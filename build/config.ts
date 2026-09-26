@@ -5,7 +5,7 @@ export const NOM_SITE = 'Keur Déco';
 export const SLOGAN = 'Décoration africaine pour la maison';
 
 /** Adresse publique du site. Surchargeable : SITE_URL=https://mon-domaine.fr/ npm run build */
-export const SITE_URL = (process.env.SITE_URL ?? 'https://www.keurdeco.fr/').replace(/\/?$/, '/');
+export const SITE_URL = (process.env.SITE_URL ?? 'https://teiki5320.github.io/Keurdeco/').replace(/\/?$/, '/');
 
 /** Date du jour à Paris (AAAA-MM-JJ), ou DATE_PUBLICATION si elle est définie (prévisualisation). */
 export function dateDuJour(): string {

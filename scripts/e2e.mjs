@@ -118,8 +118,8 @@ try {
 
   // Fichiers générés
   const sitemap = await (await fetch(`${BASE}sitemap.xml`)).text();
-  verifier(sitemap.includes('https://www.keurdeco.fr/salon-terracotta-wax.html') && !sitemap.includes('404'), 'sitemap.xml');
-  verifier((await (await fetch(`${BASE}robots.txt`)).text()).includes('Sitemap: https://www.keurdeco.fr/sitemap.xml'), 'robots.txt');
+  verifier(sitemap.includes('https://teiki5320.github.io/Keurdeco/salon-terracotta-wax.html') && !sitemap.includes('404'), 'sitemap.xml');
+  verifier((await (await fetch(`${BASE}robots.txt`)).text()).includes('Sitemap: https://teiki5320.github.io/Keurdeco/sitemap.xml'), 'robots.txt');
   verifier((await fetch(`${BASE}manifest.webmanifest`)).ok && (await fetch(`${BASE}sw.js`)).ok, 'manifeste et service worker');
   const manifeste = await (await fetch(`${BASE}epingles.json`)).json();
   verifier(manifeste.epingles.length === 15 && manifeste.epingles.every((e) => e.lien.includes('utm_source=pinterest')), 'manifeste des épingles : 15 épingles, liens avec utm_source=pinterest');

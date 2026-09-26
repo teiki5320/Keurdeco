@@ -1,7 +1,7 @@
 // Publication automatique des épingles sur Pinterest (API v5).
 // Usage : npm run pinterest:publier [-- --a-blanc] [-- --local]
 //
-// 1. Lit le manifeste publié (https://www.keurdeco.fr/epingles.json, ou public/epingles.json avec --local)
+// 1. Lit le manifeste publié (https://teiki5320.github.io/Keurdeco/epingles.json, ou public/epingles.json avec --local)
 //    et le fichier d'état data/pinterest-etat.json (épingles déjà publiées, avec leur id Pinterest).
 // 2. Choisit au plus N épingles (config/pinterest.json, 5 par défaut), jamais deux du même article le même jour.
 // 3. Publie chacune par POST /v5/pins (media_source image_url, lien vers l'article) dans le tableau
@@ -18,7 +18,7 @@ import { api, aujourdhuiParis, chargerEnv, choisirEpingles, corpsEpingle, hoteAp
 chargerEnv();
 const env = process.env;
 const args = process.argv.slice(2);
-const SITE_URL = (env.SITE_URL ?? 'https://www.keurdeco.fr/').replace(/\/?$/, '/');
+const SITE_URL = (env.SITE_URL ?? 'https://teiki5320.github.io/Keurdeco/').replace(/\/?$/, '/');
 const SANDBOX = env.PINTEREST_SANDBOX === '1';
 const FICHIER_ETAT = resolve(RACINE, SANDBOX ? 'data/pinterest-etat-sandbox.json' : 'data/pinterest-etat.json');
 const config = lireJson(resolve(RACINE, 'config/pinterest.json'), {});

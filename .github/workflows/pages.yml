@@ -19,7 +19,7 @@ concurrency:
 
 env:
   # Réglages facultatifs : Settings › Secrets and variables › Actions › Variables.
-  SITE_URL: ${{ vars.SITE_URL || 'https://www.keurdeco.fr/' }}
+  SITE_URL: ${{ vars.SITE_URL || 'https://teiki5320.github.io/Keurdeco/' }}
   PLAUSIBLE_DOMAIN: ${{ vars.PLAUSIBLE_DOMAIN }}
   PINTEREST_VERIFY: ${{ vars.PINTEREST_VERIFY }}
 

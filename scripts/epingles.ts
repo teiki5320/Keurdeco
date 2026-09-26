@@ -90,13 +90,13 @@ async function titrePng(titre: string, couleur: string, largeur: number, hauteur
   throw new Error(`Titre d'épingle trop long : « ${titre} »`);
 }
 
-/** Signature : petit logo + « keurdeco.fr ». */
+/** Signature : petit logo + « Keur Déco » (ajouter l’adresse du site quand le domaine sera en place). */
 async function signature(couleurTexte: string, surFonce: boolean): Promise<Buffer> {
   const logo = await sharp(Buffer.from(marque('logo-marque', surFonce).replace('class="logo-marque"', 'xmlns="http://www.w3.org/2000/svg"').replace('width="40" height="40"', 'width="56" height="56"')))
     .png()
     .toBuffer();
   const texte = await sharp({
-    text: { text: `<span foreground="${couleurTexte}">Keur Déco · keurdeco.fr</span>`, font: 'Source Sans 3 SemiBold 30', fontfile: POLICE_TEXTE, rgba: true, dpi: 72 },
+    text: { text: `<span foreground="${couleurTexte}">Keur Déco · déco africaine</span>`, font: 'Source Sans 3 SemiBold 30', fontfile: POLICE_TEXTE, rgba: true, dpi: 72 },
   })
     .png()
     .toBuffer();

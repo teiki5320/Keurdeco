@@ -2,7 +2,7 @@
 
 Site éditorial en français sur la **décoration africaine** : idées d'aménagement, Top 10 et guides sur les matières et savoir-faire (wax, bogolan, kente, indigo, raphia…), pour la diaspora africaine en France et tous les amateurs de déco. « Keur » veut dire « maison » en wolof.
 
-- Adresse : https://www.keurdeco.fr/
+- Adresse actuelle : https://teiki5320.github.io/Keurdeco/ (GitHub Pages) ; domaine prévu plus tard : www.keurdeco.fr
 - Éditeur : ALOHASH (SAS, nom commercial TOA CORP), voir `mentions-legales.html`.
 - Revenus : liens Partenaires Amazon.fr. Trafic : Pinterest (publication automatique par l'API) et Google.
 - **Priorité : automatiser la chaîne, de l'article à l'épingle Pinterest publiée.**
@@ -123,19 +123,19 @@ Tout est détaillé dans [`docs/pinterest.md`](docs/pinterest.md), y compris les
 
 `.github/workflows/pages.yml` : à chaque push sur `main`, chaque lundi à 5 h UTC et à la demande : `npm ci`, tests, build (épingles comprises), test de bout en bout Chromium, puis déploiement GitHub Pages.
 
-Réglages facultatifs (*Settings* › *Secrets and variables* › *Actions* › *Variables*) : `SITE_URL` (par défaut `https://www.keurdeco.fr/`), `PLAUSIBLE_DOMAIN` (mesure d'audience sans cookie, par exemple `www.keurdeco.fr`), `PINTEREST_VERIFY`.
+Réglages facultatifs (*Settings* › *Secrets and variables* › *Actions* › *Variables*) : `SITE_URL` (par défaut `https://teiki5320.github.io/Keurdeco/`), `PLAUSIBLE_DOMAIN` (mesure d'audience sans cookie, par exemple `www.keurdeco.fr`), `PINTEREST_VERIFY`.
 
 Première mise en route : *Settings* › *Pages* › *Source* = **GitHub Actions**.
 
 Autre workflow : `pinterest.yml` (quotidien, 7 h 17 UTC).
 
-## Domaine personnalisé (IONOS + GitHub Pages)
+## Domaine personnalisé (plus tard : IONOS + GitHub Pages)
 
-Le domaine `www.keurdeco.fr` pointe vers GitHub Pages :
+Pour l'instant, le site est servi à l'adresse GitHub Pages. Le jour où le domaine `www.keurdeco.fr` est acheté :
 
 - **DNS IONOS** : 4 enregistrements **A** sur `@` vers 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153, et un **CNAME** `www` → `teiki5320.github.io`. Conserver les enregistrements de messagerie existants (MX, SPF, DKIM, DMARC). Attention : en ajoutant un enregistrement A sur `@`, IONOS propose d'en créer aussi un pour `www` ; choisir « Ne pas ajouter l'enregistrement DNS pour www ».
-- **GitHub** : *Settings* → *Pages* → *Custom domain* = `www.keurdeco.fr`, puis cocher *Enforce HTTPS* une fois le certificat émis. Le fichier `public/CNAME` contient le domaine.
-- **Code** : `SITE_URL` vaut `https://www.keurdeco.fr/` par défaut (`build/config.ts`).
+- **GitHub** : *Settings* → *Pages* → *Custom domain* = `www.keurdeco.fr`, puis cocher *Enforce HTTPS* une fois le certificat émis. Créer le fichier `public/CNAME` contenant `www.keurdeco.fr`.
+- **Code** : remplacer l'adresse par défaut par `https://www.keurdeco.fr/` dans `build/config.ts`, `scripts/pinterest-publier.mjs` et les deux workflows (ou définir la variable `SITE_URL`), et remettre « keurdeco.fr » dans la signature des épingles (`scripts/epingles.ts`).
 - Le renouvellement du domaine se fait dans IONOS.
 
 ## Pages légales

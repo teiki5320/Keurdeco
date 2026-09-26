@@ -34,7 +34,7 @@ jobs:
           PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
           PINTEREST_SANDBOX: ${{ vars.PINTEREST_SANDBOX }}
           PINTEREST_MAX: ${{ vars.PINTEREST_MAX }}
-          SITE_URL: ${{ vars.SITE_URL || 'https://www.keurdeco.fr/' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://teiki5320.github.io/Keurdeco/' }}
         run: node scripts/pinterest-publier.mjs ${{ inputs.a_blanc && '--a-blanc' || '' }}
       - name: Enregistrer le fichier d'état sur main
         if: always()
