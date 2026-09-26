@@ -1,0 +1,513 @@
+[
+  {
+    "id": "coussin-wax-cercles-safran",
+    "asin": null,
+    "nom": "Housse de coussin en wax, cercles safran et terracotta",
+    "type_objet": "coussin",
+    "matieres": [
+      "wax"
+    ],
+    "couleurs": [
+      "safran",
+      "terracotta",
+      "indigo"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "coussin-wax-vert-baobab",
+    "asin": null,
+    "nom": "Housse de coussin en wax, fond vert",
+    "type_objet": "coussin",
+    "matieres": [
+      "wax"
+    ],
+    "couleurs": [
+      "vert",
+      "safran",
+      "crème"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "coussin-wax-terracotta",
+    "asin": null,
+    "nom": "Housse de coussin en wax, fond terracotta",
+    "type_objet": "coussin",
+    "matieres": [
+      "wax"
+    ],
+    "couleurs": [
+      "terracotta",
+      "crème"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "plaid-coton-rayures-creme",
+    "asin": null,
+    "nom": "Plaid en coton tissé, rayures crème et brun",
+    "type_objet": "plaid",
+    "matieres": [
+      "bogolan"
+    ],
+    "couleurs": [
+      "crème",
+      "brun"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "assiettes-murales-tressees",
+    "asin": null,
+    "nom": "Lot d'assiettes murales tressées (paniers plats décoratifs)",
+    "type_objet": "assiette-murale",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "safran",
+      "terracotta"
+    ],
+    "pieces": [
+      "salon",
+      "entree",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "panier-plante-tresse-rayures",
+    "asin": null,
+    "nom": "Panier cache-pot tressé à rayures pour grande plante",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "terracotta"
+    ],
+    "pieces": [
+      "salon",
+      "balcon-exterieur"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "tapis-motif-losanges",
+    "asin": null,
+    "nom": "Tapis crème à motifs losanges indigo",
+    "type_objet": "tapis",
+    "matieres": [
+      "bogolan"
+    ],
+    "couleurs": [
+      "crème",
+      "indigo",
+      "terracotta"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "pouf-cuir-ocre",
+    "asin": null,
+    "nom": "Pouf rond en cuir ocre",
+    "type_objet": "pouf",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "ocre",
+      "safran"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "vase-terre-cuite-terracotta",
+    "asin": null,
+    "nom": "Vase en terre cuite, forme ronde",
+    "type_objet": "vase",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "salon",
+      "entree"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "tabouret-bois-sculpte",
+    "asin": null,
+    "nom": "Tabouret en bois sculpté (table d'appoint)",
+    "type_objet": "tabouret",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "entree"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "panier-bolga-marche",
+    "asin": null,
+    "nom": "Panier de marché Bolga tressé à anses en cuir",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "multicolore"
+    ],
+    "pieces": [
+      "entree",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "panier-linge-tresse-couvercle",
+    "asin": null,
+    "nom": "Panier à linge tressé avec couvercle",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "noir"
+    ],
+    "pieces": [
+      "salle-de-bain",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "paniers-rangement-raphia-lot",
+    "asin": null,
+    "nom": "Lot de paniers de rangement en raphia ou jonc de mer",
+    "type_objet": "rangement",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "entree",
+      "salle-de-bain",
+      "chambre-enfant"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "corbeille-fruits-tressee",
+    "asin": null,
+    "nom": "Corbeille à fruits tressée à motifs",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "multicolore"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "panier-jouets-tresse",
+    "asin": null,
+    "nom": "Grand panier à jouets tressé avec anses",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "blanc"
+    ],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "panier-mural-tresse",
+    "asin": null,
+    "nom": "Panier mural suspendu tressé",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "entree",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "paniers-gigognes-tresses",
+    "asin": null,
+    "nom": "Set de paniers gigognes tressés",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "indigo",
+      "terracotta"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "panier-agaseke-couvercle",
+    "asin": null,
+    "nom": "Boîte tressée à couvercle conique, style agaseke du Rwanda",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "noir",
+      "multicolore"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "entree"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "coussin-bogolan",
+    "asin": null,
+    "nom": "Housse de coussin en bogolan, motifs noirs et crème",
+    "type_objet": "coussin",
+    "matieres": [
+      "bogolan"
+    ],
+    "couleurs": [
+      "brun",
+      "crème",
+      "noir"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "tissu-bogolan-coupon",
+    "asin": null,
+    "nom": "Coupon de tissu bogolan (mud cloth)",
+    "type_objet": "textile",
+    "matieres": [
+      "bogolan"
+    ],
+    "couleurs": [
+      "brun",
+      "crème"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "plaid-motif-bogolan",
+    "asin": null,
+    "nom": "Plaid ou jeté de lit à motifs bogolan",
+    "type_objet": "plaid",
+    "matieres": [
+      "bogolan"
+    ],
+    "couleurs": [
+      "brun",
+      "crème"
+    ],
+    "pieces": [
+      "chambre",
+      "salon"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "abat-jour-bogolan",
+    "asin": null,
+    "nom": "Abat-jour ou lampe à motifs bogolan",
+    "type_objet": "luminaire",
+    "matieres": [
+      "bogolan"
+    ],
+    "couleurs": [
+      "brun",
+      "crème"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  },
+  {
+    "id": "tapis-motif-bogolan",
+    "asin": null,
+    "nom": "Tapis à motifs inspirés du bogolan",
+    "type_objet": "tapis",
+    "matieres": [
+      "bogolan"
+    ],
+    "couleurs": [
+      "brun",
+      "crème",
+      "noir"
+    ],
+    "pieces": [
+      "salon",
+      "entree"
+    ],
+    "statut": "a_selectionner",
+    "verifie_le": null,
+    "source": "manuel",
+    "image_url": null,
+    "image_maj_le": null
+  }
+]

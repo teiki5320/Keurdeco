@@ -1,0 +1,39 @@
+{
+  "name": "keurdeco",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Keur Déco : idées de décoration africaine (www.keurdeco.fr)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "node scripts/e2e.mjs",
+    "images": "node scripts/images.mjs",
+    "epingles": "node --experimental-strip-types scripts/epingles.ts",
+    "hotspots": "node --experimental-strip-types scripts/hotspots.ts",
+    "nouvel-article": "node scripts/nouvel-article.mjs",
+    "pinterest:auth": "node scripts/pinterest-auth.mjs",
+    "pinterest:publier": "node scripts/pinterest-publier.mjs",
+    "amazon:sync": "node scripts/amazon-sync.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "playwright": "^1.63.0",
+    "sharp": "^0.35.4",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
+  },
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/source-sans-3": "^5.3.0",
+    "marked": "^18.0.14",
+    "yaml": "^2.9.1"
+  }
+}

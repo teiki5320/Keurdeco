@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-e2e/
+*.log
+.DS_Store
+.env
+# Générés au build par scripts/epingles.ts
+public/epingles/
+public/epingles.json

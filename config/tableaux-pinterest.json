@@ -1,0 +1,25 @@
+{
+  "_aide": "Rubrique (champ tableau_pinterest des articles) → tableau Pinterest. Renseigner board_id après avoir créé les tableaux (voir docs/pinterest.md ; npm run pinterest:auth affiche la liste des tableaux et leurs identifiants). Un board_id vide renvoie au tableau « general ».",
+  "tableaux": {
+    "general": { "nom": "Déco africaine · Keur Déco", "board_id": "" },
+    "salon": { "nom": "Salon déco africaine", "board_id": "" },
+    "chambre": { "nom": "Chambre déco africaine", "board_id": "" },
+    "cuisine-salle-a-manger": { "nom": "Cuisine et table africaines", "board_id": "" },
+    "entree": { "nom": "Entrée déco africaine", "board_id": "" },
+    "salle-de-bain": { "nom": "Salle de bain déco africaine", "board_id": "" },
+    "balcon-exterieur": { "nom": "Balcon et terrasse déco africaine", "board_id": "" },
+    "chambre-enfant": { "nom": "Chambre d'enfant déco africaine", "board_id": "" },
+    "wax": { "nom": "Déco en wax", "board_id": "" },
+    "bogolan": { "nom": "Bogolan et mud cloth", "board_id": "" },
+    "kente": { "nom": "Kente", "board_id": "" },
+    "indigo": { "nom": "Indigo et adire", "board_id": "" },
+    "paniers": { "nom": "Paniers tressés africains", "board_id": "" },
+    "terre-cuite": { "nom": "Terre cuite et poterie africaine", "board_id": "" },
+    "bois-sculpte": { "nom": "Bois sculpté africain", "board_id": "" },
+    "perles": { "nom": "Perles africaines", "board_id": "" },
+    "mariage": { "nom": "Mariage africain : décoration", "board_id": "" },
+    "bapteme": { "nom": "Baptême : décoration africaine", "board_id": "" },
+    "tabaski": { "nom": "Tabaski : table et déco", "board_id": "" },
+    "fetes": { "nom": "Noël et fêtes, touche africaine", "board_id": "" }
+  }
+}

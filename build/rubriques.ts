@@ -1,0 +1,231 @@
+/**
+ * Pages générées au build (elles n'existent pas sur le disque) :
+ *   pieces.html, matieres.html, occasions.html   (entrées de chaque famille)
+ *   piece-<id>.html, matiere-<id>.html, occasion-<id>.html   (articles publiés de la rubrique)
+ *   articles.html   (tous les articles publiés, par type)
+ *   glossaire.html et glossaire-<id>.html   (glossaire des matières, motifs et savoir-faire)
+ * et les blocs de l'accueil (marqueurs <!--#une-->, <!--#derniers-->, <!--#tops-->, <!--#entrees:piece-->…).
+ */
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { FAMILLES, fichierRubrique, type Famille, type Rubrique } from '../src/taxonomie.ts';
+import { articlesPublies, carteArticle, grilleArticles, TYPES, type Article, type TypeArticle } from './articles.ts';
+import { NOM_SITE } from './config.ts';
+import { icone } from './icones.ts';
+import { imageArticle } from './images.ts';
+import { echapper } from './produits.ts';
+
+export interface EntreeGlossaire {
+  id: string;
+  nom: string;
+  categorie: string;
+  origine: string;
+  resume: string;
+  texte: string[];
+  matieres: string[];
+}
+
+export const FICHIER_GLOSSAIRE = resolve(import.meta.dirname, '../src/data/glossaire.json');
+
+export function chargerGlossaire(): EntreeGlossaire[] {
+  return (JSON.parse(readFileSync(FICHIER_GLOSSAIRE, 'utf8')) as EntreeGlossaire[]).sort((a, b) => a.nom.localeCompare(b.nom, 'fr'));
+}
+
+export function fichierGlossaire(id: string): string {
+  return `glossaire-${id}.html`;
+}
+
+interface PageSimple {
+  titre: string;
+  description: string;
+  fil: [string, string][];
+  h1: string;
+  chapo: string;
+  contenu: string;
+  classe?: string;
+}
+
+/** Gabarit commun des pages de liste (avec marqueurs). */
+export function pageSimple(p: PageSimple): string {
+  const fil = [['index.html', 'Accueil'] as [string, string], ...p.fil]
+    .map(([href, nom], i, t) => (i === t.length - 1 ? echapper(nom) : `<a href="${href}">${echapper(nom)}</a>`))
+    .join(' › ');
+  return `<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="${echapper(p.description)}" />
+    <title>${echapper(p.titre)} · ${NOM_SITE}</title>
+    <!--#head-->
+  </head>
+  <body>
+    <!--#header-->
+    <main id="contenu" class="page ${p.classe ?? ''}">
+      <header class="page__entete conteneur">
+        <p class="fil">${fil}</p>
+        <h1>${p.h1}</h1>
+        <p class="chapo">${p.chapo}</p>
+      </header>
+      <div class="conteneur">
+        ${p.contenu}
+      </div>
+    </main>
+    <!--#footer-->
+    <script type="module" src="/src/site.ts"></script>
+  </body>
+</html>
+`;
+}
+
+/** Articles publiés rattachés à une rubrique. */
+export function articlesDeRubrique(famille: Famille, id: string, publies: Article[]): Article[] {
+  return publies.filter((a) => a[FAMILLES[famille].champ].includes(id));
+}
+
+/** Tuiles d'entrée d'une famille (accueil et page hub). */
+export function tuilesRubriques(famille: Famille, publies: Article[]): string {
+  return `<ul class="tuiles tuiles--${famille}">${FAMILLES[famille].liste
+    .map((r) => {
+      const n = articlesDeRubrique(famille, r.id, publies).length;
+      return `<li><a class="tuile" href="${fichierRubrique(famille, r.id)}"><span class="tuile__nom">${r.nom}</span><span class="tuile__nb">${n ? `${n} article${n > 1 ? 's' : ''}` : 'Bientôt'}</span></a></li>`;
+    })
+    .join('')}</ul>`;
+}
+
+function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string {
+  const f = FAMILLES[famille];
+  const articles = articlesDeRubrique(famille, r.id, publies);
+  const glossaire = famille === 'matiere' ? chargerGlossaire().filter((g) => g.matieres.includes(r.id)) : [];
+  return pageSimple({
+    titre: `${r.nom} : idées de déco africaine`,
+    description: r.accroche,
+    fil: [[f.hub, f.titre], ['', r.nom]],
+    h1: echapper(r.nom),
+    chapo: echapper(r.accroche),
+    classe: `page--rubrique page--${famille}`,
+    contenu: `${grilleArticles(articles, '<p class="liste-vide">Les premiers articles de cette rubrique arrivent bientôt.</p>')}
+        ${
+          glossaire.length
+            ? `<section class="bloc-glossaire" aria-labelledby="comprendre"><h2 id="comprendre">Pour comprendre</h2><ul class="liste-glossaire">${glossaire
+                .map((g) => `<li><a href="${fichierGlossaire(g.id)}"><strong>${echapper(g.nom)}</strong> <span>${echapper(g.resume)}</span></a></li>`)
+                .join('')}</ul></section>`
+            : ''
+        }
+        <nav class="autres-rubriques" aria-label="${f.titre}"><h2>${f.titre}</h2>${tuilesRubriques(famille, publies)}</nav>`,
+  });
+}
+
+const INTRO_HUB: Record<Famille, { h1: string; chapo: string }> = {
+  piece: { h1: 'La déco africaine pièce par pièce', chapo: 'Du salon à la salle de bain, des idées concrètes pour chaque pièce de la maison.' },
+  matiere: { h1: 'Matières et styles', chapo: 'Wax, bogolan, kente, indigo, raphia, terre cuite, bois sculpté, perles : comprendre les matières pour bien les associer.' },
+  occasion: { h1: 'Décorer pour les grandes occasions', chapo: 'Mariage, baptême, Tabaski, fêtes de fin d’année : des tables et des intérieurs prêts à recevoir.' },
+};
+
+function pageHub(famille: Famille, publies: Article[]): string {
+  const f = FAMILLES[famille];
+  return pageSimple({
+    titre: INTRO_HUB[famille].h1,
+    description: INTRO_HUB[famille].chapo,
+    fil: [['', f.titre]],
+    h1: INTRO_HUB[famille].h1,
+    chapo: INTRO_HUB[famille].chapo,
+    classe: 'page--hub',
+    contenu: tuilesRubriques(famille, publies),
+  });
+}
+
+function pageTousArticles(publies: Article[]): string {
+  const sections = (Object.keys(TYPES) as TypeArticle[])
+    .map((t) => ({ t, liste: publies.filter((a) => a.type === t) }))
+    .filter(({ liste }) => liste.length)
+    .map(({ t, liste }) => `<section aria-labelledby="type-${t}"><h2 id="type-${t}">${icone(TYPES[t].icone)} ${TYPES[t].pluriel}</h2>${grilleArticles(liste)}</section>`)
+    .join('');
+  return pageSimple({
+    titre: 'Tous les articles',
+    description: 'Tous les articles de Keur Déco : ambiances à reproduire, tops de produits et guides sur les matières et savoir-faire africains.',
+    fil: [['', 'Articles']],
+    h1: 'Tous les articles',
+    chapo: 'Ambiances à reproduire, classements de produits et guides de fond sur les matières africaines.',
+    classe: 'page--articles',
+    contenu: sections || '<p class="liste-vide">Les premiers articles arrivent bientôt.</p>',
+  });
+}
+
+function pageGlossaire(entrees: EntreeGlossaire[]): string {
+  return pageSimple({
+    titre: 'Glossaire des matières, motifs et savoir-faire africains',
+    description: 'Bogolan, kente, adinkra, wax, indigo, raphia : le glossaire des matières, motifs et savoir-faire de la décoration africaine.',
+    fil: [['', 'Glossaire']],
+    h1: 'Glossaire',
+    chapo: 'Les matières, motifs et savoir-faire à connaître pour choisir et associer les objets de déco africaine.',
+    classe: 'page--glossaire',
+    contenu: `<ul class="liste-glossaire liste-glossaire--grande">${entrees
+      .map((g) => `<li><a href="${fichierGlossaire(g.id)}"><small>${echapper(g.categorie)} · ${echapper(g.origine)}</small><strong>${echapper(g.nom)}</strong> <span>${echapper(g.resume)}</span></a></li>`)
+      .join('')}</ul>`,
+  });
+}
+
+function pageEntreeGlossaire(g: EntreeGlossaire, entrees: EntreeGlossaire[], publies: Article[]): string {
+  const articles = publies.filter((a) => a.matieres.some((m) => g.matieres.includes(m))).slice(0, 3);
+  const voisines = entrees.filter((e) => e.id !== g.id && e.matieres.some((m) => g.matieres.includes(m))).slice(0, 4);
+  const rubriques = g.matieres.map((m) => FAMILLES.matiere.liste.find((r) => r.id === m)).filter((r): r is Rubrique => !!r);
+  return pageSimple({
+    titre: `${g.nom} : définition et origine`,
+    description: g.resume,
+    fil: [['glossaire.html', 'Glossaire'], ['', g.nom]],
+    h1: echapper(g.nom),
+    chapo: echapper(g.resume),
+    classe: 'page--entree-glossaire',
+    contenu: `<div class="conteneur--etroit prose">
+          <p class="entree-glossaire__origine"><strong>${echapper(g.categorie)}</strong> · ${echapper(g.origine)}</p>
+          ${g.texte.map((p) => `<p>${echapper(p)}</p>`).join('\n          ')}
+          ${rubriques.length ? `<p>Voir la rubrique ${rubriques.map((r) => `<a href="${fichierRubrique('matiere', r.id)}">${r.nom}</a>`).join(', ')}.</p>` : ''}
+        </div>
+        ${articles.length ? `<section aria-labelledby="articles-lies"><h2 id="articles-lies">Articles liés</h2>${grilleArticles(articles)}</section>` : ''}
+        ${voisines.length ? `<nav class="voisines-glossaire" aria-label="Voir aussi"><h2>Voir aussi</h2><ul class="liste-glossaire">${voisines.map((v) => `<li><a href="${fichierGlossaire(v.id)}"><strong>${echapper(v.nom)}</strong> <span>${echapper(v.resume)}</span></a></li>`).join('')}</ul></nav>` : ''}`,
+  });
+}
+
+/** Toutes les pages de rubriques, de listes et du glossaire. */
+export function pagesRubriques(publies = articlesPublies()): Map<string, string> {
+  const pages = new Map<string, string>();
+  for (const famille of Object.keys(FAMILLES) as Famille[]) {
+    pages.set(FAMILLES[famille].hub, pageHub(famille, publies));
+    for (const r of FAMILLES[famille].liste) pages.set(fichierRubrique(famille, r.id), pageRubrique(famille, r, publies));
+  }
+  pages.set('articles.html', pageTousArticles(publies));
+  const glossaire = chargerGlossaire();
+  pages.set('glossaire.html', pageGlossaire(glossaire));
+  for (const g of glossaire) pages.set(fichierGlossaire(g.id), pageEntreeGlossaire(g, glossaire, publies));
+  return pages;
+}
+
+/* ---------- Blocs de l'accueil ---------- */
+
+/** Ambiance à la une : la dernière ambiance publiée (ou, à défaut, le dernier article). */
+export function blocUne(publies = articlesPublies()): string {
+  const a = publies.find((x) => x.type === 'ambiance') ?? publies[0];
+  if (!a) {
+    return `<div class="une une--vide"><p class="une__etiquette">Bientôt</p><p class="une__titre">Les premières ambiances arrivent très vite.</p><p>Salon terracotta et wax, paniers tressés, bogolan : revenez bientôt, ou suivez-nous sur Pinterest.</p></div>`;
+  }
+  return `<a class="une" href="${a.fichier}">
+    <span class="une__image">${imageArticle(a.image, a.imageAlt, '100vw', 'eager')}</span>
+    <span class="une__texte">
+      <span class="une__etiquette">${TYPES[a.type].nom} à la une</span>
+      <strong class="une__titre">${echapper(a.titre)}</strong>
+      <span class="une__resume">${echapper(a.description)}</span>
+      <span class="une__lire">Découvrir l’ambiance ${icone('fleche', 'icone icone--petite')}</span>
+    </span>
+  </a>`;
+}
+
+export function blocDerniers(publies = articlesPublies(), n = 6): string {
+  const une = publies.find((x) => x.type === 'ambiance') ?? publies[0];
+  return grilleArticles(publies.filter((a) => a !== une).slice(0, n));
+}
+
+export function blocTops(publies = articlesPublies(), n = 3): string {
+  const tops = publies.filter((a) => a.type === 'top').slice(0, n);
+  return tops.length ? `<div class="grille-articles">${tops.map((a) => carteArticle(a)).join('')}</div>` : '<p class="liste-vide">Les premiers Top 10 arrivent bientôt.</p>';
+}

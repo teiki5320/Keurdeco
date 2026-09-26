@@ -1,0 +1,5 @@
+{
+  "_aide": "Réglages de la publication automatique (scripts/pinterest-publier.mjs).",
+  "max_par_execution": 5,
+  "manifeste": "epingles.json"
+}

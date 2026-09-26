@@ -1,0 +1,16 @@
+{
+  "name": "Keur Déco — Décoration africaine pour la maison",
+  "short_name": "Keur Déco",
+  "description": "Idées de décoration africaine : ambiances, Top 10 et guides sur le wax, le bogolan, le kente, l'indigo et le raphia.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FBF8F2",
+  "theme_color": "#1B2442",
+  "icons": [
+    { "src": "icones/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icones/icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icones/icone-masquable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
