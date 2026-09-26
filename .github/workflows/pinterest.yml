@@ -1,0 +1,48 @@
+name: Publier les épingles Pinterest
+
+on:
+  # Chaque jour à 7 h 17 UTC, après la reconstruction du lundi (5 h UTC).
+  schedule:
+    - cron: '17 7 * * *'
+  workflow_dispatch:
+    inputs:
+      a_blanc:
+        description: 'Mode à blanc (affiche sans publier)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pinterest
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Le script n'utilise que les modules de Node : pas besoin de npm ci.
+      - name: Publier
+        env:
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          PINTEREST_SANDBOX: ${{ vars.PINTEREST_SANDBOX }}
+          PINTEREST_MAX: ${{ vars.PINTEREST_MAX }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://www.keurdeco.fr/' }}
+        run: node scripts/pinterest-publier.mjs ${{ inputs.a_blanc && '--a-blanc' || '' }}
+      - name: Enregistrer le fichier d'état sur main
+        if: always()
+        run: |
+          git config user.name "keurdeco-bot"
+          git config user.email "keurdeco-bot@users.noreply.github.com"
+          git add data/pinterest-etat*.json
+          if git diff --cached --quiet; then echo "Aucune épingle publiée."; exit 0; fi
+          git commit -m "Pinterest : épingles publiées le $(TZ=Europe/Paris date +%F)"
+          for i in 1 2 3 4; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((i * 5)); done
+          exit 1
