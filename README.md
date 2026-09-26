@@ -39,7 +39,7 @@ Node 22.12 ou plus récent (les scripts `.ts` sont exécutés directement par No
 | `src/site.css`, `src/site.ts` | Styles et JavaScript (points cliquables, menu, service worker) |
 | `contenu/articles/*.md` | Un fichier par article |
 | `contenu/images/*.jpg` | Images sources haute définition (pour les épingles) |
-| `scripts/` | Outils : images, épingles, Pinterest, Amazon, hotspots, nouvel article, test e2e |
+| `scripts/` | Outils : images, épingles, Pinterest, hotspots, nouvel article, test e2e |
 | `config/` | Tableaux Pinterest, réglages de publication |
 | `data/pinterest-etat.json` | Épingles déjà publiées (mis à jour par le workflow) |
 | `docs/` | Circuit hebdomadaire, Pinterest, 40 idées d'articles |
@@ -96,13 +96,15 @@ Chaque build affiche : les articles programmés à venir, les produits `a_select
 
 ## Produits
 
-`src/data/produits.json` : `id`, `asin` (ou `null`), `nom`, `type_objet`, `matieres[]`, `couleurs[]`, `pieces[]`, `statut` (`a_selectionner` | `actif` | `indisponible`), `verifie_le`, `source` (`manuel` | `creators-api`), `image_url` (`null` ; rempli uniquement par la synchronisation API), `image_maj_le` (date de lecture de l'image par l'API).
+`src/data/produits.json` : `id`, `asin` (ou `null`), `nom`, `type_objet`, `matieres[]`, `couleurs[]`, `pieces[]`, `statut` (`a_selectionner` | `actif` | `indisponible`), `verifie_le`.
+
+Comme sur OptiLED : les produits sont relevés à la main sur Amazon.fr, sans API ni synchronisation automatique. Vérification mensuelle (disponibilité) : le rapport de build liste les produits non vérifiés depuis plus de 60 jours.
 
 Règles (vérifiées par les tests) :
 
 - **Jamais d'ASIN, de note, d'avis ni de prix inventés** ; aucun prix affiché.
 - Un produit `a_selectionner` ou `indisponible` n'est jamais affiché.
-- **Aucune photo Amazon téléchargée ni modifiée** : `image_url` est affichée telle quelle, en lien vers Amazon, et seulement si elle a été lue par l'API il y a moins de 24 h. Sinon, la carte montre une icône du type d'objet.
+- **Aucune photo Amazon** : chaque carte produit montre une icône du type d'objet.
 - Liens : `https://www.amazon.fr/dp/<ASIN>?tag=keurdeco-21`, `rel="sponsored nofollow noopener"`, `target="_blank"`.
 - La mention Partenaires figure près des liens, dans le pied de page et les mentions légales.
 
@@ -117,19 +119,6 @@ Tout est détaillé dans [`docs/pinterest.md`](docs/pinterest.md), y compris les
 - **Publication** (`scripts/pinterest-publier.mjs`, workflow quotidien 7 h 17 UTC) : lit le manifeste publié et `data/pinterest-etat.json`, publie au plus 5 épingles (config) sans deux épingles du même article le même jour, `POST /v5/pins` avec `media_source` `image_url`, tableau choisi via `config/tableaux-pinterest.json`, puis commit de l'état sur `main`. OAuth : `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, `PINTEREST_REFRESH_TOKEN` (jeton d'accès renouvelé automatiquement). `PINTEREST_SANDBOX=1` : `https://api-sandbox.pinterest.com`. Sans secrets : mode à blanc.
 - **`npm run pinterest:auth`** : serveur local (http://localhost:8085/) qui mène le parcours OAuth complet et affiche le refresh token, les tableaux et un formulaire d'épingle de démonstration (pour la vidéo exigée par Pinterest).
 
-## Amazon (Creators API)
-
-L'ancienne Product Advertising API a été arrêtée ; la **Creators API** la remplace. Elle n'est accessible qu'avec **au moins 10 ventes qualifiées sur les 30 derniers jours** (accès perdu après 30 jours sans vente). Identifiants : Partenaires Central › *Outils* › *Creators API* › *Create Application* › *Add New Credential* (propriétaire principal du compte) ; on obtient un **Credential ID**, un **Secret** (affiché une seule fois) et une **Version** (3.2 pour la région Europe, qui couvre Amazon.fr).
-
-`scripts/amazon-sync.mjs` (documentation officielle : https://affiliate-program.amazon.com/creatorsapi/docs/en-us/) :
-
-- jeton OAuth `client_credentials` sur `https://api.amazon.co.uk/auth/o2/token` (portée `creatorsapi::default`, valable 1 h) ;
-- `POST https://creatorsapi.amazon/catalog/v1/getItems` (en-tête `x-marketplace: www.amazon.fr`, 10 ASIN max par requête, 1 requête par seconde), ressources `itemInfo.title`, `images.primary.large`, `offersV2.listings.availability` ;
-- pour chaque produit actif (et indisponible avec ASIN) : met à jour `nom`, `image_url`, `image_maj_le`, `verifie_le`, et passe en `indisponible` ce qui n'est plus vendu (`ItemNotAccessible`, rupture). `AMAZON_SYNC_NOMS=0` garde les noms rédigés à la main ;
-- secrets `AMAZON_CREATORS_CREDENTIAL_ID`, `AMAZON_CREATORS_SECRET` (et variable `AMAZON_CREATORS_VERSION`, 3.2 par défaut) ; sans eux, le script s'arrête proprement.
-
-Règles de cache : la licence Amazon interdit de garder plus de **24 h** les adresses d'images et les autres contenus lus par l'API. Le workflow `amazon-sync.yml` tourne donc **chaque jour** (et non chaque semaine), commit `produits.json` sur `main` et relance la publication du site. Points marqués `TODO` dans le script : liste exacte des types de disponibilité, points d'accès hors Europe.
-
 ## Déploiement (GitHub Pages)
 
 `.github/workflows/pages.yml` : à chaque push sur `main`, chaque lundi à 5 h UTC et à la demande : `npm ci`, tests, build (épingles comprises), test de bout en bout Chromium, puis déploiement GitHub Pages.
@@ -138,7 +127,7 @@ Réglages facultatifs (*Settings* › *Secrets and variables* › *Actions* › 
 
 Première mise en route : *Settings* › *Pages* › *Source* = **GitHub Actions**.
 
-Autres workflows : `pinterest.yml` (quotidien, 7 h 17 UTC) et `amazon-sync.yml` (quotidien, 4 h 07 UTC).
+Autre workflow : `pinterest.yml` (quotidien, 7 h 17 UTC).
 
 ## Domaine personnalisé (IONOS + GitHub Pages)
 

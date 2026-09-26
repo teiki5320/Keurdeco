@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { ancre, articlesPublies, donneesStructurees, lienEpingler, lireArticle, rendreAmbiance, rendreClassement, rendreCorps, sourcePageArticle, type Article } from './articles.ts';
-import { estAffichable, imageAffichable, type Produit } from './produits.ts';
+import { estAffichable, type Produit } from './produits.ts';
 
 // Données de test : les ASIN ci-dessous sont des valeurs fictives réservées aux tests (jamais publiées).
 const produit = (id: string, statut: Produit['statut'] = 'actif', asin: string | null = 'TESTASIN01'): Produit => ({
@@ -13,8 +13,6 @@ const produit = (id: string, statut: Produit['statut'] = 'actif', asin: string |
   pieces: ['salon'],
   statut,
   verifie_le: '2026-09-01',
-  source: 'manuel',
-  image_url: null,
 });
 
 const produits = new Map<string, Produit>([
@@ -88,12 +86,6 @@ describe('produits affichés', () => {
     expect(estAffichable(produits.get('c'))).toBe(false);
     expect(estAffichable(produits.get('d'))).toBe(false);
     expect(estAffichable(undefined)).toBe(false);
-  });
-
-  it('une image Amazon n’est affichée que moins de 24 h après sa lecture par l’API', () => {
-    const p = { ...produit('i'), image_url: 'https://m.media-amazon.com/images/I/x.jpg', image_maj_le: '2026-10-05T08:00:00Z' };
-    expect(imageAffichable(p, Date.parse('2026-10-05T20:00:00Z'))).toBe(p.image_url);
-    expect(imageAffichable(p, Date.parse('2026-10-06T09:00:00Z'))).toBeNull();
   });
 });
 

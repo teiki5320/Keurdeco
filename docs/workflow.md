@@ -22,7 +22,7 @@ Créer le fichier : `npm run nouvel-article -- <ambiance|top|guide> <slug>`. La 
 ## 2. Claude sélectionne les produits sur Amazon.fr et remplit produits.json
 
 - Chercher sur Amazon.fr des produits réels, cohérents avec l'ambiance, bien notés et disponibles.
-- Pour chacun : `id` (slug), `asin` **relevé sur la fiche produit** (jamais inventé), `nom` court et en français, `type_objet`, `matieres`, `couleurs`, `pieces`, `statut: "actif"`, `verifie_le` (date du jour), `source: "manuel"`, `image_url: null`.
+- Pour chacun : `id` (slug), `asin` **relevé sur la fiche produit** (jamais inventé), `nom` court et en français, `type_objet`, `matieres`, `couleurs`, `pieces`, `statut: "actif"`, `verifie_le` (date du jour).
 - Tant qu'un ASIN n'est pas vérifié : `statut: "a_selectionner"`, `asin: null` (le produit n'est pas affiché ; le build le signale).
 - Aucune note, aucun avis, aucun prix, aucune photo reprise d'Amazon.
 
@@ -45,6 +45,6 @@ Ensuite, sans rien faire :
 
 - **le lundi suivant la date de publication** (5 h UTC), le site est reconstruit : l'article est publié, ses épingles (une par titre de la liste `epingles`) sont générées et le manifeste `epingles.json` est mis en ligne ;
 - **chaque jour à 7 h 17 UTC**, le workflow Pinterest publie jusqu'à 5 épingles (jamais deux du même article le même jour), puis enregistre l'état sur `main` ;
-- **chaque jour à 4 h 07 UTC**, une fois la Creators API accessible, les produits sont revérifiés (disponibilité, image officielle).
+- **chaque mois**, comme sur OptiLED, on revérifie à la main que les produits sont toujours vendus (le rapport de build liste ceux non vérifiés depuis plus de 60 jours) ; un produit qui n'est plus vendu passe en `indisponible`.
 
 Pour publier un article tout de suite sans attendre le lundi : Actions › « Publier sur GitHub Pages » › *Run workflow* (après la date prévue).

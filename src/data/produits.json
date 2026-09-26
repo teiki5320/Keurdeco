@@ -17,10 +17,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "coussin-wax-vert-baobab",
@@ -39,10 +36,7 @@
       "salon"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "coussin-wax-terracotta",
@@ -61,10 +55,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "plaid-coton-rayures-creme",
@@ -83,10 +74,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "assiettes-murales-tressees",
@@ -107,10 +95,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "panier-plante-tresse-rayures",
@@ -129,10 +114,7 @@
       "balcon-exterieur"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "tapis-motif-losanges",
@@ -152,10 +134,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "pouf-cuir-ocre",
@@ -174,10 +153,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "vase-terre-cuite-terracotta",
@@ -195,10 +171,7 @@
       "entree"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "tabouret-bois-sculpte",
@@ -217,10 +190,7 @@
       "entree"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "panier-bolga-marche",
@@ -239,10 +209,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "panier-linge-tresse-couvercle",
@@ -261,10 +228,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "paniers-rangement-raphia-lot",
@@ -283,10 +247,7 @@
       "chambre-enfant"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "corbeille-fruits-tressee",
@@ -304,10 +265,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "panier-jouets-tresse",
@@ -325,10 +283,7 @@
       "chambre-enfant"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "panier-mural-tresse",
@@ -346,10 +301,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "paniers-gigognes-tresses",
@@ -369,10 +321,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "panier-agaseke-couvercle",
@@ -393,10 +342,7 @@
       "entree"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "coussin-bogolan",
@@ -416,10 +362,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "tissu-bogolan-coupon",
@@ -438,10 +381,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "plaid-motif-bogolan",
@@ -460,10 +400,7 @@
       "salon"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "abat-jour-bogolan",
@@ -482,10 +419,7 @@
       "chambre"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   },
   {
     "id": "tapis-motif-bogolan",
@@ -505,9 +439,6 @@
       "entree"
     ],
     "statut": "a_selectionner",
-    "verifie_le": null,
-    "source": "manuel",
-    "image_url": null,
-    "image_maj_le": null
+    "verifie_le": null
   }
 ]

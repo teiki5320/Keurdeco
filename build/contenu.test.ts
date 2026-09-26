@@ -42,18 +42,14 @@ describe('produits (src/data/produits.json)', () => {
   it('statut, source et champs obligatoires sont valides', () => {
     for (const p of produits) {
       expect(['a_selectionner', 'actif', 'indisponible'], p.id).toContain(p.statut);
-      expect(['manuel', 'creators-api'], p.id).toContain(p.source);
       expect(p.nom.trim(), p.id).not.toBe('');
       expect(p.type_objet.trim(), p.id).not.toBe('');
       expect(Array.isArray(p.matieres) && Array.isArray(p.couleurs) && Array.isArray(p.pieces), p.id).toBe(true);
     }
   });
 
-  it('image_url n’est rempli que par la synchronisation Creators API, et pointe vers Amazon', () => {
-    for (const p of produits.filter((x) => x.image_url)) {
-      expect(p.source, p.id).toBe('creators-api');
-      expect(p.image_url, p.id).toMatch(/^https:\/\/[a-z0-9.-]*(amazon|media-amazon|ssl-images-amazon)\.[a-z.]+\//);
-    }
+  it('aucune photo Amazon : pas de champ image dans les produits', () => {
+    for (const p of produits) expect(Object.keys(p).some((k) => /image/.test(k)), p.id).toBe(false);
   });
 
   it('matières et pièces des produits existent dans la taxonomie', () => {

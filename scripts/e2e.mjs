@@ -96,7 +96,7 @@ try {
   verifier((await page.textContent('.meme-esprit'))?.includes('En tant que Partenaire Amazon'), 'mention Partenaires près des liens');
   verifier(/^https:\/\/www\.pinterest\.com\/pin\/create\/button\/\?url=/.test((await page.getAttribute('.epingler', 'href')) ?? ''), 'bouton « Épingler » sans script externe');
   verifier((await page.getAttribute('meta[property="og:type"]', 'content')) === 'article' && (await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"Article"')), 'Open Graph article et données structurées Article (Rich Pins)');
-  verifier((await page.locator('.produit__visuel .icone--objet').count()) === 10, 'sans image officielle : icône par type d’objet');
+  verifier((await page.locator('.produit__visuel .icone--objet').count()) === 10, 'cartes produits : icône par type d’objet, sans photo Amazon');
 
   // Repli sans JavaScript
   const contexteSansJs = await navigateur.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });

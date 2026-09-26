@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { tousLesArticles } from '../build/articles.ts';
-import { appliquerReponse } from './amazon-sync.mjs';
 import { descriptionEpingle, GABARITS, gabaritPour } from './epingles.ts';
 import { blocHotspots, remplacerHotspots } from './hotspots.mjs';
 import { choisirEpingles, corpsEpingle, tableauPour } from './pinterest-lib.mjs';
@@ -66,32 +65,6 @@ describe('publication Pinterest', () => {
     expect(tableauPour('salon', config)).toBe('2');
     expect(tableauPour('wax', config)).toBe('1');
     expect(tableauPour('inconnu', { tableaux: {} })).toBeNull();
-  });
-});
-
-describe('synchronisation Amazon', () => {
-  const base = { nom: 'Nom', type_objet: 'coussin', matieres: [], couleurs: [], pieces: [], source: 'manuel', image_url: null, image_maj_le: null };
-  it('met à jour les produits vendus et passe en indisponible les autres', () => {
-    // ASIN fictifs réservés aux tests.
-    const produits = [
-      { ...base, id: 'vendu', asin: 'TESTASIN01', statut: 'actif', verifie_le: '2026-01-01' },
-      { ...base, id: 'rupture', asin: 'TESTASIN02', statut: 'actif', verifie_le: '2026-01-01' },
-      { ...base, id: 'perdu', asin: 'TESTASIN03', statut: 'actif', verifie_le: '2026-01-01', image_url: 'https://m.media-amazon.com/x.jpg' },
-    ];
-    const reponse = {
-      itemResults: {
-        items: [
-          { asin: 'TESTASIN02', offersV2: { listings: [{ availability: { type: 'OUT_OF_STOCK' } }] } },
-          { asin: 'TESTASIN01', itemInfo: { title: { displayValue: 'Titre Amazon' } }, images: { primary: { large: { url: 'https://m.media-amazon.com/images/I/a.jpg' } } }, offersV2: { listings: [{ availability: { type: 'IN_STOCK' } }] } },
-        ],
-      },
-      errors: [{ code: 'ItemNotAccessible', message: 'The ItemId TESTASIN03 is not accessible through the Creators API.' }],
-    };
-    const changements = appliquerReponse(produits, reponse, { date: '2026-10-05', maintenant: '2026-10-05T04:00:00Z' });
-    expect(produits[0]).toMatchObject({ statut: 'actif', nom: 'Titre Amazon', verifie_le: '2026-10-05', source: 'creators-api', image_url: 'https://m.media-amazon.com/images/I/a.jpg', image_maj_le: '2026-10-05T04:00:00Z' });
-    expect(produits[1].statut).toBe('indisponible');
-    expect(produits[2]).toMatchObject({ statut: 'indisponible', image_url: null });
-    expect(changements).toHaveLength(3);
   });
 });
 

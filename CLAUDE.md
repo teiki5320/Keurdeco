@@ -12,7 +12,7 @@ Site éditorial de décoration africaine (www.keurdeco.fr), rémunéré par les 
 ## Amazon : règles absolues
 
 - **Ne JAMAIS inventer d'ASIN, de note, d'avis ou de prix Amazon.** Un produit sans ASIN vérifié reste en statut `a_selectionner` (`asin: null`).
-- **Ne JAMAIS télécharger, modifier ou réutiliser les photos des produits Amazon** (interdit par le programme Partenaires). Sur le site, les images Amazon n'apparaissent que via l'API officielle (`image_url`, rempli uniquement par `scripts/amazon-sync.mjs`), affichées telles quelles avec un lien vers Amazon. Sur Pinterest, uniquement nos propres visuels.
+- **Ne JAMAIS télécharger, modifier ou réutiliser les photos des produits Amazon** (interdit par le programme Partenaires). Comme sur OptiLED, les produits sont relevés à la main (pas d'API Amazon) et les cartes n'ont pas de photo, seulement une icône du type d'objet. Sur Pinterest, uniquement nos propres visuels.
 - **Aucun prix affiché.**
 - L'identifiant de suivi est défini à un seul endroit : `AMAZON_TAG` dans `src/amazon.ts`.
 - La mention « En tant que Partenaire Amazon, Keur Déco réalise un bénéfice sur les achats remplissant les conditions requises. » figure près des liens, dans le pied de page et dans les mentions légales.
@@ -29,4 +29,4 @@ Site éditorial de décoration africaine (www.keurdeco.fr), rémunéré par les 
 - Articles : `contenu/articles/<slug>.md` (Markdown + en-tête YAML, voir `build/articles.ts`).
 - Produits : `src/data/produits.json` ; rubriques : `src/taxonomie.ts` ; glossaire : `src/data/glossaire.json`.
 - Thème (couleurs, polices) : `src/theme.css`, palette « Nuit d'indigo ».
-- Pinterest : `docs/pinterest.md` ; Amazon Creators API : section Amazon du README.
+- Pinterest : `docs/pinterest.md` ; Amazon : section Produits du README.
