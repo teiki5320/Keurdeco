@@ -752,15 +752,15 @@ main {
 }
 
 @media (max-width: 599px) {
-  /* Sur petit écran, la carte s'affiche en bas de l'image, pleine largeur. */
+  /* Sur petit écran, la carte s'affiche sous l'image, pleine largeur, sans cacher les autres points. */
   .hotspot-carte,
   .hotspot-carte--gauche,
   .hotspot-carte--haut,
   .hotspot-carte--gauche.hotspot-carte--haut {
-    left: 8px !important;
-    right: 8px;
-    top: auto !important;
-    bottom: 8px;
+    left: 0 !important;
+    right: 0;
+    top: calc(100% + 8px) !important;
+    bottom: auto;
     width: auto;
     margin: 0;
     transform: none;

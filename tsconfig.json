@@ -9,6 +9,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": false,
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "erasableSyntaxOnly": true,

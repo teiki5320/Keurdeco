@@ -105,8 +105,7 @@ function bogolan(): string {
       cases += `<rect x="${x}" y="${y}" width="200" height="210" fill="${(l + c) % 3 === 0 ? '#3B2616' : C.brun}"/>${motifs[(l * 3 + c) % motifs.length](x, y)}`;
     }
   }
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${L}" height="${H}"><rect width="${L}" height="${H}" fill="#2A1A0E"/>${cases}
-  <path d="M0 ${H * 0.62}h${L}" stroke="${C.safran}" stroke-width="0"/></svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${L}" height="${H}"><rect width="${L}" height="${H}" fill="#2A1A0E"/>${cases}</svg>`;
 }
 
 if (import.meta.main) {
