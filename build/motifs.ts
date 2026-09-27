@@ -5,8 +5,12 @@
 
 const C = { indigo: '#1B2442', nuit: '#0E1430', ivoire: '#FBF8F2', sable: '#ECE1CF', terracotta: '#C4553A', safran: '#E2A62A', baobab: '#4F7A5A', brun: '#5A3A22', bleu: '#3B55A8' };
 
+/** Motif en cours de construction : on garde la définition du <pattern> pour la réutiliser ailleurs. */
+let dernierPattern = '';
+
 function svg(id: string, taille: number, fond: string, contenu: string): string {
-  return `<svg class="motif" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><pattern id="m-${id}" width="${taille}" height="${taille}" patternUnits="userSpaceOnUse"><rect width="${taille}" height="${taille}" fill="${fond}"/>${contenu}</pattern></defs><rect class="motif__fond" x="-200" y="-200" width="800" height="700" fill="url(#m-${id})"/></svg>`;
+  dernierPattern = `<pattern id="__ID__" width="${taille}" height="${taille}" patternUnits="userSpaceOnUse"><rect width="${taille}" height="${taille}" fill="${fond}"/>${contenu}</pattern>`;
+  return `<svg class="motif" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs>${dernierPattern.replace('__ID__', `m-${id}`)}</defs><rect class="motif__fond" x="-200" y="-200" width="800" height="700" fill="url(#m-${id})"/></svg>`;
 }
 
 const MOTIFS: Record<string, () => string> = {
@@ -31,4 +35,10 @@ const MOTIFS: Record<string, () => string> = {
 /** Motif d'une matière (ou motif wax par défaut). */
 export function motif(id: string): string {
   return (MOTIFS[id] ?? MOTIFS.wax)();
+}
+
+/** Définition <pattern> d'un motif, sous l'identifiant demandé (pour remplir des formes SVG). */
+export function patternMotif(id: string, idPattern: string, echelle = 1): string {
+  motif(id);
+  return dernierPattern.replace('__ID__', idPattern).replace('patternUnits="userSpaceOnUse"', `patternUnits="userSpaceOnUse" patternTransform="scale(${echelle})"`);
 }

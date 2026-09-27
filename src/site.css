@@ -2071,3 +2071,202 @@ main {
     stroke-dashoffset: 0;
   }
 }
+
+/* ---------- Passage d'une carte à son article (View Transitions entre pages) ---------- */
+
+@view-transition {
+  navigation: auto;
+}
+
+.article .couverture__image img,
+.article .ambiance__image img {
+  view-transition-name: couverture;
+}
+
+.article__entete h1 {
+  view-transition-name: titre-article;
+}
+
+::view-transition-group(couverture),
+::view-transition-group(titre-article) {
+  animation-duration: 0.65s;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.45s;
+}
+
+/* ---------- Essayez le tissu ---------- */
+
+.essayage__grille {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .essayage__grille {
+    grid-template-columns: 1fr 1.35fr;
+  }
+}
+
+.essayage__texte h2 {
+  margin-top: 0;
+}
+
+.essayage__phrase {
+  font-size: 1.2rem;
+  color: var(--texte-doux);
+  min-height: 3.4em;
+  max-width: 30em;
+}
+
+.essayage__pastilles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 26px 0 30px;
+}
+
+.pastille-tissu {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--texte-doux);
+}
+
+.pastille-tissu__motif {
+  position: relative;
+  display: block;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 0 0 3px var(--fond), 0 0 0 4px var(--bordure);
+  transition:
+    transform 0.4s var(--courbe),
+    box-shadow 0.3s ease;
+}
+
+.pastille-tissu:hover .pastille-tissu__motif {
+  transform: scale(1.1);
+}
+
+.pastille-tissu[aria-pressed='true'] .pastille-tissu__motif {
+  box-shadow: 0 0 0 3px var(--fond), 0 0 0 6px var(--terracotta);
+  transform: scale(1.12);
+}
+
+.pastille-tissu__nom {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pastille-tissu[aria-pressed='true'] .pastille-tissu__nom {
+  color: var(--terracotta);
+}
+
+.essayage__scene {
+  border-radius: calc(var(--rayon) + 8px);
+  overflow: hidden;
+  box-shadow: var(--ombre);
+}
+
+.essayage__dessin {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Curseur rond (ordinateur) ---------- */
+
+.curseur,
+.curseur-point {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 160;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.curseur-actif .curseur,
+.curseur-actif .curseur-point {
+  opacity: 1;
+}
+
+.curseur {
+  width: 0;
+  height: 0;
+}
+
+.curseur::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: -18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--terracotta);
+  transition:
+    transform 0.35s var(--courbe),
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.curseur--lien::before {
+  transform: scale(1.6);
+  background: rgb(180 83 47 / 12%);
+}
+
+.curseur--image::before {
+  transform: scale(2.6);
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+.curseur--appui::before {
+  transform: scale(0.8);
+}
+
+.curseur__texte {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%) scale(0.6);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s var(--courbe);
+}
+
+.curseur--image .curseur__texte {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.curseur-point {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--terracotta);
+}
+
+.curseur--image ~ .curseur-point {
+  opacity: 0;
+}

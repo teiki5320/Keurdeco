@@ -55,6 +55,9 @@ Animations propres à Keur Déco (`src/animations.ts`, styles dans `src/site.css
 - **coupons de tissu** : les matières sont des coupons aux bords crantés, qui se soulèvent et pivotent, motif animé (`build/motifs.ts`), étiquette cousue ;
 - **coutures** : lignes de motifs bogolan qui se dessinent trait par trait entre les sections ;
 - **rideau de kente** entre les pages : des bandes de tissu tombent l'une après l'autre puis redescendent ;
+- **essayez le tissu** (`build/essayage.ts`) : un salon dessiné ; un clic sur une pastille (wax, bogolan, kente, indigo, raphia) propage le nouveau motif en cercle sur le canapé, les coussins et le mur ;
+- **cartes qui s'ouvrent en grand** : l'image d'une carte d'article s'agrandit jusqu'à devenir la couverture de l'article (View Transitions entre pages, navigateurs récents ; ailleurs, navigation normale) ;
+- **curseur rond** (ordinateur seulement) : il suit la souris, grossit sur les liens et affiche « Voir » ou « Entrer » sur les images ;
 - titres révélés mot par mot, apparitions au défilement, cartes en arche qui s'inclinent, liens soulignés d'un fil.
 
 « Réduire les animations » (réglage du système) coupe tout ce qui bouge ; sans JavaScript, les pages restent complètes.

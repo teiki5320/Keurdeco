@@ -22,6 +22,7 @@ import { FAMILLES, type Famille } from '../src/taxonomie.ts';
 import { insecables } from '../src/typo.ts';
 import { articlesPublies, pagesArticles } from './articles.ts';
 import { NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
+import { essayage } from './essayage.ts';
 import { icone, marque, type NomIcone } from './icones.ts';
 import { blocAVenir, blocDerniers, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
@@ -261,6 +262,7 @@ export function transformerPage(html: string, fichier: string): string {
     .replace('<!--#glossaire-accueil-->', () => blocGlossaire())
     .replace(/<!--#couture-->/g, () => couture())
     .replace('<!--#visite-->', () => visiteMaison(publies))
+    .replace('<!--#essayage-->', () => essayage())
     .replace('<!--#porte-image-->', () => imagePorte(publies))
     .replace('<!--#porte-objets-->', () => objetsPorte())
     .replace(/<!--#entrees:(piece|matiere|occasion)-->/g, (_m, f: Famille) => tuilesRubriques(f, publies))
