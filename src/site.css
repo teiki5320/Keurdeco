@@ -1,4 +1,4 @@
-/* Styles du site Keur Déco : immersif, sombre et animé (mobile d'abord). Couleurs dans theme.css. */
+/* Styles du site Keur Déco : chaleureux, lumineux et animé (mobile d'abord). Couleurs dans theme.css. */
 
 *,
 *::before,
@@ -14,11 +14,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 75% 0%, rgb(44 58 102 / 55%), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 10% 100%, rgb(208 96 63 / 12%), transparent 70%),
-    var(--fond);
-  background-attachment: fixed;
+  background: var(--fond);
   color: var(--texte);
   font-family: var(--police-texte);
   font-size: 1.075rem;
@@ -35,7 +31,7 @@ body::after {
   inset: 0;
   z-index: 80;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.045;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 }
 
@@ -43,13 +39,6 @@ main,
 .site-pied {
   position: relative;
   z-index: 2;
-}
-
-.nuage-fond {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
 }
 
 img {
@@ -75,8 +64,8 @@ a:hover {
 }
 
 ::selection {
-  background: var(--safran);
-  color: var(--nuit);
+  background: var(--ocre);
+  color: var(--encre);
 }
 
 h1,
@@ -110,7 +99,7 @@ h1 em,
 h2 em {
   font-style: italic;
   font-weight: 500;
-  color: var(--safran);
+  color: var(--terracotta);
 }
 
 .point {
@@ -123,7 +112,7 @@ h2 em {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--safran);
+  color: var(--accent-texte);
 }
 
 .icone {
@@ -154,8 +143,8 @@ h2 em {
   left: -9999px;
   top: 8px;
   z-index: 200;
-  background: var(--safran);
-  color: var(--nuit);
+  background: var(--encre);
+  color: var(--ivoire);
   padding: 8px 14px;
   border-radius: var(--rayon-petit);
 }
@@ -202,50 +191,65 @@ h2 em {
   transform: none;
 }
 
-/* ---------- Transition entre les pages (iris safran) ---------- */
+/* ---------- Transition entre les pages : rideau de kente ---------- */
 
 .rideau {
   position: fixed;
   inset: 0;
   z-index: 150;
-  display: grid;
-  place-items: center;
+  display: flex;
   pointer-events: none;
-  background: var(--safran);
-  clip-path: circle(0% at 50% 50%);
-  transition: clip-path 0.48s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.rideau--couvre {
-  clip-path: circle(150% at 50% 50%);
+.rideau__bande {
+  flex: 1;
+  height: 100%;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 46px, rgb(255 255 255 / 16%) 46px 52px, transparent 52px 70px, rgb(0 0 0 / 14%) 70px 78px),
+    var(--c);
+  transform: translateY(-101%);
+  transition: transform 0.52s cubic-bezier(0.76, 0, 0.24, 1);
+  transition-delay: calc(var(--i) * 60ms);
 }
 
-.rideau--sort {
-  clip-path: circle(0% at 50% 50%);
-  transition-duration: 0.6s;
+.rideau--couvre .rideau__bande {
+  transform: translateY(0);
 }
 
-.rideau--sans-transition {
+.rideau--sort .rideau__bande {
+  transform: translateY(101%);
+}
+
+.rideau--sans-transition .rideau__bande,
+.rideau--sans-transition .rideau__texte {
   transition: none;
 }
 
 .rideau__texte {
-  max-width: min(92vw, 1200px);
+  position: absolute;
+  inset: 50% 0 auto;
+  transform: translateY(-50%);
   padding: 0 16px;
   text-align: center;
   font-family: var(--police-titre);
   font-weight: 600;
   font-style: italic;
-  font-size: clamp(2.4rem, 8vw, 6.5rem);
+  font-size: clamp(2.4rem, 8vw, 6rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
-  color: var(--nuit);
-  transform: scale(0.94);
-  transition: transform 0.7s var(--courbe);
+  color: var(--ivoire);
+  text-shadow: 0 4px 30px rgb(0 0 0 / 35%);
+  opacity: 0;
+  transition: opacity 0.3s ease 0.3s;
 }
 
 .rideau--couvre .rideau__texte {
-  transform: scale(1);
+  opacity: 1;
+}
+
+.rideau--sort .rideau__texte {
+  opacity: 0;
+  transition-delay: 0s;
 }
 
 /* ---------- En-tête ---------- */
@@ -256,15 +260,14 @@ h2 em {
   z-index: 50;
   transition:
     background 0.4s ease,
-    border-color 0.4s ease;
-  border-bottom: 1px solid transparent;
+    box-shadow 0.4s ease;
 }
 
 .site-entete--defile {
-  background: rgb(10 15 36 / 78%);
+  background: rgb(247 240 230 / 86%);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom-color: var(--bordure);
+  box-shadow: 0 1px 0 var(--bordure);
 }
 
 .site-entete__barre {
@@ -288,11 +291,11 @@ main {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--ivoire);
+  color: var(--encre);
 }
 
 .logo:hover {
-  color: var(--ivoire);
+  color: var(--encre);
 }
 
 .logo-marque {
@@ -313,18 +316,12 @@ main {
 }
 
 .logo__texte em {
-  color: var(--safran);
+  color: var(--terracotta);
 }
 
 .site-nav {
   display: none;
   margin-left: auto;
-  padding: 5px;
-  border-radius: 999px;
-  border: 1px solid var(--bordure);
-  background: rgb(251 248 242 / 6%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 .site-nav ul,
@@ -336,30 +333,39 @@ main {
 
 .site-nav ul {
   display: flex;
-  gap: 2px;
+  gap: 6px;
 }
 
-.site-nav a,
-.menu-mobile a {
-  color: var(--ivoire);
-  text-decoration: none;
-  padding: 9px 16px;
-  border-radius: 999px;
+/* Liens soulignés d'un « fil » qui se coud de gauche à droite. */
+.site-nav a {
+  position: relative;
   display: block;
+  padding: 8px 12px;
+  color: var(--encre);
+  text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
 }
 
-.site-nav a:hover {
-  background: rgb(251 248 242 / 10%);
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 2px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--terracotta) 0 6px, transparent 6px 10px);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--courbe);
+}
+
+.site-nav a:hover::after,
+.site-nav a[aria-current='page']::after {
+  transform: scaleX(1);
 }
 
 .site-nav a[aria-current='page'] {
-  background: var(--ivoire);
-  color: var(--nuit);
+  color: var(--terracotta);
 }
 
 .menu-mobile {
@@ -375,11 +381,10 @@ main {
   align-items: center;
   padding: 9px 16px;
   border: 1px solid var(--bordure);
-  background: rgb(251 248 242 / 6%);
-  backdrop-filter: blur(12px);
+  background: var(--surface);
   border-radius: 999px;
   font-weight: 600;
-  color: var(--ivoire);
+  color: var(--encre);
 }
 
 .menu-mobile summary::-webkit-details-marker {
@@ -390,14 +395,26 @@ main {
   position: absolute;
   right: 0;
   top: calc(100% + 10px);
-  background: rgb(16 23 58 / 96%);
-  backdrop-filter: blur(16px);
+  background: var(--surface);
   border: 1px solid var(--bordure);
   border-radius: var(--rayon);
   padding: 8px;
   min-width: 240px;
   box-shadow: var(--ombre);
   animation: menu-ouvre 0.35s var(--courbe);
+}
+
+.menu-mobile a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: var(--encre);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu-mobile a:hover {
+  background: var(--fond-doux);
 }
 
 @keyframes menu-ouvre {
@@ -408,7 +425,7 @@ main {
 }
 
 .menu-mobile a[aria-current='page'] {
-  color: var(--safran);
+  color: var(--terracotta);
 }
 
 @media (min-width: 960px) {
@@ -448,27 +465,24 @@ main {
 .bouton--amazon {
   background: var(--action);
   color: var(--action-texte);
-  box-shadow: 0 10px 30px rgb(208 96 63 / 35%);
+  box-shadow: 0 10px 24px rgb(180 83 47 / 28%);
 }
 
 .bouton--plein:hover,
 .bouton--amazon:hover {
-  background: #e06d4b;
+  background: var(--terracotta-fonce);
   color: #fff;
-  box-shadow: 0 14px 40px rgb(208 96 63 / 50%);
+  box-shadow: 0 14px 30px rgb(180 83 47 / 38%);
 }
 
-.bouton--verre,
 .bouton--contour {
-  background: rgb(251 248 242 / 7%);
-  border: 1px solid var(--bordure);
-  color: var(--ivoire);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  border: 1.5px solid var(--encre);
+  color: var(--encre);
 }
 
-.bouton--verre:hover,
 .bouton--contour:hover {
-  background: rgb(251 248 242 / 14%);
+  background: var(--encre);
   color: var(--ivoire);
 }
 
@@ -478,7 +492,7 @@ main {
   gap: 8px;
   font-weight: 700;
   text-decoration: none;
-  color: var(--safran);
+  color: var(--terracotta);
 }
 
 .lien-fleche .icone {
@@ -503,25 +517,24 @@ main {
   font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
-  background: rgb(251 248 242 / 7%);
-  border: 1px solid var(--bordure);
-  color: var(--ivoire);
+  background: var(--sable);
+  color: var(--indigo);
   transition: background 0.25s ease;
 }
 
 .pastille:hover {
-  background: rgb(251 248 242 / 15%);
-  color: var(--ivoire);
+  background: var(--sable-fonce);
+  color: var(--indigo);
 }
 
 .pastille--matiere {
-  border-color: rgb(242 179 61 / 40%);
-  color: var(--safran);
+  background: var(--terracotta-clair);
+  color: var(--terracotta-fonce);
 }
 
 .pastille--occasion {
-  border-color: rgb(111 156 120 / 50%);
-  color: #a9d2b2;
+  background: var(--baobab-clair);
+  color: var(--baobab);
 }
 
 /* ---------- Pages ---------- */
@@ -551,181 +564,333 @@ main {
 .page__entete {
   position: relative;
   display: grid;
-  gap: 24px;
+  gap: 32px;
   align-items: center;
-  padding: clamp(40px, 8vw, 110px) 0 clamp(24px, 5vw, 56px);
-  min-height: min(62vh, 560px);
+  padding: clamp(36px, 7vw, 90px) 0 clamp(24px, 4vw, 48px);
 }
 
-.page__nuage,
-.article__nuage {
-  height: clamp(220px, 36vw, 420px);
-}
-
-.article__nuage {
-  position: absolute;
-  right: var(--gouttiere);
-  top: 90px;
-  width: min(40vw, 420px);
+/* Petite porte en arche garnie du motif de la rubrique. */
+.page__arche {
+  position: relative;
+  height: clamp(200px, 32vw, 380px);
+  width: min(100%, 320px);
+  justify-self: center;
+  border-radius: 999px 999px 18px 18px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: var(--ombre);
+  outline: 8px solid var(--surface);
 }
 
 @media (min-width: 900px) {
   .page__entete {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
   }
 }
 
 .liste-vide,
 .produits-vide {
   padding: 24px;
-  background: var(--surface);
-  border: 1px solid var(--bordure);
+  background: var(--fond-doux);
   border-radius: var(--rayon);
   color: var(--texte-doux);
 }
 
-/* ---------- Accueil ---------- */
+/* ---------- Accueil : la porte en arche ---------- */
 
-.heros {
+.porte {
+  --p: 0;
   position: relative;
-  min-height: calc(100svh - 76px);
-  display: grid;
-  align-items: center;
-  padding: 24px 0 90px;
 }
 
-.heros__grille {
+.porte__collant {
+  position: relative;
   display: grid;
-  gap: 16px;
-  align-items: center;
+  gap: 28px;
+  padding: 24px 0 64px;
 }
 
-.heros__titre {
-  font-size: clamp(3.2rem, 11vw, 8.4rem);
+.porte__titre {
+  font-size: clamp(3rem, 10vw, 7.6rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
-  margin: 0 0 28px;
+  margin: 0 0 24px;
 }
 
-.heros__titre em {
-  display: inline;
-}
-
-.heros__chapo {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+.porte__chapo {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   color: var(--texte-doux);
-  max-width: 34em;
-  margin: 0 0 32px;
+  max-width: 32em;
+  margin: 0 0 30px;
 }
 
-.heros__actions {
+.porte__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin: 0;
 }
 
-.heros__nuage {
-  height: clamp(300px, 55vw, 640px);
-  order: -1;
-}
-
-@media (min-width: 900px) {
-  .heros__grille {
-    grid-template-columns: 1.15fr 1fr;
-  }
-  .heros__nuage {
-    order: 0;
-  }
-}
-
-.heros__defiler {
-  position: absolute;
-  left: 50%;
-  bottom: 28px;
-  width: 28px;
-  height: 46px;
-  margin-left: -14px;
-  border-radius: 999px;
-  border: 1.5px solid rgb(251 248 242 / 40%);
-}
-
-.heros__defiler span {
-  position: absolute;
-  left: 50%;
-  top: 9px;
-  width: 4px;
-  height: 9px;
-  margin-left: -2px;
-  border-radius: 4px;
-  background: var(--safran);
-  animation: defiler 1.8s var(--courbe) infinite;
-}
-
-@keyframes defiler {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  80% {
-    transform: translateY(16px);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-/* Bandeau défilant des matières */
-
-.bandeau-defilant {
+.porte__arche {
+  position: relative;
+  width: min(86vw, 460px);
+  height: min(110vw, 560px);
+  justify-self: center;
+  border-radius: 999px 999px 20px 20px;
   overflow: hidden;
-  border-block: 1px solid var(--bordure);
-  padding: 22px 0;
-  margin: 24px 0;
-  background: rgb(251 248 242 / 3%);
+  background: var(--terracotta);
+  box-shadow: var(--ombre);
 }
 
-.bandeau-defilant__piste {
-  display: flex;
-  width: max-content;
-  gap: 40px;
-  align-items: center;
-  animation: bandeau 40s linear infinite;
+.porte__arche img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.bandeau-defilant__piste span {
+.porte__arche::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgb(30 42 71 / 75%));
+  opacity: 0;
+  pointer-events: none;
+}
+
+.porte--active .porte__arche::after {
+  opacity: clamp(0, (var(--p) - 0.4) * 2, 1);
+}
+
+.porte__bienvenue {
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 12%;
+  margin: 0;
+  text-align: center;
   font-family: var(--police-titre);
-  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+  font-size: clamp(2rem, 6vw, 4.6rem);
   font-weight: 600;
-  font-style: italic;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-  color: transparent;
-  -webkit-text-stroke: 1px rgb(251 248 242 / 55%);
-}
-
-.bandeau-defilant__piste span:nth-child(4n + 1) {
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: var(--ivoire);
-  -webkit-text-stroke: 0;
+  text-shadow: 0 4px 30px rgb(0 0 0 / 45%);
+  opacity: 0;
+  padding: 0 16px;
 }
 
-.bandeau-defilant__piste .bandeau__etoile {
-  color: var(--safran);
-  -webkit-text-stroke: 0;
-  font-style: normal;
-  font-size: 1.4rem;
+.porte__bienvenue em {
+  display: block;
+  color: #ffd98a;
 }
 
-.bandeau-defilant:hover .bandeau-defilant__piste {
-  animation-play-state: paused;
+.porte__objets {
+  display: none;
 }
 
-@keyframes bandeau {
-  to {
-    transform: translateX(-50%);
+/* Avec JavaScript : la section devient une scène « collante » ; l'arche s'ouvre jusqu'à remplir l'écran. */
+.porte--active {
+  height: 230vh;
+}
+
+.porte--active .porte__collant {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.porte--active .porte__texte {
+  position: absolute;
+  inset: calc(76px + 3vh) 0 auto;
+  width: min(100% - 2 * var(--gouttiere), var(--largeur));
+  margin-inline: auto;
+  z-index: 2;
+  opacity: calc(1 - var(--p) * 2.2);
+  transform: translateY(calc(var(--p) * -120px));
+}
+
+.porte--active .porte__texte > * {
+  max-width: 560px;
+}
+
+.porte--active .porte__arche {
+  --l0: 52vw;
+  --t0: 18vh;
+  --w0: 38vw;
+  --h0: 74vh;
+  position: absolute;
+  left: calc(var(--l0) * (1 - var(--p)));
+  top: calc(var(--t0) * (1 - var(--p)));
+  width: calc(var(--w0) + (100vw - var(--w0)) * var(--p));
+  height: calc(var(--h0) + (100svh - var(--h0)) * var(--p));
+  border-radius: calc(40vw * (1 - var(--p))) calc(40vw * (1 - var(--p))) calc(20px * (1 - var(--p))) calc(20px * (1 - var(--p)));
+  z-index: 1;
+}
+
+.porte--active .porte__bienvenue {
+  opacity: clamp(0, (var(--p) - 0.65) * 4, 1);
+  transform: translateY(calc((1 - var(--p)) * 40px));
+}
+
+.porte--active .porte__objets {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: calc(1 - var(--p) * 1.6);
+}
+
+.porte__objet {
+  position: absolute;
+  display: block;
+  will-change: transform;
+  filter: drop-shadow(0 10px 14px rgb(42 29 21 / 18%));
+}
+
+.porte__objet svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: flotte 6s ease-in-out infinite;
+}
+
+.porte__objet--jarre {
+  width: clamp(70px, 8vw, 120px);
+  left: 45vw;
+  top: 66vh;
+}
+
+.porte__objet--panier {
+  width: clamp(80px, 9vw, 140px);
+  right: 3vw;
+  top: 70vh;
+}
+
+.porte__objet--panier svg {
+  animation-delay: -2s;
+}
+
+.porte__objet--coussin {
+  width: clamp(70px, 7vw, 110px);
+  right: 6vw;
+  top: 16vh;
+}
+
+.porte__objet--coussin svg {
+  animation-delay: -1s;
+}
+
+.porte__objet--feuille {
+  width: clamp(40px, 4vw, 64px);
+  left: 48vw;
+  top: 22vh;
+}
+
+.porte__objet--feuille svg {
+  animation-delay: -3s;
+}
+
+.porte__objet--perles {
+  width: clamp(90px, 9vw, 150px);
+  left: 6vw;
+  bottom: 6vh;
+}
+
+.porte__objet--perles svg {
+  animation-delay: -4s;
+}
+
+@keyframes flotte {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(3deg);
   }
 }
+
+@media (max-width: 899px) {
+  .porte--active {
+    height: 200vh;
+  }
+  .porte--active .porte__arche {
+    --l0: 22vw;
+    --t0: 71vh;
+    --w0: 56vw;
+    --h0: 29vh;
+  }
+  .porte--active .porte__texte {
+    inset: calc(64px + 2vh) 0 auto;
+  }
+  .porte__titre {
+    font-size: clamp(2.6rem, 11vw, 4rem);
+  }
+  .porte__objet--jarre {
+    left: 4vw;
+    top: 80vh;
+  }
+  .porte__objet--feuille,
+  .porte__objet--perles {
+    display: none;
+  }
+  .porte__objet--coussin {
+    top: auto;
+    bottom: 4vh;
+    right: 4vw;
+  }
+  .porte__objet--panier {
+    display: none;
+  }
+}
+
+/* ---------- Couture : motifs bogolan qui se dessinent ---------- */
+
+.couture {
+  width: min(100% - 2 * var(--gouttiere), var(--largeur));
+  margin: var(--espace) auto 0;
+}
+
+.couture svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.couture .trait {
+  fill: none;
+  stroke: var(--terracotta);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.couture .trait--fil {
+  stroke: var(--ocre);
+  stroke-dasharray: 0.3 0.2;
+}
+
+.js .couture .trait {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.9s var(--courbe);
+  transition-delay: calc(var(--i) * 70ms);
+}
+
+.js .couture.visible .trait {
+  stroke-dashoffset: 0;
+}
+
+.js .couture[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Sections ---------- */
 
 .section {
   margin-top: var(--espace);
@@ -749,48 +914,14 @@ main {
   color: var(--texte-doux);
 }
 
-.section__entete--colonne {
-  display: block;
-}
-
-.section__entete--colonne h2 {
-  margin-bottom: 16px;
-}
-
-.section__deux {
-  display: grid;
-  gap: 32px;
-  align-items: center;
-}
-
-.section__nuage {
-  height: clamp(260px, 45vw, 520px);
-}
-
-@media (min-width: 900px) {
-  .section__deux {
-    grid-template-columns: 1.3fr 1fr;
-  }
-  .section__deux--inverse {
-    grid-template-columns: 1fr 1.3fr;
-  }
-}
-
-@media (max-width: 899px) {
-  .section__nuage {
-    display: none;
-  }
-}
-
 /* À la une */
 
 .une {
   position: relative;
   display: grid;
-  border-radius: calc(var(--rayon) + 6px);
+  border-radius: calc(var(--rayon) + 8px);
   overflow: hidden;
-  background: var(--surface-forte);
-  border: 1px solid var(--bordure);
+  background: var(--indigo);
   color: var(--ivoire);
   text-decoration: none;
   box-shadow: var(--ombre);
@@ -826,7 +957,7 @@ main {
 }
 
 .une__etiquette {
-  color: var(--safran);
+  color: var(--ocre);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.16em;
@@ -835,19 +966,19 @@ main {
 
 .une__titre {
   font-family: var(--police-titre);
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
   font-weight: 600;
 }
 
 .une__resume {
-  color: var(--texte-doux);
+  color: rgb(253 249 243 / 78%);
   font-size: 1.1rem;
 }
 
 .une__lire {
-  color: var(--safran);
+  color: var(--ocre);
   font-weight: 700;
 }
 
@@ -857,7 +988,7 @@ main {
   }
   .une__image img {
     aspect-ratio: auto;
-    min-height: 520px;
+    min-height: 500px;
   }
 }
 
@@ -888,7 +1019,7 @@ main {
 }
 
 .rail > * {
-  flex: 0 0 clamp(270px, 32vw, 400px);
+  flex: 0 0 clamp(270px, 30vw, 380px);
   scroll-snap-align: start;
 }
 
@@ -901,19 +1032,20 @@ main {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid var(--bordure);
-  background: rgb(251 248 242 / 6%);
-  color: var(--ivoire);
+  border: 1.5px solid var(--encre);
+  background: transparent;
+  color: var(--encre);
   font-size: 1.2rem;
   cursor: pointer;
   transition:
     background 0.25s ease,
+    color 0.25s ease,
     opacity 0.25s ease;
 }
 
 .rail__bouton:hover {
-  background: var(--ivoire);
-  color: var(--nuit);
+  background: var(--encre);
+  color: var(--ivoire);
 }
 
 .rail--debut [data-rail-prec],
@@ -921,7 +1053,191 @@ main {
   opacity: 0.3;
 }
 
-/* ---------- Tuiles de rubriques ---------- */
+/* ---------- Visite de la maison ---------- */
+
+.visite {
+  margin-top: var(--espace);
+}
+
+.visite__entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: 28px;
+}
+
+.visite__entete h2 {
+  margin: 0;
+}
+
+.visite__compteur {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-style: italic;
+  color: var(--texte-doux);
+}
+
+.visite__compteur span {
+  color: var(--terracotta);
+}
+
+.visite__barre {
+  display: none;
+  flex-basis: 100%;
+  height: 3px;
+  background: var(--bordure);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.visite__barre span {
+  display: block;
+  height: 100%;
+  background: repeating-linear-gradient(90deg, var(--terracotta) 0 10px, var(--ocre) 10px 20px);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.visite__piste {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 0 max(var(--gouttiere), calc((100vw - var(--largeur)) / 2)) 20px;
+}
+
+.visite__piste::-webkit-scrollbar {
+  display: none;
+}
+
+.visite__piece {
+  position: relative;
+  flex: 0 0 min(80vw, 520px);
+  height: min(62vh, 560px);
+  scroll-snap-align: center;
+  display: grid;
+  align-content: end;
+  padding: 26px;
+  border-radius: 999px 999px 24px 24px;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--ivoire);
+  text-decoration: none;
+  box-shadow: var(--ombre);
+}
+
+.visite__piece:hover {
+  color: var(--ivoire);
+}
+
+.visite__motif {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  transition: transform 1.2s var(--courbe);
+}
+
+.visite__piece:hover .visite__motif {
+  transform: scale(1.08);
+}
+
+.visite__piece::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent 30%, rgb(30 42 71 / 88%) 100%);
+}
+
+.visite__num {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--police-titre);
+  font-style: italic;
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 1;
+  color: var(--ivoire);
+  text-shadow: 0 6px 30px rgb(0 0 0 / 35%);
+}
+
+.visite__icone {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  background: var(--ivoire);
+  color: var(--terracotta);
+}
+
+.visite__icone .icone {
+  width: 30px;
+  height: 30px;
+}
+
+.visite__texte {
+  display: grid;
+  gap: 8px;
+}
+
+.visite__nom {
+  font-family: var(--police-titre);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.visite__accroche {
+  color: rgb(253 249 243 / 85%);
+  font-size: 1rem;
+}
+
+.visite__lien {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  font-weight: 700;
+  color: #ffd98a;
+}
+
+/* Avec JavaScript : la piste glisse de côté pendant qu'on descend (section collante). */
+.visite--active {
+  height: calc(100svh + var(--n) * 55vh);
+}
+
+.visite--active .visite__collant {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.visite--active .visite__barre {
+  display: block;
+}
+
+.visite--active .visite__piste {
+  overflow: visible;
+  scroll-snap-type: none;
+  will-change: transform;
+}
+
+.visite--active .visite__piece {
+  height: min(60vh, 540px);
+}
+
+/* ---------- Coupons de tissu (matières) et tuiles ---------- */
 
 .tuiles {
   list-style: none;
@@ -934,8 +1250,8 @@ main {
 }
 
 .tuiles--matiere {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  gap: 26px 20px;
 }
 
 .tuile {
@@ -950,7 +1266,7 @@ main {
   border-radius: var(--rayon);
   background: var(--surface);
   border: 1px solid var(--bordure);
-  color: var(--ivoire);
+  color: var(--encre);
   text-decoration: none;
   overflow: hidden;
   isolation: isolate;
@@ -958,27 +1274,13 @@ main {
   transition:
     transform 0.4s var(--courbe),
     border-color 0.3s ease,
-    background 0.3s ease;
-  backdrop-filter: blur(6px);
-}
-
-.tuile::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(circle at var(--lx, 50%) var(--ly, 50%), rgb(242 179 61 / 22%), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    box-shadow 0.3s ease;
 }
 
 .tuile:hover {
-  color: var(--ivoire);
-  border-color: rgb(242 179 61 / 50%);
-}
-
-.tuile:hover::after {
-  opacity: 1;
+  color: var(--encre);
+  border-color: var(--terracotta);
+  box-shadow: var(--ombre);
 }
 
 .tuile__icone {
@@ -987,8 +1289,8 @@ main {
   width: 54px;
   height: 54px;
   border-radius: 16px;
-  background: rgb(242 179 61 / 12%);
-  color: var(--safran);
+  background: var(--terracotta-clair);
+  color: var(--terracotta);
   transition: transform 0.5s var(--courbe);
 }
 
@@ -1030,14 +1332,43 @@ main {
   transform: translateX(4px);
 }
 
-/* Tuiles de matières : motif animé en fond */
+.tuiles--occasion .tuile__icone {
+  background: var(--baobab-clair);
+  color: var(--baobab);
+}
+
+/* Coupons : bords crantés, le tissu se soulève et pivote sous la souris. */
+.tuiles--matiere li {
+  filter: drop-shadow(0 6px 10px rgb(42 29 21 / 14%));
+  transition: filter 0.4s ease;
+}
+
+.tuiles--matiere li:hover {
+  filter: drop-shadow(0 20px 22px rgb(42 29 21 / 22%));
+}
+
+.tuiles--matiere li:nth-child(odd) .tuile {
+  --tourne: -1.2deg;
+}
+
+.tuiles--matiere li:nth-child(even) .tuile {
+  --tourne: 1.4deg;
+}
 
 .tuiles--matiere .tuile {
-  min-height: 230px;
+  min-height: 250px;
   align-content: end;
   padding: 0;
   border: 0;
+  border-radius: 0;
   background: var(--indigo);
+  clip-path: var(--crante);
+  transform: rotate(var(--tourne, 0deg)) rotateX(var(--rx)) rotateY(var(--ry));
+}
+
+.tuiles--matiere .tuile:hover {
+  transform: translateY(-10px) rotate(calc(var(--tourne, 0deg) * -2)) rotateX(var(--rx)) rotateY(var(--ry));
+  box-shadow: none;
 }
 
 .motif {
@@ -1049,12 +1380,11 @@ main {
 }
 
 .motif__fond {
-  animation: motif-glisse 30s linear infinite;
-  transform-origin: center;
+  animation: motif-glisse 34s linear infinite;
 }
 
 .tuile:hover .motif__fond {
-  animation-duration: 8s;
+  animation-duration: 9s;
 }
 
 @keyframes motif-glisse {
@@ -1064,22 +1394,20 @@ main {
 }
 
 .tuiles--matiere .tuile__texte {
-  margin: 12px;
-  padding: 16px 18px;
-  border-radius: 16px;
-  background: rgb(10 15 36 / 72%);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  margin: 16px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  background: var(--ivoire);
+  color: var(--encre);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  /* Étiquette cousue : pointillés comme une couture */
+  outline: 1.5px dashed var(--terracotta);
+  outline-offset: -6px;
   transition: transform 0.5s var(--courbe);
 }
 
-.tuiles--matiere .tuile:hover .tuile__texte {
-  transform: translateY(-6px);
-}
-
-.tuiles--occasion .tuile__icone {
-  background: rgb(111 156 120 / 16%);
-  color: #a9d2b2;
+.tuiles--matiere .tuile__nb {
+  color: var(--terracotta);
 }
 
 /* ---------- Cartes d'articles ---------- */
@@ -1109,40 +1437,36 @@ main {
 .carte-article__image {
   position: relative;
   display: block;
-  border-radius: var(--rayon);
+  border-radius: 999px 999px var(--rayon) var(--rayon);
   overflow: hidden;
-  background: var(--surface-forte);
+  background: var(--sable);
   aspect-ratio: 4 / 5;
-  border: 1px solid var(--bordure);
+  box-shadow: var(--ombre);
 }
 
 .carte-article__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition:
-    transform 1s var(--courbe),
-    filter 0.6s ease;
+  transition: transform 1s var(--courbe);
 }
 
 .carte-article:hover .carte-article__image img {
   transform: scale(1.07);
 }
 
-.carte-article--bientot .carte-article__image img {
-  filter: saturate(0.85) brightness(0.75);
-}
-
 .carte-article__date {
   position: absolute;
-  left: 14px;
-  top: 14px;
-  padding: 6px 12px;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  padding: 7px 14px;
   border-radius: 999px;
-  background: var(--safran);
-  color: var(--nuit);
+  background: var(--ivoire);
+  color: var(--terracotta);
   font-weight: 800;
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .carte-article__type {
@@ -1150,7 +1474,7 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--safran);
+  color: var(--accent-texte);
   margin-top: 8px;
 }
 
@@ -1161,6 +1485,10 @@ main {
   letter-spacing: -0.02em;
   color: var(--titre);
   font-weight: 600;
+}
+
+.carte-article:hover .carte-article__titre {
+  color: var(--terracotta);
 }
 
 .carte-article__resume {
@@ -1189,7 +1517,7 @@ main {
 }
 
 .article__type {
-  color: var(--safran);
+  color: var(--terracotta);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -1240,7 +1568,7 @@ main {
   font-weight: 700;
   font-size: 0.92rem;
   text-decoration: none;
-  box-shadow: 0 6px 20px rgb(0 0 0 / 35%);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 25%);
   transition: transform 0.3s var(--courbe);
 }
 
@@ -1265,7 +1593,7 @@ main {
   font: 700 0.95rem/1 var(--police-texte);
   cursor: pointer;
   place-items: center;
-  box-shadow: 0 0 0 0 rgb(242 179 61 / 70%), 0 4px 14px rgb(0 0 0 / 40%);
+  box-shadow: 0 0 0 0 rgb(212 154 42 / 70%), 0 4px 14px rgb(0 0 0 / 30%);
   animation: pulsation 2.4s ease-out infinite;
   z-index: 2;
   transition: transform 0.3s var(--courbe);
@@ -1280,20 +1608,19 @@ main {
 }
 
 .hotspot[aria-expanded='true'] {
-  background: var(--safran);
-  color: var(--nuit);
+  background: var(--indigo);
   animation: none;
 }
 
 @keyframes pulsation {
   0% {
-    box-shadow: 0 0 0 0 rgb(242 179 61 / 70%), 0 4px 14px rgb(0 0 0 / 40%);
+    box-shadow: 0 0 0 0 rgb(212 154 42 / 70%), 0 4px 14px rgb(0 0 0 / 30%);
   }
   70% {
-    box-shadow: 0 0 0 16px rgb(242 179 61 / 0%), 0 4px 14px rgb(0 0 0 / 40%);
+    box-shadow: 0 0 0 16px rgb(212 154 42 / 0%), 0 4px 14px rgb(0 0 0 / 30%);
   }
   100% {
-    box-shadow: 0 0 0 0 rgb(242 179 61 / 0%), 0 4px 14px rgb(0 0 0 / 40%);
+    box-shadow: 0 0 0 0 rgb(212 154 42 / 0%), 0 4px 14px rgb(0 0 0 / 30%);
   }
 }
 
@@ -1303,12 +1630,9 @@ main {
   width: min(270px, 80vw);
   margin: 28px 0 0 -18px;
   padding: 18px 18px 16px;
-  background: rgb(16 23 58 / 92%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--bordure);
+  background: var(--surface);
   border-radius: var(--rayon);
-  box-shadow: var(--ombre);
+  box-shadow: var(--ombre), 0 12px 30px rgb(0 0 0 / 18%);
   animation: carte-ouvre 0.35s var(--courbe);
 }
 
@@ -1343,14 +1667,14 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--safran);
+  color: var(--terracotta);
 }
 
 .hotspot-carte__nom {
   margin: 4px 26px 14px 0;
   font-family: var(--police-titre);
   font-weight: 600;
-  color: var(--ivoire);
+  color: var(--encre);
   line-height: 1.25;
 }
 
@@ -1406,12 +1730,14 @@ main {
   border-radius: var(--rayon);
   transition:
     border-color 0.3s ease,
-    transform 0.4s var(--courbe);
+    transform 0.4s var(--courbe),
+    box-shadow 0.3s ease;
 }
 
 .produit:hover {
-  border-color: rgb(242 179 61 / 45%);
+  border-color: var(--terracotta);
   transform: translateY(-3px);
+  box-shadow: var(--ombre);
 }
 
 .produit__visuel {
@@ -1421,8 +1747,8 @@ main {
   width: 88px;
   height: 88px;
   border-radius: 16px;
-  background: rgb(242 179 61 / 10%);
-  color: var(--safran);
+  background: var(--fond-doux);
+  color: var(--indigo);
 }
 
 .icone--objet {
@@ -1444,7 +1770,7 @@ main {
   color: #fff;
   font-weight: 700;
   font-size: 0.85rem;
-  border: 2px solid var(--nuit);
+  border: 2px solid #fff;
 }
 
 .produit__type {
@@ -1453,7 +1779,7 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--safran);
+  color: var(--terracotta);
 }
 
 .produit__nom {
@@ -1477,15 +1803,14 @@ main {
   margin: 32px 0;
   padding: 20px;
   border-radius: var(--rayon);
-  background: var(--surface);
-  border: 1px solid var(--bordure);
-  border-left: 4px solid var(--safran);
+  background: var(--fond-doux);
+  border-left: 4px solid var(--ocre);
 }
 
 .encadre-produit__titre {
   margin: 0 0 12px;
   font-weight: 700;
-  color: var(--safran);
+  color: var(--accent-texte);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.8rem;
@@ -1503,8 +1828,7 @@ main {
   position: relative;
   padding: 26px 22px 10px;
   border-radius: var(--rayon);
-  background: var(--surface);
-  border: 1px solid var(--bordure);
+  background: var(--fond-doux);
 }
 
 .classement__rang {
@@ -1519,15 +1843,13 @@ main {
   height: 52px;
   display: grid;
   place-items: center;
-  background: var(--safran);
-  color: var(--nuit);
+  background: var(--indigo);
+  color: var(--ocre);
   border-radius: 50%;
-  box-shadow: 0 8px 24px rgb(242 179 61 / 35%);
 }
 
 .classement__entree .produit {
   margin-top: 16px;
-  background: rgb(10 15 36 / 40%);
 }
 
 /* ---------- Texte des articles ---------- */
@@ -1543,10 +1865,6 @@ main {
   margin: 0 0 1.15em;
 }
 
-.prose strong {
-  color: var(--ivoire);
-}
-
 .prose h2 {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   padding-top: 0.3em;
@@ -1559,24 +1877,23 @@ main {
 .prose blockquote {
   margin: 1.8em 0;
   padding: 0.2em 0 0.2em 1.2em;
-  border-left: 3px solid var(--safran);
+  border-left: 3px solid var(--terracotta);
   font-family: var(--police-titre);
   font-style: italic;
   font-size: 1.45rem;
   line-height: 1.4;
-  color: var(--ivoire);
+  color: var(--indigo);
 }
 
 .sommaire {
-  background: var(--surface);
-  border: 1px solid var(--bordure);
+  background: var(--fond-doux);
   border-radius: var(--rayon);
   padding: 20px 24px;
   margin-bottom: 32px;
 }
 
 .sommaire strong {
-  color: var(--safran);
+  color: var(--terracotta);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.8rem;
@@ -1604,7 +1921,6 @@ main {
 
 .liste-glossaire--accueil {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
-  margin-bottom: 28px;
 }
 
 .liste-glossaire a {
@@ -1620,24 +1936,24 @@ main {
   transition:
     border-color 0.3s ease,
     transform 0.4s var(--courbe),
-    background 0.3s ease;
+    box-shadow 0.3s ease;
 }
 
 .liste-glossaire a:hover {
-  border-color: rgb(242 179 61 / 50%);
-  background: rgb(251 248 242 / 9%);
+  border-color: var(--terracotta);
   transform: translateY(-4px);
+  box-shadow: var(--ombre);
 }
 
 .liste-glossaire strong {
   font-family: var(--police-titre);
   font-size: 1.35rem;
   letter-spacing: -0.01em;
-  color: var(--ivoire);
+  color: var(--encre);
 }
 
 .liste-glossaire small {
-  color: var(--safran);
+  color: var(--accent-texte);
   font-weight: 700;
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -1669,12 +1985,19 @@ main {
 
 .site-pied {
   margin-top: var(--espace);
-  background: rgb(5 8 20 / 85%);
-  border-top: 1px solid var(--bordure);
-  color: var(--texte-doux);
+  background: var(--indigo);
+  color: rgb(253 249 243 / 78%);
   padding: clamp(48px, 7vw, 90px) 0 48px;
   font-size: 0.97rem;
-  backdrop-filter: blur(10px);
+}
+
+.site-pied .logo,
+.site-pied .logo:hover {
+  color: var(--ivoire);
+}
+
+.site-pied .logo__texte em {
+  color: var(--ocre);
 }
 
 .site-pied a {
@@ -1683,11 +2006,11 @@ main {
 }
 
 .site-pied a:hover {
-  color: var(--safran);
+  color: var(--ocre);
 }
 
 .site-pied h2 {
-  color: var(--safran);
+  color: var(--ocre);
   font-family: var(--police-texte);
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -1716,7 +2039,7 @@ main {
 
 .site-pied__note {
   font-size: 0.86rem;
-  color: rgb(181 179 198 / 80%);
+  color: rgb(253 249 243 / 62%);
 }
 
 @media (min-width: 1000px) {
@@ -1743,5 +2066,8 @@ main {
   .js [data-mots] .mot__int {
     opacity: 1;
     transform: none;
+  }
+  .js .couture .trait {
+    stroke-dashoffset: 0;
   }
 }

@@ -46,13 +46,18 @@ Node 22.12 ou plus récent (les scripts `.ts` sont exécutés directement par No
 
 ## Identité visuelle
 
-Palette « Nuit d'indigo » en version immersive (inspirée d'Alohash) : fond de nuit indigo `#0A0F24`, ivoire, safran `#F2B33D`, terracotta `#D0603F`, vert baobab. Polices hébergées avec le site : **Fraunces** (titres) et **Source Sans 3** (texte), via Fontsource ; les versions TTF de `assets/polices/` servent aux épingles. Logo : `public/logo.svg`.
+Palette « Terre de Dakar » : fond sable clair `#F7F0E6`, terracotta `#B4532F` (couleur principale), ocre `#D49A2A`, indigo `#1E2A47`, vert baobab `#52693A`. Polices hébergées avec le site : **Fraunces** (titres) et **Source Sans 3** (texte), via Fontsource ; les versions TTF de `assets/polices/` servent aux épingles. Logo : `public/logo.svg`. Thème : `src/theme.css`.
 
-Animations :
+Animations propres à Keur Déco (`src/animations.ts`, styles dans `src/site.css`) :
 
-- **nuage de particules 3D** (Three.js, `src/nuage/`) en fond : il prend la forme de la carte de l'Afrique, d'une maison, d'une jarre ou d'une assiette tressée selon l'élément `[data-nuage][data-forme]` le plus proche du centre de l'écran, fuit le curseur et se disperse entre deux pages ;
-- **transition « iris »** safran entre les pages, titres révélés mot par mot, apparitions au défilement, bandeau défilant des matières, rangées de cartes à faire glisser, cartes qui s'inclinent sous la souris, motifs de tissus animés (`build/motifs.ts`) — tout est dans `src/animations.ts` ;
-- « Réduire les animations » (réglage du système) coupe tout ce qui bouge ; sans JavaScript, les pages restent complètes.
+- **porte en arche** (accueil) : l'image d'ambiance apparaît dans la porte du logo, qui s'ouvre au défilement jusqu'à remplir l'écran (« Entrez, vous êtes chez vous ») ; des objets dessinés (jarre, panier, coussin, feuille, perles) flottent et suivent la souris ;
+- **visite de la maison** : les pièces défilent de côté pendant qu'on descend, avec compteur « 01 / 07 » et barre de progression ;
+- **coupons de tissu** : les matières sont des coupons aux bords crantés, qui se soulèvent et pivotent, motif animé (`build/motifs.ts`), étiquette cousue ;
+- **coutures** : lignes de motifs bogolan qui se dessinent trait par trait entre les sections ;
+- **rideau de kente** entre les pages : des bandes de tissu tombent l'une après l'autre puis redescendent ;
+- titres révélés mot par mot, apparitions au défilement, cartes en arche qui s'inclinent, liens soulignés d'un fil.
+
+« Réduire les animations » (réglage du système) coupe tout ce qui bouge ; sans JavaScript, les pages restent complètes.
 
 ## Ajouter un article
 

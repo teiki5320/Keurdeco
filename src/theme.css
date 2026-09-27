@@ -1,39 +1,43 @@
 /*
- * Thème Keur Déco, palette « Nuit d'indigo » en version immersive (fond de nuit indigo,
- * safran et terracotta lumineux) : toutes les couleurs, polices et mesures du site sont ici.
+ * Thème Keur Déco, palette « Terre de Dakar » : chaude et lumineuse, fond sable clair,
+ * terracotta en couleur principale, ocre pour les accents, indigo et vert baobab en touches.
+ * Toutes les couleurs, polices et mesures du site sont définies ici, et seulement ici.
  */
 :root {
   /* Couleurs de base */
-  --nuit: #0a0f24;
-  --nuit-2: #10173a;
-  --indigo: #1b2442;
-  --indigo-clair: #2c3a66;
-  --ivoire: #fbf8f2;
-  --sable: #ece1cf;
-  --terracotta: #d0603f;
-  --terracotta-fonce: #a6432a;
-  --safran: #f2b33d;
-  --safran-doux: #e2a62a;
-  --baobab: #6f9c78;
+  --sable-clair: #f7f0e6;
+  --sable: #efe3d0;
+  --sable-fonce: #e3d2b8;
+  --encre: #2a1d15;
+  --terracotta: #b4532f;
+  --terracotta-fonce: #8f3f22;
+  --terracotta-clair: #f1d9cc;
+  --ocre: #d49a2a;
+  --ocre-fonce: #9c6b12;
+  --indigo: #1e2a47;
+  --indigo-clair: #33436b;
+  --baobab: #52693a;
+  --baobab-clair: #dde4d2;
+  --ivoire: #fdf9f3;
   --pinterest: #e60023;
   --pinterest-fonce: #ad081b;
 
   /* Rôles */
-  --fond: var(--nuit);
-  --fond-doux: rgb(251 248 242 / 5%);
-  --surface: rgb(251 248 242 / 6%);
-  --surface-forte: #141c40;
-  --bordure: rgb(251 248 242 / 12%);
-  --texte: #f3eee6;
-  --texte-doux: #b5b3c6;
-  --titre: var(--ivoire);
-  --lien: var(--safran);
-  --lien-survol: #ffd27a;
+  --fond: var(--sable-clair);
+  --fond-doux: var(--sable);
+  --surface: #fffaf3;
+  --bordure: #e2d3bd;
+  --texte: var(--encre);
+  --texte-doux: #6b5a4e;
+  --titre: var(--encre);
+  --lien: var(--terracotta);
+  --lien-survol: var(--terracotta-fonce);
   --action: var(--terracotta);
   --action-texte: #ffffff;
-  --accent: var(--safran);
-  --focus: #8fb4ff;
-  --verre: rgb(16 23 58 / 55%);
+  --accent: var(--ocre);
+  --accent-texte: var(--ocre-fonce);
+  --focus: #2c6bd6;
+  --voile: rgb(42 29 21 / 6%);
 
   /* Polices (hébergées avec le site) */
   --police-titre: 'Fraunces Variable', 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -43,9 +47,11 @@
   --largeur: 1280px;
   --largeur-texte: 720px;
   --gouttiere: clamp(16px, 4vw, 56px);
-  --rayon: 22px;
+  --rayon: 20px;
   --rayon-petit: 12px;
-  --ombre: 0 20px 60px rgb(0 0 0 / 35%);
-  --espace: clamp(72px, 11vw, 150px);
+  --ombre: 0 2px 6px rgb(42 29 21 / 6%), 0 18px 40px rgb(42 29 21 / 12%);
+  --espace: clamp(72px, 10vw, 140px);
   --courbe: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Bords crantés des coupons de tissu (ciseaux à cranter) */
+  --crante: polygon(0.00% 0, 4.55% 7px, 9.09% 0, 13.64% 7px, 18.18% 0, 22.73% 7px, 27.27% 0, 31.82% 7px, 36.36% 0, 40.91% 7px, 45.45% 0, 50.00% 7px, 54.55% 0, 59.09% 7px, 63.64% 0, 68.18% 7px, 72.73% 0, 77.27% 7px, 81.82% 0, 86.36% 7px, 90.91% 0, 95.45% 7px, 100.00% 0, calc(100% - 7px) 8.33%, 100% 16.67%, calc(100% - 7px) 25.00%, 100% 33.33%, calc(100% - 7px) 41.67%, 100% 50.00%, calc(100% - 7px) 58.33%, 100% 66.67%, calc(100% - 7px) 75.00%, 100% 83.33%, calc(100% - 7px) 91.67%, 100% 100.00%, 95.45% calc(100% - 7px), 90.91% 100%, 86.36% calc(100% - 7px), 81.82% 100%, 77.27% calc(100% - 7px), 72.73% 100%, 68.18% calc(100% - 7px), 63.64% 100%, 59.09% calc(100% - 7px), 54.55% 100%, 50.00% calc(100% - 7px), 45.45% 100%, 40.91% calc(100% - 7px), 36.36% 100%, 31.82% calc(100% - 7px), 27.27% 100%, 22.73% calc(100% - 7px), 18.18% 100%, 13.64% calc(100% - 7px), 9.09% 100%, 4.55% calc(100% - 7px), 0.00% 100%, 7px 91.67%, 0 83.33%, 7px 75.00%, 0 66.67%, 7px 58.33%, 0 50.00%, 7px 41.67%, 0 33.33%, 7px 25.00%, 0 16.67%, 7px 8.33%);
 }

@@ -204,9 +204,6 @@ function boutonEpingler(a: Article): string {
   return `<a class="epingler" href="${echapper(lienEpingler(a))}" target="_blank" rel="noopener">${icone('epingle', 'icone icone--petite')}<span>Épingler</span></a>`;
 }
 
-/** Forme du nuage selon le type d'article : maison, assiette tressée, carte de l'Afrique. */
-const FORME_TYPE: Record<TypeArticle, number> = { ambiance: 1, top: 3, guide: 0 };
-
 const MENTION_IA = 'Image d’ambiance créée par IA : les produits proposés sont dans le même esprit, pas les objets exacts.';
 
 /** Image d'ambiance avec points cliquables, puis la liste « Dans le même esprit ». */
@@ -390,7 +387,6 @@ export function sourcePageArticle(a: Article, publies: Article[], produits = ind
   <body>
     <!--#header-->
     <main id="contenu" class="article article--${a.type}">
-      <div class="article__nuage" data-nuage data-forme="${FORME_TYPE[a.type]}" data-discret aria-hidden="true"></div>
       <header class="article__entete conteneur conteneur--etroit">
         <p class="fil"><a href="index.html">Accueil</a> › <a href="articles.html">Articles</a></p>
         <p class="article__meta"><span class="article__type">${icone(t.icone, 'icone icone--petite')} ${t.nom}</span><time datetime="${a.publieLe}">${dateLongue(a.publieLe)}</time><span>${icone('horloge', 'icone icone--petite')} ${minutes} min de lecture</span></p>

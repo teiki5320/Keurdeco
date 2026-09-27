@@ -68,7 +68,7 @@ try {
   // Accueil
   await page.goto(BASE, { waitUntil: 'networkidle' });
   verifier((await page.locator('.une').count()) === 1 && (await page.getAttribute('.une', 'href')) === 'salon-terracotta-wax.html', 'accueil : ambiance à la une');
-  verifier((await page.locator('.tuiles--piece .tuile').count()) === 7 && (await page.locator('.tuiles--matiere .tuile').count()) === 8, 'accueil : entrées par pièce (7) et par matière (8)');
+  verifier((await page.locator('.visite__piece').count()) === 7 && (await page.locator('.tuiles--matiere .tuile').count()) === 8, 'accueil : visite des 7 pièces et 8 coupons de matières');
   verifier((await page.textContent('.site-pied'))?.includes('En tant que Partenaire Amazon, Keur Déco réalise un bénéfice'), 'pied de page : mention Partenaires Amazon');
   verifier((await page.getAttribute('meta[name="p:domain_verify"]', 'content')) === 'code-de-test', 'balise de revendication Pinterest (PINTEREST_VERIFY)');
 

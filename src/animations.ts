@@ -1,7 +1,9 @@
 /**
  * Animations du site (confort seulement : sans JavaScript, tout reste visible et lisible).
  * - apparition au défilement ([data-reveal]) et titres révélés mot par mot ([data-mots]) ;
- * - transition « iris » safran entre les pages, avec dispersion du nuage ;
+ * - porte en arche de l'accueil qui s'ouvre au défilement, objets flottants ;
+ * - visite de la maison : les pièces défilent de côté pendant qu'on descend ;
+ * - rideau de kente entre les pages (bandes de tissu qui tombent puis remontent) ;
  * - rangées de cartes défilantes (.rail) avec boutons et glisser à la souris ;
  * - cartes qui s'inclinent sous le curseur ([data-inclinaison]) ;
  * - en-tête compact après défilement.
@@ -9,7 +11,6 @@
  */
 
 const reduit = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-export const explosion = (v: number) => window.dispatchEvent(new CustomEvent('nuage:explosion', { detail: v }));
 
 /** Découpe les titres [data-mots] en mots animables (le texte reste lisible par les lecteurs d'écran). */
 function decouperTitres(): void {
@@ -65,34 +66,40 @@ function apparitions(): void {
   elements.forEach((e) => obs.observe(e));
 }
 
-/** Transition entre les pages : un iris safran se ferme avec le nom de la destination, puis se rouvre. */
+/** Couleurs des bandes du rideau de kente. */
+const BANDES = ['#B4532F', '#D49A2A', '#1E2A47', '#52693A', '#D49A2A', '#B4532F', '#1E2A47'];
+const DUREE_RIDEAU = 520;
+
+/** Transition entre les pages : des bandes de tissu tombent l'une après l'autre, puis remontent. */
 function transitions(): void {
   const rideau = document.createElement('div');
   rideau.className = 'rideau';
   rideau.setAttribute('aria-hidden', 'true');
-  rideau.innerHTML = '<span class="rideau__texte"></span>';
+  rideau.innerHTML = `${BANDES.map((c, i) => `<span class="rideau__bande" style="--c:${c};--i:${i}"></span>`).join('')}<span class="rideau__texte"></span>`;
   document.body.append(rideau);
   const texte = rideau.querySelector<HTMLElement>('.rideau__texte')!;
+  const poser = (etat: '' | 'couvre' | 'sort', sansTransition = false) => {
+    rideau.classList.toggle('rideau--sans-transition', sansTransition);
+    rideau.classList.toggle('rideau--couvre', etat === 'couvre');
+    rideau.classList.toggle('rideau--sort', etat === 'sort');
+  };
 
-  // Arrivée après une transition : le rideau couvre la page, puis s'ouvre.
+  // Arrivée après une transition : le rideau couvre la page, puis les bandes descendent.
   const arrivee = sessionStorage.getItem('kd-transition');
   if (arrivee !== null && !reduit()) {
     sessionStorage.removeItem('kd-transition');
     texte.textContent = arrivee;
-    rideau.classList.add('rideau--couvre', 'rideau--sans-transition');
+    poser('couvre', true);
     requestAnimationFrame(() =>
       requestAnimationFrame(() => {
-        rideau.classList.remove('rideau--sans-transition');
-        rideau.classList.remove('rideau--couvre');
-        rideau.classList.add('rideau--sort');
-        setTimeout(() => rideau.classList.remove('rideau--sort'), 700);
+        poser('sort');
+        setTimeout(() => poser('', true), DUREE_RIDEAU + BANDES.length * 60 + 100);
       }),
     );
   }
   // Retour arrière (cache du navigateur) : pas de rideau resté fermé.
   window.addEventListener('pageshow', (e) => {
-    if (e.persisted) rideau.classList.remove('rideau--couvre');
-    explosion(0);
+    if (e.persisted) poser('', true);
   });
 
   document.addEventListener('click', (e) => {
@@ -103,14 +110,72 @@ function transitions(): void {
     if (url.origin !== location.origin || !/\.html$|\/$/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.hash) return; // ancre dans la page
     e.preventDefault();
-    const libelle = (lien.dataset.libelle ?? lien.querySelector('strong, .titre-carte')?.textContent ?? lien.textContent ?? '').trim().replace(/\s+/g, ' ');
+    const libelle = (lien.dataset.libelle ?? lien.querySelector('strong')?.textContent ?? lien.textContent ?? '').trim().replace(/\s+/g, ' ');
     const court = libelle.length > 48 ? `${libelle.slice(0, 46)}…` : libelle;
     texte.textContent = court;
     sessionStorage.setItem('kd-transition', court);
-    rideau.classList.add('rideau--couvre');
-    explosion(1);
-    setTimeout(() => (location.href = url.href), 480);
+    poser('couvre');
+    setTimeout(() => (location.href = url.href), DUREE_RIDEAU + BANDES.length * 60);
   });
+}
+
+/** Avancement (0 → 1) du défilement à travers une section « collante ». */
+function avancement(section: HTMLElement): number {
+  const r = section.getBoundingClientRect();
+  const course = r.height - window.innerHeight;
+  return course > 0 ? Math.min(1, Math.max(0, -r.top / course)) : 0;
+}
+
+/** Porte en arche : elle s'ouvre jusqu'à remplir l'écran ; les objets flottent au défilement et à la souris. */
+function porte(): void {
+  const section = document.querySelector<HTMLElement>('[data-porte]');
+  if (!section || reduit()) return;
+  section.classList.add('porte--active');
+  const objets = [...section.querySelectorAll<HTMLElement>('[data-vitesse]')];
+  let sx = 0, sy = 0, mx = 0, my = 0, p = -1;
+  window.addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    mx = e.clientX / window.innerWidth - 0.5;
+    my = e.clientY / window.innerHeight - 0.5;
+  });
+  const boucle = () => {
+    requestAnimationFrame(boucle);
+    const r = section.getBoundingClientRect();
+    if (r.bottom < 0) return;
+    const np = avancement(section);
+    sx += (mx - sx) * 0.08;
+    sy += (my - sy) * 0.08;
+    if (Math.abs(np - p) > 0.0005) {
+      p = np;
+      section.style.setProperty('--p', p.toFixed(4));
+    }
+    for (const o of objets) {
+      const v = Number(o.dataset.vitesse);
+      o.style.transform = `translate(${(sx * 60 * v).toFixed(1)}px, ${(sy * 50 * v - p * 260 * v).toFixed(1)}px) rotate(${(sx * 10 * v).toFixed(1)}deg)`;
+    }
+  };
+  boucle();
+}
+
+/** Visite de la maison : la piste des pièces glisse de côté pendant qu'on descend. */
+function visite(): void {
+  const section = document.querySelector<HTMLElement>('[data-visite]');
+  if (!section || reduit()) return;
+  section.classList.add('visite--active');
+  const piste = section.querySelector<HTMLElement>('.visite__piste')!;
+  const num = section.querySelector<HTMLElement>('[data-visite-num]');
+  const barre = section.querySelector<HTMLElement>('[data-visite-barre]');
+  const n = piste.children.length;
+  const maj = () => {
+    const p = avancement(section);
+    const course = Math.max(0, piste.scrollWidth - piste.clientWidth);
+    piste.style.transform = `translateX(${(-p * course).toFixed(1)}px)`;
+    if (num) num.textContent = String(Math.min(n, 1 + Math.floor(p * n * 0.999))).padStart(2, '0');
+    if (barre) barre.style.transform = `scaleX(${p.toFixed(4)})`;
+  };
+  window.addEventListener('scroll', maj, { passive: true });
+  window.addEventListener('resize', maj);
+  maj();
 }
 
 /** Rangées de cartes défilantes : boutons précédent/suivant et glisser à la souris. */
@@ -195,9 +260,9 @@ export function demarrerAnimations(): void {
   decouperTitres();
   apparitions();
   transitions();
+  porte();
+  visite();
   rails();
   inclinaisons();
   entete();
-  // Les particules, dispersées au chargement, se rassemblent.
-  setTimeout(() => explosion(0), 60);
 }

@@ -44,8 +44,8 @@ interface PageSimple {
   chapo: string;
   contenu: string;
   classe?: string;
-  /** Forme du nuage en haut de page : 0 Afrique, 1 maison, 2 jarre, 3 assiette tressée. */
-  forme?: number;
+  /** Motif de l'arche en haut de page (voir build/motifs.ts). */
+  motif?: string;
 }
 
 /** Gabarit commun des pages de liste (avec marqueurs). */
@@ -71,7 +71,7 @@ export function pageSimple(p: PageSimple): string {
           <h1 data-mots>${p.h1}</h1>
           <p class="chapo" data-reveal>${p.chapo}</p>
         </div>
-        <div class="page__nuage" data-nuage data-forme="${p.forme ?? 0}" data-discret aria-hidden="true"></div>
+        <div class="page__arche" data-reveal aria-hidden="true">${motif(p.motif ?? 'kente')}</div>
       </header>
       <div class="conteneur">
         ${p.contenu}
@@ -126,7 +126,7 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     h1: echapper(r.nom),
     chapo: echapper(r.accroche),
     classe: `page--rubrique page--${famille}`,
-    forme: FORME_FAMILLE[famille],
+    motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
     contenu: `${grilleArticles(articles, '<p class="liste-vide">Les premiers articles de cette rubrique arrivent bientôt.</p>')}
         ${
           glossaire.length
@@ -139,8 +139,8 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
   });
 }
 
-/** Forme du nuage par famille : maison pour les pièces, assiette tressée pour les matières, jarre pour les occasions. */
-const FORME_FAMILLE: Record<Famille, number> = { piece: 1, matiere: 3, occasion: 2 };
+/** Motif de l'arche par famille. */
+const MOTIF_FAMILLE: Record<Famille, string> = { piece: 'wax', matiere: 'bogolan', occasion: 'kente' };
 
 const INTRO_HUB: Record<Famille, { h1: string; chapo: string }> = {
   piece: { h1: 'La déco africaine pièce par pièce', chapo: 'Du salon à la salle de bain, des idées concrètes pour chaque pièce de la maison.' },
@@ -157,7 +157,7 @@ function pageHub(famille: Famille, publies: Article[]): string {
     h1: INTRO_HUB[famille].h1,
     chapo: INTRO_HUB[famille].chapo,
     classe: 'page--hub',
-    forme: FORME_FAMILLE[famille],
+    motif: MOTIF_FAMILLE[famille],
     contenu: tuilesRubriques(famille, publies),
   });
 }
@@ -187,7 +187,7 @@ function pageGlossaire(entrees: EntreeGlossaire[]): string {
     h1: 'Glossaire',
     chapo: 'Les matières, motifs et savoir-faire à connaître pour choisir et associer les objets de déco africaine.',
     classe: 'page--glossaire',
-    forme: 2,
+    motif: 'bogolan',
     contenu: `<ul class="liste-glossaire liste-glossaire--grande">${entrees
       .map((g) => `<li><a href="${fichierGlossaire(g.id)}"><small>${echapper(g.categorie)} · ${echapper(g.origine)}</small><strong>${echapper(g.nom)}</strong> <span>${echapper(g.resume)}</span></a></li>`)
       .join('')}</ul>`,
@@ -205,7 +205,7 @@ function pageEntreeGlossaire(g: EntreeGlossaire, entrees: EntreeGlossaire[], pub
     h1: echapper(g.nom),
     chapo: echapper(g.resume),
     classe: 'page--entree-glossaire',
-    forme: 2,
+    motif: 'bogolan',
     contenu: `<div class="conteneur--etroit prose">
           <p class="entree-glossaire__origine"><strong>${echapper(g.categorie)}</strong> · ${echapper(g.origine)}</p>
           ${g.texte.map((p) => `<p>${echapper(p)}</p>`).join('\n          ')}
@@ -298,4 +298,58 @@ export function blocGlossaire(n = 6): string {
     .slice(0, n)
     .map((g, i) => `<li data-reveal style="--i:${i}"><a href="${fichierGlossaire(g.id)}" data-libelle="${echapper(g.nom)}"><small>${echapper(g.categorie)} · ${echapper(g.origine)}</small><strong>${echapper(g.nom)}</strong> <span>${echapper(g.resume)}</span></a></li>`)
     .join('');
+}
+
+/** Motif associé à chaque pièce pour la visite de la maison. */
+const MOTIF_PIECE: Record<string, string> = {
+  salon: 'wax',
+  chambre: 'indigo',
+  'cuisine-salle-a-manger': 'terre-cuite',
+  entree: 'raphia-paniers',
+  'salle-de-bain': 'bogolan',
+  'balcon-exterieur': 'kente',
+  'chambre-enfant': 'perles',
+};
+
+/**
+ * « Visite de la maison » : les pièces défilent de côté pendant qu'on descend la page
+ * (src/animations.ts) ; sans JavaScript, c'est une simple rangée qu'on fait glisser.
+ */
+export function visiteMaison(publies = articlesPublies()): string {
+  const pieces = FAMILLES.piece.liste;
+  const total = String(pieces.length).padStart(2, '0');
+  const panneaux = pieces
+    .map((r, i) => {
+      const n = articlesDeRubrique('piece', r.id, publies).length;
+      return `<a class="visite__piece visite__piece--${i % 4}" href="${fichierRubrique('piece', r.id)}" data-libelle="${r.nom}">
+      <span class="visite__motif">${motif(MOTIF_PIECE[r.id] ?? 'wax')}</span>
+      <span class="visite__num">${String(i + 1).padStart(2, '0')}</span>
+      <span class="visite__icone">${icone(ICONES_RUBRIQUES[r.id] ?? 'maison', 'icone')}</span>
+      <span class="visite__texte">
+        <strong class="visite__nom">${r.nom}</strong>
+        <span class="visite__accroche">${echapper(r.accroche)}</span>
+        <span class="visite__lien">${n ? `${n} article${n > 1 ? 's' : ''} · ` : ''}Entrer ${icone('fleche', 'icone icone--petite')}</span>
+      </span>
+    </a>`;
+    })
+    .join('');
+  return `<section class="visite" data-visite style="--n:${pieces.length}" aria-labelledby="visite-titre">
+  <div class="visite__collant">
+    <div class="conteneur visite__entete">
+      <div>
+        <p class="surtitre">Visite de la maison</p>
+        <h2 id="visite-titre" data-mots>Pièce par <em>pièce</em><span class="point">.</span></h2>
+      </div>
+      <p class="visite__compteur" aria-hidden="true"><span data-visite-num>01</span> / ${total}</p>
+      <span class="visite__barre" aria-hidden="true"><span data-visite-barre></span></span>
+    </div>
+    <div class="visite__piste">${panneaux}</div>
+  </div>
+</section>`;
+}
+
+/** Image de la porte en arche (accueil) : l'article à la une, ou le prochain article programmé. */
+export function imagePorte(publies = articlesPublies(), tous = tousLesArticles()): string {
+  const a = publies.find((x) => x.type === 'ambiance') ?? publies[0] ?? [...tous].sort((x, y) => x.publieLe.localeCompare(y.publieLe))[0];
+  return a ? imageArticle(a.image, a.imageAlt, '100vw', 'eager') : '';
 }

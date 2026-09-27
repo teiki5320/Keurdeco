@@ -10,27 +10,27 @@
   <body class="accueil-page">
     <!--#header-->
     <main id="contenu" class="accueil">
-      <section class="heros">
-        <div class="conteneur heros__grille">
-          <div class="heros__texte">
+      <section class="porte" data-porte>
+        <div class="porte__collant">
+          <div class="conteneur porte__texte">
             <p class="surtitre" data-reveal>« Keur » : la maison, en wolof</p>
-            <h1 class="heros__titre" data-mots>La déco <em>africaine,</em> chez&nbsp;soi.</h1>
-            <p class="heros__chapo" data-reveal>Wax, bogolan, indigo, paniers tressés : des ambiances à reproduire, des sélections et des guides pour habiller chaque pièce aux couleurs de l’Afrique.</p>
-            <p class="heros__actions" data-reveal>
+            <h1 class="porte__titre" data-mots>La déco <em>africaine,</em> chez&nbsp;soi.</h1>
+            <p class="porte__chapo" data-reveal>Wax, bogolan, indigo, paniers tressés : des ambiances à reproduire, des sélections et des guides pour habiller chaque pièce aux couleurs de l’Afrique.</p>
+            <p class="porte__actions" data-reveal>
               <a class="bouton bouton--plein" href="pieces.html" data-libelle="Par pièce">Explorer les pièces <!--#icone:fleche--></a>
-              <a class="bouton bouton--verre" href="glossaire.html" data-libelle="Glossaire">Les matières</a>
+              <a class="bouton bouton--contour" href="glossaire.html" data-libelle="Glossaire">Les matières</a>
             </p>
           </div>
-          <div class="heros__nuage" data-nuage data-forme="0" aria-hidden="true"></div>
+          <div class="porte__arche"><!--#porte-image--><p class="porte__bienvenue" aria-hidden="true">Entrez, <em>vous êtes chez vous.</em></p></div>
+          <div class="porte__objets"><!--#porte-objets--></div>
         </div>
-        <a class="heros__defiler" href="#une" aria-label="Défiler vers la suite"><span></span></a>
       </section>
-
-      <!--#marquee-->
 
       <section class="conteneur section" id="une" aria-label="À la une">
         <!--#une-->
       </section>
+
+      <!--#couture-->
 
       <section class="section section--rail" aria-labelledby="a-venir" data-rail>
         <div class="conteneur section__entete">
@@ -43,28 +43,14 @@
         </div>
       </section>
 
-      <section class="section section--nuage" aria-labelledby="pieces">
-        <div class="conteneur section__deux">
-          <div>
-            <div class="section__entete section__entete--colonne">
-              <p class="surtitre" data-reveal>Pièce par pièce</p>
-              <h2 id="pieces" data-mots>Chaque pièce a son <em>histoire</em><span class="point">.</span></h2>
-              <p data-reveal>Du salon au balcon, des idées concrètes pour une maison chaleureuse, sans effet musée.</p>
-            </div>
-            <!--#entrees:piece-->
-          </div>
-          <div class="section__nuage" data-nuage data-forme="1" aria-hidden="true"></div>
-        </div>
-      </section>
+      <!--#visite-->
 
-      <!--#marquee-->
-
-      <section class="section section--nuage" aria-labelledby="matieres">
+      <section class="section" aria-labelledby="matieres">
         <div class="conteneur">
           <div class="section__entete">
             <div>
               <p class="surtitre" data-reveal>Matières et styles</p>
-              <h2 id="matieres" data-mots>Tissus, fibres <em>et terre</em><span class="point">.</span></h2>
+              <h2 id="matieres" data-mots>Le bon <em>coupon</em> de tissu<span class="point">.</span></h2>
             </div>
             <a class="lien-fleche" href="matieres.html" data-libelle="Matières">Toutes les matières <!--#icone:fleche--></a>
           </div>
@@ -72,18 +58,18 @@
         </div>
       </section>
 
-      <section class="section section--nuage" aria-labelledby="comprendre">
-        <div class="conteneur section__deux section__deux--inverse">
-          <div class="section__nuage" data-nuage data-forme="3" aria-hidden="true"></div>
-          <div>
-            <div class="section__entete section__entete--colonne">
+      <!--#couture-->
+
+      <section class="section" aria-labelledby="comprendre">
+        <div class="conteneur">
+          <div class="section__entete">
+            <div>
               <p class="surtitre" data-reveal>Glossaire</p>
               <h2 id="comprendre" data-mots>Comprendre ce qu’on <em>accroche</em><span class="point">.</span></h2>
-              <p data-reveal>Bogolan, kente, adinkra : l’histoire et le sens des motifs, pour choisir en connaissance de cause.</p>
             </div>
-            <ul class="liste-glossaire liste-glossaire--accueil"><!--#glossaire-accueil--></ul>
-            <p data-reveal><a class="lien-fleche" href="glossaire.html" data-libelle="Glossaire">Tout le glossaire <!--#icone:fleche--></a></p>
+            <a class="lien-fleche" href="glossaire.html" data-libelle="Glossaire">Tout le glossaire <!--#icone:fleche--></a>
           </div>
+          <ul class="liste-glossaire liste-glossaire--accueil"><!--#glossaire-accueil--></ul>
         </div>
       </section>
 
@@ -93,17 +79,15 @@
         </div>
       </section>
 
-      <section class="section section--nuage" aria-labelledby="occasions">
-        <div class="conteneur section__deux">
-          <div>
-            <div class="section__entete section__entete--colonne">
+      <section class="section section--occasions" aria-labelledby="occasions">
+        <div class="conteneur">
+          <div class="section__entete">
+            <div>
               <p class="surtitre" data-reveal>Grandes occasions</p>
               <h2 id="occasions" data-mots>Recevoir, <em>fêter</em>, célébrer<span class="point">.</span></h2>
-              <p data-reveal>Mariage, baptême, Tabaski, fêtes de fin d’année : des tables et des intérieurs prêts à accueillir.</p>
             </div>
-            <!--#entrees:occasion-->
           </div>
-          <div class="section__nuage" data-nuage data-forme="2" aria-hidden="true"></div>
+          <!--#entrees:occasion-->
         </div>
       </section>
     </main>

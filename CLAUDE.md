@@ -28,5 +28,5 @@ Site éditorial de décoration africaine (www.keurdeco.fr), rémunéré par les 
 
 - Articles : `contenu/articles/<slug>.md` (Markdown + en-tête YAML, voir `build/articles.ts`).
 - Produits : `src/data/produits.json` ; rubriques : `src/taxonomie.ts` ; glossaire : `src/data/glossaire.json`.
-- Thème (couleurs, polices) : `src/theme.css`, palette « Nuit d'indigo ».
+- Thème (couleurs, polices) : `src/theme.css`, palette « Terre de Dakar » ; animations dans `src/animations.ts` (porte en arche, visite de la maison, coupons, coutures, rideau de kente).
 - Pinterest : `docs/pinterest.md` ; Amazon : section Produits du README.

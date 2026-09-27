@@ -23,7 +23,7 @@ import { insecables } from '../src/typo.ts';
 import { articlesPublies, pagesArticles } from './articles.ts';
 import { NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
 import { icone, marque, type NomIcone } from './icones.ts';
-import { blocAVenir, blocDerniers, blocGlossaire, blocTops, blocUne, pagesRubriques, tuilesRubriques } from './rubriques.ts';
+import { blocAVenir, blocDerniers, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
 
 export { insecables, NOM_SITE, SITE_URL };
@@ -115,8 +115,8 @@ function liensNavigation(fichier: string): string {
   return NAVIGATION.map(({ href, libelle, pages }) => `<li><a href="${href}"${pages.test(fichier) ? ' aria-current="page"' : ''}>${libelle}</a></li>`).join('');
 }
 
-function logo(): string {
-  return `<a class="logo" href="index.html" aria-label="${NOM_SITE}, accueil">${marque('logo-marque', true)}<span class="logo__texte">Keur <em>Déco</em></span></a>`;
+function logo(surFonce = false): string {
+  return `<a class="logo" href="index.html" aria-label="${NOM_SITE}, accueil">${marque('logo-marque', surFonce)}<span class="logo__texte">Keur <em>Déco</em></span></a>`;
 }
 
 export function header(fichier: string): string {
@@ -134,10 +134,37 @@ export function header(fichier: string): string {
 </header>`;
 }
 
-/** Bandeau défilant des matières (doublé pour une boucle sans à-coup). */
-export function bandeauDefilant(): string {
-  const mots = FAMILLES.matiere.liste.map((r) => `<span>${r.nom}</span><span class="bandeau__etoile" aria-hidden="true">✦</span>`).join('');
-  return `<div class="bandeau-defilant" aria-hidden="true"><div class="bandeau-defilant__piste">${mots}${mots}</div></div>`;
+/** Objets dessinés qui flottent autour de la porte en arche (jarre, panier, coussin, feuille, perles). */
+export function objetsPorte(): string {
+  const objets: [string, string, number][] = [
+    ['jarre', '<svg viewBox="0 0 100 120"><path d="M38 8h24v10c20 10 30 30 26 55-4 28-22 42-38 42S16 101 12 73C8 48 18 28 38 18Z" fill="#B4532F"/><path d="M16 60h68M18 72h64" stroke="#D49A2A" stroke-width="4"/><path d="M34 8h32" stroke="#8F3F22" stroke-width="6" stroke-linecap="round"/></svg>', 0.9],
+    ['panier', '<svg viewBox="0 0 120 100"><path d="M10 40h100l-10 55H20Z" fill="#D49A2A"/><path d="M14 52h92M17 66h86M20 80h80" stroke="#9C6B12" stroke-width="4"/><path d="M30 40c0-40 60-40 60 0" fill="none" stroke="#6B3E1E" stroke-width="7"/></svg>', 1.4],
+    ['coussin', '<svg viewBox="0 0 110 100"><defs><pattern id="po-wax" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#1E2A47"/><circle cx="11" cy="11" r="6" fill="none" stroke="#D49A2A" stroke-width="3"/><circle cx="11" cy="11" r="2" fill="#B4532F"/></pattern></defs><path d="M8 12c30 8 64 8 94 0-6 26-6 50 0 76-30-8-64-8-94 0 6-26 6-50 0-76Z" fill="url(#po-wax)"/></svg>', 1.15],
+    ['feuille', '<svg viewBox="0 0 80 140"><path d="M40 136C38 90 40 50 40 6" stroke="#52693A" stroke-width="5" fill="none"/><path d="M40 30c-26 6-34 26-30 44 18-2 30-18 30-44ZM40 60c26 6 34 26 30 44-18-2-30-18-30-44Z" fill="#52693A"/></svg>', 0.6],
+    ['perles', '<svg viewBox="0 0 120 60"><path d="M6 10c20 40 88 40 108 0" fill="none" stroke="#6B5A4E" stroke-width="2"/>' + [12, 26, 42, 60, 78, 94, 108].map((x, i) => `<circle cx="${x}" cy="${10 + Math.sin((x / 120) * Math.PI) * 28}" r="7" fill="${['#B4532F', '#D49A2A', '#1E2A47', '#52693A'][i % 4]}"/>`).join('') + '</svg>', 1.7],
+  ];
+  return objets.map(([nom, svg, vitesse]) => `<span class="porte__objet porte__objet--${nom}" data-vitesse="${vitesse}" aria-hidden="true">${svg}</span>`).join('');
+}
+
+/**
+ * « Couture » : une ligne de motifs bogolan (zigzag, cercle, croix, points, chevrons) qui se
+ * dessinent trait par trait quand elle entre à l'écran. Sert de séparateur entre les sections.
+ */
+export function couture(): string {
+  const glyphes = [
+    'M0 30l10-14 10 14 10-14 10 14',
+    'M20 30a10 10 0 1 0 20 0a10 10 0 1 0-20 0M26 30a4 4 0 1 0 8 0a4 4 0 1 0-8 0',
+    'M30 14v32M14 30h32M22 22h16v16H22z',
+    'M18 22h.01M30 22h.01M42 22h.01M24 36h.01M36 36h.01',
+    'M8 20l14 10-14 10M28 20l14 10-14 10',
+    'M12 18h36v24H12zM12 18l36 24M48 18L12 42',
+  ];
+  const n = 18;
+  const traits = Array.from({ length: n }, (_, i) => {
+    const d = glyphes[i % glyphes.length];
+    return `<g transform="translate(${i * 70} 0)"><path class="trait" pathLength="1" style="--i:${i}" d="${d}"/></g><path class="trait trait--fil" pathLength="1" style="--i:${i}" d="M${i * 70 + 58} 30h12"/>`;
+  }).join('');
+  return `<div class="couture" data-reveal aria-hidden="true"><svg viewBox="0 0 ${n * 70} 60" preserveAspectRatio="xMidYMid meet" focusable="false">${traits}</svg></div>`;
 }
 
 export function footer(): string {
@@ -146,7 +173,7 @@ export function footer(): string {
   return `<footer class="site-pied">
   <div class="conteneur site-pied__grille">
     <div class="site-pied__marque">
-      ${logo()}
+      ${logo(true)}
       <p>${SLOGAN}. Idées d’aménagement, sélections et savoir-faire, pour la diaspora et tous les amoureux de déco.</p>
       <p class="site-pied__note">${MENTION_AMAZON} Les liens vers Amazon sont des liens sponsorisés ; aucun prix n’est affiché sur le site.</p>
       <p class="site-pied__note">Certaines images d’ambiance sont créées par intelligence artificielle ; elles sont alors signalées sous l’image.</p>
@@ -232,7 +259,10 @@ export function transformerPage(html: string, fichier: string): string {
     .replace('<!--#tops-->', () => blocTops(publies))
     .replace('<!--#a-venir-->', () => blocAVenir(publies))
     .replace('<!--#glossaire-accueil-->', () => blocGlossaire())
-    .replace(/<!--#marquee-->/g, () => bandeauDefilant())
+    .replace(/<!--#couture-->/g, () => couture())
+    .replace('<!--#visite-->', () => visiteMaison(publies))
+    .replace('<!--#porte-image-->', () => imagePorte(publies))
+    .replace('<!--#porte-objets-->', () => objetsPorte())
     .replace(/<!--#entrees:(piece|matiere|occasion)-->/g, (_m, f: Famille) => tuilesRubriques(f, publies))
     .replace(/<!--#mention-amazon-->/g, MENTION_AMAZON)
     .replace(/<!--#icone:([a-z-]+)-->/g, (_m, nom: NomIcone) => icone(nom));
