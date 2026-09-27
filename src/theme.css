@@ -1,49 +1,51 @@
 /*
- * Thème Keur Déco, palette « Nuit d'indigo » : toutes les couleurs, polices et
- * mesures du site sont définies ici, et seulement ici.
+ * Thème Keur Déco, palette « Nuit d'indigo » en version immersive (fond de nuit indigo,
+ * safran et terracotta lumineux) : toutes les couleurs, polices et mesures du site sont ici.
  */
 :root {
   /* Couleurs de base */
-  --ivoire: #fbf8f2;
-  --sable: #ece1cf;
-  --sable-clair: #f4ecdf;
-  --encre: #1c1b22;
+  --nuit: #0a0f24;
+  --nuit-2: #10173a;
   --indigo: #1b2442;
   --indigo-clair: #2c3a66;
-  --terracotta: #a6432a;
-  --terracotta-fonce: #8a3620;
-  --safran: #e2a62a;
-  --baobab: #3f5d46;
-  --baobab-clair: #dfe8e1;
-  --terracotta-clair: #f3dfd6;
+  --ivoire: #fbf8f2;
+  --sable: #ece1cf;
+  --terracotta: #d0603f;
+  --terracotta-fonce: #a6432a;
+  --safran: #f2b33d;
+  --safran-doux: #e2a62a;
+  --baobab: #6f9c78;
   --pinterest: #e60023;
   --pinterest-fonce: #ad081b;
 
   /* Rôles */
-  --fond: var(--ivoire);
-  --fond-doux: var(--sable-clair);
-  --surface: #ffffff;
-  --texte: var(--encre);
-  --texte-doux: #55525c;
-  --titre: var(--indigo);
-  --lien: var(--terracotta);
-  --lien-survol: var(--terracotta-fonce);
+  --fond: var(--nuit);
+  --fond-doux: rgb(251 248 242 / 5%);
+  --surface: rgb(251 248 242 / 6%);
+  --surface-forte: #141c40;
+  --bordure: rgb(251 248 242 / 12%);
+  --texte: #f3eee6;
+  --texte-doux: #b5b3c6;
+  --titre: var(--ivoire);
+  --lien: var(--safran);
+  --lien-survol: #ffd27a;
   --action: var(--terracotta);
   --action-texte: #ffffff;
   --accent: var(--safran);
-  --bordure: #e2d7c5;
-  --focus: #2c6bd6;
+  --focus: #8fb4ff;
+  --verre: rgb(16 23 58 / 55%);
 
   /* Polices (hébergées avec le site) */
   --police-titre: 'Fraunces Variable', 'Fraunces', Georgia, 'Times New Roman', serif;
   --police-texte: 'Source Sans 3 Variable', 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* Mesures */
-  --largeur: 1180px;
+  --largeur: 1280px;
   --largeur-texte: 720px;
-  --gouttiere: clamp(16px, 4vw, 40px);
-  --rayon: 14px;
-  --rayon-petit: 8px;
-  --ombre: 0 1px 2px rgb(27 36 66 / 6%), 0 8px 24px rgb(27 36 66 / 8%);
-  --espace: clamp(48px, 8vw, 104px);
+  --gouttiere: clamp(16px, 4vw, 56px);
+  --rayon: 22px;
+  --rayon-petit: 12px;
+  --ombre: 0 20px 60px rgb(0 0 0 / 35%);
+  --espace: clamp(72px, 11vw, 150px);
+  --courbe: cubic-bezier(0.16, 1, 0.3, 1);
 }

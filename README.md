@@ -46,7 +46,13 @@ Node 22.12 ou plus récent (les scripts `.ts` sont exécutés directement par No
 
 ## Identité visuelle
 
-Palette « Nuit d'indigo » : ivoire `#FBF8F2`, sable `#ECE1CF`, indigo profond `#1B2442`, terracotta brûlé `#A6432A` (boutons), safran `#E2A62A`, vert baobab `#3F5D46`. Polices hébergées avec le site : **Fraunces** (titres) et **Source Sans 3** (texte), via Fontsource ; les versions TTF de `assets/polices/` servent aux épingles. Logo : `public/logo.svg` (icônes et image de partage régénérées par `node scripts/visuels-marque.ts`).
+Palette « Nuit d'indigo » en version immersive (inspirée d'Alohash) : fond de nuit indigo `#0A0F24`, ivoire, safran `#F2B33D`, terracotta `#D0603F`, vert baobab. Polices hébergées avec le site : **Fraunces** (titres) et **Source Sans 3** (texte), via Fontsource ; les versions TTF de `assets/polices/` servent aux épingles. Logo : `public/logo.svg`.
+
+Animations :
+
+- **nuage de particules 3D** (Three.js, `src/nuage/`) en fond : il prend la forme de la carte de l'Afrique, d'une maison, d'une jarre ou d'une assiette tressée selon l'élément `[data-nuage][data-forme]` le plus proche du centre de l'écran, fuit le curseur et se disperse entre deux pages ;
+- **transition « iris »** safran entre les pages, titres révélés mot par mot, apparitions au défilement, bandeau défilant des matières, rangées de cartes à faire glisser, cartes qui s'inclinent sous la souris, motifs de tissus animés (`build/motifs.ts`) — tout est dans `src/animations.ts` ;
+- « Réduire les animations » (réglage du système) coupe tout ce qui bouge ; sans JavaScript, les pages restent complètes.
 
 ## Ajouter un article
 

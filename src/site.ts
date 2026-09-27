@@ -5,6 +5,7 @@ import '@fontsource-variable/fraunces';
 import '@fontsource-variable/source-sans-3';
 import './theme.css';
 import './site.css';
+import { demarrerAnimations } from './animations.ts';
 
 /** Points cliquables des images d'ambiance : un seul ouvert à la fois, Échap pour fermer. */
 function pointsCliquables(): void {
@@ -60,6 +61,19 @@ function lienEvitement(): void {
 pointsCliquables();
 menuMobile();
 lienEvitement();
+demarrerAnimations();
+
+/** Nuage de particules 3D en fond : chargé après la page, seulement si WebGL est disponible. */
+function nuage(): void {
+  if (!document.querySelector('[data-nuage]')) return;
+  const hote = document.createElement('div');
+  hote.className = 'nuage-fond';
+  hote.setAttribute('aria-hidden', 'true');
+  document.body.prepend(hote);
+  import('./nuage/nuage.ts').then(({ demarrerNuage }) => demarrerNuage(hote)).catch(() => hote.remove());
+}
+if (document.readyState === 'complete') nuage();
+else window.addEventListener('load', nuage);
 
 /** Site installable et consultable hors ligne : service worker (site publié en HTTPS uniquement). */
 if (import.meta.env.PROD && 'serviceWorker' in navigator && location.protocol === 'https:') {

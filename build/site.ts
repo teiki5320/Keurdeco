@@ -23,7 +23,7 @@ import { insecables } from '../src/typo.ts';
 import { articlesPublies, pagesArticles } from './articles.ts';
 import { NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
 import { icone, marque, type NomIcone } from './icones.ts';
-import { blocDerniers, blocTops, blocUne, pagesRubriques, tuilesRubriques } from './rubriques.ts';
+import { blocAVenir, blocDerniers, blocGlossaire, blocTops, blocUne, pagesRubriques, tuilesRubriques } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
 
 export { insecables, NOM_SITE, SITE_URL };
@@ -134,6 +134,12 @@ export function header(fichier: string): string {
 </header>`;
 }
 
+/** Bandeau défilant des matières (doublé pour une boucle sans à-coup). */
+export function bandeauDefilant(): string {
+  const mots = FAMILLES.matiere.liste.map((r) => `<span>${r.nom}</span><span class="bandeau__etoile" aria-hidden="true">✦</span>`).join('');
+  return `<div class="bandeau-defilant" aria-hidden="true"><div class="bandeau-defilant__piste">${mots}${mots}</div></div>`;
+}
+
 export function footer(): string {
   const colonne = (famille: Famille) =>
     `<div><h2>${FAMILLES[famille].titre}</h2><ul>${FAMILLES[famille].liste.map((r) => `<li><a href="${famille}-${r.id}.html">${r.nom}</a></li>`).join('')}</ul></div>`;
@@ -224,6 +230,9 @@ export function transformerPage(html: string, fichier: string): string {
     .replace('<!--#une-->', () => blocUne(publies))
     .replace('<!--#derniers-->', () => blocDerniers(publies))
     .replace('<!--#tops-->', () => blocTops(publies))
+    .replace('<!--#a-venir-->', () => blocAVenir(publies))
+    .replace('<!--#glossaire-accueil-->', () => blocGlossaire())
+    .replace(/<!--#marquee-->/g, () => bandeauDefilant())
     .replace(/<!--#entrees:(piece|matiere|occasion)-->/g, (_m, f: Famille) => tuilesRubriques(f, publies))
     .replace(/<!--#mention-amazon-->/g, MENTION_AMAZON)
     .replace(/<!--#icone:([a-z-]+)-->/g, (_m, nom: NomIcone) => icone(nom));

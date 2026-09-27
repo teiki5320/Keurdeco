@@ -9,9 +9,10 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { FAMILLES, fichierRubrique, type Famille, type Rubrique } from '../src/taxonomie.ts';
-import { articlesPublies, carteArticle, grilleArticles, TYPES, type Article, type TypeArticle } from './articles.ts';
-import { NOM_SITE } from './config.ts';
-import { icone } from './icones.ts';
+import { articlesPublies, carteArticle, grilleArticles, tousLesArticles, TYPES, type Article, type TypeArticle } from './articles.ts';
+import { dateLongue, NOM_SITE } from './config.ts';
+import { icone, type NomIcone } from './icones.ts';
+import { motif } from './motifs.ts';
 import { imageArticle } from './images.ts';
 import { echapper } from './produits.ts';
 
@@ -43,6 +44,8 @@ interface PageSimple {
   chapo: string;
   contenu: string;
   classe?: string;
+  /** Forme du nuage en haut de page : 0 Afrique, 1 maison, 2 jarre, 3 assiette tressée. */
+  forme?: number;
 }
 
 /** Gabarit commun des pages de liste (avec marqueurs). */
@@ -63,9 +66,12 @@ export function pageSimple(p: PageSimple): string {
     <!--#header-->
     <main id="contenu" class="page ${p.classe ?? ''}">
       <header class="page__entete conteneur">
-        <p class="fil">${fil}</p>
-        <h1>${p.h1}</h1>
-        <p class="chapo">${p.chapo}</p>
+        <div class="page__entete-texte">
+          <p class="fil">${fil}</p>
+          <h1 data-mots>${p.h1}</h1>
+          <p class="chapo" data-reveal>${p.chapo}</p>
+        </div>
+        <div class="page__nuage" data-nuage data-forme="${p.forme ?? 0}" data-discret aria-hidden="true"></div>
       </header>
       <div class="conteneur">
         ${p.contenu}
@@ -83,15 +89,31 @@ export function articlesDeRubrique(famille: Famille, id: string, publies: Articl
   return publies.filter((a) => a[FAMILLES[famille].champ].includes(id));
 }
 
-/** Tuiles d'entrée d'une famille (accueil et page hub). */
+/** Tuiles d'entrée d'une famille (accueil et page hub) : motif de la matière ou icône de la pièce. */
 export function tuilesRubriques(famille: Famille, publies: Article[]): string {
   return `<ul class="tuiles tuiles--${famille}">${FAMILLES[famille].liste
-    .map((r) => {
+    .map((r, i) => {
       const n = articlesDeRubrique(famille, r.id, publies).length;
-      return `<li><a class="tuile" href="${fichierRubrique(famille, r.id)}"><span class="tuile__nom">${r.nom}</span><span class="tuile__nb">${n ? `${n} article${n > 1 ? 's' : ''}` : 'Bientôt'}</span></a></li>`;
+      const visuel = famille === 'matiere' ? motif(r.id) : `<span class="tuile__icone">${icone(ICONES_RUBRIQUES[r.id] ?? 'maison', 'icone')}</span>`;
+      return `<li data-reveal style="--i:${i}"><a class="tuile" href="${fichierRubrique(famille, r.id)}" data-inclinaison data-libelle="${r.nom}">${visuel}<span class="tuile__texte"><span class="tuile__nom">${r.nom}</span><span class="tuile__nb">${n ? `${n} article${n > 1 ? 's' : ''}` : 'Découvrir'} ${icone('fleche', 'icone icone--petite')}</span></span></a></li>`;
     })
     .join('')}</ul>`;
 }
+
+/** Icône de chaque pièce et occasion. */
+const ICONES_RUBRIQUES: Record<string, NomIcone> = {
+  salon: 'coussin',
+  chambre: 'linge-de-lit',
+  'cuisine-salle-a-manger': 'vaisselle',
+  entree: 'miroir',
+  'salle-de-bain': 'panier',
+  'balcon-exterieur': 'vase',
+  'chambre-enfant': 'pouf',
+  mariage: 'bijou',
+  bapteme: 'bougie',
+  tabaski: 'nappe',
+  'fetes-fin-annee': 'luminaire',
+};
 
 function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string {
   const f = FAMILLES[famille];
@@ -104,6 +126,7 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     h1: echapper(r.nom),
     chapo: echapper(r.accroche),
     classe: `page--rubrique page--${famille}`,
+    forme: FORME_FAMILLE[famille],
     contenu: `${grilleArticles(articles, '<p class="liste-vide">Les premiers articles de cette rubrique arrivent bientôt.</p>')}
         ${
           glossaire.length
@@ -115,6 +138,9 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
         <nav class="autres-rubriques" aria-label="${f.titre}"><h2>${f.titre}</h2>${tuilesRubriques(famille, publies)}</nav>`,
   });
 }
+
+/** Forme du nuage par famille : maison pour les pièces, assiette tressée pour les matières, jarre pour les occasions. */
+const FORME_FAMILLE: Record<Famille, number> = { piece: 1, matiere: 3, occasion: 2 };
 
 const INTRO_HUB: Record<Famille, { h1: string; chapo: string }> = {
   piece: { h1: 'La déco africaine pièce par pièce', chapo: 'Du salon à la salle de bain, des idées concrètes pour chaque pièce de la maison.' },
@@ -131,6 +157,7 @@ function pageHub(famille: Famille, publies: Article[]): string {
     h1: INTRO_HUB[famille].h1,
     chapo: INTRO_HUB[famille].chapo,
     classe: 'page--hub',
+    forme: FORME_FAMILLE[famille],
     contenu: tuilesRubriques(famille, publies),
   });
 }
@@ -160,6 +187,7 @@ function pageGlossaire(entrees: EntreeGlossaire[]): string {
     h1: 'Glossaire',
     chapo: 'Les matières, motifs et savoir-faire à connaître pour choisir et associer les objets de déco africaine.',
     classe: 'page--glossaire',
+    forme: 2,
     contenu: `<ul class="liste-glossaire liste-glossaire--grande">${entrees
       .map((g) => `<li><a href="${fichierGlossaire(g.id)}"><small>${echapper(g.categorie)} · ${echapper(g.origine)}</small><strong>${echapper(g.nom)}</strong> <span>${echapper(g.resume)}</span></a></li>`)
       .join('')}</ul>`,
@@ -177,6 +205,7 @@ function pageEntreeGlossaire(g: EntreeGlossaire, entrees: EntreeGlossaire[], pub
     h1: echapper(g.nom),
     chapo: echapper(g.resume),
     classe: 'page--entree-glossaire',
+    forme: 2,
     contenu: `<div class="conteneur--etroit prose">
           <p class="entree-glossaire__origine"><strong>${echapper(g.categorie)}</strong> · ${echapper(g.origine)}</p>
           ${g.texte.map((p) => `<p>${echapper(p)}</p>`).join('\n          ')}
@@ -203,29 +232,70 @@ export function pagesRubriques(publies = articlesPublies()): Map<string, string>
 
 /* ---------- Blocs de l'accueil ---------- */
 
-/** Ambiance à la une : la dernière ambiance publiée (ou, à défaut, le dernier article). */
-export function blocUne(publies = articlesPublies()): string {
+/** Ambiance à la une : la dernière ambiance publiée (ou le dernier article), sinon le prochain article programmé. */
+export function blocUne(publies = articlesPublies(), tous = tousLesArticles()): string {
   const a = publies.find((x) => x.type === 'ambiance') ?? publies[0];
-  if (!a) {
-    return `<div class="une une--vide"><p class="une__etiquette">Bientôt</p><p class="une__titre">Les premières ambiances arrivent très vite.</p><p>Salon terracotta et wax, paniers tressés, bogolan : revenez bientôt, ou suivez-nous sur Pinterest.</p></div>`;
-  }
-  return `<a class="une" href="${a.fichier}">
+  if (a) {
+    return `<a class="une" href="${a.fichier}" data-reveal data-libelle="${echapper(a.titre)}">
     <span class="une__image">${imageArticle(a.image, a.imageAlt, '100vw', 'eager')}</span>
     <span class="une__texte">
       <span class="une__etiquette">${TYPES[a.type].nom} à la une</span>
       <strong class="une__titre">${echapper(a.titre)}</strong>
       <span class="une__resume">${echapper(a.description)}</span>
-      <span class="une__lire">Découvrir l’ambiance ${icone('fleche', 'icone icone--petite')}</span>
+      <span class="une__lire">Découvrir ${icone('fleche', 'icone icone--petite')}</span>
     </span>
   </a>`;
+  }
+  const prochain = [...tous].filter((x) => !publies.includes(x)).sort((x, y) => x.publieLe.localeCompare(y.publieLe))[0];
+  if (!prochain) return '';
+  return `<div class="une une--bientot" data-reveal>
+    <span class="une__image">${imageArticle(prochain.image, prochain.imageAlt, '100vw', 'eager')}</span>
+    <span class="une__texte">
+      <span class="une__etiquette">Premier article le ${dateLongue(prochain.publieLe)}</span>
+      <strong class="une__titre">${echapper(prochain.titre)}</strong>
+      <span class="une__resume">${echapper(prochain.description)}</span>
+    </span>
+  </div>`;
 }
 
-export function blocDerniers(publies = articlesPublies(), n = 6): string {
-  const une = publies.find((x) => x.type === 'ambiance') ?? publies[0];
-  return grilleArticles(publies.filter((a) => a !== une).slice(0, n));
+/** Articles programmés (sans lien : ils ne sont pas encore en ligne), pour que l'accueil annonce la suite. */
+export function blocAVenir(publies = articlesPublies(), tous = tousLesArticles()): string {
+  const aVenir = tous.filter((x) => !publies.includes(x)).sort((x, y) => x.publieLe.localeCompare(y.publieLe));
+  if (aVenir.length === 0) return '';
+  return aVenir
+    .map(
+      (a, i) => `<div class="carte-article carte-article--bientot" data-reveal style="--i:${i}">
+  <span class="carte-article__image">${imageArticle(a.image, '', '(min-width: 1100px) 380px, 80vw')}<span class="carte-article__date">${dateLongue(a.publieLe)}</span></span>
+  <span class="carte-article__type">${icone(TYPES[a.type].icone, 'icone icone--petite')} ${TYPES[a.type].nom} · bientôt</span>
+  <strong class="carte-article__titre">${echapper(a.titre)}</strong>
+  <span class="carte-article__resume">${echapper(a.description)}</span>
+</div>`,
+    )
+    .join('');
+}
+
+export function blocDerniers(publies = articlesPublies(), n = 8): string {
+  return publies
+    .slice(0, n)
+    .map((a) => carteArticle(a))
+    .join('');
 }
 
 export function blocTops(publies = articlesPublies(), n = 3): string {
   const tops = publies.filter((a) => a.type === 'top').slice(0, n);
-  return tops.length ? `<div class="grille-articles">${tops.map((a) => carteArticle(a)).join('')}</div>` : '<p class="liste-vide">Les premiers Top 10 arrivent bientôt.</p>';
+  return tops.length
+    ? `<div class="section__entete"><h2 id="tops-titre" data-mots>Nos Top 10<span class="point">.</span></h2></div><div class="grille-articles">${tops.map((a) => carteArticle(a)).join('')}</div>`
+    : '';
+}
+
+/** Quelques entrées du glossaire, pour l'accueil. */
+export function blocGlossaire(n = 6): string {
+  const choix = ['bogolan', 'kente', 'adinkra', 'wax', 'indigo', 'panier-bolga', 'velours-kuba', 'perles-krobo'];
+  const entrees = chargerGlossaire();
+  return choix
+    .map((id) => entrees.find((e) => e.id === id))
+    .filter((e): e is EntreeGlossaire => !!e)
+    .slice(0, n)
+    .map((g, i) => `<li data-reveal style="--i:${i}"><a href="${fichierGlossaire(g.id)}" data-libelle="${echapper(g.nom)}"><small>${echapper(g.categorie)} · ${echapper(g.origine)}</small><strong>${echapper(g.nom)}</strong> <span>${echapper(g.resume)}</span></a></li>`)
+    .join('');
 }
