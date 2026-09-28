@@ -533,5 +533,134 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coupon-pagne-wax-180x120",
+    "asin": "B09TR5B2W6",
+    "nom": "Coupon de pagne en wax africain, 100 % coton, 180 × 120 cm",
+    "type_objet": "textile",
+    "matieres": [
+      "wax"
+    ],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "chemin-table-tribal-africain",
+    "asin": "B09WCZJW2K",
+    "nom": "Chemin de table à motifs tribaux africains",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "chemin-table-kente-lin",
+    "asin": "B0CZ6F2G4P",
+    "nom": "Chemin de table en lin imprimé kente, 33 × 183 cm",
+    "type_objet": "nappe",
+    "matieres": [
+      "kente"
+    ],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "chemin-table-totems-lin",
+    "asin": "B0BM61238K",
+    "nom": "Chemin de table en lin à totems africains, 33 × 183 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "noir",
+      "naturel"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "nappe-lin-geometrique",
+    "asin": "B082KGNPHR",
+    "nom": "Nappe en lin à motifs géométriques, 130 × 180 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "chemin-table-lin-orange-pompons",
+    "asin": "B0DFTWY87B",
+    "nom": "Chemin de table en lin orange à pompons",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "nappe-impermeable-tribale",
+    "asin": "B09CKHJTXJ",
+    "nom": "Nappe imperméable anti-taches à motif tribal",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger",
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coupons-tissus-africains-lot-6",
+    "asin": "B08P1VXJCW",
+    "nom": "Coupons de tissus africains en coton, lot de 6 (50 × 40 cm)",
+    "type_objet": "textile",
+    "matieres": [
+      "wax"
+    ],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
