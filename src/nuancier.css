@@ -1,0 +1,326 @@
+/* « Essayez le tissu » : le nuancier de l'accueil (build/essayage.ts, src/nuancier.ts). */
+
+.nuancier__carte {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr) 84px;
+  min-height: 600px;
+  background: var(--surface);
+  border-radius: var(--rayon-petit);
+  box-shadow: 0 40px 80px -30px rgb(42 29 21 / 35%), 0 2px 6px rgb(42 29 21 / 6%);
+}
+
+.nuancier__objets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px 0;
+  border-right: 1px solid var(--bordure);
+}
+
+.nuancier__vignette {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 96px;
+  margin: 0 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  transition: margin 0.45s cubic-bezier(0.3, 1.4, 0.5, 1), background 0.3s, box-shadow 0.3s;
+}
+
+.nuancier__vignette[aria-pressed='true'] {
+  margin: 0 -14px 0 10px;
+  background: #fff;
+  box-shadow: 0 14px 30px -10px rgb(42 29 21 / 30%);
+}
+
+.nuancier__vignette img {
+  width: 84px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.nuancier__vignette span {
+  position: absolute;
+  left: 10px;
+  bottom: 6px;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: var(--texte-doux);
+}
+
+.nuancier__scene {
+  position: relative;
+  overflow: hidden;
+  padding: 56px clamp(24px, 4vw, 64px);
+}
+
+.nuancier__nom {
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.nuancier__sous {
+  position: relative;
+  z-index: 3;
+  margin: 6px 0 0;
+  font-family: var(--police-titre);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--texte-doux);
+}
+
+.nuancier__disques {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  width: min(52%, 440px);
+  aspect-ratio: 1;
+  transform: translateY(-46%);
+}
+
+.nuancier__disque,
+.nuancier__calque {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.nuancier__disque {
+  border-radius: 50%;
+  background: var(--t);
+  clip-path: circle(0% at 100% var(--oy));
+  transition: clip-path 1s cubic-bezier(0.65, 0, 0.2, 1);
+}
+
+.nuancier__calque {
+  clip-path: circle(0% at 110% var(--oy));
+  transition: clip-path 1.1s cubic-bezier(0.65, 0, 0.2, 1) 0.08s;
+}
+
+.nuancier .est-precedent {
+  z-index: 1;
+}
+
+.nuancier .est-actif {
+  z-index: 2;
+}
+
+.nuancier__disque.est-actif,
+.nuancier__disque.est-precedent {
+  clip-path: circle(150% at 100% var(--oy));
+}
+
+.nuancier__calque.est-actif,
+.nuancier__calque.est-precedent {
+  clip-path: circle(150% at 110% var(--oy));
+}
+
+.nuancier__calque img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 100%;
+}
+
+.nuancier__zone {
+  position: absolute;
+  z-index: 2;
+  left: 30%;
+  right: 5%;
+  top: 30%;
+  bottom: 20%;
+}
+
+.nuancier__scene--canape .nuancier__zone {
+  cursor: pointer;
+}
+
+.nuancier__pose {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.nuancier__pose::before {
+  content: '';
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 3%;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(42 29 21 / 30%), transparent);
+  filter: blur(2px);
+}
+
+.nuancier__coussin {
+  position: absolute;
+  z-index: 5;
+  width: 22%;
+  height: 26%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 8px rgb(42 29 21 / 25%));
+  animation: nuancier-chute 1s cubic-bezier(0.35, 0, 0.3, 1) both;
+}
+
+@keyframes nuancier-chute {
+  0% { transform: translateY(-440px) rotate(-40deg); opacity: 0; }
+  10% { opacity: 1; }
+  58% { transform: translateY(0) rotate(var(--r)) scale(1.12, 0.84); }
+  74% { transform: translateY(-26px) rotate(var(--r)) scale(0.96, 1.04); }
+  88% { transform: translateY(0) rotate(var(--r)) scale(1.03, 0.97); }
+  100% { transform: translateY(0) rotate(var(--r)); }
+}
+
+.nuancier__texte {
+  position: absolute;
+  z-index: 3;
+  left: clamp(24px, 4vw, 64px);
+  bottom: 52px;
+  max-width: 280px;
+}
+
+.nuancier__titre {
+  margin: 0 0 6px;
+  font-family: var(--police-titre);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.nuancier__phrase {
+  margin: 0 0 18px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--texte-doux);
+}
+
+.nuancier__pastilles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-left: 1px solid var(--bordure);
+}
+
+.nuancier__pastille {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--c);
+  cursor: pointer;
+  transition: width 0.4s cubic-bezier(0.3, 1.6, 0.5, 1), height 0.4s cubic-bezier(0.3, 1.6, 0.5, 1), box-shadow 0.3s, transform 0.2s;
+}
+
+.nuancier__pastille:hover {
+  transform: scale(1.12);
+}
+
+.nuancier__pastille[aria-pressed='true'] {
+  width: 26px;
+  height: 26px;
+  box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--s);
+}
+
+.nuancier__pastille[aria-pressed='true']::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--s);
+  animation: nuancier-onde 1.6s ease-out infinite;
+}
+
+@keyframes nuancier-onde {
+  from { transform: scale(1); opacity: 0.8; }
+  to { transform: scale(2.2); opacity: 0; }
+}
+
+.nuancier__aide {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--texte-doux);
+}
+
+html:not(.js) .nuancier__aide {
+  display: none;
+}
+
+@media (max-width: 759px) {
+  .nuancier__carte {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .nuancier__objets {
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 10px;
+    border-right: 0;
+    border-bottom: 1px solid var(--bordure);
+  }
+  .nuancier__vignette,
+  .nuancier__vignette[aria-pressed='true'] {
+    flex: none;
+    width: 76px;
+    height: 64px;
+    margin: 0 4px;
+  }
+  .nuancier__vignette img {
+    width: 80%;
+    height: 60%;
+  }
+  .nuancier__scene {
+    min-height: 560px;
+    padding: 28px 20px;
+  }
+  .nuancier__disques {
+    right: -10%;
+    width: 80%;
+  }
+  .nuancier__zone {
+    left: 5%;
+    top: 24%;
+    bottom: 36%;
+  }
+  .nuancier__texte {
+    left: 20px;
+    right: 20px;
+    bottom: 24px;
+    max-width: none;
+  }
+  .nuancier__pastilles {
+    flex-direction: row;
+    padding: 16px;
+    border-left: 0;
+    border-top: 1px solid var(--bordure);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nuancier__disque,
+  .nuancier__calque,
+  .nuancier__vignette,
+  .nuancier__pastille,
+  .nuancier__pose {
+    transition: none;
+  }
+  .nuancier__pastille[aria-pressed='true']::after {
+    animation: none;
+  }
+}
