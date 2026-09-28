@@ -1538,5 +1538,173 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "suspension-rotin-fait-main",
+    "asin": "B0BB28LM7L",
+    "nom": "Suspension vintage en rotin naturel, fabriquée à la main",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "suspension-paille-parasol",
+    "asin": "B09QH28R5R",
+    "nom": "Suspension en paille tressée en forme de parasol, 60 cm",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "suspension-bambou-tess-58",
+    "asin": "B0CQX6KQ3W",
+    "nom": "Suspension à abat-jour en bambou, 58 cm",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "suspension-jute-alara-70",
+    "asin": "B0D91BK77M",
+    "nom": "Grande suspension en jute tressé, 69,5 cm, hauteur réglable",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "suspension-rotin-cuzco",
+    "asin": "B084GR9QBF",
+    "nom": "Suspension bohème en rotin tressé naturel",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "lampes-chevet-rotin-lot-2",
+    "asin": "B0FK4YWHTQ",
+    "nom": "Lampes de chevet bohèmes en rotin, lot de 2",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "chambre",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "lampadaire-fibres-naturelles-bijie",
+    "asin": "B08W8DF3LS",
+    "nom": "Lampadaire en fibres naturelles",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "appliques-bois-rotin-lot-2",
+    "asin": "B0CY4H3GX9",
+    "nom": "Appliques murales en bois et rotin, lot de 2",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "chambre",
+      "salon",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "lampe-lanterne-bambou",
+    "asin": "B09GR854KH",
+    "nom": "Lampe lanterne en bambou tressé",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "chambre",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
