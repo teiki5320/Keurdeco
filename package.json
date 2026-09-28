@@ -19,7 +19,8 @@
     "hotspots": "node scripts/hotspots.mjs",
     "nouvel-article": "node scripts/nouvel-article.mjs",
     "pinterest:auth": "node scripts/pinterest-auth.mjs",
-    "pinterest:publier": "node scripts/pinterest-publier.mjs"
+    "pinterest:publier": "node scripts/pinterest-publier.mjs",
+    "verifier-produits": "node scripts/verifier-produits.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.20.4",

@@ -45,7 +45,7 @@ Ensuite, sans rien faire :
 
 - **le lundi suivant la date de publication** (5 h UTC), le site est reconstruit : l'article est publié, ses épingles (une par titre de la liste `epingles`) sont générées et le manifeste `epingles.json` est mis en ligne ;
 - **chaque jour à 7 h 17 UTC**, le workflow Pinterest publie jusqu'à 5 épingles (jamais deux du même article le même jour), puis enregistre l'état sur `main` ;
-- **chaque mois**, comme sur OptiLED, on revérifie à la main que les produits sont toujours vendus (le rapport de build liste ceux non vérifiés depuis plus de 60 jours) ; un produit qui n'est plus vendu passe en `indisponible`.
+- **le 1er de chaque mois à 9 h**, une tâche planifiée de l'application Claude (sur l'ordinateur, car Amazon bloque souvent les serveurs de GitHub) lance `npm run verifier-produits -- --ecrire` : chaque fiche amazon.fr/dp/<ASIN> est ouverte ; les produits achetables reçoivent la date du jour dans `verifie_le`, les autres passent en `indisponible` (plus affichés, ASIN conservé). Après les tests, la mise à jour est publiée sur `main` et un résumé liste les produits à remplacer. Si l'application est fermée ce jour-là, la tâche s'exécute à la prochaine ouverture.
 
 Pour publier un article tout de suite sans attendre le lundi : Actions › « Publier sur GitHub Pages » › *Run workflow* (après la date prévue).
 
