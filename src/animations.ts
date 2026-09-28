@@ -5,13 +5,14 @@
  * - visite de la maison : les pièces défilent de côté pendant qu'on descend ;
  * - rideau de kente entre les pages (bandes de tissu qui tombent puis remontent) ;
  * - cartes d'articles qui s'agrandissent jusqu'à l'image de l'article (View Transitions entre pages) ;
- * - « Essayez le tissu » : le motif choisi se propage en cercle depuis la pastille ;
- * - curseur rond qui suit la souris et grossit sur les liens (ordinateur seulement) ;
+ * - nuancier de l'accueil (src/nuancier.ts) : objets, matières, coussins qui tombent sur le canapé ;
  * - rangées de cartes défilantes (.rail) avec boutons et glisser à la souris ;
  * - cartes qui s'inclinent sous le curseur ([data-inclinaison]) ;
  * - en-tête compact après défilement.
  * « Réduire les animations » (préférence du système) désactive tout ce qui bouge.
  */
+
+import { nuancier } from './nuancier.ts';
 
 const reduit = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -194,107 +195,6 @@ function visite(): void {
   maj();
 }
 
-/** « Essayez le tissu » : le nouveau tissu se propage en cercle depuis la pastille cliquée. */
-function essayage(): void {
-  const section = document.querySelector<HTMLElement>('[data-essayage]');
-  if (!section) return;
-  const tissus = JSON.parse(section.querySelector('[data-essayage-tissus]')?.textContent ?? '[]') as { id: string; nom: string; phrase: string; vars: string; lien: string }[];
-  const dessin = section.querySelector<SVGSVGElement>('.essayage__dessin')!;
-  const base = section.querySelector<SVGGElement>('.essayage__base')!;
-  const nouveau = section.querySelector<SVGGElement>('.essayage__nouveau')!;
-  const cercle = section.querySelector<SVGCircleElement>('[data-essayage-cercle]')!;
-  const phrase = section.querySelector<HTMLElement>('[data-essayage-phrase]');
-  const lien = section.querySelector<HTMLAnchorElement>('[data-essayage-lien]');
-  const nom = section.querySelector<HTMLElement>('[data-essayage-nom]');
-  const pastilles = [...section.querySelectorAll<HTMLButtonElement>('[data-tissu]')];
-  let anim = 0;
-
-  const appliquer = (g: SVGGElement, vars: string) => g.setAttribute('style', vars);
-  const finir = (t: (typeof tissus)[number]) => {
-    appliquer(base, t.vars);
-    cercle.setAttribute('r', '0');
-  };
-
-  for (const bouton of pastilles) {
-    bouton.addEventListener('click', () => {
-      const t = tissus[Number(bouton.dataset.tissu)];
-      if (!t || bouton.getAttribute('aria-pressed') === 'true') return;
-      pastilles.forEach((p) => p.setAttribute('aria-pressed', String(p === bouton)));
-      if (phrase) phrase.textContent = t.phrase;
-      if (lien) {
-        lien.href = t.lien;
-        lien.dataset.libelle = t.nom;
-      }
-      if (nom) nom.textContent = t.nom;
-      cancelAnimationFrame(anim);
-      // Si une propagation était en cours, on la termine d'abord.
-      if (Number(cercle.getAttribute('r')) > 0) appliquer(base, nouveau.getAttribute('style') ?? '');
-      appliquer(nouveau, t.vars);
-      if (reduit()) return finir(t);
-      // Centre du cercle : la pastille, ramenée dans les coordonnées du dessin.
-      const r = bouton.getBoundingClientRect();
-      const pt = dessin.createSVGPoint();
-      pt.x = r.left + r.width / 2;
-      pt.y = r.top + r.height / 2;
-      const m = dessin.getScreenCTM();
-      const p = m ? pt.matrixTransform(m.inverse()) : { x: 500, y: 350 };
-      cercle.setAttribute('cx', p.x.toFixed(1));
-      cercle.setAttribute('cy', p.y.toFixed(1));
-      const rayonMax = Math.max(...[[0, 0], [1000, 0], [0, 700], [1000, 700]].map(([x, y]) => Math.hypot(x - p.x, y - p.y)));
-      const debut = performance.now();
-      const duree = 900;
-      const pas = (maintenant: number) => {
-        const k = Math.min(1, (maintenant - debut) / duree);
-        const doux = 1 - Math.pow(1 - k, 3);
-        cercle.setAttribute('r', (doux * rayonMax).toFixed(1));
-        if (k < 1) anim = requestAnimationFrame(pas);
-        else finir(t);
-      };
-      anim = requestAnimationFrame(pas);
-    });
-  }
-}
-
-/** Curseur rond qui suit la souris, grossit sur les liens et affiche « Voir » sur les images d'articles. */
-function curseur(): void {
-  if (reduit() || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  const rond = document.createElement('div');
-  rond.className = 'curseur';
-  rond.setAttribute('aria-hidden', 'true');
-  rond.innerHTML = '<span class="curseur__texte"></span>';
-  const point = document.createElement('div');
-  point.className = 'curseur-point';
-  point.setAttribute('aria-hidden', 'true');
-  document.body.append(rond, point);
-  const texte = rond.querySelector<HTMLElement>('.curseur__texte')!;
-  let x = -100, y = -100, cx = -100, cy = -100;
-  window.addEventListener('pointermove', (e) => {
-    if (e.pointerType !== 'mouse') return;
-    x = e.clientX;
-    y = e.clientY;
-    point.style.transform = `translate(${x}px, ${y}px)`;
-    document.documentElement.classList.add('curseur-actif');
-  });
-  document.addEventListener('pointerleave', () => document.documentElement.classList.remove('curseur-actif'));
-  document.addEventListener('pointerover', (e) => {
-    const cible = e.target as HTMLElement;
-    const image = cible.closest?.('.carte-article, .une, .visite__piece');
-    const actif = cible.closest?.('a, button, summary, [role="button"]');
-    rond.classList.toggle('curseur--image', !!image);
-    rond.classList.toggle('curseur--lien', !image && !!actif);
-    texte.textContent = image ? (image.classList.contains('visite__piece') ? 'Entrer' : 'Voir') : '';
-  });
-  document.addEventListener('pointerdown', () => rond.classList.add('curseur--appui'));
-  document.addEventListener('pointerup', () => rond.classList.remove('curseur--appui'));
-  const boucle = () => {
-    cx += (x - cx) * 0.18;
-    cy += (y - cy) * 0.18;
-    rond.style.transform = `translate(${cx.toFixed(1)}px, ${cy.toFixed(1)}px)`;
-    requestAnimationFrame(boucle);
-  };
-  boucle();
-}
-
 /** Rangées de cartes défilantes : boutons précédent/suivant et glisser à la souris. */
 function rails(): void {
   document.querySelectorAll<HTMLElement>('[data-rail]').forEach((bloc) => {
@@ -379,8 +279,7 @@ export function demarrerAnimations(): void {
   transitions();
   porte();
   visite();
-  essayage();
-  curseur();
+  nuancier();
   rails();
   inclinaisons();
   entete();
