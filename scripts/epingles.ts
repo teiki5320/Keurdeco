@@ -8,7 +8,7 @@
 //
 // Sortie : public/epingles/<slug>-<n>.jpg et public/epingles.json (manifeste lu par
 // scripts/pinterest-publier.mjs une fois le site publié).
-import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import sharp, { type OverlayOptions } from 'sharp';
 import { FAMILLES, trouverRubrique, type Famille } from '../src/taxonomie.ts';
@@ -22,6 +22,8 @@ import { motif } from '../build/motifs.ts';
 const RACINE = resolve(import.meta.dirname, '..');
 const SORTIE = resolve(RACINE, 'public/epingles');
 const MANIFESTE = resolve(RACINE, 'public/epingles.json');
+const CSV = resolve(RACINE, 'public/epingles-pinterest.csv');
+const TABLEAUX = resolve(RACINE, 'config/tableaux-pinterest.json');
 const POLICE_TITRE = resolve(RACINE, 'assets/polices/Fraunces_600SemiBold.ttf');
 const POLICE_TEXTE = resolve(RACINE, 'assets/polices/SourceSans3_600SemiBold.ttf');
 
@@ -214,6 +216,25 @@ export async function composerEpingleConseil(c: Conseil, titre: string): Promise
     .toBuffer();
 }
 
+/**
+ * Fichier d'import en lot pour Pinterest (« Créer des épingles en masse » avec un fichier .csv) :
+ * solution manuelle en attendant l'accès complet à l'API. Colonnes du modèle Pinterest :
+ * Title, Media URL, Pinterest board, Thumbnail, Description, Link, Publish date, Keywords.
+ * Le tableau est désigné par son nom (config/tableaux-pinterest.json) ; les épingles sont
+ * programmées une par jour à partir d'aujourd'hui, dans l'ordre du manifeste.
+ */
+export function csvPinterest(entrees: EntreeManifeste[], tableaux = JSON.parse(readFileSync(TABLEAUX, 'utf8')) as { tableaux: Record<string, { nom: string }> }): string {
+  const cellule = (v: string) => `"${v.replace(/"/g, '""')}"`;
+  const lignes = [['Title', 'Media URL', 'Pinterest board', 'Thumbnail', 'Description', 'Link', 'Publish date', 'Keywords'].join(',')];
+  entrees.forEach((e, i) => {
+    const date = new Date(Date.now() + (i + 1) * 86400000);
+    date.setUTCHours(17, 0, 0, 0); // 19 h à Paris en été : un bon créneau sur Pinterest
+    const tableau = tableaux.tableaux[e.tableau]?.nom ?? tableaux.tableaux.general?.nom ?? 'Keur Déco';
+    lignes.push([e.titre, e.image, tableau, '', e.description, e.lien, date.toISOString().slice(0, 19), 'déco africaine, décoration africaine'].map(cellule).join(','));
+  });
+  return lignes.join('\n') + '\n';
+}
+
 /** Génère toutes les épingles des articles publiés et le manifeste. */
 export async function genererEpingles(articles = articlesPublies(), url = SITE_URL, conseils = conseilsPublies()): Promise<EntreeManifeste[]> {
   rmSync(SORTIE, { recursive: true, force: true });
@@ -266,6 +287,7 @@ export async function genererEpingles(articles = articlesPublies(), url = SITE_U
       });
     }
   }
+  writeFileSync(CSV, csvPinterest(manifeste));
   writeFileSync(MANIFESTE, JSON.stringify({ genere_le: new Date().toISOString(), site: url, epingles: manifeste }, null, 2) + '\n');
   return manifeste;
 }

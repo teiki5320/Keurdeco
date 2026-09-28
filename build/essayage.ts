@@ -36,8 +36,19 @@ export const DEPART = 4;
 
 /** Dessin d'un objet habillé d'une matière, en image SVG autonome. */
 export function dessin(objet: string, remplissage: string): string {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240"><defs>${motifs}</defs><g fill="${remplissage}">${dessins[objet]}</g></svg>`;
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  // Seul le motif réellement utilisé est embarqué (url(#kd-…)), pas toute la bibliothèque.
+  const id = remplissage.match(/url\(#([\w-]+)\)/)?.[1];
+  const motif = id ? (motifs.match(new RegExp(`<pattern id="${id}"[\\s\\S]*?</pattern>`))?.[0] ?? '') : '';
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">${motif ? `<defs>${motif}</defs>` : ''}<g fill="${remplissage}">${dessins[objet]}</g></svg>`;
+  return `data:image/svg+xml;charset=utf-8,${encoderSvg(svg)}`;
+}
+
+/** Encodage compact d'un SVG pour une adresse data: (guillemets simples, seuls les caractères sensibles échappés). */
+export function encoderSvg(svg: string): string {
+  return svg
+    .replace(/"/g, "'")
+    .replace(/[\r\n]+/g, ' ')
+    .replace(/[%#<>{}]/g, (c) => encodeURIComponent(c));
 }
 
 const echapper = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
@@ -70,7 +81,7 @@ export function essayage(): string {
     <div class="nuancier__carte" data-reveal>
       <div class="nuancier__objets" role="group" aria-label="Choisir un objet">${vignettes}</div>
       <div class="nuancier__scene nuancier__scene--canape" data-nuancier-scene>
-        <p class="nuancier__nom" data-nuancier-nom aria-live="polite">${o.nom.toUpperCase()}</p>
+        <p class="nuancier__nom" data-nuancier-nom aria-hidden="true">${o.nom.toUpperCase()}</p><p class="visuellement-cache" data-nuancier-annonce aria-live="polite">${o.nom}</p>
         <p class="nuancier__sous" data-nuancier-sous>${o.sous}</p>
         <div class="nuancier__disques" aria-hidden="true">${disques}</div>
         <div class="nuancier__zone" data-nuancier-zone>

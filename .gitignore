@@ -7,3 +7,4 @@ dist-e2e/
 # Générés au build par scripts/epingles.ts
 public/epingles/
 public/epingles.json
+public/epingles-pinterest.csv

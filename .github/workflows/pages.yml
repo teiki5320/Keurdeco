@@ -22,6 +22,7 @@ env:
   SITE_URL: ${{ vars.SITE_URL || 'https://teiki5320.github.io/Keurdeco/' }}
   PLAUSIBLE_DOMAIN: ${{ vars.PLAUSIBLE_DOMAIN }}
   PINTEREST_VERIFY: ${{ vars.PINTEREST_VERIFY }}
+  GOOGLE_VERIFY: ${{ vars.GOOGLE_VERIFY }}
 
 jobs:
   build:

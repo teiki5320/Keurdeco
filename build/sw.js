@@ -2,8 +2,9 @@
  * - Pages HTML : réseau d'abord (toujours la dernière version), cache en secours hors ligne.
  * - Fichiers du build (assets/, noms à empreinte), images, icônes : cache d'abord.
  * - Les requêtes vers d'autres domaines (images Amazon, Plausible) ne sont jamais mises en cache.
- * Changer VERSION invalide les anciens caches (à faire quand une image ou le manifeste change). */
-const VERSION = 'keurdeco-v1';
+ * VERSION change à chaque publication du site (remplacée au build par build/site.ts) : les anciens
+ * caches, images comprises, sont alors supprimés. Ce fichier est un modèle, publié sous dist/sw.js. */
+const VERSION = 'keurdeco-__VERSION__';
 const PRECHARGE = ['./', './index.html', './articles.html', './pieces.html', './matieres.html', './glossaire.html', './manifest.webmanifest'];
 
 self.addEventListener('install', (e) => {
@@ -11,7 +12,12 @@ self.addEventListener('install', (e) => {
 });
 
 /** Retire du cache les fichiers du build (assets/) qu'aucune page ni feuille de style en cache n'utilise plus. */
+/** Le nettoyage relit tout le HTML en cache : on ne le fait qu'une fois toutes les 10 minutes au plus. */
+let dernierNettoyage = 0;
+
 async function nettoyerAssets() {
+  if (Date.now() - dernierNettoyage < 10 * 60 * 1000) return;
+  dernierNettoyage = Date.now();
   const cache = await caches.open(VERSION);
   const requetes = await cache.keys();
   const estAsset = (r) => new URL(r.url).pathname.includes('/assets/');
@@ -33,6 +39,14 @@ self.addEventListener('activate', (e) => {
   );
 });
 
+/** Page affichée hors ligne quand la page demandée n'a jamais été consultée. */
+function pageHorsLigne() {
+  const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hors ligne · Keur Déco</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F7F0E6;color:#2A1D15;font-family:Georgia,serif;text-align:center;padding:24px}a{color:#A3472A}</style></head>
+<body><main><h1>Vous êtes hors ligne</h1><p>Cette page n’a pas encore été enregistrée sur votre appareil.</p><p><a href="./">Revenir à l’accueil</a> (les pages déjà lues restent consultables).</p></main></body></html>`;
+  return new Response(html, { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+}
+
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
@@ -49,7 +63,7 @@ self.addEventListener('fetch', (e) => {
           }
           return rep;
         })
-        .catch(() => caches.match(req, { ignoreSearch: true }).then((r) => r || caches.match('./index.html'))),
+        .catch(() => caches.match(req, { ignoreSearch: true }).then((r) => r || pageHorsLigne())),
     );
     return;
   }

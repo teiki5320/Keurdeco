@@ -10,7 +10,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { FAMILLES, fichierRubrique, type Famille, type Rubrique } from '../src/taxonomie.ts';
 import { articlesPublies, carteArticle, grilleArticles, tousLesArticles, TYPES, type Article, type TypeArticle } from './articles.ts';
-import { dateLongue, NOM_SITE } from './config.ts';
+import { dateLongue, NOM_SITE, SITE_URL } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { motif } from './motifs.ts';
 import { imageArticle } from './images.ts';
@@ -46,6 +46,10 @@ interface PageSimple {
   classe?: string;
   /** Motif de l'arche en haut de page (voir build/motifs.ts). */
   motif?: string;
+  /** Page encore vide : cachée à Google et absente du sitemap jusqu'à son premier contenu. */
+  noindex?: boolean;
+  /** Données structurées JSON-LD à ajouter dans l'en-tête. */
+  ld?: object;
 }
 
 /** Gabarit commun des pages de liste (avec marqueurs). */
@@ -58,9 +62,9 @@ export function pageSimple(p: PageSimple): string {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="${echapper(p.description)}" />
+    <meta name="description" content="${echapper(p.description)}" />${p.noindex ? '\n    <meta name="robots" content="noindex" />' : ''}
     <title>${echapper(p.titre)} · ${NOM_SITE}</title>
-    <!--#head-->
+    <!--#head-->${p.ld ? `\n    <script type="application/ld+json">${JSON.stringify(p.ld).replace(/</g, '\\u003c')}</script>` : ''}
   </head>
   <body>
     <!--#header-->
@@ -126,6 +130,7 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     h1: echapper(r.nom),
     chapo: echapper(r.accroche),
     classe: `page--rubrique page--${famille}`,
+    noindex: articles.length === 0,
     motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
     contenu: `${grilleArticles(articles, '<p class="liste-vide">Les premiers articles de cette rubrique arrivent bientôt.</p>')}
         ${
@@ -175,6 +180,7 @@ function pageTousArticles(publies: Article[]): string {
     h1: 'Tous les articles',
     chapo: 'Ambiances à reproduire, classements de produits et guides de fond sur les matières africaines.',
     classe: 'page--articles',
+    noindex: publies.length === 0,
     contenu: sections || '<p class="liste-vide">Les premiers articles arrivent bientôt.</p>',
   });
 }
@@ -206,6 +212,15 @@ function pageEntreeGlossaire(g: EntreeGlossaire, entrees: EntreeGlossaire[], pub
     chapo: echapper(g.resume),
     classe: 'page--entree-glossaire',
     motif: 'bogolan',
+    // Fiche de glossaire : un « terme défini » dans l'ensemble « Glossaire Keur Déco ».
+    ld: {
+      '@context': 'https://schema.org',
+      '@type': 'DefinedTerm',
+      name: g.nom,
+      description: g.resume,
+      url: `${SITE_URL}${fichierGlossaire(g.id)}`,
+      inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'Glossaire Keur Déco', url: `${SITE_URL}glossaire.html` },
+    },
     contenu: `<div class="conteneur--etroit prose">
           <p class="entree-glossaire__origine"><strong>${echapper(g.categorie)}</strong> · ${echapper(g.origine)}</p>
           ${g.texte.map((p) => `<p>${echapper(p)}</p>`).join('\n          ')}

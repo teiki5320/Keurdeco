@@ -25,14 +25,14 @@ const echapper = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&l
 function page(titre, contenu) {
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${echapper(titre)} · Keur Déco</title>
 <style>
-body{font-family:system-ui,sans-serif;background:#FBF8F2;color:#1C1B22;max-width:860px;margin:0 auto;padding:32px 20px;line-height:1.55}
-h1{font-family:Georgia,serif;color:#1B2442}h2{color:#1B2442;margin-top:2em}
-.bouton{display:inline-block;background:#A6432A;color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;border:0;font-size:1rem;cursor:pointer}
+body{font-family:system-ui,sans-serif;background:#F7F0E6;color:#1C1B22;max-width:860px;margin:0 auto;padding:32px 20px;line-height:1.55}
+h1{font-family:Georgia,serif;color:#1E2A47}h2{color:#1E2A47;margin-top:2em}
+.bouton{display:inline-block;background:#B4532F;color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;border:0;font-size:1rem;cursor:pointer}
 .bouton--pinterest{background:#E60023}
 code,textarea{font-family:ui-monospace,monospace;font-size:.9rem}
 textarea{width:100%;min-height:90px;padding:10px;border-radius:8px;border:1px solid #ccc}
 table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #e2d7c5;padding:8px;text-align:left}
-.note{background:#ECE1CF;padding:14px 18px;border-radius:12px}.ok{color:#3F5D46;font-weight:700}.erreur{color:#A6432A;font-weight:700}
+.note{background:#EFE3D0;padding:14px 18px;border-radius:12px}.ok{color:#52693A;font-weight:700}.erreur{color:#B4532F;font-weight:700}
 select,input{font-size:1rem;padding:8px;border-radius:8px;border:1px solid #ccc;max-width:100%}
 </style></head><body><h1>${echapper(titre)}</h1>${contenu}</body></html>`;
 }

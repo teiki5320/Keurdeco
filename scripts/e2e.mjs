@@ -117,6 +117,38 @@ try {
   verifier((await page.locator('.reponse-courte').count()) === 1 && (await page.locator('.site-nav a[href="conseils.html"][aria-current="page"]').count()) === 1, 'conseil : réponse courte et onglet Conseils actif');
   verifier((await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"FAQPage"')), 'conseil : données structurées FAQ');
 
+  // Animations : pas de boucle permanente, liens de contenu immédiats, mémoire bloquée sans plantage
+  await page.goto(BASE, { waitUntil: 'networkidle' });
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await page.waitForTimeout(1500);
+  const images = await page.evaluate(
+    () =>
+      new Promise((ok) => {
+        let n = 0;
+        const origine = window.requestAnimationFrame.bind(window);
+        window.requestAnimationFrame = (f) => (n++, origine(f));
+        setTimeout(() => ok(n), 1500);
+      }),
+  );
+  verifier(images < 5, `accueil immobile : pas de boucle d'animation permanente (${images} images demandées en 1,5 s)`);
+  verifier((await page.evaluate(() => [...document.querySelectorAll('[id]')].map((e) => e.id).filter((id, i, t) => t.indexOf(id) !== i).length)) === 0, 'accueil : aucun identifiant en double');
+  await page.goto(`${BASE}conseils.html`, { waitUntil: 'networkidle' });
+  const debutClic = Date.now();
+  await Promise.all([page.waitForURL(/conseil-/), page.locator('.carte-conseil').first().click()]);
+  verifier(Date.now() - debutClic < 1500, `lien de contenu : ouverture sans rideau (${Date.now() - debutClic} ms)`);
+  const contexteBloque = await navigateur.newContext({ viewport: { width: 390, height: 844 } });
+  await contexteBloque.addInitScript(() => {
+    for (const nom of ['sessionStorage', 'localStorage']) Object.defineProperty(window, nom, { get: () => { throw new Error('bloqué'); } });
+  });
+  const pageBloquee = await contexteBloque.newPage();
+  const erreursBloquees = [];
+  pageBloquee.on('pageerror', (e) => erreursBloquees.push(e.message));
+  await pageBloquee.goto(BASE, { waitUntil: 'networkidle' });
+  verifier(erreursBloquees.length === 0 && (await pageBloquee.locator('.porte--active').count()) === 1, `cookies et mémoire bloqués : aucune erreur, animations actives${erreursBloquees.length ? ' : ' + erreursBloquees.join(' | ') : ''}`);
+  await contexteBloque.close();
+  const sw = await (await fetch(`${BASE}sw.js`)).text();
+  verifier(/keurdeco-[a-z0-9]+'/.test(sw) && !sw.includes('__VERSION__'), 'service worker : version renouvelée à chaque publication');
+
   // Menu mobile
   await page.click('.menu-mobile summary');
   verifier(await page.locator('.menu-mobile nav').isVisible(), 'menu mobile');

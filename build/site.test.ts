@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { MENTION_AMAZON } from '../src/amazon.ts';
-import { footer, header, insecables, mesureAudience, pagesGenerees, referencement, sitemap, transformerPage, verificationPinterest } from './site.ts';
+import { footer, header, insecables, mesureAudience, pagesGenerees, referencement, sitemap, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
 
 describe('parties communes', () => {
   it('navigation : la rubrique courante est signalée', () => {
@@ -43,6 +43,8 @@ describe('référencement', () => {
   it('revendication Pinterest et Plausible seulement si configurés', () => {
     expect(verificationPinterest(undefined)).toBe('');
     expect(verificationPinterest('abc123')).toBe('<meta name="p:domain_verify" content="abc123" />');
+    expect(verificationGoogle(undefined)).toBe('');
+    expect(verificationGoogle('xyz')).toBe('<meta name="google-site-verification" content="xyz" />');
     expect(mesureAudience(undefined)).toBe('');
     expect(mesureAudience('www.keurdeco.fr')).toContain('data-domain="www.keurdeco.fr"');
   });

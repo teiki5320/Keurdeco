@@ -60,14 +60,14 @@ export function iconeObjet(typeObjet: string): string {
  * `surFonce` éclaircit le corps de la maison pour les fonds indigo (en-tête, pied de page).
  */
 export function marque(classe = 'logo-marque', surFonce = false): string {
-  return `<svg class="${classe}" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true" focusable="false"><path d="M24 4 5 20v24h38V20L24 4Z" fill="${surFonce ? '#2C3A66' : '#1B2442'}"${surFonce ? ' stroke="#ECE1CF" stroke-width="1.5"' : ''}/><path d="M24 4 5 20h38L24 4Z" fill="#A6432A"/><path d="m14 20 3-4 3 4m4 0 3-4 3 4" fill="none" stroke="#E2A62A" stroke-width="2"/><path d="M19 44V31a5 5 0 0 1 10 0v13" fill="#E2A62A"/><circle cx="12" cy="27" r="1.6" fill="#E2A62A"/><circle cx="36" cy="27" r="1.6" fill="#E2A62A"/><circle cx="12" cy="35" r="1.6" fill="#ECE1CF"/><circle cx="36" cy="35" r="1.6" fill="#ECE1CF"/></svg>`;
+  return `<svg class="${classe}" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true" focusable="false"><path d="M24 4 5 20v24h38V20L24 4Z" fill="${surFonce ? '#33436B' : '#1E2A47'}"${surFonce ? ' stroke="#EFE3D0" stroke-width="1.5"' : ''}/><path d="M24 4 5 20h38L24 4Z" fill="#B4532F"/><path d="m14 20 3-4 3 4m4 0 3-4 3 4" fill="none" stroke="#D49A2A" stroke-width="2"/><path d="M19 44V31a5 5 0 0 1 10 0v13" fill="#D49A2A"/><circle cx="12" cy="27" r="1.6" fill="#D49A2A"/><circle cx="36" cy="27" r="1.6" fill="#D49A2A"/><circle cx="12" cy="35" r="1.6" fill="#EFE3D0"/><circle cx="36" cy="35" r="1.6" fill="#EFE3D0"/></svg>`;
 }
 
 /** Logo texte complet (marque + « Keur Déco »), en SVG autonome : public/logo.svg. */
 export function logoSvgAutonome(): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" width="260" height="56" role="img" aria-label="Keur Déco">
   <g transform="translate(0 4)">${marque().replace(/<svg[^>]*>|<\/svg>/g, '')}</g>
-  <text x="58" y="38" font-family="'Fraunces Variable', Fraunces, Georgia, serif" font-size="30" font-weight="600" fill="#1B2442">Keur <tspan fill="#A6432A" font-style="italic">Déco</tspan></text>
+  <text x="58" y="38" font-family="'Fraunces Variable', Fraunces, Georgia, serif" font-size="30" font-weight="600" fill="#1E2A47">Keur <tspan fill="#B4532F" font-style="italic">Déco</tspan></text>
 </svg>
 `;
 }

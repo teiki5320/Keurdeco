@@ -51,17 +51,17 @@ function page() {
   const donnees = JSON.stringify({ points: entete.hotspots ?? [], produits: tries.map((p) => ({ id: p.id, nom: p.nom, statut: p.statut, cite: cites.has(p.id) })) }).replace(/</g, '\\u003c');
   return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Points cliquables · ${slug}</title>
 <style>
-body{font-family:system-ui,sans-serif;margin:0;background:#FBF8F2;color:#1C1B22}
-header{background:#1B2442;color:#fff;padding:14px 20px}h1{font-size:1.2rem;margin:0}
+body{font-family:system-ui,sans-serif;margin:0;background:#F7F0E6;color:#1C1B22}
+header{background:#1E2A47;color:#fff;padding:14px 20px}h1{font-size:1.2rem;margin:0}
 main{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:20px;padding:20px}
 .image{position:relative;cursor:crosshair;user-select:none}.image img{width:100%;display:block;border-radius:10px}
-.point{position:absolute;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:#A6432A;color:#fff;border:3px solid #fff;display:grid;place-items:center;font-weight:700;box-shadow:0 2px 8px #0006}
+.point{position:absolute;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:#B4532F;color:#fff;border:3px solid #fff;display:grid;place-items:center;font-weight:700;box-shadow:0 2px 8px #0006}
 .point.sans{background:#888}
 aside{display:grid;gap:14px;align-content:start}
 ol{margin:0;padding-left:1.4em}li{margin:6px 0}select{max-width:100%;font-size:.95rem}
 textarea{width:100%;min-height:220px;font-family:ui-monospace,monospace;font-size:.85rem}
-button{background:#A6432A;color:#fff;border:0;border-radius:999px;padding:9px 16px;font-weight:600;cursor:pointer}
-button.secondaire{background:#1B2442}.aide{font-size:.9rem;color:#555}.suppr{background:none;color:#A6432A;padding:2px 6px}
+button{background:#B4532F;color:#fff;border:0;border-radius:999px;padding:9px 16px;font-weight:600;cursor:pointer}
+button.secondaire{background:#1E2A47}.aide{font-size:.9rem;color:#555}.suppr{background:none;color:#B4532F;padding:2px 6px}
 </style></head><body>
 <header><h1>Points cliquables : ${slug}</h1></header>
 <main>

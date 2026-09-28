@@ -16,6 +16,25 @@ import { nuancier } from './nuancier.ts';
 
 const reduit = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/** Mémoire de session protégée : si le navigateur la refuse (cookies bloqués), on s'en passe sans erreur. */
+const memoire = {
+  lire(cle: string): string | null {
+    try {
+      return sessionStorage.getItem(cle);
+    } catch {
+      return null;
+    }
+  },
+  ecrire(cle: string, valeur: string | null): void {
+    try {
+      if (valeur === null) sessionStorage.removeItem(cle);
+      else sessionStorage.setItem(cle, valeur);
+    } catch {
+      /* mémoire indisponible : la transition d'arrivée sera simplement absente */
+    }
+  },
+};
+
 /** Découpe les titres [data-mots] en mots animables (le texte reste lisible par les lecteurs d'écran). */
 function decouperTitres(): void {
   document.querySelectorAll<HTMLElement>('[data-mots]').forEach((titre) => {
@@ -72,9 +91,11 @@ function apparitions(): void {
 
 /** Couleurs des bandes du rideau de kente. */
 const BANDES = ['#B4532F', '#D49A2A', '#1E2A47', '#52693A', '#D49A2A', '#B4532F', '#1E2A47'];
-const DUREE_RIDEAU = 520;
+/** Durée d'une bande et décalage entre deux bandes (ms) : le rideau couvre l'écran en 0,35 s environ. */
+const DUREE_RIDEAU = 250;
+const DECALAGE_BANDE = 15;
 
-/** Transition entre les pages : des bandes de tissu tombent l'une après l'autre, puis remontent. */
+/** Transition entre les pages (menu et logo) : des bandes de tissu tombent l'une après l'autre, puis descendent. */
 function transitions(): void {
   const rideau = document.createElement('div');
   rideau.className = 'rideau';
@@ -89,15 +110,15 @@ function transitions(): void {
   };
 
   // Arrivée après une transition : le rideau couvre la page, puis les bandes descendent.
-  const arrivee = sessionStorage.getItem('kd-transition');
+  const arrivee = memoire.lire('kd-transition');
   if (arrivee !== null && !reduit()) {
-    sessionStorage.removeItem('kd-transition');
+    memoire.ecrire('kd-transition', null);
     texte.textContent = arrivee;
     poser('couvre', true);
     requestAnimationFrame(() =>
       requestAnimationFrame(() => {
         poser('sort');
-        setTimeout(() => poser('', true), DUREE_RIDEAU + BANDES.length * 60 + 100);
+        setTimeout(() => poser('', true), DUREE_RIDEAU + BANDES.length * DECALAGE_BANDE + 100);
       }),
     );
   }
@@ -121,13 +142,15 @@ function transitions(): void {
       lien.querySelector<HTMLElement>('.carte-article__titre, .une__titre')?.style.setProperty('view-transition-name', 'titre-article');
       return; // navigation normale : le navigateur anime le passage d'une page à l'autre
     }
+    // Le rideau ne joue que depuis le menu et le logo : les autres liens s'ouvrent immédiatement.
+    if (!lien.closest('.site-entete')) return;
     e.preventDefault();
     const libelle = (lien.dataset.libelle ?? lien.querySelector('strong')?.textContent ?? lien.textContent ?? '').trim().replace(/\s+/g, ' ');
     const court = libelle.length > 48 ? `${libelle.slice(0, 46)}…` : libelle;
     texte.textContent = court;
-    sessionStorage.setItem('kd-transition', court);
+    memoire.ecrire('kd-transition', court);
     poser('couvre');
-    setTimeout(() => (location.href = url.href), DUREE_RIDEAU + BANDES.length * 60);
+    setTimeout(() => (location.href = url.href), DUREE_RIDEAU + BANDES.length * DECALAGE_BANDE);
   });
 }
 
@@ -145,23 +168,36 @@ function avancement(section: HTMLElement): number {
 
 /** Porte en arche : elle s'ouvre jusqu'à remplir l'écran ; les objets flottent au défilement et à la souris. */
 function porte(): void {
-  const section = document.querySelector<HTMLElement>('[data-porte]');
-  if (!section || reduit()) return;
+  const trouvee = document.querySelector<HTMLElement>('[data-porte]');
+  if (!trouvee || reduit()) return;
+  const section: HTMLElement = trouvee;
   section.classList.add('porte--active');
   const objets = [...section.querySelectorAll<HTMLElement>('[data-vitesse]')];
   let sx = 0, sy = 0, mx = 0, my = 0, p = -1;
+  let visible = true;
+  let image = 0;
+  // La boucle ne tourne que si la porte est à l'écran et qu'il reste un mouvement à finir.
+  const demander = () => {
+    if (!image && visible) image = requestAnimationFrame(boucle);
+  };
   window.addEventListener('pointermove', (e) => {
     if (e.pointerType !== 'mouse') return;
     mx = e.clientX / window.innerWidth - 0.5;
     my = e.clientY / window.innerHeight - 0.5;
+    demander();
   });
-  const boucle = () => {
-    requestAnimationFrame(boucle);
-    const r = section.getBoundingClientRect();
-    if (r.bottom < 0) return;
+  window.addEventListener('scroll', demander, { passive: true });
+  window.addEventListener('resize', demander);
+  new IntersectionObserver(([entree]) => {
+    visible = entree.isIntersecting;
+    demander();
+  }).observe(section);
+  function boucle(): void {
+    image = 0;
     const np = avancement(section);
     sx += (mx - sx) * 0.08;
     sy += (my - sy) * 0.08;
+    const bougeEncore = Math.abs(mx - sx) > 0.0005 || Math.abs(my - sy) > 0.0005;
     if (Math.abs(np - p) > 0.0005) {
       p = np;
       section.style.setProperty('--p', p.toFixed(4));
@@ -170,8 +206,9 @@ function porte(): void {
       const v = Number(o.dataset.vitesse);
       o.style.transform = `translate(${(sx * 60 * v).toFixed(1)}px, ${(sy * 50 * v - p * 260 * v).toFixed(1)}px) rotate(${(sx * 10 * v).toFixed(1)}deg)`;
     }
-  };
-  boucle();
+    if (bougeEncore) demander();
+  }
+  demander();
 }
 
 /** Visite de la maison : la piste des pièces glisse de côté pendant qu'on descend. */
@@ -192,6 +229,16 @@ function visite(): void {
   };
   window.addEventListener('scroll', maj, { passive: true });
   window.addEventListener('resize', maj);
+  // Au clavier : quand une pièce reçoit le focus, on fait défiler la page jusqu'à l'avancement qui l'affiche.
+  piste.addEventListener('focusin', (e) => {
+    const piece = (e.target as HTMLElement).closest<HTMLElement>('.visite__piece');
+    if (!piece) return;
+    const i = [...piste.children].indexOf(piece);
+    const course = section.offsetHeight - window.innerHeight;
+    const haut = section.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: haut + (n > 1 ? i / (n - 1) : 0) * course, behavior: 'auto' });
+    maj();
+  });
   maj();
 }
 

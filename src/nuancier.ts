@@ -33,6 +33,8 @@ export function nuancier(): void {
   const calques = [...section.querySelectorAll<HTMLElement>('.nuancier__calque')];
   const images = calques.map((c) => c.querySelector('img')!);
   const nom = $<HTMLElement>('[data-nuancier-nom]');
+  // Le nom défile lettre par lettre à l'écran (caché aux lecteurs d'écran) ; le nom final est annoncé une seule fois.
+  const annonce = section.querySelector<HTMLElement>('[data-nuancier-annonce]');
   const sous = $<HTMLElement>('[data-nuancier-sous]');
   const titre = $<HTMLElement>('[data-nuancier-titre]');
   const phrase = $<HTMLElement>('[data-nuancier-phrase]');
@@ -78,6 +80,7 @@ export function nuancier(): void {
   };
 
   const brouiller = (cible: string) => {
+    if (annonce) annonce.textContent = cible.charAt(0) + cible.slice(1).toLowerCase();
     clearInterval(brouillage);
     if (reduit()) {
       nom.textContent = cible;

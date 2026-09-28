@@ -9,7 +9,7 @@
   --sable: #efe3d0;
   --sable-fonce: #e3d2b8;
   --encre: #2a1d15;
-  --terracotta: #b4532f;
+  --terracotta: #a3472a; /* foncé juste assez pour un texte lisible (contraste ≥ 4,5:1 sur sable) */
   --terracotta-fonce: #8f3f22;
   --terracotta-clair: #f1d9cc;
   --ocre: #d49a2a;
@@ -35,7 +35,7 @@
   --action: var(--terracotta);
   --action-texte: #ffffff;
   --accent: var(--ocre);
-  --accent-texte: var(--ocre-fonce);
+  --accent-texte: #835a10; /* ocre lisible en petit texte (contraste ≥ 4,5:1 sur sable) */
   --focus: #2c6bd6;
   --voile: rgb(42 29 21 / 6%);
 

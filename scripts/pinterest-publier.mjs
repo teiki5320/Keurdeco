@@ -11,7 +11,7 @@
 // automatiquement), ou directement PINTEREST_ACCESS_TOKEN. PINTEREST_SANDBOX=1 : API de test
 // (api-sandbox.pinterest.com), état séparé dans data/pinterest-etat-sandbox.json.
 // Sans secrets (ou avec --a-blanc) : mode « à blanc », qui affiche ce qui serait publié sans rien envoyer.
-import { writeFileSync } from 'node:fs';
+import { appendFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { api, aujourdhuiParis, chargerEnv, choisirEpingles, corpsEpingle, hoteApi, lireJson, RACINE, renouvelerJeton, tableauPour } from './pinterest-lib.mjs';
 
@@ -50,6 +50,8 @@ async function jetonAcces() {
   if (!appId || !secret || !refreshToken) return null;
   const r = await renouvelerJeton({ appId, secret, refreshToken });
   if (r.refresh_token && r.refresh_token !== refreshToken) {
+    // Signal pour le workflow, qui ouvre une alerte (issue) sur GitHub. Le jeton lui-même n'est jamais écrit.
+    if (env.GITHUB_OUTPUT) appendFileSync(env.GITHUB_OUTPUT, 'nouveau_refresh_token=1\n');
     console.warn('ℹ Pinterest a fourni un nouveau refresh token : mettez à jour le secret PINTEREST_REFRESH_TOKEN (voir docs/pinterest.md).');
   }
   if (r.refresh_token_expires_in) {
@@ -71,10 +73,12 @@ async function principal() {
   if (aBlanc && !args.includes('--a-blanc')) console.log('Secrets Pinterest absents : définissez PINTEREST_APP_ID, PINTEREST_APP_SECRET et PINTEREST_REFRESH_TOKEN pour publier.');
 
   let erreurs = 0;
+  let sansTableau = 0;
   for (const e of choix) {
     const boardId = tableauPour(e.tableau, tableaux);
     const ligne = `• ${e.id} → tableau « ${e.tableau} »${boardId ? ` (${boardId})` : ''} : ${e.titre}`;
     if (!boardId) {
+      sansTableau++;
       console.warn(`${ligne}\n  ⚠ aucun board_id dans config/tableaux-pinterest.json (ni pour « general ») : épingle ignorée.`);
       continue;
     }
@@ -92,6 +96,10 @@ async function principal() {
       erreurs++;
       console.error(`${ligne}\n  ✗ ${err.message}`);
     }
+  }
+  if (sansTableau && !aBlanc) {
+    console.error(`✗ ${sansTableau} épingle(s) sans tableau Pinterest : renseignez au moins le board_id du tableau « general » dans config/tableaux-pinterest.json (voir docs/pinterest.md, étape 5).`);
+    process.exit(1);
   }
   if (erreurs) process.exit(1);
 }

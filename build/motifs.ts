@@ -8,9 +8,13 @@ const C = { indigo: '#1B2442', nuit: '#0E1430', ivoire: '#FBF8F2', sable: '#ECE1
 /** Motif en cours de construction : on garde la définition du <pattern> pour la réutiliser ailleurs. */
 let dernierPattern = '';
 
+/** Compteur d'identifiants : chaque motif affiché a un id unique, même s'il apparaît plusieurs fois dans une page. */
+let numero = 0;
+
 function svg(id: string, taille: number, fond: string, contenu: string): string {
   dernierPattern = `<pattern id="__ID__" width="${taille}" height="${taille}" patternUnits="userSpaceOnUse"><rect width="${taille}" height="${taille}" fill="${fond}"/>${contenu}</pattern>`;
-  return `<svg class="motif" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs>${dernierPattern.replace('__ID__', `m-${id}`)}</defs><rect class="motif__fond" x="-200" y="-200" width="800" height="700" fill="url(#m-${id})"/></svg>`;
+  const unique = `m-${id}-${++numero}`;
+  return `<svg class="motif" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs>${dernierPattern.replace('__ID__', unique)}</defs><rect class="motif__fond" x="-200" y="-200" width="800" height="700" fill="url(#${unique})"/></svg>`;
 }
 
 const MOTIFS: Record<string, () => string> = {

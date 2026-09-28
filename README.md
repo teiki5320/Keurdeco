@@ -19,7 +19,7 @@ npm run build        # épingles Pinterest + site dans dist/ (avec le rapport de
 npm run test:e2e     # construit une version de démonstration et la teste dans Chromium
 ```
 
-Node 22.12 ou plus récent (les scripts `.ts` sont exécutés directement par Node). Pour prévisualiser des articles programmés : `DATE_PUBLICATION=2026-12-31 npm run dev`.
+Node 22.18 ou plus récent (les scripts `.ts` sont exécutés directement par Node). Pour prévisualiser des articles programmés : `DATE_PUBLICATION=2026-12-31 npm run dev`.
 
 ## Organisation du code
 
@@ -35,7 +35,10 @@ Node 22.12 ou plus récent (les scripts `.ts` sont exécutés directement par No
 | `src/amazon.ts` | `AMAZON_TAG` (seul endroit), liens `https://www.amazon.fr/dp/<ASIN>?tag=<TAG>` |
 | `src/taxonomie.ts` | Pièces, matières et styles, occasions |
 | `src/data/produits.json`, `src/data/glossaire.json`, `src/data/images.json` | Données |
-| `src/theme.css` | **Thème** : toutes les couleurs et polices (palette « Nuit d'indigo ») |
+| `src/theme.css` | **Thème** : toutes les couleurs et polices (palette « Terre de Dakar ») |
+| `src/animations.ts`, `src/nuancier.ts` | Animations (porte, visite, coupons, coutures, rideau) et nuancier des matières |
+| `build/conseils.ts`, `contenu/conseils/*.md` | Onglet Conseils (une question par page) |
+| `build/sw.js` | Modèle du service worker (numéro de version ajouté à chaque build) |
 | `src/site.css`, `src/site.ts` | Styles et JavaScript (points cliquables, menu, service worker) |
 | `contenu/articles/*.md` | Un fichier par article |
 | `contenu/images/*.jpg` | Images sources haute définition (pour les épingles) |
@@ -46,7 +49,7 @@ Node 22.12 ou plus récent (les scripts `.ts` sont exécutés directement par No
 
 ## Identité visuelle
 
-Palette « Terre de Dakar » : fond sable clair `#F7F0E6`, terracotta `#B4532F` (couleur principale), ocre `#D49A2A`, indigo `#1E2A47`, vert baobab `#52693A`. Polices hébergées avec le site : **Fraunces** (titres) et **Source Sans 3** (texte), via Fontsource ; les versions TTF de `assets/polices/` servent aux épingles. Logo : `public/logo.svg`. Thème : `src/theme.css`.
+Palette « Terre de Dakar » : fond sable clair `#F7F0E6`, terracotta `#A3472A` (couleur principale, foncée pour le contraste), ocre `#D49A2A`, indigo `#1E2A47`, vert baobab `#52693A`. Polices hébergées avec le site : **Fraunces** (titres) et **Source Sans 3** (texte), via Fontsource ; les versions TTF de `assets/polices/` servent aux épingles. Logo : `public/logo.svg`. Thème : `src/theme.css`.
 
 Animations propres à Keur Déco (`src/animations.ts`, styles dans `src/site.css`) :
 
@@ -54,8 +57,8 @@ Animations propres à Keur Déco (`src/animations.ts`, styles dans `src/site.css
 - **visite de la maison** : les pièces défilent de côté pendant qu'on descend, avec compteur « 01 / 07 » et barre de progression ;
 - **coupons de tissu** : les matières sont des coupons aux bords crantés, qui se soulèvent et pivotent, motif animé (`build/motifs.ts`), étiquette cousue ;
 - **coutures** : lignes de motifs bogolan qui se dessinent trait par trait entre les sections ;
-- **rideau de kente** entre les pages : des bandes de tissu tombent l'une après l'autre puis redescendent ;
-- **essayez le tissu** (`build/essayage.ts`) : un salon dessiné ; un clic sur une pastille (wax, bogolan, kente, indigo, raphia) propage le nouveau motif en cercle sur le canapé, les coussins et le mur ;
+- **rideau de kente** (clics dans le menu seulement, 0,25 s) : des bandes de tissu tombent l'une après l'autre puis redescendent ;
+- **nuancier** (`src/nuancier.ts`, `build/essayage.ts`, données `src/data/nuancier.json`) : on choisit une matière et le motif habille la pièce dessinée ; le nom est annoncé aux lecteurs d'écran ;
 - **cartes qui s'ouvrent en grand** : l'image d'une carte d'article s'agrandit jusqu'à devenir la couverture de l'article (View Transitions entre pages, navigateurs récents ; ailleurs, navigation normale) ;
 - titres révélés mot par mot, apparitions au défilement, cartes en arche qui s'inclinent, liens soulignés d'un fil.
 
@@ -138,14 +141,17 @@ Tout est détaillé dans [`docs/pinterest.md`](docs/pinterest.md), y compris les
 
 - **Sur le site** : Open Graph complet + données structurées `Article` (Rich Pins), balise `p:domain_verify` (variable `PINTEREST_VERIFY`), bouton « Épingler » sans script externe.
 - **Au build** (`scripts/epingles.ts`, sharp) : pour chaque article publié, une épingle 1000 × 1500 JPG par titre de `epingles[]`, 4 gabarits qui alternent (bandeau haut, bandeau bas, cadre, split) ; sortie `public/epingles/<slug>-<n>.jpg` et manifeste `epingles.json` (slug, image, titre, description avec mots-clés, lien avec `utm_source=pinterest`, tableau).
-- **Publication** (`scripts/pinterest-publier.mjs`, workflow quotidien 7 h 17 UTC) : lit le manifeste publié et `data/pinterest-etat.json`, publie au plus 5 épingles (config) sans deux épingles du même article le même jour, `POST /v5/pins` avec `media_source` `image_url`, tableau choisi via `config/tableaux-pinterest.json`, puis commit de l'état sur `main`. OAuth : `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, `PINTEREST_REFRESH_TOKEN` (jeton d'accès renouvelé automatiquement). `PINTEREST_SANDBOX=1` : `https://api-sandbox.pinterest.com`. Sans secrets : mode à blanc.
+- **Publication** (`scripts/pinterest-publier.mjs`, workflow quotidien 7 h 17 UTC) : lit le manifeste publié et `data/pinterest-etat.json`, publie au plus 5 épingles (config) sans deux épingles du même article le même jour, `POST /v5/pins` avec `media_source` `image_url`, tableau choisi via `config/tableaux-pinterest.json`, puis commit de l'état sur `main`. Le workflow échoue si un tableau n'a pas de `board_id`, et ouvre un ticket GitHub quand Pinterest renouvelle le refresh token (à recopier dans le secret). OAuth : `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, `PINTEREST_REFRESH_TOKEN` (jeton d'accès renouvelé automatiquement). `PINTEREST_SANDBOX=1` : `https://api-sandbox.pinterest.com`. Sans secrets : mode à blanc.
+- **Import manuel** : le build écrit aussi `public/epingles-pinterest.csv` (format d'import en masse de Pinterest, une épingle par jour), utile tant que l'accès à l'API n'est pas accordé.
 - **`npm run pinterest:auth`** : serveur local (http://localhost:8085/) qui mène le parcours OAuth complet et affiche le refresh token, les tableaux et un formulaire d'épingle de démonstration (pour la vidéo exigée par Pinterest).
 
 ## Déploiement (GitHub Pages)
 
 `.github/workflows/pages.yml` : à chaque push sur `main`, chaque lundi à 5 h UTC et à la demande : `npm ci`, tests, build (épingles comprises), test de bout en bout Chromium, puis déploiement GitHub Pages.
 
-Réglages facultatifs (*Settings* › *Secrets and variables* › *Actions* › *Variables*) : `SITE_URL` (par défaut `https://teiki5320.github.io/Keurdeco/`), `PLAUSIBLE_DOMAIN` (mesure d'audience sans cookie, par exemple `www.keurdeco.fr`), `PINTEREST_VERIFY`.
+Réglages facultatifs (*Settings* › *Secrets and variables* › *Actions* › *Variables*) : `SITE_URL` (par défaut `https://teiki5320.github.io/Keurdeco/`), `PLAUSIBLE_DOMAIN` (mesure d'audience sans cookie, par exemple `www.keurdeco.fr`), `PINTEREST_VERIFY`, `GOOGLE_VERIFY` (code de la Search Console, balise `google-site-verification`).
+
+Référencement : `sitemap.xml` (avec `lastmod`) ne contient que les pages indexables ; les rubriques encore sans article sont en `noindex` jusqu'à leur premier article publié.
 
 Première mise en route : *Settings* › *Pages* › *Source* = **GitHub Actions**.
 
@@ -162,4 +168,4 @@ Pour l'instant, le site est servi à l'adresse GitHub Pages. Le jour où le doma
 
 ## Pages légales
 
-`mentions-legales.html` (ALOHASH SAS, hébergeur GitHub Pages, mention Partenaires Amazon, images créées par IA), `confidentialite.html` (aucun cookie, Plausible facultatif), et un paragraphe sur les liens affiliés dans `a-propos.html`. Si la mesure d'audience est activée, rien à changer : la politique la décrit déjà.
+`mentions-legales.html` (ALOHASH SAS, hébergeur GitHub Pages, mention Partenaires Amazon, images créées par IA), `confidentialite.html` (aucun cookie, Plausible facultatif, les deux petites mémoires du navigateur : matière choisie dans le nuancier, page ouverte depuis le menu), et un paragraphe sur les liens affiliés dans `a-propos.html`. Si la mesure d'audience est activée, rien à changer : la politique la décrit déjà.

@@ -23,7 +23,7 @@ import { FAMILLES, type Famille } from '../src/taxonomie.ts';
 import { insecables } from '../src/typo.ts';
 import { articlesPublies, pagesArticles } from './articles.ts';
 import { NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
-import { blocConseils, pagesConseils } from './conseils.ts';
+import { blocConseils, conseilsPublies, pagesConseils } from './conseils.ts';
 import { essayage } from './essayage.ts';
 import { icone, marque, type NomIcone } from './icones.ts';
 import { blocAVenir, blocDerniers, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
@@ -48,7 +48,7 @@ export function head(): string {
     <link rel="icon" href="${FAVICON}" />
     <link rel="apple-touch-icon" href="icones/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <meta name="theme-color" content="#1B2442" />`;
+    <meta name="theme-color" content="#F7F0E6" />`;
 }
 
 const DOSSIER_PARTAGE = resolve(import.meta.dirname, '../public/images/partage');
@@ -60,6 +60,11 @@ function attribut(s: string): string {
 /** Adresse publique d'une page (l'accueil est servi à la racine). */
 export function urlPage(fichier: string, url = SITE_URL): string {
   return fichier === 'index.html' ? url : `${url}${fichier}`;
+}
+
+/** Balise de vérification Google Search Console (variable GOOGLE_VERIFY, méthode « balise HTML »). */
+export function verificationGoogle(code = process.env.GOOGLE_VERIFY): string {
+  return code ? `<meta name="google-site-verification" content="${attribut(code)}" />` : '';
 }
 
 /** Balise de revendication du domaine Pinterest (variable PINTEREST_VERIFY). */
@@ -107,6 +112,7 @@ export function referencement(html: string, fichier: string, url = SITE_URL): st
     }
     <meta name="twitter:card" content="summary_large_image" />
     ${verificationPinterest()}
+    ${verificationGoogle()}
     ${json}`;
 }
 
@@ -242,11 +248,11 @@ function pageGeneree(id: string): string | null {
   return f.endsWith('.html') && pagesGenerees().has(f) ? f : null;
 }
 
-export function sitemap(pages: string[], url = SITE_URL): string {
+export function sitemap(pages: string[], url = SITE_URL, dates: Map<string, string> = new Map()): string {
   const urls = pages
     .filter((p) => p !== '404.html')
     .sort()
-    .map((p) => `  <url><loc>${url}${p === 'index.html' ? '' : p}</loc></url>`)
+    .map((p) => `  <url><loc>${url}${p === 'index.html' ? '' : p}</loc>${dates.has(p) ? `<lastmod>${dates.get(p)}</lastmod>` : ''}</url>`)
     .join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
@@ -313,8 +319,36 @@ export function pluginSite(): Plugin {
       const pages = Object.keys(toutesLesPages(racine))
         .map((nom) => `${nom}.html`)
         .filter((f) => !sourcePage(racine, f).includes('content="noindex"'));
-      this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap(pages) });
+      // Date de publication des articles et conseils (<lastmod>), pour aider Google à les découvrir.
+      const dates = new Map([...articlesPublies(), ...conseilsPublies()].map((x) => [x.fichier, x.publieLe]));
+      this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap(pages, SITE_URL, dates) });
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}sitemap.xml\n` });
+      // Service worker : une version par publication, pour que les caches (images comprises) se renouvellent.
+      const modele = readFileSync(resolve(import.meta.dirname, 'sw.js'), 'utf8');
+      this.emitFile({ type: 'asset', fileName: 'sw.js', source: modele.replace('__VERSION__', Date.now().toString(36)) });
+    },
+  };
+}
+
+/**
+ * Préchargement des polices principales (titres et texte, sous-ensemble latin) : sans lui, le texte
+ * s'affiche d'abord dans une police de secours, puis « saute » quand la vraie police arrive.
+ * Les noms de fichiers portent une empreinte : on les lit dans le paquet produit par Vite.
+ */
+export function pluginPrechargePolices(): Plugin {
+  return {
+    name: 'keurdeco-precharge-polices',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html, ctx) {
+        if (!ctx.bundle) return html;
+        const polices = Object.keys(ctx.bundle).filter((f) => /(fraunces|source-sans-3)-latin-wght-normal-[\w-]+\.woff2$/.test(f));
+        const liens = polices.map((f) => `<link rel="preload" href="${f}" as="font" type="font/woff2" crossorigin />`).join('\n    ');
+        if (!liens) return html;
+        // Page 404 : ses liens se résolvent depuis <base> ; le préchargement doit venir après.
+        const base = html.match(/<base [^>]*>/)?.[0];
+        return base ? html.replace(base, `${base}\n    ${liens}`) : html.replace('</title>', `</title>\n    ${liens}`);
+      },
     },
   };
 }
