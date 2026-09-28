@@ -97,6 +97,12 @@ describe('articles (contenu/articles)', () => {
     }
   });
 
+  it('chaque image existe en 400, 800 et 1600 px (vignettes légères comprises)', () => {
+    for (const nom of Object.keys(chargerDimensions())) {
+      for (const l of [400, 800, 1600]) expect(existsSync(resolve(DOSSIER_IMAGES, `${nom}-${l}.webp`)), `${nom}-${l}.webp`).toBe(true);
+    }
+  });
+
   it('chaque rubrique et chaque conseil a sa photo d’illustration', () => {
     for (const famille of Object.keys(FAMILLES) as Famille[]) {
       for (const r of FAMILLES[famille].liste) expect(imageExiste(imageRubrique(famille, r.id)), imageRubrique(famille, r.id)).toBe(true);

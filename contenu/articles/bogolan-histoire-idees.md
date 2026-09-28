@@ -1,7 +1,7 @@
 ---
 titre: "Le bogolan : histoire et idées pour l’intégrer chez soi"
 description: "D’où vient le bogolan, comment est-il fabriqué, que racontent ses motifs ? Et comment l’intégrer dans un intérieur moderne sans faire musée."
-publie_le: 2026-10-19
+publie_le: 2026-09-28
 type: guide
 pieces: [salon, chambre]
 matieres: [bogolan]

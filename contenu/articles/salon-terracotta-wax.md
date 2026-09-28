@@ -1,7 +1,7 @@
 ---
 titre: "Salon terracotta et wax : 5 idées"
 description: "Un mur terracotta, des coussins en wax, des paniers tressés : 5 idées simples pour un salon chaleureux aux couleurs de l’Afrique de l’Ouest."
-publie_le: 2026-10-05
+publie_le: 2026-09-28
 type: ambiance
 pieces: [salon]
 matieres: [wax, raphia-paniers, terre-cuite]

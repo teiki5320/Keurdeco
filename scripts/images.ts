@@ -1,7 +1,7 @@
 // Convertit les images d'ambiance sources (PNG/JPG) pour le site.
 // Usage : npm run images -- <dossier-source>
 // Pour chaque <nom>.png|jpg, produit :
-//   public/images/articles/<nom>-800.webp et <nom>-1600.webp (proportions conservées)
+//   public/images/articles/<nom>-400.webp, -800.webp et -1600.webp (proportions conservées ; 400 pour les vignettes)
 //   public/images/partage/<nom>.jpg (1200 × 630, image de partage Open Graph)
 //   contenu/images/<nom>.jpg (source haute définition, 2400 px max, pour les épingles Pinterest)
 // et enregistre les dimensions dans src/data/images.json.
@@ -27,9 +27,9 @@ export async function convertirImage(fichier: string): Promise<{ nom: string; la
     .replace(/^-|-$/g, '');
   for (const d of [SORTIE, PARTAGE, SOURCES]) mkdirSync(d, { recursive: true });
   let dims = { largeur: 0, hauteur: 0 };
-  for (const largeur of [1600, 800]) {
+  for (const largeur of [1600, 800, 400]) {
     const dest = join(SORTIE, `${nom}-${largeur}.webp`);
-    const info = await sharp(fichier).rotate().resize({ width: largeur, withoutEnlargement: false }).webp({ quality: largeur > 1000 ? 76 : 72 }).toFile(dest);
+    const info = await sharp(fichier).rotate().resize({ width: largeur, withoutEnlargement: false }).webp({ quality: largeur > 1000 ? 76 : largeur > 500 ? 72 : 70 }).toFile(dest);
     if (largeur === 1600) dims = { largeur: info.width, hauteur: info.height };
     console.log(`${dest.replace(RACINE + '/', '')} : ${info.width} × ${info.height}, ${ko(info.size)}`);
   }

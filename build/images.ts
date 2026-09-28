@@ -2,7 +2,7 @@
  * Images d'ambiance des articles (nos propres visuels, jamais des photos Amazon).
  *
  * `npm run images -- <dossier>` produit, pour chaque <nom>.jpg|png :
- *   public/images/articles/<nom>-800.webp et <nom>-1600.webp (proportions conservées)
+ *   public/images/articles/<nom>-400.webp, -800.webp et -1600.webp (proportions conservées)
  *   public/images/partage/<nom>.jpg (1200 × 630, Open Graph)
  *   contenu/images/<nom>.jpg (source haute définition, pour les épingles Pinterest)
  * et enregistre les dimensions dans src/data/images.json.
@@ -29,12 +29,14 @@ export function imageExiste(nom: string): boolean {
   return !!chargerDimensions()[nom] && existsSync(resolve(DOSSIER_IMAGES, `${nom}-800.webp`)) && existsSync(resolve(DOSSIER_IMAGES, `${nom}-1600.webp`));
 }
 
-/** Balise <img> responsive (800/1600 px) ; chaîne vide si l'image n'existe pas encore. */
+/** Balise <img> responsive (400/800/1600 px) ; chaîne vide si l'image n'existe pas encore. */
 export function imageArticle(nom: string, alt: string, sizes: string, chargement: 'lazy' | 'eager' = 'lazy', classe = ''): string {
   const d = chargerDimensions()[nom];
   if (!d || !imageExiste(nom)) return '';
   const prioritaire = chargement === 'eager' ? ' fetchpriority="high"' : '';
-  return `<img${classe ? ` class="${classe}"` : ''} src="images/articles/${nom}-800.webp" srcset="images/articles/${nom}-800.webp 800w, images/articles/${nom}-1600.webp 1600w" sizes="${sizes}" width="${d.largeur}" height="${d.hauteur}" alt="${echapper(alt)}" loading="${chargement}" decoding="async"${prioritaire} />`;
+  // Version 400 px (vignettes, écrans simples) quand elle existe : bien plus légère à charger.
+  const petite = existsSync(resolve(DOSSIER_IMAGES, `${nom}-400.webp`)) ? `images/articles/${nom}-400.webp 400w, ` : '';
+  return `<img${classe ? ` class="${classe}"` : ''} src="images/articles/${nom}-800.webp" srcset="${petite}images/articles/${nom}-800.webp 800w, images/articles/${nom}-1600.webp 1600w" sizes="${sizes}" width="${d.largeur}" height="${d.hauteur}" alt="${echapper(alt)}" loading="${chargement}" decoding="async"${prioritaire} />`;
 }
 
 /**

@@ -1,7 +1,7 @@
 ---
 titre: "Top 10 des paniers tressés africains pour la déco"
 description: "Paniers Bolga, raphia, herbes tressées : notre sélection de 10 paniers africains pour ranger, décorer et habiller chaque pièce de la maison."
-publie_le: 2026-10-12
+publie_le: 2026-09-28
 type: top
 pieces: [salon, entree, salle-de-bain, chambre-enfant]
 matieres: [raphia-paniers]

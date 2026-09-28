@@ -750,6 +750,13 @@ main {
   max-width: 560px;
 }
 
+/* Grand écran : le texte s'arrête avant l'arche (qui commence à 52vw), pas de chevauchement entre 900 et 1 150 px. */
+@media (min-width: 900px) {
+  .porte--active .porte__texte > * {
+    max-width: min(560px, 52vw - (100vw - min(100vw - 2 * var(--gouttiere), var(--largeur))) / 2 - 28px);
+  }
+}
+
 .porte--active .porte__arche {
   --l0: 52vw;
   --t0: 18vh;
@@ -879,6 +886,22 @@ main {
   }
   .porte__objet--panier {
     display: none;
+  }
+}
+
+/* Petits téléphones (écran peu haut) : l'arche descend un peu pour laisser la place aux boutons. */
+@media (max-width: 899px) and (max-height: 700px) {
+  .porte--active .porte__arche {
+    --t0: 78vh;
+    --h0: 22vh;
+  }
+}
+
+/* Très petits écrans (iPhone SE 1re génération) : l'arche ne fait que dépasser en bas. */
+@media (max-width: 899px) and (max-height: 600px) {
+  .porte--active .porte__arche {
+    --t0: 97vh;
+    --h0: 3vh;
   }
 }
 
