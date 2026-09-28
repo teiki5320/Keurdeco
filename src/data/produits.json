@@ -812,5 +812,163 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "paniers-kallax-jacinthe-lot-4",
+    "asin": "B0CFXNQLDQ",
+    "nom": "Paniers en jacinthe d’eau pour étagère, lot de 4 (32 × 34 cm)",
+    "type_objet": "rangement",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "porte-revues-jacinthe",
+    "asin": "B0CCDXZRKV",
+    "nom": "Porte-revues tressé en jacinthe d’eau, 2 compartiments",
+    "type_objet": "rangement",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "corbeille-papier-jacinthe",
+    "asin": "B08LCM1PR4",
+    "nom": "Corbeille à papier tressée en jacinthe d’eau, 25 cm",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "malles-osier-lot-2",
+    "asin": "B0BXL71YLC",
+    "nom": "Coffres de rangement en osier tressé, lot de 2 (80 et 60 cm)",
+    "type_objet": "rangement",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "chambre",
+      "chambre-enfant",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "boites-papier-tresse-couvercle-lot-3",
+    "asin": "B0DK5G449Y",
+    "nom": "Boîtes en papier recyclé tressé avec couvercle, lot de 3",
+    "type_objet": "rangement",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "panier-dossiers-suspendus-a4",
+    "asin": "B0FG39SFXB",
+    "nom": "Panier tressé pour dossiers suspendus A4",
+    "type_objet": "rangement",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "panier-tisse-extra-large",
+    "asin": "B0C4L3WBJD",
+    "nom": "Panier tissé extra large, 55 × 35 cm",
+    "type_objet": "panier",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "entree",
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "paniers-ronds-rotin-empilables",
+    "asin": "B089K96Y6H",
+    "nom": "Paniers ronds en rotin empilables, lot de 3",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "bannette-courrier-jonc",
+    "asin": "B0FQMVB81W",
+    "nom": "Bannette à courrier A4 en jonc de mer",
+    "type_objet": "rangement",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "entree",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
