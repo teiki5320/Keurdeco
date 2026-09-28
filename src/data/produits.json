@@ -2017,5 +2017,137 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "table-appoint-racine-teck",
+    "asin": "B01NCZT39X",
+    "nom": "Table d’appoint taillée dans une racine de teck, 45 cm",
+    "type_objet": "table",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "table-appoint-tranche-teck",
+    "asin": "B076GSF2XS",
+    "nom": "Table d’appoint pliante en tranche de teck, faite main",
+    "type_objet": "table",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tabouret-teck-massif-42",
+    "asin": "B08N59CYSQ",
+    "nom": "Tabouret en teck massif, 46 cm",
+    "type_objet": "tabouret",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "salle-de-bain"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tabouret-acajou-monte",
+    "asin": "B07MTH6SCJ",
+    "nom": "Petit tabouret bas en acajou massif, 21 cm",
+    "type_objet": "tabouret",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tabouret-bois-recycle",
+    "asin": "B07RX5CL3M",
+    "nom": "Tabouret rustique en bois dur recyclé, 43 cm",
+    "type_objet": "tabouret",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "table-appoint-manguier-laiton",
+    "asin": "B07H3XRQ2Y",
+    "nom": "Table d’appoint marocaine en manguier et marqueterie de laiton, faite main",
+    "type_objet": "table",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois",
+      "or"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tabouret-bois-torsade",
+    "asin": "B07Y1SQ2JL",
+    "nom": "Tabouret-sellette taillé dans un tronc, 50 cm",
+    "type_objet": "tabouret",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
