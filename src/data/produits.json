@@ -1299,5 +1299,128 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "assiettes-terre-cuite-lot-6",
+    "asin": "B07NCYQV2Z",
+    "nom": "Assiettes colorées en terre cuite, lot de 6",
+    "type_objet": "vaisselle",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "carafe-argile-naturelle",
+    "asin": "B08SLBQK7S",
+    "nom": "Carafe à eau en argile naturelle non émaillée, avec coupelle",
+    "type_objet": "vaisselle",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tajine-terre-cuite-35",
+    "asin": "B0CPX1TW9W",
+    "nom": "Grand plat à tajine marocain en terre cuite, fait main, 35 cm",
+    "type_objet": "vaisselle",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "bols-terre-cuite-lot-12",
+    "asin": "B08JH2C8H8",
+    "nom": "Petits bols en terre cuite, lot de 12",
+    "type_objet": "vaisselle",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "vases-argile-lot-3",
+    "asin": "B0GR85P3NM",
+    "nom": "Petits vases en céramique aux tons de terre, lot de 3",
+    "type_objet": "vase",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta",
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "pot-terre-cuite-fait-main-noir",
+    "asin": "B07SCZWF64",
+    "nom": "Pot en terre cuite fait main, noir, 23 cm",
+    "type_objet": "vase",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "noir"
+    ],
+    "pieces": [
+      "salon",
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "sphere-terre-cuite-etoiles",
+    "asin": "B0000UNANE",
+    "nom": "Boule décorative en terre cuite à motif d’étoiles, 17 cm",
+    "type_objet": "objet",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "salon",
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
