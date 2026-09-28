@@ -662,5 +662,155 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "housse-couette-coton-denim",
+    "asin": "B0CY1VFSZ2",
+    "nom": "Housse de couette en coton bleu denim, 220 × 240 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "drap-housse-lin-blanc",
+    "asin": "B074FSNR13",
+    "nom": "Drap-housse 100 % lin blanc, 180 × 200 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [
+      "blanc"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coussin-shibori-indigo",
+    "asin": "B08KD37M63",
+    "nom": "Housse de coussin shibori indigo, coton et lin",
+    "type_objet": "coussin",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo",
+      "blanc"
+    ],
+    "pieces": [
+      "chambre",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tete-de-lit-rotin-160",
+    "asin": "B0C94MQ2DH",
+    "nom": "Tête de lit en rotin naturel, 160 cm",
+    "type_objet": "tete-de-lit",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "lampes-chevet-ceramique-lot-2",
+    "asin": "B07ZD7QKYG",
+    "nom": "Lampes de chevet à pied en céramique, lot de 2",
+    "type_objet": "luminaire",
+    "matieres": [],
+    "couleurs": [
+      "blanc"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "table-chevet-rotin",
+    "asin": "B0D9BBTBCF",
+    "nom": "Table de chevet en rotin",
+    "type_objet": "table",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "plaid-gaufre-coton",
+    "asin": "B0GFTLHF28",
+    "nom": "Plaid gaufré léger en coton",
+    "type_objet": "plaid",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "chambre",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tapis-rond-coton-bleu-marine",
+    "asin": "B07MW8M1TJ",
+    "nom": "Tapis rond tissé à plat en coton bleu marine, 120 cm",
+    "type_objet": "tapis",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo"
+    ],
+    "pieces": [
+      "chambre",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "voilage-lin-naturel",
+    "asin": "B0DNYMSPNY",
+    "nom": "Rideau voilage aspect lin naturel, 140 × 240 cm",
+    "type_objet": "rideau",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "chambre",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
