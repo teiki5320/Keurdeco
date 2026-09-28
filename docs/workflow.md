@@ -25,10 +25,15 @@ Créer le fichier : `npm run nouvel-article -- <ambiance|top|guide> <slug>`. La 
 - Pour chacun : `id` (slug), `asin` **relevé sur la fiche produit** (jamais inventé), `nom` court et en français, `type_objet`, `matieres`, `couleurs`, `pieces`, `statut: "actif"`, `verifie_le` (date du jour).
 - Tant qu'un ASIN n'est pas vérifié : `statut: "a_selectionner"`, `asin: null` (le produit n'est pas affiché ; le build le signale).
 - Aucune note, aucun avis, aucun prix, aucune photo reprise d'Amazon.
+- Le `nom` décrit **le produit réel**, relu sur la fiche : couleur de la variante choisie, matière, dimensions (ne pas écrire « wax » si ce n'en est pas, ni « terracotta » pour une housse à fleurs orange).
+- **Les produits d'abord, l'image ensuite** : pour une ambiance, on choisit tous les produits avant de générer l'image.
 
 ## 3. Image d'ambiance (OpenArt)
 
 - Claude propose une consigne (prompt) et **annonce le coût en crédits**, puis **attend l'accord**. Une seule variante.
+- **L'image montre les produits choisis** : pour chaque produit, Claude regarde sa fiche Amazon (sans rien enregistrer) et le décrit précisément avec des mots dans la consigne : forme, couleur, matière, motif, dimensions (« pouf marocain en cuir cognac à coutures blanches en étoile », « trois paniers muraux plats beige à motifs noirs »…). Jamais de photo Amazon donnée à OpenArt, ni enregistrée.
+- Les objets du décor qui ne sont pas des produits (canapé, mur, plantes) restent sans point cliquable.
+- Après la génération : comparer l'image à chaque fiche ; un produit trop différent est retiré des points (ou l'image est refaite).
 - Format conseillé : paysage 3:2, grande définition (les épingles sont recadrées en portrait 2:3 dans l'image : garder le sujet au centre).
 - Conversion : placer le fichier dans un dossier puis `npm run images -- <dossier>`. Le nom du fichier devient le champ `image` de l'article.
 - Dans l'article : `image_ia: true` et un `image_alt` précis.
