@@ -1071,5 +1071,102 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coussins-kuba-lot-4",
+    "asin": "B0CGQZQPY3",
+    "nom": "Housses de coussin à motifs kuba, lot de 4 (45 × 45 cm)",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "naturel",
+      "noir"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coussin-tribal-coton-lin",
+    "asin": "B08JJ1ZT8T",
+    "nom": "Housse de coussin tribale en coton et lin, 45 × 45 cm",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coussin-divinite-fertilite",
+    "asin": "B09ZSJ1T1M",
+    "nom": "Housse de coussin à motif de divinité africaine de la fertilité, coton et lin",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coussins-femme-africaine-lin-lot-4",
+    "asin": "B07V4J5KXZ",
+    "nom": "Housses de coussin en lin, portraits de femmes africaines, lot de 4",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coussin-femme-africaine-jute",
+    "asin": "B085LDCGF5",
+    "nom": "Housse de coussin en toile de coton et lin, femme africaine",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coussins-ethniques-geometriques-lot-4",
+    "asin": "B0BPNWN7G6",
+    "nom": "Housses de coussin ethniques géométriques, lot de 4",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
