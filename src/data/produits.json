@@ -1893,5 +1893,129 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "assiettes-porcelaine-blanches-lot-6",
+    "asin": "B0C81HTHDD",
+    "nom": "Assiettes plates en porcelaine blanche, lot de 6 (27 cm)",
+    "type_objet": "vaisselle",
+    "matieres": [],
+    "couleurs": [
+      "blanc"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "couverts-dores-24-pieces",
+    "asin": "B09TXBHKJM",
+    "nom": "Couverts dorés mats en inox, 24 pièces pour 6 personnes",
+    "type_objet": "vaisselle",
+    "matieres": [],
+    "couleurs": [
+      "or"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "verres-vin-cristal-arques-lot-6",
+    "asin": "B09TB8PDWP",
+    "nom": "Verres à vin Cristal d’Arques, lot de 6 (25 cl)",
+    "type_objet": "vaisselle",
+    "matieres": [],
+    "couleurs": [
+      "blanc"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "bougeoirs-dores-coniques-lot-6",
+    "asin": "B0F8383Z54",
+    "nom": "Bougeoirs dorés coniques, lot de 6 (23 à 33 cm)",
+    "type_objet": "bougie",
+    "matieres": [],
+    "couleurs": [
+      "or"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "bougies-tige-ivoire-lot-50",
+    "asin": "B08LZHD18N",
+    "nom": "Bougies à tige ivoire, lot de 50 (25 cm)",
+    "type_objet": "bougie",
+    "matieres": [],
+    "couleurs": [
+      "blanc"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "serviettes-lin-melange-lot-12",
+    "asin": "B0C535K7FJ",
+    "nom": "Serviettes de table en mélange de lin, couleur unie, lot de 12",
+    "type_objet": "textile",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "eucalyptus-artificiel-lot-6",
+    "asin": "B0CL24N817",
+    "nom": "Branches d’eucalyptus artificielles, lot de 6",
+    "type_objet": "decoration-noel",
+    "matieres": [],
+    "couleurs": [
+      "vert"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "photophores-dores-lot-12",
+    "asin": "B0C36J75M3",
+    "nom": "Photophores dorés en verre mercurisé, lot de 12",
+    "type_objet": "bougie",
+    "matieres": [],
+    "couleurs": [
+      "or"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
