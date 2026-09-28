@@ -1168,5 +1168,136 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "housse-canape-velours-cotele",
+    "asin": "B0G6DBL57S",
+    "nom": "Housse de canapé épaisse en velours côtelé, 2 à 4 places",
+    "type_objet": "textile",
+    "matieres": [],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "plaid-tricot-chenille",
+    "asin": "B0CJV3388K",
+    "nom": "Plaid en grosse maille de chenille tricotée main",
+    "type_objet": "plaid",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "bougies-piliers-ivoire-lot-6",
+    "asin": "B082BJD4TX",
+    "nom": "Bougies piliers ivoire sans parfum, lot de 6",
+    "type_objet": "bougie",
+    "matieres": [],
+    "couleurs": [
+      "blanc"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coupe-terre-cuite-ronde",
+    "asin": "B0F1D8JJT6",
+    "nom": "Coupe ronde en terre cuite artisanale, 30 cm",
+    "type_objet": "vase",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "salon",
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "branches-saule-sechees",
+    "asin": "B0CJ2HFYLP",
+    "nom": "Branches de saule séchées, lot de 15 (58 cm)",
+    "type_objet": "vase",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tapis-peau-mouton-beige",
+    "asin": "B0B96YGHKT",
+    "nom": "Tapis en peau de mouton à poil long, beige, 90 × 60 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "lampadaire-rotin-boheme",
+    "asin": "B0F1FPJ393",
+    "nom": "Lampadaire bohème en rotin, double abat-jour, 173 cm",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "pouf-tricot-moutarde",
+    "asin": "B00LN8C37Q",
+    "nom": "Pouf rond tressé en coton, jaune moutarde, 70 cm",
+    "type_objet": "pouf",
+    "matieres": [],
+    "couleurs": [
+      "safran"
+    ],
+    "pieces": [
+      "salon",
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
