@@ -36,3 +36,14 @@ export function imageArticle(nom: string, alt: string, sizes: string, chargement
   const prioritaire = chargement === 'eager' ? ' fetchpriority="high"' : '';
   return `<img${classe ? ` class="${classe}"` : ''} src="images/articles/${nom}-800.webp" srcset="images/articles/${nom}-800.webp 800w, images/articles/${nom}-1600.webp 1600w" sizes="${sizes}" width="${d.largeur}" height="${d.hauteur}" alt="${echapper(alt)}" loading="${chargement}" decoding="async"${prioritaire} />`;
 }
+
+/**
+ * Photo d'ambiance d'une rubrique ou d'un conseil (images créées par IA) : « piece-salon »,
+ * « matiere-wax », « occasion-mariage », « conseil-<slug> ». Même chaîne que les articles
+ * (npm run images). Tant que la photo n'existe pas, le motif dessiné reste affiché.
+ */
+export function photoFond(nom: string, sizes: string, chargement: 'lazy' | 'eager' = 'lazy'): string {
+  return imageArticle(nom, '', sizes, chargement, 'photo-fond');
+}
+
+export const MENTION_IA_ILLUSTRATION = 'Photo d’illustration créée par IA.';

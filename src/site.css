@@ -1351,6 +1351,48 @@ main {
   transform: translateX(4px);
 }
 
+/* Photo d'ambiance d'une rubrique ou d'un conseil (build/images.ts, photoFond) : remplace le motif. */
+.photo-fond {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--courbe);
+}
+
+.tuile:hover .photo-fond {
+  transform: scale(1.06);
+}
+
+.tuiles--piece .tuile--photo,
+.tuiles--occasion .tuile--photo {
+  min-height: 230px;
+  align-content: end;
+  border: 0;
+  color: var(--ivoire);
+}
+
+.tuiles--piece .tuile--photo::before,
+.tuiles--occasion .tuile--photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent 35%, rgb(30 42 71 / 85%) 100%);
+}
+
+.tuiles--piece .tuile--photo:hover,
+.tuiles--occasion .tuile--photo:hover {
+  color: var(--ivoire);
+}
+
+.tuiles--piece .tuile--photo .tuile__nb,
+.tuiles--occasion .tuile--photo .tuile__nb {
+  color: rgb(255 250 240 / 85%);
+}
+
 .tuiles--occasion .tuile__icone {
   background: var(--baobab-clair);
   color: var(--baobab);

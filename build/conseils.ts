@@ -20,6 +20,7 @@ import { fichierRubrique, trouverRubrique } from '../src/taxonomie.ts';
 import { rendreCorps } from './articles.ts';
 import { dateDuJour, dateLongue, NOM_SITE, SITE_URL } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
+import { imageExiste, MENTION_IA_ILLUSTRATION, photoFond } from './images.ts';
 import { motif } from './motifs.ts';
 import { echapper, indexProduits } from './produits.ts';
 
@@ -88,11 +89,16 @@ export function conseilsPublies(date = dateDuJour(), tous = tousLesConseils()): 
   return tous.filter((c) => c.publieLe <= date);
 }
 
+/** Nom de la photo d'un conseil : « conseil-<slug> » (voir photoFond). */
+export function imageConseil(c: Conseil): string {
+  return `${PREFIXE_CONSEIL}${c.slug}`;
+}
+
 /** Carte d'un conseil (liste, accueil, suggestions). */
 export function carteConseil(c: Conseil, i = 0): string {
   const t = THEMES[c.theme];
   return `<a class="carte-conseil" href="${c.fichier}" data-reveal style="--i:${i}" data-libelle="${echapper(c.titre)}">
-  <span class="carte-conseil__motif">${motif(t.motif)}<span class="carte-conseil__icone">${icone(t.icone, 'icone')}</span></span>
+  <span class="carte-conseil__motif">${photoFond(imageConseil(c), '96px') || `${motif(t.motif)}<span class="carte-conseil__icone">${icone(t.icone, 'icone')}</span>`}</span>
   <span class="carte-conseil__texte">
     <span class="carte-conseil__theme">${t.nom}</span>
     <strong class="carte-conseil__titre">${echapper(c.titre)}</strong>
@@ -119,6 +125,7 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
   const lire = [...voisins, ...autres].slice(0, 3);
   const matieres = c.matieres.map((id) => trouverRubrique('matiere', id)).filter((r) => !!r);
   const adresse = `${url}${c.fichier}`;
+  const photo = photoFond(imageConseil(c), '(min-width: 900px) 320px, 120px', 'eager');
   // Données structurées : la question et sa réponse courte (FAQ), plus l'article et le fil d'Ariane.
   const ld = [
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: c.titre, acceptedAnswer: { '@type': 'Answer', text: c.reponse } }] },
@@ -139,7 +146,7 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="${echapper(c.description)}" />
-    <meta name="date-publication" content="${c.publieLe}" />
+    <meta name="date-publication" content="${c.publieLe}" />${imageExiste(imageConseil(c)) ? `\n    <meta name="image-partage" content="${imageConseil(c)}" />` : ''}
     <title>${echapper(c.titre)} · ${NOM_SITE}</title>
     <!--#head-->
     ${ld.map(jsonLd).join('\n    ')}
@@ -151,9 +158,9 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
         <div class="page__entete-texte">
           <p class="fil"><a href="index.html">Accueil</a> › <a href="conseils.html">Conseils</a> › ${t.nom}</p>
           <p class="article__meta"><span class="article__type">${icone(t.icone, 'icone icone--petite')} ${t.nom}</span><time datetime="${c.publieLe}">${dateLongue(c.publieLe)}</time></p>
-          <h1 data-mots>${echapper(c.titre)}</h1>
+          <h1 data-mots>${echapper(c.titre)}</h1>${photo ? `\n          <p class="mention-ia">${icone('ia', 'icone icone--petite')} ${MENTION_IA_ILLUSTRATION}</p>` : ''}
         </div>
-        <div class="page__arche" data-reveal aria-hidden="true">${motif(t.motif)}</div>
+        <div class="page__arche" data-reveal aria-hidden="true">${photo || motif(t.motif)}</div>
       </header>
       <div class="conteneur conteneur--etroit">
         <aside class="reponse-courte" data-reveal>

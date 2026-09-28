@@ -13,7 +13,7 @@ import { articlesPublies, carteArticle, grilleArticles, tousLesArticles, TYPES, 
 import { dateLongue, NOM_SITE, SITE_URL } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { motif } from './motifs.ts';
-import { imageArticle } from './images.ts';
+import { imageArticle, imageExiste, MENTION_IA_ILLUSTRATION, photoFond } from './images.ts';
 import { echapper } from './produits.ts';
 
 export interface EntreeGlossaire {
@@ -46,6 +46,8 @@ interface PageSimple {
   classe?: string;
   /** Motif de l'arche en haut de page (voir build/motifs.ts). */
   motif?: string;
+  /** Photo de l'arche (voir photoFond) ; à défaut, le motif. */
+  image?: string;
   /** Page encore vide : cachée à Google et absente du sitemap jusqu'à son premier contenu. */
   noindex?: boolean;
   /** Données structurées JSON-LD à ajouter dans l'en-tête. */
@@ -54,6 +56,7 @@ interface PageSimple {
 
 /** Gabarit commun des pages de liste (avec marqueurs). */
 export function pageSimple(p: PageSimple): string {
+  const photo = p.image ? photoFond(p.image, '(min-width: 900px) 320px, 120px', 'eager') : '';
   const fil = [['index.html', 'Accueil'] as [string, string], ...p.fil]
     .map(([href, nom], i, t) => (i === t.length - 1 ? echapper(nom) : `<a href="${href}">${echapper(nom)}</a>`))
     .join(' › ');
@@ -62,7 +65,7 @@ export function pageSimple(p: PageSimple): string {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="${echapper(p.description)}" />${p.noindex ? '\n    <meta name="robots" content="noindex" />' : ''}
+    <meta name="description" content="${echapper(p.description)}" />${p.noindex ? '\n    <meta name="robots" content="noindex" />' : ''}${photo ? `\n    <meta name="image-partage" content="${p.image}" />` : ''}
     <title>${echapper(p.titre)} · ${NOM_SITE}</title>
     <!--#head-->${p.ld ? `\n    <script type="application/ld+json">${JSON.stringify(p.ld).replace(/</g, '\\u003c')}</script>` : ''}
   </head>
@@ -73,9 +76,9 @@ export function pageSimple(p: PageSimple): string {
         <div class="page__entete-texte">
           <p class="fil">${fil}</p>
           <h1 data-mots>${p.h1}</h1>
-          <p class="chapo" data-reveal>${p.chapo}</p>
+          <p class="chapo" data-reveal>${p.chapo}</p>${photo ? `\n          <p class="mention-ia">${icone('ia', 'icone icone--petite')} ${MENTION_IA_ILLUSTRATION}</p>` : ''}
         </div>
-        <div class="page__arche" data-reveal aria-hidden="true">${motif(p.motif ?? 'kente')}</div>
+        <div class="page__arche" data-reveal aria-hidden="true">${photo || motif(p.motif ?? 'kente')}</div>
       </header>
       <div class="conteneur">
         ${p.contenu}
@@ -93,13 +96,19 @@ export function articlesDeRubrique(famille: Famille, id: string, publies: Articl
   return publies.filter((a) => a[FAMILLES[famille].champ].includes(id));
 }
 
+/** Nom de la photo d'une rubrique : « piece-salon », « matiere-wax », « occasion-mariage ». */
+export function imageRubrique(famille: Famille, id: string): string {
+  return `${famille}-${id}`;
+}
+
 /** Tuiles d'entrée d'une famille (accueil et page hub) : motif de la matière ou icône de la pièce. */
 export function tuilesRubriques(famille: Famille, publies: Article[]): string {
   return `<ul class="tuiles tuiles--${famille}">${FAMILLES[famille].liste
     .map((r, i) => {
       const n = articlesDeRubrique(famille, r.id, publies).length;
-      const visuel = famille === 'matiere' ? motif(r.id) : `<span class="tuile__icone">${icone(ICONES_RUBRIQUES[r.id] ?? 'maison', 'icone')}</span>`;
-      return `<li data-reveal style="--i:${i}"><a class="tuile" href="${fichierRubrique(famille, r.id)}" data-inclinaison data-libelle="${r.nom}">${visuel}<span class="tuile__texte"><span class="tuile__nom">${r.nom}</span><span class="tuile__nb">${n ? `${n} article${n > 1 ? 's' : ''}` : 'Découvrir'} ${icone('fleche', 'icone icone--petite')}</span></span></a></li>`;
+      const photo = photoFond(imageRubrique(famille, r.id), '(min-width: 1100px) 300px, (min-width: 700px) 45vw, 92vw');
+      const visuel = photo || (famille === 'matiere' ? motif(r.id) : `<span class="tuile__icone">${icone(ICONES_RUBRIQUES[r.id] ?? 'maison', 'icone')}</span>`);
+      return `<li data-reveal style="--i:${i}"><a class="tuile${photo ? ' tuile--photo' : ''}" href="${fichierRubrique(famille, r.id)}" data-inclinaison data-libelle="${r.nom}">${visuel}<span class="tuile__texte"><span class="tuile__nom">${r.nom}</span><span class="tuile__nb">${n ? `${n} article${n > 1 ? 's' : ''}` : 'Découvrir'} ${icone('fleche', 'icone icone--petite')}</span></span></a></li>`;
     })
     .join('')}</ul>`;
 }
@@ -132,6 +141,7 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     classe: `page--rubrique page--${famille}`,
     noindex: articles.length === 0,
     motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
+    image: imageExiste(imageRubrique(famille, r.id)) ? imageRubrique(famille, r.id) : undefined,
     contenu: `${grilleArticles(articles, '<p class="liste-vide">Les premiers articles de cette rubrique arrivent bientôt.</p>')}
         ${
           glossaire.length
@@ -337,7 +347,7 @@ export function visiteMaison(publies = articlesPublies()): string {
     .map((r, i) => {
       const n = articlesDeRubrique('piece', r.id, publies).length;
       return `<a class="visite__piece visite__piece--${i % 4}" href="${fichierRubrique('piece', r.id)}" data-libelle="${r.nom}">
-      <span class="visite__motif">${motif(MOTIF_PIECE[r.id] ?? 'wax')}</span>
+      <span class="visite__motif">${photoFond(imageRubrique('piece', r.id), '(min-width: 700px) 520px, 80vw') || motif(MOTIF_PIECE[r.id] ?? 'wax')}</span>
       <span class="visite__num">${String(i + 1).padStart(2, '0')}</span>
       <span class="visite__icone">${icone(ICONES_RUBRIQUES[r.id] ?? 'maison', 'icone')}</span>
       <span class="visite__texte">

@@ -8,10 +8,10 @@ import { describe, expect, it } from 'vitest';
 import { FORMAT_ASIN } from '../src/amazon.ts';
 import { FAMILLES, type Famille } from '../src/taxonomie.ts';
 import { produitsCites, tousLesArticles } from './articles.ts';
-import { conseilsPublies, tousLesConseils } from './conseils.ts';
-import { chargerDimensions, DOSSIER_IMAGES } from './images.ts';
+import { conseilsPublies, imageConseil, tousLesConseils } from './conseils.ts';
+import { chargerDimensions, DOSSIER_IMAGES, imageExiste } from './images.ts';
 import { chargerProduits } from './produits.ts';
-import { chargerGlossaire } from './rubriques.ts';
+import { chargerGlossaire, imageRubrique } from './rubriques.ts';
 
 const RACINE = resolve(import.meta.dirname, '..');
 const produits = chargerProduits(resolve(RACINE, 'src/data/produits.json'));
@@ -95,6 +95,13 @@ describe('articles (contenu/articles)', () => {
       for (const f of [`${a.image}-800.webp`, `${a.image}-1600.webp`]) expect(existsSync(resolve(DOSSIER_IMAGES, f)), `${a.slug} : ${f}`).toBe(true);
       expect(existsSync(resolve(RACINE, 'public/images/partage', `${a.image}.jpg`)), `${a.slug} : image de partage`).toBe(true);
     }
+  });
+
+  it('chaque rubrique et chaque conseil a sa photo d’illustration', () => {
+    for (const famille of Object.keys(FAMILLES) as Famille[]) {
+      for (const r of FAMILLES[famille].liste) expect(imageExiste(imageRubrique(famille, r.id)), imageRubrique(famille, r.id)).toBe(true);
+    }
+    for (const c of tousLesConseils()) expect(imageExiste(imageConseil(c)), imageConseil(c)).toBe(true);
   });
 
   it('les titres d’épingles font 100 caractères au plus', () => {
