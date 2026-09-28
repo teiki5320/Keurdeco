@@ -1,12 +1,10 @@
 [
   {
     "id": "coussin-wax-cercles-safran",
-    "asin": null,
-    "nom": "Housse de coussin en wax, cercles safran et terracotta",
+    "asin": "B09S5QN8GB",
+    "nom": "Housses de coussin à imprimé africain, lot de 4",
     "type_objet": "coussin",
-    "matieres": [
-      "wax"
-    ],
+    "matieres": [],
     "couleurs": [
       "safran",
       "terracotta",
@@ -16,14 +14,14 @@
       "salon",
       "chambre"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "coussin-wax-vert-baobab",
-    "asin": null,
-    "nom": "Housse de coussin en wax, fond vert",
-    "type_objet": "coussin",
+    "asin": "B0BWCF2VQ1",
+    "nom": "Coupons de tissu wax africain, lot de 8 (50 × 40 cm)",
+    "type_objet": "textile",
     "matieres": [
       "wax"
     ],
@@ -35,17 +33,15 @@
     "pieces": [
       "salon"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "coussin-wax-terracotta",
-    "asin": null,
-    "nom": "Housse de coussin en wax, fond terracotta",
+    "asin": "B0FH9PLDMJ",
+    "nom": "Housses de coussin en velours terracotta, lot de 2",
     "type_objet": "coussin",
-    "matieres": [
-      "wax"
-    ],
+    "matieres": [],
     "couleurs": [
       "terracotta",
       "crème"
@@ -54,17 +50,15 @@
       "salon",
       "chambre"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "plaid-coton-rayures-creme",
-    "asin": null,
-    "nom": "Plaid en coton tissé, rayures crème et brun",
+    "asin": "B07JR27VQJ",
+    "nom": "Plaid ethnique à franges en coton, écru et noir",
     "type_objet": "plaid",
-    "matieres": [
-      "bogolan"
-    ],
+    "matieres": [],
     "couleurs": [
       "crème",
       "brun"
@@ -73,13 +67,13 @@
       "salon",
       "chambre"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "assiettes-murales-tressees",
-    "asin": null,
-    "nom": "Lot d'assiettes murales tressées (paniers plats décoratifs)",
+    "asin": "B0BHVFDLJK",
+    "nom": "Paniers muraux tressés main à motif africain, lot de 3",
     "type_objet": "assiette-murale",
     "matieres": [
       "raphia-paniers"
@@ -94,13 +88,13 @@
       "entree",
       "chambre"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "panier-plante-tresse-rayures",
-    "asin": null,
-    "nom": "Panier cache-pot tressé à rayures pour grande plante",
+    "asin": "B0CB1JHCJM",
+    "nom": "Cache-pot tressé en jonc de mer, noir, 27 cm",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -113,17 +107,15 @@
       "salon",
       "balcon-exterieur"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "tapis-motif-losanges",
-    "asin": null,
-    "nom": "Tapis crème à motifs losanges indigo",
+    "asin": "B09NM5XVWQ",
+    "nom": "Tapis berbère à losanges, crème, 160 × 230 cm",
     "type_objet": "tapis",
-    "matieres": [
-      "bogolan"
-    ],
+    "matieres": [],
     "couleurs": [
       "crème",
       "indigo",
@@ -133,17 +125,15 @@
       "salon",
       "chambre"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "pouf-cuir-ocre",
-    "asin": null,
-    "nom": "Pouf rond en cuir ocre",
+    "asin": "B07KB6WT5Y",
+    "nom": "Pouf marocain en cuir véritable, fait main",
     "type_objet": "pouf",
-    "matieres": [
-      "bois-sculpte"
-    ],
+    "matieres": [],
     "couleurs": [
       "ocre",
       "safran"
@@ -152,13 +142,13 @@
       "salon",
       "chambre"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "vase-terre-cuite-terracotta",
-    "asin": null,
-    "nom": "Vase en terre cuite, forme ronde",
+    "asin": "B0DF2K5LNW",
+    "nom": "Vase rustique en céramique à deux anses",
     "type_objet": "vase",
     "matieres": [
       "terre-cuite"
@@ -170,13 +160,13 @@
       "salon",
       "entree"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "tabouret-bois-sculpte",
-    "asin": null,
-    "nom": "Tabouret en bois sculpté (table d'appoint)",
+    "asin": "B0CYHBBKBW",
+    "nom": "Tabouret tripode en teck massif, fait main",
     "type_objet": "tabouret",
     "matieres": [
       "bois-sculpte"
@@ -189,13 +179,13 @@
       "chambre",
       "entree"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "panier-bolga-marche",
-    "asin": null,
-    "nom": "Panier de marché Bolga tressé à anses en cuir",
+    "asin": "B0041CZMX8",
+    "nom": "Grand panier Bolga du Ghana, anse en cuir, commerce équitable",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -208,13 +198,13 @@
       "entree",
       "cuisine-salle-a-manger"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "panier-linge-tresse-couvercle",
-    "asin": null,
-    "nom": "Panier à linge tressé avec couvercle",
+    "asin": "B0BSVCHK5K",
+    "nom": "Panier à linge rond tressé en jacinthe d’eau, avec couvercle",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -227,13 +217,13 @@
       "salle-de-bain",
       "chambre"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "paniers-rangement-raphia-lot",
-    "asin": null,
-    "nom": "Lot de paniers de rangement en raphia ou jonc de mer",
+    "asin": "B0B21CGYK2",
+    "nom": "Paniers de rangement en jonc de mer, lot de 3",
     "type_objet": "rangement",
     "matieres": [
       "raphia-paniers"
@@ -246,13 +236,13 @@
       "salle-de-bain",
       "chambre-enfant"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "corbeille-fruits-tressee",
-    "asin": null,
-    "nom": "Corbeille à fruits tressée à motifs",
+    "asin": "B0B2RDK7DC",
+    "nom": "Grande corbeille ronde tressée, 40 cm",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -264,13 +254,13 @@
     "pieces": [
       "cuisine-salle-a-manger"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "panier-jouets-tresse",
-    "asin": null,
-    "nom": "Grand panier à jouets tressé avec anses",
+    "asin": "B0DPWYJK58",
+    "nom": "Grand panier tressé à poignées, 65 litres",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -282,13 +272,13 @@
     "pieces": [
       "chambre-enfant"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "panier-mural-tresse",
-    "asin": null,
-    "nom": "Panier mural suspendu tressé",
+    "asin": "B0FD9YXM78",
+    "nom": "Panier suspendu tressé en jacinthe d’eau",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -300,13 +290,13 @@
       "entree",
       "cuisine-salle-a-manger"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "paniers-gigognes-tresses",
-    "asin": null,
-    "nom": "Set de paniers gigognes tressés",
+    "asin": "B0F381GK7Q",
+    "nom": "Paniers en algues tressées avec couvercle, 3 tailles",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -320,13 +310,13 @@
       "salon",
       "chambre"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "panier-agaseke-couvercle",
-    "asin": null,
-    "nom": "Boîte tressée à couvercle conique, style agaseke du Rwanda",
+    "asin": "B07DQRGFJD",
+    "nom": "Grand panier coloré en rotin tressé main, avec couvercle",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -341,13 +331,13 @@
       "chambre",
       "entree"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "coussin-bogolan",
-    "asin": null,
-    "nom": "Housse de coussin en bogolan, motifs noirs et crème",
+    "asin": "B0CJF5J48N",
+    "nom": "Housses de coussin à motifs mudcloth (bogolan), 50 × 50 cm",
     "type_objet": "coussin",
     "matieres": [
       "bogolan"
@@ -361,8 +351,8 @@
       "salon",
       "chambre"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   },
   {
     "id": "tissu-bogolan-coupon",
@@ -423,8 +413,8 @@
   },
   {
     "id": "tapis-motif-bogolan",
-    "asin": null,
-    "nom": "Tapis à motifs inspirés du bogolan",
+    "asin": "B0F9QXTF71",
+    "nom": "Tapis tribal noir et blanc à losanges",
     "type_objet": "tapis",
     "matieres": [
       "bogolan"
@@ -438,7 +428,7 @@
       "salon",
       "entree"
     ],
-    "statut": "a_selectionner",
-    "verifie_le": null
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]

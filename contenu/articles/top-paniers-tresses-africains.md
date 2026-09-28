@@ -51,8 +51,8 @@ classement:
     pourquoi: "Rangés les uns dans les autres ou répartis dans la maison, ils créent un fil conducteur d’une pièce à l’autre."
     a_savoir: "Les plus petits servent de vide-poches ; les plus grands de cache-pots ou de paniers à plaids."
   - produit: panier-agaseke-couvercle
-    pourquoi: "Inspirée des paniers de la paix rwandais, cette boîte au couvercle pointu est un petit objet d’art, posé seul ou en groupe sur une étagère."
-    a_savoir: "Les modèles tressés main demandent de nombreuses heures de travail ; les versions en grande série sont moins fines mais plus abordables."
+    pourquoi: "Très coloré et fermé par un couvercle, ce grand panier en rotin tressé à la main cache le linge ou les plaids tout en décorant un coin de chambre."
+    a_savoir: "Il est grand (environ 47 cm de diamètre et 55 cm de haut) : prévoyez la place au sol plutôt que sur une étagère."
 epingles:
   - "Top 10 des paniers tressés africains pour la déco"
   - "Paniers Bolga, raphia : les plus beaux paniers africains"
