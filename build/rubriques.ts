@@ -4,7 +4,7 @@
  *   piece-<id>.html, matiere-<id>.html, occasion-<id>.html   (articles publiés de la rubrique)
  *   articles.html   (tous les articles publiés, par type)
  *   glossaire.html et glossaire-<id>.html   (glossaire des matières, motifs et savoir-faire)
- * et les blocs de l'accueil (marqueurs <!--#une-->, <!--#derniers-->, <!--#tops-->, <!--#entrees:piece-->…).
+ * et les blocs de l'accueil (marqueurs <!--#une-->, <!--#tops-->, <!--#entrees:piece-->…).
  */
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -281,29 +281,6 @@ export function blocUne(publies = articlesPublies(), tous = tousLesArticles()): 
       <span class="une__resume">${echapper(prochain.description)}</span>
     </span>
   </div>`;
-}
-
-/** Articles programmés (sans lien : ils ne sont pas encore en ligne), pour que l'accueil annonce la suite. */
-export function blocAVenir(publies = articlesPublies(), tous = tousLesArticles()): string {
-  const aVenir = tous.filter((x) => !publies.includes(x)).sort((x, y) => x.publieLe.localeCompare(y.publieLe));
-  if (aVenir.length === 0) return '';
-  return aVenir
-    .map(
-      (a, i) => `<div class="carte-article carte-article--bientot" data-reveal style="--i:${i}">
-  <span class="carte-article__image">${imageArticle(a.image, '', '(min-width: 1100px) 380px, 80vw')}<span class="carte-article__date">${dateLongue(a.publieLe)}</span></span>
-  <span class="carte-article__type">${icone(TYPES[a.type].icone, 'icone icone--petite')} ${TYPES[a.type].nom} · bientôt</span>
-  <strong class="carte-article__titre">${echapper(a.titre)}</strong>
-  <span class="carte-article__resume">${echapper(a.description)}</span>
-</div>`,
-    )
-    .join('');
-}
-
-export function blocDerniers(publies = articlesPublies(), n = 8): string {
-  return publies
-    .slice(0, n)
-    .map((a) => carteArticle(a))
-    .join('');
 }
 
 export function blocTops(publies = articlesPublies(), n = 3): string {

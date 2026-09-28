@@ -8,7 +8,6 @@
  *   <!--#header-->           bandeau + navigation (la rubrique courante est mise en évidence)
  *   <!--#footer-->           pied de page (avec la mention Partenaires Amazon)
  *   <!--#une-->              ambiance à la une (accueil)
- *   <!--#derniers-->         derniers articles publiés
  *   <!--#tops-->             derniers Top 10
  *   <!--#conseils-->         derniers conseils publiés
  *   <!--#entrees:piece-->    tuiles d'entrée d'une famille (piece, matiere, occasion)
@@ -26,7 +25,7 @@ import { NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
 import { blocConseils, conseilsPublies, pagesConseils } from './conseils.ts';
 import { essayage } from './essayage.ts';
 import { icone, marque, type NomIcone } from './icones.ts';
-import { blocAVenir, blocDerniers, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
+import { blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
 
 export { insecables, NOM_SITE, SITE_URL };
@@ -267,10 +266,8 @@ export function transformerPage(html: string, fichier: string): string {
     .replace('<!--#header-->', header(fichier))
     .replace('<!--#footer-->', footer())
     .replace('<!--#une-->', () => blocUne(publies))
-    .replace('<!--#derniers-->', () => blocDerniers(publies))
     .replace('<!--#tops-->', () => blocTops(publies))
     .replace('<!--#conseils-->', () => blocConseils())
-    .replace('<!--#a-venir-->', () => blocAVenir(publies))
     .replace('<!--#glossaire-accueil-->', () => blocGlossaire())
     .replace(/<!--#couture-->/g, () => couture())
     .replace('<!--#visite-->', () => visiteMaison(publies))

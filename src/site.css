@@ -1050,67 +1050,6 @@ main {
   }
 }
 
-/* Rangées défilantes */
-
-.section--rail .section__entete {
-  margin-bottom: 28px;
-}
-
-.rail {
-  display: flex;
-  gap: clamp(16px, 2.4vw, 28px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  padding: 8px max(var(--gouttiere), calc((100vw - var(--largeur)) / 2)) 24px;
-  scroll-padding-inline: max(var(--gouttiere), calc((100vw - var(--largeur)) / 2));
-  cursor: grab;
-}
-
-.rail::-webkit-scrollbar {
-  display: none;
-}
-
-.rail--glisse {
-  cursor: grabbing;
-  scroll-snap-type: none;
-}
-
-.rail > * {
-  flex: 0 0 clamp(270px, 30vw, 380px);
-  scroll-snap-align: start;
-}
-
-.rail__boutons {
-  display: flex;
-  gap: 8px;
-}
-
-.rail__bouton {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1.5px solid var(--encre);
-  background: transparent;
-  color: var(--encre);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    opacity 0.25s ease;
-}
-
-.rail__bouton:hover {
-  background: var(--encre);
-  color: var(--ivoire);
-}
-
-.rail--debut [data-rail-prec],
-.rail--fin [data-rail-suiv] {
-  opacity: 0.3;
-}
-
 /* ---------- Visite de la maison ---------- */
 
 .visite {

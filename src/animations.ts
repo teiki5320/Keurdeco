@@ -6,7 +6,6 @@
  * - rideau de kente entre les pages (bandes de tissu qui tombent puis remontent) ;
  * - cartes d'articles qui s'agrandissent jusqu'à l'image de l'article (View Transitions entre pages) ;
  * - nuancier de l'accueil (src/nuancier.ts) : objets, matières, coussins qui tombent sur le canapé ;
- * - rangées de cartes défilantes (.rail) avec boutons et glisser à la souris ;
  * - cartes qui s'inclinent sous le curseur ([data-inclinaison]) ;
  * - en-tête compact après défilement.
  * « Réduire les animations » (préférence du système) désactive tout ce qui bouge.
@@ -257,55 +256,6 @@ function visite(): void {
   maj();
 }
 
-/** Rangées de cartes défilantes : boutons précédent/suivant et glisser à la souris. */
-function rails(): void {
-  document.querySelectorAll<HTMLElement>('[data-rail]').forEach((bloc) => {
-    const piste = bloc.querySelector<HTMLElement>('.rail');
-    if (!piste) return;
-    const pas = () => Math.max(260, piste.clientWidth * 0.8);
-    bloc.querySelector('[data-rail-prec]')?.addEventListener('click', () => piste.scrollBy({ left: -pas(), behavior: reduit() ? 'auto' : 'smooth' }));
-    bloc.querySelector('[data-rail-suiv]')?.addEventListener('click', () => piste.scrollBy({ left: pas(), behavior: reduit() ? 'auto' : 'smooth' }));
-    const maj = () => {
-      bloc.classList.toggle('rail--debut', piste.scrollLeft < 8);
-      bloc.classList.toggle('rail--fin', piste.scrollLeft + piste.clientWidth > piste.scrollWidth - 8);
-    };
-    piste.addEventListener('scroll', maj, { passive: true });
-    maj();
-    // Glisser à la souris (le tactile défile nativement).
-    let depart: { x: number; gauche: number } | null = null;
-    let glisse = false;
-    piste.addEventListener('pointerdown', (e) => {
-      if (e.pointerType !== 'mouse' || e.button !== 0) return;
-      depart = { x: e.clientX, gauche: piste.scrollLeft };
-      glisse = false;
-    });
-    window.addEventListener('pointermove', (e) => {
-      if (!depart) return;
-      const dx = e.clientX - depart.x;
-      if (Math.abs(dx) > 6) {
-        glisse = true;
-        piste.classList.add('rail--glisse');
-      }
-      piste.scrollLeft = depart.gauche - dx;
-    });
-    window.addEventListener('pointerup', () => {
-      depart = null;
-      piste.classList.remove('rail--glisse');
-    });
-    piste.addEventListener(
-      'click',
-      (e) => {
-        if (glisse) {
-          e.preventDefault();
-          e.stopPropagation();
-          glisse = false;
-        }
-      },
-      true,
-    );
-  });
-}
-
 /** Cartes qui s'inclinent légèrement sous le curseur. */
 function inclinaisons(): void {
   if (reduit() || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
@@ -342,7 +292,6 @@ export function demarrerAnimations(): void {
   porte();
   visite();
   nuancier();
-  rails();
   inclinaisons();
   entete();
 }
