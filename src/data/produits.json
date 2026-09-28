@@ -1805,5 +1805,93 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "awale-mancala-bois",
+    "asin": "B0F3RXF9PS",
+    "nom": "Jeu d’awalé (mancala) en bois, plateau pliable",
+    "type_objet": "jeu",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "livre-african-textiles",
+    "asin": "0500292213",
+    "nom": "Livre « African Textiles: Colour and Creativity Across a Continent » (en anglais)",
+    "type_objet": "livre",
+    "matieres": [
+      "wax",
+      "bogolan",
+      "kente"
+    ],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "sous-verres-rotin-lot-6",
+    "asin": "B0GFWD7JN3",
+    "nom": "Dessous de verre en rotin faits main, lot de 6 avec support",
+    "type_objet": "vaisselle",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "plateaux-tresses-lot-2",
+    "asin": "B088BKCHSB",
+    "nom": "Plateaux ronds tressés en jonc de mer et jacinthe d’eau, 32 et 28 cm",
+    "type_objet": "plateau",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "savon-noir-dudu-osun-lot-6",
+    "asin": "B01N78IU8L",
+    "nom": "Savon noir africain Dudu-Osun, lot de 6",
+    "type_objet": "soin",
+    "matieres": [],
+    "couleurs": [
+      "noir"
+    ],
+    "pieces": [
+      "salle-de-bain"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
