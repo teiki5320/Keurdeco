@@ -67,7 +67,13 @@ try {
 
   // Accueil
   await page.goto(BASE, { waitUntil: 'networkidle' });
-  verifier((await page.locator('.une').count()) === 1 && (await page.getAttribute('.une', 'href')) === 'salon-terracotta-wax.html', 'accueil : ambiance à la une');
+  // À la une : l'ambiance la plus récente (tous les articles sont publiés dans la version de démonstration).
+  const ambiances = readdirSync(resolve(RACINE, 'contenu/articles'))
+    .filter((f) => f.endsWith('.md'))
+    .map((f) => { const t = readFileSync(resolve(RACINE, 'contenu/articles', f), 'utf8'); return { fichier: f.replace(/\.md$/, '.html'), type: t.match(/^type: (\S+)/m)?.[1], date: t.match(/^publie_le: (\S+)/m)?.[1] ?? '', titre: t.match(/^titre: "?(.*?)"?$/m)?.[1] ?? '' }; })
+    .filter((x) => x.type === 'ambiance')
+    .sort((x, y) => y.date.localeCompare(x.date) || x.titre.localeCompare(y.titre, 'fr'));
+  verifier((await page.locator('.une').count()) === 1 && (await page.getAttribute('.une', 'href')) === ambiances[0].fichier, `accueil : ambiance à la une (${ambiances[0].fichier})`);
   verifier((await page.locator('.visite__piece').count()) === 7 && (await page.locator('.tuiles--matiere .tuile').count()) === 8, 'accueil : visite des 7 pièces et 8 coupons de matières');
   verifier((await page.textContent('.site-pied'))?.includes('En tant que Partenaire Amazon, Keur Déco réalise un bénéfice'), 'pied de page : mention Partenaires Amazon');
   verifier((await page.getAttribute('meta[name="p:domain_verify"]', 'content')) === 'code-de-test', 'balise de revendication Pinterest (PINTEREST_VERIFY)');
