@@ -2149,5 +2149,72 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "chaises-dossier-rotin-lot-2",
+    "asin": "B0DP8R9719",
+    "nom": "Chaises à dossier en rotin, beige, lot de 2",
+    "type_objet": "chaise",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "etageres-flottantes-pin-lot-3",
+    "asin": "B0DKSLZ29R",
+    "nom": "Étagères murales flottantes en pin, lot de 3 (40 cm)",
+    "type_objet": "rangement",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "paravent-bois-3-panneaux",
+    "asin": "B0FNQXL8HS",
+    "nom": "Paravent en bois à 3 panneaux, brun clair, 135 × 180 cm",
+    "type_objet": "paravent",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "chambre",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "table-ronde-2-personnes-chene",
+    "asin": "B0F9152F2Q",
+    "nom": "Table à manger ronde pour 2 personnes, aspect chêne, 80 cm",
+    "type_objet": "table",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
