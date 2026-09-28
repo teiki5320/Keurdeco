@@ -115,7 +115,7 @@ export function referencement(html: string, fichier: string, url = SITE_URL): st
     ${json}`;
 }
 
-/** Mesure d'audience facultative et sans cookie : PLAUSIBLE_DOMAIN=www.keurdeco.fr npm run build */
+/** Mesure d'audience facultative et sans cookie : PLAUSIBLE_DOMAIN=www.keurdeco.com npm run build */
 export function mesureAudience(domaine = process.env.PLAUSIBLE_DOMAIN): string {
   return domaine ? `<script defer data-domain="${attribut(domaine)}" src="https://plausible.io/js/script.js"></script>` : '';
 }

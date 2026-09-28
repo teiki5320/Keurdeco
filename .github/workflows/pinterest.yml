@@ -36,7 +36,7 @@ jobs:
           PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
           PINTEREST_SANDBOX: ${{ vars.PINTEREST_SANDBOX }}
           PINTEREST_MAX: ${{ vars.PINTEREST_MAX }}
-          SITE_URL: ${{ vars.SITE_URL || 'https://teiki5320.github.io/Keurdeco/' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://www.keurdeco.com/' }}
         run: node scripts/pinterest-publier.mjs ${{ inputs.a_blanc && '--a-blanc' || '' }}
       - name: Alerte si Pinterest a renouvelé le refresh token
         if: always() && steps.publier.outputs.nouveau_refresh_token == '1'

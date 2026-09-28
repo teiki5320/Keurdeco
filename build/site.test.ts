@@ -27,8 +27,8 @@ describe('parties communes', () => {
 describe('référencement', () => {
   const page = '<title>Salon terracotta · Keur Déco</title><meta name="description" content="Desc" /><meta name="date-publication" content="2026-10-05" />';
   it('canonique, Open Graph complet pour les Rich Pins', () => {
-    const r = referencement(page, 'salon.html', 'https://www.keurdeco.fr/');
-    expect(r).toContain('<link rel="canonical" href="https://www.keurdeco.fr/salon.html" />');
+    const r = referencement(page, 'salon.html', 'https://www.keurdeco.com/');
+    expect(r).toContain('<link rel="canonical" href="https://www.keurdeco.com/salon.html" />');
     expect(r).toContain('<meta property="og:type" content="article" />');
     expect(r).toContain('<meta property="og:title" content="Salon terracotta" />');
     expect(r).toContain('<meta property="og:site_name" content="Keur Déco" />');
@@ -46,13 +46,13 @@ describe('référencement', () => {
     expect(verificationGoogle(undefined)).toBe('');
     expect(verificationGoogle('xyz')).toBe('<meta name="google-site-verification" content="xyz" />');
     expect(mesureAudience(undefined)).toBe('');
-    expect(mesureAudience('www.keurdeco.fr')).toContain('data-domain="www.keurdeco.fr"');
+    expect(mesureAudience('www.keurdeco.com')).toContain('data-domain="www.keurdeco.com"');
   });
 
   it('sitemap sans la 404', () => {
-    const s = sitemap(['index.html', '404.html', 'articles.html'], 'https://www.keurdeco.fr/');
-    expect(s).toContain('<loc>https://www.keurdeco.fr/</loc>');
-    expect(s).toContain('<loc>https://www.keurdeco.fr/articles.html</loc>');
+    const s = sitemap(['index.html', '404.html', 'articles.html'], 'https://www.keurdeco.com/');
+    expect(s).toContain('<loc>https://www.keurdeco.com/</loc>');
+    expect(s).toContain('<loc>https://www.keurdeco.com/articles.html</loc>');
     expect(s).not.toContain('404');
   });
 });

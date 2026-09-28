@@ -2,7 +2,7 @@
   "name": "keurdeco",
   "private": true,
   "version": "1.0.0",
-  "description": "Keur Déco : idées de décoration africaine (www.keurdeco.fr)",
+  "description": "Keur Déco : idées de décoration africaine (www.keurdeco.com)",
   "type": "module",
   "engines": {
     "node": ">=22.18"

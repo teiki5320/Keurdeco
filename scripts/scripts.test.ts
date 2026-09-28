@@ -12,8 +12,8 @@ const entree = (slug: string, numero: number, publie_le = '2026-10-05') => ({
   titre: `Titre ${slug} ${numero}`,
   description: 'Description',
   alt: 'Alt',
-  image: `https://www.keurdeco.fr/epingles/${slug}-${numero}.jpg`,
-  lien: `https://www.keurdeco.fr/${slug}.html?utm_source=pinterest`,
+  image: `https://www.keurdeco.com/epingles/${slug}-${numero}.jpg`,
+  lien: `https://www.keurdeco.com/${slug}.html?utm_source=pinterest`,
   tableau: 'salon',
 });
 
@@ -56,7 +56,7 @@ describe('publication Pinterest', () => {
   it('corps de POST /v5/pins : image_url et lien de l’article', () => {
     const c = corpsEpingle(entree('salon', 1), '123');
     expect(c.board_id).toBe('123');
-    expect(c.media_source).toEqual({ source_type: 'image_url', url: 'https://www.keurdeco.fr/epingles/salon-1.jpg' });
+    expect(c.media_source).toEqual({ source_type: 'image_url', url: 'https://www.keurdeco.com/epingles/salon-1.jpg' });
     expect(c.link).toContain('utm_source=pinterest');
   });
 

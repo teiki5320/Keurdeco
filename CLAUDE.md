@@ -1,6 +1,6 @@
 # Consignes du projet Keur Déco
 
-Site éditorial de décoration africaine (www.keurdeco.fr), rémunéré par les liens Partenaires Amazon.fr, trafic attendu depuis Pinterest et Google. Objectif prioritaire : **automatiser la chaîne, de l'article à l'épingle Pinterest publiée**.
+Site éditorial de décoration africaine (www.keurdeco.com), rémunéré par les liens Partenaires Amazon.fr, trafic attendu depuis Pinterest et Google. Objectif prioritaire : **automatiser la chaîne, de l'article à l'épingle Pinterest publiée**.
 
 ## Règles de travail
 

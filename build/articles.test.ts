@@ -140,9 +140,9 @@ describe('rendu', () => {
   });
 
   it('lien Épingler : adresse, image et description encodées', () => {
-    const lien = new URL(lienEpingler(ambiance, 'https://www.keurdeco.fr/', 'https://www.keurdeco.fr/epingles/x-1.jpg'));
-    expect(lien.searchParams.get('url')).toBe('https://www.keurdeco.fr/test-ambiance.html');
-    expect(lien.searchParams.get('media')).toBe('https://www.keurdeco.fr/epingles/x-1.jpg');
+    const lien = new URL(lienEpingler(ambiance, 'https://www.keurdeco.com/', 'https://www.keurdeco.com/epingles/x-1.jpg'));
+    expect(lien.searchParams.get('url')).toBe('https://www.keurdeco.com/test-ambiance.html');
+    expect(lien.searchParams.get('media')).toBe('https://www.keurdeco.com/epingles/x-1.jpg');
     expect(lien.searchParams.get('description')).toBe('Titre de test');
   });
 

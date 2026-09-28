@@ -173,8 +173,8 @@ try {
 
   // Fichiers générés
   const sitemap = await (await fetch(`${BASE}sitemap.xml`)).text();
-  verifier(sitemap.includes('https://teiki5320.github.io/Keurdeco/salon-terracotta-wax.html') && !sitemap.includes('404'), 'sitemap.xml');
-  verifier((await (await fetch(`${BASE}robots.txt`)).text()).includes('Sitemap: https://teiki5320.github.io/Keurdeco/sitemap.xml'), 'robots.txt');
+  verifier(sitemap.includes('https://www.keurdeco.com/salon-terracotta-wax.html') && !sitemap.includes('404'), 'sitemap.xml');
+  verifier((await (await fetch(`${BASE}robots.txt`)).text()).includes('Sitemap: https://www.keurdeco.com/sitemap.xml'), 'robots.txt');
   verifier((await fetch(`${BASE}manifest.webmanifest`)).ok && (await fetch(`${BASE}sw.js`)).ok, 'manifeste et service worker');
   const manifeste = await (await fetch(`${BASE}epingles.json`)).json();
   const epArticles = manifeste.epingles.filter((e) => e.gabarit !== 'question');
