@@ -7,6 +7,17 @@ import './theme.css';
 import './site.css';
 import { demarrerAnimations } from './animations.ts';
 
+/** Photos pas encore chargées : cachées puis montrées en fondu (voir .img-attente dans site.css). */
+function fonduImages(): void {
+  for (const img of document.querySelectorAll<HTMLImageElement>('img')) {
+    if (img.complete) continue;
+    img.classList.add('img-attente');
+    const montrer = () => img.classList.remove('img-attente');
+    img.addEventListener('load', montrer, { once: true });
+    img.addEventListener('error', montrer, { once: true });
+  }
+}
+
 /** Points cliquables des images d'ambiance : un seul ouvert à la fois, Échap pour fermer. */
 function pointsCliquables(): void {
   const boutons = [...document.querySelectorAll<HTMLButtonElement>('.hotspot')];
@@ -61,6 +72,7 @@ function lienEvitement(): void {
 pointsCliquables();
 menuMobile();
 lienEvitement();
+fonduImages();
 demarrerAnimations();
 
 /** Site installable et consultable hors ligne : service worker (site publié en HTTPS uniquement). */

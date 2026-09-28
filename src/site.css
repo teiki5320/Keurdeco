@@ -203,6 +203,29 @@ h2 em {
   transform: none;
 }
 
+/* Tant que le script n'a pas découpé le titre, on le cache : sinon il s'affiche entier,
+   disparaît au découpage puis se rejoue (effet de saut). Filet de sécurité : sans script,
+   il réapparaît seul au bout de 2 s. */
+.js [data-mots]:not([data-decoupe]) {
+  opacity: 0;
+  animation: titre-secours 0s 2s forwards;
+}
+
+@keyframes titre-secours {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Photo pas encore chargée (classe posée par src/site.ts) : elle arrive en fondu au lieu d'apparaître d'un coup. */
+img {
+  transition: opacity 0.45s ease;
+}
+
+img.img-attente {
+  opacity: 0;
+}
+
 /* ---------- Transition entre les pages : rideau de kente ---------- */
 
 .rideau {

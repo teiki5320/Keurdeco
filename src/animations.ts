@@ -95,6 +95,19 @@ const BANDES = ['#B4532F', '#D49A2A', '#1E2A47', '#52693A', '#D49A2A', '#B4532F'
 const DUREE_RIDEAU = 250;
 const DECALAGE_BANDE = 15;
 
+/** Attente maximale (ms) avant de lever le rideau, même si une image traîne. */
+const ATTENTE_MAX_RIDEAU = 900;
+
+/** Polices chargées et images visibles à l'écran décodées (ou délai dépassé). */
+function pagePrete(max: number): Promise<void> {
+  const visibles = [...document.images].filter((img) => {
+    const r = img.getBoundingClientRect();
+    return r.width > 0 && r.bottom > 0 && r.top < window.innerHeight;
+  });
+  const pret = Promise.all([document.fonts?.ready, ...visibles.map((img) => img.decode().catch(() => undefined))]);
+  return Promise.race([pret.then(() => undefined), new Promise<void>((r) => setTimeout(r, max))]);
+}
+
 /** Transition entre les pages (menu et logo) : des bandes de tissu tombent l'une après l'autre, puis descendent. */
 function transitions(): void {
   const rideau = document.createElement('div');
@@ -115,7 +128,9 @@ function transitions(): void {
     memoire.ecrire('kd-transition', null);
     texte.textContent = arrivee;
     poser('couvre', true);
-    requestAnimationFrame(() =>
+    // On attend que la page soit prête (polices, images visibles) avant de lever le rideau :
+    // sinon il découvre une page encore en train de se construire.
+    pagePrete(ATTENTE_MAX_RIDEAU).then(() =>
       requestAnimationFrame(() => {
         poser('sort');
         setTimeout(() => poser('', true), DUREE_RIDEAU + BANDES.length * DECALAGE_BANDE + 100);
