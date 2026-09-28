@@ -1706,5 +1706,104 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "sapin-artificiel-180",
+    "asin": "B0GY1BKZX2",
+    "nom": "Sapin de Noël artificiel touffu, 180 cm",
+    "type_objet": "sapin",
+    "matieres": [],
+    "couleurs": [
+      "vert"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "guirlande-perles-bois",
+    "asin": "B089638RTC",
+    "nom": "Guirlande de perles en bois naturel à franges",
+    "type_objet": "decoration-noel",
+    "matieres": [
+      "perles"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "etoiles-paille-lot-16",
+    "asin": "B09KQMHNLS",
+    "nom": "Étoiles en paille pour le sapin, lot de 16 (10 cm)",
+    "type_objet": "decoration-noel",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "cache-pied-sapin-rotin",
+    "asin": "B0CLRYH3CB",
+    "nom": "Cache-pied de sapin en rotin tressé main",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "couronne-osier-30",
+    "asin": "B09FFF78VF",
+    "nom": "Couronne en osier naturel, 30 cm",
+    "type_objet": "decoration-noel",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "guirlande-lumineuse-20m",
+    "asin": "B0D9YC7ZZT",
+    "nom": "Guirlande lumineuse de Noël, 200 LED, 20 m",
+    "type_objet": "luminaire",
+    "matieres": [],
+    "couleurs": [
+      "blanc"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
