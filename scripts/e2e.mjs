@@ -78,10 +78,15 @@ try {
   verifier((await page.textContent('.site-pied'))?.includes('En tant que Partenaire Amazon, Keur Déco réalise un bénéfice'), 'pied de page : mention Partenaires Amazon');
   verifier((await page.getAttribute('meta[name="p:domain_verify"]', 'content')) === 'code-de-test', 'balise de revendication Pinterest (PINTEREST_VERIFY)');
 
-  // Ambiance : points cliquables
+  // Ambiance : points cliquables (nombres attendus lus dans l'article : tous les produits sont actifs dans la démonstration)
+  const salon = readFileSync(resolve(RACINE, 'contenu/articles/salon-terracotta-wax.md'), 'utf8');
+  const idsPoints = [...salon.matchAll(/^ {2}- \{ produit: ([a-z0-9-]+)/gm)].map((m) => m[1]);
+  const idsListe = salon.match(/^produits:\r?\n((?: {2}- .*\r?\n)+)/m)?.[1].split('\n').map((l) => l.replace(/^ {2}- /, '').trim()).filter(Boolean) ?? [];
+  const nbPoints = idsPoints.length;
+  const nbListe = new Set([...idsPoints, ...idsListe]).size;
   await page.goto(`${BASE}salon-terracotta-wax.html`, { waitUntil: 'networkidle' });
   const points = page.locator('.hotspot');
-  verifier((await points.count()) === 10 && (await points.first().isVisible()), 'ambiance : 10 points cliquables visibles');
+  verifier((await points.count()) === nbPoints && (await points.first().isVisible()), `ambiance : ${nbPoints} points cliquables visibles`);
   verifier((await points.first().getAttribute('aria-label'))?.startsWith('Objet 1 : '), 'point accessible (aria-label numéroté)');
   await points.first().click();
   const carte = page.locator('#carte-salon-terracotta-wax-1');
@@ -98,22 +103,23 @@ try {
   verifier(!(await carte.isVisible()) && (await page.locator('#carte-salon-terracotta-wax-2').isVisible()), 'une seule carte ouverte à la fois');
   await page.keyboard.press('Escape');
   verifier(!(await page.locator('#carte-salon-terracotta-wax-2').isVisible()), 'Échap referme la carte');
-  verifier((await page.locator('.meme-esprit .produit').count()) === 10, 'liste « Dans le même esprit » : 10 produits');
+  verifier((await page.locator('.meme-esprit .produit').count()) === nbListe, `liste « Dans le même esprit » : ${nbListe} produits`);
   verifier((await page.textContent('.meme-esprit'))?.includes('En tant que Partenaire Amazon'), 'mention Partenaires près des liens');
   verifier(/^https:\/\/www\.pinterest\.com\/pin\/create\/button\/\?url=/.test((await page.getAttribute('.epingler', 'href')) ?? ''), 'bouton « Épingler » sans script externe');
   verifier((await page.getAttribute('meta[property="og:type"]', 'content')) === 'article' && (await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"Article"')), 'Open Graph article et données structurées Article (Rich Pins)');
-  verifier((await page.locator('.produit__visuel .icone--objet').count()) === 10, 'cartes produits : icône par type d’objet, sans photo Amazon');
+  verifier((await page.locator('.produit__visuel .icone--objet').count()) === nbListe, 'cartes produits : icône par type d’objet, sans photo Amazon');
 
   // Repli sans JavaScript
   const contexteSansJs = await navigateur.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
   const sansJs = await contexteSansJs.newPage();
   await sansJs.goto(`${BASE}salon-terracotta-wax.html`);
-  verifier((await sansJs.locator('.hotspot').first().isHidden()) && (await sansJs.locator('.meme-esprit .produit').count()) === 10, 'sans JavaScript : points masqués, liste complète affichée');
+  verifier((await sansJs.locator('.hotspot').first().isHidden()) && (await sansJs.locator('.meme-esprit .produit').count()) === nbListe, 'sans JavaScript : points masqués, liste complète affichée');
   await contexteSansJs.close();
 
   // Top et guide
   await page.goto(`${BASE}top-paniers-tresses-africains.html`, { waitUntil: 'networkidle' });
-  verifier((await page.locator('.classement__entree').count()) === 10, 'top : 10 produits classés');
+  const nbClasses = [...readFileSync(resolve(RACINE, 'contenu/articles/top-paniers-tresses-africains.md'), 'utf8').matchAll(/^ {2}- produit: /gm)].length;
+  verifier((await page.locator('.classement__entree').count()) === nbClasses, `top : ${nbClasses} produits classés`);
   verifier((await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"ItemList"') && t.includes('"numberOfItems":10')), 'top : données structurées ItemList');
   await page.goto(`${BASE}bogolan-histoire-idees.html`, { waitUntil: 'networkidle' });
   verifier((await page.locator('.encadre-produit').count()) === 5 && (await page.locator('.sommaire').count()) === 1, 'guide : 5 encadrés produits et un sommaire');
