@@ -7,7 +7,7 @@
 // jamais publiées. Puis pilote le site construit (vite preview) pour vérifier pages, points cliquables,
 // liens Amazon, repli sans JavaScript, épingles et fichiers de référencement.
 import { execFileSync, spawn } from 'node:child_process';
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { chromium } from 'playwright';
@@ -161,7 +161,12 @@ try {
   const manifeste = await (await fetch(`${BASE}epingles.json`)).json();
   const epArticles = manifeste.epingles.filter((e) => e.gabarit !== 'question');
   const epConseils = manifeste.epingles.filter((e) => e.gabarit === 'question');
-  verifier(epArticles.length === 15 && epConseils.length >= 12 && manifeste.epingles.every((e) => e.lien.includes('utm_source=pinterest')), `manifeste des épingles : 15 d'articles, ${epConseils.length} de conseils, liens avec utm_source=pinterest`);
+  // Une épingle par titre de la liste « epingles » de chaque article (tous publiés dans la version de démonstration).
+  const dossierArticles = resolve(RACINE, 'contenu/articles');
+  const attendues = readdirSync(dossierArticles)
+    .filter((f) => f.endsWith('.md'))
+    .reduce((n, f) => n + (readFileSync(join(dossierArticles, f), 'utf8').match(/^epingles:\r?\n((?: {2}- .*\r?\n)+)/m)?.[1].trim().split('\n').length ?? 0), 0);
+  verifier(epArticles.length === attendues && epConseils.length >= 12 && manifeste.epingles.every((e) => e.lien.includes('utm_source=pinterest')), `manifeste des épingles : ${epArticles.length}/${attendues} d'articles, ${epConseils.length} de conseils, liens avec utm_source=pinterest`);
   const epingle = await page.goto(`${BASE}epingles/salon-terracotta-wax-1.jpg`);
   verifier(epingle?.ok() && epingle.headers()['content-type'] === 'image/jpeg', 'épingle 1000 × 1500 servie');
 
