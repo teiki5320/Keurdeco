@@ -64,7 +64,7 @@ Puis `npm run pinterest:auth` et ouvrir http://localhost:8085/ :
 2. la page affiche le **refresh token**, le nom du compte et **la liste des tableaux avec leur `board_id`** ;
 3. un formulaire permet de **publier une épingle de démonstration** dans un tableau.
 
-L'épingle de démonstration utilise une image hébergée sur le site : il faut donc que le site soit en ligne avec au moins un article publié (le premier est programmé le 5 octobre 2026), puis relancer `npm run build` en local pour que `public/epingles.json` le contienne.
+L'épingle de démonstration utilise une image hébergée sur le site (10 articles et leurs épingles sont en ligne depuis le 28 septembre 2026) : lancer `npm run build` en local pour que `public/epingles.json` soit à jour.
 
 Reporter les `board_id` dans `config/tableaux-pinterest.json` (au minimum `general`), puis commit sur `main`.
 
