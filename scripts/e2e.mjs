@@ -107,7 +107,13 @@ try {
   verifier((await page.textContent('.meme-esprit'))?.includes('En tant que Partenaire Amazon'), 'mention Partenaires près des liens');
   verifier(/^https:\/\/www\.pinterest\.com\/pin\/create\/button\/\?url=/.test((await page.getAttribute('.epingler', 'href')) ?? ''), 'bouton « Épingler » sans script externe');
   verifier((await page.getAttribute('meta[property="og:type"]', 'content')) === 'article' && (await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"Article"')), 'Open Graph article et données structurées Article (Rich Pins)');
-  verifier((await page.locator('.produit__visuel .icone--objet').count()) === nbListe, 'cartes produits : icône par type d’objet, sans photo Amazon');
+  const sourcesImages = await page.locator('img').evaluateAll((imgs) => imgs.map((i) => i.currentSrc || i.src));
+  verifier(
+    (await page.locator('.produit__visuel .produit__vignette, .produit__visuel .icone--objet').count()) === nbListe &&
+      (await page.locator('.produit__visuel--photo .produit__ia').count()) === (await page.locator('.produit__vignette').count()) &&
+      !sourcesImages.some((u) => /amazon|media-amazon|ssl-images/i.test(u)),
+    'cartes produits : vignette tirée de nos images (mention IA) ou icône, aucune photo Amazon',
+  );
 
   // Repli sans JavaScript
   const contexteSansJs = await navigateur.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });

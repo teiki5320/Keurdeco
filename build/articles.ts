@@ -40,6 +40,8 @@ export interface Hotspot {
   produit: string;
   x: number;
   y: number;
+  /** Facultatif : côté de la vignette du produit, en % de la hauteur de l'image (scripts/vignettes-produits.ts). */
+  cadre?: number;
 }
 
 export interface EntreeClassement {
@@ -99,7 +101,7 @@ export function lireArticle(slug: string, source: string): Article {
     for (const id of ids) if (!trouverRubrique(famille, id)) throw erreur(`${FAMILLES[famille].champ} : « ${id} » inconnu (voir src/taxonomie.ts)`);
   }
 
-  const hotspots = (Array.isArray(e.hotspots) ? e.hotspots : []).map((h: Record<string, unknown>) => ({ produit: String(h.produit), x: Number(h.x), y: Number(h.y) }));
+  const hotspots = (Array.isArray(e.hotspots) ? e.hotspots : []).map((h: Record<string, unknown>) => ({ produit: String(h.produit), x: Number(h.x), y: Number(h.y), ...(h.cadre != null ? { cadre: Number(h.cadre) } : {}) }));
   const classement = (Array.isArray(e.classement) ? e.classement : []).map((c: Record<string, unknown>) => ({
     produit: String(c.produit),
     pourquoi: String(c.pourquoi ?? '').trim(),

@@ -21,7 +21,7 @@ produits:
   - tabouret-bois-sculpte
   - coussin-wax-vert-baobab
 hotspots:
-  - { produit: assiettes-murales-tressees, x: 51, y: 22 }
+  - { produit: assiettes-murales-tressees, x: 51, y: 22, cadre: 44 }
   - { produit: coussin-bogolan, x: 29, y: 55 }
   - { produit: coussin-wax-cercles-safran, x: 39, y: 55 }
   - { produit: plaid-coton-rayures-creme, x: 68, y: 72 }
@@ -29,7 +29,7 @@ hotspots:
   - { produit: tapis-motif-losanges, x: 33, y: 92 }
   - { produit: pouf-cuir-ocre, x: 84, y: 89 }
   - { produit: vase-terre-cuite-terracotta, x: 91, y: 57 }
-  - { produit: tabouret-bois-sculpte, x: 91, y: 75 }
+  - { produit: tabouret-bois-sculpte, x: 91, y: 75, cadre: 40 }
 epingles:
   - "Salon terracotta et wax : 5 idées déco"
   - "Un salon africain chaleureux, sans surcharge"

@@ -26,7 +26,7 @@ hotspots:
   - { produit: etageres-flottantes-pin-lot-3, x: 59, y: 48 }
   - { produit: vases-argile-lot-3, x: 60, y: 35 }
   - { produit: table-ronde-2-personnes-chene, x: 71, y: 67 }
-  - { produit: chaises-dossier-rotin-lot-2, x: 64, y: 58 }
+  - { produit: chaises-dossier-rotin-lot-2, x: 64, y: 58, cadre: 42 }
   - { produit: panier-plante-tresse-rayures, x: 10, y: 83 }
   - { produit: paravent-bois-3-panneaux, x: 91, y: 47 }
   - { produit: housse-couette-coton-denim, x: 83, y: 87 }

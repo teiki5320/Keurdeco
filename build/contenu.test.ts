@@ -103,6 +103,15 @@ describe('articles (contenu/articles)', () => {
     }
   });
 
+  it('les vignettes produits correspondent aux points des ambiances (sinon : npm run vignettes)', () => {
+    const vignettes = JSON.parse(readFileSync(resolve(RACINE, 'src/data/vignettes.json'), 'utf8')) as Record<string, { article: string; x: number; y: number; cadre: number }>;
+    const attendu: Record<string, { article: string; x: number; y: number; cadre: number }> = {};
+    const ambiances = articles.filter((a) => a.type === 'ambiance').sort((a, b) => a.publieLe.localeCompare(b.publieLe) || a.slug.localeCompare(b.slug));
+    for (const a of ambiances) for (const h of a.hotspots) attendu[h.produit] ??= { article: a.slug, x: h.x, y: h.y, cadre: h.cadre ?? 30 };
+    expect(vignettes).toEqual(attendu);
+    for (const id of Object.keys(vignettes)) for (const t of [160, 320]) expect(existsSync(resolve(RACINE, 'public/images/produits', `${id}-${t}.webp`)), `${id}-${t}.webp`).toBe(true);
+  });
+
   it('chaque rubrique et chaque conseil a sa photo d’illustration', () => {
     for (const famille of Object.keys(FAMILLES) as Famille[]) {
       for (const r of FAMILLES[famille].liste) expect(imageExiste(imageRubrique(famille, r.id)), imageRubrique(famille, r.id)).toBe(true);

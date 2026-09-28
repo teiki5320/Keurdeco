@@ -5,9 +5,10 @@
  * - un produit n'est affiché que s'il est « actif » avec un ASIN valide ;
  *   « a_selectionner » et « indisponible » ne sont jamais affichés ;
  * - comme sur OptiLED, les produits sont relevés à la main sur Amazon.fr (pas d'API) ;
- * - aucune photo de produit Amazon : chaque carte montre une icône du type d'objet.
+ * - aucune photo de produit Amazon : chaque carte montre une vignette découpée dans nos propres images
+ *   d'ambiance (créées par IA, mention « Illustration IA »), ou à défaut une icône du type d'objet.
  */
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { attributsLienAmazon, FORMAT_ASIN, MENTION_AMAZON } from '../src/amazon.ts';
 import { iconeObjet, icone } from './icones.ts';
@@ -55,11 +56,23 @@ export function libelleType(t: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+const DOSSIER_VIGNETTES = resolve(import.meta.dirname, '../public/images/produits');
+
+/**
+ * Vignette du produit découpée dans une de nos images d'ambiance (créée par IA, jamais une photo Amazon :
+ * voir scripts/vignettes-produits.ts) ; à défaut, l'icône du type d'objet.
+ */
+function visuelProduit(p: Produit): string {
+  if (!existsSync(resolve(DOSSIER_VIGNETTES, `${p.id}-160.webp`))) return iconeObjet(p.type_objet);
+  return `<img class="produit__vignette" src="images/produits/${p.id}-160.webp" srcset="images/produits/${p.id}-160.webp 160w, images/produits/${p.id}-320.webp 320w" sizes="120px" width="160" height="160" alt="" loading="lazy" decoding="async" /><span class="produit__ia">Illustration IA</span>`;
+}
+
 /** Carte d'un produit affichable ; `numero` relie la carte au point cliquable de l'image. */
 export function carteProduit(p: Produit & { asin: string }, numero?: number, niveau: 'h3' | 'h4' = 'h3'): string {
   const lien = attributsLienAmazon(p.asin);
+  const visuel = visuelProduit(p);
   return `<article class="produit" id="produit-${p.id}">
-  <a class="produit__visuel" ${lien} tabindex="-1" aria-hidden="true">${iconeObjet(p.type_objet)}${numero ? `<span class="produit__numero">${numero}</span>` : ''}</a>
+  <a class="produit__visuel${visuel.startsWith('<img') ? ' produit__visuel--photo' : ''}" ${lien} tabindex="-1" aria-hidden="true">${visuel}${numero ? `<span class="produit__numero">${numero}</span>` : ''}</a>
   <div class="produit__texte">
     <p class="produit__type">${echapper(libelleType(p.type_objet))}</p>
     <${niveau} class="produit__nom">${echapper(p.nom)}</${niveau}>

@@ -12,7 +12,7 @@ Site éditorial de décoration africaine (www.keurdeco.fr), rémunéré par les 
 ## Amazon : règles absolues
 
 - **Ne JAMAIS inventer d'ASIN, de note, d'avis ou de prix Amazon.** Un produit sans ASIN vérifié reste en statut `a_selectionner` (`asin: null`).
-- **Ne JAMAIS télécharger, modifier ou réutiliser les photos des produits Amazon** (interdit par le programme Partenaires). Comme sur OptiLED, les produits sont relevés à la main (pas d'API Amazon) et les cartes n'ont pas de photo, seulement une icône du type d'objet. Sur Pinterest, uniquement nos propres visuels.
+- **Ne JAMAIS télécharger, modifier ou réutiliser les photos des produits Amazon** (interdit par le programme Partenaires). Comme sur OptiLED, les produits sont relevés à la main (pas d'API Amazon). Les cartes montrent une vignette découpée dans NOS images d'ambiance créées par IA (`npm run vignettes`, mention « Illustration IA »), ou à défaut une icône du type d'objet ; jamais une photo Amazon (les images SiteStripe n'existent plus depuis décembre 2023). Sur Pinterest, uniquement nos propres visuels.
 - **Aucun prix affiché.**
 - L'identifiant de suivi est défini à un seul endroit : `AMAZON_TAG` dans `src/amazon.ts`.
 - La mention « En tant que Partenaire Amazon, Keur Déco réalise un bénéfice sur les achats remplissant les conditions requises. » figure près des liens, dans le pied de page et dans les mentions légales.

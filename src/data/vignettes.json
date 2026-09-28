@@ -1,0 +1,410 @@
+{
+  "assiettes-murales-tressees": {
+    "article": "salon-terracotta-wax",
+    "x": 51,
+    "y": 22,
+    "cadre": 44
+  },
+  "assiettes-porcelaine-blanches-lot-6": {
+    "article": "table-reveillon-wax-or",
+    "x": 15,
+    "y": 71,
+    "cadre": 30
+  },
+  "banc-acacia-jardin": {
+    "article": "balcon-boheme-africain",
+    "x": 39,
+    "y": 52,
+    "cadre": 30
+  },
+  "banc-chaussures-bambou": {
+    "article": "entree-paniers-miroir-raphia",
+    "x": 36,
+    "y": 68,
+    "cadre": 46
+  },
+  "bol-manguier-sculpte": {
+    "article": "salon-bogolan-bois-clair",
+    "x": 87,
+    "y": 52,
+    "cadre": 30
+  },
+  "bougeoirs-dores-coniques-lot-6": {
+    "article": "table-reveillon-wax-or",
+    "x": 45,
+    "y": 50,
+    "cadre": 30
+  },
+  "bougies-piliers-ivoire-lot-6": {
+    "article": "salon-cocooning-ocre",
+    "x": 42,
+    "y": 60,
+    "cadre": 30
+  },
+  "bougies-tige-ivoire-lot-50": {
+    "article": "table-reveillon-wax-or",
+    "x": 45,
+    "y": 21,
+    "cadre": 30
+  },
+  "branches-saule-sechees": {
+    "article": "salon-cocooning-ocre",
+    "x": 13,
+    "y": 41,
+    "cadre": 30
+  },
+  "buffet-lattes": {
+    "article": "salon-bogolan-bois-clair",
+    "x": 88,
+    "y": 65,
+    "cadre": 30
+  },
+  "cache-pied-sapin-rotin": {
+    "article": "noel-touche-africaine",
+    "x": 55,
+    "y": 83,
+    "cadre": 30
+  },
+  "cadre-chene-a2": {
+    "article": "salon-bogolan-bois-clair",
+    "x": 39,
+    "y": 29,
+    "cadre": 30
+  },
+  "chaises-dossier-rotin-lot-2": {
+    "article": "studio-deco-africaine",
+    "x": 64,
+    "y": 58,
+    "cadre": 42
+  },
+  "coupe-terre-cuite-ronde": {
+    "article": "salon-cocooning-ocre",
+    "x": 35,
+    "y": 60,
+    "cadre": 30
+  },
+  "coupon-pagne-wax-180x120": {
+    "article": "noel-touche-africaine",
+    "x": 64,
+    "y": 89,
+    "cadre": 30
+  },
+  "couronne-osier-30": {
+    "article": "noel-touche-africaine",
+    "x": 83,
+    "y": 24,
+    "cadre": 30
+  },
+  "coussin-bogolan": {
+    "article": "balcon-boheme-africain",
+    "x": 68,
+    "y": 55,
+    "cadre": 30
+  },
+  "coussin-shibori-indigo": {
+    "article": "chambre-indigo-lin",
+    "x": 52,
+    "y": 49,
+    "cadre": 30
+  },
+  "coussin-wax-cercles-safran": {
+    "article": "balcon-boheme-africain",
+    "x": 57,
+    "y": 55,
+    "cadre": 30
+  },
+  "coussins-lin-beige-lot-2": {
+    "article": "salon-bogolan-bois-clair",
+    "x": 38,
+    "y": 58,
+    "cadre": 30
+  },
+  "couverts-dores-24-pieces": {
+    "article": "table-reveillon-wax-or",
+    "x": 13,
+    "y": 78,
+    "cadre": 30
+  },
+  "drap-housse-lin-blanc": {
+    "article": "chambre-indigo-lin",
+    "x": 47,
+    "y": 86,
+    "cadre": 30
+  },
+  "etageres-flottantes-pin-lot-3": {
+    "article": "studio-deco-africaine",
+    "x": 59,
+    "y": 48,
+    "cadre": 30
+  },
+  "etoiles-paille-lot-16": {
+    "article": "noel-touche-africaine",
+    "x": 62,
+    "y": 30,
+    "cadre": 30
+  },
+  "eucalyptus-artificiel-lot-6": {
+    "article": "table-reveillon-wax-or",
+    "x": 50,
+    "y": 58,
+    "cadre": 30
+  },
+  "galettes-chaise-orange": {
+    "article": "balcon-boheme-africain",
+    "x": 41,
+    "y": 65,
+    "cadre": 30
+  },
+  "guirlande-guinguette": {
+    "article": "balcon-boheme-africain",
+    "x": 50,
+    "y": 14,
+    "cadre": 30
+  },
+  "guirlande-lumineuse-20m": {
+    "article": "noel-touche-africaine",
+    "x": 47,
+    "y": 67,
+    "cadre": 30
+  },
+  "guirlande-perles-bois": {
+    "article": "noel-touche-africaine",
+    "x": 58,
+    "y": 36,
+    "cadre": 30
+  },
+  "housse-couette-coton-denim": {
+    "article": "chambre-indigo-lin",
+    "x": 40,
+    "y": 70,
+    "cadre": 30
+  },
+  "jarre-terre-cuite-toscane": {
+    "article": "balcon-boheme-africain",
+    "x": 19,
+    "y": 75,
+    "cadre": 30
+  },
+  "lampadaire-noir-abat-jour-lin": {
+    "article": "salon-bogolan-bois-clair",
+    "x": 18,
+    "y": 32,
+    "cadre": 30
+  },
+  "lampadaire-rotin-boheme": {
+    "article": "salon-cocooning-ocre",
+    "x": 84,
+    "y": 21,
+    "cadre": 30
+  },
+  "lampes-chevet-ceramique-lot-2": {
+    "article": "chambre-indigo-lin",
+    "x": 26,
+    "y": 48,
+    "cadre": 30
+  },
+  "lanternes-solaires-rotin": {
+    "article": "balcon-boheme-africain",
+    "x": 86,
+    "y": 83,
+    "cadre": 30
+  },
+  "miroir-soleil-rotin-58": {
+    "article": "entree-paniers-miroir-raphia",
+    "x": 43,
+    "y": 38,
+    "cadre": 30
+  },
+  "pampa-sechee-bouquet": {
+    "article": "entree-paniers-miroir-raphia",
+    "x": 20,
+    "y": 52,
+    "cadre": 30
+  },
+  "panier-bolga-marche": {
+    "article": "balcon-boheme-africain",
+    "x": 67,
+    "y": 84,
+    "cadre": 30
+  },
+  "panier-jouets-tresse": {
+    "article": "chambre-indigo-lin",
+    "x": 76,
+    "y": 87,
+    "cadre": 30
+  },
+  "panier-plante-tresse-rayures": {
+    "article": "salon-terracotta-wax",
+    "x": 10,
+    "y": 79,
+    "cadre": 30
+  },
+  "paniers-rangement-raphia-lot": {
+    "article": "entree-paniers-miroir-raphia",
+    "x": 51,
+    "y": 82,
+    "cadre": 30
+  },
+  "paravent-bois-3-panneaux": {
+    "article": "studio-deco-africaine",
+    "x": 91,
+    "y": 47,
+    "cadre": 30
+  },
+  "pateres-chene-lot-4": {
+    "article": "entree-paniers-miroir-raphia",
+    "x": 67,
+    "y": 33,
+    "cadre": 42
+  },
+  "photophores-dores-lot-12": {
+    "article": "table-reveillon-wax-or",
+    "x": 60,
+    "y": 75,
+    "cadre": 30
+  },
+  "plaid-coton-rayures-creme": {
+    "article": "entree-paniers-miroir-raphia",
+    "x": 56,
+    "y": 70,
+    "cadre": 30
+  },
+  "plaid-gaufre-coton": {
+    "article": "chambre-indigo-lin",
+    "x": 62,
+    "y": 70,
+    "cadre": 30
+  },
+  "plaid-tricot-chenille": {
+    "article": "salon-cocooning-ocre",
+    "x": 68,
+    "y": 70,
+    "cadre": 30
+  },
+  "pouf-cuir-ocre": {
+    "article": "balcon-boheme-africain",
+    "x": 37,
+    "y": 87,
+    "cadre": 30
+  },
+  "pouf-tricot-moutarde": {
+    "article": "salon-cocooning-ocre",
+    "x": 92,
+    "y": 73,
+    "cadre": 30
+  },
+  "sapin-artificiel-180": {
+    "article": "noel-touche-africaine",
+    "x": 72,
+    "y": 65,
+    "cadre": 30
+  },
+  "serviettes-lin-melange-lot-12": {
+    "article": "table-reveillon-wax-or",
+    "x": 83,
+    "y": 67,
+    "cadre": 30
+  },
+  "suspension-jute-boheme": {
+    "article": "entree-paniers-miroir-raphia",
+    "x": 50,
+    "y": 11,
+    "cadre": 30
+  },
+  "table-basse-ronde-chene-clair": {
+    "article": "salon-bogolan-bois-clair",
+    "x": 57,
+    "y": 73,
+    "cadre": 30
+  },
+  "table-chevet-rotin": {
+    "article": "chambre-indigo-lin",
+    "x": 25,
+    "y": 61,
+    "cadre": 30
+  },
+  "table-ronde-2-personnes-chene": {
+    "article": "studio-deco-africaine",
+    "x": 71,
+    "y": 67,
+    "cadre": 30
+  },
+  "tabouret-bois-sculpte": {
+    "article": "salon-terracotta-wax",
+    "x": 91,
+    "y": 75,
+    "cadre": 40
+  },
+  "tapis-couloir-kilim-chindi": {
+    "article": "entree-paniers-miroir-raphia",
+    "x": 47,
+    "y": 96,
+    "cadre": 30
+  },
+  "tapis-jute-rond": {
+    "article": "balcon-boheme-africain",
+    "x": 53,
+    "y": 94,
+    "cadre": 30
+  },
+  "tapis-motif-bogolan": {
+    "article": "salon-bogolan-bois-clair",
+    "x": 28,
+    "y": 94,
+    "cadre": 30
+  },
+  "tapis-motif-losanges": {
+    "article": "salon-terracotta-wax",
+    "x": 33,
+    "y": 92,
+    "cadre": 30
+  },
+  "tapis-peau-mouton-beige": {
+    "article": "salon-cocooning-ocre",
+    "x": 25,
+    "y": 94,
+    "cadre": 30
+  },
+  "tapis-rond-coton-bleu-marine": {
+    "article": "chambre-indigo-lin",
+    "x": 50,
+    "y": 96,
+    "cadre": 30
+  },
+  "tete-de-lit-rotin-160": {
+    "article": "chambre-indigo-lin",
+    "x": 52,
+    "y": 34,
+    "cadre": 30
+  },
+  "vase-ceramique-noir-mat": {
+    "article": "salon-bogolan-bois-clair",
+    "x": 57,
+    "y": 62,
+    "cadre": 30
+  },
+  "vase-terre-cuite-terracotta": {
+    "article": "salon-terracotta-wax",
+    "x": 91,
+    "y": 57,
+    "cadre": 30
+  },
+  "vases-argile-lot-3": {
+    "article": "studio-deco-africaine",
+    "x": 60,
+    "y": 35,
+    "cadre": 30
+  },
+  "verres-vin-cristal-arques-lot-6": {
+    "article": "table-reveillon-wax-or",
+    "x": 69,
+    "y": 51,
+    "cadre": 30
+  },
+  "voilage-lin-naturel": {
+    "article": "chambre-indigo-lin",
+    "x": 13,
+    "y": 37,
+    "cadre": 30
+  }
+}

@@ -24,10 +24,10 @@ hotspots:
   - { produit: miroir-soleil-rotin-58, x: 43, y: 38 }
   - { produit: pampa-sechee-bouquet, x: 20, y: 52 }
   - { produit: jarre-terre-cuite-toscane, x: 20, y: 80 }
-  - { produit: banc-chaussures-bambou, x: 36, y: 68 }
+  - { produit: banc-chaussures-bambou, x: 36, y: 68, cadre: 46 }
   - { produit: plaid-coton-rayures-creme, x: 56, y: 70 }
   - { produit: paniers-rangement-raphia-lot, x: 51, y: 82 }
-  - { produit: pateres-chene-lot-4, x: 67, y: 33 }
+  - { produit: pateres-chene-lot-4, x: 67, y: 33, cadre: 42 }
   - { produit: tapis-couloir-kilim-chindi, x: 47, y: 96 }
 epingles:
   - "Une entrée chaleureuse en 3 objets africains"
