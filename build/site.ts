@@ -10,6 +10,7 @@
  *   <!--#une-->              ambiance à la une (accueil)
  *   <!--#derniers-->         derniers articles publiés
  *   <!--#tops-->             derniers Top 10
+ *   <!--#conseils-->         derniers conseils publiés
  *   <!--#entrees:piece-->    tuiles d'entrée d'une famille (piece, matiere, occasion)
  *   <!--#mention-amazon-->   mention obligatoire du programme Partenaires Amazon
  *   <!--#icone:nom-->        une icône de build/icones.ts
@@ -22,6 +23,7 @@ import { FAMILLES, type Famille } from '../src/taxonomie.ts';
 import { insecables } from '../src/typo.ts';
 import { articlesPublies, pagesArticles } from './articles.ts';
 import { NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
+import { blocConseils, pagesConseils } from './conseils.ts';
 import { essayage } from './essayage.ts';
 import { icone, marque, type NomIcone } from './icones.ts';
 import { blocAVenir, blocDerniers, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
@@ -35,6 +37,7 @@ export const NAVIGATION: { href: string; libelle: string; pages: RegExp }[] = [
   { href: 'matieres.html', libelle: 'Matières', pages: /^(matieres|matiere-.*)\.html$/ },
   { href: 'occasions.html', libelle: 'Occasions', pages: /^(occasions|occasion-.*)\.html$/ },
   { href: 'articles.html', libelle: 'Articles', pages: /^articles\.html$/ },
+  { href: 'conseils.html', libelle: 'Conseils', pages: /^conseils?(-.*)?\.html$/ },
   { href: 'glossaire.html', libelle: 'Glossaire', pages: /^glossaire(-.*)?\.html$/ },
 ];
 
@@ -184,7 +187,7 @@ export function footer(): string {
     <div>
       ${colonne('occasion').replace(/^<div>|<\/div>$/g, '')}
       <h2>Keur Déco</h2>
-      <ul><li><a href="articles.html">Tous les articles</a></li><li><a href="glossaire.html">Glossaire</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul>
+      <ul><li><a href="articles.html">Tous les articles</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="glossaire.html">Glossaire</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul>
     </div>
   </div>
 </footer>`;
@@ -201,13 +204,15 @@ export function pagesHtml(racine: string): Record<string, string> {
 
 let cachePages: Map<string, string> | null = null;
 
-/** Pages générées au build (elles n'existent pas sur le disque) : articles publiés, rubriques, glossaire. */
+/** Pages générées au build (elles n'existent pas sur le disque) : articles et conseils publiés, rubriques, glossaire. */
 export function pagesGenerees(): Map<string, string> {
   if (!cachePages || process.env.VITEST) {
     const articles = pagesArticles();
     const rubriques = pagesRubriques();
+    const conseils = pagesConseils();
     for (const f of articles.keys()) if (rubriques.has(f)) throw new Error(`Conflit d'adresse : l'article ${f} porte le nom d'une page de rubrique`);
-    cachePages = new Map([...rubriques, ...articles]);
+    for (const f of conseils.keys()) if (rubriques.has(f) || articles.has(f)) throw new Error(`Conflit d'adresse : ${f}`);
+    cachePages = new Map([...rubriques, ...articles, ...conseils]);
   }
   return cachePages;
 }
@@ -258,6 +263,7 @@ export function transformerPage(html: string, fichier: string): string {
     .replace('<!--#une-->', () => blocUne(publies))
     .replace('<!--#derniers-->', () => blocDerniers(publies))
     .replace('<!--#tops-->', () => blocTops(publies))
+    .replace('<!--#conseils-->', () => blocConseils())
     .replace('<!--#a-venir-->', () => blocAVenir(publies))
     .replace('<!--#glossaire-accueil-->', () => blocGlossaire())
     .replace(/<!--#couture-->/g, () => couture())

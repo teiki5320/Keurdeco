@@ -107,6 +107,15 @@ Produit `public/images/articles/<nom>-800.webp` et `-1600.webp` (proportions con
 
 Chaque build affiche : les articles programmés à venir, les produits `a_selectionner` (avec les articles concernés), les produits actifs non vérifiés depuis plus de 60 jours, et un avertissement pour chaque article qui cite des produits masqués.
 
+## Conseils
+
+Onglet « Conseils », comme sur OptiLED et Alohash : une question pratique par page (entretenir, associer, choisir, accrocher, comprendre), publiée à sa date.
+
+- Un fichier par conseil : `contenu/conseils/<slug>.md` (en-tête YAML : `titre` = la question, `description`, `publie_le`, `theme`, `reponse` = réponse courte affichée en tête, `matieres[]` et `epingles[]` facultatifs). `{{produit: <id>}}` insère un encadré produit.
+- Pages générées par `build/conseils.ts` : `conseils.html` (par thème) et `conseil-<slug>.html` (réponse courte, données structurées FAQ, conseils proches).
+- Épingles Pinterest automatiques : un visuel typographique (la question dans une arche, sur le motif du thème) par titre, publié dans le tableau « general ».
+- Les tests vérifient que les liens internes d'un conseil mènent à des pages déjà publiées à sa date.
+
 ## Produits
 
 `src/data/produits.json` : `id`, `asin` (ou `null`), `nom`, `type_objet`, `matieres[]`, `couleurs[]`, `pieces[]`, `statut` (`a_selectionner` | `actif` | `indisponible`), `verifie_le`.

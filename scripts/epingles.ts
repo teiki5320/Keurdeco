@@ -15,7 +15,9 @@ import { FAMILLES, trouverRubrique, type Famille } from '../src/taxonomie.ts';
 import { typographier } from '../src/typo.ts';
 import { adresseArticle, articlesPublies, type Article } from '../build/articles.ts';
 import { lienPinterest, SITE_URL } from '../build/config.ts';
+import { conseilsPublies, THEMES, type Conseil } from '../build/conseils.ts';
 import { marque } from '../build/icones.ts';
+import { motif } from '../build/motifs.ts';
 
 const RACINE = resolve(import.meta.dirname, '..');
 const SORTIE = resolve(RACINE, 'public/epingles');
@@ -26,9 +28,10 @@ const POLICE_TEXTE = resolve(RACINE, 'assets/polices/SourceSans3_600SemiBold.ttf
 export const LARGEUR = 1000;
 export const HAUTEUR = 1500;
 export const GABARITS = ['bandeau-haut', 'bandeau-bas', 'cadre', 'split'] as const;
-export type Gabarit = (typeof GABARITS)[number];
+export type Gabarit = (typeof GABARITS)[number] | 'question';
 
-const C = { indigo: '#1B2442', ivoire: '#FBF8F2', sable: '#ECE1CF', terracotta: '#A6432A', safran: '#E2A62A' };
+// Palette « Terre de Dakar » (src/theme.css).
+const C = { indigo: '#1E2A47', ivoire: '#FDF9F3', sable: '#EFE3D0', terracotta: '#B4532F', safran: '#D49A2A', ocreFonce: '#9C6B12' };
 
 export interface EntreeManifeste {
   id: string;
@@ -178,8 +181,41 @@ export async function composerEpingle(source: string, titre: string, gabarit: Ga
   return sharp(fond).composite(couches).jpeg({ quality: 84, mozjpeg: true }).toBuffer();
 }
 
+/** Nom lisible du motif d'un conseil (texte alternatif). */
+const t = (c: Conseil) => THEMES[c.theme].motif.replace('-paniers', '').replace('-', ' ');
+
+/** Épingle d'un conseil (sans photo) : la question en grand, sur le motif de tissu de son thème. */
+export async function composerEpingleConseil(c: Conseil, titre: string): Promise<Buffer> {
+  const theme = THEMES[c.theme];
+  const fond = Buffer.from(motif(theme.motif).replace('<svg class="motif"', `<svg xmlns="http://www.w3.org/2000/svg" width="${LARGEUR}" height="${HAUTEUR}"`).replace(/ aria-hidden="true" focusable="false"/, ''));
+  const titrePngConseil = await titrePng(titre, C.indigo, 700, 620);
+  const h = await hauteurDe(titrePngConseil);
+  const etiquette = await sharp({
+    text: { text: `<span foreground="${C.ocreFonce}" letter_spacing="4000">CONSEIL · ${echapperPango(theme.nom.toUpperCase())}</span>`, font: 'Source Sans 3 SemiBold 30', fontfile: POLICE_TEXTE, rgba: true, dpi: 72 },
+  })
+    .png()
+    .toBuffer();
+  const carteH = h + 330;
+  const haut = Math.round((HAUTEUR - carteH) / 2) - 40;
+  // Carte ivoire en forme d'arche (la porte du logo), qui porte la question.
+  const carte = Buffer.from(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${LARGEUR}" height="${HAUTEUR}"><path d="M110 ${haut + 260} A390 260 0 0 1 890 ${haut + 260} V${haut + carteH} H110 Z" fill="${C.ivoire}"/><rect x="${LARGEUR / 2 - 40}" y="${haut + 150}" width="80" height="6" fill="${C.terracotta}"/></svg>`,
+  );
+  const s = await signature(C.ivoire, true);
+  return sharp(await sharp(fond).png().toBuffer())
+    .composite([
+      { input: carte },
+      { input: etiquette, left: await centreX(etiquette), top: haut + 190 },
+      { input: titrePngConseil, left: await centreX(titrePngConseil), top: haut + 250 },
+      { input: rect(260, HAUTEUR - 150, 480, 80, C.indigo, 0.92, 40) },
+      { input: s, left: await centreX(s), top: HAUTEUR - 138 },
+    ])
+    .jpeg({ quality: 86, mozjpeg: true })
+    .toBuffer();
+}
+
 /** Génère toutes les épingles des articles publiés et le manifeste. */
-export async function genererEpingles(articles = articlesPublies(), url = SITE_URL): Promise<EntreeManifeste[]> {
+export async function genererEpingles(articles = articlesPublies(), url = SITE_URL, conseils = conseilsPublies()): Promise<EntreeManifeste[]> {
   rmSync(SORTIE, { recursive: true, force: true });
   mkdirSync(SORTIE, { recursive: true });
   const manifeste: EntreeManifeste[] = [];
@@ -206,6 +242,27 @@ export async function genererEpingles(articles = articlesPublies(), url = SITE_U
         lien: lienPinterest(adresseArticle(a, url), a.slug),
         tableau: a.tableauPinterest,
         publie_le: a.publieLe,
+      });
+    }
+  }
+  // Conseils : une épingle typographique par titre (tableau général).
+  for (const c of conseils) {
+    for (const [i, titre] of c.epingles.entries()) {
+      const numero = i + 1;
+      const fichier = `conseil-${c.slug}-${numero}.jpg`;
+      writeFileSync(resolve(SORTIE, fichier), await composerEpingleConseil(c, titre));
+      manifeste.push({
+        id: `conseil-${c.slug}-${numero}`,
+        slug: `conseil-${c.slug}`,
+        numero,
+        gabarit: 'question',
+        image: `${url}epingles/${fichier}`,
+        titre: titre.length > 100 ? `${titre.slice(0, 99)}…` : titre,
+        description: `${c.reponse} Conseils de décoration africaine sur Keur Déco.`.slice(0, 500),
+        alt: `Épingle Keur Déco : « ${titre} » sur un motif ${t(c)}.`,
+        lien: lienPinterest(`${url}${c.fichier}`, `conseil-${c.slug}`),
+        tableau: 'general',
+        publie_le: c.publieLe,
       });
     }
   }

@@ -48,3 +48,7 @@ Ensuite, sans rien faire :
 - **chaque mois**, comme sur OptiLED, on revérifie à la main que les produits sont toujours vendus (le rapport de build liste ceux non vérifiés depuis plus de 60 jours) ; un produit qui n'est plus vendu passe en `indisponible`.
 
 Pour publier un article tout de suite sans attendre le lundi : Actions › « Publier sur GitHub Pages » › *Run workflow* (après la date prévue).
+
+## Et les conseils ?
+
+En plus de l'article de la semaine, un conseil court par semaine (une question, une réponse) : créer `contenu/conseils/<slug>.md` en copiant un conseil existant, choisir un lundi dans `publie_le`. Il sera publié et épinglé automatiquement, comme les articles.

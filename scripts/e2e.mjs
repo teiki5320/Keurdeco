@@ -56,7 +56,7 @@ try {
   const erreurs = [];
   page.on('pageerror', (e) => erreurs.push(e.message));
 
-  const pages = ['index.html', 'articles.html', 'pieces.html', 'matiere-bogolan.html', 'occasion-mariage.html', 'glossaire.html', 'glossaire-bogolan.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', 'salon-terracotta-wax.html', 'top-paniers-tresses-africains.html', 'bogolan-histoire-idees.html'];
+  const pages = ['index.html', 'articles.html', 'pieces.html', 'matiere-bogolan.html', 'occasion-mariage.html', 'glossaire.html', 'glossaire-bogolan.html', 'conseils.html', 'conseil-laver-coussin-wax.html', 'conseil-rideau-perles.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', 'salon-terracotta-wax.html', 'top-paniers-tresses-africains.html', 'bogolan-histoire-idees.html'];
   for (const p of pages) {
     const rep = await page.goto(BASE + p, { waitUntil: 'networkidle' });
     verifier(rep?.ok() && (await page.locator('h1').count()) === 1, `${p} s'affiche avec un seul h1`);
@@ -112,6 +112,11 @@ try {
   await page.goto(`${BASE}bogolan-histoire-idees.html`, { waitUntil: 'networkidle' });
   verifier((await page.locator('.encadre-produit').count()) === 5 && (await page.locator('.sommaire').count()) === 1, 'guide : 5 encadrés produits et un sommaire');
 
+  // Conseils : onglet, réponse courte, données FAQ
+  await page.goto(`${BASE}conseil-laver-coussin-wax.html`, { waitUntil: 'networkidle' });
+  verifier((await page.locator('.reponse-courte').count()) === 1 && (await page.locator('.site-nav a[href="conseils.html"][aria-current="page"]').count()) === 1, 'conseil : réponse courte et onglet Conseils actif');
+  verifier((await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"FAQPage"')), 'conseil : données structurées FAQ');
+
   // Menu mobile
   await page.click('.menu-mobile summary');
   verifier(await page.locator('.menu-mobile nav').isVisible(), 'menu mobile');
@@ -122,7 +127,9 @@ try {
   verifier((await (await fetch(`${BASE}robots.txt`)).text()).includes('Sitemap: https://teiki5320.github.io/Keurdeco/sitemap.xml'), 'robots.txt');
   verifier((await fetch(`${BASE}manifest.webmanifest`)).ok && (await fetch(`${BASE}sw.js`)).ok, 'manifeste et service worker');
   const manifeste = await (await fetch(`${BASE}epingles.json`)).json();
-  verifier(manifeste.epingles.length === 15 && manifeste.epingles.every((e) => e.lien.includes('utm_source=pinterest')), 'manifeste des épingles : 15 épingles, liens avec utm_source=pinterest');
+  const epArticles = manifeste.epingles.filter((e) => e.gabarit !== 'question');
+  const epConseils = manifeste.epingles.filter((e) => e.gabarit === 'question');
+  verifier(epArticles.length === 15 && epConseils.length >= 12 && manifeste.epingles.every((e) => e.lien.includes('utm_source=pinterest')), `manifeste des épingles : 15 d'articles, ${epConseils.length} de conseils, liens avec utm_source=pinterest`);
   const epingle = await page.goto(`${BASE}epingles/salon-terracotta-wax-1.jpg`);
   verifier(epingle?.ok() && epingle.headers()['content-type'] === 'image/jpeg', 'épingle 1000 × 1500 servie');
 

@@ -2185,3 +2185,132 @@ main {
   width: 100%;
   height: auto;
 }
+
+/* ---------- Conseils ---------- */
+
+.grille-conseils {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+}
+
+.carte-conseil {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 16px;
+  border-radius: var(--rayon);
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  color: var(--texte);
+  text-decoration: none;
+  transition:
+    border-color 0.3s ease,
+    transform 0.4s var(--courbe),
+    box-shadow 0.3s ease;
+}
+
+.carte-conseil:hover {
+  color: var(--texte);
+  border-color: var(--terracotta);
+  transform: translateY(-4px);
+  box-shadow: var(--ombre);
+}
+
+.carte-conseil__motif {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 96px;
+  border-radius: 999px 999px 10px 10px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.carte-conseil__icone {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--ivoire);
+  color: var(--terracotta);
+}
+
+.carte-conseil__texte {
+  display: grid;
+  gap: 6px;
+}
+
+.carte-conseil__theme {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-texte);
+}
+
+.carte-conseil__titre {
+  font-family: var(--police-titre);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--encre);
+}
+
+.carte-conseil:hover .carte-conseil__titre {
+  color: var(--terracotta);
+}
+
+.carte-conseil__reponse {
+  font-size: 0.92rem;
+  color: var(--texte-doux);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.section-conseils + .section-conseils {
+  margin-top: var(--espace);
+}
+
+.reponse-courte {
+  margin: 0 0 36px;
+  padding: 22px 24px;
+  border-radius: var(--rayon);
+  background: var(--indigo);
+  color: var(--ivoire);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.reponse-courte p {
+  margin: 0;
+}
+
+.reponse-courte__titre {
+  margin-bottom: 8px !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ocre);
+}
+
+.page--conseils .pastille span {
+  opacity: 0.6;
+  margin-left: 4px;
+}
+
+/* Sur téléphone, l'arche décorative des en-têtes reste discrète. */
+@media (max-width: 899px) {
+  .page__arche {
+    height: 120px;
+    width: 120px;
+    justify-self: start;
+    outline-width: 5px;
+  }
+}

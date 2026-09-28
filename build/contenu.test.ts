@@ -8,6 +8,7 @@ import { describe, expect, it } from 'vitest';
 import { FORMAT_ASIN } from '../src/amazon.ts';
 import { FAMILLES, type Famille } from '../src/taxonomie.ts';
 import { produitsCites, tousLesArticles } from './articles.ts';
+import { conseilsPublies, tousLesConseils } from './conseils.ts';
 import { chargerDimensions, DOSSIER_IMAGES } from './images.ts';
 import { chargerProduits } from './produits.ts';
 import { chargerGlossaire } from './rubriques.ts';
@@ -128,5 +129,34 @@ describe('glossaire (src/data/glossaire.json)', () => {
   });
   it('couvre bogolan, kente, adinkra et wax', () => {
     for (const id of ['bogolan', 'kente', 'adinkra', 'wax']) expect(entrees.some((e) => e.id === id), id).toBe(true);
+  });
+});
+
+describe('conseils (contenu/conseils)', () => {
+  const conseils = tousLesConseils();
+  const articlesParFichier = new Map(articles.map((a) => [a.fichier, a.publieLe]));
+  const conseilsParFichier = new Map(conseils.map((c) => [c.fichier, c.publieLe]));
+
+  it('au moins un conseil est déjà publié (onglet jamais vide)', () => {
+    expect(conseilsPublies().length).toBeGreaterThan(0);
+  });
+
+  it('les slugs sont au bon format et les produits cités existent', () => {
+    for (const c of conseils) {
+      expect(c.slug).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
+      for (const [, id] of c.corps.matchAll(/\{\{\s*produit:\s*([a-z0-9-]+)\s*\}\}/g)) expect(ids.has(id), `${c.slug} → ${id}`).toBe(true);
+    }
+  });
+
+  it('les liens internes mènent à des pages existantes, déjà publiées à la date du conseil', () => {
+    const glossaire = new Set(chargerGlossaire().map((g) => `glossaire-${g.id}.html`));
+    const rubriques = new Set((Object.keys(FAMILLES) as Famille[]).flatMap((f) => FAMILLES[f].liste.map((r) => `${f}-${r.id}.html`)));
+    for (const c of conseils) {
+      for (const [, lien] of c.corps.matchAll(/\]\(([^)#]+\.html)(#[^)]*)?\)/g)) {
+        const date = articlesParFichier.get(lien) ?? conseilsParFichier.get(lien);
+        if (date) expect(date <= c.publieLe, `${c.slug} → ${lien} (publié le ${date})`).toBe(true);
+        else expect(glossaire.has(lien) || rubriques.has(lien), `${c.slug} → ${lien}`).toBe(true);
+      }
+    }
   });
 });
