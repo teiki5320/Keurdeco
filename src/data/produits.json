@@ -970,5 +970,106 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "miroir-soleil-rotin-58",
+    "asin": "B077NG6R71",
+    "nom": "Miroir soleil en rotin, 58 cm",
+    "type_objet": "miroir",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "entree",
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "banc-chaussures-bambou",
+    "asin": "B0F7M3XNYS",
+    "nom": "Banc à chaussures en bambou massif, 2 niveaux",
+    "type_objet": "banc",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "pateres-chene-lot-4",
+    "asin": "B09YSJNWNJ",
+    "nom": "Patères murales en chêne massif, lot de 4",
+    "type_objet": "rangement",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "entree",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tapis-couloir-kilim-chindi",
+    "asin": "B08QTZJK64",
+    "nom": "Tapis de couloir tissé à plat façon kilim, 60 × 180 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "entree",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "pampa-sechee-bouquet",
+    "asin": "B0C1YGLKPT",
+    "nom": "Bouquet d’herbes de pampa séchées naturelles",
+    "type_objet": "vase",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "entree",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "suspension-jute-boheme",
+    "asin": "B0FMDYQ126",
+    "nom": "Suspension bohème en jute tressé, 32 cm",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "entree",
+      "salon",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
