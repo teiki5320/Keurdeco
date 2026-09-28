@@ -7,12 +7,11 @@ pieces: [salon]
 matieres: [bogolan, bois-sculpte]
 occasions: []
 image: salon-bogolan-bois-clair
-image_alt: "Salon scandinave lumineux : canapé gris clair avec deux coussins bogolan noir et crème et un coussin en lin, bogolan encadré au mur, table basse en chêne clair avec vase noir, buffet en bois clair avec bol en bois et plante, lampadaire noir et tapis géométrique noir et blanc."
+image_alt: "Salon scandinave lumineux : canapé gris clair avec coussins mudcloth rouille et noir et coussins en lin beige, tissu bogolan encadré en chêne au mur, table d’appoint ronde bois et blanc avec vase noir rainuré, buffet à lattes en bois avec bol en manguier, lampadaire noir à abat-jour en lin et tapis tribal noir et ivoire."
 image_ia: true
 produits:
   - cadre-chene-a2
   - coussin-bogolan
-  - coussins-kuba-lot-4
   - coussins-lin-beige-lot-2
   - lampadaire-noir-abat-jour-lin
   - vase-ceramique-noir-mat
@@ -21,16 +20,15 @@ produits:
   - buffet-lattes
   - bol-manguier-sculpte
 hotspots:
-  - { produit: cadre-chene-a2, x: 51, y: 35 }
-  - { produit: coussin-bogolan, x: 33, y: 62 }
-  - { produit: coussins-lin-beige-lot-2, x: 41, y: 62 }
-  - { produit: coussins-kuba-lot-4, x: 68, y: 62 }
-  - { produit: lampadaire-noir-abat-jour-lin, x: 22, y: 37 }
-  - { produit: vase-ceramique-noir-mat, x: 45, y: 75 }
-  - { produit: table-basse-ronde-chene-clair, x: 60, y: 82 }
-  - { produit: tapis-motif-bogolan, x: 25, y: 95 }
-  - { produit: buffet-lattes, x: 87, y: 70 }
-  - { produit: bol-manguier-sculpte, x: 86, y: 55 }
+  - { produit: cadre-chene-a2, x: 39, y: 29 }
+  - { produit: coussin-bogolan, x: 29, y: 57 }
+  - { produit: coussins-lin-beige-lot-2, x: 38, y: 58 }
+  - { produit: lampadaire-noir-abat-jour-lin, x: 18, y: 32 }
+  - { produit: vase-ceramique-noir-mat, x: 57, y: 62 }
+  - { produit: table-basse-ronde-chene-clair, x: 57, y: 73 }
+  - { produit: buffet-lattes, x: 88, y: 65 }
+  - { produit: bol-manguier-sculpte, x: 87, y: 52 }
+  - { produit: tapis-motif-bogolan, x: 28, y: 94 }
 epingles:
   - "Le bogolan rencontre le style scandinave"
   - "Salon clair et bogolan : le duo réussi"

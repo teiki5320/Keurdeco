@@ -7,7 +7,7 @@ pieces: [cuisine-salle-a-manger]
 matieres: [wax]
 occasions: [fetes-fin-annee]
 image: table-reveillon-wax-or
-image_alt: "Table de réveillon en bois foncé : chemin de table en wax vert, rouge et or, sous-assiettes dorées et assiettes blanches, serviettes vertes, couverts dorés, verres à vin, grands bougeoirs dorés avec bougies ivoire, centre de table en eucalyptus et graminées, photophores dorés, sapin illuminé en arrière-plan."
+image_alt: "Table de réveillon en bois foncé : chemin de table en tissu wax vert, rouge et or, assiettes blanches, serviettes vert armée, couverts dorés, verres à vin, bougeoirs coniques dorés avec bougies couleur champagne, centre de table en eucalyptus, photophores dorés en verre mercurisé, sapin illuminé en arrière-plan."
 image_ia: true
 produits:
   - coupon-pagne-wax-180x120
@@ -21,15 +21,15 @@ produits:
   - eucalyptus-artificiel-lot-6
   - photophores-dores-lot-12
 hotspots:
-  - { produit: coupon-pagne-wax-180x120, x: 17, y: 80 }
-  - { produit: assiettes-porcelaine-blanches-lot-6, x: 56, y: 80 }
-  - { produit: serviettes-lin-melange-lot-12, x: 80, y: 73 }
-  - { produit: couverts-dores-24-pieces, x: 55, y: 86 }
-  - { produit: verres-vin-cristal-arques-lot-6, x: 82, y: 53 }
-  - { produit: bougeoirs-dores-coniques-lot-6, x: 67, y: 49 }
-  - { produit: bougies-tige-ivoire-lot-50, x: 35, y: 29 }
-  - { produit: eucalyptus-artificiel-lot-6, x: 47, y: 55 }
-  - { produit: photophores-dores-lot-12, x: 29, y: 61 }
+  - { produit: coupon-pagne-wax-180x120, x: 51, y: 87 }
+  - { produit: assiettes-porcelaine-blanches-lot-6, x: 15, y: 71 }
+  - { produit: serviettes-lin-melange-lot-12, x: 83, y: 67 }
+  - { produit: couverts-dores-24-pieces, x: 13, y: 78 }
+  - { produit: verres-vin-cristal-arques-lot-6, x: 69, y: 51 }
+  - { produit: bougeoirs-dores-coniques-lot-6, x: 45, y: 50 }
+  - { produit: bougies-tige-ivoire-lot-50, x: 45, y: 21 }
+  - { produit: eucalyptus-artificiel-lot-6, x: 50, y: 58 }
+  - { produit: photophores-dores-lot-12, x: 60, y: 75 }
 epingles:
   - "Une table de réveillon en wax et or"
   - "Noël africain : la table qui brille"
@@ -67,7 +67,7 @@ Au centre, un chemin de **branchages** : eucalyptus, graminées dorées, quelque
 
 ## 5. La lumière des bougies
 
-C’est la touche finale : de grandes **bougies ivoire** dans les bougeoirs, et de petites bougies dans les photophores tout le long de la table. Baissez les autres lumières : l’or et le wax brillent à la lueur des bougies.
+C’est la touche finale : de grandes **bougies à tige** couleur champagne dans les bougeoirs, et de petites bougies dans les photophores tout le long de la table. Baissez les autres lumières : l’or et le wax brillent à la lueur des bougies.
 
 ## En résumé
 

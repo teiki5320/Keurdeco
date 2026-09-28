@@ -7,7 +7,7 @@ pieces: [salon]
 matieres: [wax, raphia-paniers, perles]
 occasions: [fetes-fin-annee]
 image: noel-touche-africaine
-image_alt: "Salon de Noël : sapin décoré de guirlandes de perles en bois, d’étoiles en paille et de petites décorations en wax, pied caché dans un panier tressé, cadeaux emballés dans du tissu wax, couronne en rotin au mur, canapé avec coussin en wax et plaid, bougies sur la table basse."
+image_alt: "Salon de Noël : sapin décoré de guirlandes de perles en bois à pompons de jute, d’étoiles de paille et de guirlandes lumineuses, pied caché dans une collerette en osier, cadeaux emballés dans du tissu wax, couronne de saule brun au mur, canapé avec coussin à portrait de femme africaine et plaid vert sauge, bougies sur la table basse."
 image_ia: true
 produits:
   - sapin-artificiel-180
@@ -21,16 +21,16 @@ produits:
   - plaid-tricot-chenille
   - bougies-piliers-ivoire-lot-6
 hotspots:
-  - { produit: sapin-artificiel-180, x: 70, y: 58 }
-  - { produit: guirlande-perles-bois, x: 55, y: 33 }
-  - { produit: etoiles-paille-lot-16, x: 53, y: 49 }
-  - { produit: guirlande-lumineuse-20m, x: 47, y: 64 }
-  - { produit: cache-pied-sapin-rotin, x: 55, y: 81 }
-  - { produit: coupon-pagne-wax-180x120, x: 63, y: 88 }
-  - { produit: couronne-osier-30, x: 78, y: 24 }
-  - { produit: coussin-wax-cercles-safran, x: 15, y: 57 }
-  - { produit: plaid-tricot-chenille, x: 26, y: 62 }
-  - { produit: bougies-piliers-ivoire-lot-6, x: 9, y: 77 }
+  - { produit: sapin-artificiel-180, x: 72, y: 65 }
+  - { produit: guirlande-perles-bois, x: 58, y: 36 }
+  - { produit: etoiles-paille-lot-16, x: 62, y: 30 }
+  - { produit: guirlande-lumineuse-20m, x: 47, y: 67 }
+  - { produit: cache-pied-sapin-rotin, x: 55, y: 83 }
+  - { produit: coupon-pagne-wax-180x120, x: 64, y: 89 }
+  - { produit: couronne-osier-30, x: 83, y: 24 }
+  - { produit: coussin-wax-cercles-safran, x: 15, y: 58 }
+  - { produit: plaid-tricot-chenille, x: 28, y: 70 }
+  - { produit: bougies-piliers-ivoire-lot-6, x: 14, y: 84 }
 epingles:
   - "Un Noël aux couleurs de l’Afrique"
   - "Sapin en wax et paniers : le Noël qui change"

@@ -7,7 +7,7 @@ pieces: [salon, chambre]
 matieres: [raphia-paniers, terre-cuite, wax, indigo]
 occasions: []
 image: studio-deco-africaine
-image_alt: "Petit studio lumineux : banquette en lin avec coussins en wax et jeté bogolan, trois paniers tressés accrochés au mur, étagère murale avec poteries en terre cuite et plante, table ronde et deux chaises en rotin près de la fenêtre, ficus dans un panier, paravent en bois devant un lit au couvre-lit indigo et tapis rond en jute."
+image_alt: "Petit studio lumineux : banquette en lin avec coussin à portrait de femme africaine, trois paniers tressés à motifs noirs au mur, étagères en pin avec trois petits vases aux tons de terre et de la pampa, table ronde aux pieds noirs croisés et deux chaises au dossier canné, plante dans un panier noir et naturel, paravent en bois clair, lit au couvre-lit bleu denim et tapis rond en jute."
 image_ia: true
 produits:
   - assiettes-murales-tressees
@@ -21,16 +21,16 @@ produits:
   - housse-couette-coton-denim
   - tapis-jute-rond
 hotspots:
-  - { produit: assiettes-murales-tressees, x: 29, y: 33 }
-  - { produit: etageres-flottantes-pin-lot-3, x: 53, y: 41 }
-  - { produit: vases-argile-lot-3, x: 56, y: 31 }
-  - { produit: coussin-wax-cercles-safran, x: 39, y: 61 }
-  - { produit: table-ronde-2-personnes-chene, x: 62, y: 58 }
-  - { produit: chaises-dossier-rotin-lot-2, x: 68, y: 66 }
-  - { produit: panier-plante-tresse-rayures, x: 80, y: 71 }
-  - { produit: paravent-bois-3-panneaux, x: 87, y: 47 }
-  - { produit: housse-couette-coton-denim, x: 93, y: 80 }
-  - { produit: tapis-jute-rond, x: 57, y: 92 }
+  - { produit: assiettes-murales-tressees, x: 34, y: 32 }
+  - { produit: coussin-wax-cercles-safran, x: 37, y: 62 }
+  - { produit: etageres-flottantes-pin-lot-3, x: 59, y: 48 }
+  - { produit: vases-argile-lot-3, x: 60, y: 35 }
+  - { produit: table-ronde-2-personnes-chene, x: 71, y: 67 }
+  - { produit: chaises-dossier-rotin-lot-2, x: 64, y: 58 }
+  - { produit: panier-plante-tresse-rayures, x: 10, y: 83 }
+  - { produit: paravent-bois-3-panneaux, x: 91, y: 47 }
+  - { produit: housse-couette-coton-denim, x: 83, y: 87 }
+  - { produit: tapis-jute-rond, x: 52, y: 92 }
 epingles:
   - "Déco africaine dans un petit studio"
   - "25 m² aux couleurs de l’Afrique"
@@ -48,7 +48,7 @@ Au sol, la place est précieuse ; les murs, eux, sont souvent vides. Accrochez-y
 
 ## 2. Une banquette qui fait tout
 
-Dans 25 m², le canapé doit aussi servir de lit d’appoint. Choisissez une banquette simple, dans un tissu uni et clair, et apportez la couleur avec **deux coussins en wax** et un jeté aux motifs bogolan. On change l’ambiance en changeant les textiles, sans racheter de meuble.
+Dans 25 m², le canapé doit aussi servir de lit d’appoint. Choisissez une banquette simple, dans un tissu uni et clair, et apportez la couleur avec **un coussin à imprimé africain**, ici un portrait aux couleurs chaudes. On change l’ambiance en changeant les textiles, sans racheter de meuble.
 
 ## 3. Un coin repas près de la fenêtre
 

@@ -7,11 +7,9 @@ pieces: [salon]
 matieres: [terre-cuite, raphia-paniers, bois-sculpte]
 occasions: []
 image: salon-cocooning-ocre
-image_alt: "Salon aux murs ocre dans une lumière de fin de journée : canapé en velours rouille avec coussins et plaid en grosse maille crème, table basse ronde en bois sculpté avec coupe en terre cuite et bougie, grande jarre avec branches séchées, lampadaire en rotin, pouf tressé et tapis en peau de mouton."
+image_alt: "Salon aux murs ocre dans une lumière de fin de journée : canapé en velours rouille, plaid vert sauge en grosse maille, tabouret en bois brut portant une coupe en terre cuite et des bougies, amphore avec branches de saule bouclées, tapis en peau de mouton beige, lampadaire à abat-jour en rotin et pouf tricoté moutarde."
 image_ia: true
 produits:
-  - housse-canape-velours-cotele
-  - coussin-wax-terracotta
   - plaid-tricot-chenille
   - coupe-terre-cuite-ronde
   - bougies-piliers-ivoire-lot-6
@@ -22,17 +20,15 @@ produits:
   - lampadaire-rotin-boheme
   - pouf-tricot-moutarde
 hotspots:
-  - { produit: jarre-terre-cuite-toscane, x: 11, y: 73 }
-  - { produit: branches-saule-sechees, x: 12, y: 41 }
-  - { produit: housse-canape-velours-cotele, x: 33, y: 67 }
-  - { produit: coussin-wax-terracotta, x: 68, y: 55 }
-  - { produit: plaid-tricot-chenille, x: 66, y: 72 }
-  - { produit: coupe-terre-cuite-ronde, x: 46, y: 70 }
-  - { produit: bougies-piliers-ivoire-lot-6, x: 53, y: 72 }
-  - { produit: tabouret-bois-sculpte, x: 50, y: 82 }
-  - { produit: tapis-peau-mouton-beige, x: 25, y: 91 }
-  - { produit: lampadaire-rotin-boheme, x: 82, y: 33 }
-  - { produit: pouf-tricot-moutarde, x: 88, y: 80 }
+  - { produit: jarre-terre-cuite-toscane, x: 14, y: 75 }
+  - { produit: branches-saule-sechees, x: 13, y: 41 }
+  - { produit: plaid-tricot-chenille, x: 68, y: 70 }
+  - { produit: coupe-terre-cuite-ronde, x: 35, y: 60 }
+  - { produit: bougies-piliers-ivoire-lot-6, x: 42, y: 60 }
+  - { produit: tabouret-bois-sculpte, x: 38, y: 80 }
+  - { produit: tapis-peau-mouton-beige, x: 25, y: 94 }
+  - { produit: lampadaire-rotin-boheme, x: 84, y: 21 }
+  - { produit: pouf-tricot-moutarde, x: 92, y: 73 }
 epingles:
   - "Salon cocooning aux couleurs de la terre"
   - "Ocre et terre cuite pour l’automne"

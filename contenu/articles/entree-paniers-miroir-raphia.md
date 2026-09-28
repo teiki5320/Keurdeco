@@ -7,7 +7,7 @@ pieces: [entree]
 matieres: [raphia-paniers, terre-cuite, bois-sculpte]
 occasions: []
 image: entree-paniers-miroir-raphia
-image_alt: "Entrée au mur ocre jaune : grand miroir rond encadré de raphia à franges, banc en bois sculpté avec un plaid rayé, deux paniers tressés remplis de chaussures, patères avec cabas et écharpe, jarre en terre cuite garnie de pampas, suspension tressée et tapis kilim."
+image_alt: "Entrée au mur ocre : miroir soleil en rotin, suspension en jute à trois étages, banc à chaussures en bambou avec plaid à losanges noir et crème et paniers en jonc de mer, patères rondes en chêne avec manteau et cabas, amphore en terre cuite garnie de pampa et tapis tissé taupe."
 image_ia: true
 produits:
   - miroir-soleil-rotin-58
@@ -20,15 +20,15 @@ produits:
   - pampa-sechee-bouquet
   - tapis-couloir-kilim-chindi
 hotspots:
-  - { produit: suspension-jute-boheme, x: 49, y: 7 }
-  - { produit: miroir-soleil-rotin-58, x: 39, y: 41 }
-  - { produit: pampa-sechee-bouquet, x: 18, y: 47 }
-  - { produit: jarre-terre-cuite-toscane, x: 19, y: 77 }
-  - { produit: banc-chaussures-bambou, x: 47, y: 68 }
-  - { produit: plaid-coton-rayures-creme, x: 58, y: 65 }
-  - { produit: paniers-rangement-raphia-lot, x: 41, y: 82 }
-  - { produit: pateres-chene-lot-4, x: 72, y: 28 }
-  - { produit: tapis-couloir-kilim-chindi, x: 45, y: 94 }
+  - { produit: suspension-jute-boheme, x: 50, y: 11 }
+  - { produit: miroir-soleil-rotin-58, x: 43, y: 38 }
+  - { produit: pampa-sechee-bouquet, x: 20, y: 52 }
+  - { produit: jarre-terre-cuite-toscane, x: 20, y: 80 }
+  - { produit: banc-chaussures-bambou, x: 36, y: 68 }
+  - { produit: plaid-coton-rayures-creme, x: 56, y: 70 }
+  - { produit: paniers-rangement-raphia-lot, x: 51, y: 82 }
+  - { produit: pateres-chene-lot-4, x: 67, y: 33 }
+  - { produit: tapis-couloir-kilim-chindi, x: 47, y: 96 }
 epingles:
   - "Une entrée chaleureuse en 3 objets africains"
   - "Miroir en raphia et paniers : l’entrée qui accueille"
