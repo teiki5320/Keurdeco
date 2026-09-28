@@ -1422,5 +1422,121 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "coussins-lin-beige-lot-2",
+    "asin": "B0GXGG35X9",
+    "nom": "Housses de coussin en lin naturel beige, lot de 2 (45 × 45 cm)",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "table-basse-ronde-chene-clair",
+    "asin": "B07BMZ94LF",
+    "nom": "Table basse ronde à tiroir, chêne clair et blanc",
+    "type_objet": "table",
+    "matieres": [],
+    "couleurs": [
+      "bois",
+      "blanc"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "vase-ceramique-noir-mat",
+    "asin": "B0D8LFJ8S1",
+    "nom": "Vase en céramique noir mat à rainures",
+    "type_objet": "vase",
+    "matieres": [],
+    "couleurs": [
+      "noir"
+    ],
+    "pieces": [
+      "salon",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "buffet-lattes",
+    "asin": "B0GQHC13PF",
+    "nom": "Buffet bas à portes à lattes, étagère réglable",
+    "type_objet": "rangement",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "bol-manguier-sculpte",
+    "asin": "B0BSXJQS9H",
+    "nom": "Bol décoratif en bois de manguier sculpté main",
+    "type_objet": "bol",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "lampadaire-noir-abat-jour-lin",
+    "asin": "B0GHNJV6TP",
+    "nom": "Lampadaire noir à abat-jour en lin",
+    "type_objet": "luminaire",
+    "matieres": [],
+    "couleurs": [
+      "noir",
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "cadre-chene-a2",
+    "asin": "B0F8QM7LDN",
+    "nom": "Grand cadre en chêne, format A2 (42 × 59 cm)",
+    "type_objet": "cadre",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
