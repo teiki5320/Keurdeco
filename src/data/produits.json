@@ -430,5 +430,108 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "jarre-terre-cuite-toscane",
+    "asin": "B08L6CFDWZ",
+    "nom": "Jarre en terre cuite de Toscane, 46 cm",
+    "type_objet": "vase",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "balcon-exterieur",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "galettes-chaise-orange",
+    "asin": "B0CQ2FXG87",
+    "nom": "Galettes de chaise orange, lot de 4",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "balcon-exterieur",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "lanternes-solaires-rotin",
+    "asin": "B0G19M7BX1",
+    "nom": "Lanternes solaires en rotin tressé, lot de 2",
+    "type_objet": "luminaire",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tapis-jute-rond",
+    "asin": "B09JZL9L7S",
+    "nom": "Tapis rond en jute, 120 cm",
+    "type_objet": "tapis",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "balcon-exterieur",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "guirlande-guinguette",
+    "asin": "B0FRY54MMD",
+    "nom": "Guirlande lumineuse guinguette d’extérieur, 9 m",
+    "type_objet": "luminaire",
+    "matieres": [],
+    "couleurs": [
+      "blanc"
+    ],
+    "pieces": [
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "banc-acacia-jardin",
+    "asin": "B0C6GRTFSP",
+    "nom": "Banc de jardin en bois d’acacia, 2 places",
+    "type_objet": "banc",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "balcon-exterieur",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-28"
   }
 ]
