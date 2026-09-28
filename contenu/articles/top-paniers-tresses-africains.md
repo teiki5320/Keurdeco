@@ -7,9 +7,9 @@ pieces: [salon, entree, salle-de-bain, chambre-enfant]
 matieres: [raphia-paniers]
 occasions: []
 image: paniers-tresses-africains
-image_alt: "Illustration d’une étagère en bois garnie de paniers tressés à rayures safran, indigo, terracotta et vert, avec un grand panier et une plante au sol."
+image_alt: "Étagère en chêne clair garnie de paniers tressés africains à rayures safran, indigo, terracotta et vert, avec anses en cuir ou couvercles, et un monstera dans un grand panier tressé posé au sol."
 # Illustration provisoire (dessin maison). Passer à true si elle est remplacée par une image créée par IA.
-image_ia: false
+image_ia: true
 produits:
   - panier-bolga-marche
   - panier-plante-tresse-rayures

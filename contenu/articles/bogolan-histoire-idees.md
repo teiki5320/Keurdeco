@@ -7,9 +7,9 @@ pieces: [salon, chambre]
 matieres: [bogolan]
 occasions: []
 image: bogolan-histoire-deco
-image_alt: "Illustration d’un tissu bogolan : damier de carrés bruns ornés de motifs crème, points, zigzags, croix et cercles."
+image_alt: "Coin salon aux murs blancs : grand bogolan brun aux motifs crème (zigzags, points, croix, carrés) accroché au-dessus d’une banquette en lin, coussin en bogolan, jarre en terre et bouquet sec sur un chevet en bois sombre."
 # Illustration provisoire (dessin maison). Passer à true si elle est remplacée par une image créée par IA.
-image_ia: false
+image_ia: true
 produits:
   - coussin-bogolan
   - tissu-bogolan-coupon

@@ -7,9 +7,9 @@ pieces: [salon]
 matieres: [wax, raphia-paniers, terre-cuite]
 occasions: []
 image: salon-terracotta-wax
-image_alt: "Illustration d’un salon au mur terracotta : canapé bleu indigo, coussins en wax, assiettes tressées au mur, panier avec plante, tapis à losanges et pouf ocre."
+image_alt: "Salon au mur enduit terracotta : canapé bleu indigo, coussins en wax safran, baobab et terracotta, plaid rayé crème, assiettes tressées au mur, ficus dans un panier rayé, tapis à losanges, pouf en cuir ocre et tabouret sculpté portant un vase en terre cuite."
 # Illustration provisoire (dessin maison). Passer à true si elle est remplacée par une image créée par IA.
-image_ia: false
+image_ia: true
 produits:
   - coussin-wax-cercles-safran
   - coussin-wax-vert-baobab
@@ -22,16 +22,16 @@ produits:
   - tabouret-bois-sculpte
   - plaid-coton-rayures-creme
 hotspots:
-  - { produit: coussin-wax-cercles-safran, x: 35, y: 51 }
-  - { produit: coussin-wax-vert-baobab, x: 46, y: 52 }
-  - { produit: coussin-wax-terracotta, x: 65, y: 51 }
-  - { produit: assiettes-murales-tressees, x: 42, y: 24 }
-  - { produit: panier-plante-tresse-rayures, x: 14, y: 66 }
-  - { produit: tapis-motif-losanges, x: 40, y: 89 }
-  - { produit: pouf-cuir-ocre, x: 81, y: 86 }
-  - { produit: vase-terre-cuite-terracotta, x: 85, y: 52 }
-  - { produit: tabouret-bois-sculpte, x: 85, y: 67 }
-  - { produit: plaid-coton-rayures-creme, x: 56, y: 60 }
+  - { produit: coussin-wax-cercles-safran, x: 36, y: 57 }
+  - { produit: coussin-wax-vert-baobab, x: 50, y: 57 }
+  - { produit: coussin-wax-terracotta, x: 66, y: 57 }
+  - { produit: assiettes-murales-tressees, x: 50, y: 28 }
+  - { produit: panier-plante-tresse-rayures, x: 15, y: 75 }
+  - { produit: tapis-motif-losanges, x: 40, y: 92 }
+  - { produit: pouf-cuir-ocre, x: 85, y: 89 }
+  - { produit: vase-terre-cuite-terracotta, x: 86, y: 57 }
+  - { produit: tabouret-bois-sculpte, x: 86, y: 72 }
+  - { produit: plaid-coton-rayures-creme, x: 71, y: 70 }
 epingles:
   - "Salon terracotta et wax : 5 idées déco"
   - "Un salon africain chaleureux, sans surcharge"
