@@ -7,7 +7,7 @@ pieces: [chambre]
 matieres: [indigo, raphia-paniers]
 occasions: []
 image: chambre-indigo-lin
-image_alt: "Chambre lumineuse : lit habillé d’une housse de couette bleu indigo et de draps blancs, coussins shibori indigo, tête de lit en rotin, lampe en céramique sur un chevet en bois, panier avec plaid, tapis rayé bleu et voilages en lin."
+image_alt: "Chambre lumineuse : tête de lit en rotin en forme de soleil, housse de couette bleu denim, coussin shibori indigo et blanc, plaid gaufré gris, chevet en bois à tiroirs cannés et lampes en céramique blanche, panier en corde blanc et marron, tapis rond bleu marine et voilages beiges."
 image_ia: true
 produits:
   - housse-couette-coton-denim
@@ -21,16 +21,16 @@ produits:
   - tapis-rond-coton-bleu-marine
   - voilage-lin-naturel
 hotspots:
-  - { produit: tete-de-lit-rotin-160, x: 61, y: 37 }
-  - { produit: coussin-shibori-indigo, x: 52, y: 48 }
-  - { produit: housse-couette-coton-denim, x: 58, y: 72 }
-  - { produit: drap-housse-lin-blanc, x: 72, y: 88 }
-  - { produit: lampes-chevet-ceramique-lot-2, x: 33, y: 47 }
-  - { produit: table-chevet-rotin, x: 32, y: 65 }
-  - { produit: plaid-gaufre-coton, x: 91, y: 63 }
-  - { produit: panier-jouets-tresse, x: 94, y: 74 }
-  - { produit: tapis-rond-coton-bleu-marine, x: 40, y: 95 }
-  - { produit: voilage-lin-naturel, x: 19, y: 37 }
+  - { produit: tete-de-lit-rotin-160, x: 52, y: 34 }
+  - { produit: coussin-shibori-indigo, x: 52, y: 49 }
+  - { produit: housse-couette-coton-denim, x: 40, y: 70 }
+  - { produit: drap-housse-lin-blanc, x: 47, y: 86 }
+  - { produit: lampes-chevet-ceramique-lot-2, x: 26, y: 48 }
+  - { produit: table-chevet-rotin, x: 25, y: 61 }
+  - { produit: plaid-gaufre-coton, x: 62, y: 70 }
+  - { produit: panier-jouets-tresse, x: 76, y: 87 }
+  - { produit: tapis-rond-coton-bleu-marine, x: 50, y: 96 }
+  - { produit: voilage-lin-naturel, x: 13, y: 37 }
 epingles:
   - "Une chambre indigo pour mieux dormir"
   - "Indigo + lin : la chambre africaine apaisante"
@@ -52,23 +52,23 @@ Le lin et le coton lavé sont les plus agréables : ils respirent l’été, gar
 
 Le secret d’une chambre indigo qui reste lumineuse : **beaucoup de blanc** autour. Draps en lin blanc, murs chaulés ou blanc cassé, voilages légers. Le bleu ressort mieux, et la pièce ne paraît jamais sombre.
 
-## 3. Des motifs teints, pas plus de deux
+## 3. Un seul motif teint
 
-Sur les oreillers, ajoutez deux coussins à **motifs teints** : shibori, adire ou tie-dye indigo. Ces motifs nés de la teinture à réserve, avec leurs petites irrégularités, rappellent le travail des teinturières. Entre eux, glissez un coussin uni en lin naturel pour faire la transition.
+Devant les oreillers, posez un coussin à **motif teint** : shibori, adire ou tie-dye indigo. Ces motifs nés de la teinture à réserve, avec leurs petites irrégularités, rappellent le travail des teinturières. Un seul suffit : au-delà, le lit perd son calme.
 
-Deux coussins imprimés suffisent : au-delà, le lit perd son calme.
+Au pied du lit, un **plaid gaufré gris foncé** ajoute du relief sans rompre la palette.
 
 ## 4. Rotin, bois clair et céramique
 
 Pour réchauffer le bleu, entourez-le de matières naturelles :
 
-- une **tête de lit en rotin**, qui apporte une texture chaleureuse sans alourdir ;
-- un **chevet en bois clair** ou en rotin ;
+- une **tête de lit en rotin** en forme de soleil, qui apporte une texture chaleureuse sans alourdir ;
+- un **chevet en bois clair** aux tiroirs cannés ;
 - une **lampe au pied en céramique** blanche, avec un abat-jour clair pour une lumière douce le soir.
 
 ## 5. Un tapis et un panier pour finir
 
-Au pied du lit, un **tapis tissé** bleu et écru prolonge la couleur jusqu’au sol et adoucit le réveil. Dans un coin, un **grand panier tressé** accueille le plaid et les coussins de la journée : la chambre reste rangée sans effort.
+Au pied du lit, un **tapis rond bleu marine** prolonge la couleur jusqu’au sol et adoucit le réveil. Dans un coin, un **grand panier en corde de coton** accueille le plaid et les coussins de la journée : la chambre reste rangée sans effort.
 
 ## En résumé
 

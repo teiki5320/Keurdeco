@@ -260,14 +260,14 @@
   {
     "id": "panier-jouets-tresse",
     "asin": "B0DPWYJK58",
-    "nom": "Grand panier tressé à poignées, 65 litres",
+    "nom": "Grand panier en corde de coton blanc et marron, à poignées, 65 litres",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
     ],
     "couleurs": [
-      "naturel",
-      "blanc"
+      "blanc",
+      "bois"
     ],
     "pieces": [
       "chambre-enfant"
@@ -766,11 +766,11 @@
   {
     "id": "plaid-gaufre-coton",
     "asin": "B0GFTLHF28",
-    "nom": "Plaid gaufré léger en coton",
+    "nom": "Plaid gaufré en coton, gris foncé, 220 × 240 cm",
     "type_objet": "plaid",
     "matieres": [],
     "couleurs": [
-      "naturel"
+      "gris"
     ],
     "pieces": [
       "chambre",

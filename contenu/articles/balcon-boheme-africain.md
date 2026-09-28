@@ -7,7 +7,7 @@ pieces: [balcon-exterieur]
 matieres: [terre-cuite, raphia-paniers, bogolan]
 occasions: []
 image: balcon-boheme-africain
-image_alt: "Balcon en ville au coucher du soleil : banc en bois garni de coussins jaune, indigo et orange, olivier dans une grande jarre en terre cuite, panier tressé avec un tissu kente, deux lanternes en rotin, tapis rond en jute, deux poufs en cuir et guirlande guinguette."
+image_alt: "Balcon au coucher du soleil sur les toits : banc en acacia à lattes avec galettes orange, coussin à portrait de femme africaine et coussin mudcloth, olivier dans une amphore en terre cuite, pouf marocain en cuir cognac sur un tapis rond en jute, panier Bolga rayé rouge et noir, deux lanternes en rotin et guirlande guinguette."
 image_ia: true
 produits:
   - banc-acacia-jardin
@@ -21,16 +21,16 @@ produits:
   - pouf-cuir-ocre
   - guirlande-guinguette
 hotspots:
-  - { produit: jarre-terre-cuite-toscane, x: 10, y: 81 }
-  - { produit: banc-acacia-jardin, x: 31, y: 73 }
-  - { produit: coussin-wax-cercles-safran, x: 19, y: 57 }
-  - { produit: coussin-bogolan, x: 29, y: 55 }
-  - { produit: galettes-chaise-orange, x: 37, y: 61 }
-  - { produit: panier-bolga-marche, x: 52, y: 70 }
-  - { produit: lanternes-solaires-rotin, x: 67, y: 73 }
-  - { produit: tapis-jute-rond, x: 60, y: 80 }
-  - { produit: pouf-cuir-ocre, x: 79, y: 91 }
-  - { produit: guirlande-guinguette, x: 60, y: 12 }
+  - { produit: guirlande-guinguette, x: 50, y: 14 }
+  - { produit: jarre-terre-cuite-toscane, x: 19, y: 75 }
+  - { produit: banc-acacia-jardin, x: 39, y: 52 }
+  - { produit: galettes-chaise-orange, x: 41, y: 65 }
+  - { produit: coussin-wax-cercles-safran, x: 57, y: 55 }
+  - { produit: coussin-bogolan, x: 68, y: 55 }
+  - { produit: pouf-cuir-ocre, x: 37, y: 87 }
+  - { produit: panier-bolga-marche, x: 67, y: 84 }
+  - { produit: lanternes-solaires-rotin, x: 86, y: 83 }
+  - { produit: tapis-jute-rond, x: 53, y: 94 }
 epingles:
   - "Un balcon africain pour l’été"
   - "Poufs, lanternes, jarres : le balcon qui voyage"
@@ -52,7 +52,7 @@ Complétez avec une ou deux plantes en pot de la même famille de couleurs, pas 
 
 ## 2. Un banc bas, beaucoup de coussins
 
-Un banc en bois contre le mur prend peu de place et offre plus d’assises qu’un salon de jardin. Garnissez-le de **galettes épaisses** et de coussins aux imprimés africains : jaune safran, indigo à motifs bogolan, orange brûlé.
+Un banc en bois contre le mur prend peu de place et offre plus d’assises qu’un salon de jardin. Garnissez-le de **galettes épaisses** orange brûlé et de coussins aux imprimés africains : un portrait aux couleurs chaudes, un motif mudcloth rouille et noir.
 
 Comme à l’intérieur, reliez les imprimés par une couleur commune et variez la taille des motifs. Et rentrez les housses les soirs de pluie : même les tissus d’extérieur passent au soleil.
 
@@ -60,7 +60,7 @@ Comme à l’intérieur, reliez les imprimés par une couleur commune et variez 
 
 Plaid pour la fraîcheur du soir, coussins supplémentaires, livre, jeux de cartes : un **grand panier tressé** posé au pied du banc range tout sans alourdir le décor. Un panier Bolga du Ghana, avec ses couleurs vives et son anse en cuir, fait aussi office d’objet déco.
 
-Glissez-y un tissu à bandes colorées, façon kente : il suffit à apporter la touche graphique qui manquait.
+Ses rayures rouges et noires suffisent à apporter la touche graphique qui répond aux coussins.
 
 ## 4. De la lumière à hauteur des yeux
 
