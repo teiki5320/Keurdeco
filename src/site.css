@@ -185,8 +185,9 @@ h2 em {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
-  padding-bottom: 0.08em;
-  margin-bottom: -0.08em;
+  /* Marge intérieure pour ne pas couper les jambages (p, g) ni le bout des italiques. */
+  padding: 0 0.08em 0.24em;
+  margin: 0 -0.08em -0.24em;
 }
 
 .mot__int {
