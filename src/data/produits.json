@@ -2159,5 +2159,599 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-28"
+  },
+  {
+    "id": "tapis-enfant-arlequin-pompons",
+    "asin": "B0BGFCX4ZG",
+    "nom": "Tapis rond en coton à pompons, motif arlequin beige, 90 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [
+      "crème"
+    ],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "guirlandes-boules-feutre-lot-2",
+    "asin": "B09TSRQCY9",
+    "nom": "Guirlandes de boules en feutre multicolores, lot de 2 (2,5 m)",
+    "type_objet": "objet",
+    "matieres": [],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "affiches-animaux-savane-lot-3",
+    "asin": "B0DGV3TX4D",
+    "nom": "Affiches animaux de la savane (lion, girafe, éléphant), 3 toiles 30 × 40 cm sans cadre",
+    "type_objet": "cadre",
+    "matieres": [],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "mobile-bois-animaux-savane",
+    "asin": "B0CDLRLRML",
+    "nom": "Mobile en bois et boules de laine : girafe, lion, éléphant",
+    "type_objet": "objet",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "etageres-murales-enfant-lot-3",
+    "asin": "B0D6R7Z8J7",
+    "nom": "Étagères murales à livres pour enfant en bois massif, lot de 3",
+    "type_objet": "rangement",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "coussin-lion-franges",
+    "asin": "B08VN27K8D",
+    "nom": "Coussin lion à franges, beige, 38 cm",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "crème"
+    ],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "tipi-enfant-coton",
+    "asin": "B01HTIET3Y",
+    "nom": "Tipi enfant en toile de coton blanche, avec tapis et guirlande lumineuse",
+    "type_objet": "objet",
+    "matieres": [],
+    "couleurs": [
+      "blanc"
+    ],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "paniers-muraux-motif-africain-classic-lot-3",
+    "asin": "B0CDXKTP1S",
+    "nom": "Paniers muraux en jonc de mer tressés main, motif africain, lot de 3 (modèle Classic)",
+    "type_objet": "assiette-murale",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "decorations-murales-seagrass-lot-3",
+    "asin": "B08TYGDXB1",
+    "nom": "Décorations murales rondes en jonc de mer, lot de 3 (18, 28 et 38 cm)",
+    "type_objet": "assiette-murale",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "paniers-muraux-rotin-lot-8",
+    "asin": "B0CMXNM9NN",
+    "nom": "Paniers muraux en rotin et feuilles tressées, lot de 8",
+    "type_objet": "assiette-murale",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "brun"
+    ],
+    "pieces": [
+      "salon",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "paniers-muraux-jacinthe-lot-7",
+    "asin": "B0D2CL45F3",
+    "nom": "Paniers muraux plats en jacinthe d’eau et feuille de maïs, faits main, lot de 7",
+    "type_objet": "assiette-murale",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "corbeilles-murales-jonc-lot-7",
+    "asin": "B0F98Z1VM9",
+    "nom": "Corbeilles murales rondes en jonc de mer, feuille de maïs et rotin, tons naturels, lot de 7",
+    "type_objet": "assiette-murale",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "entree",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "miroirs-rotin-soleil-lot-3",
+    "asin": "B07MY93WBS",
+    "nom": "Miroirs soleil en rotin, 28 cm, lot de 3",
+    "type_objet": "miroir",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "entree",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "kit-teinture-indigo-jacquard",
+    "asin": "B003IIN7HO",
+    "nom": "Kit de teinture à l’indigo Jacquard (mini)",
+    "type_objet": "objet",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "plaid-coton-bleu-140x200",
+    "asin": "B07S49NSQL",
+    "nom": "Plaid jeté de fauteuil en coton, bleu, 140 × 200 cm",
+    "type_objet": "plaid",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "distributeur-savon-terracotta",
+    "asin": "B09GBM1XWV",
+    "nom": "Distributeur de savon en céramique terracotta mat, 300 ml",
+    "type_objet": "objet",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "salle-de-bain"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "tapis-bain-coton-tresse-creme",
+    "asin": "B0CT3P6NSW",
+    "nom": "Tapis de bain en coton tressé, crème, 60 × 120 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [
+      "crème"
+    ],
+    "pieces": [
+      "salle-de-bain",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "echelle-porte-serviettes-bambou",
+    "asin": "B0D5R1QVS4",
+    "nom": "Échelle porte-serviettes en bambou, 5 barreaux, 180 cm",
+    "type_objet": "rangement",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salle-de-bain"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "fouta-coton-sable",
+    "asin": "B0BK22XYD1",
+    "nom": "Fouta en coton, couleur sable",
+    "type_objet": "textile",
+    "matieres": [],
+    "couleurs": [
+      "crème"
+    ],
+    "pieces": [
+      "salle-de-bain"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "planche-olivier-39",
+    "asin": "B097C7GNPF",
+    "nom": "Planche à découper et de service en bois d’olivier, 39 × 18 cm",
+    "type_objet": "plateau",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "pot-terre-cuite-couvercle",
+    "asin": "B0CTKKN5FC",
+    "nom": "Pot de conservation en terre cuite avec couvercle, 17,8 cm",
+    "type_objet": "vaisselle",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "chemin-table-terracotta-glands",
+    "asin": "B0DHJZ3PYK",
+    "nom": "Chemin de table terracotta orangé à glands",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "lanternes-bois-lot-10",
+    "asin": "B0BZ8CKGPB",
+    "nom": "Lanternes en bois pour centre de table, 27 cm, lot de 10 (bougies non incluses)",
+    "type_objet": "luminaire",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "porte-noms-bois-lot-30",
+    "asin": "B0D92C1GM2",
+    "nom": "Porte-noms de table en bois, lot de 30, avec cartes kraft",
+    "type_objet": "objet",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "sets-table-jacinthe-lot-6",
+    "asin": "B0G25HK1PB",
+    "nom": "Sets de table ronds en jacinthe d’eau tressée, lot de 6",
+    "type_objet": "nappe",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "chemins-table-gaze-terracotta-lot-6",
+    "asin": "B0G3Q1X4SM",
+    "nom": "Chemins de table en gaze de coton terracotta, 55 × 300 cm, lot de 6",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "vase-rustique-terre-cuite-anse",
+    "asin": "B0DF2D41WB",
+    "nom": "Vase rustique en céramique façon terre cuite, avec anse",
+    "type_objet": "vase",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "corbeilles-tressees-anse-lot-10",
+    "asin": "B0C3C4W76M",
+    "nom": "Petites corbeilles tressées façon osier avec anse, lot de 10",
+    "type_objet": "panier",
+    "matieres": [],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "couronnes-fleurs-sechees-lot-2",
+    "asin": "B0D2MDQZRT",
+    "nom": "Couronnes de fleurs séchées sur anneau doré, lot de 2",
+    "type_objet": "objet",
+    "matieres": [],
+    "couleurs": [
+      "or",
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "cadres-photo-bois-a5-lot-3",
+    "asin": "B0FWQLKR7C",
+    "nom": "Cadres photo en bois clair, format A5, lot de 3",
+    "type_objet": "cadre",
+    "matieres": [],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "parure-gaze-coton-terracotta",
+    "asin": "B0987W1G8K",
+    "nom": "Parure de lit en gaze de coton terracotta, housse 240 × 220 cm et 2 taies",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "plaid-terre-cuite-pompons",
+    "asin": "B0CC9SKQC7",
+    "nom": "Jeté en coton recyclé couleur terre cuite, à pompons, 180 × 130 cm",
+    "type_objet": "plaid",
+    "matieres": [],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "chambre",
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "tapis-jute-alhambra",
+    "asin": "B07BZ4PS7B",
+    "nom": "Tapis en jute naturel tressé main, modèle Alhambra",
+    "type_objet": "tapis",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "tapis-kilim-terracotta-160x230",
+    "asin": "B0F5NRTMF1",
+    "nom": "Tapis effet kilim terracotta chiné, lavable, 160 × 230 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "tapis-berbere-losanges-creme",
+    "asin": "B09NM74SRD",
+    "nom": "Tapis berbère à poils longs, losanges multicolores sur fond crème, 120 × 170 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [
+      "crème",
+      "multicolore"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "tapis-rond-jute-lurex-80",
+    "asin": "B07TVYHFTJ",
+    "nom": "Tapis rond en jute et fil doré, 80 cm",
+    "type_objet": "tapis",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "or"
+    ],
+    "pieces": [
+      "salon",
+      "entree",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-29"
   }
 ]
