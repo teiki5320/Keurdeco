@@ -2,7 +2,7 @@
 
 .nuancier__carte {
   display: grid;
-  grid-template-columns: 118px minmax(0, 1fr) 84px;
+  grid-template-columns: 196px minmax(0, 1fr) 84px;
   min-height: 600px;
   background: var(--surface);
   border-radius: var(--rayon-petit);
@@ -10,11 +10,11 @@
 }
 
 .nuancier__objets {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6px;
-  padding: 24px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  gap: 6px 4px;
+  padding: 24px 8px;
   border-right: 1px solid var(--bordure);
 }
 
@@ -22,8 +22,8 @@
   position: relative;
   display: grid;
   place-items: center;
-  height: 96px;
-  margin: 0 10px;
+  height: 86px;
+  margin: 0;
   border: 0;
   border-radius: 4px;
   background: transparent;
@@ -32,14 +32,13 @@
 }
 
 .nuancier__vignette[aria-pressed='true'] {
-  margin: 0 -14px 0 10px;
   background: #fff;
   box-shadow: 0 14px 30px -10px rgb(42 29 21 / 30%);
 }
 
 .nuancier__vignette img {
-  width: 84px;
-  height: 52px;
+  width: 76px;
+  height: 48px;
   object-fit: contain;
 }
 
@@ -267,6 +266,7 @@ html:not(.js) .nuancier__aide {
     min-height: 0;
   }
   .nuancier__objets {
+    display: flex;
     flex-direction: row;
     justify-content: flex-start;
     overflow-x: auto;
