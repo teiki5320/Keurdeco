@@ -126,9 +126,10 @@ try {
   await page.goto(`${BASE}top-paniers-tresses-africains.html`, { waitUntil: 'networkidle' });
   const nbClasses = [...readFileSync(resolve(RACINE, 'contenu/articles/top-paniers-tresses-africains.md'), 'utf8').matchAll(/^ {2}- produit: /gm)].length;
   verifier((await page.locator('.classement__entree').count()) === nbClasses, `top : ${nbClasses} produits classés`);
-  verifier((await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"ItemList"') && t.includes('"numberOfItems":10')), 'top : données structurées ItemList');
+  verifier((await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"ItemList"') && t.includes(`"numberOfItems":${nbClasses}`)), 'top : données structurées ItemList');
   await page.goto(`${BASE}bogolan-histoire-idees.html`, { waitUntil: 'networkidle' });
-  verifier((await page.locator('.encadre-produit').count()) === 5 && (await page.locator('.sommaire').count()) === 1, 'guide : 5 encadrés produits et un sommaire');
+  const nbEncadres = [...readFileSync(resolve(RACINE, 'contenu/articles/bogolan-histoire-idees.md'), 'utf8').matchAll(/\{\{produit: /g)].length;
+  verifier((await page.locator('.encadre-produit').count()) === nbEncadres && (await page.locator('.sommaire').count()) === 1, `guide : ${nbEncadres} encadrés produits et un sommaire`);
 
   // Conseils : onglet, réponse courte, données FAQ
   await page.goto(`${BASE}conseil-laver-coussin-wax.html`, { waitUntil: 'networkidle' });
