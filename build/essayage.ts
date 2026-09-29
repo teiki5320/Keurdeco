@@ -1,6 +1,7 @@
 /**
  * « Essayez le tissu » (accueil) : le nuancier. On choisit un objet (canapé, fauteuil, pouf,
- * coussin, suspension) à gauche et l’une des 8 matières du site à droite ; elle se propage en cercle.
+ * coussin, suspension, jarre, tabouret, calebasse, panier) à gauche et, à droite, les matières qui lui
+ * conviennent (les tissus pour les meubles, sa matière pour chaque objet) ; elle se propage en cercle.
  * Sur le canapé, un clic fait tomber des coussins. Rendu statique ici (lisible sans JavaScript),
  * animé par src/nuancier.ts. Les dessins des objets sont dans src/data/nuancier.json, les motifs dans build/motifs.ts.
  */
@@ -16,12 +17,20 @@ const { dessins } = JSON.parse(readFileSync(resolve(import.meta.dirname, '../src
 /** Motifs des 8 matières (les mêmes que sur les tuiles), réduits pour habiller les dessins. */
 const motifs = MATIERES.map((m) => patternMotif(m.id, `kd-${m.id}`, 0.55)).join('');
 
+/** Tissus d'ameublement : ils habillent les meubles. Les autres matières ont chacune leur objet. */
+const TISSUS_AMEUBLEMENT = ['wax', 'bogolan', 'kente', 'indigo'];
+
+/** Objets du nuancier et matières qu'on peut leur appliquer (pastilles affichées à droite). */
 export const OBJETS = [
-  { id: 'canape', nom: 'Saly', sous: 'Canapé deux places' },
-  { id: 'fauteuil', nom: 'Gorée', sous: 'Fauteuil capitonné' },
-  { id: 'pouf', nom: 'Joal', sous: 'Pouf rond' },
-  { id: 'coussin', nom: 'Ngor', sous: 'Coussin carré' },
-  { id: 'lampe', nom: 'Casamance', sous: 'Suspension' },
+  { id: 'canape', nom: 'Saly', sous: 'Canapé deux places', matieres: TISSUS_AMEUBLEMENT },
+  { id: 'fauteuil', nom: 'Gorée', sous: 'Fauteuil capitonné', matieres: TISSUS_AMEUBLEMENT },
+  { id: 'pouf', nom: 'Joal', sous: 'Pouf rond', matieres: TISSUS_AMEUBLEMENT },
+  { id: 'coussin', nom: 'Ngor', sous: 'Coussin carré', matieres: TISSUS_AMEUBLEMENT },
+  { id: 'lampe', nom: 'Casamance', sous: 'Suspension', matieres: TISSUS_AMEUBLEMENT },
+  { id: 'jarre', nom: 'Mbour', sous: 'Jarre en terre cuite', matieres: ['terre-cuite'] },
+  { id: 'tabouret', nom: 'Kaolack', sous: 'Tabouret sculpté', matieres: ['bois-sculpte'] },
+  { id: 'calebasse', nom: 'Thiès', sous: 'Calebasse perlée', matieres: ['perles'] },
+  { id: 'panier', nom: 'Bolga', sous: 'Panier tressé', matieres: ['raphia-paniers'] },
 ];
 
 /** Les 8 matières du site (src/taxonomie.ts), avec leur motif (build/motifs.ts) et leur pastille. */
@@ -36,29 +45,27 @@ const PASTILLES: Record<string, { pastille: string; contour: string; teinte: str
   perles: { pastille: 'radial-gradient(circle,#E2A62A 0 3px,transparent 3.5px) 0 0/10px 10px,radial-gradient(circle,#C4553A 0 3px,transparent 3.5px) 5px 5px/10px 10px,#0E1430', contour: '#0E1430', teinte: '#D6D2E4', phrase: 'Perles de verre, de terre ou de graines : une touche précieuse et colorée, portée ou accrochée.' },
 };
 
-/** Tissus en photo : un meuble habillé par objet (npm run nuancier-images). */
-const TISSUS_PHOTO: Record<string, string> = { wax: 'wax' };
-/** Matières montrées par un objet en photo, à la place du meuble. */
-const OBJETS_MATIERE: Record<string, { nom: string; sous: string; image: string }> = {
-  'raphia-paniers': { nom: 'Bolga', sous: 'Panier tressé du Ghana', image: 'images/nuancier/panier-bolga.webp' },
-};
-
 export const TISSUS = MATIERES.map((m) => ({
   id: m.id,
   nom: m.nom,
   remplissage: `url(#kd-${m.id})`,
   titre: m.nom,
   lien: fichierRubrique('matiere', m.id),
-  ...(TISSUS_PHOTO[m.id] ? { images: Object.fromEntries(OBJETS.map((o) => [o.id, `images/nuancier/${TISSUS_PHOTO[m.id]}-${o.id}.webp`])) } : {}),
-  ...(OBJETS_MATIERE[m.id] ? { objet: OBJETS_MATIERE[m.id] } : {}),
+  /** Objets habillés de cette matière en photo réaliste (npm run nuancier-images). */
+  images: Object.fromEntries(OBJETS.filter((o) => o.matieres.includes(m.id)).map((o) => [o.id, `images/nuancier/${m.id}-${o.id}.webp`])) as Record<string, string>,
   ...PASTILLES[m.id],
 }));
 
-type Tissu = (typeof TISSUS)[number] & { images?: Record<string, string>; objet?: { nom: string; sous: string; image: string } };
+type Tissu = (typeof TISSUS)[number];
 
-/** Image d'un objet dans une matière : l'objet en photo (matière), le meuble en photo (tissu), sinon le dessin. */
+/** Image d'un objet dans une matière : la photo réaliste si elle existe, sinon le dessin rempli du motif. */
 export function visuel(objet: string, t: Tissu): string {
-  return t.objet?.image ?? t.images?.[objet] ?? dessin(objet, t.remplissage);
+  return t.images[objet] ?? dessin(objet, t.remplissage);
+}
+
+/** Vignette d'un objet : dans la matière choisie si elle lui convient, sinon dans sa propre matière. */
+function vignette(o: (typeof OBJETS)[number], t: Tissu): string {
+  return visuel(o.id, o.matieres.includes(t.id) ? t : TISSUS.find((x) => x.id === o.matieres[0])!);
 }
 
 /** Matière affichée au premier chargement (wax). */
@@ -89,7 +96,7 @@ export function essayage(): string {
   const oy = (i: number) => `${10 + i * 11.5}%`;
   const vignettes = OBJETS.map(
     (x, i) =>
-      `<button type="button" class="nuancier__vignette" data-objet="${i}" aria-pressed="${i === 0}" aria-label="${echapper(x.sous)}"><img src="${visuel(x.id, t)}" alt="" width="84" height="52"><span>0${i + 1}</span></button>`,
+      `<button type="button" class="nuancier__vignette" data-objet="${i}" aria-pressed="${i === 0}" aria-label="${echapper(x.sous)}"><img src="${vignette(x, t)}" alt="" width="84" height="52" loading="lazy"><span>0${i + 1}</span></button>`,
   ).join('');
   const disques = TISSUS.map((x, i) => `<span class="nuancier__disque${i === DEPART ? ' est-actif' : ''}" style="--t:${x.teinte};--oy:${oy(i)}"></span>`).join('');
   const calques = TISSUS.map(
@@ -97,7 +104,8 @@ export function essayage(): string {
       `<span class="nuancier__calque${i === DEPART ? ' est-actif' : ''}" style="--oy:${oy(i)}"><img src="${visuel(o.id, x)}" alt="${i === DEPART ? echapper(`${o.sous} habillé en ${x.nom.toLowerCase()}`) : ''}"></span>`,
   ).join('');
   const pastilles = TISSUS.map(
-    (x, i) => `<button type="button" class="nuancier__pastille" data-tissu="${i}" aria-pressed="${i === DEPART}" aria-label="${echapper(x.nom)}" style="--c:${x.pastille};--s:${x.contour}"></button>`,
+    (x, i) =>
+      `<button type="button" class="nuancier__pastille" data-tissu="${i}" aria-pressed="${i === DEPART}" aria-label="${echapper(x.nom)}" style="--c:${x.pastille};--s:${x.contour}"${o.matieres.includes(x.id) ? '' : ' hidden'}></button>`,
   ).join('');
   const donnees = JSON.stringify({ motifs, dessins, objets: OBJETS, tissus: TISSUS }).replace(/</g, '\\u003c');
   return `<section class="section nuancier" data-nuancier data-depart="${DEPART}" aria-labelledby="nuancier-titre">

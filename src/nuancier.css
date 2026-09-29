@@ -325,11 +325,3 @@ html:not(.js) .nuancier__aide {
   }
 }
 
-/* Matière montrée par un objet en photo (panier, jarre…) : pas de choix de meuble. */
-.nuancier--objet .nuancier__objets {
-  visibility: hidden;
-}
-
-.nuancier--objet .nuancier__zone {
-  cursor: default;
-}
