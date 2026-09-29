@@ -1205,40 +1205,48 @@ main {
   color: #ffd98a;
 }
 
-/* Avec JavaScript : la piste glisse de côté pendant qu'on descend (section collante). */
-.visite--active {
-  height: calc(100svh + var(--n) * 30vh);
-}
-
-/* Sur téléphone, la visite défile plus vite : moins de hauteur à parcourir. */
-@media (max-width: 699px) {
-  .visite--active {
-    height: calc(100svh + var(--n) * 18vh);
-  }
-}
-
-.visite--active .visite__collant {
-  position: sticky;
-  top: 0;
-  height: 100svh;
+/* Avec JavaScript : carrousel (glisser au doigt ou au pavé tactile, flèches pour la souris). */
+.visite__commandes {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
+  align-items: center;
+  gap: 10px;
 }
 
-.visite--active .visite__barre {
+.visite__fleche {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--bordure);
+  border-radius: 50%;
+  background: var(--ivoire);
+  color: var(--encre);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.visite__fleche:hover:not(:disabled) {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--ivoire);
+}
+
+.visite__fleche:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.visite__fleche--prec .icone {
+  transform: rotate(180deg);
+}
+
+.visite--carrousel .visite__barre {
   display: block;
 }
 
-.visite--active .visite__piste {
-  overflow: visible;
-  scroll-snap-type: none;
-  will-change: transform;
-}
-
-.visite--active .visite__piece {
-  height: min(60vh, 540px);
+.visite--carrousel .visite__piste {
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
 }
 
 /* ---------- Coupons de tissu (matières) et tuiles ---------- */

@@ -314,8 +314,8 @@ const MOTIF_PIECE: Record<string, string> = {
 };
 
 /**
- * « Visite de la maison » : les pièces défilent de côté pendant qu'on descend la page
- * (src/animations.ts) ; sans JavaScript, c'est une simple rangée qu'on fait glisser.
+ * « Visite de la maison » : un carrousel qu'on fait glisser (doigt, pavé tactile) ou qu'on fait
+ * avancer avec les flèches (src/animations.ts) ; sans JavaScript, la rangée glisse toujours.
  */
 export function visiteMaison(publies = articlesPublies()): string {
   const pieces = FAMILLES.piece.liste;
@@ -342,7 +342,11 @@ export function visiteMaison(publies = articlesPublies()): string {
         <p class="surtitre">Visite de la maison</p>
         <h2 id="visite-titre" data-mots>Pièce par <em>pièce</em><span class="point">.</span></h2>
       </div>
-      <p class="visite__compteur" aria-hidden="true"><span data-visite-num>01</span> / ${total}</p>
+      <div class="visite__commandes">
+        <p class="visite__compteur" aria-hidden="true"><span data-visite-num>01</span> / ${total}</p>
+        <button type="button" class="visite__fleche visite__fleche--prec" data-visite-prec aria-label="Pièce précédente" hidden>${icone('fleche', 'icone')}</button>
+        <button type="button" class="visite__fleche" data-visite-suiv aria-label="Pièce suivante" hidden>${icone('fleche', 'icone')}</button>
+      </div>
       <span class="visite__barre" aria-hidden="true"><span data-visite-barre></span></span>
     </div>
     <div class="visite__piste">${panneaux}</div>

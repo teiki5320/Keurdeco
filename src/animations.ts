@@ -2,7 +2,7 @@
  * Animations du site (confort seulement : sans JavaScript, tout reste visible et lisible).
  * - apparition au défilement ([data-reveal]) et titres révélés mot par mot ([data-mots]) ;
  * - porte en arche de l'accueil qui s'ouvre au défilement, objets flottants ;
- * - visite de la maison : les pièces défilent de côté pendant qu'on descend ;
+ * - visite de la maison : carrousel des pièces (glisser ou flèches) ;
  * - rideau de kente entre les pages (bandes de tissu qui tombent puis remontent) ;
  * - cartes d'articles qui s'agrandissent jusqu'à l'image de l'article (View Transitions entre pages) ;
  * - nuancier de l'accueil (src/nuancier.ts) : objets, matières, coussins qui tombent sur le canapé ;
@@ -225,34 +225,52 @@ function porte(): void {
   demander();
 }
 
-/** Visite de la maison : la piste des pièces glisse de côté pendant qu'on descend. */
+/** Visite de la maison : carrousel horizontal (glisser, pavé tactile ou flèches), compteur et barre d'avancement. */
 function visite(): void {
   const section = document.querySelector<HTMLElement>('[data-visite]');
-  if (!section || reduit()) return;
-  section.classList.add('visite--active');
+  if (!section) return;
+  section.classList.add('visite--carrousel');
   const piste = section.querySelector<HTMLElement>('.visite__piste')!;
   const num = section.querySelector<HTMLElement>('[data-visite-num]');
   const barre = section.querySelector<HTMLElement>('[data-visite-barre]');
-  const n = piste.children.length;
-  const maj = () => {
-    const p = avancement(section);
-    const course = Math.max(0, piste.scrollWidth - piste.clientWidth);
-    piste.style.transform = `translateX(${(-p * course).toFixed(1)}px)`;
-    if (num) num.textContent = String(Math.min(n, 1 + Math.floor(p * n * 0.999))).padStart(2, '0');
-    if (barre) barre.style.transform = `scaleX(${p.toFixed(4)})`;
+  const prec = section.querySelector<HTMLButtonElement>('[data-visite-prec]');
+  const suiv = section.querySelector<HTMLButtonElement>('[data-visite-suiv]');
+  const pieces = [...piste.children] as HTMLElement[];
+  const n = pieces.length;
+  // Pièce la plus proche du centre de la piste (la première et la dernière aux deux bouts).
+  const courante = () => {
+    const course = piste.scrollWidth - piste.clientWidth;
+    if (piste.scrollLeft <= 2) return 0;
+    if (piste.scrollLeft >= course - 2) return n - 1;
+    const centre = piste.getBoundingClientRect().left + piste.clientWidth / 2;
+    let meilleure = 0;
+    let ecart = Infinity;
+    pieces.forEach((p, i) => {
+      const r = p.getBoundingClientRect();
+      const d = Math.abs(r.left + r.width / 2 - centre);
+      if (d < ecart) [ecart, meilleure] = [d, i];
+    });
+    return meilleure;
   };
-  window.addEventListener('scroll', maj, { passive: true });
+  let image = 0;
+  const maj = () => {
+    image = 0;
+    const course = piste.scrollWidth - piste.clientWidth;
+    const p = course > 0 ? piste.scrollLeft / course : 0;
+    if (num) num.textContent = String(courante() + 1).padStart(2, '0');
+    if (barre) barre.style.transform = `scaleX(${Math.max(1 / n, p).toFixed(4)})`;
+    if (prec) prec.disabled = piste.scrollLeft <= 2;
+    if (suiv) suiv.disabled = piste.scrollLeft >= course - 2;
+  };
+  piste.addEventListener('scroll', () => (image ||= requestAnimationFrame(maj)), { passive: true });
   window.addEventListener('resize', maj);
-  // Au clavier : quand une pièce reçoit le focus, on fait défiler la page jusqu'à l'avancement qui l'affiche.
-  piste.addEventListener('focusin', (e) => {
-    const piece = (e.target as HTMLElement).closest<HTMLElement>('.visite__piece');
-    if (!piece) return;
-    const i = [...piste.children].indexOf(piece);
-    const course = section.offsetHeight - window.innerHeight;
-    const haut = section.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: haut + (n > 1 ? i / (n - 1) : 0) * course, behavior: 'auto' });
-    maj();
-  });
+  const aller = (i: number) => {
+    const cible = pieces[Math.max(0, Math.min(n - 1, i))];
+    piste.scrollTo({ left: cible.offsetLeft - (piste.clientWidth - cible.offsetWidth) / 2, behavior: reduit() ? 'auto' : 'smooth' });
+  };
+  prec?.addEventListener('click', () => aller(courante() - 1));
+  suiv?.addEventListener('click', () => aller(courante() + 1));
+  [prec, suiv].forEach((b) => b && (b.hidden = false));
   maj();
 }
 
