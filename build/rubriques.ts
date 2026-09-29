@@ -96,6 +96,11 @@ export function articlesDeRubrique(famille: Famille, id: string, publies: Articl
   return publies.filter((a) => a[FAMILLES[famille].champ].includes(id));
 }
 
+/** Ambiances publiées d'une pièce. */
+export function ambiancesDePiece(id: string, publies: Article[]): Article[] {
+  return articlesDeRubrique('piece', id, publies).filter((a) => a.type === 'ambiance');
+}
+
 /** Nom de la photo d'une rubrique : « piece-salon », « matiere-wax », « occasion-mariage ». */
 export function imageRubrique(famille: Famille, id: string): string {
   return `${famille}-${id}`;
@@ -105,10 +110,11 @@ export function imageRubrique(famille: Famille, id: string): string {
 export function tuilesRubriques(famille: Famille, publies: Article[]): string {
   return `<ul class="tuiles tuiles--${famille}">${FAMILLES[famille].liste
     .map((r, i) => {
-      const n = articlesDeRubrique(famille, r.id, publies).length;
+      const n = (famille === 'piece' ? ambiancesDePiece(r.id, publies) : articlesDeRubrique(famille, r.id, publies)).length;
+      const unite = famille === 'piece' ? 'ambiance' : 'article';
       const photo = photoFond(imageRubrique(famille, r.id), '(min-width: 1100px) 300px, (min-width: 700px) 45vw, 92vw');
       const visuel = photo || (famille === 'matiere' ? motif(r.id) : `<span class="tuile__icone">${icone(ICONES_RUBRIQUES[r.id] ?? 'maison', 'icone')}</span>`);
-      return `<li data-reveal style="--i:${i}"><a class="tuile${photo ? ' tuile--photo' : ''}" href="${fichierRubrique(famille, r.id)}" data-inclinaison data-libelle="${r.nom}">${visuel}<span class="tuile__texte"><span class="tuile__nom">${r.nom}</span><span class="tuile__nb">${n ? `${n} article${n > 1 ? 's' : ''}` : 'Découvrir'} ${icone('fleche', 'icone icone--petite')}</span></span></a></li>`;
+      return `<li data-reveal style="--i:${i}"><a class="tuile${photo ? ' tuile--photo' : ''}" href="${fichierRubrique(famille, r.id)}" data-inclinaison data-libelle="${r.nom}">${visuel}<span class="tuile__texte"><span class="tuile__nom">${r.nom}</span><span class="tuile__nb">${n ? `${n} ${unite}${n > 1 ? 's' : ''}` : 'Découvrir'} ${icone('fleche', 'icone icone--petite')}</span></span></a></li>`;
     })
     .join('')}</ul>`;
 }
@@ -130,7 +136,8 @@ const ICONES_RUBRIQUES: Record<string, NomIcone> = {
 
 function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string {
   const f = FAMILLES[famille];
-  const articles = articlesDeRubrique(famille, r.id, publies);
+  // Une pièce ne montre que ses ambiances ; les tops et les guides restent dans Articles et les matières.
+  const articles = famille === 'piece' ? ambiancesDePiece(r.id, publies) : articlesDeRubrique(famille, r.id, publies);
   const glossaire = famille === 'matiere' ? chargerGlossaire().filter((g) => g.matieres.includes(r.id)) : [];
   return pageSimple({
     titre: `${r.nom} : idées de déco africaine`,
@@ -142,7 +149,7 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     noindex: articles.length === 0,
     motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
     image: imageExiste(imageRubrique(famille, r.id)) ? imageRubrique(famille, r.id) : undefined,
-    contenu: `${grilleArticles(articles, '<p class="liste-vide">Les premiers articles de cette rubrique arrivent bientôt.</p>')}
+    contenu: `${grilleArticles(articles, `<p class="liste-vide">${famille === 'piece' ? 'La première ambiance de cette pièce arrive bientôt.' : 'Les premiers articles de cette rubrique arrivent bientôt.'}</p>`)}
         ${
           glossaire.length
             ? `<section class="bloc-glossaire" aria-labelledby="comprendre"><h2 id="comprendre">Pour comprendre</h2><ul class="liste-glossaire">${glossaire
@@ -329,7 +336,7 @@ export function visiteMaison(publies = articlesPublies()): string {
   const total = String(pieces.length).padStart(2, '0');
   const panneaux = pieces
     .map((r, i) => {
-      const n = articlesDeRubrique('piece', r.id, publies).length;
+      const n = ambiancesDePiece(r.id, publies).length;
       return `<a class="visite__piece visite__piece--${i % 4}" href="${fichierRubrique('piece', r.id)}" data-libelle="${r.nom}">
       <span class="visite__motif">${photoFond(imageRubrique('piece', r.id), '(min-width: 700px) 520px, 80vw') || motif(MOTIF_PIECE[r.id] ?? 'wax')}</span>
       <span class="visite__num">${String(i + 1).padStart(2, '0')}</span>
@@ -337,7 +344,7 @@ export function visiteMaison(publies = articlesPublies()): string {
       <span class="visite__texte">
         <strong class="visite__nom">${r.nom}</strong>
         <span class="visite__accroche">${echapper(r.accroche)}</span>
-        <span class="visite__lien">${n ? `${n} article${n > 1 ? 's' : ''} · ` : ''}Entrer ${icone('fleche', 'icone icone--petite')}</span>
+        <span class="visite__lien">${n ? `${n} ambiance${n > 1 ? 's' : ''} · ` : ''}Entrer ${icone('fleche', 'icone icone--petite')}</span>
       </span>
     </a>`;
     })
