@@ -21,7 +21,8 @@
     "pinterest:auth": "node scripts/pinterest-auth.mjs",
     "pinterest:publier": "node scripts/pinterest-publier.mjs",
     "verifier-produits": "node scripts/verifier-produits.mjs",
-    "vignettes": "node scripts/vignettes-produits.ts"
+    "vignettes": "node scripts/vignettes-produits.ts",
+    "visuels-marque": "node scripts/visuels-marque.ts"
   },
   "devDependencies": {
     "@types/node": "^22.20.4",

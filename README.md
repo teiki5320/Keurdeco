@@ -49,7 +49,7 @@ Node 22.18 ou plus récent (les scripts `.ts` sont exécutés directement par No
 
 ## Identité visuelle
 
-Palette « Terre de Dakar » : fond sable clair `#F7F0E6`, terracotta `#A3472A` (couleur principale, foncée pour le contraste), ocre `#D49A2A`, indigo `#1E2A47`, vert baobab `#52693A`. Polices hébergées avec le site : **Fraunces** (titres) et **Source Sans 3** (texte), via Fontsource ; les versions TTF de `assets/polices/` servent aux épingles. Logo : `public/logo.svg`. Thème : `src/theme.css`.
+Palette « Terre de Dakar » : fond sable clair `#F7F0E6`, terracotta `#A3472A` (couleur principale, foncée pour le contraste), ocre `#D49A2A`, indigo `#1E2A47`, vert baobab `#52693A`. Polices hébergées avec le site : **Fraunces** (titres) et **Source Sans 3** (texte), via Fontsource ; les versions TTF de `assets/polices/` servent aux épingles. Logo : sources dans `assets/marque/` (`logo-fond-blanc.png`, `logo-fond-noir.png`) ; `npm run visuels-marque` en tire l’emblème détouré (en-tête, pied de page, épingles), le favicon, les icônes, `public/images/marque/logo.png`, l’image de partage par défaut et la photo de profil Pinterest (`assets/marque/profil-pinterest.png`). Thème : `src/theme.css`.
 
 Animations propres à Keur Déco (`src/animations.ts`, styles dans `src/site.css`) :
 

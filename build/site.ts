@@ -24,7 +24,7 @@ import { articlesPublies, pagesArticles } from './articles.ts';
 import { NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
 import { blocConseils, conseilsPublies, pagesConseils } from './conseils.ts';
 import { essayage } from './essayage.ts';
-import { icone, marque, type NomIcone } from './icones.ts';
+import { icone, type NomIcone } from './icones.ts';
 import { blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
 
@@ -40,11 +40,10 @@ export const NAVIGATION: { href: string; libelle: string; pages: RegExp }[] = [
   { href: 'glossaire.html', libelle: 'Glossaire', pages: /^glossaire(-.*)?\.html$/ },
 ];
 
-const FAVICON = `data:image/svg+xml,${encodeURIComponent(marque().replace('class="logo-marque" ', 'xmlns="http://www.w3.org/2000/svg" '))}`;
-
 export function head(): string {
   return `<script>document.documentElement.classList.add('js')</script>
-    <link rel="icon" href="${FAVICON}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icones/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="icones/favicon-48.png" />
     <link rel="apple-touch-icon" href="icones/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
     <meta name="theme-color" content="#F7F0E6" />`;
@@ -89,7 +88,7 @@ export function referencement(html: string, fichier: string, url = SITE_URL): st
     fichier === 'index.html'
       ? [
           { '@context': 'https://schema.org', '@type': 'WebSite', name: NOM_SITE, url, inLanguage: 'fr', description },
-          { '@context': 'https://schema.org', '@type': 'Organization', name: NOM_SITE, url, logo: `${url}icones/icone-512.png` },
+          { '@context': 'https://schema.org', '@type': 'Organization', name: NOM_SITE, url, logo: `${url}images/marque/logo.png` },
         ]
       : [];
   const json = donnees.map((d) => `<script type="application/ld+json">${JSON.stringify(d).replace(/</g, '\\u003c')}</script>`).join('\n    ');
@@ -124,8 +123,14 @@ function liensNavigation(fichier: string): string {
   return NAVIGATION.map(({ href, libelle, pages }) => `<li><a href="${href}"${pages.test(fichier) ? ' aria-current="page"' : ''}>${libelle}</a></li>`).join('');
 }
 
+/** Emblème Keur Déco (Afrique et maison), détouré par npm run visuels-marque ; version sombre pour les fonds indigo. */
+function embleme(surFonce = false): string {
+  const nom = `images/marque/embleme-${surFonce ? 'sombre' : 'clair'}`;
+  return `<img class="logo-marque" src="${nom}-96.webp" srcset="${nom}-96.webp 1x, ${nom}-192.webp 2x" width="48" height="48" alt="" />`;
+}
+
 function logo(surFonce = false): string {
-  return `<a class="logo" href="index.html" aria-label="${NOM_SITE}, accueil">${marque('logo-marque', surFonce)}<span class="logo__texte">Keur <em>Déco</em></span></a>`;
+  return `<a class="logo" href="index.html" aria-label="${NOM_SITE}, accueil">${embleme(surFonce)}<span class="logo__texte">Keur <em>Déco</em></span></a>`;
 }
 
 export function header(fichier: string): string {

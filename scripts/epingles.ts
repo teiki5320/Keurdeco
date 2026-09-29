@@ -16,7 +16,6 @@ import { typographier } from '../src/typo.ts';
 import { adresseArticle, articlesPublies, type Article } from '../build/articles.ts';
 import { lienPinterest, SITE_URL } from '../build/config.ts';
 import { conseilsPublies, THEMES, type Conseil } from '../build/conseils.ts';
-import { marque } from '../build/icones.ts';
 import { motif } from '../build/motifs.ts';
 
 const RACINE = resolve(import.meta.dirname, '..');
@@ -95,9 +94,10 @@ async function titrePng(titre: string, couleur: string, largeur: number, hauteur
   throw new Error(`Titre d'épingle trop long : « ${titre} »`);
 }
 
-/** Signature : petit logo + « Keur Déco » (ajouter l’adresse du site quand le domaine sera en place). */
+/** Signature : emblème Keur Déco (npm run visuels-marque) + « Keur Déco · déco africaine ». */
 async function signature(couleurTexte: string, surFonce: boolean): Promise<Buffer> {
-  const logo = await sharp(Buffer.from(marque('logo-marque', surFonce).replace('class="logo-marque"', 'xmlns="http://www.w3.org/2000/svg"').replace('width="40" height="40"', 'width="56" height="56"')))
+  const logo = await sharp(resolve(RACINE, `public/images/marque/embleme-${surFonce ? 'sombre' : 'clair'}-192.webp`))
+    .resize(56, 56)
     .png()
     .toBuffer();
   const texte = await sharp({

@@ -327,7 +327,7 @@ export function donneesStructurees(a: Article, produits: Map<string, Produit>, u
       inLanguage: 'fr',
       mainEntityOfPage: adresse,
       author: { '@type': 'Organization', name: NOM_SITE, url },
-      publisher: { '@type': 'Organization', name: NOM_SITE, url, logo: { '@type': 'ImageObject', url: `${url}icones/icone-512.png` } },
+      publisher: { '@type': 'Organization', name: NOM_SITE, url, logo: { '@type': 'ImageObject', url: `${url}images/marque/logo.png` } },
     },
     {
       '@context': 'https://schema.org',
