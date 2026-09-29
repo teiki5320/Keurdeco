@@ -1,7 +1,7 @@
 ---
 titre: "Top 10 des paniers muraux et assiettes tressées"
 description: "Assiettes tressées, paniers muraux en jonc de mer ou jacinthe d’eau, miroirs soleil en rotin : 10 pièces pour composer un mur chaleureux, et comment les disposer."
-publie_le: 2026-12-21
+publie_le: 2026-12-14
 type: top
 pieces: [salon, entree]
 matieres: [raphia-paniers]

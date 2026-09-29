@@ -1,7 +1,7 @@
 ---
 titre: "Chambre d’enfant africaine, douce et colorée"
 description: "Un tipi, des animaux de la savane, des paniers tressés et des couleurs chaudes : 5 idées pour une chambre d’enfant gaie, rassurante et pleine d’aventures."
-publie_le: 2026-12-14
+publie_le: 2026-09-29
 type: ambiance
 pieces: [chambre-enfant]
 matieres: [wax, raphia-paniers]

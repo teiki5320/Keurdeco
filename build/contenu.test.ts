@@ -128,15 +128,15 @@ describe('articles (contenu/articles)', () => {
     for (const a of articles) expect(config.tableaux[a.tableauPinterest], `${a.slug} → ${a.tableauPinterest}`).toBeDefined();
   });
 
-  it('les liens internes des articles pointent vers des pages existantes', () => {
+  it('les liens internes des articles mènent à des pages existantes, déjà publiées à la date de l’article', () => {
     const glossaire = new Set(chargerGlossaire().map((g) => `glossaire-${g.id}.html`));
     const rubriques = new Set((Object.keys(FAMILLES) as Famille[]).flatMap((f) => FAMILLES[f].liste.map((r) => `${f}-${r.id}.html`)));
-    const pages = new Set([...glossaire, ...rubriques, ...articles.map((a) => a.fichier), 'index.html', 'articles.html', 'glossaire.html', 'a-propos.html']);
+    const pages = new Set([...glossaire, ...rubriques, 'index.html', 'articles.html', 'glossaire.html', 'a-propos.html']);
     const conseils = tousLesConseils();
     for (const a of articles) {
-      // Un article peut renvoyer à un conseil déjà publié à sa propre date.
-      const conseilsPublies = new Set(conseils.filter((c) => c.publieLe <= a.publieLe).map((c) => c.fichier));
-      for (const [, lien] of a.corps.matchAll(/\]\(([^)#]+\.html)(#[^)]*)?\)/g)) expect(pages.has(lien) || conseilsPublies.has(lien), `${a.slug} → ${lien}`).toBe(true);
+      // Un article peut renvoyer à un article ou à un conseil déjà publié à sa propre date (sinon, lien mort en attendant).
+      const publies = new Set([...articles, ...conseils].filter((x) => x.publieLe <= a.publieLe).map((x) => x.fichier));
+      for (const [, lien] of a.corps.matchAll(/\]\(([^)#]+\.html)(#[^)]*)?\)/g)) expect(pages.has(lien) || publies.has(lien), `${a.slug} → ${lien}`).toBe(true);
     }
   });
 });

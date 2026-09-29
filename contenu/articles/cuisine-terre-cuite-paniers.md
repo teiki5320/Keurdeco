@@ -1,7 +1,7 @@
 ---
 titre: "Cuisine chaleureuse : paniers et terre cuite"
 description: "Vaisselle en terre cuite, carafe en argile, corbeilles tressées et suspension en jute : 5 idées pour une cuisine chaleureuse et vivante, esprit marché africain."
-publie_le: 2027-01-18
+publie_le: 2026-09-29
 type: ambiance
 pieces: [cuisine-salle-a-manger]
 matieres: [terre-cuite, raphia-paniers]
@@ -68,7 +68,7 @@ Un **chemin de table terracotta à glands** suffit à réchauffer une table en b
 
 Au-dessus de la table, une **suspension bohème en jute** filtre la lumière et dessine des ombres douces le soir. Au sol, devant l’évier ou le long du plan de travail, un **tapis de couloir façon kilim** apporte couleur et confort sous les pieds. Choisissez une ampoule à lumière chaude pour que la terre cuite garde ses tons dorés.
 
-Pour aller plus loin avec la poterie, découvrez notre [top de la terre cuite en déco](top-terre-cuite-deco.html).
+Pour aller plus loin avec la poterie, découvrez notre page [Terre cuite et poterie](matiere-terre-cuite.html).
 
 ## En résumé
 

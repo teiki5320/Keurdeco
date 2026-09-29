@@ -1,7 +1,7 @@
 ---
 titre: "Chambre de Saint-Valentin : terracotta, rotin et lumière tamisée"
 description: "Gaze de coton terracotta, rotin, bougies et lumière douce : 5 idées pour une chambre romantique à la Saint-Valentin, sans cœurs partout ni excès de rose."
-publie_le: 2027-02-08
+publie_le: 2027-01-18
 type: ambiance
 pieces: [chambre]
 matieres: [terre-cuite, raphia-paniers]

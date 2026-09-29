@@ -1,7 +1,7 @@
 ---
 titre: "Salle de bain esprit spa : terre cuite, bois et fibres"
 description: "Terre cuite, teck, bambou, fibres tressées et savon noir : 5 idées pour transformer votre salle de bain en petit spa chaleureux, aux couleurs de l’Afrique."
-publie_le: 2027-01-04
+publie_le: 2026-09-29
 type: ambiance
 pieces: [salle-de-bain]
 matieres: [terre-cuite, raphia-paniers, bois-sculpte]
@@ -65,7 +65,7 @@ Le secret d’un spa, c’est l’absence de désordre :
 
 ## 5. Un bouquet sec qui ne demande rien
 
-Les plantes fraîches souffrent parfois dans une salle de bain sombre. Un **bouquet d’herbes de pampa séchées** dans un **vase rustique en céramique** apporte de la hauteur et du mouvement, sans arrosage. Posez-le au sol ou sur un rebord, à l’écart des projections d’eau. Pour d’autres idées de poteries, voyez notre [top de la terre cuite en déco](top-terre-cuite-deco.html).
+Les plantes fraîches souffrent parfois dans une salle de bain sombre. Un **bouquet d’herbes de pampa séchées** dans un **vase rustique en céramique** apporte de la hauteur et du mouvement, sans arrosage. Posez-le au sol ou sur un rebord, à l’écart des projections d’eau. Pour d’autres idées de poteries, voyez notre page [Terre cuite et poterie](matiere-terre-cuite.html).
 
 ## En résumé
 

@@ -1,7 +1,7 @@
 ---
 titre: "Baptême : une décoration africaine douce"
 description: "Accueil de la famille, table des dragées, coin photo : 5 idées pour décorer un baptême aux tons doux, entre terracotta, crème, wax et fibres tressées."
-publie_le: 2027-02-15
+publie_le: 2027-01-25
 type: ambiance
 pieces: [salon, cuisine-salle-a-manger]
 matieres: [wax, raphia-paniers]

@@ -1,7 +1,7 @@
 ---
 titre: "Top 10 des tapis esprit africain"
 description: "Jute tressé, kilim, berbère, losanges noir et blanc : 10 tapis esprit africain pour le salon, la chambre ou l’entrée, et comment choisir la bonne taille."
-publie_le: 2027-01-11
+publie_le: 2026-12-28
 type: top
 pieces: [salon, chambre, entree]
 matieres: [raphia-paniers, bogolan]

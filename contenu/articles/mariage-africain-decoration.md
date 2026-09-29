@@ -1,7 +1,7 @@
 ---
 titre: "Décorer un mariage africain"
 description: "Dot, aso ebi, kente : les traditions qui inspirent la fête, puis nos idées pour décorer tables, centres de table, accueil et cadeaux d’invités d’un mariage africain."
-publie_le: 2027-01-25
+publie_le: 2027-01-04
 type: guide
 pieces: [cuisine-salle-a-manger]
 matieres: [wax, kente, raphia-paniers]
