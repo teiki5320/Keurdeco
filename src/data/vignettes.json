@@ -1,4 +1,10 @@
 {
+  "affiches-animaux-savane-lot-3": {
+    "article": "chambre-enfant-savane",
+    "x": 50,
+    "y": 26,
+    "cadre": 30
+  },
   "assiettes-murales-tressees": {
     "article": "salon-terracotta-wax",
     "x": 51,
@@ -9,6 +15,12 @@
     "article": "table-reveillon-wax-or",
     "x": 15,
     "y": 71,
+    "cadre": 30
+  },
+  "assiettes-terre-cuite-lot-6": {
+    "article": "cuisine-terre-cuite-paniers",
+    "x": 61,
+    "y": 68,
     "cadre": 30
   },
   "banc-acacia-jardin": {
@@ -27,6 +39,12 @@
     "article": "salon-bogolan-bois-clair",
     "x": 87,
     "y": 52,
+    "cadre": 30
+  },
+  "bols-terre-cuite-lot-12": {
+    "article": "cuisine-terre-cuite-paniers",
+    "x": 54,
+    "y": 58,
     "cadre": 30
   },
   "bougeoirs-dores-coniques-lot-6": {
@@ -71,11 +89,47 @@
     "y": 29,
     "cadre": 30
   },
+  "cadres-photo-bois-a5-lot-3": {
+    "article": "bapteme-decoration-africaine",
+    "x": 51,
+    "y": 51,
+    "cadre": 30
+  },
+  "carafe-argile-naturelle": {
+    "article": "cuisine-terre-cuite-paniers",
+    "x": 61,
+    "y": 55,
+    "cadre": 30
+  },
   "chaises-dossier-rotin-lot-2": {
     "article": "studio-deco-africaine",
     "x": 64,
     "y": 58,
     "cadre": 42
+  },
+  "chemin-table-terracotta-glands": {
+    "article": "cuisine-terre-cuite-paniers",
+    "x": 52,
+    "y": 82,
+    "cadre": 30
+  },
+  "chemins-table-gaze-terracotta-lot-6": {
+    "article": "bapteme-decoration-africaine",
+    "x": 88,
+    "y": 76,
+    "cadre": 30
+  },
+  "corbeille-fruits-tressee": {
+    "article": "cuisine-terre-cuite-paniers",
+    "x": 50,
+    "y": 52,
+    "cadre": 30
+  },
+  "corbeilles-tressees-anse-lot-10": {
+    "article": "bapteme-decoration-africaine",
+    "x": 54,
+    "y": 64,
+    "cadre": 30
   },
   "coupe-terre-cuite-ronde": {
     "article": "salon-cocooning-ocre",
@@ -95,10 +149,22 @@
     "y": 24,
     "cadre": 30
   },
+  "couronnes-fleurs-sechees-lot-2": {
+    "article": "bapteme-decoration-africaine",
+    "x": 63,
+    "y": 17,
+    "cadre": 30
+  },
   "coussin-bogolan": {
     "article": "balcon-boheme-africain",
     "x": 68,
     "y": 55,
+    "cadre": 30
+  },
+  "coussin-lion-franges": {
+    "article": "chambre-enfant-savane",
+    "x": 64,
+    "y": 57,
     "cadre": 30
   },
   "coussin-shibori-indigo": {
@@ -113,6 +179,12 @@
     "y": 55,
     "cadre": 30
   },
+  "coussin-wax-terracotta": {
+    "article": "chambre-enfant-savane",
+    "x": 72,
+    "y": 57,
+    "cadre": 30
+  },
   "coussins-lin-beige-lot-2": {
     "article": "salon-bogolan-bois-clair",
     "x": 38,
@@ -125,16 +197,34 @@
     "y": 78,
     "cadre": 30
   },
+  "distributeur-savon-terracotta": {
+    "article": "salle-de-bain-spa-africaine",
+    "x": 56,
+    "y": 57,
+    "cadre": 30
+  },
   "drap-housse-lin-blanc": {
     "article": "chambre-indigo-lin",
     "x": 47,
     "y": 86,
     "cadre": 30
   },
+  "echelle-porte-serviettes-bambou": {
+    "article": "salle-de-bain-spa-africaine",
+    "x": 47,
+    "y": 24,
+    "cadre": 40
+  },
   "etageres-flottantes-pin-lot-3": {
     "article": "studio-deco-africaine",
     "x": 59,
     "y": 48,
+    "cadre": 30
+  },
+  "etageres-murales-enfant-lot-3": {
+    "article": "chambre-enfant-savane",
+    "x": 89,
+    "y": 32,
     "cadre": 30
   },
   "etoiles-paille-lot-16": {
@@ -147,6 +237,12 @@
     "article": "table-reveillon-wax-or",
     "x": 50,
     "y": 58,
+    "cadre": 30
+  },
+  "fouta-coton-sable": {
+    "article": "salle-de-bain-spa-africaine",
+    "x": 43,
+    "y": 38,
     "cadre": 30
   },
   "galettes-chaise-orange": {
@@ -171,6 +267,12 @@
     "article": "noel-touche-africaine",
     "x": 58,
     "y": 36,
+    "cadre": 30
+  },
+  "guirlandes-boules-feutre-lot-2": {
+    "article": "chambre-enfant-savane",
+    "x": 62,
+    "y": 42,
     "cadre": 30
   },
   "housse-couette-coton-denim": {
@@ -203,16 +305,40 @@
     "y": 48,
     "cadre": 30
   },
+  "lampes-chevet-rotin-lot-2": {
+    "article": "chambre-saint-valentin-terracotta",
+    "x": 35,
+    "y": 47,
+    "cadre": 30
+  },
+  "lanternes-bois-lot-10": {
+    "article": "bapteme-decoration-africaine",
+    "x": 88,
+    "y": 57,
+    "cadre": 30
+  },
   "lanternes-solaires-rotin": {
     "article": "balcon-boheme-africain",
     "x": 86,
     "y": 83,
     "cadre": 30
   },
+  "malles-osier-lot-2": {
+    "article": "chambre-enfant-savane",
+    "x": 88,
+    "y": 77,
+    "cadre": 30
+  },
   "miroir-soleil-rotin-58": {
     "article": "entree-paniers-miroir-raphia",
     "x": 43,
     "y": 38,
+    "cadre": 30
+  },
+  "mobile-bois-animaux-savane": {
+    "article": "chambre-enfant-savane",
+    "x": 70,
+    "y": 17,
     "cadre": 30
   },
   "pampa-sechee-bouquet": {
@@ -233,6 +359,18 @@
     "y": 87,
     "cadre": 30
   },
+  "panier-linge-tresse-couvercle": {
+    "article": "salle-de-bain-spa-africaine",
+    "x": 33,
+    "y": 72,
+    "cadre": 30
+  },
+  "panier-mural-tresse": {
+    "article": "cuisine-terre-cuite-paniers",
+    "x": 21,
+    "y": 34,
+    "cadre": 30
+  },
   "panier-plante-tresse-rayures": {
     "article": "salon-terracotta-wax",
     "x": 10,
@@ -249,6 +387,12 @@
     "article": "studio-deco-africaine",
     "x": 91,
     "y": 47,
+    "cadre": 30
+  },
+  "parure-gaze-coton-terracotta": {
+    "article": "chambre-saint-valentin-terracotta",
+    "x": 55,
+    "y": 62,
     "cadre": 30
   },
   "pateres-chene-lot-4": {
@@ -275,10 +419,28 @@
     "y": 70,
     "cadre": 30
   },
+  "plaid-terre-cuite-pompons": {
+    "article": "chambre-saint-valentin-terracotta",
+    "x": 82,
+    "y": 70,
+    "cadre": 30
+  },
   "plaid-tricot-chenille": {
     "article": "salon-cocooning-ocre",
     "x": 68,
     "y": 70,
+    "cadre": 30
+  },
+  "planche-olivier-39": {
+    "article": "cuisine-terre-cuite-paniers",
+    "x": 40,
+    "y": 69,
+    "cadre": 30
+  },
+  "pot-terre-cuite-couvercle": {
+    "article": "cuisine-terre-cuite-paniers",
+    "x": 93,
+    "y": 45,
     "cadre": 30
   },
   "pouf-cuir-ocre": {
@@ -297,6 +459,12 @@
     "article": "noel-touche-africaine",
     "x": 72,
     "y": 65,
+    "cadre": 30
+  },
+  "savon-noir-dudu-osun-lot-6": {
+    "article": "salle-de-bain-spa-africaine",
+    "x": 60,
+    "y": 59,
     "cadre": 30
   },
   "serviettes-lin-melange-lot-12": {
@@ -335,10 +503,28 @@
     "y": 75,
     "cadre": 40
   },
+  "tabouret-teck-massif-42": {
+    "article": "salle-de-bain-spa-africaine",
+    "x": 58,
+    "y": 76,
+    "cadre": 30
+  },
+  "tapis-bain-coton-tresse-creme": {
+    "article": "salle-de-bain-spa-africaine",
+    "x": 77,
+    "y": 91,
+    "cadre": 22
+  },
   "tapis-couloir-kilim-chindi": {
     "article": "entree-paniers-miroir-raphia",
     "x": 47,
     "y": 96,
+    "cadre": 30
+  },
+  "tapis-enfant-arlequin-pompons": {
+    "article": "chambre-enfant-savane",
+    "x": 50,
+    "y": 88,
     "cadre": 30
   },
   "tapis-jute-rond": {
@@ -375,6 +561,12 @@
     "article": "chambre-indigo-lin",
     "x": 52,
     "y": 34,
+    "cadre": 30
+  },
+  "tipi-enfant-coton": {
+    "article": "chambre-enfant-savane",
+    "x": 20,
+    "y": 55,
     "cadre": 30
   },
   "vase-ceramique-noir-mat": {

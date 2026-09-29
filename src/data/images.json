@@ -7,6 +7,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "bapteme-decoration-africaine": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "bogolan-histoire-deco": {
     "largeur": 1600,
     "hauteur": 1073
@@ -15,7 +19,15 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "chambre-enfant-savane": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "chambre-indigo-lin": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "chambre-saint-valentin-terracotta": {
     "largeur": 1600,
     "hauteur": 1073
   },
@@ -71,7 +83,15 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "cuisine-terre-cuite-paniers": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "entree-paniers-miroir-raphia": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "indigo-adire-histoire": {
     "largeur": 1600,
     "hauteur": 1073
   },
@@ -80,6 +100,10 @@
     "hauteur": 1073
   },
   "luminaires-tresses": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "mariage-africain-decoration": {
     "largeur": 1600,
     "hauteur": 1073
   },
@@ -175,6 +199,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "salle-de-bain-spa-africaine": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "salon-bogolan-bois-clair": {
     "largeur": 1600,
     "hauteur": 1073
@@ -200,6 +228,18 @@
     "hauteur": 1073
   },
   "terre-cuite-console": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top-paniers-muraux-tresses": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top-table-mariage-africain": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top-tapis-esprit-africain": {
     "largeur": 1600,
     "hauteur": 1073
   }
