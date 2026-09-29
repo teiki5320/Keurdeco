@@ -1,17 +1,20 @@
 /**
  * « Essayez le tissu » (accueil) : le nuancier. On choisit un objet (canapé, fauteuil, pouf,
- * coussin, suspension) à gauche et une matière à droite ; la matière se propage en cercle.
+ * coussin, suspension) à gauche et l’une des 8 matières du site à droite ; elle se propage en cercle.
  * Sur le canapé, un clic fait tomber des coussins. Rendu statique ici (lisible sans JavaScript),
- * animé par src/nuancier.ts. Les dessins et motifs SVG sont dans src/data/nuancier.json.
+ * animé par src/nuancier.ts. Les dessins des objets sont dans src/data/nuancier.json, les motifs dans build/motifs.ts.
  */
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { fichierRubrique } from '../src/taxonomie.ts';
+import { fichierRubrique, MATIERES } from '../src/taxonomie.ts';
+import { patternMotif } from './motifs.ts';
 
-const { motifs, dessins } = JSON.parse(readFileSync(resolve(import.meta.dirname, '../src/data/nuancier.json'), 'utf8')) as {
-  motifs: string;
+const { dessins } = JSON.parse(readFileSync(resolve(import.meta.dirname, '../src/data/nuancier.json'), 'utf8')) as {
   dessins: Record<string, string>;
 };
+
+/** Motifs des 8 matières (les mêmes que sur les tuiles), réduits pour habiller les dessins. */
+const motifs = MATIERES.map((m) => patternMotif(m.id, `kd-${m.id}`, 0.55)).join('');
 
 export const OBJETS = [
   { id: 'canape', nom: 'Saly', sous: 'Canapé deux places' },
@@ -21,18 +24,29 @@ export const OBJETS = [
   { id: 'lampe', nom: 'Casamance', sous: 'Suspension' },
 ];
 
-export const TISSUS = [
-  { nom: 'Terracotta', remplissage: '#B4532F', pastille: '#B4532F', contour: '#B4532F', teinte: '#EBC0A8', titre: 'Terracotta, la terre de Dakar', phrase: 'La couleur des murs en banco et des jarres en terre cuite. Chaude, mate, elle se marie au bois foncé.', lien: fichierRubrique('matiere', 'terre-cuite') },
-  { nom: 'Ocre safran', remplissage: '#D49A2A', pastille: '#D49A2A', contour: '#D49A2A', teinte: '#F3DCA8', titre: 'Ocre safran', phrase: 'Le jaune des épices et des pagnes du marché. Une touche lumineuse pour une pièce sombre.', lien: 'matieres.html' },
-  { nom: 'Indigo', remplissage: '#233257', pastille: '#233257', contour: '#233257', teinte: '#B5BFD6', titre: 'Indigo', phrase: 'Le bleu des teinturiers de Kano et de Guinée, obtenu à partir des feuilles d’indigotier.', lien: fichierRubrique('matiere', 'indigo') },
-  { nom: 'Baobab', remplissage: '#5E7640', pastille: '#5E7640', contour: '#5E7640', teinte: '#CCD5B0', titre: 'Vert baobab', phrase: 'Le vert des feuilles de baobab et de la savane après la pluie. Il apaise les imprimés vifs.', lien: 'matieres.html' },
-  { nom: 'Wax', remplissage: 'url(#kd-wax)', pastille: 'radial-gradient(circle,#D49A2A 0 5px,#B4532F 5px 8px,transparent 8px) 0 0/16px 16px,#1E2A47', contour: '#1E2A47', teinte: '#F2D6A8', titre: 'Wax', phrase: 'Coton imprimé à la cire, aux motifs et aux couleurs vives, emblème des pagnes d’Afrique de l’Ouest.', lien: fichierRubrique('matiere', 'wax') },
-  { nom: 'Bogolan', remplissage: 'url(#kd-bog)', pastille: 'radial-gradient(#E9DCC3 1.5px,transparent 2px) 0 0/8px 8px,#4A2F1C', contour: '#4A2F1C', teinte: '#E0CFB2', titre: 'Bogolan', phrase: 'Coton du Mali teint à la boue fermentée ; les motifs sont peints à la main, trait par trait.', lien: fichierRubrique('matiere', 'bogolan') },
-  { nom: 'Kente', remplissage: 'url(#kd-kente)', pastille: 'repeating-linear-gradient(90deg,#D49A2A 0 5px,#1E2A47 5px 7px,#5E7640 7px 11px,#B4532F 11px 14px)', contour: '#B4532F', teinte: '#F4DC98', titre: 'Kente', phrase: 'Bandes étroites tissées au Ghana puis cousues ensemble ; chaque couleur porte un sens.', lien: fichierRubrique('matiere', 'kente') },
-];
+/** Les 8 matières du site (src/taxonomie.ts), avec leur motif (build/motifs.ts) et leur pastille. */
+const PASTILLES: Record<string, { pastille: string; contour: string; teinte: string; phrase: string }> = {
+  wax: { pastille: 'radial-gradient(circle,#D49A2A 0 5px,#B4532F 5px 8px,transparent 8px) 0 0/16px 16px,#1E2A47', contour: '#1E2A47', teinte: '#F2D6A8', phrase: 'Coton imprimé à la cire, aux motifs et aux couleurs vives, emblème des pagnes d’Afrique de l’Ouest.' },
+  bogolan: { pastille: 'radial-gradient(#E9DCC3 1.5px,transparent 2px) 0 0/8px 8px,#4A2F1C', contour: '#4A2F1C', teinte: '#E0CFB2', phrase: 'Coton du Mali teint à la boue fermentée ; les motifs sont peints à la main, trait par trait.' },
+  kente: { pastille: 'repeating-linear-gradient(90deg,#D49A2A 0 5px,#1E2A47 5px 7px,#5E7640 7px 11px,#B4532F 11px 14px)', contour: '#B4532F', teinte: '#F4DC98', phrase: 'Bandes étroites tissées au Ghana puis cousues ensemble ; chaque couleur porte un sens.' },
+  indigo: { pastille: 'radial-gradient(circle,#7F95D6 0 2.5px,transparent 3px) 0 0/10px 10px,#1B2442', contour: '#1B2442', teinte: '#B5BFD6', phrase: 'Le bleu des teinturiers de Kano et de Guinée, obtenu à partir des feuilles d’indigotier.' },
+  'raphia-paniers': { pastille: 'repeating-linear-gradient(45deg,#B48A4E 0 4px,#C9A56B 4px 8px)', contour: '#8E6A38', teinte: '#EADBC0', phrase: 'Raphia, jonc, herbes tressées : la vannerie des marchés, pour des paniers et des assiettes murales.' },
+  'terre-cuite': { pastille: 'radial-gradient(circle at 50% 100%,#E2A62A 0 3px,#E07A5A 3px 6px,transparent 6px) 0 0/12px 12px,#C4553A', contour: '#C4553A', teinte: '#EBC0A8', phrase: 'La couleur des murs en banco et des jarres en terre cuite. Chaude, mate, elle se marie au bois foncé.' },
+  'bois-sculpte': { pastille: 'repeating-linear-gradient(135deg,#7A4E2C 0 4px,#A8744A 4px 7px)', contour: '#5E3A1F', teinte: '#E3CDB4', phrase: 'Tabourets, bols et masques taillés dans une seule pièce de bois, patinés par le temps.' },
+  perles: { pastille: 'radial-gradient(circle,#E2A62A 0 3px,transparent 3.5px) 0 0/10px 10px,radial-gradient(circle,#C4553A 0 3px,transparent 3.5px) 5px 5px/10px 10px,#0E1430', contour: '#0E1430', teinte: '#D6D2E4', phrase: 'Perles de verre, de terre ou de graines : une touche précieuse et colorée, portée ou accrochée.' },
+};
+
+export const TISSUS = MATIERES.map((m) => ({
+  id: m.id,
+  nom: m.nom,
+  remplissage: `url(#kd-${m.id})`,
+  titre: m.nom,
+  lien: fichierRubrique('matiere', m.id),
+  ...PASTILLES[m.id],
+}));
 
 /** Matière affichée au premier chargement (wax). */
-export const DEPART = 4;
+export const DEPART = 0;
 
 /** Dessin d'un objet habillé d'une matière, en image SVG autonome. */
 export function dessin(objet: string, remplissage: string): string {
@@ -56,7 +70,7 @@ const echapper = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').r
 export function essayage(): string {
   const t = TISSUS[DEPART];
   const o = OBJETS[0];
-  const oy = (i: number) => `${14 + i * 12}%`;
+  const oy = (i: number) => `${10 + i * 11.5}%`;
   const vignettes = OBJETS.map(
     (x, i) =>
       `<button type="button" class="nuancier__vignette" data-objet="${i}" aria-pressed="${i === 0}" aria-label="${echapper(x.sous)}"><img src="${dessin(x.id, t.remplissage)}" alt="" width="84" height="52"><span>0${i + 1}</span></button>`,

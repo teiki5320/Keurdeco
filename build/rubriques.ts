@@ -173,7 +173,14 @@ function pageHub(famille: Famille, publies: Article[]): string {
     chapo: INTRO_HUB[famille].chapo,
     classe: 'page--hub',
     motif: MOTIF_FAMILLE[famille],
-    contenu: tuilesRubriques(famille, publies),
+    // Pièces : le carrousel de la visite ; Matières : le nuancier puis les 8 matières. Ces blocs
+    // occupent toute la largeur : on referme le conteneur de la page le temps de les afficher.
+    contenu:
+      famille === 'piece'
+        ? `</div><!--#visite--><div class="conteneur">`
+        : famille === 'matiere'
+          ? `</div><!--#essayage--><div class="conteneur">${tuilesRubriques(famille, publies)}`
+          : tuilesRubriques(famille, publies),
   });
 }
 
