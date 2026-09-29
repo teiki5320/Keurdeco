@@ -355,63 +355,6 @@
     "verifie_le": "2026-09-28"
   },
   {
-    "id": "tissu-bogolan-coupon",
-    "asin": null,
-    "nom": "Coupon de tissu bogolan (mud cloth)",
-    "type_objet": "textile",
-    "matieres": [
-      "bogolan"
-    ],
-    "couleurs": [
-      "brun",
-      "crème"
-    ],
-    "pieces": [
-      "salon",
-      "chambre"
-    ],
-    "statut": "a_selectionner",
-    "verifie_le": null
-  },
-  {
-    "id": "plaid-motif-bogolan",
-    "asin": null,
-    "nom": "Plaid ou jeté de lit à motifs bogolan",
-    "type_objet": "plaid",
-    "matieres": [
-      "bogolan"
-    ],
-    "couleurs": [
-      "brun",
-      "crème"
-    ],
-    "pieces": [
-      "chambre",
-      "salon"
-    ],
-    "statut": "a_selectionner",
-    "verifie_le": null
-  },
-  {
-    "id": "abat-jour-bogolan",
-    "asin": null,
-    "nom": "Abat-jour ou lampe à motifs bogolan",
-    "type_objet": "luminaire",
-    "matieres": [
-      "bogolan"
-    ],
-    "couleurs": [
-      "brun",
-      "crème"
-    ],
-    "pieces": [
-      "salon",
-      "chambre"
-    ],
-    "statut": "a_selectionner",
-    "verifie_le": null
-  },
-  {
     "id": "tapis-motif-bogolan",
     "asin": "B0F9QXTF71",
     "nom": "Tapis tribal noir et blanc à losanges",

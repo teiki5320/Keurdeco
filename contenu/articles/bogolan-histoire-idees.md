@@ -12,9 +12,6 @@ image_alt: "Coin salon aux murs blancs : grand bogolan brun aux motifs crème (z
 image_ia: true
 produits:
   - coussin-bogolan
-  - tissu-bogolan-coupon
-  - plaid-motif-bogolan
-  - abat-jour-bogolan
   - tapis-motif-bogolan
 epingles:
   - "Le bogolan : histoire et idées déco"
@@ -42,8 +39,6 @@ Longtemps porté par les chasseurs, lors des rites de passage ou après un accou
 
 Un bogolan fait main demande donc plusieurs jours de travail : c’est ce qui explique l’écart de prix avec les tissus simplement *imprimés* façon bogolan, que l’on trouve en grande diffusion.
 
-{{produit: tissu-bogolan-coupon}}
-
 ## Que racontent les motifs ?
 
 Chaque motif a un nom et, traditionnellement, un sens : il peut évoquer un événement historique, un proverbe, un animal, un objet du quotidien ou une qualité (le courage, la patience). Points, zigzags, croix, spirales et damiers se combinent pour « écrire » le tissu. Les significations varient selon les régions et les artisans : mieux vaut interroger le vendeur quand on achète une pièce faite main.
@@ -60,8 +55,6 @@ C’est l’entrée la plus facile : deux coussins en bogolan sur un canapé gri
 
 Dans une chambre claire, un jeté ou un plaid à motifs bogolan posé au pied du lit apporte du caractère sans assombrir la pièce.
 
-{{produit: plaid-motif-bogolan}}
-
 ### 3. Une pièce encadrée ou tendue au mur
 
 Un coupon de bogolan tendu sur un châssis, ou simplement suspendu à une tringle en bois, devient une œuvre graphique. C’est aussi la meilleure façon de mettre en valeur une pièce faite main.
@@ -69,8 +62,6 @@ Un coupon de bogolan tendu sur un châssis, ou simplement suspendu à une tringl
 ### 4. Une lumière douce
 
 Un abat-jour à motifs bogolan diffuse une lumière chaude et projette le graphisme du tissu. À placer sur une lampe à poser, au salon ou dans une chambre.
-
-{{produit: abat-jour-bogolan}}
 
 ### 5. Au sol, un tapis à motifs bogolan
 
