@@ -41,11 +41,11 @@ describe('référencement', () => {
   });
 
   it('revendication Pinterest et Plausible seulement si configurés', () => {
-    expect(verificationPinterest(undefined)).toBe('');
+    expect(verificationPinterest('')).toBe('');
     expect(verificationPinterest('abc123')).toBe('<meta name="p:domain_verify" content="abc123" />');
-    expect(verificationGoogle(undefined)).toBe('');
+    expect(verificationGoogle('')).toBe('');
     expect(verificationGoogle('xyz')).toBe('<meta name="google-site-verification" content="xyz" />');
-    expect(mesureAudience(undefined)).toBe('');
+    expect(mesureAudience('')).toBe('');
     expect(mesureAudience('www.keurdeco.com')).toContain('data-domain="www.keurdeco.com"');
   });
 
