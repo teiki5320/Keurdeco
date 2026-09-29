@@ -92,7 +92,7 @@ async function imagePartage(emblemeSombre: Buffer): Promise<void> {
     <g fill="#D49A2A" fill-opacity=".5">${Array.from({ length: 14 }, (_, i) => `<circle cx="${80 + i * 80}" cy="580" r="6"/>`).join('')}</g>
     <path d="M0 540h1200" stroke="#EFE3D0" stroke-opacity=".25" stroke-width="2"/>
   </svg>`);
-  const titre = await texte('<span foreground="#F7F0E6">Keur <i>Déco</i></span>', 'Fraunces SemiBold 96', POLICE_TITRE, 700);
+  const titre = await texte('<span foreground="#F7F0E6">Keur <span foreground="#D49A2A">Déco</span></span>', 'Fraunces SemiBold 96', POLICE_TITRE, 700);
   const slogan = await texte('<span foreground="#EFE3D0">Décoration africaine pour la maison</span>', 'Source Sans 3 SemiBold 40', POLICE_TEXTE, 700);
   mkdirSync(resolve(RACINE, 'public/images/partage'), { recursive: true });
   await sharp(fond)

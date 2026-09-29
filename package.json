@@ -9,20 +9,20 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && node scripts/epingles.ts && vite build",
+    "build": "tsc --noEmit && PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/epingles.ts && vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "node scripts/e2e.mjs",
     "images": "node scripts/images.ts",
-    "epingles": "node scripts/epingles.ts",
+    "epingles": "PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/epingles.ts",
     "hotspots": "node scripts/hotspots.mjs",
     "nouvel-article": "node scripts/nouvel-article.mjs",
     "pinterest:auth": "node scripts/pinterest-auth.mjs",
     "pinterest:publier": "node scripts/pinterest-publier.mjs",
     "verifier-produits": "node scripts/verifier-produits.mjs",
     "vignettes": "node scripts/vignettes-produits.ts",
-    "visuels-marque": "node scripts/visuels-marque.ts"
+    "visuels-marque": "PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/visuels-marque.ts"
   },
   "devDependencies": {
     "@types/node": "^22.20.4",
