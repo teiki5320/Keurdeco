@@ -45,8 +45,10 @@ describe('référencement', () => {
     expect(verificationPinterest('abc123')).toBe('<meta name="p:domain_verify" content="abc123" />');
     expect(verificationGoogle('')).toBe('');
     expect(verificationGoogle('xyz')).toBe('<meta name="google-site-verification" content="xyz" />');
-    expect(mesureAudience('')).toBe('');
-    expect(mesureAudience('www.keurdeco.com')).toContain('data-domain="www.keurdeco.com"');
+    expect(mesureAudience('', '')).toBe('');
+    expect(mesureAudience('', 'abc123')).toContain('static.cloudflareinsights.com/beacon.min.js');
+    expect(mesureAudience('', 'abc123')).toContain('&quot;token&quot;:&quot;abc123&quot;');
+    expect(mesureAudience('www.keurdeco.com', '')).toContain('data-domain="www.keurdeco.com"');
   });
 
   it('sitemap sans la 404', () => {

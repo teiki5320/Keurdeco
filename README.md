@@ -26,7 +26,7 @@ Node 22.18 ou plus récent (les scripts `.ts` sont exécutés directement par No
 | Chemin | Rôle |
 | --- | --- |
 | `index.html`, `a-propos.html`, `mentions-legales.html`, `confidentialite.html`, `404.html` | Pages écrites, avec des marqueurs (`<!--#head-->`, `<!--#header-->`, `<!--#footer-->`, `<!--#une-->`…) |
-| `build/site.ts` | Plugin Vite : parties communes, pages générées, typographie française (espaces insécables), canonique, Open Graph, données structurées, `sitemap.xml`, `robots.txt`, Plausible facultatif |
+| `build/site.ts` | Plugin Vite : parties communes, pages générées, typographie française (espaces insécables), canonique, Open Graph, données structurées, `sitemap.xml`, `robots.txt`, mesure d'audience facultative (Cloudflare Web Analytics ou Plausible) |
 | `build/articles.ts` | Lecture des articles (Markdown + YAML), publication à date, rendu des 3 types, points cliquables, bouton « Épingler » |
 | `build/produits.ts` | Produits : filtrage (seuls les actifs sont affichés), cartes, encadrés, mention Partenaires |
 | `build/rubriques.ts` | Pages de rubriques (pièces, matières, occasions), liste des articles, glossaire, blocs de l'accueil |
@@ -149,7 +149,7 @@ Tout est détaillé dans [`docs/pinterest.md`](docs/pinterest.md), y compris les
 
 `.github/workflows/pages.yml` : à chaque push sur `main`, chaque lundi à 5 h UTC et à la demande : `npm ci`, tests, build (épingles comprises), test de bout en bout Chromium, puis déploiement GitHub Pages.
 
-Réglages facultatifs (*Settings* › *Secrets and variables* › *Actions* › *Variables*) : `SITE_URL` (par défaut `https://www.keurdeco.com/`), `PLAUSIBLE_DOMAIN` (mesure d'audience sans cookie, par exemple `www.keurdeco.com`), `PINTEREST_VERIFY`, `GOOGLE_VERIFY` (code de la Search Console, balise `google-site-verification`).
+Réglages facultatifs (*Settings* › *Secrets and variables* › *Actions* › *Variables*) : `SITE_URL` (par défaut `https://www.keurdeco.com/`), `CLOUDFLARE_WEB_ANALYTICS` (token public du « JS Snippet » de Cloudflare Web Analytics : mesure d'audience sans cookie, en place), `PLAUSIBLE_DOMAIN` (alternative : Plausible), `PINTEREST_VERIFY`, `GOOGLE_VERIFY` (code de la Search Console, balise `google-site-verification`).
 
 Référencement : `sitemap.xml` (avec `lastmod`) ne contient que les pages indexables ; les rubriques encore sans article sont en `noindex` jusqu'à leur premier article publié.
 
@@ -168,4 +168,4 @@ Le domaine `keurdeco.com` est enregistré chez **Cloudflare** (compte teiki5320@
 
 ## Pages légales
 
-`mentions-legales.html` (ALOHASH SAS, hébergeur GitHub Pages, mention Partenaires Amazon, images créées par IA), `confidentialite.html` (aucun cookie, Plausible facultatif, les deux petites mémoires du navigateur : matière choisie dans le nuancier, page ouverte depuis le menu), et un paragraphe sur les liens affiliés dans `a-propos.html`. Si la mesure d'audience est activée, rien à changer : la politique la décrit déjà.
+`mentions-legales.html` (ALOHASH SAS, hébergeur GitHub Pages, mention Partenaires Amazon, images créées par IA), `confidentialite.html` (aucun cookie, mesure d'audience Cloudflare Web Analytics sans cookie, les deux petites mémoires du navigateur : matière choisie dans le nuancier, page ouverte depuis le menu), et un paragraphe sur les liens affiliés dans `a-propos.html`. Si la mesure d'audience est activée, rien à changer : la politique la décrit déjà.

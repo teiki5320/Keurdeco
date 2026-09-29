@@ -114,8 +114,15 @@ export function referencement(html: string, fichier: string, url = SITE_URL): st
     ${json}`;
 }
 
-/** Mesure d'audience facultative et sans cookie : PLAUSIBLE_DOMAIN=www.keurdeco.com npm run build */
-export function mesureAudience(domaine = process.env.PLAUSIBLE_DOMAIN): string {
+/**
+ * Mesure d'audience facultative et sans cookie, activée par une variable au build :
+ * CLOUDFLARE_WEB_ANALYTICS (token public du « JS Snippet » de Cloudflare Web Analytics, utilisé en production)
+ * ou PLAUSIBLE_DOMAIN (www.keurdeco.com).
+ */
+export function mesureAudience(domaine = process.env.PLAUSIBLE_DOMAIN, jetonCloudflare = process.env.CLOUDFLARE_WEB_ANALYTICS): string {
+  if (jetonCloudflare) {
+    return `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${attribut(JSON.stringify({ token: jetonCloudflare }))}'></script>`;
+  }
   return domaine ? `<script defer data-domain="${attribut(domaine)}" src="https://plausible.io/js/script.js"></script>` : '';
 }
 
