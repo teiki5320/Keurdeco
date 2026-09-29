@@ -36,14 +36,30 @@ const PASTILLES: Record<string, { pastille: string; contour: string; teinte: str
   perles: { pastille: 'radial-gradient(circle,#E2A62A 0 3px,transparent 3.5px) 0 0/10px 10px,radial-gradient(circle,#C4553A 0 3px,transparent 3.5px) 5px 5px/10px 10px,#0E1430', contour: '#0E1430', teinte: '#D6D2E4', phrase: 'Perles de verre, de terre ou de graines : une touche précieuse et colorée, portée ou accrochée.' },
 };
 
+/** Tissus en photo : un meuble habillé par objet (npm run nuancier-images). */
+const TISSUS_PHOTO: Record<string, string> = { wax: 'wax' };
+/** Matières montrées par un objet en photo, à la place du meuble. */
+const OBJETS_MATIERE: Record<string, { nom: string; sous: string; image: string }> = {
+  'raphia-paniers': { nom: 'Bolga', sous: 'Panier tressé du Ghana', image: 'images/nuancier/panier-bolga.webp' },
+};
+
 export const TISSUS = MATIERES.map((m) => ({
   id: m.id,
   nom: m.nom,
   remplissage: `url(#kd-${m.id})`,
   titre: m.nom,
   lien: fichierRubrique('matiere', m.id),
+  ...(TISSUS_PHOTO[m.id] ? { images: Object.fromEntries(OBJETS.map((o) => [o.id, `images/nuancier/${TISSUS_PHOTO[m.id]}-${o.id}.webp`])) } : {}),
+  ...(OBJETS_MATIERE[m.id] ? { objet: OBJETS_MATIERE[m.id] } : {}),
   ...PASTILLES[m.id],
 }));
+
+type Tissu = (typeof TISSUS)[number] & { images?: Record<string, string>; objet?: { nom: string; sous: string; image: string } };
+
+/** Image d'un objet dans une matière : l'objet en photo (matière), le meuble en photo (tissu), sinon le dessin. */
+export function visuel(objet: string, t: Tissu): string {
+  return t.objet?.image ?? t.images?.[objet] ?? dessin(objet, t.remplissage);
+}
 
 /** Matière affichée au premier chargement (wax). */
 export const DEPART = 0;
@@ -73,12 +89,12 @@ export function essayage(): string {
   const oy = (i: number) => `${10 + i * 11.5}%`;
   const vignettes = OBJETS.map(
     (x, i) =>
-      `<button type="button" class="nuancier__vignette" data-objet="${i}" aria-pressed="${i === 0}" aria-label="${echapper(x.sous)}"><img src="${dessin(x.id, t.remplissage)}" alt="" width="84" height="52"><span>0${i + 1}</span></button>`,
+      `<button type="button" class="nuancier__vignette" data-objet="${i}" aria-pressed="${i === 0}" aria-label="${echapper(x.sous)}"><img src="${visuel(x.id, t)}" alt="" width="84" height="52"><span>0${i + 1}</span></button>`,
   ).join('');
   const disques = TISSUS.map((x, i) => `<span class="nuancier__disque${i === DEPART ? ' est-actif' : ''}" style="--t:${x.teinte};--oy:${oy(i)}"></span>`).join('');
   const calques = TISSUS.map(
     (x, i) =>
-      `<span class="nuancier__calque${i === DEPART ? ' est-actif' : ''}" style="--oy:${oy(i)}"><img src="${dessin(o.id, x.remplissage)}" alt="${i === DEPART ? echapper(`${o.sous} habillé en ${x.nom.toLowerCase()}`) : ''}"></span>`,
+      `<span class="nuancier__calque${i === DEPART ? ' est-actif' : ''}" style="--oy:${oy(i)}"><img src="${visuel(o.id, x)}" alt="${i === DEPART ? echapper(`${o.sous} habillé en ${x.nom.toLowerCase()}`) : ''}"></span>`,
   ).join('');
   const pastilles = TISSUS.map(
     (x, i) => `<button type="button" class="nuancier__pastille" data-tissu="${i}" aria-pressed="${i === DEPART}" aria-label="${echapper(x.nom)}" style="--c:${x.pastille};--s:${x.contour}"></button>`,

@@ -13,7 +13,19 @@ interface Donnees {
   motifs: string;
   dessins: Record<string, string>;
   objets: { id: string; nom: string; sous: string }[];
-  tissus: { nom: string; remplissage: string; contour: string; teinte: string; titre: string; phrase: string; lien: string }[];
+  tissus: {
+    nom: string;
+    remplissage: string;
+    contour: string;
+    teinte: string;
+    titre: string;
+    phrase: string;
+    lien: string;
+    /** Meubles habillés de ce tissu en photo (sinon, dessin rempli du motif). */
+    images?: Record<string, string>;
+    /** Matière montrée par un objet en photo, à la place du meuble. */
+    objet?: { nom: string; sous: string; image: string };
+  }[];
 }
 
 const reduit = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -48,10 +60,13 @@ export function nuancier(): void {
   const dessin = (objet: string, remplissage: string) =>
     `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240"><defs>${d.motifs}</defs><g fill="${remplissage}">${d.dessins[objet]}</g></svg>`)}`;
 
+  const visuel = (o: string, t: Donnees['tissus'][number]) => t.objet?.image ?? t.images?.[o] ?? dessin(o, t.remplissage);
+
   let objet = 0;
   let tissu = depart;
   let precedent = -1;
   let brouillage = 0;
+  let nettoyage = 0;
 
   const poserTissu = (i: number) => {
     if (i !== tissu) precedent = tissu;
@@ -63,13 +78,37 @@ export function nuancier(): void {
       });
     }
     pastilles.forEach((p, k) => p.setAttribute('aria-pressed', String(k === i)));
+    // Une fois le cercle déployé, l'ancien calque disparaît : sinon il se voit autour d'une silhouette
+    // différente (un panier à la place d'un canapé).
+    clearTimeout(nettoyage);
+    nettoyage = window.setTimeout(
+      () =>
+        calques.forEach((c) => {
+          if (!c.classList.contains('est-precedent')) return;
+          c.style.transition = 'none'; // disparition immédiate, sans refermer le cercle
+          c.classList.remove('est-precedent');
+          void c.offsetWidth;
+          c.style.transition = '';
+        }),
+      reduit() ? 0 : 1300,
+    );
     const t = d.tissus[i];
+    // Matière montrée par un objet : on masque le choix du meuble et on présente l'objet.
+    const avant = d.tissus[precedent]?.objet;
+    section.classList.toggle('nuancier--objet', !!t.objet);
+    if (t.objet || avant) {
+      const o = t.objet ?? d.objets[objet];
+      sous.textContent = o.sous;
+      brouiller(o.nom.toUpperCase());
+      pose.querySelectorAll('.nuancier__coussin').forEach((c) => c.remove());
+    }
+    if (aide) aide.hidden = !!t.objet || objet !== 0;
     titre.textContent = t.titre;
     phrase.textContent = t.phrase;
     lien.href = t.lien;
     lien.dataset.libelle = t.nom;
-    images.forEach((im, k) => (im.alt = k === i ? `${d.objets[objet].sous} habillé en ${t.nom.toLowerCase()}` : ''));
-    vignettes.forEach((v, k) => (v.querySelector('img')!.src = dessin(d.objets[k].id, t.remplissage)));
+    images.forEach((im, k) => (im.alt = k === i ? (t.objet ? t.objet.sous : `${d.objets[objet].sous} habillé en ${t.nom.toLowerCase()}`) : ''));
+    if (!t.objet) vignettes.forEach((v, k) => (v.querySelector('img')!.src = visuel(d.objets[k].id, t)));
     document.documentElement.style.setProperty('--matiere', t.contour);
     document.documentElement.style.setProperty('--matiere-teinte', t.teinte);
     try {
@@ -103,7 +142,7 @@ export function nuancier(): void {
     const o = d.objets[i];
     vignettes.forEach((v, k) => v.setAttribute('aria-pressed', String(k === i)));
     images.forEach((im, k) => {
-      im.src = dessin(o.id, d.tissus[k].remplissage);
+      im.src = visuel(o.id, d.tissus[k]);
       im.alt = k === tissu ? `${o.sous} habillé en ${d.tissus[tissu].nom.toLowerCase()}` : '';
     });
     sous.textContent = o.sous;
@@ -129,11 +168,12 @@ export function nuancier(): void {
 
   // Coussins qui tombent : sur le canapé seulement.
   zone.addEventListener('click', () => {
-    if (objet !== 0 || reduit()) return;
+    if (objet !== 0 || reduit() || d.tissus[tissu].objet) return;
     const coussin = document.createElement('img');
     coussin.className = 'nuancier__coussin';
     coussin.alt = '';
-    coussin.src = dessin('coussin', d.tissus[Math.floor(Math.random() * d.tissus.length)].remplissage);
+    const tissus = d.tissus.filter((t) => !t.objet);
+    coussin.src = visuel('coussin', tissus[Math.floor(Math.random() * tissus.length)]);
     coussin.style.left = `${14 + Math.random() * 56}%`;
     coussin.style.top = `${22 + Math.random() * 14}%`;
     coussin.style.setProperty('--r', `${Math.round((Math.random() - 0.5) * 40)}deg`);
