@@ -724,7 +724,7 @@ main {
 
 /* Avec JavaScript : la section devient une scène « collante » ; l'arche s'ouvre jusqu'à remplir l'écran. */
 .porte--active {
-  height: 230vh;
+  height: 140vh;
 }
 
 .porte--active .porte__collant {
@@ -857,7 +857,7 @@ main {
 
 @media (max-width: 899px) {
   .porte--active {
-    height: 200vh;
+    height: 130vh;
   }
   .porte--active .porte__arche {
     --l0: 22vw;
@@ -1207,13 +1207,13 @@ main {
 
 /* Avec JavaScript : la piste glisse de côté pendant qu'on descend (section collante). */
 .visite--active {
-  height: calc(100svh + var(--n) * 55vh);
+  height: calc(100svh + var(--n) * 30vh);
 }
 
 /* Sur téléphone, la visite défile plus vite : moins de hauteur à parcourir. */
 @media (max-width: 699px) {
   .visite--active {
-    height: calc(100svh + var(--n) * 32vh);
+    height: calc(100svh + var(--n) * 18vh);
   }
 }
 
