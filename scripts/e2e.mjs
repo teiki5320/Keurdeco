@@ -27,7 +27,7 @@ const produitsDemo = JSON.parse(readFileSync(resolve(RACINE, 'src/data/produits.
 }));
 const fichierProduits = join(temp, 'produits.json');
 writeFileSync(fichierProduits, JSON.stringify(produitsDemo));
-const envDemo = { ...process.env, DATE_PUBLICATION: '2099-12-31', KEURDECO_PRODUITS: fichierProduits, DOSSIER_SORTIE: SORTIE, PINTEREST_VERIFY: 'code-de-test' };
+const envDemo = { ...process.env, DATE_PUBLICATION: '2099-12-31', KEURDECO_PRODUITS: fichierProduits, DOSSIER_SORTIE: SORTIE, PINTEREST_VERIFY: 'code-de-test', CLOUDFLARE_WEB_ANALYTICS: '', PLAUSIBLE_DOMAIN: '' };
 
 console.log('Construction de la version de démonstration…');
 execFileSync('node', ['scripts/epingles.ts'], { cwd: RACINE, env: envDemo, stdio: 'ignore' });
