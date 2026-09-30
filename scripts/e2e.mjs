@@ -74,12 +74,12 @@ try {
     .filter((x) => x.type === 'ambiance')
     .sort((x, y) => y.date.localeCompare(x.date) || x.titre.localeCompare(y.titre, 'fr'));
   verifier((await page.locator('.une').count()) === 1 && (await page.getAttribute('.une', 'href')) === ambiances[0].fichier, `accueil : ambiance à la une (${ambiances[0].fichier})`);
-  verifier((await page.locator('.visite__piece').count()) === 7 && (await page.locator('.nuancier__pastille').count()) === 4, 'accueil : carrousel des 7 pièces et nuancier des 4 tissus');
+  verifier((await page.locator('.visite__piece').count()) === 7 && (await page.locator('.nuancier__pastille:not([hidden])').count()) === 4 && (await page.locator('.nuancier__vignette').count()) === 8, 'accueil : carrousel des 7 pièces et nuancier (8 objets, 4 tissus pour le canapé)');
   const pageHub = await navigateur.newPage();
   await pageHub.goto(`${BASE}pieces.html`);
   verifier((await pageHub.locator('.visite__piece').count()) === 7, 'page Pièces : carrousel des 7 pièces');
   await pageHub.goto(`${BASE}matieres.html`);
-  verifier((await pageHub.locator('.nuancier__pastille').count()) === 4 && (await pageHub.locator('.tuiles--matiere .tuile').count()) === 8, 'page Matières : nuancier et 8 matières');
+  verifier((await pageHub.locator('.nuancier__pastille:not([hidden])').count()) === 4 && (await pageHub.locator('.tuiles--matiere .tuile').count()) === 8, 'page Matières : nuancier et 8 matières');
   await pageHub.close();
   verifier((await page.textContent('.site-pied'))?.includes('En tant que Partenaire Amazon, Keur Déco réalise un bénéfice'), 'pied de page : mention Partenaires Amazon');
   verifier((await page.getAttribute('meta[name="p:domain_verify"]', 'content')) === 'code-de-test', 'balise de revendication Pinterest (PINTEREST_VERIFY)');

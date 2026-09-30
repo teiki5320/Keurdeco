@@ -1,5 +1,6 @@
 /**
  * Nuancier de l'accueil (« Essayez le tissu », HTML généré par build/essayage.ts) :
+ * - chaque objet n'accepte que certaines matières (les tissus pour les meubles, une seule pour un objet) ;
  * - la matière choisie se propage en cercle sur l'objet et le disque ; elle est mémorisée
  *   (localStorage) et exposée au site par --matiere et --matiere-teinte ;
  * - changer d'objet le fait rebondir et brouille son nom lettre par lettre ;
@@ -13,8 +14,8 @@ interface Donnees {
   motifs: string;
   neutre: string;
   dessins: Record<string, string>;
-  objets: { id: string; nom: string; sous: string }[];
-  tissus: { nom: string; remplissage: string; contour: string; teinte: string; titre: string; phrase: string; lien: string }[];
+  objets: { id: string; nom: string; sous: string; matieres: string[] }[];
+  tissus: { id: string; nom: string; remplissage: string; contour: string; teinte: string; titre: string; phrase: string; lien: string }[];
 }
 
 const reduit = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -49,8 +50,13 @@ export function nuancier(): void {
   const dessin = (objet: string, remplissage: string) =>
     `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240"><defs>${d.motifs}</defs><g fill="${remplissage}">${d.dessins[objet]}</g></svg>`)}`;
 
+  // Un objet n'accepte que certaines matières (les tissus pour un meuble, la sienne pour un objet).
+  const convient = (o: number, t: number) => d.objets[o].matieres.includes(d.tissus[t].id);
+
   let objet = 0;
   let tissu = depart;
+  /** Dernier tissu choisi sur un meuble : on le retrouve en revenant d'un objet d'une seule matière. */
+  let tissuMeuble = depart;
   let precedent = -1;
   let brouillage = 0;
 
@@ -58,14 +64,21 @@ export function nuancier(): void {
   const colorerVignettes = () =>
     vignettes.forEach((v, k) => (v.querySelector('img')!.src = dessin(d.objets[k].id, k === objet ? d.tissus[tissu].remplissage : d.neutre)));
 
-  const poserTissu = (i: number) => {
+  /** `nouvelObjet` : la matière change parce qu'on a changé d'objet ; le dessin change d'un coup, seul le disque se propage. */
+  const poserTissu = (i: number, nouvelObjet = false) => {
     if (i !== tissu) precedent = tissu;
     tissu = i;
+    if (d.objets[objet].matieres.length > 1) tissuMeuble = i;
+    if (nouvelObjet) calques.forEach((c) => (c.style.transition = 'none'));
     for (const liste of [disques, calques]) {
       liste.forEach((el, k) => {
         el.classList.toggle('est-actif', k === i);
-        el.classList.toggle('est-precedent', k === precedent && k !== i);
+        el.classList.toggle('est-precedent', k === precedent && k !== i && !(nouvelObjet && liste === calques));
       });
+    }
+    if (nouvelObjet) {
+      void section.offsetWidth;
+      calques.forEach((c) => (c.style.transition = ''));
     }
     pastilles.forEach((p, k) => p.setAttribute('aria-pressed', String(k === i)));
     const t = d.tissus[i];
@@ -107,7 +120,9 @@ export function nuancier(): void {
     objet = i;
     const o = d.objets[i];
     vignettes.forEach((v, k) => v.setAttribute('aria-pressed', String(k === i)));
-    colorerVignettes();
+    pastilles.forEach((p, k) => (p.hidden = !convient(i, k)));
+    if (!convient(i, tissu)) poserTissu(convient(i, tissuMeuble) ? tissuMeuble : d.tissus.findIndex((t) => t.id === o.matieres[0]), true);
+    else colorerVignettes();
     images.forEach((im, k) => {
       im.src = dessin(o.id, d.tissus[k].remplissage);
       im.alt = k === tissu ? `${o.sous} habillé en ${d.tissus[tissu].nom.toLowerCase()}` : '';
@@ -139,7 +154,8 @@ export function nuancier(): void {
     const coussin = document.createElement('img');
     coussin.className = 'nuancier__coussin';
     coussin.alt = '';
-    coussin.src = dessin('coussin', d.tissus[Math.floor(Math.random() * d.tissus.length)].remplissage);
+    const tissus = d.tissus.filter((_, k) => convient(0, k));
+    coussin.src = dessin('coussin', tissus[Math.floor(Math.random() * tissus.length)].remplissage);
     coussin.style.left = `${14 + Math.random() * 56}%`;
     coussin.style.top = `${22 + Math.random() * 14}%`;
     coussin.style.setProperty('--r', `${Math.round((Math.random() - 0.5) * 40)}deg`);
@@ -167,7 +183,7 @@ export function nuancier(): void {
   } catch {
     /* rien */
   }
-  if (Number.isInteger(memoire) && memoire >= 0 && memoire < d.tissus.length && memoire !== depart) {
+  if (Number.isInteger(memoire) && memoire >= 0 && memoire < d.tissus.length && memoire !== depart && convient(0, memoire)) {
     calques.forEach((c) => (c.style.transition = 'none'));
     disques.forEach((c) => (c.style.transition = 'none'));
     poserTissu(memoire);

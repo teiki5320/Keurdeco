@@ -13,16 +13,24 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 6px;
-  padding: 24px 0;
+  gap: 3px;
+  padding: 16px 0;
   border-right: 1px solid var(--bordure);
+}
+
+/* Trait entre les meubles (4 tissus) et les objets d'une seule matière. */
+.nuancier__separation {
+  flex: none;
+  height: 1px;
+  margin: 8px 18px;
+  background: var(--bordure);
 }
 
 .nuancier__vignette {
   position: relative;
   display: grid;
   place-items: center;
-  height: 96px;
+  height: 66px;
   margin: 0 10px;
   border: 0;
   border-radius: 4px;
@@ -38,15 +46,15 @@
 }
 
 .nuancier__vignette img {
-  width: 84px;
-  height: 52px;
+  width: 72px;
+  height: 44px;
   object-fit: contain;
 }
 
 .nuancier__vignette span {
   position: absolute;
-  left: 10px;
-  bottom: 6px;
+  left: 8px;
+  bottom: 3px;
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   color: var(--texte-doux);
@@ -273,6 +281,11 @@ html:not(.js) .nuancier__aide {
     padding: 10px;
     border-right: 0;
     border-bottom: 1px solid var(--bordure);
+  }
+  .nuancier__separation {
+    width: 1px;
+    height: auto;
+    margin: 8px 6px;
   }
   .nuancier__vignette,
   .nuancier__vignette[aria-pressed='true'] {
