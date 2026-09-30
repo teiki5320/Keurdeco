@@ -12,15 +12,21 @@
     "cadre": 44
   },
   "assiettes-porcelaine-blanches-lot-6": {
-    "article": "table-reveillon-wax-or",
-    "x": 15,
-    "y": 71,
+    "article": "table-mariage-wax",
+    "x": 63,
+    "y": 81,
     "cadre": 30
   },
   "assiettes-terre-cuite-lot-6": {
     "article": "cuisine-terre-cuite-paniers",
     "x": 61,
     "y": 68,
+    "cadre": 30
+  },
+  "awale-mancala-bois": {
+    "article": "chambre-enfant-wax-doux",
+    "x": 64,
+    "y": 92,
     "cadre": 30
   },
   "banc-acacia-jardin": {
@@ -36,9 +42,9 @@
     "cadre": 46
   },
   "bol-manguier-sculpte": {
-    "article": "salon-bogolan-bois-clair",
-    "x": 87,
-    "y": 52,
+    "article": "salon-touches-kente",
+    "x": 45,
+    "y": 71,
     "cadre": 30
   },
   "bols-terre-cuite-lot-12": {
@@ -48,9 +54,9 @@
     "cadre": 30
   },
   "bougeoirs-dores-coniques-lot-6": {
-    "article": "table-reveillon-wax-or",
-    "x": 45,
-    "y": 50,
+    "article": "table-mariage-wax",
+    "x": 36,
+    "y": 52,
     "cadre": 30
   },
   "bougies-piliers-ivoire-lot-6": {
@@ -60,9 +66,9 @@
     "cadre": 30
   },
   "bougies-tige-ivoire-lot-50": {
-    "article": "table-reveillon-wax-or",
-    "x": 45,
-    "y": 21,
+    "article": "table-mariage-wax",
+    "x": 36,
+    "y": 28,
     "cadre": 30
   },
   "branches-saule-sechees": {
@@ -102,15 +108,27 @@
     "cadre": 30
   },
   "chaises-dossier-rotin-lot-2": {
-    "article": "studio-deco-africaine",
-    "x": 64,
-    "y": 58,
-    "cadre": 42
+    "article": "table-tabaski",
+    "x": 89,
+    "y": 56,
+    "cadre": 30
+  },
+  "chemin-table-kente-lin": {
+    "article": "salon-touches-kente",
+    "x": 38,
+    "y": 75,
+    "cadre": 30
   },
   "chemin-table-terracotta-glands": {
     "article": "cuisine-terre-cuite-paniers",
     "x": 52,
     "y": 82,
+    "cadre": 30
+  },
+  "chemin-table-tribal-africain": {
+    "article": "table-tabaski",
+    "x": 50,
+    "y": 89,
     "cadre": 30
   },
   "chemins-table-gaze-terracotta-lot-6": {
@@ -138,9 +156,15 @@
     "cadre": 30
   },
   "coupon-pagne-wax-180x120": {
-    "article": "noel-touche-africaine",
-    "x": 64,
-    "y": 89,
+    "article": "table-mariage-wax",
+    "x": 15,
+    "y": 86,
+    "cadre": 30
+  },
+  "coupons-tissus-africains-lot-6": {
+    "article": "chambre-enfant-wax-doux",
+    "x": 89,
+    "y": 19,
     "cadre": 30
   },
   "couronne-osier-30": {
@@ -186,15 +210,15 @@
     "cadre": 30
   },
   "coussins-lin-beige-lot-2": {
-    "article": "salon-bogolan-bois-clair",
+    "article": "salon-touches-kente",
     "x": 38,
-    "y": 58,
+    "y": 53,
     "cadre": 30
   },
   "couverts-dores-24-pieces": {
-    "article": "table-reveillon-wax-or",
-    "x": 13,
-    "y": 78,
+    "article": "table-mariage-wax",
+    "x": 55,
+    "y": 86,
     "cadre": 30
   },
   "distributeur-savon-terracotta": {
@@ -234,9 +258,9 @@
     "cadre": 30
   },
   "eucalyptus-artificiel-lot-6": {
-    "article": "table-reveillon-wax-or",
-    "x": 50,
-    "y": 58,
+    "article": "table-mariage-wax",
+    "x": 31,
+    "y": 68,
     "cadre": 30
   },
   "fouta-coton-sable": {
@@ -264,9 +288,9 @@
     "cadre": 30
   },
   "guirlande-perles-bois": {
-    "article": "noel-touche-africaine",
-    "x": 58,
-    "y": 36,
+    "article": "entree-rideau-perles",
+    "x": 32,
+    "y": 78,
     "cadre": 30
   },
   "guirlandes-boules-feutre-lot-2": {
@@ -288,9 +312,9 @@
     "cadre": 30
   },
   "lampadaire-noir-abat-jour-lin": {
-    "article": "salon-bogolan-bois-clair",
-    "x": 18,
-    "y": 32,
+    "article": "salon-touches-kente",
+    "x": 86,
+    "y": 25,
     "cadre": 30
   },
   "lampadaire-rotin-boheme": {
@@ -312,15 +336,21 @@
     "cadre": 30
   },
   "lanternes-bois-lot-10": {
-    "article": "bapteme-decoration-africaine",
-    "x": 88,
-    "y": 57,
+    "article": "table-tabaski",
+    "x": 66,
+    "y": 31,
     "cadre": 30
   },
   "lanternes-solaires-rotin": {
     "article": "balcon-boheme-africain",
     "x": 86,
     "y": 83,
+    "cadre": 30
+  },
+  "livre-african-textiles": {
+    "article": "salon-touches-kente",
+    "x": 60,
+    "y": 73,
     "cadre": 30
   },
   "malles-osier-lot-2": {
@@ -335,6 +365,12 @@
     "y": 38,
     "cadre": 30
   },
+  "miroirs-rotin-soleil-lot-3": {
+    "article": "entree-rideau-perles",
+    "x": 20,
+    "y": 22,
+    "cadre": 30
+  },
   "mobile-bois-animaux-savane": {
     "article": "chambre-enfant-savane",
     "x": 70,
@@ -345,6 +381,12 @@
     "article": "entree-paniers-miroir-raphia",
     "x": 20,
     "y": 52,
+    "cadre": 30
+  },
+  "panier-agaseke-couvercle": {
+    "article": "entree-rideau-perles",
+    "x": 76,
+    "y": 79,
     "cadre": 30
   },
   "panier-bolga-marche": {
@@ -402,9 +444,9 @@
     "cadre": 42
   },
   "photophores-dores-lot-12": {
-    "article": "table-reveillon-wax-or",
-    "x": 60,
-    "y": 75,
+    "article": "table-mariage-wax",
+    "x": 42,
+    "y": 63,
     "cadre": 30
   },
   "plaid-coton-rayures-creme": {
@@ -437,10 +479,28 @@
     "y": 69,
     "cadre": 30
   },
+  "plateaux-tresses-lot-2": {
+    "article": "table-tabaski",
+    "x": 63,
+    "y": 74,
+    "cadre": 30
+  },
+  "porte-noms-bois-lot-30": {
+    "article": "table-mariage-wax",
+    "x": 62,
+    "y": 71,
+    "cadre": 30
+  },
   "pot-terre-cuite-couvercle": {
     "article": "cuisine-terre-cuite-paniers",
     "x": 93,
     "y": 45,
+    "cadre": 30
+  },
+  "pot-terre-cuite-fait-main-noir": {
+    "article": "balcon-lanternes-kente",
+    "x": 23,
+    "y": 78,
     "cadre": 30
   },
   "pouf-cuir-ocre": {
@@ -450,9 +510,9 @@
     "cadre": 30
   },
   "pouf-tricot-moutarde": {
-    "article": "salon-cocooning-ocre",
-    "x": 92,
-    "y": 73,
+    "article": "salon-touches-kente",
+    "x": 17,
+    "y": 79,
     "cadre": 30
   },
   "sapin-artificiel-180": {
@@ -468,9 +528,27 @@
     "cadre": 30
   },
   "serviettes-lin-melange-lot-12": {
-    "article": "table-reveillon-wax-or",
-    "x": 83,
-    "y": 67,
+    "article": "table-mariage-wax",
+    "x": 70,
+    "y": 75,
+    "cadre": 30
+  },
+  "sets-table-jacinthe-lot-6": {
+    "article": "table-tabaski",
+    "x": 28,
+    "y": 76,
+    "cadre": 30
+  },
+  "sphere-terre-cuite-etoiles": {
+    "article": "balcon-lanternes-kente",
+    "x": 76,
+    "y": 88,
+    "cadre": 30
+  },
+  "suspension-jute-alara-70": {
+    "article": "table-tabaski",
+    "x": 50,
+    "y": 10,
     "cadre": 30
   },
   "suspension-jute-boheme": {
@@ -479,10 +557,16 @@
     "y": 11,
     "cadre": 30
   },
+  "table-appoint-tranche-teck": {
+    "article": "balcon-lanternes-kente",
+    "x": 53,
+    "y": 76,
+    "cadre": 30
+  },
   "table-basse-ronde-chene-clair": {
-    "article": "salon-bogolan-bois-clair",
-    "x": 57,
-    "y": 73,
+    "article": "salon-touches-kente",
+    "x": 52,
+    "y": 88,
     "cadre": 30
   },
   "table-chevet-rotin": {
@@ -497,16 +581,34 @@
     "y": 67,
     "cadre": 30
   },
+  "tabouret-acajou-monte": {
+    "article": "chambre-enfant-wax-doux",
+    "x": 64,
+    "y": 82,
+    "cadre": 30
+  },
   "tabouret-bois-sculpte": {
     "article": "salon-terracotta-wax",
     "x": 91,
     "y": 75,
     "cadre": 40
   },
+  "tabouret-bois-torsade": {
+    "article": "entree-rideau-perles",
+    "x": 28,
+    "y": 86,
+    "cadre": 30
+  },
   "tabouret-teck-massif-42": {
     "article": "salle-de-bain-spa-africaine",
     "x": 58,
     "y": 76,
+    "cadre": 30
+  },
+  "tajine-terre-cuite-35": {
+    "article": "table-tabaski",
+    "x": 50,
+    "y": 51,
     "cadre": 30
   },
   "tapis-bain-coton-tresse-creme": {
@@ -525,6 +627,12 @@
     "article": "chambre-enfant-savane",
     "x": 50,
     "y": 88,
+    "cadre": 30
+  },
+  "tapis-jute-alhambra": {
+    "article": "salon-touches-kente",
+    "x": 86,
+    "y": 90,
     "cadre": 30
   },
   "tapis-jute-rond": {
@@ -557,6 +665,12 @@
     "y": 96,
     "cadre": 30
   },
+  "tapis-rond-jute-lurex-80": {
+    "article": "entree-rideau-perles",
+    "x": 50,
+    "y": 95,
+    "cadre": 30
+  },
   "tete-de-lit-rotin-160": {
     "article": "chambre-indigo-lin",
     "x": 52,
@@ -570,9 +684,9 @@
     "cadre": 30
   },
   "vase-ceramique-noir-mat": {
-    "article": "salon-bogolan-bois-clair",
-    "x": 57,
-    "y": 62,
+    "article": "entree-rideau-perles",
+    "x": 30,
+    "y": 65,
     "cadre": 30
   },
   "vase-terre-cuite-terracotta": {
@@ -588,9 +702,9 @@
     "cadre": 30
   },
   "verres-vin-cristal-arques-lot-6": {
-    "article": "table-reveillon-wax-or",
-    "x": 69,
-    "y": 51,
+    "article": "table-mariage-wax",
+    "x": 60,
+    "y": 56,
     "cadre": 30
   },
   "voilage-lin-naturel": {

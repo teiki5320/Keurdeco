@@ -7,6 +7,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "balcon-lanternes-kente": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "bapteme-decoration-africaine": {
     "largeur": 1600,
     "hauteur": 1073
@@ -20,6 +24,10 @@
     "hauteur": 1073
   },
   "chambre-enfant-savane": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "chambre-enfant-wax-doux": {
     "largeur": 1600,
     "hauteur": 1073
   },
@@ -88,6 +96,10 @@
     "hauteur": 1073
   },
   "entree-paniers-miroir-raphia": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "entree-rideau-perles": {
     "largeur": 1600,
     "hauteur": 1073
   },
@@ -199,6 +211,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "salle-de-bain-indigo": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "salle-de-bain-spa-africaine": {
     "largeur": 1600,
     "hauteur": 1073
@@ -215,11 +231,23 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "salon-touches-kente": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "studio-deco-africaine": {
     "largeur": 1600,
     "hauteur": 1073
   },
+  "table-mariage-wax": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "table-reveillon-wax-or": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "table-tabaski": {
     "largeur": 1600,
     "hauteur": 1073
   },
