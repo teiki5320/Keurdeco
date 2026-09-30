@@ -3,6 +3,7 @@
  * - la matière choisie se propage en cercle sur l'objet et le disque ; elle est mémorisée
  *   (localStorage) et exposée au site par --matiere et --matiere-teinte ;
  * - changer d'objet le fait rebondir et brouille son nom lettre par lettre ;
+ * - sur le canapé seulement, un clic fait tomber un coussin (8 au plus) ;
  * - l'objet s'incline légèrement sous la souris.
  * « Réduire les animations » garde les changements, sans mouvement.
  */
@@ -11,24 +12,14 @@ import './nuancier.css';
 interface Donnees {
   motifs: string;
   dessins: Record<string, string>;
-  objets: { id: string; nom: string; sous: string; matieres: string[] }[];
-  tissus: {
-    nom: string;
-    remplissage: string;
-    contour: string;
-    teinte: string;
-    titre: string;
-    phrase: string;
-    lien: string;
-    id: string;
-    /** Objets habillés de cette matière en photo réaliste (sinon, dessin rempli du motif). */
-    images: Record<string, string>;
-  }[];
+  objets: { id: string; nom: string; sous: string }[];
+  tissus: { nom: string; remplissage: string; contour: string; teinte: string; titre: string; phrase: string; lien: string }[];
 }
 
 const reduit = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const MEMOIRE = 'kd-matiere';
 const LETTRES = 'ABCDEFGHIJKLMNOPRSTUVWXYZÉ';
+const MAX_COUSSINS = 8;
 
 export function nuancier(): void {
   const section = document.querySelector<HTMLElement>('[data-nuancier]');
@@ -48,6 +39,8 @@ export function nuancier(): void {
   const titre = $<HTMLElement>('[data-nuancier-titre]');
   const phrase = $<HTMLElement>('[data-nuancier-phrase]');
   const lien = $<HTMLAnchorElement>('[data-nuancier-lien]');
+  const aide = section.querySelector<HTMLElement>('[data-nuancier-aide]');
+  const scene = $<HTMLElement>('[data-nuancier-scene]');
   const zone = $<HTMLElement>('[data-nuancier-zone]');
   const pose = $<HTMLElement>('[data-nuancier-pose]');
   const depart = Number(section.dataset.depart ?? 0);
@@ -55,16 +48,10 @@ export function nuancier(): void {
   const dessin = (objet: string, remplissage: string) =>
     `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240"><defs>${d.motifs}</defs><g fill="${remplissage}">${d.dessins[objet]}</g></svg>`)}`;
 
-  const visuel = (o: string, t: Donnees['tissus'][number]) => t.images?.[o] ?? dessin(o, t.remplissage);
-  // Un objet n'accepte que certaines matières (les tissus pour les meubles, sa matière pour un objet).
-  const convient = (o: number, t: number) => d.objets[o].matieres.includes(d.tissus[t].id);
-  const vignetteDe = (o: number, t: number) => visuel(d.objets[o].id, d.tissus[convient(o, t) ? t : d.tissus.findIndex((x) => x.id === d.objets[o].matieres[0])]);
-
   let objet = 0;
   let tissu = depart;
   let precedent = -1;
   let brouillage = 0;
-  let nettoyage = 0;
 
   const poserTissu = (i: number) => {
     if (i !== tissu) precedent = tissu;
@@ -76,27 +63,13 @@ export function nuancier(): void {
       });
     }
     pastilles.forEach((p, k) => p.setAttribute('aria-pressed', String(k === i)));
-    // Une fois le cercle déployé, l'ancien calque disparaît : sinon il se voit autour d'une silhouette
-    // différente (un panier à la place d'un canapé).
-    clearTimeout(nettoyage);
-    nettoyage = window.setTimeout(
-      () =>
-        calques.forEach((c) => {
-          if (!c.classList.contains('est-precedent')) return;
-          c.style.transition = 'none'; // disparition immédiate, sans refermer le cercle
-          c.classList.remove('est-precedent');
-          void c.offsetWidth;
-          c.style.transition = '';
-        }),
-      reduit() ? 0 : 1300,
-    );
     const t = d.tissus[i];
     titre.textContent = t.titre;
     phrase.textContent = t.phrase;
     lien.href = t.lien;
     lien.dataset.libelle = t.nom;
-    images.forEach((im, k) => (im.alt = k === i ? `${d.objets[objet].sous}, ${t.nom.toLowerCase()}` : ''));
-    vignettes.forEach((v, k) => (v.querySelector('img')!.src = vignetteDe(k, i)));
+    images.forEach((im, k) => (im.alt = k === i ? `${d.objets[objet].sous} habillé en ${t.nom.toLowerCase()}` : ''));
+    vignettes.forEach((v, k) => (v.querySelector('img')!.src = dessin(d.objets[k].id, t.remplissage)));
     document.documentElement.style.setProperty('--matiere', t.contour);
     document.documentElement.style.setProperty('--matiere-teinte', t.teinte);
     try {
@@ -130,13 +103,15 @@ export function nuancier(): void {
     const o = d.objets[i];
     vignettes.forEach((v, k) => v.setAttribute('aria-pressed', String(k === i)));
     images.forEach((im, k) => {
-      im.src = visuel(o.id, d.tissus[k]);
+      im.src = dessin(o.id, d.tissus[k].remplissage);
       im.alt = k === tissu ? `${o.sous} habillé en ${d.tissus[tissu].nom.toLowerCase()}` : '';
     });
     sous.textContent = o.sous;
     brouiller(o.nom.toUpperCase());
-    pastilles.forEach((p, k) => (p.hidden = !convient(i, k)));
-    if (!convient(i, tissu)) poserTissu(d.tissus.findIndex((x) => x.id === o.matieres[0]));
+    const canape = i === 0;
+    scene.classList.toggle('nuancier__scene--canape', canape);
+    if (aide) aide.hidden = !canape;
+    pose.querySelectorAll('.nuancier__coussin').forEach((c) => c.remove());
     if (!reduit())
       zone.animate(
         [
@@ -151,6 +126,21 @@ export function nuancier(): void {
 
   vignettes.forEach((v, i) => v.addEventListener('click', () => poserObjet(i)));
   pastilles.forEach((p, i) => p.addEventListener('click', () => i !== tissu && poserTissu(i)));
+
+  // Coussins qui tombent : sur le canapé seulement.
+  zone.addEventListener('click', () => {
+    if (objet !== 0 || reduit()) return;
+    const coussin = document.createElement('img');
+    coussin.className = 'nuancier__coussin';
+    coussin.alt = '';
+    coussin.src = dessin('coussin', d.tissus[Math.floor(Math.random() * d.tissus.length)].remplissage);
+    coussin.style.left = `${14 + Math.random() * 56}%`;
+    coussin.style.top = `${22 + Math.random() * 14}%`;
+    coussin.style.setProperty('--r', `${Math.round((Math.random() - 0.5) * 40)}deg`);
+    pose.append(coussin);
+    const tous = pose.querySelectorAll('.nuancier__coussin');
+    if (tous.length > MAX_COUSSINS) tous[0].remove();
+  });
 
   // Légère inclinaison sous la souris.
   const carte = section.querySelector<HTMLElement>('.nuancier__carte');
@@ -174,7 +164,6 @@ export function nuancier(): void {
   if (Number.isInteger(memoire) && memoire >= 0 && memoire < d.tissus.length && memoire !== depart) {
     calques.forEach((c) => (c.style.transition = 'none'));
     disques.forEach((c) => (c.style.transition = 'none'));
-    if (!convient(objet, memoire)) poserObjet(d.objets.findIndex((o) => o.matieres.includes(d.tissus[memoire].id)));
     poserTissu(memoire);
     precedent = -1;
     requestAnimationFrame(() => {

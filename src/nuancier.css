@@ -2,7 +2,7 @@
 
 .nuancier__carte {
   display: grid;
-  grid-template-columns: 196px minmax(0, 1fr) 84px;
+  grid-template-columns: 118px minmax(0, 1fr) 84px;
   min-height: 600px;
   background: var(--surface);
   border-radius: var(--rayon-petit);
@@ -10,11 +10,11 @@
 }
 
 .nuancier__objets {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-content: center;
-  gap: 6px 4px;
-  padding: 24px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px 0;
   border-right: 1px solid var(--bordure);
 }
 
@@ -22,8 +22,8 @@
   position: relative;
   display: grid;
   place-items: center;
-  height: 86px;
-  margin: 0;
+  height: 96px;
+  margin: 0 10px;
   border: 0;
   border-radius: 4px;
   background: transparent;
@@ -32,13 +32,14 @@
 }
 
 .nuancier__vignette[aria-pressed='true'] {
+  margin: 0 -14px 0 10px;
   background: #fff;
   box-shadow: 0 14px 30px -10px rgb(42 29 21 / 30%);
 }
 
 .nuancier__vignette img {
-  width: 76px;
-  height: 48px;
+  width: 84px;
+  height: 52px;
   object-fit: contain;
 }
 
@@ -141,6 +142,10 @@
   bottom: 20%;
 }
 
+.nuancier__scene--canape .nuancier__zone {
+  cursor: pointer;
+}
+
 .nuancier__pose {
   position: absolute;
   inset: 0;
@@ -157,6 +162,25 @@
   border-radius: 50%;
   background: radial-gradient(closest-side, rgb(42 29 21 / 30%), transparent);
   filter: blur(2px);
+}
+
+.nuancier__coussin {
+  position: absolute;
+  z-index: 5;
+  width: 22%;
+  height: 26%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 8px rgb(42 29 21 / 25%));
+  animation: nuancier-chute 1s cubic-bezier(0.35, 0, 0.3, 1) both;
+}
+
+@keyframes nuancier-chute {
+  0% { transform: translateY(-440px) rotate(-40deg); opacity: 0; }
+  10% { opacity: 1; }
+  58% { transform: translateY(0) rotate(var(--r)) scale(1.12, 0.84); }
+  74% { transform: translateY(-26px) rotate(var(--r)) scale(0.96, 1.04); }
+  88% { transform: translateY(0) rotate(var(--r)) scale(1.03, 0.97); }
+  100% { transform: translateY(0) rotate(var(--r)); }
 }
 
 .nuancier__texte {
@@ -226,6 +250,16 @@
   to { transform: scale(2.2); opacity: 0; }
 }
 
+.nuancier__aide {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--texte-doux);
+}
+
+html:not(.js) .nuancier__aide {
+  display: none;
+}
 
 @media (max-width: 759px) {
   .nuancier__carte {
@@ -233,7 +267,6 @@
     min-height: 0;
   }
   .nuancier__objets {
-    display: flex;
     flex-direction: row;
     justify-content: flex-start;
     overflow-x: auto;
@@ -291,4 +324,3 @@
     animation: none;
   }
 }
-
