@@ -7,7 +7,7 @@ pieces: [balcon-exterieur]
 matieres: [kente, terre-cuite]
 occasions: []
 image: balcon-lanternes-kente
-image_alt: "Balcon de ville au crépuscule : banc en acacia garni de coussins aux motifs kente jaunes, verts et rouges, petite table pliante en tranche de teck avec un chemin de table imprimé kente et une coupe en terre cuite remplie de citrons, deux lanternes solaires en rotin allumées, pot noir en terre cuite avec un palmier, cache-pot tressé noir avec une fougère, boule en terre cuite ajourée d’étoiles, tapis rond en jute et guirlande guinguette."
+image_alt: "Balcon de ville au crépuscule : banc en acacia garni de coussins aux motifs kente jaunes, verts et rouges, petite table en tranche de teck sur pieds en épingle avec un chemin de table imprimé kente et une coupe en terre cuite remplie de citrons, deux lanternes solaires en rotin allumées, pot noir en terre cuite sculpté avec un palmier, cache-pot tressé noir avec une fougère, boule en terre cuite ajourée d’étoiles, tapis rond en jute et guirlande guinguette."
 image_ia: true
 produits:
   - guirlande-guinguette
@@ -27,7 +27,7 @@ hotspots:
   - { produit: housses-coussin-imprime-kente-lot-2, x: 38, y: 48 }
   - { produit: coupe-terre-cuite-ronde, x: 57, y: 64 }
   - { produit: chemin-table-kente-lin, x: 64, y: 72 }
-  - { produit: table-appoint-tranche-teck, x: 53, y: 76 }
+  - { produit: table-appoint-tranche-teck, x: 50, y: 74 }
   - { produit: pot-terre-cuite-fait-main-noir, x: 23, y: 78 }
   - { produit: lanternes-solaires-rotin, x: 32, y: 83 }
   - { produit: panier-plante-tresse-rayures, x: 86, y: 84 }

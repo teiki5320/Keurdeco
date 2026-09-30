@@ -7,7 +7,7 @@ pieces: [entree]
 matieres: [perles, raphia-paniers, bois-sculpte]
 occasions: []
 image: entree-rideau-perles
-image_alt: "Entrée aux murs crème et au sol en tomettes : rideau de perles jaunes, rouges, bleues et ivoire dans l’embrasure d’une porte, trois miroirs soleil en rotin, patères rondes en chêne avec un chapeau de paille et un sac en toile, sellette taillée dans un tronc portant un vase noir garni de pampa et une guirlande de perles en bois, grand panier rayé à couvercle et tapis rond en jute."
+image_alt: "Entrée aux murs crème et au sol en tomettes : rideau de perles jaunes, rouges, bleues et ivoire dans l’embrasure d’une porte, trois miroirs soleil en rotin, patères en J en chêne avec un chapeau de paille et un sac en toile, sellette en bois massif torsadé portant un vase noir garni de pampa et une guirlande de perles en bois, grand panier rayé à couvercle et tapis rond en jute."
 image_ia: true
 produits:
   - rideau-perles-bambou-bois
@@ -22,7 +22,7 @@ produits:
 hotspots:
   - { produit: miroirs-rotin-soleil-lot-3, x: 20, y: 22 }
   - { produit: rideau-perles-bambou-bois, x: 53, y: 40 }
-  - { produit: pateres-chene-lot-4, x: 23, y: 43 }
+  - { produit: pateres-chene-lot-4, x: 24, y: 41 }
   - { produit: pampa-sechee-bouquet, x: 31, y: 50 }
   - { produit: vase-ceramique-noir-mat, x: 30, y: 65 }
   - { produit: guirlande-perles-bois, x: 32, y: 78 }
@@ -54,15 +54,15 @@ Trois **miroirs soleil en rotin**, accrochés en grappe à des hauteurs différe
 
 Placez le plus bas à hauteur de visage, les deux autres décalés au-dessus.
 
-## 3. Des patères rondes à portée de main
+## 3. Des patères en chêne à portée de main
 
-Une rangée de **patères en chêne** reçoit le chapeau, le sac en toile, l’écharpe. Rondes et sans vis apparente, elles restent jolies même vides. Comptez une patère par personne du foyer, plus une pour les invités.
+Une rangée de **patères en chêne** reçoit le chapeau, le sac en toile, l’écharpe. Courbées en J, en chêne huilé, elles restent jolies même vides. Comptez une patère par personne du foyer, plus une pour les invités.
 
-## 4. Une sellette en bois brut et ses perles
+## 4. Une sellette en bois torsadé et ses perles
 
 Au pied du mur, une **sellette taillée dans un tronc** sert de vide-poche en hauteur. Posez-y un **vase noir à rainures** garni d’un bouquet d’**herbes de pampa séchées**, et enroulez autour du vase une **guirlande de perles en bois** à pompons : elle répond au rideau, en version naturelle.
 
-Le bois brut, avec ses veines et ses creux, apporte la matière qui manque souvent aux entrées.
+Le bois massif, avec ses veines chaudes et sa forme torsadée, apporte la matière qui manque souvent aux entrées.
 
 ## 5. Un grand panier à couvercle pour tout cacher
 
@@ -72,4 +72,4 @@ Au sol, un **tapis rond en jute** marque le seuil et protège les tomettes.
 
 ## En résumé
 
-Un rideau de perles dans l’embrasure, trois miroirs soleil, des patères, une sellette en bois brut et un grand panier à couvercle : l’entrée accueille, range et annonce la couleur du reste de la maison.
+Un rideau de perles dans l’embrasure, trois miroirs soleil, des patères, une sellette en bois torsadé et un grand panier à couvercle : l’entrée accueille, range et annonce la couleur du reste de la maison.

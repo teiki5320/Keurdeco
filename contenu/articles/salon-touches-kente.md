@@ -7,7 +7,7 @@ pieces: [salon]
 matieres: [kente]
 occasions: []
 image: salon-touches-kente
-image_alt: "Salon clair : canapé en lin crème avec deux coussins beiges et un jeté en kente jaune, vert et rouge, table basse ronde en chêne clair couverte d’un chemin de table imprimé kente, bol en bois sculpté et livre sur les textiles africains, pouf tricoté moutarde, vase noir à rainures, lampadaire noir à abat-jour en lin, tapis en jute et bande de kente encadrée au mur."
+image_alt: "Salon clair : canapé en lin crème avec deux coussins beiges et un jeté en kente jaune, vert et rouge, petite table ronde blanche à tiroir et pieds clairs, couverte d’un chemin de table imprimé kente, bol en bois sculpté et livre « African Textiles », pouf tricoté moutarde, vase noir à rainures, lampadaire noir à abat-jour en lin, tapis en jute et bande de kente encadrée au mur."
 image_ia: true
 produits:
   - chemin-table-kente-lin
@@ -23,11 +23,11 @@ hotspots:
   - { produit: lampadaire-noir-abat-jour-lin, x: 86, y: 25 }
   - { produit: coussins-lin-beige-lot-2, x: 38, y: 53 }
   - { produit: vase-ceramique-noir-mat, x: 4, y: 62 }
-  - { produit: bol-manguier-sculpte, x: 45, y: 71 }
-  - { produit: livre-african-textiles, x: 60, y: 73 }
-  - { produit: chemin-table-kente-lin, x: 38, y: 75 }
+  - { produit: bol-manguier-sculpte, x: 46, y: 63 }
+  - { produit: livre-african-textiles, x: 57, y: 66 }
+  - { produit: chemin-table-kente-lin, x: 38, y: 80 }
   - { produit: pouf-tricot-moutarde, x: 17, y: 79 }
-  - { produit: table-basse-ronde-chene-clair, x: 52, y: 88 }
+  - { produit: table-basse-ronde-chene-clair, x: 52, y: 73 }
   - { produit: tapis-jute-alhambra, x: 86, y: 90 }
 epingles:
   - "Salon aux touches de kente"
@@ -52,9 +52,9 @@ C’est le geste le plus simple : une pièce de kente pliée en deux, posée sur
 
 > Bon à savoir : un kente tissé à la main est une pièce de valeur, traditionnellement portée lors des grandes occasions. Évitez le plein soleil et le lavage en machine ; un simple dépoussiérage suffit.
 
-## 3. Un chemin de table sur la table basse
+## 3. Un chemin de table sur une petite table ronde
 
-Pour répéter le motif sans acheter un second tissage, posez un **chemin de table imprimé kente** en travers d’une **table basse ronde** en bois clair. Il fait écho au jeté et délimite un petit plateau : un **bol en manguier sculpté**, un beau livre sur les textiles africains, rien de plus.
+Pour répéter le motif sans acheter un second tissage, posez un **chemin de table imprimé kente** en travers d’une **petite table ronde** blanche à pieds clairs. Il fait écho au jeté et délimite un petit plateau : un **bol en manguier sculpté**, un beau livre sur les textiles africains, rien de plus.
 
 Le bois sombre du bol calme les couleurs et rappelle une autre matière de la maison, le [bois sculpté](matiere-bois-sculpte.html).
 

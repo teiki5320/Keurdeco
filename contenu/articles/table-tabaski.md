@@ -7,7 +7,7 @@ pieces: [cuisine-salle-a-manger]
 matieres: [terre-cuite, raphia-paniers]
 occasions: [tabaski]
 image: table-tabaski
-image_alt: "Grande table en bois dressée pour la Tabaski dans une salle à manger aux murs ocre : plat à tajine en terre cuite au centre, assiettes en terre cuite jaunes, vertes et bleues sur des sets ronds tressés, petits bols de sauces et de dattes, carafe en argile, plateau tressé garni de pains, corbeille de fruits, deux lanternes en bois, chemin de table à motifs géométriques, chaises cannées et grande suspension en jute."
+image_alt: "Grande table en bois dressée pour la Tabaski dans une salle à manger aux murs ocre : plat à tajine en terre cuite au centre, cassolettes en terre cuite vernissées sur des sets ronds tressés, petits bols de sauces et de dattes, carafe en argile, plateau tressé garni de pains, corbeille tressée multicolore remplie de fruits, deux lanternes en bois, chemin de table à bandes rouges, vertes, jaunes et noires, chaises cannées et large suspension plate en jute."
 image_ia: true
 produits:
   - suspension-jute-alara-70
@@ -22,15 +22,15 @@ produits:
   - sets-table-jacinthe-lot-6
   - chemin-table-tribal-africain
 hotspots:
-  - { produit: suspension-jute-alara-70, x: 50, y: 10 }
+  - { produit: suspension-jute-alara-70, x: 50, y: 14 }
   - { produit: lanternes-bois-lot-10, x: 66, y: 31 }
   - { produit: tajine-terre-cuite-35, x: 50, y: 51 }
   - { produit: chaises-dossier-rotin-lot-2, x: 89, y: 56 }
   - { produit: carafe-argile-naturelle, x: 17, y: 60 }
   - { produit: bols-terre-cuite-lot-12, x: 52, y: 63 }
   - { produit: assiettes-terre-cuite-lot-6, x: 34, y: 68 }
-  - { produit: plateaux-tresses-lot-2, x: 63, y: 74 }
-  - { produit: corbeille-fruits-tressee, x: 84, y: 74 }
+  - { produit: plateaux-tresses-lot-2, x: 63, y: 70 }
+  - { produit: corbeille-fruits-tressee, x: 84, y: 68 }
   - { produit: sets-table-jacinthe-lot-6, x: 28, y: 76 }
   - { produit: chemin-table-tribal-africain, x: 50, y: 89 }
 epingles:
@@ -54,7 +54,7 @@ Autour de lui, disposez les accompagnements dans des plats plus bas : riz, légu
 
 ## 2. De la terre cuite, de toutes les couleurs
 
-Pour les assiettes, mélangez les couleurs plutôt que d’aligner un service uni : **assiettes en terre cuite** jaunes, vertes, bleues, rouille. La matière les relie entre elles, et chaque invité reconnaît la sienne.
+Pour les assiettes, choisissez des **cassolettes en terre cuite** vernissées : brun profond à l’intérieur, terre nue à l’extérieur. Un peu creuses, elles retiennent la sauce, et leur matière répond au plat principal.
 
 La [terre cuite](glossaire-terre-cuite.html) a aussi un avantage : elle supporte sans complexe une table bien remplie et des services qui s’enchaînent.
 
@@ -68,11 +68,11 @@ Ajoutez une **carafe en argile** : non émaillée, elle garde l’eau fraîche p
 
 Sous chaque assiette, un **set de table rond tressé** protège le bois et délimite les places. Le pain se présente sur un **plateau tressé**, les fruits dans une grande **corbeille ronde** : oranges, mangues, grenades font un dessert tout prêt et un décor à eux seuls.
 
-Au centre, un **chemin de table à motifs géométriques** noir, rouille et crème donne le rythme sans cacher le bois de la table.
+Au centre, un **chemin de table à motifs tribaux**, en bandes rouges, vertes, jaunes et noires, donne le rythme sans cacher le bois de la table.
 
 ## 5. Une lumière douce pour la soirée
 
-Le repas de fête dure. Quand le jour baisse, une grande **suspension en jute** au-dessus de la table diffuse une lumière chaude, et deux **lanternes en bois** garnies de bougies prennent le relais en bout de table.
+Le repas de fête dure. Quand le jour baisse, une large **suspension en jute**, plate comme une ombrelle, au-dessus de la table diffuse une lumière chaude, et deux **lanternes en bois** garnies de bougies prennent le relais en bout de table.
 
 Prévoyez assez d’assises : des **chaises à dossier canné**, légères, se déplacent facilement quand de nouveaux invités arrivent.
 

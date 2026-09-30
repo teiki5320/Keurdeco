@@ -7,7 +7,7 @@ pieces: [salon, chambre]
 matieres: [raphia-paniers, terre-cuite, wax, indigo]
 occasions: []
 image: studio-deco-africaine
-image_alt: "Petit studio lumineux : banquette en lin avec coussin à portrait de femme africaine, trois paniers tressés à motifs noirs au mur, étagères en pin avec trois petits vases aux tons de terre et de la pampa, table ronde aux pieds noirs croisés et deux chaises au dossier canné, plante dans un panier noir et naturel, paravent en bois clair, lit au couvre-lit bleu denim et tapis rond en jute."
+image_alt: "Petit studio lumineux : banquette en lin avec coussin à portrait de femme africaine, trois paniers tressés à motifs noirs au mur, étagères en pin avec trois petits vases aux tons de terre et de la pampa, table ronde aux pieds noirs croisés et deux chaises au dossier canné, plante dans un panier noir et naturel, paravent tressé en bois clair, lit au couvre-lit bleu denim et tapis rond en jute."
 image_ia: true
 produits:
   - assiettes-murales-tressees
@@ -56,7 +56,7 @@ Une **petite table ronde** pour deux, installée près de la fenêtre, crée un 
 
 ## 4. Séparer sans cloisonner
 
-Pour délimiter le coin nuit, un **paravent en bois** suffit. Il cache le lit pendant la journée, se replie en un instant et laisse passer la lumière. Sur le lit, un couvre-lit **indigo** répond aux motifs du salon.
+Pour délimiter le coin nuit, un **paravent** à panneaux tressés suffit. Il cache le lit pendant la journée, se replie en un instant et laisse passer la lumière. Sur le lit, un couvre-lit **indigo** répond aux motifs du salon.
 
 ## 5. Un tapis rond et une grande plante
 

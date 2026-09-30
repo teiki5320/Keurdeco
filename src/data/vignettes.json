@@ -19,8 +19,8 @@
   },
   "assiettes-terre-cuite-lot-6": {
     "article": "cuisine-terre-cuite-paniers",
-    "x": 61,
-    "y": 68,
+    "x": 56,
+    "y": 69,
     "cadre": 30
   },
   "awale-mancala-bois": {
@@ -43,8 +43,8 @@
   },
   "bol-manguier-sculpte": {
     "article": "salon-touches-kente",
-    "x": 45,
-    "y": 71,
+    "x": 46,
+    "y": 63,
     "cadre": 30
   },
   "bols-terre-cuite-lot-12": {
@@ -116,7 +116,7 @@
   "chemin-table-kente-lin": {
     "article": "salon-touches-kente",
     "x": 38,
-    "y": 75,
+    "y": 80,
     "cadre": 30
   },
   "chemin-table-terracotta-glands": {
@@ -355,8 +355,8 @@
   },
   "livre-african-textiles": {
     "article": "salon-touches-kente",
-    "x": 60,
-    "y": 73,
+    "x": 57,
+    "y": 66,
     "cadre": 30
   },
   "malles-osier-lot-2": {
@@ -416,7 +416,7 @@
   "panier-mural-tresse": {
     "article": "cuisine-terre-cuite-paniers",
     "x": 21,
-    "y": 34,
+    "y": 36,
     "cadre": 30
   },
   "panier-plante-tresse-rayures": {
@@ -488,7 +488,7 @@
   "plateaux-tresses-lot-2": {
     "article": "table-tabaski",
     "x": 63,
-    "y": 74,
+    "y": 70,
     "cadre": 30
   },
   "porte-noms-bois-lot-30": {
@@ -560,7 +560,7 @@
   "suspension-jute-alara-70": {
     "article": "table-tabaski",
     "x": 50,
-    "y": 10,
+    "y": 14,
     "cadre": 30
   },
   "suspension-jute-boheme": {
@@ -571,14 +571,14 @@
   },
   "table-appoint-tranche-teck": {
     "article": "balcon-lanternes-kente",
-    "x": 53,
-    "y": 76,
+    "x": 50,
+    "y": 74,
     "cadre": 30
   },
   "table-basse-ronde-chene-clair": {
     "article": "salon-touches-kente",
     "x": 52,
-    "y": 88,
+    "y": 73,
     "cadre": 30
   },
   "table-chevet-rotin": {
@@ -614,7 +614,7 @@
   "tabouret-teck-massif-42": {
     "article": "salle-de-bain-spa-africaine",
     "x": 58,
-    "y": 76,
+    "y": 72,
     "cadre": 30
   },
   "tajine-terre-cuite-35": {

@@ -7,7 +7,7 @@ pieces: [salle-de-bain]
 matieres: [terre-cuite, raphia-paniers, bois-sculpte]
 occasions: []
 image: salle-de-bain-spa-africaine
-image_alt: "Salle de bain esprit spa aux murs sable et au sol en tomettes : échelle en bambou avec fouta, panier à linge en jacinthe d’eau, vase en céramique à deux anses avec herbes de pampa, tabouret en teck portant un distributeur de savon terracotta et du savon noir, baignoire îlot, tapis de bain crème tressé et paniers en jonc de mer sur l’étagère."
+image_alt: "Salle de bain esprit spa aux murs sable et au sol en tomettes : échelle en bambou avec fouta, panier à linge en jacinthe d’eau, vase en céramique vieillie à deux anses avec herbes de pampa, tabouret rustique en teck à quatre pieds portant un distributeur de savon terracotta et du savon noir, baignoire îlot, tapis de bain crème tressé et paniers en jonc de mer sur l’étagère."
 image_ia: true
 produits:
   - distributeur-savon-terracotta
@@ -29,7 +29,7 @@ hotspots:
   - { produit: vase-terre-cuite-terracotta, x: 18, y: 81 }
   - { produit: distributeur-savon-terracotta, x: 56, y: 57 }
   - { produit: savon-noir-dudu-osun-lot-6, x: 60, y: 59 }
-  - { produit: tabouret-teck-massif-42, x: 58, y: 76 }
+  - { produit: tabouret-teck-massif-42, x: 58, y: 72 }
   - { produit: tapis-bain-coton-tresse-creme, x: 77, y: 91, cadre: 22 }
 epingles:
   - "Salle de bain esprit spa africain"

@@ -7,7 +7,7 @@ pieces: [cuisine-salle-a-manger]
 matieres: [terre-cuite, raphia-paniers]
 occasions: []
 image: cuisine-terre-cuite-paniers
-image_alt: "Cuisine rustique aux murs chaulés : grande table en bois avec chemin de table terracotta à glands, planche en olivier et pain, petites coupelles en terre cuite, bols empilés, carafe en argile, corbeille tressée noire et blanche remplie d’agrumes, suspension en jute à franges, panier mural garni de torchons, pot en terre cuite sur le plan de travail et tapis de couloir tissé."
+image_alt: "Cuisine rustique aux murs chaulés : grande table en bois avec chemin de table terracotta à glands, planche en olivier et pain, cassolettes et petits bols en terre cuite, carafe en argile, corbeille tressée aux rayures multicolores remplie d’agrumes, suspension en jute à franges, panier mural garni de torchons, pot en terre cuite sur le plan de travail et tapis de couloir tissé."
 image_ia: true
 produits:
   - planche-olivier-39
@@ -22,11 +22,11 @@ produits:
   - tapis-couloir-kilim-chindi
 hotspots:
   - { produit: suspension-jute-boheme, x: 51, y: 17 }
-  - { produit: panier-mural-tresse, x: 21, y: 34 }
+  - { produit: panier-mural-tresse, x: 21, y: 36 }
   - { produit: corbeille-fruits-tressee, x: 50, y: 52 }
   - { produit: carafe-argile-naturelle, x: 61, y: 55 }
   - { produit: bols-terre-cuite-lot-12, x: 54, y: 58 }
-  - { produit: assiettes-terre-cuite-lot-6, x: 61, y: 68 }
+  - { produit: assiettes-terre-cuite-lot-6, x: 56, y: 69 }
   - { produit: planche-olivier-39, x: 40, y: 69 }
   - { produit: chemin-table-terracotta-glands, x: 52, y: 82 }
   - { produit: pot-terre-cuite-couvercle, x: 93, y: 45 }
@@ -44,7 +44,7 @@ En plein hiver, la cuisine devient le cœur de la maison : on y mijote, on y tra
 
 ## 1. La terre cuite à table
 
-Remplacez la vaisselle blanche du quotidien par des **assiettes en terre cuite colorées** et de **petits bols** assortis. Les bols servent à tout : sauces, arachides grillées, olives, épices pour un tiéboudienne ou un mafé. Leur couleur chaude met en valeur les plats mijotés et donne tout de suite un air de repas partagé.
+Remplacez la vaisselle blanche du quotidien par des **assiettes creuses en terre cuite** vernissées et de **petits bols** assortis. Les bols servent à tout : sauces, arachides grillées, olives, épices pour un tiéboudienne ou un mafé. Leur couleur chaude met en valeur les plats mijotés et donne tout de suite un air de repas partagé.
 
 ## 2. Une carafe en argile, comme un canari
 
