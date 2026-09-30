@@ -16,7 +16,9 @@ const SORTIE = resolve(RACINE, 'public/images/nuancier');
 const { dessins } = JSON.parse(readFileSync(resolve(RACINE, 'src/data/nuancier.json'), 'utf8')) as { dessins: Record<string, string> };
 
 /** Matières en photo et objets qu'elles habillent (les mêmes que dans build/essayage.ts). */
-const MEUBLES = ['canape', 'fauteuil', 'pouf', 'coussin', 'lampe'];
+const MEUBLES = ['canape', 'fauteuil', 'coussin', 'lampe'];
+/** Objets d'une seule matière, en photo quand assets/nuancier/<objet>-<matière>.jpg existe. */
+const OBJETS_MATIERE: Record<string, string> = { jarre: 'terre-cuite', tabouret: 'bois-sculpte', calebasse: 'perles', panier: 'raphia-paniers' };
 const HABILLAGES: Record<string, string[]> = {
   wax: MEUBLES,
   bogolan: MEUBLES,
@@ -67,7 +69,23 @@ async function meublesPhoto(objet: string, noms: string[]): Promise<void> {
   // Fond ou ombre : clair et peu coloré sur TOUTES les photos (le tissu est coloré sur au moins l'une),
   // et relié aux bords de l'image (les motifs clairs à l'intérieur du tissu ne sont pas touchés).
   const candidat = new Uint8Array(n);
-  for (let i = 0; i < n; i++) candidat[i] = images.every(({ data }) => lum(data, i) > 100 && chroma(data, i) < 70) ? 1 : 0;
+  if (images.length > 1) {
+    for (let i = 0; i < n; i++) candidat[i] = images.every(({ data }) => lum(data, i) > 100 && chroma(data, i) < 70) ? 1 : 0;
+  } else {
+    // Une seule photo (objet d'une seule matière) : est « fond ou ombre » ce qui a la teinte du fond de sa
+    // ligne, en plus ou moins clair (rapports R/G/B voisins) ; la paille, la terre ou le bois n'ont pas cette teinte.
+    const d = images[0].data;
+    const teinteLigne = Array.from({ length: h }, (_, y) => {
+      const v: number[][] = [[], [], []];
+      for (let x = 0; x < l * 0.05; x++) for (const i of [y * l + x, y * l + l - 1 - x]) for (let c = 0; c < 3; c++) v[c].push(d[i * 3 + c]);
+      return v.map((t) => t.sort((a, b) => a - b)[Math.floor(t.length / 2)]);
+    });
+    for (let i = 0; i < n; i++) {
+      const f = teinteLigne[Math.floor(i / l)];
+      const r = [0, 1, 2].map((c) => d[i * 3 + c] / Math.max(1, f[c]));
+      candidat[i] = Math.max(...r) - Math.min(...r) < 0.13 && (r[0] + r[1] + r[2]) / 3 > 0.45 ? 1 : 0;
+    }
+  }
   const fond = new Uint8Array(n);
   const file = new Int32Array(n);
   let debut = 0;
@@ -131,7 +149,8 @@ if (import.meta.main) {
   for (const [nom, objets] of Object.entries(HABILLAGES)) if (existsSync(resolve(SOURCES, `${nom}.jpg`))) await tissu(nom, objets);
   for (const objet of MEUBLES) {
     const noms = ['wax', 'bogolan', 'kente', 'indigo'].filter((t) => existsSync(resolve(SOURCES, `${objet}-${t}.jpg`)));
-    if (noms.length > 1) await meublesPhoto(objet, noms);
+    if (noms.length) await meublesPhoto(objet, noms);
   }
+  for (const [objet, matiere] of Object.entries(OBJETS_MATIERE)) if (existsSync(resolve(SOURCES, `${objet}-${matiere}.jpg`))) await meublesPhoto(objet, [matiere]);
   console.log('Images du nuancier générées dans public/images/nuancier/.');
 }

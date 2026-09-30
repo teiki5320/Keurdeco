@@ -1,5 +1,5 @@
 /**
- * « Essayez le tissu » (accueil) : le nuancier. On choisit un objet (canapé, fauteuil, pouf,
+ * « Essayez le tissu » (accueil) : le nuancier. On choisit un objet (canapé, fauteuil,
  * coussin, suspension, jarre, tabouret, calebasse, panier) à gauche et, à droite, les matières qui lui
  * conviennent (les tissus pour les meubles, sa matière pour chaque objet) ; elle se propage en cercle.
  * Le canapé est une vraie photo (même canapé, un tissu par image). Rendu statique ici (lisible sans JavaScript),
@@ -24,7 +24,6 @@ const TISSUS_AMEUBLEMENT = ['wax', 'bogolan', 'kente', 'indigo'];
 export const OBJETS = [
   { id: 'canape', nom: 'Saly', sous: 'Canapé deux places', matieres: TISSUS_AMEUBLEMENT },
   { id: 'fauteuil', nom: 'Gorée', sous: 'Fauteuil capitonné', matieres: TISSUS_AMEUBLEMENT },
-  { id: 'pouf', nom: 'Joal', sous: 'Pouf rond', matieres: TISSUS_AMEUBLEMENT },
   { id: 'coussin', nom: 'Ngor', sous: 'Coussin carré', matieres: TISSUS_AMEUBLEMENT },
   { id: 'lampe', nom: 'Casamance', sous: 'Suspension', matieres: TISSUS_AMEUBLEMENT },
   { id: 'jarre', nom: 'Mbour', sous: 'Jarre en terre cuite', matieres: ['terre-cuite'] },
