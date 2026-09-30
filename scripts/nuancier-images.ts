@@ -2,9 +2,9 @@
 //   une photo de matière vue à plat (assets/nuancier/<matière>.jpg, créée par IA : wax, bogolan, kente,
 //   indigo, terre cuite, bois sculpté, perles, raphia) posée sur les objets dessinés qu'elle habille
 //   (src/data/nuancier.json), avec un dégradé d'ombre pour le volume → public/images/nuancier/<matière>-<objet>.webp
-// Exception : le canapé est une vraie photo (assets/nuancier/canape-<tissu>.jpg, même canapé retouché par IA
-// pour chaque tissu, cadrage identique) détourée du fond crème, ombre au sol conservée
-// → public/images/nuancier/<tissu>-canape.webp.
+// Exception : un meuble peut être une vraie photo (assets/nuancier/<objet>-<tissu>.jpg, même meuble retouché
+// par IA pour chaque tissu, cadrage identique) détourée du fond crème, ombre au sol conservée
+// → public/images/nuancier/<tissu>-<objet>.webp (canapé et fauteuil pour l'instant).
 // Usage : npm run nuancier-images (à relancer quand on ajoute une photo dans assets/nuancier).
 import { existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -40,15 +40,15 @@ function formesTissu(dessin: string): string {
     .replace(/<(path|rect|circle|ellipse)\b[^>]*\b(fill|stroke)="[^"]*"[^>]*>(<\/\1>)?/g, '');
 }
 
-/** Cadre commun des photos du canapé (même zone pour les 4 tissus : les transitions restent alignées). */
-const CADRE_CANAPE = { left: 0, top: 0.1, width: 1, height: 0.86 };
+/** Cadre commun des photos d'un meuble (même zone pour les 4 tissus : les transitions restent alignées). */
+const CADRE_PHOTO = { left: 0, top: 0.05, width: 1, height: 0.93 };
 
-/** Photo du canapé : fond crème retiré (relié aux bords), l'ombre au sol devient une ombre transparente. */
-async function canapePhoto(nom: string): Promise<void> {
-  const source = sharp(resolve(SOURCES, `canape-${nom}.jpg`));
+/** Photo d'un meuble : fond crème retiré (relié aux bords), l'ombre au sol devient une ombre transparente. */
+async function meublePhoto(nom: string, objet: string): Promise<void> {
+  const source = sharp(resolve(SOURCES, `${objet}-${nom}.jpg`));
   const { width = 0, height = 0 } = await source.metadata();
-  const zone = { left: Math.round(CADRE_CANAPE.left * width), top: Math.round(CADRE_CANAPE.top * height), width: Math.round(CADRE_CANAPE.width * width), height: Math.round(CADRE_CANAPE.height * height) };
-  const { data, info } = await sharp(resolve(SOURCES, `canape-${nom}.jpg`)).extract(zone).resize(1200).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const zone = { left: Math.round(CADRE_PHOTO.left * width), top: Math.round(CADRE_PHOTO.top * height), width: Math.round(CADRE_PHOTO.width * width), height: Math.round(CADRE_PHOTO.height * height) };
+  const { data, info } = await sharp(resolve(SOURCES, `${objet}-${nom}.jpg`)).extract(zone).resize(1200).removeAlpha().raw().toBuffer({ resolveWithObject: true });
   const l = info.width;
   const h = info.height;
   const n = l * h;
@@ -82,7 +82,7 @@ async function canapePhoto(nom: string): Promise<void> {
     for (let c = 0; c < 3; c++) rgba[i * 4 + c] = a > 0 ? Math.round(Math.min(255, Math.max(0, (data[i * 3 + c] - fond[c] * (1 - a)) / a))) : 0;
     rgba[i * 4 + 3] = Math.round(a * 255);
   }
-  await sharp(rgba, { raw: { width: l, height: h, channels: 4 } }).webp({ quality: 84, alphaQuality: 90 }).toFile(resolve(SORTIE, `${nom}-canape.webp`));
+  await sharp(rgba, { raw: { width: l, height: h, channels: 4 } }).webp({ quality: 84, alphaQuality: 90 }).toFile(resolve(SORTIE, `${nom}-${objet}.webp`));
 }
 
 async function tissu(nom: string, objets: string[]): Promise<void> {
@@ -90,8 +90,8 @@ async function tissu(nom: string, objets: string[]): Promise<void> {
   const texture = (await sharp(resolve(SOURCES, `${nom}.jpg`)).resize(512, 512).jpeg({ quality: 82 }).toBuffer()).toString('base64');
   const motif = `<pattern id="t" width="${maille}" height="${maille}" patternUnits="userSpaceOnUse"><image href="data:image/jpeg;base64,${texture}" width="${maille}" height="${maille}" preserveAspectRatio="none"/></pattern>`;
   for (const objet of objets) {
-    if (objet === 'canape' && existsSync(resolve(SOURCES, `canape-${nom}.jpg`))) {
-      await canapePhoto(nom);
+    if (existsSync(resolve(SOURCES, `${objet}-${nom}.jpg`))) {
+      await meublePhoto(nom, objet);
       continue;
     }
     const dessin = dessins[objet];
