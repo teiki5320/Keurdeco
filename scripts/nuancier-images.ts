@@ -2,6 +2,9 @@
 //   une photo de matière vue à plat (assets/nuancier/<matière>.jpg, créée par IA : wax, bogolan, kente,
 //   indigo, terre cuite, bois sculpté, perles, raphia) posée sur les objets dessinés qu'elle habille
 //   (src/data/nuancier.json), avec un dégradé d'ombre pour le volume → public/images/nuancier/<matière>-<objet>.webp
+// Exception : le canapé est une vraie photo (assets/nuancier/canape-<tissu>.jpg, même canapé retouché par IA
+// pour chaque tissu, cadrage identique) détourée du fond crème, ombre au sol conservée
+// → public/images/nuancier/<tissu>-canape.webp.
 // Usage : npm run nuancier-images (à relancer quand on ajoute une photo dans assets/nuancier).
 import { existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -37,11 +40,60 @@ function formesTissu(dessin: string): string {
     .replace(/<(path|rect|circle|ellipse)\b[^>]*\b(fill|stroke)="[^"]*"[^>]*>(<\/\1>)?/g, '');
 }
 
+/** Cadre commun des photos du canapé (même zone pour les 4 tissus : les transitions restent alignées). */
+const CADRE_CANAPE = { left: 0, top: 0.1, width: 1, height: 0.86 };
+
+/** Photo du canapé : fond crème retiré (relié aux bords), l'ombre au sol devient une ombre transparente. */
+async function canapePhoto(nom: string): Promise<void> {
+  const source = sharp(resolve(SOURCES, `canape-${nom}.jpg`));
+  const { width = 0, height = 0 } = await source.metadata();
+  const zone = { left: Math.round(CADRE_CANAPE.left * width), top: Math.round(CADRE_CANAPE.top * height), width: Math.round(CADRE_CANAPE.width * width), height: Math.round(CADRE_CANAPE.height * height) };
+  const { data, info } = await sharp(resolve(SOURCES, `canape-${nom}.jpg`)).extract(zone).resize(1200).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const l = info.width;
+  const h = info.height;
+  const n = l * h;
+  // Couleur du fond : moyenne d'un coin.
+  const fond = [0, 1, 2].map((c) => data[(5 * l + 5) * 3 + c]);
+  const ecart = (i: number) => Math.max(...[0, 1, 2].map((c) => Math.abs(data[i * 3 + c] - fond[c])));
+  const dehors = new Uint8Array(n);
+  const file = new Int32Array(n);
+  let debut = 0;
+  let fin = 0;
+  const ajouter = (i: number) => {
+    if (!dehors[i] && ecart(i) < 70) {
+      dehors[i] = 1;
+      file[fin++] = i;
+    }
+  };
+  for (let x = 0; x < l; x++) ajouter(x), ajouter((h - 1) * l + x);
+  for (let y = 0; y < h; y++) ajouter(y * l), ajouter(y * l + l - 1);
+  while (debut < fin) {
+    const i = file[debut++];
+    const x = i % l;
+    if (x) ajouter(i - 1);
+    if (x < l - 1) ajouter(i + 1);
+    if (i >= l) ajouter(i - l);
+    if (i < n - l) ajouter(i + l);
+  }
+  const rgba = Buffer.alloc(n * 4);
+  for (let i = 0; i < n; i++) {
+    // Hors du canapé : plus le pixel s'éloigne du fond, plus il est opaque (ombre douce), couleur « dé-mélangée ».
+    const a = dehors[i] ? Math.min(1, Math.max(0, (ecart(i) - 4) / 66)) : 1;
+    for (let c = 0; c < 3; c++) rgba[i * 4 + c] = a > 0 ? Math.round(Math.min(255, Math.max(0, (data[i * 3 + c] - fond[c] * (1 - a)) / a))) : 0;
+    rgba[i * 4 + 3] = Math.round(a * 255);
+  }
+  await sharp(rgba, { raw: { width: l, height: h, channels: 4 } }).webp({ quality: 84, alphaQuality: 90 }).toFile(resolve(SORTIE, `${nom}-canape.webp`));
+}
+
 async function tissu(nom: string, objets: string[]): Promise<void> {
   const maille = MAILLE[nom] ?? 96;
   const texture = (await sharp(resolve(SOURCES, `${nom}.jpg`)).resize(512, 512).jpeg({ quality: 82 }).toBuffer()).toString('base64');
   const motif = `<pattern id="t" width="${maille}" height="${maille}" patternUnits="userSpaceOnUse"><image href="data:image/jpeg;base64,${texture}" width="${maille}" height="${maille}" preserveAspectRatio="none"/></pattern>`;
   for (const objet of objets) {
+    if (objet === 'canape' && existsSync(resolve(SOURCES, `canape-${nom}.jpg`))) {
+      await canapePhoto(nom);
+      continue;
+    }
     const dessin = dessins[objet];
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="800" height="480"><defs>${motif}${LUMIERE}</defs><g fill="url(#t)">${dessin}</g><g fill="url(#lum)">${formesTissu(dessin)}</g></svg>`;
     await sharp(Buffer.from(svg)).webp({ quality: 82, alphaQuality: 100 }).toFile(resolve(SORTIE, `${nom}-${objet}.webp`));

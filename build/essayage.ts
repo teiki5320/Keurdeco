@@ -2,7 +2,7 @@
  * « Essayez le tissu » (accueil) : le nuancier. On choisit un objet (canapé, fauteuil, pouf,
  * coussin, suspension, jarre, tabouret, calebasse, panier) à gauche et, à droite, les matières qui lui
  * conviennent (les tissus pour les meubles, sa matière pour chaque objet) ; elle se propage en cercle.
- * Sur le canapé, un clic fait tomber des coussins. Rendu statique ici (lisible sans JavaScript),
+ * Le canapé est une vraie photo (même canapé, un tissu par image). Rendu statique ici (lisible sans JavaScript),
  * animé par src/nuancier.ts. Les dessins des objets sont dans src/data/nuancier.json, les motifs dans build/motifs.ts.
  */
 import { readFileSync } from 'node:fs';
@@ -118,7 +118,7 @@ export function essayage(): string {
     </div>
     <div class="nuancier__carte" data-reveal>
       <div class="nuancier__objets" role="group" aria-label="Choisir un objet">${vignettes}</div>
-      <div class="nuancier__scene nuancier__scene--canape" data-nuancier-scene>
+      <div class="nuancier__scene" data-nuancier-scene>
         <p class="nuancier__nom" data-nuancier-nom aria-hidden="true">${o.nom.toUpperCase()}</p><p class="visuellement-cache" data-nuancier-annonce aria-live="polite">${o.nom}</p>
         <p class="nuancier__sous" data-nuancier-sous>${o.sous}</p>
         <div class="nuancier__disques" aria-hidden="true">${disques}</div>
@@ -133,7 +133,6 @@ export function essayage(): string {
       </div>
       <div class="nuancier__pastilles" role="group" aria-label="Choisir une matière">${pastilles}</div>
     </div>
-    <p class="nuancier__aide" data-nuancier-aide>Cliquez sur le canapé pour y faire tomber des coussins.</p>
   </div>
   <script type="application/json" data-nuancier-donnees>${donnees}</script>
 </section>`;

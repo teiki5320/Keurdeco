@@ -3,7 +3,6 @@
  * - la matière choisie se propage en cercle sur l'objet et le disque ; elle est mémorisée
  *   (localStorage) et exposée au site par --matiere et --matiere-teinte ;
  * - changer d'objet le fait rebondir et brouille son nom lettre par lettre ;
- * - sur le canapé seulement, un clic fait tomber un coussin (8 au plus) ;
  * - l'objet s'incline légèrement sous la souris.
  * « Réduire les animations » garde les changements, sans mouvement.
  */
@@ -30,7 +29,6 @@ interface Donnees {
 const reduit = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const MEMOIRE = 'kd-matiere';
 const LETTRES = 'ABCDEFGHIJKLMNOPRSTUVWXYZÉ';
-const MAX_COUSSINS = 8;
 
 export function nuancier(): void {
   const section = document.querySelector<HTMLElement>('[data-nuancier]');
@@ -50,8 +48,6 @@ export function nuancier(): void {
   const titre = $<HTMLElement>('[data-nuancier-titre]');
   const phrase = $<HTMLElement>('[data-nuancier-phrase]');
   const lien = $<HTMLAnchorElement>('[data-nuancier-lien]');
-  const aide = section.querySelector<HTMLElement>('[data-nuancier-aide]');
-  const scene = $<HTMLElement>('[data-nuancier-scene]');
   const zone = $<HTMLElement>('[data-nuancier-zone]');
   const pose = $<HTMLElement>('[data-nuancier-pose]');
   const depart = Number(section.dataset.depart ?? 0);
@@ -141,10 +137,6 @@ export function nuancier(): void {
     brouiller(o.nom.toUpperCase());
     pastilles.forEach((p, k) => (p.hidden = !convient(i, k)));
     if (!convient(i, tissu)) poserTissu(d.tissus.findIndex((x) => x.id === o.matieres[0]));
-    const canape = i === 0;
-    scene.classList.toggle('nuancier__scene--canape', canape);
-    if (aide) aide.hidden = !canape;
-    pose.querySelectorAll('.nuancier__coussin').forEach((c) => c.remove());
     if (!reduit())
       zone.animate(
         [
@@ -159,22 +151,6 @@ export function nuancier(): void {
 
   vignettes.forEach((v, i) => v.addEventListener('click', () => poserObjet(i)));
   pastilles.forEach((p, i) => p.addEventListener('click', () => i !== tissu && poserTissu(i)));
-
-  // Coussins qui tombent : sur le canapé seulement.
-  zone.addEventListener('click', () => {
-    if (objet !== 0 || reduit()) return;
-    const coussin = document.createElement('img');
-    coussin.className = 'nuancier__coussin';
-    coussin.alt = '';
-    const tissus = d.tissus.filter((t) => d.objets[3].matieres.includes(t.id));
-    coussin.src = visuel('coussin', tissus[Math.floor(Math.random() * tissus.length)]);
-    coussin.style.left = `${14 + Math.random() * 56}%`;
-    coussin.style.top = `${22 + Math.random() * 14}%`;
-    coussin.style.setProperty('--r', `${Math.round((Math.random() - 0.5) * 40)}deg`);
-    pose.append(coussin);
-    const tous = pose.querySelectorAll('.nuancier__coussin');
-    if (tous.length > MAX_COUSSINS) tous[0].remove();
-  });
 
   // Légère inclinaison sous la souris.
   const carte = section.querySelector<HTMLElement>('.nuancier__carte');
