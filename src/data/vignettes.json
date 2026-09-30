@@ -305,6 +305,12 @@
     "y": 70,
     "cadre": 30
   },
+  "housses-coussin-imprime-kente-lot-2": {
+    "article": "balcon-lanternes-kente",
+    "x": 38,
+    "y": 48,
+    "cadre": 30
+  },
   "jarre-terre-cuite-toscane": {
     "article": "balcon-boheme-africain",
     "x": 19,
@@ -513,6 +519,12 @@
     "article": "salon-touches-kente",
     "x": 17,
     "y": 79,
+    "cadre": 30
+  },
+  "rideau-perles-bambou-bois": {
+    "article": "entree-rideau-perles",
+    "x": 53,
+    "y": 40,
     "cadre": 30
   },
   "sapin-artificiel-180": {

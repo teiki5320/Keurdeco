@@ -12,6 +12,7 @@ image_ia: true
 produits:
   - guirlande-guinguette
   - banc-acacia-jardin
+  - housses-coussin-imprime-kente-lot-2
   - coupe-terre-cuite-ronde
   - chemin-table-kente-lin
   - table-appoint-tranche-teck
@@ -23,6 +24,7 @@ produits:
 hotspots:
   - { produit: guirlande-guinguette, x: 30, y: 16 }
   - { produit: banc-acacia-jardin, x: 56, y: 42 }
+  - { produit: housses-coussin-imprime-kente-lot-2, x: 38, y: 48 }
   - { produit: coupe-terre-cuite-ronde, x: 57, y: 64 }
   - { produit: chemin-table-kente-lin, x: 64, y: 72 }
   - { produit: table-appoint-tranche-teck, x: 53, y: 76 }

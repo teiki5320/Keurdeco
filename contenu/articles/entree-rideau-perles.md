@@ -10,6 +10,7 @@ image: entree-rideau-perles
 image_alt: "Entrée aux murs crème et au sol en tomettes : rideau de perles jaunes, rouges, bleues et ivoire dans l’embrasure d’une porte, trois miroirs soleil en rotin, patères rondes en chêne avec un chapeau de paille et un sac en toile, sellette taillée dans un tronc portant un vase noir garni de pampa et une guirlande de perles en bois, grand panier rayé à couvercle et tapis rond en jute."
 image_ia: true
 produits:
+  - rideau-perles-bambou-bois
   - miroirs-rotin-soleil-lot-3
   - pateres-chene-lot-4
   - pampa-sechee-bouquet
@@ -20,6 +21,7 @@ produits:
   - tapis-rond-jute-lurex-80
 hotspots:
   - { produit: miroirs-rotin-soleil-lot-3, x: 20, y: 22 }
+  - { produit: rideau-perles-bambou-bois, x: 53, y: 40 }
   - { produit: pateres-chene-lot-4, x: 23, y: 43 }
   - { produit: pampa-sechee-bouquet, x: 31, y: 50 }
   - { produit: vase-ceramique-noir-mat, x: 30, y: 65 }

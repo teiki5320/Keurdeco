@@ -2753,5 +2753,45 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-29"
+  },
+  {
+    "id": "rideau-perles-bambou-bois",
+    "asin": "B0CXS6HVKJ",
+    "nom": "Rideau de porte en perles de bois et bambou, perles multicolores, 90 × 200 cm",
+    "type_objet": "rideau",
+    "matieres": [
+      "perles"
+    ],
+    "couleurs": [
+      "naturel",
+      "multicolore"
+    ],
+    "pieces": [
+      "entree",
+      "salon",
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-30"
+  },
+  {
+    "id": "housses-coussin-imprime-kente-lot-2",
+    "asin": "B0CL1V618Q",
+    "nom": "Housses de coussin à imprimé kente rouge, vert et jaune, 60 × 60 cm, lot de 2",
+    "type_objet": "coussin",
+    "matieres": [
+      "kente"
+    ],
+    "couleurs": [
+      "jaune",
+      "rouge",
+      "vert"
+    ],
+    "pieces": [
+      "salon",
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-09-30"
   }
 ]
