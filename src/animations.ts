@@ -139,20 +139,15 @@ function transitions(): void {
   // Retour arrière (cache du navigateur) : pas de rideau resté fermé.
   window.addEventListener('pageshow', (e) => {
     if (e.persisted) poser('', true);
-    memoire.ecrire('kd-carte', null);
+    document.querySelectorAll('style[data-transition]').forEach((s) => s.remove());
     // Retour sur la page : on retire les noms de transition posés au clic (ils doivent rester uniques).
     document.querySelectorAll<HTMLElement>('[style*="view-transition-name"]').forEach((el) => el.style.removeProperty('view-transition-name'));
   });
 
-  // Transition animée du navigateur entre deux pages : seulement d'une carte d'article vers son article.
-  // Pour tous les autres liens (tuiles, menus, retour arrière), la page suivante s'affiche tout de suite.
-  window.addEventListener('pageswap', (e) => {
-    if (!memoire.lire('kd-carte')) (e as Event & { viewTransition?: { skipTransition(): void } | null }).viewTransition?.skipTransition();
-  });
-
-  // Au survol ou au toucher d'un lien interne, la page visée est demandée d'avance : elle s'ouvre sans attente au clic.
+  // Au survol (souris) ou au toucher d'un lien interne, la page visée est demandée d'avance : elle s'ouvre sans attente au clic.
   const demandees = new Set<string>();
   const precharger = (e: Event) => {
+    if (e.type === 'pointerover' && (e as PointerEvent).pointerType !== 'mouse') return;
     const lien = (e.target as HTMLElement).closest?.('a');
     if (!lien || lien.target) return;
     const url = new URL(lien.href, location.href);
@@ -173,7 +168,11 @@ function transitions(): void {
     if (url.pathname === location.pathname && url.hash) return; // ancre dans la page
     // Carte d'article : l'image s'agrandit jusqu'à la couverture de l'article (transition native du navigateur).
     if (lien.matches('.carte-article, .une') && vueTransitionPossible()) {
-      memoire.ecrire('kd-carte', '1');
+      // La transition entre pages n'existe que si la page de départ la demande aussi (l'article la demande déjà).
+      const regle = document.createElement('style');
+      regle.dataset.transition = '';
+      regle.textContent = '@view-transition{navigation:auto}';
+      document.head.append(regle);
       lien.querySelector<HTMLElement>('img')?.style.setProperty('view-transition-name', 'couverture');
       lien.querySelector<HTMLElement>('.carte-article__titre, .une__titre')?.style.setProperty('view-transition-name', 'titre-article');
       return; // navigation normale : le navigateur anime le passage d'une page à l'autre

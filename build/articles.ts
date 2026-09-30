@@ -401,6 +401,7 @@ export function sourcePageArticle(a: Article, publies: Article[], produits = ind
     <meta name="image-partage" content="${echapper(a.image)}" />
     <title>${echapper(a.titre)} · ${NOM_SITE}</title>
     <!--#head-->
+    <style>@view-transition{navigation:auto}</style>
     ${donneesStructurees(a, produits)}
   </head>
   <body>

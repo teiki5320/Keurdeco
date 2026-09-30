@@ -1404,8 +1404,11 @@ main {
   transition: filter 0.4s ease;
 }
 
-.tuiles--matiere li:hover {
-  filter: drop-shadow(0 20px 22px rgb(42 29 21 / 22%));
+/* Effets de survol réservés à la souris : sur un écran tactile, ils obligeaient à toucher deux fois. */
+@media (hover: hover) and (pointer: fine) {
+  .tuiles--matiere li:hover {
+    filter: drop-shadow(0 20px 22px rgb(42 29 21 / 22%));
+  }
 }
 
 .tuiles--matiere li:nth-child(odd) .tuile {
@@ -1427,9 +1430,11 @@ main {
   transform: rotate(var(--tourne, 0deg)) rotateX(var(--rx)) rotateY(var(--ry));
 }
 
-.tuiles--matiere .tuile:hover {
-  transform: translateY(-10px) rotate(calc(var(--tourne, 0deg) * -2)) rotateX(var(--rx)) rotateY(var(--ry));
-  box-shadow: none;
+@media (hover: hover) and (pointer: fine) {
+  .tuiles--matiere .tuile:hover {
+    transform: translateY(-10px) rotate(calc(var(--tourne, 0deg) * -2)) rotateX(var(--rx)) rotateY(var(--ry));
+    box-shadow: none;
+  }
 }
 
 .motif {
@@ -2165,10 +2170,8 @@ main {
 
 /* ---------- Passage d'une carte à son article (View Transitions entre pages) ---------- */
 
-@view-transition {
-  navigation: auto;
-}
-
+/* La transition n'est activée que sur les pages d'article (build/articles.ts) et, au clic sur une carte,
+   sur la page de départ (src/animations.ts) : tous les autres liens ouvrent la page directement. */
 .article .couverture__image img,
 .article .ambiance__image img {
   view-transition-name: couverture;
