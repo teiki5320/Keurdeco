@@ -131,7 +131,7 @@ describe('articles (contenu/articles)', () => {
   it('les liens internes des articles mènent à des pages existantes, déjà publiées à la date de l’article', () => {
     const glossaire = new Set(chargerGlossaire().map((g) => `glossaire-${g.id}.html`));
     const rubriques = new Set((Object.keys(FAMILLES) as Famille[]).flatMap((f) => FAMILLES[f].liste.map((r) => `${f}-${r.id}.html`)));
-    const pages = new Set([...glossaire, ...rubriques, 'index.html', 'articles.html', 'glossaire.html', 'a-propos.html']);
+    const pages = new Set([...glossaire, ...rubriques, 'index.html', 'tops.html', 'guides.html', 'glossaire.html', 'a-propos.html']);
     const conseils = tousLesConseils();
     for (const a of articles) {
       // Un article peut renvoyer à un article ou à un conseil déjà publié à sa propre date (sinon, lien mort en attendant).

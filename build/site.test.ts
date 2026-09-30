@@ -62,7 +62,7 @@ describe('référencement', () => {
 describe('pages générées', () => {
   it('rubriques, glossaire et liste des articles', () => {
     const pages = pagesGenerees();
-    for (const f of ['pieces.html', 'matieres.html', 'occasions.html', 'piece-salon.html', 'matiere-bogolan.html', 'occasion-tabaski.html', 'articles.html', 'glossaire.html', 'glossaire-bogolan.html']) {
+    for (const f of ['pieces.html', 'matieres.html', 'occasions.html', 'piece-salon.html', 'matiere-bogolan.html', 'occasion-tabaski.html', 'tops.html', 'guides.html', 'glossaire.html', 'glossaire-bogolan.html']) {
       expect(pages.has(f), f).toBe(true);
     }
   });

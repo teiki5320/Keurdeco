@@ -56,7 +56,7 @@ try {
   const erreurs = [];
   page.on('pageerror', (e) => erreurs.push(e.message));
 
-  const pages = ['index.html', 'articles.html', 'pieces.html', 'matiere-bogolan.html', 'occasion-mariage.html', 'glossaire.html', 'glossaire-bogolan.html', 'conseils.html', 'conseil-laver-coussin-wax.html', 'conseil-rideau-perles.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', 'salon-terracotta-wax.html', 'top-paniers-tresses-africains.html', 'bogolan-histoire-idees.html'];
+  const pages = ['index.html', 'tops.html', 'guides.html', 'pieces.html', 'matiere-bogolan.html', 'occasion-mariage.html', 'glossaire.html', 'glossaire-bogolan.html', 'conseils.html', 'conseil-laver-coussin-wax.html', 'conseil-rideau-perles.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', 'salon-terracotta-wax.html', 'top-paniers-tresses-africains.html', 'bogolan-histoire-idees.html'];
   for (const p of pages) {
     const rep = await page.goto(BASE + p, { waitUntil: 'networkidle' });
     verifier(rep?.ok() && (await page.locator('h1').count()) === 1, `${p} s'affiche avec un seul h1`);

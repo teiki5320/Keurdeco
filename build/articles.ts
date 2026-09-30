@@ -308,6 +308,22 @@ export function grilleArticles(articles: Article[], vide = '<p class="liste-vide
   return articles.length ? `<div class="grille-articles">${articles.map((a) => carteArticle(a)).join('')}</div>` : vide;
 }
 
+/** Page de liste des tops et des guides (build/rubriques.ts). */
+export const FICHIER_LISTE: Record<'top' | 'guide', string> = { top: 'tops.html', guide: 'guides.html' };
+
+/**
+ * Fil d'Ariane d'un article, entre l'accueil et son titre : un top mène aux Tops, un guide aux Guides,
+ * une ambiance à sa première pièce (à défaut, sa première matière ou occasion).
+ */
+export function filArticle(a: Article): [string, string][] {
+  if (a.type !== 'ambiance') return [[FICHIER_LISTE[a.type], TYPES[a.type].pluriel]];
+  for (const famille of ['piece', 'matiere', 'occasion'] as Famille[]) {
+    const r = trouverRubrique(famille, a[FAMILLES[famille].champ][0] ?? '');
+    if (r) return [[FAMILLES[famille].hub, FAMILLES[famille].titre], [fichierRubrique(famille, r.id), r.nom]];
+  }
+  return [];
+}
+
 function jsonLd(donnees: object): string {
   return `<script type="application/ld+json">${JSON.stringify(donnees).replace(/</g, '\\u003c')}</script>`;
 }
@@ -315,6 +331,7 @@ function jsonLd(donnees: object): string {
 /** Données structurées de l'article : Article (Rich Pins, Google), fil d'Ariane et, pour un top, ItemList. */
 export function donneesStructurees(a: Article, produits: Map<string, Produit>, url = SITE_URL): string {
   const adresse = adresseArticle(a, url);
+  const fil = filArticle(a);
   const image = imageExiste(a.image) ? `${url}images/articles/${a.image}-1600.webp` : `${url}images/partage/accueil.jpg`;
   const blocs: object[] = [
     {
@@ -334,8 +351,8 @@ export function donneesStructurees(a: Article, produits: Map<string, Produit>, u
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: url },
-        { '@type': 'ListItem', position: 2, name: 'Articles', item: `${url}articles.html` },
-        { '@type': 'ListItem', position: 3, name: a.titre, item: adresse },
+        ...fil.map(([href, nom], i) => ({ '@type': 'ListItem', position: i + 2, name: nom, item: `${url}${href}` })),
+        { '@type': 'ListItem', position: fil.length + 2, name: a.titre, item: adresse },
       ],
     },
   ];
@@ -390,7 +407,7 @@ export function sourcePageArticle(a: Article, publies: Article[], produits = ind
     <!--#header-->
     <main id="contenu" class="article article--${a.type}">
       <header class="article__entete conteneur conteneur--etroit">
-        <p class="fil"><a href="index.html">Accueil</a> › <a href="articles.html">Articles</a></p>
+        <p class="fil"><a href="index.html">Accueil</a>${filArticle(a).map(([href, nom]) => ` › <a href="${href}">${echapper(nom)}</a>`).join('')}</p>
         <p class="article__meta"><span class="article__type">${icone(t.icone, 'icone icone--petite')} ${t.nom}</span><time datetime="${a.publieLe}">${dateLongue(a.publieLe)}</time><span>${icone('horloge', 'icone icone--petite')} ${minutes} min de lecture</span></p>
         <h1 data-mots>${echapper(a.titre)}</h1>
         <p class="chapo" data-reveal>${echapper(a.description)}</p>

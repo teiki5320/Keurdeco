@@ -5,7 +5,7 @@
  * VERSION change à chaque publication du site (remplacée au build par build/site.ts) : les anciens
  * caches, images comprises, sont alors supprimés. Ce fichier est un modèle, publié sous dist/sw.js. */
 const VERSION = 'keurdeco-__VERSION__';
-const PRECHARGE = ['./', './index.html', './articles.html', './pieces.html', './matieres.html', './glossaire.html', './manifest.webmanifest'];
+const PRECHARGE = ['./', './index.html', './tops.html', './guides.html', './pieces.html', './matieres.html', './glossaire.html', './manifest.webmanifest'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(PRECHARGE)).then(() => self.skipWaiting()));

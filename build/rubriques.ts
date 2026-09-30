@@ -2,14 +2,14 @@
  * Pages générées au build (elles n'existent pas sur le disque) :
  *   pieces.html, matieres.html, occasions.html   (entrées de chaque famille)
  *   piece-<id>.html, matiere-<id>.html, occasion-<id>.html   (articles publiés de la rubrique)
- *   articles.html   (tous les articles publiés, par type)
+ *   tops.html et guides.html   (les tops seulement, les guides seulement)
  *   glossaire.html et glossaire-<id>.html   (glossaire des matières, motifs et savoir-faire)
  * et les blocs de l'accueil (marqueurs <!--#une-->, <!--#tops-->, <!--#entrees:piece-->…).
  */
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { FAMILLES, fichierRubrique, type Famille, type Rubrique } from '../src/taxonomie.ts';
-import { articlesPublies, carteArticle, grilleArticles, tousLesArticles, TYPES, type Article, type TypeArticle } from './articles.ts';
+import { articlesPublies, carteArticle, FICHIER_LISTE, grilleArticles, tousLesArticles, TYPES, type Article } from './articles.ts';
 import { dateLongue, NOM_SITE, SITE_URL } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { motif } from './motifs.ts';
@@ -96,9 +96,9 @@ export function articlesDeRubrique(famille: Famille, id: string, publies: Articl
   return publies.filter((a) => a[FAMILLES[famille].champ].includes(id));
 }
 
-/** Ambiances publiées d'une pièce. */
-export function ambiancesDePiece(id: string, publies: Article[]): Article[] {
-  return articlesDeRubrique('piece', id, publies).filter((a) => a.type === 'ambiance');
+/** Ambiances publiées d'une rubrique : une pièce, une matière ou une occasion ne montre que ses ambiances. */
+export function ambiancesDeRubrique(famille: Famille, id: string, publies: Article[]): Article[] {
+  return articlesDeRubrique(famille, id, publies).filter((a) => a.type === 'ambiance');
 }
 
 /** Nom de la photo d'une rubrique : « piece-salon », « matiere-wax », « occasion-mariage ». */
@@ -110,8 +110,8 @@ export function imageRubrique(famille: Famille, id: string): string {
 export function tuilesRubriques(famille: Famille, publies: Article[]): string {
   return `<ul class="tuiles tuiles--${famille}">${FAMILLES[famille].liste
     .map((r, i) => {
-      const n = (famille === 'piece' ? ambiancesDePiece(r.id, publies) : articlesDeRubrique(famille, r.id, publies)).length;
-      const unite = famille === 'piece' ? 'ambiance' : 'article';
+      const n = ambiancesDeRubrique(famille, r.id, publies).length;
+      const unite = 'ambiance';
       const photo = photoFond(imageRubrique(famille, r.id), '(min-width: 1100px) 300px, (min-width: 700px) 45vw, 92vw');
       const visuel = photo || (famille === 'matiere' ? motif(r.id) : `<span class="tuile__icone">${icone(ICONES_RUBRIQUES[r.id] ?? 'maison', 'icone')}</span>`);
       return `<li data-reveal style="--i:${i}"><a class="tuile${photo ? ' tuile--photo' : ''}" href="${fichierRubrique(famille, r.id)}" data-inclinaison data-libelle="${r.nom}">${visuel}<span class="tuile__texte"><span class="tuile__nom">${r.nom}</span><span class="tuile__nb">${n ? `${n} ${unite}${n > 1 ? 's' : ''}` : 'Découvrir'} ${icone('fleche', 'icone icone--petite')}</span></span></a></li>`;
@@ -136,9 +136,8 @@ const ICONES_RUBRIQUES: Record<string, NomIcone> = {
 
 function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string {
   const f = FAMILLES[famille];
-  // Une pièce ne montre que ses ambiances ; les tops et les guides restent dans Articles et les matières.
-  const articles = famille === 'piece' ? ambiancesDePiece(r.id, publies) : articlesDeRubrique(famille, r.id, publies);
-  const glossaire = famille === 'matiere' ? chargerGlossaire().filter((g) => g.matieres.includes(r.id)) : [];
+  // Une rubrique ne montre que ses ambiances ; les tops, les guides, les conseils et le glossaire ont chacun leur page.
+  const articles = ambiancesDeRubrique(famille, r.id, publies);
   return pageSimple({
     titre: `${r.nom} : idées de déco africaine`,
     description: r.accroche,
@@ -149,14 +148,7 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     noindex: articles.length === 0,
     motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
     image: imageExiste(imageRubrique(famille, r.id)) ? imageRubrique(famille, r.id) : undefined,
-    contenu: `${grilleArticles(articles, `<p class="liste-vide">${famille === 'piece' ? 'La première ambiance de cette pièce arrive bientôt.' : 'Les premiers articles de cette rubrique arrivent bientôt.'}</p>`)}
-        ${
-          glossaire.length
-            ? `<section class="bloc-glossaire" aria-labelledby="comprendre"><h2 id="comprendre">Pour comprendre</h2><ul class="liste-glossaire">${glossaire
-                .map((g) => `<li><a href="${fichierGlossaire(g.id)}"><strong>${echapper(g.nom)}</strong> <span>${echapper(g.resume)}</span></a></li>`)
-                .join('')}</ul></section>`
-            : ''
-        }
+    contenu: `${grilleArticles(articles, '<p class="liste-vide">La première ambiance arrive bientôt.</p>')}
         <nav class="autres-rubriques" aria-label="${f.titre}"><h2>${f.titre}</h2>${tuilesRubriques(famille, publies)}</nav>`,
   });
 }
@@ -191,21 +183,39 @@ function pageHub(famille: Famille, publies: Article[]): string {
   });
 }
 
-function pageTousArticles(publies: Article[]): string {
-  const sections = (Object.keys(TYPES) as TypeArticle[])
-    .map((t) => ({ t, liste: publies.filter((a) => a.type === t) }))
-    .filter(({ liste }) => liste.length)
-    .map(({ t, liste }) => `<section aria-labelledby="type-${t}"><h2 id="type-${t}">${icone(TYPES[t].icone)} ${TYPES[t].pluriel}</h2>${grilleArticles(liste)}</section>`)
-    .join('');
+/** Pages de liste d'un seul type d'article : les tops, les guides (les ambiances se trouvent par pièce, matière ou occasion). */
+export const LISTES_TYPE: Record<'top' | 'guide', { fichier: string; h1: string; titre: string; chapo: string; vide: string; motif: string }> = {
+  top: {
+    fichier: FICHIER_LISTE.top,
+    h1: 'Nos Top 10',
+    titre: 'Tops : nos sélections de déco africaine',
+    chapo: 'Nos classements d’objets de déco africaine, choisis un par un : paniers, coussins, nappes, luminaires.',
+    vide: 'Le premier top arrive bientôt.',
+    motif: 'wax',
+  },
+  guide: {
+    fichier: FICHIER_LISTE.guide,
+    h1: 'Guides',
+    titre: 'Guides : comprendre les matières et les motifs africains',
+    chapo: 'L’histoire et le sens des matières, des motifs et des savoir-faire, pour choisir en connaissance de cause.',
+    vide: 'Le premier guide arrive bientôt.',
+    motif: 'kente',
+  },
+};
+
+function pageListeType(type: 'top' | 'guide', publies: Article[]): string {
+  const l = LISTES_TYPE[type];
+  const liste = publies.filter((a) => a.type === type);
   return pageSimple({
-    titre: 'Tous les articles',
-    description: 'Tous les articles de Keur Déco : ambiances à reproduire, tops de produits et guides sur les matières et savoir-faire africains.',
-    fil: [['', 'Articles']],
-    h1: 'Tous les articles',
-    chapo: 'Ambiances à reproduire, classements de produits et guides de fond sur les matières africaines.',
+    titre: l.titre,
+    description: l.chapo,
+    fil: [['', TYPES[type].pluriel]],
+    h1: l.h1,
+    chapo: l.chapo,
     classe: 'page--articles',
-    noindex: publies.length === 0,
-    contenu: sections || '<p class="liste-vide">Les premiers articles arrivent bientôt.</p>',
+    noindex: liste.length === 0,
+    motif: l.motif,
+    contenu: grilleArticles(liste, `<p class="liste-vide">${l.vide}</p>`),
   });
 }
 
@@ -262,7 +272,7 @@ export function pagesRubriques(publies = articlesPublies()): Map<string, string>
     pages.set(FAMILLES[famille].hub, pageHub(famille, publies));
     for (const r of FAMILLES[famille].liste) pages.set(fichierRubrique(famille, r.id), pageRubrique(famille, r, publies));
   }
-  pages.set('articles.html', pageTousArticles(publies));
+  for (const type of ['top', 'guide'] as const) pages.set(LISTES_TYPE[type].fichier, pageListeType(type, publies));
   const glossaire = chargerGlossaire();
   pages.set('glossaire.html', pageGlossaire(glossaire));
   for (const g of glossaire) pages.set(fichierGlossaire(g.id), pageEntreeGlossaire(g, glossaire, publies));
@@ -336,7 +346,7 @@ export function visiteMaison(publies = articlesPublies()): string {
   const total = String(pieces.length).padStart(2, '0');
   const panneaux = pieces
     .map((r, i) => {
-      const n = ambiancesDePiece(r.id, publies).length;
+      const n = ambiancesDeRubrique('piece', r.id, publies).length;
       return `<a class="visite__piece visite__piece--${i % 4}" href="${fichierRubrique('piece', r.id)}" data-libelle="${r.nom}">
       <span class="visite__motif">${photoFond(imageRubrique('piece', r.id), '(min-width: 700px) 520px, 80vw') || motif(MOTIF_PIECE[r.id] ?? 'wax')}</span>
       <span class="visite__num">${String(i + 1).padStart(2, '0')}</span>
