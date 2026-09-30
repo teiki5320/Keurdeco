@@ -9,7 +9,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { FAMILLES, fichierRubrique, type Famille, type Rubrique } from '../src/taxonomie.ts';
-import { articlesPublies, carteArticle, FICHIER_LISTE, grilleArticles, tousLesArticles, TYPES, type Article } from './articles.ts';
+import { articlesPublies, FICHIER_LISTE, grilleArticles, tousLesArticles, TYPES, type Article } from './articles.ts';
 import { dateLongue, NOM_SITE, SITE_URL } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { motif } from './motifs.ts';
@@ -307,11 +307,41 @@ export function blocUne(publies = articlesPublies(), tous = tousLesArticles()): 
   </div>`;
 }
 
-export function blocTops(publies = articlesPublies(), n = 3): string {
+/** Les derniers tops, en carrousel comme les pièces (7 au plus ; la liste complète est sur la page Tops). */
+export function blocTops(publies = articlesPublies(), n = 7): string {
   const tops = publies.filter((a) => a.type === 'top').slice(0, n);
-  return tops.length
-    ? `<div class="section__entete"><h2 id="tops-titre" data-mots>Nos Top 10<span class="point">.</span></h2></div><div class="grille-articles">${tops.map((a) => carteArticle(a)).join('')}</div>`
-    : '';
+  if (!tops.length) return '';
+  const total = String(tops.length).padStart(2, '0');
+  const panneaux = tops
+    .map(
+      (a, i) => `<a class="visite__piece visite__piece--${i % 4}" href="${a.fichier}" data-libelle="${echapper(a.titre)}">
+      <span class="visite__motif">${photoFond(a.image, '(min-width: 700px) 520px, 80vw') || motif('wax')}</span>
+      <span class="visite__num">${String(i + 1).padStart(2, '0')}</span>
+      <span class="visite__icone">${icone(TYPES.top.icone, 'icone')}</span>
+      <span class="visite__texte">
+        <strong class="visite__nom visite__nom--long">${echapper(a.titre)}</strong>
+        <span class="visite__lien">Voir le top ${icone('fleche', 'icone icone--petite')}</span>
+      </span>
+    </a>`,
+    )
+    .join('');
+  return `<section class="visite visite--tops" data-visite="tops" style="--n:${tops.length}" aria-labelledby="tops-titre">
+  <div class="visite__collant">
+    <div class="conteneur visite__entete">
+      <div>
+        <p class="surtitre">Nos sélections</p>
+        <h2 id="tops-titre" data-mots>Nos Top <em>10</em><span class="point">.</span></h2>
+      </div>
+      <div class="visite__commandes">
+        <p class="visite__compteur" aria-hidden="true"><span data-visite-num>01</span> / ${total}</p>
+        <button type="button" class="visite__fleche visite__fleche--prec" data-visite-prec aria-label="Top précédent" hidden>${icone('fleche', 'icone')}</button>
+        <button type="button" class="visite__fleche" data-visite-suiv aria-label="Top suivant" hidden>${icone('fleche', 'icone')}</button>
+      </div>
+      <span class="visite__barre" aria-hidden="true"><span data-visite-barre></span></span>
+    </div>
+    <div class="visite__piste">${panneaux}</div>
+  </div>
+</section>`;
 }
 
 /** Quelques entrées du glossaire, pour l'accueil. */
@@ -359,7 +389,7 @@ export function visiteMaison(publies = articlesPublies()): string {
     </a>`;
     })
     .join('');
-  return `<section class="visite" data-visite style="--n:${pieces.length}" aria-labelledby="visite-titre">
+  return `<section class="visite" data-visite="pieces" style="--n:${pieces.length}" aria-labelledby="visite-titre">
   <div class="visite__collant">
     <div class="conteneur visite__entete">
       <div>

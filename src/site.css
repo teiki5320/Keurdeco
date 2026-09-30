@@ -1193,6 +1193,12 @@ main {
   font-weight: 600;
 }
 
+/* Titre d'article (plus long qu'un nom de pièce) dans le carrousel des tops. */
+.visite__nom--long {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 1.12;
+}
+
 .visite__accroche {
   color: rgb(253 249 243 / 85%);
   font-size: 1rem;

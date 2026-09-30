@@ -74,7 +74,7 @@ try {
     .filter((x) => x.type === 'ambiance')
     .sort((x, y) => y.date.localeCompare(x.date) || x.titre.localeCompare(y.titre, 'fr'));
   verifier((await page.locator('.une').count()) === 1 && (await page.getAttribute('.une', 'href')) === ambiances[0].fichier, `accueil : ambiance à la une (${ambiances[0].fichier})`);
-  verifier((await page.locator('.visite__piece').count()) === 7 && (await page.locator('.nuancier__pastille:not([hidden])').count()) === 4 && (await page.locator('.nuancier__vignette').count()) === 8, 'accueil : carrousel des 7 pièces et nuancier (8 objets, 4 tissus pour le canapé)');
+  verifier((await page.locator('[data-visite="pieces"] .visite__piece').count()) === 7 && (await page.locator('[data-visite="tops"] .visite__piece').count()) >= 1 && (await page.locator('.nuancier__pastille:not([hidden])').count()) === 4 && (await page.locator('.nuancier__vignette').count()) === 8, 'accueil : carrousel des 7 pièces et nuancier (8 objets, 4 tissus pour le canapé)');
   const pageHub = await navigateur.newPage();
   await pageHub.goto(`${BASE}pieces.html`);
   verifier((await pageHub.locator('.visite__piece').count()) === 7, 'page Pièces : carrousel des 7 pièces');

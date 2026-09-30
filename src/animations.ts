@@ -2,7 +2,7 @@
  * Animations du site (confort seulement : sans JavaScript, tout reste visible et lisible).
  * - apparition au défilement ([data-reveal]) et titres révélés mot par mot ([data-mots]) ;
  * - porte en arche de l'accueil qui s'ouvre au défilement, objets flottants ;
- * - visite de la maison : carrousel des pièces (glisser ou flèches) ;
+ * - visite de la maison et tops : carrousels (glisser ou flèches) ;
  * - rideau de kente entre les pages (bandes de tissu qui tombent puis remontent) ;
  * - cartes d'articles qui s'agrandissent jusqu'à l'image de l'article (View Transitions entre pages) ;
  * - nuancier de l'accueil (src/nuancier.ts) : objets, matières, coussins qui tombent sur le canapé ;
@@ -225,10 +225,12 @@ function porte(): void {
   demander();
 }
 
-/** Visite de la maison : carrousel horizontal (glisser, pavé tactile ou flèches), compteur et barre d'avancement. */
+/** Carrousels de l'accueil (pièces, tops) : défilement horizontal (glisser, pavé tactile ou flèches), compteur et barre d'avancement. */
 function visite(): void {
-  const section = document.querySelector<HTMLElement>('[data-visite]');
-  if (!section) return;
+  document.querySelectorAll<HTMLElement>('[data-visite]').forEach(carrousel);
+}
+
+function carrousel(section: HTMLElement): void {
   section.classList.add('visite--carrousel');
   const piste = section.querySelector<HTMLElement>('.visite__piste')!;
   const num = section.querySelector<HTMLElement>('[data-visite-num]');
