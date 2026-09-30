@@ -4,7 +4,7 @@
  * - la matière choisie se propage en cercle sur l'objet et le disque ; elle est mémorisée
  *   (localStorage) et exposée au site par --matiere et --matiere-teinte ;
  * - changer d'objet le fait rebondir et brouille son nom lettre par lettre ;
- * - sur le canapé seulement, un clic fait tomber un coussin (8 au plus) ;
+ * - sur le canapé et le fauteuil, un clic fait tomber un coussin (8 au plus sur le canapé, 3 sur le fauteuil) ;
  * - l'objet s'incline légèrement sous la souris.
  * « Réduire les animations » garde les changements, sans mouvement.
  */
@@ -21,7 +21,11 @@ interface Donnees {
 const reduit = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const MEMOIRE = 'kd-matiere';
 const LETTRES = 'ABCDEFGHIJKLMNOPRSTUVWXYZÉ';
-const MAX_COUSSINS = 8;
+/** Meubles qui reçoivent des coussins : zone d'atterrissage (en % de la largeur du dessin) et nombre maximal. */
+const COUSSINS: Record<string, { nom: string; gauche: number; largeur: number; max: number }> = {
+  canape: { nom: 'le canapé', gauche: 14, largeur: 56, max: 8 },
+  fauteuil: { nom: 'le fauteuil', gauche: 31, largeur: 16, max: 3 },
+};
 
 export function nuancier(): void {
   const section = document.querySelector<HTMLElement>('[data-nuancier]');
@@ -129,9 +133,12 @@ export function nuancier(): void {
     });
     sous.textContent = o.sous;
     brouiller(o.nom.toUpperCase());
-    const canape = i === 0;
-    scene.classList.toggle('nuancier__scene--canape', canape);
-    if (aide) aide.hidden = !canape;
+    const coussins = COUSSINS[o.id];
+    scene.classList.toggle('nuancier__scene--canape', Boolean(coussins));
+    if (aide) {
+      aide.hidden = !coussins;
+      if (coussins) aide.textContent = `Cliquez sur ${coussins.nom} pour y faire tomber des coussins.`;
+    }
     pose.querySelectorAll('.nuancier__coussin').forEach((c) => c.remove());
     if (!reduit())
       zone.animate(
@@ -148,20 +155,21 @@ export function nuancier(): void {
   vignettes.forEach((v, i) => v.addEventListener('click', () => poserObjet(i)));
   pastilles.forEach((p, i) => p.addEventListener('click', () => i !== tissu && poserTissu(i)));
 
-  // Coussins qui tombent : sur le canapé seulement.
+  // Coussins qui tombent : sur le canapé et le fauteuil.
   zone.addEventListener('click', () => {
-    if (objet !== 0 || reduit()) return;
+    const coussins = COUSSINS[d.objets[objet].id];
+    if (!coussins || reduit()) return;
     const coussin = document.createElement('img');
     coussin.className = 'nuancier__coussin';
     coussin.alt = '';
     const tissus = d.tissus.filter((_, k) => convient(0, k));
     coussin.src = dessin('coussin', tissus[Math.floor(Math.random() * tissus.length)].remplissage);
-    coussin.style.left = `${14 + Math.random() * 56}%`;
+    coussin.style.left = `${coussins.gauche + Math.random() * coussins.largeur}%`;
     coussin.style.top = `${22 + Math.random() * 14}%`;
     coussin.style.setProperty('--r', `${Math.round((Math.random() - 0.5) * 40)}deg`);
     pose.append(coussin);
     const tous = pose.querySelectorAll('.nuancier__coussin');
-    if (tous.length > MAX_COUSSINS) tous[0].remove();
+    if (tous.length > coussins.max) tous[0].remove();
   });
 
   // Légère inclinaison sous la souris.

@@ -4,7 +4,7 @@
  * seule matière (pouf en raphia, jarre en terre cuite, tabouret en bois sculpté, calebasse perlée).
  * À droite, les matières possibles pour l’objet choisi ; la matière se propage en cercle.
  * À gauche, seul l’objet choisi porte sa matière : les autres restent en teinte neutre.
- * Sur le canapé, un clic fait tomber des coussins. Rendu statique ici (lisible sans JavaScript),
+ * Sur le canapé et le fauteuil, un clic fait tomber des coussins. Rendu statique ici (lisible sans JavaScript),
  * animé par src/nuancier.ts. Les dessins des objets sont dans src/data/nuancier.json, les motifs dans build/motifs.ts.
  */
 import { readFileSync } from 'node:fs';
