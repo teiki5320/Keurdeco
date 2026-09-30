@@ -11,6 +11,7 @@ import './nuancier.css';
 
 interface Donnees {
   motifs: string;
+  neutre: string;
   dessins: Record<string, string>;
   objets: { id: string; nom: string; sous: string }[];
   tissus: { nom: string; remplissage: string; contour: string; teinte: string; titre: string; phrase: string; lien: string }[];
@@ -53,6 +54,10 @@ export function nuancier(): void {
   let precedent = -1;
   let brouillage = 0;
 
+  // À gauche, seul l'objet choisi porte le tissu ; les autres restent neutres.
+  const colorerVignettes = () =>
+    vignettes.forEach((v, k) => (v.querySelector('img')!.src = dessin(d.objets[k].id, k === objet ? d.tissus[tissu].remplissage : d.neutre)));
+
   const poserTissu = (i: number) => {
     if (i !== tissu) precedent = tissu;
     tissu = i;
@@ -69,7 +74,7 @@ export function nuancier(): void {
     lien.href = t.lien;
     lien.dataset.libelle = t.nom;
     images.forEach((im, k) => (im.alt = k === i ? `${d.objets[objet].sous} habillé en ${t.nom.toLowerCase()}` : ''));
-    vignettes.forEach((v, k) => (v.querySelector('img')!.src = dessin(d.objets[k].id, t.remplissage)));
+    colorerVignettes();
     document.documentElement.style.setProperty('--matiere', t.contour);
     document.documentElement.style.setProperty('--matiere-teinte', t.teinte);
     try {
@@ -102,6 +107,7 @@ export function nuancier(): void {
     objet = i;
     const o = d.objets[i];
     vignettes.forEach((v, k) => v.setAttribute('aria-pressed', String(k === i)));
+    colorerVignettes();
     images.forEach((im, k) => {
       im.src = dessin(o.id, d.tissus[k].remplissage);
       im.alt = k === tissu ? `${o.sous} habillé en ${d.tissus[tissu].nom.toLowerCase()}` : '';
