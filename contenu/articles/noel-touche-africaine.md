@@ -1,7 +1,7 @@
 ---
 titre: "Sapin et salon de Noël à la touche africaine"
 description: "Perles de bois, étoiles de paille, cache-pied tressé et cadeaux emballés dans du wax : 5 idées pour un Noël chaleureux aux couleurs de l’Afrique."
-publie_le: 2026-11-02
+publie_le: 2026-09-30
 type: ambiance
 pieces: [salon]
 matieres: [wax, raphia-paniers, perles]

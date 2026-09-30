@@ -1,7 +1,7 @@
 ---
 titre: "Top 8 des tabourets et tables d’appoint en bois massif"
 description: "Racine de teck, tronc taillé d’une seule pièce, acajou, manguier : 8 tabourets et tables d’appoint en bois massif, dans l’esprit des tabourets sculptés africains."
-publie_le: 2026-11-23
+publie_le: 2026-11-16
 type: top
 pieces: [salon, chambre, entree]
 matieres: [bois-sculpte]

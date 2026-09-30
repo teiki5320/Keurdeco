@@ -1,7 +1,7 @@
 ---
 titre: "Petit studio : la déco africaine dans 25 m²"
 description: "Paniers muraux, étagères suspendues, paravent et tapis rond : 5 idées pour apporter la déco africaine dans un petit studio, sans jamais l’encombrer."
-publie_le: 2026-11-30
+publie_le: 2026-11-23
 type: ambiance
 pieces: [salon, chambre]
 matieres: [raphia-paniers, terre-cuite, wax, indigo]

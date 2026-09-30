@@ -1,7 +1,7 @@
 ---
 titre: "Top 10 pour une table de mariage africain"
 description: "Kente, terracotta, doré et fibres tressées : 10 indispensables pour dresser les tables d’un mariage africain, avec les bonnes quantités selon le nombre d’invités."
-publie_le: 2027-01-11
+publie_le: 2027-01-04
 type: top
 pieces: [cuisine-salle-a-manger]
 matieres: [kente, raphia-paniers, terre-cuite]

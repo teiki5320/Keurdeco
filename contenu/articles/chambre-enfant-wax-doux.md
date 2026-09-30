@@ -1,7 +1,7 @@
 ---
 titre: "Chambre d’enfant en wax doux : fanions et tipi"
 description: "Fanions en wax pastel, tipi blanc, pouf moutarde et étagères à livres : 5 idées pour une chambre d’enfant gaie et douce, avec une touche de wax."
-publie_le: 2027-02-15
+publie_le: 2027-02-01
 type: ambiance
 pieces: [chambre-enfant]
 matieres: [wax]

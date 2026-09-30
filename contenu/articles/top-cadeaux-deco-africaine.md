@@ -1,7 +1,7 @@
 ---
 titre: "Top 10 des idées cadeaux déco africaine"
 description: "Panier Bolga, jeu d’awalé, beau livre sur les textiles africains, coupon de wax, bol sculpté : 10 idées cadeaux pour les amoureux de déco africaine."
-publie_le: 2026-11-09
+publie_le: 2026-11-02
 type: top
 pieces: [salon, cuisine-salle-a-manger]
 matieres: [wax, raphia-paniers, bois-sculpte, terre-cuite]

@@ -1,7 +1,7 @@
 ---
 titre: "Baptême : une décoration africaine douce"
 description: "Accueil de la famille, table des dragées, coin photo : 5 idées pour décorer un baptême aux tons doux, entre terracotta, crème, wax et fibres tressées."
-publie_le: 2027-01-25
+publie_le: 2026-09-30
 type: ambiance
 pieces: [salon, cuisine-salle-a-manger]
 matieres: [wax, raphia-paniers]
@@ -58,7 +58,7 @@ Quand la lumière baisse, les **photophores dorés** et les **bougies piliers iv
 
 ## 5. Des tables pour partager le repas
 
-Pour le repas, reprenez les chemins en gaze terracotta sur toutes les tables, avec une **lanterne** au centre et un brin de pampa. Nos idées pour une [table de mariage africain](top-table-mariage-africain.html) vous aideront à calculer les quantités si vous recevez beaucoup de monde.
+Pour le repas, reprenez les chemins en gaze terracotta sur toutes les tables, avec une **lanterne** au centre et un brin de pampa. Notre [table de mariage en wax](table-mariage-wax.html) vous donnera d’autres idées si vous recevez beaucoup de monde.
 
 ## En résumé
 

@@ -1,7 +1,7 @@
 ---
 titre: "Les symboles adinkra et leur sens"
 description: "Gye Nyame, Sankofa, Dwennimmen, Adinkrahene : les symboles adinkra du Ghana, leur histoire, leur signification, et comment les accueillir chez soi avec justesse."
-publie_le: 2026-12-07
+publie_le: 2026-11-30
 type: guide
 pieces: [salon, entree, chambre]
 matieres: [kente]

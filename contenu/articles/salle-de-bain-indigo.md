@@ -1,7 +1,7 @@
 ---
 titre: "Salle de bain indigo : le bleu qui apaise"
 description: "Rideau teint à l’indigo, tapis rond bleu marine, bambou et teck : 5 idées pour une salle de bain calme et lumineuse aux bleus d’Afrique de l’Ouest."
-publie_le: 2027-02-01
+publie_le: 2027-01-18
 type: ambiance
 pieces: [salle-de-bain]
 matieres: [indigo]

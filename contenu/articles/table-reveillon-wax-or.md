@@ -1,7 +1,7 @@
 ---
 titre: "Table de réveillon wax et or"
 description: "Un chemin de table en wax, de l’or, du vert profond et des bougies : 5 idées pour une table de réveillon élégante et chaleureuse, à la touche africaine."
-publie_le: 2026-11-16
+publie_le: 2026-11-09
 type: ambiance
 pieces: [cuisine-salle-a-manger]
 matieres: [wax]

@@ -1,7 +1,7 @@
 ---
 titre: "L’indigo et l’adire : histoire et idées déco"
 description: "Du voile bleu des Touareg à l’adire yoruba du Nigeria, l’indigo est une grande tradition d’Afrique de l’Ouest. Son histoire, ses techniques et comment l’adopter."
-publie_le: 2026-12-21
+publie_le: 2026-12-14
 type: guide
 pieces: [chambre, salon]
 matieres: [indigo]
