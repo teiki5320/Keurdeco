@@ -1,7 +1,7 @@
 /**
  * « Essayez le tissu » (accueil) : le nuancier. À gauche, d’abord les meubles (canapé, fauteuil, suspension,
  * coussin), qui s’habillent des 4 tissus (wax, bogolan, kente, indigo), puis, après un trait, les objets d’une
- * seule matière (pouf en raphia, jarre en terre cuite, tabouret en bois sculpté, calebasse perlée).
+ * seule matière (pouf en raphia, jarre en terre cuite, tabouret en bois sculpté, rideau de perles).
  * À droite, les matières possibles pour l’objet choisi ; la matière se propage en cercle.
  * À gauche, seul l’objet choisi porte sa matière : les autres restent en teinte neutre.
  * Sur le canapé et le fauteuil, un clic fait tomber des coussins. Rendu statique ici (lisible sans JavaScript),
@@ -33,7 +33,7 @@ export const OBJETS = [
   { id: 'pouf', nom: 'Joal', sous: 'Pouf en raphia tressé', matieres: ['raphia-paniers'] },
   { id: 'jarre', nom: 'Mbour', sous: 'Jarre en terre cuite', matieres: ['terre-cuite'] },
   { id: 'tabouret', nom: 'Kaolack', sous: 'Tabouret sculpté', matieres: ['bois-sculpte'] },
-  { id: 'calebasse', nom: 'Thiès', sous: 'Calebasse perlée', matieres: ['perles'] },
+  { id: 'rideau', nom: 'Thiès', sous: 'Rideau de perles', matieres: ['perles'] },
 ];
 
 /** Nombre de meubles en tête de liste : un trait les sépare des objets d'une seule matière. */
