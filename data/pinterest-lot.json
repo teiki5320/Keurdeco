@@ -1,0 +1,485 @@
+{
+  "fichier": "keurdeco-epingles-2026-10-02-au-2026-10-31.csv",
+  "epingles": [
+    {
+      "id": "bapteme-decoration-africaine-1",
+      "slug": "bapteme-decoration-africaine",
+      "pin_id": null,
+      "tableau": "bapteme",
+      "mode": "import-csv",
+      "publie_le": "2026-10-02"
+    },
+    {
+      "id": "entree-rideau-perles-1",
+      "slug": "entree-rideau-perles",
+      "pin_id": null,
+      "tableau": "perles",
+      "mode": "import-csv",
+      "publie_le": "2026-10-02"
+    },
+    {
+      "id": "noel-touche-africaine-1",
+      "slug": "noel-touche-africaine",
+      "pin_id": null,
+      "tableau": "fetes",
+      "mode": "import-csv",
+      "publie_le": "2026-10-03"
+    },
+    {
+      "id": "salon-touches-kente-1",
+      "slug": "salon-touches-kente",
+      "pin_id": null,
+      "tableau": "kente",
+      "mode": "import-csv",
+      "publie_le": "2026-10-03"
+    },
+    {
+      "id": "table-mariage-wax-1",
+      "slug": "table-mariage-wax",
+      "pin_id": null,
+      "tableau": "mariage",
+      "mode": "import-csv",
+      "publie_le": "2026-10-04"
+    },
+    {
+      "id": "table-tabaski-1",
+      "slug": "table-tabaski",
+      "pin_id": null,
+      "tableau": "tabaski",
+      "mode": "import-csv",
+      "publie_le": "2026-10-04"
+    },
+    {
+      "id": "chambre-enfant-savane-1",
+      "slug": "chambre-enfant-savane",
+      "pin_id": null,
+      "tableau": "chambre-enfant",
+      "mode": "import-csv",
+      "publie_le": "2026-10-05"
+    },
+    {
+      "id": "cuisine-terre-cuite-paniers-1",
+      "slug": "cuisine-terre-cuite-paniers",
+      "pin_id": null,
+      "tableau": "cuisine-salle-a-manger",
+      "mode": "import-csv",
+      "publie_le": "2026-10-05"
+    },
+    {
+      "id": "salle-de-bain-spa-africaine-1",
+      "slug": "salle-de-bain-spa-africaine",
+      "pin_id": null,
+      "tableau": "salle-de-bain",
+      "mode": "import-csv",
+      "publie_le": "2026-10-06"
+    },
+    {
+      "id": "bogolan-histoire-idees-1",
+      "slug": "bogolan-histoire-idees",
+      "pin_id": null,
+      "tableau": "bogolan",
+      "mode": "import-csv",
+      "publie_le": "2026-10-06"
+    },
+    {
+      "id": "conseil-accrocher-assiettes-tressees-1",
+      "slug": "conseil-accrocher-assiettes-tressees",
+      "pin_id": null,
+      "tableau": "general",
+      "mode": "import-csv",
+      "publie_le": "2026-10-07"
+    },
+    {
+      "id": "conseil-associer-wax-bogolan-1",
+      "slug": "conseil-associer-wax-bogolan",
+      "pin_id": null,
+      "tableau": "general",
+      "mode": "import-csv",
+      "publie_le": "2026-10-07"
+    },
+    {
+      "id": "conseil-entretenir-panier-tresse-1",
+      "slug": "conseil-entretenir-panier-tresse",
+      "pin_id": null,
+      "tableau": "general",
+      "mode": "import-csv",
+      "publie_le": "2026-10-08"
+    },
+    {
+      "id": "conseil-laver-coussin-wax-1",
+      "slug": "conseil-laver-coussin-wax",
+      "pin_id": null,
+      "tableau": "general",
+      "mode": "import-csv",
+      "publie_le": "2026-10-08"
+    },
+    {
+      "id": "conseil-signification-sankofa-1",
+      "slug": "conseil-signification-sankofa",
+      "pin_id": null,
+      "tableau": "general",
+      "mode": "import-csv",
+      "publie_le": "2026-10-09"
+    },
+    {
+      "id": "salon-terracotta-wax-1",
+      "slug": "salon-terracotta-wax",
+      "pin_id": null,
+      "tableau": "salon",
+      "mode": "import-csv",
+      "publie_le": "2026-10-09"
+    },
+    {
+      "id": "top-paniers-tresses-africains-1",
+      "slug": "top-paniers-tresses-africains",
+      "pin_id": null,
+      "tableau": "paniers",
+      "mode": "import-csv",
+      "publie_le": "2026-10-10"
+    },
+    {
+      "id": "kente-histoire-couleurs-1",
+      "slug": "kente-histoire-couleurs",
+      "pin_id": null,
+      "tableau": "kente",
+      "mode": "import-csv",
+      "publie_le": "2026-10-10"
+    },
+    {
+      "id": "top-coussins-wax-1",
+      "slug": "top-coussins-wax",
+      "pin_id": null,
+      "tableau": "wax",
+      "mode": "import-csv",
+      "publie_le": "2026-10-11"
+    },
+    {
+      "id": "entree-paniers-miroir-raphia-1",
+      "slug": "entree-paniers-miroir-raphia",
+      "pin_id": null,
+      "tableau": "entree",
+      "mode": "import-csv",
+      "publie_le": "2026-10-11"
+    },
+    {
+      "id": "top-rangements-tresses-rentree-1",
+      "slug": "top-rangements-tresses-rentree",
+      "pin_id": null,
+      "tableau": "paniers",
+      "mode": "import-csv",
+      "publie_le": "2026-10-12"
+    },
+    {
+      "id": "chambre-indigo-lin-1",
+      "slug": "chambre-indigo-lin",
+      "pin_id": null,
+      "tableau": "chambre",
+      "mode": "import-csv",
+      "publie_le": "2026-10-12"
+    },
+    {
+      "id": "top-nappes-wax-1",
+      "slug": "top-nappes-wax",
+      "pin_id": null,
+      "tableau": "cuisine-salle-a-manger",
+      "mode": "import-csv",
+      "publie_le": "2026-10-13"
+    },
+    {
+      "id": "balcon-boheme-africain-1",
+      "slug": "balcon-boheme-africain",
+      "pin_id": null,
+      "tableau": "balcon-exterieur",
+      "mode": "import-csv",
+      "publie_le": "2026-10-13"
+    },
+    {
+      "id": "bapteme-decoration-africaine-2",
+      "slug": "bapteme-decoration-africaine",
+      "pin_id": null,
+      "tableau": "bapteme",
+      "mode": "import-csv",
+      "publie_le": "2026-10-14"
+    },
+    {
+      "id": "entree-rideau-perles-2",
+      "slug": "entree-rideau-perles",
+      "pin_id": null,
+      "tableau": "perles",
+      "mode": "import-csv",
+      "publie_le": "2026-10-14"
+    },
+    {
+      "id": "noel-touche-africaine-2",
+      "slug": "noel-touche-africaine",
+      "pin_id": null,
+      "tableau": "fetes",
+      "mode": "import-csv",
+      "publie_le": "2026-10-15"
+    },
+    {
+      "id": "salon-touches-kente-2",
+      "slug": "salon-touches-kente",
+      "pin_id": null,
+      "tableau": "kente",
+      "mode": "import-csv",
+      "publie_le": "2026-10-15"
+    },
+    {
+      "id": "table-mariage-wax-2",
+      "slug": "table-mariage-wax",
+      "pin_id": null,
+      "tableau": "mariage",
+      "mode": "import-csv",
+      "publie_le": "2026-10-16"
+    },
+    {
+      "id": "table-tabaski-2",
+      "slug": "table-tabaski",
+      "pin_id": null,
+      "tableau": "tabaski",
+      "mode": "import-csv",
+      "publie_le": "2026-10-16"
+    },
+    {
+      "id": "chambre-enfant-savane-2",
+      "slug": "chambre-enfant-savane",
+      "pin_id": null,
+      "tableau": "chambre-enfant",
+      "mode": "import-csv",
+      "publie_le": "2026-10-17"
+    },
+    {
+      "id": "cuisine-terre-cuite-paniers-2",
+      "slug": "cuisine-terre-cuite-paniers",
+      "pin_id": null,
+      "tableau": "cuisine-salle-a-manger",
+      "mode": "import-csv",
+      "publie_le": "2026-10-17"
+    },
+    {
+      "id": "salle-de-bain-spa-africaine-2",
+      "slug": "salle-de-bain-spa-africaine",
+      "pin_id": null,
+      "tableau": "salle-de-bain",
+      "mode": "import-csv",
+      "publie_le": "2026-10-18"
+    },
+    {
+      "id": "bogolan-histoire-idees-2",
+      "slug": "bogolan-histoire-idees",
+      "pin_id": null,
+      "tableau": "bogolan",
+      "mode": "import-csv",
+      "publie_le": "2026-10-18"
+    },
+    {
+      "id": "conseil-accrocher-assiettes-tressees-2",
+      "slug": "conseil-accrocher-assiettes-tressees",
+      "pin_id": null,
+      "tableau": "general",
+      "mode": "import-csv",
+      "publie_le": "2026-10-19"
+    },
+    {
+      "id": "conseil-laver-coussin-wax-2",
+      "slug": "conseil-laver-coussin-wax",
+      "pin_id": null,
+      "tableau": "general",
+      "mode": "import-csv",
+      "publie_le": "2026-10-19"
+    },
+    {
+      "id": "salon-terracotta-wax-2",
+      "slug": "salon-terracotta-wax",
+      "pin_id": null,
+      "tableau": "salon",
+      "mode": "import-csv",
+      "publie_le": "2026-10-20"
+    },
+    {
+      "id": "top-paniers-tresses-africains-2",
+      "slug": "top-paniers-tresses-africains",
+      "pin_id": null,
+      "tableau": "paniers",
+      "mode": "import-csv",
+      "publie_le": "2026-10-20"
+    },
+    {
+      "id": "kente-histoire-couleurs-2",
+      "slug": "kente-histoire-couleurs",
+      "pin_id": null,
+      "tableau": "kente",
+      "mode": "import-csv",
+      "publie_le": "2026-10-21"
+    },
+    {
+      "id": "top-coussins-wax-2",
+      "slug": "top-coussins-wax",
+      "pin_id": null,
+      "tableau": "wax",
+      "mode": "import-csv",
+      "publie_le": "2026-10-21"
+    },
+    {
+      "id": "entree-paniers-miroir-raphia-2",
+      "slug": "entree-paniers-miroir-raphia",
+      "pin_id": null,
+      "tableau": "entree",
+      "mode": "import-csv",
+      "publie_le": "2026-10-22"
+    },
+    {
+      "id": "top-rangements-tresses-rentree-2",
+      "slug": "top-rangements-tresses-rentree",
+      "pin_id": null,
+      "tableau": "paniers",
+      "mode": "import-csv",
+      "publie_le": "2026-10-22"
+    },
+    {
+      "id": "chambre-indigo-lin-2",
+      "slug": "chambre-indigo-lin",
+      "pin_id": null,
+      "tableau": "chambre",
+      "mode": "import-csv",
+      "publie_le": "2026-10-23"
+    },
+    {
+      "id": "top-nappes-wax-2",
+      "slug": "top-nappes-wax",
+      "pin_id": null,
+      "tableau": "cuisine-salle-a-manger",
+      "mode": "import-csv",
+      "publie_le": "2026-10-23"
+    },
+    {
+      "id": "balcon-boheme-africain-2",
+      "slug": "balcon-boheme-africain",
+      "pin_id": null,
+      "tableau": "balcon-exterieur",
+      "mode": "import-csv",
+      "publie_le": "2026-10-24"
+    },
+    {
+      "id": "bapteme-decoration-africaine-3",
+      "slug": "bapteme-decoration-africaine",
+      "pin_id": null,
+      "tableau": "bapteme",
+      "mode": "import-csv",
+      "publie_le": "2026-10-24"
+    },
+    {
+      "id": "entree-rideau-perles-3",
+      "slug": "entree-rideau-perles",
+      "pin_id": null,
+      "tableau": "perles",
+      "mode": "import-csv",
+      "publie_le": "2026-10-25"
+    },
+    {
+      "id": "noel-touche-africaine-3",
+      "slug": "noel-touche-africaine",
+      "pin_id": null,
+      "tableau": "fetes",
+      "mode": "import-csv",
+      "publie_le": "2026-10-25"
+    },
+    {
+      "id": "salon-touches-kente-3",
+      "slug": "salon-touches-kente",
+      "pin_id": null,
+      "tableau": "kente",
+      "mode": "import-csv",
+      "publie_le": "2026-10-26"
+    },
+    {
+      "id": "table-mariage-wax-3",
+      "slug": "table-mariage-wax",
+      "pin_id": null,
+      "tableau": "mariage",
+      "mode": "import-csv",
+      "publie_le": "2026-10-26"
+    },
+    {
+      "id": "table-tabaski-3",
+      "slug": "table-tabaski",
+      "pin_id": null,
+      "tableau": "tabaski",
+      "mode": "import-csv",
+      "publie_le": "2026-10-27"
+    },
+    {
+      "id": "chambre-enfant-savane-3",
+      "slug": "chambre-enfant-savane",
+      "pin_id": null,
+      "tableau": "chambre-enfant",
+      "mode": "import-csv",
+      "publie_le": "2026-10-27"
+    },
+    {
+      "id": "cuisine-terre-cuite-paniers-3",
+      "slug": "cuisine-terre-cuite-paniers",
+      "pin_id": null,
+      "tableau": "cuisine-salle-a-manger",
+      "mode": "import-csv",
+      "publie_le": "2026-10-28"
+    },
+    {
+      "id": "salle-de-bain-spa-africaine-3",
+      "slug": "salle-de-bain-spa-africaine",
+      "pin_id": null,
+      "tableau": "salle-de-bain",
+      "mode": "import-csv",
+      "publie_le": "2026-10-28"
+    },
+    {
+      "id": "bogolan-histoire-idees-3",
+      "slug": "bogolan-histoire-idees",
+      "pin_id": null,
+      "tableau": "bogolan",
+      "mode": "import-csv",
+      "publie_le": "2026-10-29"
+    },
+    {
+      "id": "salon-terracotta-wax-3",
+      "slug": "salon-terracotta-wax",
+      "pin_id": null,
+      "tableau": "salon",
+      "mode": "import-csv",
+      "publie_le": "2026-10-29"
+    },
+    {
+      "id": "top-paniers-tresses-africains-3",
+      "slug": "top-paniers-tresses-africains",
+      "pin_id": null,
+      "tableau": "paniers",
+      "mode": "import-csv",
+      "publie_le": "2026-10-30"
+    },
+    {
+      "id": "kente-histoire-couleurs-3",
+      "slug": "kente-histoire-couleurs",
+      "pin_id": null,
+      "tableau": "kente",
+      "mode": "import-csv",
+      "publie_le": "2026-10-30"
+    },
+    {
+      "id": "top-coussins-wax-3",
+      "slug": "top-coussins-wax",
+      "pin_id": null,
+      "tableau": "wax",
+      "mode": "import-csv",
+      "publie_le": "2026-10-31"
+    },
+    {
+      "id": "entree-paniers-miroir-raphia-3",
+      "slug": "entree-paniers-miroir-raphia",
+      "pin_id": null,
+      "tableau": "entree",
+      "mode": "import-csv",
+      "publie_le": "2026-10-31"
+    }
+  ]
+}

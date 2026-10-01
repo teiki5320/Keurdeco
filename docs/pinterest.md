@@ -96,6 +96,18 @@ Pinterest demande une vidéo qui montre l'intégration complète avant d'ouvrir 
 
 Le jeton d'accès est renouvelé automatiquement à chaque exécution à partir du refresh token. Le refresh token a lui-même une durée de vie limitée (environ un an) : le journal du workflow prévient 30 jours avant l'échéance ; il suffit alors de relancer `npm run pinterest:auth` et de mettre à jour le secret. Si Pinterest renvoie un nouveau refresh token, le journal le signale aussi.
 
+## En attendant l'application : import par lots
+
+Tant que l'application n'est pas validée, les épingles s'importent à la main, par lots de 30 jours
+(Pinterest refuse les dates de publication trop lointaines) :
+
+1. `npm run pinterest:lot` écrit `~/Downloads/keurdeco-epingles-<du>-au-<au>.csv` (2 épingles par jour au plus,
+   jamais deux du même article le même jour) et le lot en attente dans `data/pinterest-lot.json`.
+2. Sur Pinterest : **Créer › Créer des épingles en masse › Importer un fichier .csv**. Tous les tableaux nommés
+   dans le fichier doivent exister, avec exactement le même nom (le script en affiche la liste).
+3. Une fois l'import accepté : `npm run pinterest:lot -- --confirmer` note ces épingles dans `data/pinterest-etat.json` ;
+   le lot suivant et la publication automatique ne les reprendront pas.
+
 ## Vérifier que tout marche
 
 - *Actions* › « Publier les épingles Pinterest » › *Run workflow* avec « Mode à blanc » coché : le journal liste les épingles qui seraient publiées.

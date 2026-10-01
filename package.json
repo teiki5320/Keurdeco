@@ -20,6 +20,7 @@
     "nouvel-article": "node scripts/nouvel-article.mjs",
     "pinterest:auth": "node scripts/pinterest-auth.mjs",
     "pinterest:publier": "node scripts/pinterest-publier.mjs",
+    "pinterest:lot": "node scripts/pinterest-lot.mjs",
     "verifier-produits": "node scripts/verifier-produits.mjs",
     "vignettes": "node scripts/vignettes-produits.ts",
     "visuels-marque": "PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/visuels-marque.ts",
