@@ -43,6 +43,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-accrocher-tissu-africain-mur": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "conseil-associer-wax-bogolan": {
     "largeur": 1600,
     "hauteur": 1073
@@ -55,11 +59,27 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-couleurs-kente-signification": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "conseil-entretenir-jarre-terre-cuite": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
   "conseil-entretenir-panier-tresse": {
     "largeur": 1600,
     "hauteur": 1073
   },
   "conseil-laver-coussin-wax": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "conseil-nettoyer-tapis-jute": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "conseil-objets-africains-salon-sans-effet-musee": {
     "largeur": 1600,
     "hauteur": 1073
   },
@@ -72,6 +92,10 @@
     "hauteur": 1073
   },
   "conseil-reconnaitre-vrai-bogolan": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "conseil-reconnaitre-vrai-wax": {
     "largeur": 1600,
     "hauteur": 1073
   },
