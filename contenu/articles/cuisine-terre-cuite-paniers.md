@@ -7,7 +7,7 @@ pieces: [cuisine-salle-a-manger]
 matieres: [terre-cuite, raphia-paniers]
 occasions: []
 image: cuisine-terre-cuite-paniers
-image_alt: "Cuisine rustique aux murs chaulés : grande table en bois avec chemin de table terracotta à glands, planche en olivier et pain, cassolettes et petits bols en terre cuite, carafe en argile, corbeille tressée aux rayures multicolores remplie d’agrumes, suspension en jute à franges, panier mural garni de torchons, pot en terre cuite sur le plan de travail et tapis de couloir tissé."
+image_alt: "Cuisine rustique aux murs chaulés : grande table en bois avec chemin de table terracotta à glands, planche en olivier et pain, cassolettes et petits bols en terre cuite, carafe en argile, corbeille tressée aux rayures multicolores remplie d’agrumes, suspension en jute à franges, panier mural bas et long, en jacinthe d’eau, garni de torchons, pot en terre cuite sur le plan de travail et tapis de couloir tissé."
 image_ia: true
 produits:
   - planche-olivier-39
@@ -22,7 +22,7 @@ produits:
   - tapis-couloir-kilim-chindi
 hotspots:
   - { produit: suspension-jute-boheme, x: 51, y: 17 }
-  - { produit: panier-mural-tresse, x: 21, y: 36 }
+  - { produit: panier-mural-tresse, x: 21, y: 41 }
   - { produit: corbeille-fruits-tressee, x: 50, y: 52 }
   - { produit: carafe-argile-naturelle, x: 61, y: 55 }
   - { produit: bols-terre-cuite-lot-12, x: 54, y: 58 }
