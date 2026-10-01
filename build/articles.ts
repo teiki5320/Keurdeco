@@ -21,7 +21,7 @@ import { Marked } from 'marked';
 import { parse as parseYaml } from 'yaml';
 import { attributsLienAmazon } from '../src/amazon.ts';
 import { FAMILLES, fichierRubrique, trouverRubrique, type Famille } from '../src/taxonomie.ts';
-import { dateDuJour, dateLongue, NOM_SITE, SITE_URL } from './config.ts';
+import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone } from './icones.ts';
 import { imageArticle, imageExiste } from './images.ts';
 import { carteProduit, echapper, encadreProduit, estAffichable, grilleProduits, indexProduits, libelleType, mentionAmazon, type Produit } from './produits.ts';
@@ -399,7 +399,7 @@ export function sourcePageArticle(a: Article, publies: Article[], produits = ind
     <meta name="description" content="${echapper(a.description)}" />
     <meta name="date-publication" content="${a.publieLe}" />
     <meta name="image-partage" content="${echapper(a.image)}" />
-    <title>${echapper(a.titre)} · ${NOM_SITE}</title>
+    <title>${echapper(titrePage(a.titre))}</title>
     <!--#head-->
     <style>@view-transition{navigation:auto}</style>
     ${donneesStructurees(a, produits)}

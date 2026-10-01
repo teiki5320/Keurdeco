@@ -1,6 +1,6 @@
 ---
 titre: "Balcon bohème africain : poufs, lanternes et jarres"
-description: "Poufs en cuir, jarres en terre cuite, lanternes tressées et coussins imprimés : 5 idées pour transformer un petit balcon en coin d’été aux couleurs de l’Afrique."
+description: "Poufs en cuir, jarres en terre cuite, lanternes tressées et coussins imprimés : 5 idées pour faire d’un petit balcon un coin d’été aux couleurs de l’Afrique."
 publie_le: 2026-08-10
 type: ambiance
 pieces: [balcon-exterieur]

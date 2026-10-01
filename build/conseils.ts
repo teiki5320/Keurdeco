@@ -18,7 +18,7 @@ import { resolve } from 'node:path';
 import { parse as parseYaml } from 'yaml';
 import { fichierRubrique, trouverRubrique } from '../src/taxonomie.ts';
 import { rendreCorps } from './articles.ts';
-import { dateDuJour, dateLongue, NOM_SITE, SITE_URL } from './config.ts';
+import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { imageExiste, MENTION_IA_ILLUSTRATION, photoFond } from './images.ts';
 import { motif } from './motifs.ts';
@@ -147,7 +147,7 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="${echapper(c.description)}" />
     <meta name="date-publication" content="${c.publieLe}" />${imageExiste(imageConseil(c)) ? `\n    <meta name="image-partage" content="${imageConseil(c)}" />` : ''}
-    <title>${echapper(c.titre)} · ${NOM_SITE}</title>
+    <title>${echapper(titrePage(c.titre))}</title>
     <!--#head-->
     ${ld.map(jsonLd).join('\n    ')}
   </head>

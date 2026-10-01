@@ -10,7 +10,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { FAMILLES, fichierRubrique, type Famille, type Rubrique } from '../src/taxonomie.ts';
 import { articlesPublies, FICHIER_LISTE, grilleArticles, tousLesArticles, TYPES, type Article } from './articles.ts';
-import { dateLongue, NOM_SITE, SITE_URL } from './config.ts';
+import { dateLongue, SITE_URL, titrePage } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { motif } from './motifs.ts';
 import { imageArticle, imageExiste, MENTION_IA_ILLUSTRATION, photoFond } from './images.ts';
@@ -54,6 +54,16 @@ interface PageSimple {
   ld?: object;
 }
 
+/** Fil d'Ariane en données structurées (BreadcrumbList) pour une page de liste. */
+function filArianeLd(fil: [string, string][]): object {
+  const etapes = [['index.html', 'Accueil'] as [string, string], ...fil];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: etapes.map(([href, nom], i) => ({ '@type': 'ListItem', position: i + 1, name: nom, ...(href ? { item: `${SITE_URL}${href === 'index.html' ? '' : href}` } : {}) })),
+  };
+}
+
 /** Gabarit commun des pages de liste (avec marqueurs). */
 export function pageSimple(p: PageSimple): string {
   const photo = p.image ? photoFond(p.image, '(min-width: 900px) 320px, 120px', 'eager') : '';
@@ -66,8 +76,8 @@ export function pageSimple(p: PageSimple): string {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="${echapper(p.description)}" />${p.noindex ? '\n    <meta name="robots" content="noindex" />' : ''}${photo ? `\n    <meta name="image-partage" content="${p.image}" />` : ''}
-    <title>${echapper(p.titre)} · ${NOM_SITE}</title>
-    <!--#head-->${p.ld ? `\n    <script type="application/ld+json">${JSON.stringify(p.ld).replace(/</g, '\\u003c')}</script>` : ''}
+    <title>${echapper(titrePage(p.titre))}</title>
+    <!--#head-->\n    <script type="application/ld+json">${JSON.stringify(p.ld ?? filArianeLd(p.fil)).replace(/</g, '\\u003c')}</script>
   </head>
   <body>
     <!--#header-->

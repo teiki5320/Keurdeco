@@ -1,6 +1,6 @@
 ---
 titre: "Top 10 des rangements tressés pour la rentrée"
-description: "Paniers d’étagère, porte-revues, coffres, bannette à courrier : 10 rangements tressés pour remettre de l’ordre à la rentrée, avec la chaleur des fibres naturelles."
+description: "Paniers d’étagère, porte-revues, coffres, bannette à courrier : 10 rangements tressés pour remettre de l’ordre à la rentrée, avec la chaleur des fibres."
 publie_le: 2026-08-31
 type: top
 pieces: [entree, salon, chambre-enfant]
