@@ -260,7 +260,7 @@ export async function genererEpingles(articles = articlesPublies(), url = SITE_U
         titre: titre.length > 100 ? `${titre.slice(0, 99)}…` : titre,
         description: descriptionEpingle(a),
         alt: a.imageAlt.slice(0, 500),
-        lien: lienPinterest(adresseArticle(a, url), a.slug),
+        lien: lienPinterest(adresseArticle(a, url), a.slug, numero),
         tableau: a.tableauPinterest,
         publie_le: a.publieLe,
       });
@@ -281,7 +281,7 @@ export async function genererEpingles(articles = articlesPublies(), url = SITE_U
         titre: titre.length > 100 ? `${titre.slice(0, 99)}…` : titre,
         description: `${c.reponse} Conseils de décoration africaine sur Keur Déco.`.slice(0, 500),
         alt: `Épingle Keur Déco : « ${titre} » sur un motif ${t(c)}.`,
-        lien: lienPinterest(`${url}${c.fichier}`, `conseil-${c.slug}`),
+        lien: lienPinterest(`${url}${c.fichier}`, `conseil-${c.slug}`, numero),
         tableau: 'general',
         publie_le: c.publieLe,
       });

@@ -23,7 +23,11 @@ export function dateLongue(iso: string): string {
   return new Date(Date.UTC(a, m - 1, j)).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 }
 
-/** Paramètres de suivi ajoutés aux liens des épingles Pinterest. */
-export function lienPinterest(adresse: string, slug: string): string {
-  return `${adresse}?utm_source=pinterest&utm_medium=social&utm_campaign=${encodeURIComponent(slug)}`;
+/**
+ * Paramètres de suivi ajoutés aux liens des épingles Pinterest. Le numéro de l'épingle (utm_content) rend
+ * chaque lien unique : Pinterest refuse à l'import « Dupliquer le lien de l'Épingle » deux épingles au même lien.
+ */
+export function lienPinterest(adresse: string, slug: string, numero?: number): string {
+  const contenu = numero === undefined ? '' : `&utm_content=${numero}`;
+  return `${adresse}?utm_source=pinterest&utm_medium=social&utm_campaign=${encodeURIComponent(slug)}${contenu}`;
 }

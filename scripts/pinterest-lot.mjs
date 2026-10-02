@@ -64,10 +64,13 @@ const lot = [];
 const premier = plusJours(aujourdhuiParis(), 1);
 for (let j = 0; j < JOURS; j++) {
   const jour = plusJours(premier, j);
-  const choix = choisirEpingles(manifeste, simulation, { max: PAR_JOUR, aujourdhui: jour });
+  // Les épingles déjà programmées ce jour-là (lots précédents) comptent dans le maximum quotidien.
+  const deja = simulation.publiees.filter((p) => p.publie_le === jour).length;
+  if (deja >= PAR_JOUR) continue;
+  const choix = choisirEpingles(manifeste, simulation, { max: PAR_JOUR - deja, aujourdhui: jour });
   choix.forEach((e, k) => {
     simulation.publiees.push({ id: e.id, slug: e.slug, publie_le: jour });
-    lot.push({ e, date: `${jour}T${HEURES[k % HEURES.length]}` });
+    lot.push({ e, date: `${jour}T${HEURES[(deja + k) % HEURES.length]}` });
   });
 }
 if (!lot.length) {

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { tousLesArticles } from '../build/articles.ts';
+import { lienPinterest } from '../build/config.ts';
 import { descriptionEpingle, GABARITS, gabaritPour } from './epingles.ts';
 import { blocHotspots, remplacerHotspots } from './hotspots.mjs';
 import { choisirEpingles, corpsEpingle, tableauPour } from './pinterest-lib.mjs';
@@ -18,6 +19,12 @@ const entree = (slug: string, numero: number, publie_le = '2026-10-05') => ({
 });
 
 describe('épingles', () => {
+  it('chaque épingle d’un même article a un lien différent (Pinterest refuse les liens en double)', () => {
+    const liens = [1, 2, 3].map((n) => lienPinterest('https://www.keurdeco.com/a.html', 'a', n));
+    expect(new Set(liens).size).toBe(3);
+    expect(liens[1]).toContain('utm_campaign=a&utm_content=2');
+  });
+
   it('les 4 gabarits alternent pour un même article', () => {
     const a = tousLesArticles()[0];
     const g = [0, 1, 2, 3].map((i) => gabaritPour(a, i));
