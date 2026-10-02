@@ -1,7 +1,7 @@
 ---
 titre: "Quelle taille de tapis choisir pour son salon ?"
 description: "Pieds du canapé dessus ou dessous, marge autour, forme du tapis : les repères simples pour choisir un tapis de salon aux bonnes dimensions."
-publie_le: 2026-10-05
+publie_le: 2026-10-02
 theme: choisir
 reponse: "Choisissez un tapis assez grand pour que les pieds avant du canapé et des fauteuils reposent dessus, en gardant une bande de sol visible autour de la pièce."
 ---

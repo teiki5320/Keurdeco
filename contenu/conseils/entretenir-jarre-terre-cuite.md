@@ -1,7 +1,7 @@
 ---
 titre: "Comment entretenir une jarre en terre cuite ?"
 description: "Eau claire, brosse douce, vinaigre contre les traces blanches et abri l’hiver : les bons gestes pour qu’une jarre en terre cuite dure des années."
-publie_le: 2026-11-23
+publie_le: 2026-10-02
 theme: entretien
 reponse: "Nettoyez-la à l’eau claire avec une brosse douce, sans détergent ; enlevez les traces blanches avec de l’eau vinaigrée, laissez-la sécher à l’air et mettez-la à l’abri du gel l’hiver."
 matieres: [terre-cuite]

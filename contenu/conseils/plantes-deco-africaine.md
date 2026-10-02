@@ -1,7 +1,7 @@
 ---
 titre: "Quelles plantes pour une déco africaine ?"
 description: "Strelitzia, sansevieria, ficus lyrata, palmiers d’intérieur : des plantes faciles qui prolongent une déco africaine, et comment les mettre en valeur."
-publie_le: 2026-11-02
+publie_le: 2026-10-02
 theme: associer
 reponse: "Misez sur de grandes feuilles graphiques et des plantes robustes : sansevieria, strelitzia, ficus lyrata ou palmier d’intérieur, dans des paniers tressés ou des pots en terre cuite."
 ---

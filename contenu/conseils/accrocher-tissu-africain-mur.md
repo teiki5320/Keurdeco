@@ -1,7 +1,7 @@
 ---
 titre: "Comment accrocher un tissu africain au mur ?"
 description: "Tringle et fourreau, baguettes en bois, cadre sous verre ou châssis tendu : quatre façons d’accrocher un wax, un bogolan ou un kente sans l’abîmer."
-publie_le: 2026-12-28
+publie_le: 2026-10-02
 theme: accrocher
 reponse: "Le plus simple : cousez un fourreau en haut du tissu et glissez-y une tringle ou un bâton de bois. Pour un tissu précieux, préférez un cadre sous verre ou un châssis tendu, et jamais de clous à travers le tissu."
 matieres: [wax, bogolan, kente]

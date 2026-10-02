@@ -1,7 +1,7 @@
 ---
 titre: "Que signifient les couleurs du kente ?"
 description: "Or, vert, bleu, rouge, noir : chaque couleur du kente porte traditionnellement un sens. Le guide pour choisir un kente selon ce qu’il raconte."
-publie_le: 2026-12-14
+publie_le: 2026-10-02
 theme: comprendre
 reponse: "Traditionnellement, l’or évoque la richesse et la royauté, le vert la croissance et les récoltes, le bleu la paix et l’harmonie, le rouge la force et le sacrifice, le noir la maturité et le lien aux ancêtres."
 matieres: [kente]

@@ -1,7 +1,7 @@
 ---
 titre: "Comment reconnaître un vrai wax ?"
 description: "Couleurs identiques des deux côtés, fines craquelures, odeur de cire et lisière imprimée : quatre indices pour distinguer un vrai wax d’une simple imitation."
-publie_le: 2026-11-30
+publie_le: 2026-10-02
 theme: choisir
 reponse: "Regardez l’envers : sur un vrai wax, le motif est aussi net que sur l’endroit. Cherchez aussi de fines craquelures dans les couleurs, une légère odeur de cire et une mention sur la lisière."
 matieres: [wax]

@@ -1,7 +1,7 @@
 ---
 titre: "Comment nettoyer un tapis en jute ?"
 description: "Aspirer sans brosse rotative, tamponner les taches, très peu d’eau et un séchage rapide : comment garder un tapis en jute propre sans l’abîmer."
-publie_le: 2026-12-21
+publie_le: 2026-10-02
 theme: entretien
 reponse: "Aspirez-le souvent sans brosse rotative, tamponnez les taches tout de suite avec un linge sec, n’utilisez que très peu d’eau et faites-le sécher vite : le jute mouillé rétrécit et brunit."
 matieres: [raphia-paniers]

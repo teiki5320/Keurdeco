@@ -1,7 +1,7 @@
 ---
 titre: "Comment décorer avec des perles africaines ?"
 description: "Colliers accrochés au mur, guirlandes, rideaux et petits objets perlés : des idées pour utiliser les perles africaines en décoration, avec parcimonie."
-publie_le: 2026-11-16
+publie_le: 2026-10-02
 theme: accrocher
 reponse: "Utilisez les perles en touches : un long collier accroché au mur, une guirlande sur une étagère ou un rideau de perles dans un passage, près d’une matière naturelle qui les met en valeur."
 matieres: [perles]

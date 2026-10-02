@@ -1,7 +1,7 @@
 ---
 titre: "Comment décorer avec des objets africains sans faire musée ?"
 description: "Grouper par trois, mélanger avec des meubles d’aujourd’hui, laisser respirer les murs : comment intégrer des objets africains dans un salon vivant."
-publie_le: 2026-12-07
+publie_le: 2026-10-02
 theme: associer
 reponse: "Mélangez les objets africains avec des meubles simples d’aujourd’hui, groupez-les par trois autour d’une couleur commune et gardez un seul objet fort par mur, avec du vide autour."
 matieres: [bois-sculpte, raphia-paniers]

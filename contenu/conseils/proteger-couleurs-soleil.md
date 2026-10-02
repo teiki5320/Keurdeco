@@ -1,7 +1,7 @@
 ---
 titre: "Comment éviter que les tissus africains pâlissent au soleil ?"
 description: "Wax, kente, indigo : les couleurs vives craignent la lumière directe. Placement, rotation, voilages et lavage pour garder des couleurs intenses."
-publie_le: 2026-10-26
+publie_le: 2026-10-02
 theme: entretien
 reponse: "Éloignez les tissus de la lumière directe, faites tourner coussins et plaids régulièrement, filtrez le soleil avec un voilage et lavez à froid, à l’envers."
 matieres: [wax, kente, indigo]

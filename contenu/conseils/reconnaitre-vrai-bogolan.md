@@ -1,7 +1,7 @@
 ---
 titre: "Comment reconnaître un bogolan fait main ?"
 description: "Bandes cousues, motifs irréguliers, envers, odeur : les indices pour distinguer un bogolan teint à la main d’un simple tissu imprimé façon mud cloth."
-publie_le: 2026-10-19
+publie_le: 2026-10-02
 theme: choisir
 reponse: "Un bogolan fait main est tissé en bandes étroites cousues ensemble, ses motifs sont peints à la main donc légèrement irréguliers, et la couleur traverse en partie le tissu."
 matieres: [bogolan]

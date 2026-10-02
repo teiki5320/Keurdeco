@@ -1,7 +1,7 @@
 ---
 titre: "Quelle couleur de mur avec des tissus en wax ?"
 description: "Terracotta, blanc chaud, sable, vert sauge ou bleu profond : comment choisir la couleur des murs pour mettre en valeur des coussins et rideaux en wax."
-publie_le: 2026-10-12
+publie_le: 2026-10-02
 theme: associer
 reponse: "Choisissez une couleur de mur reprise dans le wax, mais plus douce ou plus sombre : terracotta rompu, sable, blanc chaud ou bleu profond laissent les motifs respirer."
 matieres: [wax]
