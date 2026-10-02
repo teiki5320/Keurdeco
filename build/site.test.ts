@@ -1,6 +1,8 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { MENTION_AMAZON } from '../src/amazon.ts';
-import { footer, header, insecables, mesureAudience, pagesGenerees, referencement, sitemap, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
+import { datesSitemap, footer, header, insecables, mesureAudience, pagesGenerees, referencement, sitemap, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
 
 describe('parties communes', () => {
   it('navigation : la rubrique courante est signalée', () => {
@@ -56,6 +58,19 @@ describe('référencement', () => {
     expect(s).toContain('<loc>https://www.keurdeco.com/</loc>');
     expect(s).toContain('<loc>https://www.keurdeco.com/articles.html</loc>');
     expect(s).not.toContain('404');
+  });
+
+  it('chaque page du sitemap a une date de mise à jour (lastmod)', () => {
+    const racine = resolve(import.meta.dirname, '..');
+    const dates = datesSitemap(racine);
+    const pages = ['index.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', ...pagesGenerees().keys()];
+    for (const p of pages) expect(dates.get(p), p).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+
+  it('les pages fixes portent des données structurées', () => {
+    const racine = resolve(import.meta.dirname, '..');
+    for (const f of ['a-propos.html', 'mentions-legales.html', 'confidentialite.html']) expect(readFileSync(resolve(racine, f), 'utf8'), f).toContain('application/ld+json');
+    expect(pagesGenerees().get('conseils.html')).toContain('"CollectionPage"');
   });
 });
 

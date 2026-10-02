@@ -297,7 +297,7 @@ export function articlesProches(a: Article, publies: Article[], n = 3): Article[
 export function carteArticle(a: Article, chargement: 'lazy' | 'eager' = 'lazy'): string {
   const t = TYPES[a.type];
   return `<a class="carte-article carte-article--${a.type}" href="${a.fichier}" data-inclinaison data-reveal data-libelle="${echapper(a.titre)}">
-  <span class="carte-article__image">${imageArticle(a.image, '', '(min-width: 1100px) 340px, (min-width: 700px) 45vw, 92vw', chargement)}</span>
+  <span class="carte-article__image">${imageArticle(a.image, a.imageAlt, '(min-width: 1100px) 340px, (min-width: 700px) 45vw, 92vw', chargement)}</span>
   <span class="carte-article__type">${icone(t.icone, 'icone icone--petite')} ${t.nom}</span>
   <strong class="carte-article__titre">${echapper(a.titre)}</strong>
   <span class="carte-article__resume">${echapper(a.description)}</span>

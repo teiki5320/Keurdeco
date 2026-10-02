@@ -325,7 +325,7 @@ export function blocTops(publies = articlesPublies(), n = 7): string {
   const panneaux = tops
     .map(
       (a, i) => `<a class="visite__piece visite__piece--${i % 4}" href="${a.fichier}" data-libelle="${echapper(a.titre)}">
-      <span class="visite__motif">${photoFond(a.image, '(min-width: 700px) 520px, 80vw') || motif('wax')}</span>
+      <span class="visite__motif">${photoFond(a.image, '(min-width: 700px) 520px, 80vw', 'lazy', a.imageAlt) || motif('wax')}</span>
       <span class="visite__num">${String(i + 1).padStart(2, '0')}</span>
       <span class="visite__icone">${icone(TYPES.top.icone, 'icone')}</span>
       <span class="visite__texte">

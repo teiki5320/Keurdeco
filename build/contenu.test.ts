@@ -9,7 +9,7 @@ import { FORMAT_ASIN } from '../src/amazon.ts';
 import { FAMILLES, type Famille } from '../src/taxonomie.ts';
 import { produitsCites, tousLesArticles } from './articles.ts';
 import { conseilsPublies, imageConseil, tousLesConseils } from './conseils.ts';
-import { chargerDimensions, DOSSIER_IMAGES, imageExiste } from './images.ts';
+import { chargerDimensions, DOSSIER_IMAGES, imageExiste, texteAlternatif } from './images.ts';
 import { chargerProduits } from './produits.ts';
 import { chargerGlossaire, imageRubrique } from './rubriques.ts';
 
@@ -117,6 +117,14 @@ describe('articles (contenu/articles)', () => {
       for (const r of FAMILLES[famille].liste) expect(imageExiste(imageRubrique(famille, r.id)), imageRubrique(famille, r.id)).toBe(true);
     }
     for (const c of tousLesConseils()) expect(imageExiste(imageConseil(c)), imageConseil(c)).toBe(true);
+  });
+
+  it('chaque photo de rubrique et de conseil a son texte alternatif (src/data/textes-alternatifs.json)', () => {
+    const noms = [
+      ...(Object.keys(FAMILLES) as Famille[]).flatMap((f) => FAMILLES[f].liste.map((r) => imageRubrique(f, r.id))),
+      ...tousLesConseils().map((c) => imageConseil(c)),
+    ];
+    for (const nom of noms) expect(texteAlternatif(nom).length, nom).toBeGreaterThan(30);
   });
 
   it('les titres d’épingles font 100 caractères au plus', () => {

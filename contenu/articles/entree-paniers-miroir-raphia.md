@@ -1,5 +1,5 @@
 ---
-titre: "Entrée accueillante : paniers, miroir en raphia et banc sculpté"
+titre: "Entrée accueillante : paniers et miroir en raphia"
 description: "Un miroir en fibres naturelles, un banc en bois, des paniers pour les chaussures et un kilim : 5 idées pour une entrée chaleureuse qui accueille dès la porte."
 publie_le: 2026-09-07
 type: ambiance

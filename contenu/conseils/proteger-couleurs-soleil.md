@@ -1,5 +1,5 @@
 ---
-titre: "Comment éviter que les tissus africains pâlissent au soleil ?"
+titre: "Comment protéger les tissus africains du soleil ?"
 description: "Wax, kente, indigo : les couleurs vives craignent la lumière directe. Placement, rotation, voilages et lavage pour garder des couleurs intenses."
 publie_le: 2026-10-02
 theme: entretien

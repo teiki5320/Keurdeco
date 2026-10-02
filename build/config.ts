@@ -2,10 +2,10 @@
 
 export const NOM_SITE = 'Keur Déco';
 
-/** Titre de l'onglet : « Titre · Keur Déco », sans le nom du site quand l'ensemble dépasserait 65 caractères (Google coupe au-delà). */
+/** Titre de l'onglet : « Titre · Keur Déco », sans le nom du site quand l'ensemble dépasserait 60 caractères (Google coupe au-delà). */
 export function titrePage(titre: string): string {
   const complet = `${titre} · ${NOM_SITE}`;
-  return complet.length > 65 ? titre : complet;
+  return complet.length > 60 ? titre : complet;
 }
 
 export const SLOGAN = 'Décoration africaine pour la maison';

@@ -44,8 +44,16 @@ export function imageArticle(nom: string, alt: string, sizes: string, chargement
  * « matiere-wax », « occasion-mariage », « conseil-<slug> ». Même chaîne que les articles
  * (npm run images). Tant que la photo n'existe pas, le motif dessiné reste affiché.
  */
-export function photoFond(nom: string, sizes: string, chargement: 'lazy' | 'eager' = 'lazy'): string {
-  return imageArticle(nom, '', sizes, chargement, 'photo-fond');
+export function photoFond(nom: string, sizes: string, chargement: 'lazy' | 'eager' = 'lazy', alt = texteAlternatif(nom)): string {
+  return imageArticle(nom, alt, sizes, chargement, 'photo-fond');
+}
+
+let textesAlternatifs: Record<string, string> | null = null;
+
+/** Texte alternatif d'une photo de rubrique ou de conseil (src/data/textes-alternatifs.json) ; vide s'il manque. */
+export function texteAlternatif(nom: string): string {
+  textesAlternatifs ??= JSON.parse(readFileSync(resolve(RACINE, 'src/data/textes-alternatifs.json'), 'utf8')) as Record<string, string>;
+  return textesAlternatifs[nom] ?? '';
 }
 
 export const MENTION_IA_ILLUSTRATION = 'Photo d’illustration créée par IA.';

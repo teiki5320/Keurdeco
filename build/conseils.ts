@@ -181,6 +181,33 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
 `;
 }
 
+/** Données structurées de conseils.html : page de collection, liste des conseils et fil d'Ariane. */
+function ldListeConseils(publies: Conseil[]): object {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        name: 'Conseils de décoration africaine',
+        url: `${SITE_URL}conseils.html`,
+        inLanguage: 'fr',
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: publies.length,
+          itemListElement: publies.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE_URL}${c.fichier}`, name: c.titre })),
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Conseils', item: `${SITE_URL}conseils.html` },
+        ],
+      },
+    ],
+  };
+}
+
 /** Page conseils.html : tous les conseils publiés, regroupés par thème. */
 export function sourcePageListeConseils(publies: Conseil[]): string {
   const themes = (Object.keys(THEMES) as Theme[]).map((t) => ({ t, liste: publies.filter((c) => c.theme === t) })).filter((x) => x.liste.length);
@@ -196,6 +223,7 @@ export function sourcePageListeConseils(publies: Conseil[]): string {
     <meta name="description" content="Nos conseils de décoration africaine : entretenir le wax et les paniers, associer les tissus, choisir un tapis, accrocher des assiettes tressées." />
     <title>Conseils de décoration africaine · ${NOM_SITE}</title>
     <!--#head-->
+    <script type="application/ld+json">${JSON.stringify(ldListeConseils(publies)).replace(/</g, '\\u003c')}</script>
   </head>
   <body>
     <!--#header-->

@@ -1,5 +1,5 @@
 ---
-titre: "Comment mélanger plusieurs imprimés africains sans surcharger ?"
+titre: "Comment mélanger des imprimés africains sans surcharger ?"
 description: "Une couleur commune, des motifs de tailles différentes, des unis pour respirer : la méthode pour associer wax, bogolan et kente dans une même pièce."
 publie_le: 2026-10-02
 theme: associer

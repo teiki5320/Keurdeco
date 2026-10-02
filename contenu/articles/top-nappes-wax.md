@@ -1,5 +1,5 @@
 ---
-titre: "Top 8 des nappes et chemins de table en wax et imprimés africains"
+titre: "Top 8 des nappes et chemins de table en wax"
 description: "Coupon de pagne en wax, chemins de table en lin imprimé kente ou tribal, nappe imperméable : notre sélection pour une table d’été pleine de couleurs."
 publie_le: 2026-08-17
 type: top

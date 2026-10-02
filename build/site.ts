@@ -14,18 +14,19 @@
  *   <!--#mention-amazon-->   mention obligatoire du programme Partenaires Amazon
  *   <!--#icone:nom-->        une icône de build/icones.ts
  */
+import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { basename, resolve } from 'node:path';
 import type { Plugin } from 'vite';
 import { MENTION_AMAZON } from '../src/amazon.ts';
-import { FAMILLES, type Famille } from '../src/taxonomie.ts';
+import { FAMILLES, type Famille, fichierRubrique } from '../src/taxonomie.ts';
 import { insecables } from '../src/typo.ts';
 import { articlesPublies, pagesArticles } from './articles.ts';
 import { NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
 import { blocConseils, conseilsPublies, pagesConseils } from './conseils.ts';
 import { essayage } from './essayage.ts';
 import { icone, type NomIcone } from './icones.ts';
-import { blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
+import { ambiancesDeRubrique, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
 
 export { insecables, NOM_SITE, SITE_URL };
@@ -260,6 +261,46 @@ function pageGeneree(id: string): string | null {
   return f.endsWith('.html') && pagesGenerees().has(f) ? f : null;
 }
 
+/** Date du dernier commit qui a modifié un fichier (AAAA-MM-JJ), ou undefined hors dépôt git. */
+function dateGit(racine: string, fichier: string): string | undefined {
+  try {
+    return execFileSync('git', ['log', '-1', '--format=%cs', '--', fichier], { cwd: racine, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim() || undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/**
+ * Date de dernière mise à jour de chaque page (<lastmod> du sitemap) : publication pour les articles
+ * et les conseils, contenu le plus récent pour les pages de liste, dernier commit du fichier source
+ * pour le glossaire et les pages fixes.
+ */
+export function datesSitemap(racine: string): Map<string, string> {
+  const articles = articlesPublies();
+  const conseils = conseilsPublies();
+  const plusRecente = (liste: { publieLe: string }[]) => liste.reduce((m, x) => (x.publieLe > m ? x.publieLe : m), '');
+  const dates = new Map<string, string>([...articles, ...conseils].map((x) => [x.fichier, x.publieLe]));
+  const poser = (fichier: string, date: string | undefined) => {
+    if (date) dates.set(fichier, date);
+  };
+  for (const famille of Object.keys(FAMILLES) as Famille[]) {
+    const ambiances = FAMILLES[famille].liste.map((r) => {
+      const liste = ambiancesDeRubrique(famille, r.id, articles);
+      poser(fichierRubrique(famille, r.id), plusRecente(liste));
+      return liste;
+    });
+    poser(FAMILLES[famille].hub, plusRecente(ambiances.flat()));
+  }
+  poser('tops.html', plusRecente(articles.filter((a) => a.type === 'top')));
+  poser('guides.html', plusRecente(articles.filter((a) => a.type === 'guide')));
+  poser('conseils.html', plusRecente(conseils));
+  poser('index.html', plusRecente([...articles, ...conseils]));
+  const glossaire = dateGit(racine, 'src/data/glossaire.json');
+  for (const f of readdirSync(racine)) if (f.endsWith('.html') && !dates.has(f)) poser(f, dateGit(racine, f));
+  for (const f of pagesGenerees().keys()) if (f.startsWith('glossaire')) poser(f, glossaire);
+  return dates;
+}
+
 export function sitemap(pages: string[], url = SITE_URL, dates: Map<string, string> = new Map()): string {
   const urls = pages
     .filter((p) => p !== '404.html')
@@ -330,7 +371,7 @@ export function pluginSite(): Plugin {
         .map((nom) => `${nom}.html`)
         .filter((f) => !sourcePage(racine, f).includes('content="noindex"'));
       // Date de publication des articles et conseils (<lastmod>), pour aider Google à les découvrir.
-      const dates = new Map([...articlesPublies(), ...conseilsPublies()].map((x) => [x.fichier, x.publieLe]));
+      const dates = datesSitemap(racine);
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap(pages, SITE_URL, dates) });
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}sitemap.xml\n` });
       // Service worker : une version par publication, pour que les caches (images comprises) se renouvellent.
