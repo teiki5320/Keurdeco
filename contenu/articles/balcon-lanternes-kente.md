@@ -1,7 +1,7 @@
 ---
 titre: "Balcon aux lanternes et au kente pour les soirées d’été"
 description: "Banc en acacia, coussins aux couleurs du kente, lanternes solaires et terre cuite : 5 idées pour profiter du balcon jusqu’à la nuit tombée."
-publie_le: 2027-01-25
+publie_le: 2027-04-26
 type: ambiance
 pieces: [balcon-exterieur]
 matieres: [kente, terre-cuite]
