@@ -6,7 +6,8 @@
  *   glossaire.html et glossaire-<id>.html   (glossaire des matières, motifs et savoir-faire)
  * et les blocs de l'accueil (marqueurs <!--#une-->, <!--#tops-->, <!--#entrees:piece-->…).
  */
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { Marked } from 'marked';
 import { resolve } from 'node:path';
 import { FAMILLES, fichierRubrique, type Famille, type Rubrique } from '../src/taxonomie.ts';
 import { articlesPublies, FICHIER_LISTE, grilleArticles, tousLesArticles, TYPES, type Article } from './articles.ts';
@@ -159,8 +160,21 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
     image: imageExiste(imageRubrique(famille, r.id)) ? imageRubrique(famille, r.id) : undefined,
     contenu: `${grilleArticles(articles, '<p class="liste-vide">La première ambiance arrive bientôt.</p>')}
+        ${introPage(fichierRubrique(famille, r.id).replace(/\.html$/, ''))}
         <nav class="autres-rubriques" aria-label="${f.titre}"><h2>${f.titre}</h2>${tuilesRubriques(famille, publies)}</nav>`,
   });
+}
+
+/** Textes d'introduction des pages de liste (contenu/rubriques/<page>.md), affichés sous les ambiances. */
+const DOSSIER_INTROS = resolve(import.meta.dirname, '../contenu/rubriques');
+const markdownIntro = new Marked();
+
+/** Texte d'introduction d'une page de liste (« piece-salon », « matieres », « guides ») ; vide s'il n'existe pas. */
+export function introPage(nom: string): string {
+  const fichier = resolve(DOSSIER_INTROS, `${nom}.md`);
+  if (!existsSync(fichier)) return '';
+  const html = markdownIntro.parse(readFileSync(fichier, 'utf8'), { async: false }) as string;
+  return `<section class="intro-page conteneur--etroit prose" data-reveal>${html}</section>`;
 }
 
 /** Motif de l'arche par famille. */
@@ -185,11 +199,11 @@ function pageHub(famille: Famille, publies: Article[]): string {
     // Pièces : le carrousel de la visite ; Matières : le nuancier puis les 8 matières. Ces blocs
     // occupent toute la largeur : on referme le conteneur de la page le temps de les afficher.
     contenu:
-      famille === 'piece'
+      (famille === 'piece'
         ? `</div><!--#visite--><div class="conteneur">`
         : famille === 'matiere'
           ? `</div><!--#essayage--><div class="conteneur">${tuilesRubriques(famille, publies)}`
-          : tuilesRubriques(famille, publies),
+          : tuilesRubriques(famille, publies)) + introPage(f.hub.replace(/\.html$/, '')),
   });
 }
 
@@ -225,7 +239,7 @@ function pageListeType(type: 'top' | 'guide', publies: Article[]): string {
     classe: 'page--articles',
     noindex: liste.length === 0,
     motif: l.motif,
-    contenu: grilleArticles(liste, `<p class="liste-vide">${l.vide}</p>`),
+    contenu: grilleArticles(liste, `<p class="liste-vide">${l.vide}</p>`) + introPage(l.fichier.replace(/\.html$/, '')),
   });
 }
 

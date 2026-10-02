@@ -11,7 +11,7 @@ import { produitsCites, tousLesArticles } from './articles.ts';
 import { conseilsPublies, imageConseil, tousLesConseils } from './conseils.ts';
 import { chargerDimensions, DOSSIER_IMAGES, imageExiste, texteAlternatif } from './images.ts';
 import { chargerProduits } from './produits.ts';
-import { chargerGlossaire, imageRubrique } from './rubriques.ts';
+import { chargerGlossaire, imageRubrique, introPage } from './rubriques.ts';
 
 const RACINE = resolve(import.meta.dirname, '..');
 const produits = chargerProduits(resolve(RACINE, 'src/data/produits.json'));
@@ -117,6 +117,13 @@ describe('articles (contenu/articles)', () => {
       for (const r of FAMILLES[famille].liste) expect(imageExiste(imageRubrique(famille, r.id)), imageRubrique(famille, r.id)).toBe(true);
     }
     for (const c of tousLesConseils()) expect(imageExiste(imageConseil(c)), imageConseil(c)).toBe(true);
+  });
+
+  it('chaque page de rubrique et chaque page de famille a son texte d’introduction (contenu/rubriques/)', () => {
+    for (const famille of Object.keys(FAMILLES) as Famille[]) {
+      expect(introPage(FAMILLES[famille].hub.replace(/\.html$/, '')), FAMILLES[famille].hub).toContain('<h2');
+      for (const r of FAMILLES[famille].liste) expect(introPage(imageRubrique(famille, r.id)), r.id).toContain('<h2');
+    }
   });
 
   it('chaque photo de rubrique et de conseil a son texte alternatif (src/data/textes-alternatifs.json)', () => {
