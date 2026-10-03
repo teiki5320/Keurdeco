@@ -258,6 +258,11 @@
   to { transform: scale(2.2); opacity: 0; }
 }
 
+/* Respiration sous le nuancier avant le bloc suivant (grille des matières sur la page Matières). */
+.nuancier {
+  margin-bottom: var(--espace);
+}
+
 .nuancier__aide {
   margin: 18px 0 0;
   text-align: center;
