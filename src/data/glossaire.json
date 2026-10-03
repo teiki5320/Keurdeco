@@ -8,9 +8,12 @@
     "texte": [
       "Le wax (de l’anglais « cire ») est un tissu de coton imprimé selon une technique inspirée du batik javanais : une réserve de cire (ou de résine) protège certaines zones du tissu pendant la teinture. Industrialisé au XIXe siècle aux Pays-Bas, il a trouvé son public en Afrique de l’Ouest et centrale, où il s’est imposé au XXe siècle.",
       "Ses motifs portent souvent un nom, donné par les commerçantes et les clientes : un même dessin peut évoquer un proverbe, un événement ou une situation de la vie. Les grandes revendeuses de Lomé, surnommées les « Nana Benz », ont largement contribué à son succès.",
-      "En décoration, le wax se prête aux coussins, rideaux, nappes, abat-jour, tableaux tendus sur châssis ou têtes de lit. Ses couleurs franches se marient bien avec des matières brutes (bois, rotin, terre cuite) et des murs sobres qui le laissent respirer."
+      "En décoration, le wax se prête aux coussins, rideaux, nappes, abat-jour, tableaux tendus sur châssis ou têtes de lit. Ses couleurs franches se marient bien avec des matières brutes (bois, rotin, terre cuite) et des murs sobres qui le laissent respirer.",
+      "Pour bien le choisir, regardez l’envers du tissu : sur un vrai wax, le motif est aussi net que sur l’endroit, et de fines craquelures apparaissent dans les aplats de couleur, signature de la cire. Le wax se vend souvent en coupons de six yards, soit environ 5,5 m, ce qui suffit pour une grande nappe ou plusieurs housses de coussin. Il se lave en machine à 30 °C, à l’envers et avec des couleurs proches ; le premier lavage l’assouplit. Évitez le plein soleil derrière une vitre, qui fait pâlir les couleurs les plus vives."
     ],
-    "matieres": ["wax"]
+    "matieres": [
+      "wax"
+    ]
   },
   {
     "id": "bogolan",
@@ -21,9 +24,12 @@
     "texte": [
       "Le bogolan (ou bògòlanfini) vient du Mali. Son nom en bambara associe « bògò », la terre, et « lan », qui marque l’origine ou le moyen : c’est l’étoffe faite avec de la terre. En anglais, on parle souvent de « mud cloth ».",
       "Des bandes de coton tissées à la main sont cousues ensemble, puis trempées dans une décoction de feuilles riches en tanins qui leur donne une teinte jaune. Les motifs sont ensuite dessinés avec une boue fermentée, riche en fer, qui réagit avec les tanins et noircit en séchant. Les zones épargnées sont parfois décolorées pour obtenir un blanc cassé.",
-      "Chaque motif a traditionnellement un sens (protection, statut, événement). Aujourd’hui, le bogolan se décline en coussins, plaids, tapis, tentures ou abat-jour ; ses tons terre en font l’un des tissus africains les plus faciles à intégrer dans un intérieur contemporain."
+      "Chaque motif a traditionnellement un sens (protection, statut, événement). Aujourd’hui, le bogolan se décline en coussins, plaids, tapis, tentures ou abat-jour ; ses tons terre en font l’un des tissus africains les plus faciles à intégrer dans un intérieur contemporain.",
+      "Un bogolan teint à la main se reconnaît à ses irrégularités : traits légèrement tremblés, nuances de brun qui varient, envers moins net que l’endroit. Les versions imprimées en série sont plus régulières et moins chères, mais conviennent bien au linge du quotidien. Les pièces artisanales se lavent rarement, à la main, à l’eau froide et sans les faire tremper, puis sèchent à plat et à l’ombre : la teinture naturelle peut dégorger. En décoration, le bogolan s’accorde particulièrement avec le lin, le bois brut, la terre cuite et les fibres tressées, et apaise un ensemble de tissus plus colorés."
     ],
-    "matieres": ["bogolan"]
+    "matieres": [
+      "bogolan"
+    ]
   },
   {
     "id": "kente",
@@ -34,9 +40,12 @@
     "texte": [
       "Le kente est un tissu tissé en bandes étroites sur des métiers horizontaux, puis assemblées bord à bord. Il est associé aux Ashanti (Asante) et aux Éwé, au Ghana et au Togo. D’abord réservé à la royauté et aux chefs, il est aujourd’hui porté lors des cérémonies, des mariages et des remises de diplôme.",
       "Ses motifs géométriques et ses couleurs ont une signification : l’or évoque la richesse et le statut, le vert la croissance, le bleu la paix, le rouge le sacrifice et la lutte. Chaque dessin porte un nom.",
-      "En décoration, une bande de kente suffit souvent : chemin de table, coussin, encadrement mural ou détail sur un plaid. On trouve surtout des tissus « imprimés kente » en grande diffusion ; le kente tissé main est plus rare et plus précieux."
+      "En décoration, une bande de kente suffit souvent : chemin de table, coussin, encadrement mural ou détail sur un plaid. On trouve surtout des tissus « imprimés kente » en grande diffusion ; le kente tissé main est plus rare et plus précieux.",
+      "Un kente tissé main se reconnaît à ses bandes de 10 à 12 cm environ, cousues bord à bord, et à son épaisseur : le motif traverse le tissu au lieu d’être imprimé en surface. C’est une pièce de valeur, que l’on protège de la lumière directe et que l’on dépoussière plutôt que de la laver. Pour un usage quotidien, comme des coussins, des nappes ou des housses, les tissus imprimés aux motifs de kente sont plus pratiques et se lavent en machine. Dans une pièce, laissez au kente un fond calme et reprenez une seule de ses couleurs sur un objet uni."
     ],
-    "matieres": ["kente"]
+    "matieres": [
+      "kente"
+    ]
   },
   {
     "id": "adinkra",
@@ -47,9 +56,13 @@
     "texte": [
       "Les adinkra sont des symboles graphiques des peuples akan (Ghana, Côte d’Ivoire). Traditionnellement, ils étaient imprimés sur des tissus de deuil à l’aide de tampons taillés dans des calebasses, avec une encre obtenue à partir d’écorce.",
       "Chaque symbole résume un proverbe ou une valeur. Parmi les plus connus : Gye Nyame (la toute-puissance de Dieu), Sankofa (revenir chercher ce que l’on a oublié, apprendre du passé), Dwennimmen (les cornes du bélier, humilité et force), Nkyinkyim (l’adaptabilité).",
-      "Les adinkra se retrouvent aujourd’hui sur des tissus, des objets en bois, des bijoux, des carreaux ou des affiches. Ils apportent une touche graphique discrète, idéale sur un mur clair ou un linge uni."
+      "Les adinkra se retrouvent aujourd’hui sur des tissus, des objets en bois, des bijoux, des carreaux ou des affiches. Ils apportent une touche graphique discrète, idéale sur un mur clair ou un linge uni.",
+      "Dans une maison, un symbole adinkra se choisit pour son sens autant que pour sa forme : Sankofa dans une entrée pour rappeler d’où l’on vient, Gye Nyame au-dessus d’une porte, Dwennimmen dans un bureau. Un seul symbole, grand et bien placé, a plus d’effet qu’une accumulation. Les tampons en calebasse, les cadres imprimés et les tissus estampés à la main se trouvent auprès d’artisans ghanéens ; les reproductions en série sont plus régulières. Les adinkra s’accordent avec le blanc, le crème et le noir, et ressortent bien sur un mur clair ou un linge de lit uni."
     ],
-    "matieres": ["kente", "bois-sculpte"]
+    "matieres": [
+      "kente",
+      "bois-sculpte"
+    ]
   },
   {
     "id": "adire",
@@ -60,9 +73,12 @@
     "texte": [
       "L’adire est un tissu teint à l’indigo, emblématique des Yoruba du sud-ouest du Nigeria, notamment de la région d’Abeokuta. Le mot signifie à peu près « lier et teindre ».",
       "Les motifs naissent de réserves qui empêchent la teinture de pénétrer : ligatures et nœuds (adire oniko), coutures serrées (adire alabere) ou pâte d’amidon appliquée à la main ou au pochoir (adire eleko). Après les bains d’indigo, les zones protégées apparaissent en bleu clair ou en blanc.",
-      "Ses bleus profonds et ses motifs répétitifs s’accordent avec le lin, le bois clair et le blanc : coussins, rideaux, nappes ou tentures pour une ambiance calme."
+      "Ses bleus profonds et ses motifs répétitifs s’accordent avec le lin, le bois clair et le blanc : coussins, rideaux, nappes ou tentures pour une ambiance calme.",
+      "Pour reconnaître un adire fait main, observez les motifs : de légers débordements de teinture et des différences de bleu d’une zone à l’autre trahissent un travail artisanal. Les premiers lavages dégorgent souvent un peu d’indigo : lavez la pièce seule, à l’eau froide et avec un savon doux, puis faites-la sécher à l’ombre. En décoration, l’adire convient particulièrement aux chambres et aux salles de bain, où son bleu profond apaise. Associé à une touche de terracotta ou d’ocre, il prend encore plus d’éclat ; avec du blanc et du bois clair, il reste très calme."
     ],
-    "matieres": ["indigo"]
+    "matieres": [
+      "indigo"
+    ]
   },
   {
     "id": "indigo",
@@ -73,9 +89,12 @@
     "texte": [
       "L’indigo est un colorant bleu tiré de plantes (indigotiers du genre Indigofera, ou lianes comme Lonchocarpus cyanescens en Afrique de l’Ouest). Le tissu est plongé dans une cuve de teinture puis exposé à l’air : c’est l’oxydation qui fait apparaître le bleu. Plus les bains sont nombreux, plus la couleur est profonde.",
       "Les fosses de teinture de Kano, au Nigeria, sont parmi les plus anciennes encore en activité. Au Mali, en Guinée ou au Burkina Faso, l’indigo sert aussi à teindre les bandes de coton tissées ; chez les Touaregs, il colore les chèches.",
-      "En décoration, l’indigo apporte de la profondeur sans agressivité. Il se marie avec le blanc, le sable, le terracotta (son complément chaud) et le bois naturel."
+      "En décoration, l’indigo apporte de la profondeur sans agressivité. Il se marie avec le blanc, le sable, le terracotta (son complément chaud) et le bois naturel.",
+      "Les tissus teints à l’indigo vieillissent bien : leur bleu s’adoucit avec les lavages, comme un jean. Lors des premiers lavages, ils peuvent déteindre légèrement ; lavez-les seuls ou avec des couleurs sombres, à l’eau froide, et faites-les sécher à l’ombre. Dans une maison, l’indigo trouve naturellement sa place dans la chambre, sur le linge de lit, ou dans la salle de bain, en serviettes et en tentures. Pour éviter une pièce trop froide, réchauffez-le avec du bois, des fibres tressées ou une touche de terracotta, sa couleur complémentaire."
     ],
-    "matieres": ["indigo"]
+    "matieres": [
+      "indigo"
+    ]
   },
   {
     "id": "faso-dan-fani",
@@ -85,9 +104,12 @@
     "resume": "Pagne de coton tissé du Burkina Faso, souvent rayé, symbole de fierté nationale et de production locale.",
     "texte": [
       "Le Faso Dan Fani (« pagne tissé de la patrie ») est un tissu de coton tissé au Burkina Faso, souvent à rayures colorées. Il a été mis en avant dans les années 1980 comme symbole de la production locale et reste aujourd’hui un tissu de fête et de fierté.",
-      "Il est tissé en bandes, principalement par des femmes, à partir de coton filé. Ses rayures régulières en font un tissu facile à associer : il habille des coussins, des chemins de table ou des rideaux avec une note graphique mais sobre."
+      "Il est tissé en bandes, principalement par des femmes, à partir de coton filé. Ses rayures régulières en font un tissu facile à associer : il habille des coussins, des chemins de table ou des rideaux avec une note graphique mais sobre.",
+      "Le Faso Dan Fani se reconnaît à ses bandes étroites assemblées et à ses rayures nettes, souvent dans des couleurs franches comme le rouge, le jaune, le vert et l’indigo. Le coton tissé est épais et solide : il convient aux coussins de canapé, aux chemins de table, aux housses de pouf et aux rideaux qui doivent bien tomber. Il se lave à l’eau froide ou tiède, à l’envers, pour préserver ses couleurs. Ses rayures régulières en font un bon partenaire des imprimés plus chargés comme le wax : elles structurent l’ensemble sans le surcharger."
     ],
-    "matieres": ["wax"]
+    "matieres": [
+      "wax"
+    ]
   },
   {
     "id": "velours-kuba",
@@ -97,9 +119,12 @@
     "resume": "Tissu de raphia brodé du royaume kuba, aux motifs géométriques en relief, qui ressemble à du velours.",
     "texte": [
       "Les Kuba, au centre de la République démocratique du Congo, tissent le raphia en petits carrés que les femmes brodent ensuite de fils de raphia coupés ras : le relief obtenu évoque le velours, d’où le nom de « velours du Kasaï ».",
-      "Les motifs géométriques, souvent asymétriques, ont inspiré de nombreux artistes du XXe siècle. Les pièces anciennes sont des objets de collection ; les créations actuelles s’accrochent au mur, s’encadrent ou recouvrent des coussins, pour une texture naturelle très graphique."
+      "Les motifs géométriques, souvent asymétriques, ont inspiré de nombreux artistes du XXe siècle. Les pièces anciennes sont des objets de collection ; les créations actuelles s’accrochent au mur, s’encadrent ou recouvrent des coussins, pour une texture naturelle très graphique.",
+      "Une pièce de kuba demande peu d’entretien mais beaucoup de précautions : le raphia craint l’humidité, le frottement et le plein soleil. On la dépoussière à l’aspirateur à faible puissance, à travers une gaze, et on la conserve à plat ou roulée, jamais pliée longtemps au même endroit. Accrochée au mur, elle se fixe sur une baguette ou se pose dans un cadre sous verre. Pour le quotidien, des reproductions imprimées en coton reprennent ses motifs géométriques sur des coussins ou des nappes, sans risque d’abîmer une pièce artisanale."
     ],
-    "matieres": ["raphia-paniers"]
+    "matieres": [
+      "raphia-paniers"
+    ]
   },
   {
     "id": "raphia",
@@ -110,9 +135,12 @@
     "texte": [
       "Le raphia est une fibre obtenue à partir des jeunes feuilles de palmiers du genre Raphia. Séchée, elle devient souple et solide ; elle se tresse, se tisse ou se crochète.",
       "On en fait des paniers, des sets de table, des abat-jour, des chapeaux, des tissus (comme le velours du Kasaï) et des assiettes murales. Madagascar en est un grand producteur.",
-      "Le raphia apporte de la texture et de la chaleur sans alourdir : il fonctionne dans toutes les pièces, surtout à côté de tissus unis ou d’indigo."
+      "Le raphia apporte de la texture et de la chaleur sans alourdir : il fonctionne dans toutes les pièces, surtout à côté de tissus unis ou d’indigo.",
+      "Les objets en raphia demandent un entretien simple : un dépoussiérage régulier au pinceau ou à l’aspirateur muni d’une brosse, et un chiffon à peine humide pour les taches. Le raphia craint surtout l’eau stagnante et l’humidité, qui le déforment et favorisent la moisissure : évitez les salles de bain sans aération et faites sécher vite un panier mouillé. Un objet écrasé se remet en forme en l’humidifiant légèrement puis en le laissant sécher dans la bonne position. Les brins qui s’effilochent se coupent au ras ou se recollent avec une goutte de colle blanche."
     ],
-    "matieres": ["raphia-paniers"]
+    "matieres": [
+      "raphia-paniers"
+    ]
   },
   {
     "id": "panier-bolga",
@@ -122,9 +150,12 @@
     "resume": "Panier tressé à la main dans la région de Bolgatanga, en herbe « veta vera », souvent bicolore avec des anses gainées de cuir.",
     "texte": [
       "Les paniers Bolga tirent leur nom de Bolgatanga, ville du nord du Ghana où la vannerie fait vivre de nombreuses familles. Ils sont tressés à la main en herbe « veta vera » (une herbe de la famille des graminées), teinte ou laissée naturelle.",
-      "Leur tressage serré les rend solides : ils servent de paniers de marché, de cache-pots, de paniers à linge ou de rangements. Leurs couleurs vives ou leurs motifs rayés égaient une entrée, une salle de bain ou une chambre d’enfant."
+      "Leur tressage serré les rend solides : ils servent de paniers de marché, de cache-pots, de paniers à linge ou de rangements. Leurs couleurs vives ou leurs motifs rayés égaient une entrée, une salle de bain ou une chambre d’enfant.",
+      "Un vrai panier Bolga se reconnaît à son tressage très serré, à son poids et à son anse souvent gainée de cuir cousu à la main. Chaque panier est unique : les couleurs et les motifs varient d’un tresseur à l’autre. Pour l’entretenir, il suffit de le dépoussiérer et de le garder à l’abri de l’humidité. S’il se déforme, on le vaporise légèrement d’eau et on lui redonne sa forme à la main avant de le laisser sécher à l’air. Le plein soleil prolongé fait pâlir les fibres teintes : préférez un emplacement à l’ombre."
     ],
-    "matieres": ["raphia-paniers"]
+    "matieres": [
+      "raphia-paniers"
+    ]
   },
   {
     "id": "assiette-murale-tressee",
@@ -134,9 +165,12 @@
     "resume": "Plateaux et vans tressés, autrefois utilitaires, aujourd’hui accrochés en compositions murales colorées.",
     "texte": [
       "Beaucoup de plateaux tressés ont d’abord servi à vanner les céréales, à sécher des aliments ou à servir. Selon les régions, ils sont faits d’herbes, de feuilles de palmier, de raphia ou de sisal, parfois avec des motifs teints.",
-      "Accrochés au mur en grappe, de tailles et de couleurs variées, ils forment une composition chaleureuse qui habille un grand mur blanc sans percer des dizaines de trous : quelques clous suffisent."
+      "Accrochés au mur en grappe, de tailles et de couleurs variées, ils forment une composition chaleureuse qui habille un grand mur blanc sans percer des dizaines de trous : quelques clous suffisent.",
+      "Pour composer un mur d’assiettes tressées, choisissez des tailles variées, de 20 à 50 cm, et une ou deux couleurs dominantes qui reviennent dans plusieurs pièces de l’ensemble. Disposez-les d’abord au sol, ou dessinez des gabarits en papier que vous fixez au mur avec du ruban de masquage, avant de percer. Un petit clou ou un crochet adhésif suffit pour les modèles légers ; certaines assiettes ont une boucle au dos, sinon un anneau cousu fait l’affaire. Dépoussiérez-les de temps en temps au pinceau et évitez les murs humides."
     ],
-    "matieres": ["raphia-paniers"]
+    "matieres": [
+      "raphia-paniers"
+    ]
   },
   {
     "id": "terre-cuite",
@@ -147,9 +181,12 @@
     "texte": [
       "En Afrique de l’Ouest, la poterie est souvent un savoir-faire féminin transmis de mère en fille. Les pièces sont montées à la main (au colombin ou par martelage sur une forme), polies, parfois décorées d’impressions ou d’engobes, puis cuites en meule à l’air libre.",
       "Le canari, grande jarre de terre poreuse, garde l’eau fraîche grâce à l’évaporation. Les villages de potières, comme Kalabougou au Mali, sont réputés pour leurs pièces noires ou rouges.",
-      "En décoration, jarres, vases et plats en terre cuite apportent des formes rondes et des tons chauds : sur une console, au pied d’un canapé ou sur un balcon avec des plantes."
+      "En décoration, jarres, vases et plats en terre cuite apportent des formes rondes et des tons chauds : sur une console, au pied d’un canapé ou sur un balcon avec des plantes.",
+      "La terre cuite est poreuse : elle absorbe l’eau, les graisses et les taches. Pour un pot ou une jarre d’intérieur, un dépoussiérage et un chiffon humide suffisent ; pour un plat de cuisson, on le fait tremper avant le premier usage et on évite les chocs de température. Dehors, choisissez une terre cuite dite non gélive, ou rentrez les pièces avant les gelées : l’eau absorbée peut faire éclater la terre en gelant. Les traces blanches de calcaire s’enlèvent avec un peu de vinaigre blanc dilué, puis un rinçage à l’eau claire."
     ],
-    "matieres": ["terre-cuite"]
+    "matieres": [
+      "terre-cuite"
+    ]
   },
   {
     "id": "bois-sculpte",
@@ -160,9 +197,12 @@
     "texte": [
       "La sculpture sur bois est l’un des arts les plus répandus en Afrique subsaharienne. De nombreux objets sont taillés dans une seule pièce : tabourets (comme les tabourets sénoufo ou ashanti), appuie-tête, bols, cuillères, portes de grenier.",
       "Les masques et statuettes ont souvent une fonction rituelle. Pour la décoration, on privilégie les créations d’artisans actuels et les objets du quotidien, et l’on évite de présenter un objet sacré comme un simple accessoire.",
-      "Un tabouret sculpté sert de table d’appoint, de support de plante ou de siège ; un grand bol devient vide-poche ou corbeille à fruits."
+      "Un tabouret sculpté sert de table d’appoint, de support de plante ou de siège ; un grand bol devient vide-poche ou corbeille à fruits.",
+      "Un objet en bois sculpté artisanal se reconnaît à son poids, aux traces d’outils visibles sur la surface et à ses légères irrégularités ; une copie en résine est plus légère et parfaitement régulière. Côté entretien, on dépoussière au pinceau souple, on évite l’eau et on tient l’objet à l’écart des radiateurs et du plein soleil, qui dessèchent le bois et le font fendre. Une ou deux fois par an, une fine couche de cire d’abeille nourrit le bois et ravive sa patine ; testez-la d’abord sur une zone cachée."
     ],
-    "matieres": ["bois-sculpte"]
+    "matieres": [
+      "bois-sculpte"
+    ]
   },
   {
     "id": "perles-krobo",
@@ -172,9 +212,12 @@
     "resume": "Perles de verre fabriquées au Ghana à partir de verre recyclé broyé, moulé et cuit au four, aux couleurs douces et mates.",
     "texte": [
       "Les Krobo, dans l’est du Ghana, fabriquent des perles à partir de verre recyclé (bouteilles, vitres) réduit en poudre, coloré, versé dans des moules en argile puis cuit dans des fours artisanaux. Chaque perle est légèrement irrégulière.",
-      "Les perles tiennent une place importante dans les cérémonies, notamment le Dipo, rite de passage des jeunes filles. En décoration, on les retrouve en guirlandes, en rideaux de perles, en suspensions ou en colliers accrochés au mur."
+      "Les perles tiennent une place importante dans les cérémonies, notamment le Dipo, rite de passage des jeunes filles. En décoration, on les retrouve en guirlandes, en rideaux de perles, en suspensions ou en colliers accrochés au mur.",
+      "Les perles krobo se reconnaissent à leurs couleurs vives ou translucides, à leurs légères irrégularités et à leur toucher un peu rugueux, dû à la cuisson du verre en poudre. Elles sont solides et se nettoient simplement avec un chiffon doux, éventuellement humide. En décoration, enfilées sur un cordon de coton ou de raphia, elles composent des guirlandes à poser sur une étagère, autour d’un vase ou à suspendre à une branche de bois flotté. Comme pour les tissus colorés, un ou deux éléments perlés par pièce suffisent sur un fond calme."
     ],
-    "matieres": ["perles"]
+    "matieres": [
+      "perles"
+    ]
   },
   {
     "id": "shweshwe",
@@ -184,8 +227,11 @@
     "resume": "Coton imprimé sud-africain aux petits motifs géométriques, souvent bleu indigo, brun ou rouge, obtenus par enlevage.",
     "texte": [
       "Le shweshwe est un coton imprimé très populaire en Afrique du Sud. Ses motifs fins (cercles, losanges, étoiles) sont obtenus par enlevage : on retire la couleur d’un tissu teint pour dessiner les motifs en clair.",
-      "Longtemps associé aux vêtements de cérémonie, il se décline aujourd’hui en coussins, sacs et linge de maison. Ses petits motifs réguliers se marient facilement avec des tissus unis."
+      "Longtemps associé aux vêtements de cérémonie, il se décline aujourd’hui en coussins, sacs et linge de maison. Ses petits motifs réguliers se marient facilement avec des tissus unis.",
+      "Le shweshwe se reconnaît à ses motifs fins et très réguliers, souvent en bleu indigo, brun ou rouge, et à son toucher un peu raide quand il est neuf, dû à l’apprêt du tissu. Cette raideur disparaît au premier lavage, qui se fait à l’eau froide ; le tissu rétrécit légèrement, mieux vaut donc le laver avant de le coudre. En décoration, ses petits motifs conviennent aux coussins, aux housses, aux sets de table et à la chambre d’enfant. Ils se marient bien avec des tissus unis ou avec des imprimés plus grands, comme le wax."
     ],
-    "matieres": ["indigo"]
+    "matieres": [
+      "indigo"
+    ]
   }
 ]
