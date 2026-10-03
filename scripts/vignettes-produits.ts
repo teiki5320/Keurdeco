@@ -1,5 +1,5 @@
 // Vignettes des cartes produits, découpées dans NOS images d'ambiance (créées par IA), jamais dans
-// des photos Amazon. Pour chaque produit placé sur une ambiance, un carré est découpé autour de son
+// des photos Amazon. Pour chaque produit placé sur une ambiance (ou sur l'image d'un top), un carré est découpé autour de son
 // point cliquable (première ambiance où il apparaît, par date), depuis la source haute définition
 // contenu/images/<image>.jpg.
 //
@@ -20,9 +20,11 @@ export const CADRE_DEFAUT = 30;
 mkdirSync(SORTIE, { recursive: true });
 for (const f of readdirSync(SORTIE)) rmSync(resolve(SORTIE, f));
 
-const ambiances = tousLesArticles()
-  .filter((a) => a.type === 'ambiance')
-  .sort((a, b) => a.publieLe.localeCompare(b.publieLe) || a.slug.localeCompare(b.slug));
+// Les ambiances d'abord, puis les tops (dont l'image porte aussi des points) : un produit garde la vignette
+// de la première image où il apparaît.
+const parDate = (a: { publieLe: string; slug: string }, b: { publieLe: string; slug: string }) => a.publieLe.localeCompare(b.publieLe) || a.slug.localeCompare(b.slug);
+const articles = tousLesArticles();
+const ambiances = [...articles.filter((a) => a.type === 'ambiance').sort(parDate), ...articles.filter((a) => a.type === 'top').sort(parDate)];
 
 const vignettes: Record<string, { article: string; x: number; y: number; cadre: number }> = {};
 for (const a of ambiances) {

@@ -40,6 +40,12 @@ classement:
   - produit: sphere-terre-cuite-etoiles
     pourquoi: "Une boule décorative ornée d’étoiles, à poser dans une coupe, sur une pile de livres ou au pied d’une plante : une petite touche graphique."
     a_savoir: "Elle mesure 17 cm et pèse plus de 2 kg : c’est un objet à poser, pas un contenant."
+hotspots:
+  - { produit: jarre-terre-cuite-toscane, x: 88, y: 78, cadre: 30 }
+  - { produit: coupe-terre-cuite-ronde, x: 49, y: 58, cadre: 14 }
+  - { produit: vases-argile-lot-3, x: 70, y: 57, cadre: 14 }
+  - { produit: assiettes-terre-cuite-lot-6, x: 25, y: 58, cadre: 14 }
+  - { produit: vase-terre-cuite-terracotta, x: 35, y: 52, cadre: 20 }
 epingles:
   - "10 objets en terre cuite pour la maison"
   - "Vases, jarres, plats : la terre cuite déco"

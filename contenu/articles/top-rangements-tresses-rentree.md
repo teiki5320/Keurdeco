@@ -40,6 +40,16 @@ classement:
   - produit: panier-bolga-marche
     pourquoi: "La touche africaine du rangement : un panier Bolga tressé au Ghana pour les rouleaux de dessin, les tapis de yoga ou les écharpes."
     a_savoir: "Chaque panier est unique, tressé à la main : couleurs et dimensions varient d’une pièce à l’autre."
+hotspots:
+  - { produit: paniers-kallax-jacinthe-lot-4, x: 55, y: 61, cadre: 22 }
+  - { produit: porte-revues-jacinthe, x: 55, y: 42, cadre: 22 }
+  - { produit: bannette-courrier-jonc, x: 35, y: 45, cadre: 20 }
+  - { produit: malles-osier-lot-2, x: 39, y: 82, cadre: 34 }
+  - { produit: panier-tisse-extra-large, x: 35, y: 59, cadre: 24 }
+  - { produit: boites-papier-tresse-couvercle-lot-3, x: 55, y: 24, cadre: 20 }
+  - { produit: paniers-ronds-rotin-empilables, x: 36, y: 6, cadre: 18 }
+  - { produit: corbeille-papier-jacinthe, x: 88, y: 84, cadre: 26 }
+  - { produit: panier-bolga-marche, x: 56, y: 83, cadre: 30 }
 epingles:
   - "10 rangements tressés pour la rentrée"
   - "Ranger avec style : paniers africains"

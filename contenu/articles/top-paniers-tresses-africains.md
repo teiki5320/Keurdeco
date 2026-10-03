@@ -53,6 +53,13 @@ classement:
   - produit: panier-agaseke-couvercle
     pourquoi: "Très coloré et fermé par un couvercle, ce grand panier en rotin tressé à la main cache le linge ou les plaids tout en décorant un coin de chambre."
     a_savoir: "Il est grand (environ 47 cm de diamètre et 55 cm de haut) : prévoyez la place au sol plutôt que sur une étagère."
+hotspots:
+  - { produit: panier-bolga-marche, x: 81, y: 49, cadre: 24 }
+  - { produit: panier-plante-tresse-rayures, x: 24, y: 77, cadre: 26 }
+  - { produit: panier-linge-tresse-couvercle, x: 81, y: 74, cadre: 24 }
+  - { produit: corbeille-fruits-tressee, x: 59, y: 42, cadre: 14 }
+  - { produit: paniers-gigognes-tresses, x: 47, y: 75, cadre: 22 }
+  - { produit: panier-agaseke-couvercle, x: 60, y: 54, cadre: 16 }
 epingles:
   - "Top 10 des paniers tressés africains pour la déco"
   - "Paniers Bolga, raphia : les plus beaux paniers africains"

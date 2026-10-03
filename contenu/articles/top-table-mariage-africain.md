@@ -40,6 +40,17 @@ classement:
   - produit: pampa-sechee-bouquet
     pourquoi: "Des herbes de pampa séchées, légères et naturelles, qui donnent du volume sans masquer les visages de part et d’autre de la table."
     a_savoir: "Elles se préparent la veille et ne fanent pas. Gardez-les loin des flammes."
+hotspots:
+  - { produit: chemin-table-kente-lin, x: 43, y: 62, cadre: 16 }
+  - { produit: sets-table-jacinthe-lot-6, x: 31, y: 64, cadre: 18 }
+  - { produit: chemins-table-gaze-terracotta-lot-6, x: 85, y: 80, cadre: 22 }
+  - { produit: lanternes-bois-lot-10, x: 39, y: 47, cadre: 20 }
+  - { produit: porte-noms-bois-lot-30, x: 43, y: 77, cadre: 12 }
+  - { produit: bougeoirs-dores-coniques-lot-6, x: 66, y: 58, cadre: 22 }
+  - { produit: photophores-dores-lot-12, x: 58, y: 65, cadre: 12 }
+  - { produit: serviettes-lin-melange-lot-12, x: 13, y: 52, cadre: 14 }
+  - { produit: vase-rustique-terre-cuite-anse, x: 51, y: 53, cadre: 20 }
+  - { produit: pampa-sechee-bouquet, x: 48, y: 20, cadre: 28 }
 epingles:
   - "Table de mariage africain : 10 idées"
   - "Kente, terracotta et doré pour un mariage"

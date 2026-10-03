@@ -40,6 +40,12 @@ classement:
   - produit: lampe-lanterne-bambou
     pourquoi: "Une petite lanterne en bambou tressé, en veilleuse dans une chambre d’enfant ou posée sur une étagère."
     a_savoir: "C’est une lampe d’ambiance : pour lire, préférez une lampe plus puissante."
+hotspots:
+  - { produit: suspension-rotin-fait-main, x: 42, y: 26, cadre: 22 }
+  - { produit: suspension-jute-alara-70, x: 51, y: 37, cadre: 20 }
+  - { produit: suspension-bambou-tess-58, x: 59, y: 30, cadre: 18 }
+  - { produit: lampadaire-fibres-naturelles-bijie, x: 81, y: 46, cadre: 22 }
+  - { produit: lampes-chevet-rotin-lot-2, x: 20, y: 52, cadre: 20 }
 epingles:
   - "10 suspensions tressées pour une lumière douce"
   - "Luminaires africains : notre sélection"

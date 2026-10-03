@@ -40,6 +40,17 @@ classement:
   - produit: miroir-soleil-rotin-58
     pourquoi: "Un miroir soleil en rotin de 58 cm, pour occuper le centre d’une composition ou trôner seul au-dessus d’une console."
     a_savoir: "Dans une entrée, placez-le face à une fenêtre ou une porte vitrée pour agrandir l’espace."
+hotspots:
+  - { produit: assiettes-murales-tressees, x: 27, y: 27, cadre: 20 }
+  - { produit: paniers-muraux-motif-africain-classic-lot-3, x: 37, y: 37, cadre: 18 }
+  - { produit: decorations-murales-seagrass-lot-3, x: 38, y: 17, cadre: 18 }
+  - { produit: paniers-muraux-rotin-lot-8, x: 60, y: 32, cadre: 18 }
+  - { produit: paniers-muraux-jacinthe-lot-7, x: 70, y: 44, cadre: 16 }
+  - { produit: corbeilles-murales-jonc-lot-7, x: 81, y: 42, cadre: 14 }
+  - { produit: panier-bolga-marche, x: 51, y: 46, cadre: 24 }
+  - { produit: panier-mural-tresse, x: 70, y: 72, cadre: 18 }
+  - { produit: miroirs-rotin-soleil-lot-3, x: 61, y: 16, cadre: 18 }
+  - { produit: miroir-soleil-rotin-58, x: 75, y: 25, cadre: 28 }
 epingles:
   - "10 paniers muraux tressés pour un mur chaleureux"
   - "Mur d’assiettes tressées : notre sélection"

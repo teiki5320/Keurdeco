@@ -40,6 +40,12 @@ classement:
   - produit: tapis-rond-coton-bleu-marine
     pourquoi: "Un rond de coton bleu marine tissé à plat, de 120 cm, pour accompagner les tissus indigo d’une chambre."
     a_savoir: "Le coton tissé à plat est léger : un sous-tapis antidérapant évite qu’il ne glisse."
+hotspots:
+  - { produit: tapis-jute-alhambra, x: 66, y: 80, cadre: 26 }
+  - { produit: tapis-motif-bogolan, x: 33, y: 85, cadre: 26 }
+  - { produit: tapis-jute-rond, x: 66, y: 60, cadre: 18 }
+  - { produit: tapis-couloir-kilim-chindi, x: 65, y: 48, cadre: 14 }
+  - { produit: tapis-peau-mouton-beige, x: 84, y: 70, cadre: 26 }
 epingles:
   - "10 tapis esprit africain pour toute la maison"
   - "Jute, kilim, berbère : quel tapis choisir ?"

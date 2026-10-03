@@ -40,6 +40,15 @@ classement:
   - produit: savon-noir-dudu-osun-lot-6
     pourquoi: "Le célèbre savon noir africain Dudu-Osun, à glisser dans une corbeille tressée pour un cadeau bien-être."
     a_savoir: "C’est un produit de toilette : vérifiez sa composition sur la fiche si la personne a la peau sensible."
+hotspots:
+  - { produit: panier-bolga-marche, x: 43, y: 45, cadre: 34 }
+  - { produit: awale-mancala-bois, x: 36, y: 80, cadre: 24 }
+  - { produit: livre-african-textiles, x: 73, y: 70, cadre: 26 }
+  - { produit: coupon-pagne-wax-180x120, x: 42, y: 30, cadre: 20 }
+  - { produit: bol-manguier-sculpte, x: 71, y: 37, cadre: 20 }
+  - { produit: sous-verres-rotin-lot-6, x: 85, y: 50, cadre: 18 }
+  - { produit: carafe-argile-naturelle, x: 16, y: 55, cadre: 24 }
+  - { produit: plateaux-tresses-lot-2, x: 55, y: 63, cadre: 22 }
 epingles:
   - "10 idées cadeaux déco africaine"
   - "Offrir un objet africain : notre sélection"

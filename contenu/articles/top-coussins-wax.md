@@ -40,6 +40,14 @@ classement:
   - produit: coussin-wax-vert-baobab
     pourquoi: "Pour avoir de vrais coussins en wax, le plus sûr est de les coudre : huit coupons de wax pour des housses uniques."
     a_savoir: "Chaque coupon mesure 50 × 40 cm : il en faut deux pour une housse de 40 × 40 cm, ou un seul pour le devant avec un dos uni."
+hotspots:
+  - { produit: coussins-kuba-lot-4, x: 59, y: 54, cadre: 16 }
+  - { produit: coussin-bogolan, x: 71, y: 61, cadre: 18 }
+  - { produit: coussin-tribal-coton-lin, x: 54, y: 62, cadre: 16 }
+  - { produit: coussin-shibori-indigo, x: 34, y: 50, cadre: 14 }
+  - { produit: coussins-ethniques-geometriques-lot-4, x: 28, y: 61, cadre: 18 }
+  - { produit: coussin-wax-cercles-safran, x: 38, y: 60, cadre: 18 }
+  - { produit: coussin-wax-vert-baobab, x: 47, y: 55, cadre: 18 }
 epingles:
   - "Top 10 des coussins africains"
   - "Les plus beaux coussins aux imprimés africains"

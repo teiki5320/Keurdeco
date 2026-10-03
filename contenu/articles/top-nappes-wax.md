@@ -34,6 +34,8 @@ classement:
   - produit: coupons-tissus-africains-lot-6
     pourquoi: "Six coupons de coton imprimé : de quoi coudre des serviettes dépareillées, des sets de table ou des sachets à pain assortis à la nappe."
     a_savoir: "Chaque coupon mesure 50 × 40 cm : comptez un coupon par serviette, ourlet compris."
+hotspots:
+  - { produit: coupon-pagne-wax-180x120, x: 50, y: 86, cadre: 26 }
 epingles:
   - "8 nappes en wax pour l’été"
   - "Chemin de table wax : notre sélection"

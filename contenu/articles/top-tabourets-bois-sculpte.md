@@ -34,6 +34,12 @@ classement:
   - produit: tabouret-acajou-monte
     pourquoi: "Un petit tabouret bas en acajou massif, parfait pour les enfants ou pour surélever une plante."
     a_savoir: "Il ne mesure que 21 cm de haut : c’est un marchepied ou un support, pas une assise d’adulte."
+hotspots:
+  - { produit: table-appoint-racine-teck, x: 77, y: 67, cadre: 32 }
+  - { produit: tabouret-bois-torsade, x: 33, y: 62, cadre: 30 }
+  - { produit: tabouret-teck-massif-42, x: 48, y: 66, cadre: 30 }
+  - { produit: tabouret-bois-sculpte, x: 17, y: 60, cadre: 30 }
+  - { produit: tabouret-bois-recycle, x: 86, y: 75, cadre: 22 }
 epingles:
   - "8 tabourets en bois massif pour le salon"
   - "Table d’appoint africaine : notre sélection"

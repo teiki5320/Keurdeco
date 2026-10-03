@@ -41,6 +41,18 @@
     "y": 68,
     "cadre": 46
   },
+  "bannette-courrier-jonc": {
+    "article": "top-rangements-tresses-rentree",
+    "x": 35,
+    "y": 45,
+    "cadre": 20
+  },
+  "boites-papier-tresse-couvercle-lot-3": {
+    "article": "top-rangements-tresses-rentree",
+    "x": 55,
+    "y": 24,
+    "cadre": 20
+  },
   "bol-manguier-sculpte": {
     "article": "salon-touches-kente",
     "x": 46,
@@ -143,6 +155,18 @@
     "y": 52,
     "cadre": 30
   },
+  "corbeille-papier-jacinthe": {
+    "article": "top-rangements-tresses-rentree",
+    "x": 88,
+    "y": 84,
+    "cadre": 26
+  },
+  "corbeilles-murales-jonc-lot-7": {
+    "article": "top-paniers-muraux-tresses",
+    "x": 81,
+    "y": 42,
+    "cadre": 14
+  },
   "corbeilles-tressees-anse-lot-10": {
     "article": "bapteme-decoration-africaine",
     "x": 54,
@@ -197,6 +221,12 @@
     "y": 49,
     "cadre": 30
   },
+  "coussin-tribal-coton-lin": {
+    "article": "top-coussins-wax",
+    "x": 54,
+    "y": 62,
+    "cadre": 16
+  },
   "coussin-wax-cercles-safran": {
     "article": "balcon-boheme-africain",
     "x": 57,
@@ -209,6 +239,24 @@
     "y": 57,
     "cadre": 30
   },
+  "coussin-wax-vert-baobab": {
+    "article": "top-coussins-wax",
+    "x": 47,
+    "y": 55,
+    "cadre": 18
+  },
+  "coussins-ethniques-geometriques-lot-4": {
+    "article": "top-coussins-wax",
+    "x": 28,
+    "y": 61,
+    "cadre": 18
+  },
+  "coussins-kuba-lot-4": {
+    "article": "top-coussins-wax",
+    "x": 59,
+    "y": 54,
+    "cadre": 16
+  },
   "coussins-lin-beige-lot-2": {
     "article": "salon-touches-kente",
     "x": 38,
@@ -220,6 +268,12 @@
     "x": 55,
     "y": 86,
     "cadre": 30
+  },
+  "decorations-murales-seagrass-lot-3": {
+    "article": "top-paniers-muraux-tresses",
+    "x": 38,
+    "y": 17,
+    "cadre": 18
   },
   "distributeur-savon-terracotta": {
     "article": "salle-de-bain-spa-africaine",
@@ -316,6 +370,12 @@
     "x": 19,
     "y": 75,
     "cadre": 30
+  },
+  "lampadaire-fibres-naturelles-bijie": {
+    "article": "top-luminaires-tresses",
+    "x": 81,
+    "y": 46,
+    "cadre": 22
   },
   "lampadaire-noir-abat-jour-lin": {
     "article": "salon-touches-kente",
@@ -425,11 +485,53 @@
     "y": 79,
     "cadre": 30
   },
+  "panier-tisse-extra-large": {
+    "article": "top-rangements-tresses-rentree",
+    "x": 35,
+    "y": 59,
+    "cadre": 24
+  },
+  "paniers-gigognes-tresses": {
+    "article": "top-paniers-tresses-africains",
+    "x": 47,
+    "y": 75,
+    "cadre": 22
+  },
+  "paniers-kallax-jacinthe-lot-4": {
+    "article": "top-rangements-tresses-rentree",
+    "x": 55,
+    "y": 61,
+    "cadre": 22
+  },
+  "paniers-muraux-jacinthe-lot-7": {
+    "article": "top-paniers-muraux-tresses",
+    "x": 70,
+    "y": 44,
+    "cadre": 16
+  },
+  "paniers-muraux-motif-africain-classic-lot-3": {
+    "article": "top-paniers-muraux-tresses",
+    "x": 37,
+    "y": 37,
+    "cadre": 18
+  },
+  "paniers-muraux-rotin-lot-8": {
+    "article": "top-paniers-muraux-tresses",
+    "x": 60,
+    "y": 32,
+    "cadre": 18
+  },
   "paniers-rangement-raphia-lot": {
     "article": "entree-paniers-miroir-raphia",
     "x": 51,
     "y": 82,
     "cadre": 30
+  },
+  "paniers-ronds-rotin-empilables": {
+    "article": "top-rangements-tresses-rentree",
+    "x": 36,
+    "y": 6,
+    "cadre": 18
   },
   "paravent-bois-3-panneaux": {
     "article": "studio-deco-africaine",
@@ -497,6 +599,12 @@
     "y": 71,
     "cadre": 30
   },
+  "porte-revues-jacinthe": {
+    "article": "top-rangements-tresses-rentree",
+    "x": 55,
+    "y": 42,
+    "cadre": 22
+  },
   "pot-terre-cuite-couvercle": {
     "article": "cuisine-terre-cuite-paniers",
     "x": 93,
@@ -551,11 +659,23 @@
     "y": 76,
     "cadre": 30
   },
+  "sous-verres-rotin-lot-6": {
+    "article": "top-cadeaux-deco-africaine",
+    "x": 85,
+    "y": 50,
+    "cadre": 18
+  },
   "sphere-terre-cuite-etoiles": {
     "article": "balcon-lanternes-kente",
     "x": 76,
     "y": 88,
     "cadre": 30
+  },
+  "suspension-bambou-tess-58": {
+    "article": "top-luminaires-tresses",
+    "x": 59,
+    "y": 30,
+    "cadre": 18
   },
   "suspension-jute-alara-70": {
     "article": "table-tabaski",
@@ -568,6 +688,18 @@
     "x": 50,
     "y": 11,
     "cadre": 30
+  },
+  "suspension-rotin-fait-main": {
+    "article": "top-luminaires-tresses",
+    "x": 42,
+    "y": 26,
+    "cadre": 22
+  },
+  "table-appoint-racine-teck": {
+    "article": "top-tabourets-bois-sculpte",
+    "x": 77,
+    "y": 67,
+    "cadre": 32
   },
   "table-appoint-tranche-teck": {
     "article": "balcon-lanternes-kente",
@@ -598,6 +730,12 @@
     "x": 64,
     "y": 82,
     "cadre": 30
+  },
+  "tabouret-bois-recycle": {
+    "article": "top-tabourets-bois-sculpte",
+    "x": 86,
+    "y": 75,
+    "cadre": 22
   },
   "tabouret-bois-sculpte": {
     "article": "salon-terracotta-wax",
@@ -700,6 +838,12 @@
     "x": 30,
     "y": 65,
     "cadre": 30
+  },
+  "vase-rustique-terre-cuite-anse": {
+    "article": "top-table-mariage-africain",
+    "x": 51,
+    "y": 53,
+    "cadre": 20
   },
   "vase-terre-cuite-terracotta": {
     "article": "salon-terracotta-wax",
