@@ -11,7 +11,7 @@ La génération des épingles et leur publication sont automatiques. Il reste de
 
 ## 1. Compte professionnel
 
-1. Créer un compte sur https://www.pinterest.fr/ avec une adresse dédiée (par exemple contact@keurdeco.com), ou convertir un compte existant.
+1. Créer un compte sur https://www.pinterest.fr/ avec une adresse dédiée (par exemple keurdeco@toakeur.com), ou convertir un compte existant.
 2. *Paramètres* › *Paramètres du compte* › *Convertir en compte professionnel*. Nom : **Keur Déco**, site : `https://www.keurdeco.com/`, catégorie : Maison et décoration.
 3. Photo de profil : `assets/marque/profil-pinterest.png` (emblème seul, lisible dans le petit rond). Bio courte, par exemple : « La déco africaine, chez soi : wax, bogolan, indigo, paniers tressés. Idées d'aménagement pour chaque pièce. »
 
