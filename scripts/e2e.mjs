@@ -196,7 +196,9 @@ try {
   verifier(epingle?.ok() && epingle.headers()['content-type'] === 'image/jpeg', 'épingle 1000 × 1500 servie');
 
   const scripts = await page.goto(BASE).then(() => page.$$eval('script[src]', (els) => els.map((e) => e.src)));
-  verifier(scripts.every((s) => s.startsWith(BASE)), 'aucun script externe chargé');
+  // Seuls scripts externes admis : Google AdSense (build/site.ts, codeAdsense) et ceux qu'il charge lui-même.
+  const ADSENSE = 'https://pagead2.googlesyndication.com/';
+  verifier(scripts.every((s) => s.startsWith(BASE) || s.startsWith(ADSENSE)), 'aucun script externe chargé, hors AdSense');
   verifier(erreurs.length === 0, `aucune erreur JavaScript${erreurs.length ? ' : ' + erreurs.join(' | ') : ''}`);
   await navigateur.close();
 } catch (e) {

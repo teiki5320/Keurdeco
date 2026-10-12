@@ -31,3 +31,6 @@ export function lienPinterest(adresse: string, slug: string, numero?: number): s
   const contenu = numero === undefined ? '' : `&utm_content=${numero}`;
   return `${adresse}?utm_source=pinterest&utm_medium=social&utm_campaign=${encodeURIComponent(slug)}${contenu}`;
 }
+
+/** Identifiant d'éditeur Google AdSense (public : il figure aussi dans public/ads.txt). Défini ici seulement. */
+export const ADSENSE_EDITEUR = 'pub-2680784147246798';

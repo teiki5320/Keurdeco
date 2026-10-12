@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { MENTION_AMAZON } from '../src/amazon.ts';
-import { datesSitemap, footer, header, insecables, mesureAudience, pagesGenerees, referencement, sitemap, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
+import { codeAdsense, datesSitemap, footer, header, insecables, mesureAudience, pagesGenerees, referencement, sitemap, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
 
 describe('parties communes', () => {
   it('navigation : la rubrique courante est signalée', () => {
@@ -51,6 +51,12 @@ describe('référencement', () => {
     expect(mesureAudience('', 'abc123')).toContain('static.cloudflareinsights.com/beacon.min.js');
     expect(mesureAudience('', 'abc123')).toContain('&quot;token&quot;:&quot;abc123&quot;');
     expect(mesureAudience('www.keurdeco.com', '')).toContain('data-domain="www.keurdeco.com"');
+  });
+
+  it('code AdSense avec l’identifiant éditeur, sur toutes les pages, 404 comprise', () => {
+    expect(codeAdsense('')).toBe('');
+    expect(codeAdsense()).toBe('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2680784147246798" crossorigin="anonymous"></script>');
+    expect(transformerPage('<html><head><!--#head--></head><body></body></html>', '404.html')).toContain('client=ca-pub-2680784147246798');
   });
 
   it('sitemap sans la 404', () => {

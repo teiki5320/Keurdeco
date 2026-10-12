@@ -4,7 +4,7 @@
  * sitemap.xml et robots.txt. Le site reste 100 % statique et lisible sans JavaScript.
  *
  * Marqueurs disponibles dans les pages :
- *   <!--#head-->             favicon, manifeste, référencement (canonique, Open Graph, données structurées)
+ *   <!--#head-->             favicon, manifeste, référencement (canonique, Open Graph, données structurées), code AdSense
  *   <!--#header-->           bandeau + navigation (la rubrique courante est mise en évidence)
  *   <!--#footer-->           pied de page (avec la mention Partenaires Amazon)
  *   <!--#une-->              ambiance à la une (accueil)
@@ -22,7 +22,7 @@ import { MENTION_AMAZON } from '../src/amazon.ts';
 import { FAMILLES, type Famille, fichierRubrique } from '../src/taxonomie.ts';
 import { insecables } from '../src/typo.ts';
 import { articlesPublies, pagesArticles } from './articles.ts';
-import { NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
+import { ADSENSE_EDITEUR, NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
 import { blocConseils, conseilsPublies, pagesConseils } from './conseils.ts';
 import { essayage } from './essayage.ts';
 import { icone, type NomIcone } from './icones.ts';
@@ -126,6 +126,16 @@ export function mesureAudience(domaine = process.env.PLAUSIBLE_DOMAIN, jetonClou
     return `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${attribut(JSON.stringify({ token: jetonCloudflare }))}'></script>`;
   }
   return domaine ? `<script defer data-domain="${attribut(domaine)}" src="https://plausible.io/js/script.js"></script>` : '';
+}
+
+/**
+ * Code Google AdSense, identique sur toutes les pages (validation du site et, plus tard, annonces).
+ * Il ne place aucune annonce à lui seul : les emplacements se décident à part.
+ */
+export function codeAdsense(editeur = ADSENSE_EDITEUR): string {
+  return editeur
+    ? `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-${attribut(editeur)}" crossorigin="anonymous"></script>`
+    : '';
 }
 
 function liensNavigation(fichier: string): string {
@@ -317,7 +327,7 @@ export function transformerPage(html: string, fichier: string): string {
   // La 404 peut être servie sous n'importe quel chemin : liens résolus depuis la racine du site.
   const base = fichier === '404.html' ? `<base href="${SITE_URL}" />\n    ` : '';
   const page = html
-    .replace('<!--#head-->', `${base}${head()}\n    ${referencement(html, fichier)}\n    ${mesureAudience()}`)
+    .replace('<!--#head-->', `${base}${head()}\n    ${referencement(html, fichier)}\n    ${mesureAudience()}\n    ${codeAdsense()}`)
     .replace('<!--#header-->', header(fichier))
     .replace('<!--#footer-->', footer())
     .replace('<!--#une-->', () => blocUne(publies))
