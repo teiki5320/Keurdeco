@@ -7,7 +7,7 @@ pieces: [cuisine-salle-a-manger, balcon-exterieur]
 matieres: [wax, kente]
 occasions: []
 image: nappes-wax-table-ete
-image_alt: "Longue table en bois dressée dans un jardin : chemin de table en wax safran, indigo et vert sur une nappe en lin crème, assiettes en terre cuite, sets de table tressés, coupe de mangues et petits bouquets."
+image_alt: "Déjeuner d’été dans un jardin : longue table en bois avec nappe en lin crème et chemin de table en wax safran, indigo et vert, desserte couverte d’une nappe en lin à motifs géométriques et d’un chemin orange à pompons, petite table ronde à nappe imperméable tribale noire et ocre, chemin de table en lin à totems posé sur un banc."
 image_ia: true
 classement:
   - produit: coupon-pagne-wax-180x120
@@ -35,7 +35,11 @@ classement:
     pourquoi: "Six coupons de coton imprimé : de quoi coudre des serviettes dépareillées, des sets de table ou des sachets à pain assortis à la nappe."
     a_savoir: "Chaque coupon mesure 50 × 40 cm : comptez un coupon par serviette, ourlet compris."
 hotspots:
-  - { produit: coupon-pagne-wax-180x120, x: 50, y: 86, cadre: 26 }
+  - { produit: coupon-pagne-wax-180x120, x: 39, y: 72, cadre: 24 }
+  - { produit: nappe-lin-geometrique, x: 27, y: 55, cadre: 18 }
+  - { produit: chemin-table-lin-orange-pompons, x: 18, y: 59, cadre: 20 }
+  - { produit: nappe-impermeable-tribale, x: 89, y: 66, cadre: 20 }
+  - { produit: chemin-table-totems-lin, x: 81, y: 88, cadre: 22 }
 epingles:
   - "8 nappes en wax pour l’été"
   - "Chemin de table wax : notre sélection"

@@ -131,11 +131,23 @@
     "y": 80,
     "cadre": 30
   },
+  "chemin-table-lin-orange-pompons": {
+    "article": "top-nappes-wax",
+    "x": 18,
+    "y": 59,
+    "cadre": 20
+  },
   "chemin-table-terracotta-glands": {
     "article": "cuisine-terre-cuite-paniers",
     "x": 52,
     "y": 82,
     "cadre": 30
+  },
+  "chemin-table-totems-lin": {
+    "article": "top-nappes-wax",
+    "x": 81,
+    "y": 88,
+    "cadre": 22
   },
   "chemin-table-tribal-africain": {
     "article": "table-tabaski",
@@ -442,6 +454,18 @@
     "x": 70,
     "y": 17,
     "cadre": 30
+  },
+  "nappe-impermeable-tribale": {
+    "article": "top-nappes-wax",
+    "x": 89,
+    "y": 66,
+    "cadre": 20
+  },
+  "nappe-lin-geometrique": {
+    "article": "top-nappes-wax",
+    "x": 27,
+    "y": 55,
+    "cadre": 18
   },
   "pampa-sechee-bouquet": {
     "article": "entree-paniers-miroir-raphia",
