@@ -69,8 +69,26 @@ function lienEvitement(): void {
   if (lien && document.querySelector('base')) lien.href = `${location.href.split('#')[0]}#contenu`;
 }
 
+/**
+ * Liens « Gérer mes cookies » : rouvrent la fenêtre de choix de Google (AdSense, Confidentialité et messages).
+ * Sans JavaScript ou si Google n'est pas chargé, le lien mène à la politique de confidentialité.
+ */
+function gererCookies(): void {
+  type FileGoogle = { callbackQueue?: (() => void)[]; showRevocationMessage?: () => void };
+  const w = window as unknown as { googlefc?: FileGoogle };
+  for (const lien of document.querySelectorAll<HTMLAnchorElement>('a[data-cookies]')) {
+    lien.addEventListener('click', (e) => {
+      const fc = w.googlefc;
+      if (!fc?.showRevocationMessage) return;
+      e.preventDefault();
+      fc.showRevocationMessage();
+    });
+  }
+}
+
 pointsCliquables();
 menuMobile();
+gererCookies();
 lienEvitement();
 fonduImages();
 demarrerAnimations();
