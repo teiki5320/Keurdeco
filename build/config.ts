@@ -34,3 +34,6 @@ export function lienPinterest(adresse: string, slug: string, numero?: number): s
 
 /** Identifiant d'éditeur Google AdSense (public : il figure aussi dans public/ads.txt). Défini ici seulement. */
 export const ADSENSE_EDITEUR = 'pub-2680784147246798';
+
+/** Bloc d'annonces AdSense « Keur Déco - dans le texte » (format In-Article), utilisé par build/annonces.ts. */
+export const ADSENSE_BLOC = '7493402587';

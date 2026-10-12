@@ -18,6 +18,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { Marked } from 'marked';
+import { placerAnnonces } from './annonces.ts';
 import { parse as parseYaml } from 'yaml';
 import { attributsLienAmazon } from '../src/amazon.ts';
 import { FAMILLES, fichierRubrique, trouverRubrique, type Famille } from '../src/taxonomie.ts';
@@ -394,6 +395,8 @@ export function sourcePageArticle(a: Article, publies: Article[], produits = ind
   const classement = a.type === 'top' ? rendreClassement(a, produits) : '';
   let corps = rendreCorps(a.corps, produits, classement);
   if (a.type === 'top' && !a.corps.includes('{{classement}}')) corps += `\n<h2 id="le-classement">Le classement</h2>\n${classement}`;
+  // Annonces : jamais sur les Tops (ils vivent des liens Amazon), 2 au plus ailleurs.
+  if (a.type !== 'top') corps = placerAnnonces(corps, 2);
   const titres = [...corps.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)];
   const sommaire =
     a.type === 'guide' && titres.length > 2

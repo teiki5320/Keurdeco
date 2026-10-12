@@ -2329,3 +2329,31 @@ main {
     outline-width: 5px;
   }
 }
+
+/* Annonces AdSense (build/annonces.ts) : bien séparées du texte et des encadrés produits ;
+   la mention « Annonce » n'apparaît qu'une fois l'annonce affichée. */
+.annonce {
+  margin: 2.5rem 0;
+  clear: both;
+  max-width: 100%;
+  overflow: hidden;
+}
+.annonce__mention {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+  text-align: center;
+  visibility: hidden;
+}
+.annonce:has(ins[data-ad-status='filled']) {
+  padding-block: 0.75rem;
+  border-block: 1px solid var(--bordure);
+}
+.annonce:has(ins[data-ad-status='filled']) .annonce__mention {
+  visibility: visible;
+}
+.annonce:has(ins[data-ad-status='unfilled']) {
+  display: none;
+}

@@ -86,9 +86,19 @@ function gererCookies(): void {
   }
 }
 
+/** Emplacements d'annonces AdSense placés au build (build/annonces.ts) : on demande à Google de les remplir. */
+function annonces(): void {
+  const blocs = document.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])');
+  if (blocs.length === 0) return;
+  const w = window as unknown as { adsbygoogle?: object[] };
+  w.adsbygoogle = w.adsbygoogle || [];
+  blocs.forEach(() => w.adsbygoogle!.push({}));
+}
+
 pointsCliquables();
 menuMobile();
 gererCookies();
+annonces();
 lienEvitement();
 fonduImages();
 demarrerAnimations();

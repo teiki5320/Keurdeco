@@ -10,6 +10,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { Marked } from 'marked';
 import { resolve } from 'node:path';
 import { FAMILLES, fichierRubrique, type Famille, type Rubrique } from '../src/taxonomie.ts';
+import { blocAnnonce } from './annonces.ts';
 import { articlesPublies, FICHIER_LISTE, grilleArticles, tousLesArticles, TYPES, type Article } from './articles.ts';
 import { dateLongue, SITE_URL, titrePage } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
@@ -160,7 +161,7 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
     image: imageExiste(imageRubrique(famille, r.id)) ? imageRubrique(famille, r.id) : undefined,
     contenu: `${grilleArticles(articles, '<p class="liste-vide">La première ambiance arrive bientôt.</p>')}
-        ${introPage(fichierRubrique(famille, r.id).replace(/\.html$/, ''))}
+        ${introPage(fichierRubrique(famille, r.id).replace(/\.html$/, ''), true)}
         <nav class="autres-rubriques" aria-label="${f.titre}"><h2>${f.titre}</h2>${tuilesRubriques(famille, publies)}</nav>`,
   });
 }
@@ -169,12 +170,15 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
 const DOSSIER_INTROS = resolve(import.meta.dirname, '../contenu/rubriques');
 const markdownIntro = new Marked();
 
-/** Texte d'introduction d'une page de liste (« piece-salon », « matieres », « guides ») ; vide s'il n'existe pas. */
-export function introPage(nom: string): string {
+/**
+ * Texte d'introduction d'une page de liste (« piece-salon », « matieres », « guides ») ; vide s'il n'existe pas.
+ * `annonce` : un emplacement AdSense après le texte (pas sur la liste des Tops).
+ */
+export function introPage(nom: string, annonce = false): string {
   const fichier = resolve(DOSSIER_INTROS, `${nom}.md`);
   if (!existsSync(fichier)) return '';
   const html = markdownIntro.parse(readFileSync(fichier, 'utf8'), { async: false }) as string;
-  return `<section class="intro-page conteneur--etroit prose" data-reveal>${html}</section>`;
+  return `<section class="intro-page conteneur--etroit prose" data-reveal>${html}</section>${annonce ? `\n<div class="conteneur--etroit">${blocAnnonce()}</div>` : ''}`;
 }
 
 /** Motif de l'arche par famille. */
@@ -203,7 +207,7 @@ function pageHub(famille: Famille, publies: Article[]): string {
         ? `</div><!--#visite--><div class="conteneur">`
         : famille === 'matiere'
           ? `</div><!--#essayage--><div class="conteneur">${tuilesRubriques(famille, publies)}`
-          : tuilesRubriques(famille, publies)) + introPage(f.hub.replace(/\.html$/, '')),
+          : tuilesRubriques(famille, publies)) + introPage(f.hub.replace(/\.html$/, ''), true),
   });
 }
 
@@ -239,7 +243,7 @@ function pageListeType(type: 'top' | 'guide', publies: Article[]): string {
     classe: 'page--articles',
     noindex: liste.length === 0,
     motif: l.motif,
-    contenu: grilleArticles(liste, `<p class="liste-vide">${l.vide}</p>`) + introPage(l.fichier.replace(/\.html$/, '')),
+    contenu: grilleArticles(liste, `<p class="liste-vide">${l.vide}</p>`) + introPage(l.fichier.replace(/\.html$/, ''), type !== 'top'),
   });
 }
 
@@ -283,6 +287,7 @@ function pageEntreeGlossaire(g: EntreeGlossaire, entrees: EntreeGlossaire[], pub
           <p class="entree-glossaire__origine"><strong>${echapper(g.categorie)}</strong> · ${echapper(g.origine)}</p>
           ${g.texte.map((p) => `<p>${echapper(p)}</p>`).join('\n          ')}
           ${rubriques.length ? `<p>Voir la rubrique ${rubriques.map((r) => `<a href="${fichierRubrique('matiere', r.id)}">${r.nom}</a>`).join(', ')}.</p>` : ''}
+          ${blocAnnonce()}
         </div>
         ${articles.length ? `<section aria-labelledby="articles-lies"><h2 id="articles-lies">Articles liés</h2>${grilleArticles(articles)}</section>` : ''}
         ${voisines.length ? `<nav class="voisines-glossaire" aria-label="Voir aussi"><h2>Voir aussi</h2><ul class="liste-glossaire">${voisines.map((v) => `<li><a href="${fichierGlossaire(v.id)}"><strong>${echapper(v.nom)}</strong> <span>${echapper(v.resume)}</span></a></li>`).join('')}</ul></nav>` : ''}`,
