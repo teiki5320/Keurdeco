@@ -2,6 +2,22 @@
 
 Mis à jour le 13 octobre 2026 d'après le dépôt et le site en ligne. Cette fiche, avec MARKETING.md et PUBLICATION.md, est désormais la source : le Studio la recopie.
 
+## En bref
+
+- **Plateforme** : site éditorial statique, mobile d'abord, installable
+- **Stack** : Vite + TypeScript, Markdown + YAML, tests Vitest et Chromium
+- **Backend** : aucun — tout est généré au build
+- **Distribution** : GitHub Pages, à chaque push et chaque lundi
+- **Site** : www.keurdeco.com
+- **IA et outils** : images d'ambiance OpenArt, épingles générées au build
+
+## Parcours
+
+- 🌐 **Web** : 🐙 GitHub — main · pages.yml au vert [ok] → 📄 Hébergement web — GitHub Pages, HTTPS imposé [ok] → 🌍 Nom de domaine — keurdeco.com chez Cloudflare [ok] → 🔎 Google et Bing — indexation en cours [à faire]
+- 🛒 **Affiliation** : 📝 Articles — 21 en ligne, 16 programmés [ok] → 🛍️ Affiliation — Amazon Partenaires, tag keurdeco-21 [ok] → 💶 Commissions — à vérifier dans la console [pas encore]
+- 📌 **Contenu** : 🖼️ Épingles — générées au build [ok] → 📥 Import CSV — lot jusqu'au 1er novembre [ok] → 🤖 API Pinterest — tourne à blanc, sans secrets [bloquant]
+- 📰 **Publicité** : 📄 Pages de lecture — emplacements In-Article [ok] → 📰 AdSense (publicité web) — validation à vérifier [à faire]
+
 ## Vue d'ensemble
 
 - **Plateforme** : site web éditorial en français sur la décoration africaine — statique multipage, mobile d'abord, installable (manifeste + service worker), lisible sans JavaScript.
@@ -37,7 +53,7 @@ Mis à jour le 13 octobre 2026 d'après le dépôt et le site en ligne. Cette fi
 
 ## Analytics (Cloudflare Web Analytics)
 
-- **Rôle** : mesure d'audience gratuite et sans cookie ; balise présente sur les pages publiées (vérifié le 13 octobre 2026). Elle ne demande aucun consentement ; seuls les cookies publicitaires de Google en demandent (voir Publicité).
+- **Rôle** : mesure d'audience gratuite et sans cookie ; balise présente sur les pages publiées (vérifié le 13 octobre 2026). Elle ne demande aucun consentement ; seuls les cookies publicitaires de Google en demandent (voir AdSense).
 - **Console** : https://dash.cloudflare.com → Analytics & Logs → Web Analytics (site `www.keurdeco.com`).
 - **Identifiants publics** : jeton de balise (variable `CLOUDFLARE_WEB_ANALYTICS`), visible dans les pages — non secret.
 - **Secrets** : aucun.
@@ -59,9 +75,9 @@ Mis à jour le 13 octobre 2026 d'après le dépôt et le site en ligne. Cette fi
 - **Secrets** : voir GitHub (secrets Actions Pinterest).
 - **Coût** : gratuit.
 
-## Publicité (Google AdSense)
+## AdSense (publicité web)
 
-- **Rôle** : second revenu du site, mis en place le 12 octobre 2026. Le code AdSense est ajouté par le marqueur commun `<!--#head-->` sur toutes les pages ; `public/ads.txt` est servi à la racine (réponse 200 le 13 octobre 2026). Un bloc In-Article « Keur Déco - dans le texte » est placé au build par `build/annonces.ts` : 2 au plus par article, 1 pour un conseil, une fiche du glossaire ou une page de pièce, matière, occasion ou guides ; devant un intertitre, jamais contre un encadré Amazon, signalé « Annonce ». Aucune annonce sur l'accueil, les Tops, À propos, Confidentialité, Mentions légales ni la 404 ; un emplacement non rempli est masqué.
+- **Rôle** : second revenu du site, mis en place le 12 octobre 2026. Le code AdSense est ajouté par le marqueur commun `<!--#head-->` sur les pages qui peuvent porter une annonce, Confidentialité comprise (son lien « Gérer mes cookies » rouvre la fenêtre de Google) ; depuis le 13 octobre 2026, il n'est plus chargé sur l'accueil, les Tops, À propos, Mentions légales ni la 404 (`pageAvecAdsense` dans `build/site.ts`) ; `public/ads.txt` est servi à la racine (réponse 200 le 13 octobre 2026). Un bloc In-Article « Keur Déco - dans le texte » est placé au build par `build/annonces.ts` : 2 au plus par article, 1 pour un conseil, une fiche du glossaire ou une page de pièce, matière, occasion ou guides ; devant un intertitre, jamais contre un encadré Amazon, signalé « Annonce ». Aucune annonce sur l'accueil, les Tops, À propos, Confidentialité, Mentions légales ni la 404 ; un emplacement non rempli est masqué.
 - **Consentement** : fenêtre de choix de Google (Autoriser, Refuser, Gérer les options) ; cookies publicitaires seulement avec accord ; lien « Gérer mes cookies » en bas de chaque page. Confidentialité et mentions légales le décrivent.
 - **Console** : https://adsense.google.com (compte Google de Jean) — validation du site et revenus à vérifier dans la console.
 - **Identifiants publics** : identifiant éditeur et identifiant du bloc d'annonces, définis une seule fois dans `build/config.ts` (publics, l'éditeur figure aussi dans `ads.txt`).

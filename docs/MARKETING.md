@@ -8,16 +8,18 @@ Mis à jour le 13 octobre 2026. Compagnon de INFRA.md.
 - **Publics** : la diaspora africaine en France, et tous les amateurs de déco.
 - **Différenciation** : contenu éditorial soigné (animations, nuancier des matières), produits vérifiés à la main sans photos Amazon, éthique affichée (mention IA sur les images, mention Partenaires, aucun prix).
 
-## Modèle de rémunération
+## Rémunération par phases
 
-Liens Partenaires Amazon.fr — tag `keurdeco-21` ; annonces Google AdSense sur les pages de lecture depuis le 12 octobre 2026.
+- [fait] **Aujourd'hui** : liens Amazon Partenaires (tag `keurdeco-21`, 163 produits vérifiés) et annonces AdSense sur les pages de lecture depuis le 12 octobre 2026.
+- [en cours] **Validation AdSense** : Google examine le site avant de diffuser ; état à vérifier dans la console AdSense.
+- **Trafic Pinterest automatique** : publication quotidienne par l'API, dès l'accès standard accordé.
+- **Trafic de recherche** : pages indexées par Google et Bing, qui font vivre les deux revenus.
 
-| Phase | Levier | Statut |
-| --- | --- | --- |
-| 1 — Lancement | Affiliation Amazon (163 produits vérifiés à la main, mention Partenaires) | ✅ en ligne |
-| 2 — Trafic | Épingles Pinterest | ✅ par import CSV manuel — publication automatique par l'API pas encore ouverte |
-| 3 — Recherche | Référencement Google et Bing (sitemap, données structurées, Search Console, IndexNow) | ✅ en place — indexation en cours |
-| 4 — Publicité | Google AdSense (In-Article, 2 annonces au plus par article, rien sur l'accueil ni les Tops) | ✅ code en ligne depuis le 12 octobre 2026 — validation du site à vérifier dans la console AdSense |
+## Points forts
+
+- 🧵 **Matières expliquées** : nuancier animé et glossaire de 15 matières (wax, bogolan, kente, indigo, raphia…).
+- 🛋️ **Ambiances cliquables** : chaque image d'ambiance a des points qui mènent aux produits, classés sans mélange par pièce, matière ou occasion.
+- ✅ **Produits vérifiés à la main** : aucun prix, aucune photo Amazon, mention IA sur les images et mention Partenaires affichée.
 
 ## Canaux
 
@@ -26,12 +28,14 @@ Liens Partenaires Amazon.fr — tag `keurdeco-21` ; annonces Google AdSense sur 
 - ✅ **Bing** : pages signalées par IndexNow après chaque reconstruction du lundi.
 - ⬜ **TikTok « Afrotok » et YouTube « toa.afrotok »** (comptes communs à toutes les apps, branchés au Planning) : aucune publication pour Keur Déco à ce jour.
 
-## KPIs
+## Mesures
 
-- Audience : Cloudflare Web Analytics (sans cookie) — chiffres à vérifier dans la console.
-- Indexation : Search Console — 71 pages indexées au 7 octobre 2026.
-- Épingles : suivies dans `data/pinterest-etat.json` ; statistiques à vérifier dans la console Pinterest.
-- Revenus : à vérifier dans les consoles Amazon Partenaires et AdSense.
+- **Audience** : Cloudflare Web Analytics (sans cookie) — à vérifier dans la console.
+- **Pages indexées** : 71 indexées et 27 non indexées au 7 octobre 2026 (Search Console).
+- **Épingles importées** : 62, dont 38 programmées jusqu'au 1er novembre 2026 (`data/pinterest-etat.json`).
+- **Statistiques Pinterest** : à vérifier dans la console Pinterest.
+- **Commissions Amazon** : à vérifier dans la console Amazon Partenaires.
+- **Revenus AdSense** : à vérifier dans la console AdSense.
 
 ## Calendrier
 
