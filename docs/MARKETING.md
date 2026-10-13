@@ -1,6 +1,6 @@
 # MARKETING — plan marketing & rémunération
 
-Mis à jour le 12 octobre 2026. Compagnon de INFRA.md.
+Mis à jour le 13 octobre 2026. Compagnon de INFRA.md.
 
 ## Positionnement
 
@@ -10,17 +10,18 @@ Mis à jour le 12 octobre 2026. Compagnon de INFRA.md.
 
 ## Modèle de rémunération
 
-Liens Partenaires Amazon.fr — tag `keurdeco-21`.
+Liens Partenaires Amazon.fr — tag `keurdeco-21` ; annonces Google AdSense sur les pages de lecture depuis le 12 octobre 2026.
 
 | Phase | Levier | Statut |
 | --- | --- | --- |
 | 1 — Lancement | Affiliation Amazon (163 produits vérifiés à la main, mention Partenaires) | ✅ en ligne |
 | 2 — Trafic | Épingles Pinterest | ✅ par import CSV manuel — publication automatique par l'API pas encore ouverte |
 | 3 — Recherche | Référencement Google et Bing (sitemap, données structurées, Search Console, IndexNow) | ✅ en place — indexation en cours |
+| 4 — Publicité | Google AdSense (In-Article, 2 annonces au plus par article, rien sur l'accueil ni les Tops) | ✅ code en ligne depuis le 12 octobre 2026 — validation du site à vérifier dans la console AdSense |
 
 ## Canaux
 
-- ✅ **Pinterest « Keur Déco »** (principal) : compte branché au Planning du Studio ; 62 épingles importées par CSV, dont 22 parues du 2 au 12 octobre 2026 et 40 programmées jusqu'au 1er novembre (`data/pinterest-etat.json`). La publication quotidienne par l'API tourne à blanc faute de secrets.
+- ✅ **Pinterest « Keur Déco »** (principal) : compte branché au Planning du Studio ; 62 épingles importées par CSV, dont 24 parues du 2 au 13 octobre 2026 et 38 programmées jusqu'au 1er novembre (`data/pinterest-etat.json`). La publication quotidienne par l'API tourne à blanc faute de secrets.
 - ✅ **Google** : Search Console vérifiée (propriété de domaine) ; au relevé du 7 octobre 2026, 71 pages indexées et 27 non indexées, demandes d'indexation faites les 7 et 8 octobre.
 - ✅ **Bing** : pages signalées par IndexNow après chaque reconstruction du lundi.
 - ⬜ **TikTok « Afrotok » et YouTube « toa.afrotok »** (comptes communs à toutes les apps, branchés au Planning) : aucune publication pour Keur Déco à ce jour.
@@ -30,11 +31,11 @@ Liens Partenaires Amazon.fr — tag `keurdeco-21`.
 - Audience : Cloudflare Web Analytics (sans cookie) — chiffres à vérifier dans la console.
 - Indexation : Search Console — 71 pages indexées au 7 octobre 2026.
 - Épingles : suivies dans `data/pinterest-etat.json` ; statistiques à vérifier dans la console Pinterest.
-- Revenus : à vérifier dans la console Amazon Partenaires.
+- Revenus : à vérifier dans les consoles Amazon Partenaires et AdSense.
 
 ## Calendrier
 
-- Articles et conseils **publiés à leur date** (en-tête `publie_le`), le site étant reconstruit à chaque push et chaque lundi à 5 h UTC. Au 12 octobre 2026 : 37 articles, dont 21 à date (le top terre cuite paraît avec la reconstruction de ce lundi) et 16 programmés, un par lundi du 19 octobre 2026 au 25 janvier 2027, puis le balcon le 26 avril 2027.
+- Articles et conseils **publiés à leur date** (en-tête `publie_le`), le site étant reconstruit à chaque push et chaque lundi à 5 h UTC. Au 13 octobre 2026 : 37 articles, dont 21 en ligne et 16 programmés, un par lundi du 19 octobre 2026 au 25 janvier 2027, puis le balcon le 26 avril 2027.
 - Conseils : 50, dont 34 à date et 16 programmés (lundi, mercredi, vendredi) jusqu'au 18 novembre 2026 ; un rappel est prévu le 2 novembre pour préparer le lot suivant.
 - Épingles : par lots de 30 jours, 2 par jour au plus ; le lot en cours s'arrête le 1er novembre.
 
