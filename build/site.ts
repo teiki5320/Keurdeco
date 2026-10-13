@@ -138,6 +138,15 @@ export function codeAdsense(editeur = ADSENSE_EDITEUR): string {
     : '';
 }
 
+/**
+ * Pages sans annonce (accueil, Tops, pages légales, 404) : on n'y charge pas le script de Google,
+ * pour qu'elles restent aussi rapides. Confidentialité le garde : son lien « Gérer mes cookies »
+ * doit pouvoir rouvrir la fenêtre de choix de Google.
+ */
+export function pageAvecAdsense(fichier: string): boolean {
+  return !/^(index|tops|top-.*|a-propos|mentions-legales|404)\.html$/.test(fichier);
+}
+
 function liensNavigation(fichier: string): string {
   return NAVIGATION.map(({ href, libelle, pages }) => `<li><a href="${href}"${pages.test(fichier) ? ' aria-current="page"' : ''}>${libelle}</a></li>`).join('');
 }
@@ -327,7 +336,7 @@ export function transformerPage(html: string, fichier: string): string {
   // La 404 peut être servie sous n'importe quel chemin : liens résolus depuis la racine du site.
   const base = fichier === '404.html' ? `<base href="${SITE_URL}" />\n    ` : '';
   const page = html
-    .replace('<!--#head-->', `${base}${head()}\n    ${referencement(html, fichier)}\n    ${mesureAudience()}\n    ${codeAdsense()}`)
+    .replace('<!--#head-->', `${base}${head()}\n    ${referencement(html, fichier)}\n    ${mesureAudience()}${pageAvecAdsense(fichier) ? `\n    ${codeAdsense()}` : ''}`)
     .replace('<!--#header-->', header(fichier))
     .replace('<!--#footer-->', footer())
     .replace('<!--#une-->', () => blocUne(publies))

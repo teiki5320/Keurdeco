@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { MENTION_AMAZON } from '../src/amazon.ts';
-import { codeAdsense, datesSitemap, footer, header, insecables, mesureAudience, pagesGenerees, referencement, sitemap, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
+import { codeAdsense, pageAvecAdsense, datesSitemap, footer, header, insecables, mesureAudience, pagesGenerees, referencement, sitemap, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
 
 describe('parties communes', () => {
   it('navigation : la rubrique courante est signalée', () => {
@@ -53,10 +53,16 @@ describe('référencement', () => {
     expect(mesureAudience('www.keurdeco.com', '')).toContain('data-domain="www.keurdeco.com"');
   });
 
-  it('code AdSense avec l’identifiant éditeur, sur toutes les pages, 404 comprise', () => {
+  it('code AdSense avec l’identifiant éditeur, sauf sur les pages sans annonce', () => {
     expect(codeAdsense('')).toBe('');
     expect(codeAdsense()).toBe('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2680784147246798" crossorigin="anonymous"></script>');
-    expect(transformerPage('<html><head><!--#head--></head><body></body></html>', '404.html')).toContain('client=ca-pub-2680784147246798');
+    const tete = '<html><head><!--#head--></head><body></body></html>';
+    expect(transformerPage(tete, 'salon-terracotta-wax.html')).toContain('client=ca-pub-2680784147246798');
+    expect(transformerPage(tete, 'confidentialite.html')).toContain('client=ca-pub-2680784147246798');
+    for (const f of ['index.html', 'tops.html', 'top-nappes-wax.html', 'a-propos.html', 'mentions-legales.html', '404.html']) {
+      expect(pageAvecAdsense(f), f).toBe(false);
+      expect(transformerPage(tete, f), f).not.toContain('adsbygoogle');
+    }
   });
 
   it('sitemap sans la 404', () => {
