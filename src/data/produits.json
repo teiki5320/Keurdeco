@@ -15,7 +15,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "coussin-wax-vert-baobab",
@@ -34,7 +34,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "coussin-wax-terracotta",
@@ -51,7 +51,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "plaid-coton-rayures-creme",
@@ -68,7 +68,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "assiettes-murales-tressees",
@@ -89,7 +89,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "panier-plante-tresse-rayures",
@@ -108,7 +108,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "tapis-motif-losanges",
@@ -126,7 +126,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "pouf-cuir-ocre",
@@ -143,7 +143,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "vase-terre-cuite-terracotta",
@@ -161,7 +161,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "tabouret-bois-sculpte",
@@ -180,7 +180,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "panier-bolga-marche",
@@ -199,7 +199,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "panier-linge-tresse-couvercle",
@@ -218,7 +218,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "paniers-rangement-raphia-lot",
@@ -237,7 +237,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "corbeille-fruits-tressee",
@@ -255,7 +255,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "panier-jouets-tresse",
@@ -273,7 +273,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "panier-mural-tresse",
@@ -291,7 +291,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "paniers-gigognes-tresses",
@@ -311,7 +311,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "panier-agaseke-couvercle",
@@ -332,7 +332,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "coussin-bogolan",
@@ -352,7 +352,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "tapis-motif-bogolan",
@@ -372,7 +372,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "jarre-terre-cuite-toscane",
@@ -389,7 +389,7 @@
       "balcon-exterieur",
       "salon"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-09-28"
   },
   {
@@ -406,7 +406,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "lanternes-solaires-rotin",
@@ -423,7 +423,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "tapis-jute-rond",
@@ -442,7 +442,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "guirlande-guinguette",
@@ -457,7 +457,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "banc-acacia-jardin",
@@ -475,7 +475,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "coupon-pagne-wax-180x120",
@@ -493,7 +493,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "chemin-table-tribal-africain",
@@ -508,7 +508,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "chemin-table-kente-lin",
@@ -525,7 +525,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "chemin-table-totems-lin",
@@ -541,7 +541,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-13"
   },
   {
     "id": "nappe-lin-geometrique",
