@@ -556,7 +556,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "chemin-table-lin-orange-pompons",
@@ -571,7 +571,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "nappe-impermeable-tribale",
@@ -587,7 +587,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "coupons-tissus-africains-lot-6",
@@ -604,7 +604,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "housse-couette-coton-denim",
@@ -621,7 +621,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "drap-housse-lin-blanc",
@@ -636,7 +636,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "coussin-shibori-indigo",
@@ -655,7 +655,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "tete-de-lit-rotin-160",
@@ -672,7 +672,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "lampes-chevet-ceramique-lot-2",
@@ -687,7 +687,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "table-chevet-rotin",
@@ -704,7 +704,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "plaid-gaufre-coton",
@@ -720,7 +720,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "tapis-rond-coton-bleu-marine",
@@ -738,7 +738,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "voilage-lin-naturel",
@@ -754,7 +754,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "paniers-kallax-jacinthe-lot-4",
@@ -773,7 +773,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "porte-revues-jacinthe",
@@ -790,7 +790,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "corbeille-papier-jacinthe",
@@ -808,7 +808,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "malles-osier-lot-2",
@@ -827,7 +827,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "boites-papier-tresse-couvercle-lot-3",
@@ -843,7 +843,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "panier-dossiers-suspendus-a4",
@@ -860,7 +860,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "panier-tisse-extra-large",
@@ -876,7 +876,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "paniers-ronds-rotin-empilables",
@@ -894,7 +894,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "bannette-courrier-jonc",
@@ -911,7 +911,7 @@
       "entree",
       "salon"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-09-28"
   },
   {
@@ -931,7 +931,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "banc-chaussures-bambou",
@@ -946,7 +946,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "pateres-chene-lot-4",
@@ -962,7 +962,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "tapis-couloir-kilim-chindi",
@@ -978,7 +978,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "pampa-sechee-bouquet",
@@ -994,7 +994,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "suspension-jute-boheme",
@@ -1013,7 +1013,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "coussins-kuba-lot-4",
@@ -1030,7 +1030,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "coussin-tribal-coton-lin",
@@ -1046,7 +1046,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-14"
   },
   {
     "id": "coussin-divinite-fertilite",
