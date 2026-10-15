@@ -1062,7 +1062,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "coussins-femme-africaine-lin-lot-4",
@@ -1078,7 +1078,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "coussin-femme-africaine-jute",
@@ -1094,7 +1094,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "coussins-ethniques-geometriques-lot-4",
@@ -1110,7 +1110,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "housse-canape-velours-cotele",
@@ -1125,7 +1125,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "plaid-tricot-chenille",
@@ -1140,7 +1140,7 @@
       "salon",
       "chambre"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-09-28"
   },
   {
@@ -1157,7 +1157,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "coupe-terre-cuite-ronde",
@@ -1175,7 +1175,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "branches-saule-sechees",
@@ -1191,7 +1191,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "tapis-peau-mouton-beige",
@@ -1207,7 +1207,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "lampadaire-rotin-boheme",
@@ -1224,7 +1224,7 @@
       "salon",
       "chambre"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-09-28"
   },
   {
@@ -1241,7 +1241,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "assiettes-terre-cuite-lot-6",
@@ -1258,7 +1258,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "carafe-argile-naturelle",
@@ -1275,7 +1275,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "tajine-terre-cuite-35",
@@ -1292,7 +1292,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "bols-terre-cuite-lot-12",
@@ -1309,7 +1309,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "vases-argile-lot-3",
@@ -1328,7 +1328,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "pot-terre-cuite-fait-main-noir",
@@ -1346,7 +1346,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "sphere-terre-cuite-etoiles",
@@ -1363,7 +1363,7 @@
       "salon",
       "balcon-exterieur"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-09-28"
   },
   {
@@ -1380,7 +1380,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "table-basse-ronde-chene-clair",
@@ -1396,7 +1396,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "vase-ceramique-noir-mat",
@@ -1412,7 +1412,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "buffet-lattes",
@@ -1428,7 +1428,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "bol-manguier-sculpte",
@@ -1446,7 +1446,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "lampadaire-noir-abat-jour-lin",
@@ -1463,7 +1463,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "cadre-chene-a2",
@@ -1480,7 +1480,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "suspension-rotin-fait-main",
@@ -1499,7 +1499,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "suspension-paille-parasol",
@@ -1517,7 +1517,7 @@
       "cuisine-salle-a-manger",
       "chambre"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-09-28"
   },
   {
@@ -1537,7 +1537,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "suspension-jute-alara-70",
@@ -1556,7 +1556,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-09-28"
+    "verifie_le": "2026-10-15"
   },
   {
     "id": "suspension-rotin-cuzco",
