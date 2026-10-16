@@ -3,14 +3,15 @@
 //
 // Prérequis : PINTEREST_APP_ID et PINTEREST_APP_SECRET (variables d'environnement ou fichier .env),
 // et l'adresse de redirection http://localhost:8085/callback déclarée dans l'application Pinterest.
-// Le parcours : autorisation sur Pinterest → échange du code → affichage du refresh token (à copier
-// dans les secrets GitHub), du compte, des tableaux (avec leurs identifiants) et un formulaire pour
-// publier une épingle de démonstration. C'est aussi la page à filmer pour la vidéo de démonstration
+// Le parcours : autorisation sur Pinterest → échange du code → refresh token enregistré dans .env
+// (jamais affiché, ni à l'écran ni dans le terminal), compte, tableaux (avec leurs identifiants) et
+// un formulaire pour publier une épingle de démonstration. C'est aussi la page à filmer pour la vidéo de démonstration
 // exigée par Pinterest pour l'accès standard (voir docs/pinterest.md).
 import { randomBytes } from 'node:crypto';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { resolve } from 'node:path';
-import { api, chargerEnv, corpsEpingle, demanderJeton, hoteApi, lireJson, PORTEES, RACINE, URL_AUTORISATION } from './pinterest-lib.mjs';
+import { api, aujourdhuiParis, chargerEnv, corpsEpingle, demanderJeton, hoteApi, lireJson, PORTEES, RACINE, URL_AUTORISATION } from './pinterest-lib.mjs';
 
 chargerEnv();
 const PORT = Number(process.env.PINTEREST_AUTH_PORT ?? 8085);
@@ -19,6 +20,14 @@ const APP_ID = process.env.PINTEREST_APP_ID;
 const SECRET = process.env.PINTEREST_APP_SECRET;
 const etatOAuth = randomBytes(16).toString('hex');
 let session = null; // { access_token, refresh_token, ... } après l'échange du code
+
+/** Écrit (ou remplace) une ligne CLE=valeur dans .env, sans jamais afficher la valeur. */
+function enregistrerEnv(cle, valeur, fichier = resolve(RACINE, '.env')) {
+  const texte = existsSync(fichier) ? readFileSync(fichier, 'utf8') : '';
+  const ligne = `${cle}=${valeur}`;
+  const motif = new RegExp(`^${cle}=.*$`, 'm');
+  writeFileSync(fichier, motif.test(texte) ? texte.replace(motif, ligne) : `${texte.replace(/\n?$/, '\n')}${ligne}\n`);
+}
 
 const echapper = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -62,13 +71,20 @@ async function apresConnexion() {
   ]);
   const manifeste = lireJson(resolve(RACINE, 'public/epingles.json'), { epingles: [] });
   const options = (tableaux.items ?? []).map((t) => `<option value="${echapper(t.id)}">${echapper(t.name)}</option>`).join('');
-  const epingles = manifeste.epingles.map((e, i) => `<option value="${i}">${echapper(e.titre)}</option>`).join('');
+  // Seulement les articles déjà en ligne : Pinterest doit pouvoir télécharger l'image de l'épingle.
+  const aujourdhui = aujourdhuiParis();
+  const epingles = manifeste.epingles
+    .map((e, i) => (e.publie_le <= aujourdhui ? `<option value="${i}">${echapper(e.titre)}</option>` : ''))
+    .join('');
   return page(
     'Connexion réussie',
     `<p class="ok">✓ Keur Déco est autorisé sur le compte ${echapper(compte.username ?? '')}${compte.erreur ? ` (compte illisible : ${echapper(compte.erreur)})` : ''}.</p>
 <h2>1. Refresh token</h2>
-<p>Copiez cette valeur dans le secret GitHub <code>PINTEREST_REFRESH_TOKEN</code> (Settings › Secrets and variables › Actions). Ne la partagez pas.</p>
-<textarea readonly onclick="this.select()">${echapper(session.refresh_token ?? '(aucun refresh token renvoyé)')}</textarea>
+${
+  session.refresh_token
+    ? '<p class="ok">✓ Enregistré dans le fichier <code>.env</code> de cet ordinateur (<code>PINTEREST_REFRESH_TOKEN</code>). Il n’est jamais affiché ni envoyé sur GitHub ; reportez-le dans le secret GitHub du même nom pour la publication automatique.</p>'
+    : '<p class="erreur">Aucun refresh token renvoyé par Pinterest.</p>'
+}
 <p>Jeton d'accès valable ${Math.round((session.expires_in ?? 0) / 86400)} jours ; refresh token valable ${session.refresh_token_expires_in ? `${Math.round(session.refresh_token_expires_in / 86400)} jours` : 'selon Pinterest'}. Le script de publication renouvelle le jeton d'accès tout seul.</p>
 <h2>2. Vos tableaux</h2>
 ${
@@ -85,6 +101,24 @@ ${
     : '<p>Lancez d’abord <code>npm run build</code> (qui génère <code>public/epingles.json</code>) et créez au moins un tableau.</p>'
 }`,
   );
+}
+
+/**
+ * Publie l'épingle de démonstration. Avec l'accès d'essai, Pinterest refuse POST /pins en production
+ * (code 29) : si PINTEREST_JETON_BAC_A_SABLE est défini, l'épingle part dans le bac à sable, dans un
+ * tableau « <nom du tableau choisi> (démo) », créé au besoin (les tableaux du bac à sable sont distincts).
+ */
+async function publierDemo(e, tableau) {
+  const jetonBac = process.env.PINTEREST_JETON_BAC_A_SABLE;
+  if (!jetonBac) return api('/pins', { jeton: session.access_token, methode: 'POST', corps: corpsEpingle(e, tableau) });
+  const bac = { ...process.env, PINTEREST_SANDBOX: '1' };
+  // Le bac à sable refuse un nom déjà pris par un tableau de production : suffixe « (démo) ».
+  const name = `${(await api(`/boards/${encodeURIComponent(tableau)}`, { jeton: session.access_token })).name} (démo)`;
+  const existants = await api('/boards?page_size=100', { jeton: jetonBac, env: bac });
+  const tableauBac =
+    (existants.items ?? []).find((t) => t.name === name) ?? (await api('/boards', { jeton: jetonBac, env: bac, methode: 'POST', corps: { name } }));
+  const pin = await api('/pins', { jeton: jetonBac, env: bac, methode: 'POST', corps: corpsEpingle(e, tableauBac.id) });
+  return { ...pin, bacASable: true };
 }
 
 async function lireCorps(req) {
@@ -110,7 +144,10 @@ const serveur = createServer(async (req, res) => {
       const code = url.searchParams.get('code');
       if (!code) return envoyer(page('Autorisation refusée', `<p class="erreur">${echapper(url.searchParams.get('error_description') ?? 'Aucun code reçu.')}</p>`), 400);
       session = await demanderJeton({ grant_type: 'authorization_code', code, redirect_uri: REDIRECTION }, { appId: APP_ID, secret: SECRET });
-      console.log('\nRefresh token (à copier dans le secret PINTEREST_REFRESH_TOKEN) :\n' + session.refresh_token + '\n');
+      if (session.refresh_token) {
+        enregistrerEnv('PINTEREST_REFRESH_TOKEN', session.refresh_token);
+        console.log('\nRefresh token enregistré dans .env (PINTEREST_REFRESH_TOKEN), non affiché.\n');
+      }
       res.writeHead(302, { Location: '/compte' });
       return res.end();
     }
@@ -119,11 +156,11 @@ const serveur = createServer(async (req, res) => {
       const { epingle, tableau } = await lireCorps(req);
       const manifeste = lireJson(resolve(RACINE, 'public/epingles.json'), { epingles: [] });
       const e = manifeste.epingles[Number(epingle)];
-      const pin = await api('/pins', { jeton: session.access_token, methode: 'POST', corps: corpsEpingle(e, tableau) });
+      const pin = await publierDemo(e, tableau);
       return envoyer(
         page(
           'Épingle publiée',
-          `<p class="ok">✓ Épingle créée : <code>${echapper(pin.id)}</code></p><p><img src="${echapper(e.image)}" alt="" style="max-width:300px;border-radius:12px"></p><p>${hoteApi().includes('sandbox') ? 'Publiée dans le bac à sable Pinterest (accès d’essai).' : `<a href="https://www.pinterest.com/pin/${echapper(pin.id)}/">Voir l’épingle sur Pinterest</a>`}</p><p><a href="/compte">Retour</a></p>`,
+          `<p class="ok">✓ Épingle créée : <code>${echapper(pin.id)}</code></p><p><img src="${echapper(e.image)}" alt="" style="max-width:300px;border-radius:12px"></p><p>${pin.bacASable ? 'Publiée dans le bac à sable Pinterest : avec l’accès d’essai, Pinterest n’autorise la création d’épingles que là.' : `<a href="https://www.pinterest.com/pin/${echapper(pin.id)}/">Voir l’épingle sur Pinterest</a>`}</p><p><a href="/compte">Retour</a></p>`,
         ),
       );
     }

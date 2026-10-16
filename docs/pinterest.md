@@ -54,17 +54,19 @@ Créer un fichier `.env` à la racine (il est ignoré par git) :
 ```
 PINTEREST_APP_ID=votre_app_id
 PINTEREST_APP_SECRET=votre_secret
-# Pendant l'accès d'essai :
-PINTEREST_SANDBOX=1
+# Pendant l'accès d'essai : jeton « Sandbox » généré sur la page de l'application
+PINTEREST_JETON_BAC_A_SABLE=pina_...
 ```
 
-Puis `npm run pinterest:auth` et ouvrir http://localhost:8085/ :
+Puis `PINTEREST_SANDBOX=0 npm run pinterest:auth` et ouvrir http://localhost:8085/ :
 
 1. *Se connecter avec Pinterest* → autoriser l'application ;
-2. la page affiche le **refresh token**, le nom du compte et **la liste des tableaux avec leur `board_id`** ;
-3. un formulaire permet de **publier une épingle de démonstration** dans un tableau.
+2. le **refresh token** est enregistré tout seul dans `.env` (`PINTEREST_REFRESH_TOKEN`), **jamais affiché** (ni à l'écran ni dans le terminal) ; la page montre le nom du compte et **la liste des tableaux avec leur `board_id`** ;
+3. un formulaire permet de **publier une épingle de démonstration** dans un tableau (seulement les articles déjà en ligne, Pinterest devant télécharger l'image).
 
-L'épingle de démonstration utilise une image hébergée sur le site (10 articles et leurs épingles sont en ligne depuis le 28 septembre 2026) : lancer `npm run build` en local pour que `public/epingles.json` soit à jour.
+Le jeton OAuth ne fonctionne que sur l'API de production (`api.pinterest.com`), d'où `PINTEREST_SANDBOX=0`. Mais en accès d'essai, Pinterest refuse `POST /pins` en production (code 29) : si `PINTEREST_JETON_BAC_A_SABLE` est défini, l'épingle de démonstration part donc dans le bac à sable, dans un tableau « *nom du tableau choisi* (démo) » créé au besoin (le bac à sable refuse un nom déjà pris en production).
+
+Lancer `npm run build` en local pour que `public/epingles.json` soit à jour.
 
 Reporter les `board_id` dans `config/tableaux-pinterest.json` (au minimum `general`), puis commit sur `main`.
 
@@ -77,9 +79,10 @@ Pinterest demande une vidéo qui montre l'intégration complète avant d'ouvrir 
    - le clic sur *Se connecter avec Pinterest*, **l'écran d'autorisation Pinterest** et le retour sur la page ;
    - la liste des tableaux, puis la **publication d'une épingle de démonstration** ;
    - l'épingle obtenue (dans le bac à sable) et, si possible, l'article du site vers lequel elle mène.
-2. Sur developers.pinterest.com › votre application › *Upgrade access* : décrire l'usage (« publication automatique de nos propres visuels, 5 épingles par jour au maximum, dans nos tableaux, avec lien vers nos articles »), joindre la vidéo (lien YouTube non répertorié ou Google Drive).
+   Exigences de Pinterest : fichier .mp4, **20 à 60 images par seconde constantes**, ratio entre 1:2 et 1,91:1. La capture d'écran macOS est à cadence variable et trop large : la ré-encoder, par exemple `ffmpeg -i capture.mov -vf "fps=30,scale=1920:-2,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=0xF7F0E6" -r 30 -c:v libx264 -pix_fmt yuv420p -an demo.mp4`. Sinon le bouton *Envoyer* ramène au champ vidéo sans message.
+2. Sur developers.pinterest.com › votre application › *Mise à niveau de l'accès* : décrire l'usage, joindre la vidéo, cocher « Création et planification d'Épingle » et l'audience « Entreprises ». Demande envoyée le 16 octobre 2026 pour l'application « TOA CORP publication » (Keur Déco, puis Keur Cook et Keurbook).
 3. Attendre la réponse (quelques jours à deux semaines).
-4. Une fois l'accès standard obtenu : retirer `PINTEREST_SANDBOX=1` du `.env`, relancer `npm run pinterest:auth` pour obtenir un refresh token de production, et reprendre les `board_id` si besoin.
+4. Une fois l'accès standard obtenu : retirer `PINTEREST_SANDBOX=1` du `.env` et des variables GitHub ; le refresh token obtenu à l'étape 5 est déjà un jeton de production et les `board_id` de `config/tableaux-pinterest.json` sont déjà renseignés.
 
 ## 7. Secrets GitHub
 
@@ -89,7 +92,7 @@ Pinterest demande une vidéo qui montre l'intégration complète avant d'ouvrir 
 | --- | --- | --- |
 | Secrets | `PINTEREST_APP_ID` | App ID |
 | Secrets | `PINTEREST_APP_SECRET` | App secret key |
-| Secrets | `PINTEREST_REFRESH_TOKEN` | refresh token affiché à l'étape 5 |
+| Secrets | `PINTEREST_REFRESH_TOKEN` | refresh token enregistré dans `.env` à l'étape 5 |
 | Variables | `PINTEREST_VERIFY` | code de revendication du domaine (étape 2) |
 | Variables (facultatif) | `PINTEREST_SANDBOX` | `1` pendant l'accès d'essai, à supprimer ensuite |
 | Variables (facultatif) | `PINTEREST_MAX` | nombre maximum d'épingles par jour (sinon `config/pinterest.json`) |

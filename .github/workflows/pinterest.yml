@@ -43,7 +43,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue create --title "Pinterest : mettre à jour le secret PINTEREST_REFRESH_TOKEN" --body "Pinterest a fourni un nouveau refresh token lors de la publication du $(TZ=Europe/Paris date +%F). Relancez \`npm run pinterest:auth\` sur votre ordinateur, puis copiez le refresh token affiché dans le secret GitHub PINTEREST_REFRESH_TOKEN (voir docs/pinterest.md, étape 7)."
+          gh issue create --title "Pinterest : mettre à jour le secret PINTEREST_REFRESH_TOKEN" --body "Pinterest a fourni un nouveau refresh token lors de la publication du $(TZ=Europe/Paris date +%F). Relancez \`npm run pinterest:auth\` sur votre ordinateur, puis copiez le refresh token enregistré dans .env (ligne PINTEREST_REFRESH_TOKEN) dans le secret GitHub du même nom (voir docs/pinterest.md, étape 7)."
       - name: Enregistrer le fichier d'état sur main
         if: always()
         run: |
