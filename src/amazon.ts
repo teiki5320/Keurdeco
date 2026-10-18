@@ -2,8 +2,8 @@
  * Liens Partenaires Amazon.fr : l'identifiant de suivi est défini ici, et nulle part ailleurs.
  */
 
-/** Identifiant de suivi Partenaires Amazon (créé dans le compte kultiva-21, confirmé le 27 septembre 2026). */
-export const AMAZON_TAG = 'keurdeco-21';
+/** Identifiant de suivi Partenaires Amazon (compte toakeur, créé le 18 octobre 2026 : l'ancien compte kultiva-21 a été fermé par Amazon). */
+export const AMAZON_TAG = 'keurdecofr-21';
 
 /** Attributs obligatoires des liens affiliés : sponsorisés, non suivis, ouverts dans un nouvel onglet. */
 export const REL_AMAZON = 'sponsored nofollow noopener';

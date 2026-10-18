@@ -99,7 +99,7 @@ try {
   verifier((await carte.isVisible()) && (await points.first().getAttribute('aria-expanded')) === 'true', 'un clic ouvre la carte du produit');
   const lien = carte.locator('a.bouton--amazon');
   verifier(
-    /^https:\/\/www\.amazon\.fr\/dp\/DEMO\d{6}\?tag=keurdeco-21$/.test((await lien.getAttribute('href')) ?? '') &&
+    /^https:\/\/www\.amazon\.fr\/dp\/DEMO\d{6}\?tag=keurdecofr-21$/.test((await lien.getAttribute('href')) ?? '') &&
       (await lien.getAttribute('rel')) === 'sponsored nofollow noopener' &&
       (await lien.getAttribute('target')) === '_blank' &&
       (await lien.textContent())?.includes('Voir sur Amazon'),

@@ -98,7 +98,7 @@ describe('rendu', () => {
     expect(html).not.toContain('Produit c');
     expect(html).toContain('Dans le même esprit');
     expect(html).toContain('Image d’ambiance créée par IA');
-    expect(html).toContain('href="https://www.amazon.fr/dp/TESTASIN01?tag=keurdeco-21" rel="sponsored nofollow noopener" target="_blank"');
+    expect(html).toContain('href="https://www.amazon.fr/dp/TESTASIN01?tag=keurdecofr-21" rel="sponsored nofollow noopener" target="_blank"');
     expect(html).toContain('En tant que Partenaire Amazon');
   });
 

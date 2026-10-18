@@ -130,7 +130,7 @@ Règles (vérifiées par les tests) :
 - **Jamais d'ASIN, de note, d'avis ni de prix inventés** ; aucun prix affiché.
 - Un produit `a_selectionner` ou `indisponible` n'est jamais affiché.
 - **Aucune photo Amazon** : chaque carte produit montre une icône du type d'objet.
-- Liens : `https://www.amazon.fr/dp/<ASIN>?tag=keurdeco-21`, `rel="sponsored nofollow noopener"`, `target="_blank"`.
+- Liens : `https://www.amazon.fr/dp/<ASIN>?tag=keurdecofr-21`, `rel="sponsored nofollow noopener"`, `target="_blank"`.
 - La mention Partenaires figure près des liens, dans le pied de page et les mentions légales.
 
 Tests : format d'ASIN (`/^[A-Z0-9]{10}$/`), unicité des identifiants, produits référencés existants, `verifie_le` pour tout produit actif, points entre 0 et 100 %, images existantes avec texte alternatif, tableaux Pinterest existants, liens internes valides.
