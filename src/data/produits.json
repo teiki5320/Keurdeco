@@ -2813,5 +2813,84 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-09-30"
+  },
+  {
+    "id": "tissu-bogolan-indigo-fleches",
+    "asin": "B0HMJX4FHS",
+    "nom": "Tissu africain style bogolan bleu indigo, motifs flèches et ovales, 100 % coton, 180 × 116 cm",
+    "type_objet": "textile",
+    "matieres": [
+      "indigo",
+      "bogolan"
+    ],
+    "couleurs": [
+      "indigo"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "tissu-kente-jaune-noir-blanc",
+    "asin": "B0HHTQ7VKL",
+    "nom": "Tissu africain imprimé kente jaune, noir et blanc, 100 % coton, 180 × 117 cm",
+    "type_objet": "textile",
+    "matieres": [
+      "kente"
+    ],
+    "couleurs": [
+      "jaune",
+      "noir",
+      "blanc"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "tissu-dogon-indigo-blanc",
+    "asin": "B0H5WZW97W",
+    "nom": "Tissu africain imprimé Super Dogon indigo et blanc, motif géométrique, 100 % coton, 180 × 119 cm",
+    "type_objet": "textile",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo",
+      "blanc"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "tissu-kente-bleu-jaune",
+    "asin": "B0H7LFY6JQ",
+    "nom": "Tissu africain wax imprimé kente bleu et jaune, 180 × 116 cm",
+    "type_objet": "textile",
+    "matieres": [
+      "kente",
+      "wax"
+    ],
+    "couleurs": [
+      "bleu",
+      "jaune",
+      "noir"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
   }
 ]
