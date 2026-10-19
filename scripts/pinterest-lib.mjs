@@ -99,14 +99,16 @@ export function tableauPour(rubrique, config) {
  * - pas encore publiées (d'après le fichier d'état) ;
  * - au plus `max` par exécution ;
  * - jamais deux épingles du même article le même jour (ni dans l'exécution, ni avec une publication déjà faite aujourd'hui) ;
- * - d'abord la 1re épingle de chaque article (les articles les plus récents en premier), puis la 2e, etc.
+ * - d'abord la 1re épingle de chaque article (les articles les plus récents en premier), puis la 2e, etc. ;
+ * - `priorite` (liste de slugs) : les épingles de ces articles passent avant toutes les autres.
  */
-export function choisirEpingles(manifeste, etat, { max = 5, aujourdhui = aujourdhuiParis() } = {}) {
+export function choisirEpingles(manifeste, etat, { max = 5, aujourdhui = aujourdhuiParis(), priorite = [] } = {}) {
+  const prioritaire = (e) => (priorite.includes(e.slug) ? 0 : 1);
   const publiees = new Set((etat.publiees ?? []).map((p) => p.id));
   const slugsDuJour = new Set((etat.publiees ?? []).filter((p) => p.publie_le === aujourdhui).map((p) => p.slug));
   const candidates = (manifeste.epingles ?? [])
     .filter((e) => !publiees.has(e.id) && e.publie_le <= aujourdhui)
-    .sort((a, b) => a.numero - b.numero || b.publie_le.localeCompare(a.publie_le) || a.id.localeCompare(b.id));
+    .sort((a, b) => prioritaire(a) - prioritaire(b) || a.numero - b.numero || b.publie_le.localeCompare(a.publie_le) || a.id.localeCompare(b.id));
   const choix = [];
   for (const e of candidates) {
     if (choix.length >= max) break;

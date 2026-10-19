@@ -1,6 +1,6 @@
 // Lot d'épingles à importer à la main dans Pinterest (« Créer des épingles en masse » avec un fichier .csv),
 // en attendant que l'application soit validée pour la publication automatique.
-// Usage : npm run pinterest:lot [-- --jours 30] [-- --par-jour 2] [-- --local]
+// Usage : npm run pinterest:lot [-- --jours 30] [-- --par-jour 2] [-- --local] [-- --priorite slug1,slug2]
 //         npm run pinterest:lot -- --confirmer   (une fois le fichier importé dans Pinterest)
 //
 // 1. Lit le manifeste publié (https://www.keurdeco.com/epingles.json, ou public/epingles.json avec --local)
@@ -22,6 +22,8 @@ const option = (nom, defaut) => {
 };
 const JOURS = option('jours', 30);
 const PAR_JOUR = option('par-jour', 2);
+/** Articles dont les épingles passent en tête du lot (--priorite slug1,slug2). */
+const PRIORITE = args.includes('--priorite') ? String(args[args.indexOf('--priorite') + 1] ?? '').split(',').filter(Boolean) : [];
 /** Heures de publication (UTC) : 12 h et 19 h à Paris en hiver, 13 h et 20 h en été. */
 const HEURES = ['11:00:00', '18:00:00'];
 const FICHIER_ETAT = resolve(RACINE, 'data/pinterest-etat.json');
@@ -67,7 +69,7 @@ for (let j = 0; j < JOURS; j++) {
   // Les épingles déjà programmées ce jour-là (lots précédents) comptent dans le maximum quotidien.
   const deja = simulation.publiees.filter((p) => p.publie_le === jour).length;
   if (deja >= PAR_JOUR) continue;
-  const choix = choisirEpingles(manifeste, simulation, { max: PAR_JOUR - deja, aujourdhui: jour });
+  const choix = choisirEpingles(manifeste, simulation, { max: PAR_JOUR - deja, aujourdhui: jour, priorite: PRIORITE });
   choix.forEach((e, k) => {
     simulation.publiees.push({ id: e.id, slug: e.slug, publie_le: jour });
     lot.push({ e, date: `${jour}T${HEURES[(deja + k) % HEURES.length]}` });

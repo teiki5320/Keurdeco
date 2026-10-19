@@ -50,6 +50,11 @@ describe('publication Pinterest', () => {
     expect(choix.map((e: { id: string }) => e.id)).toEqual(['bogolan-1', 'paniers-1', 'salon-1']);
   });
 
+  it('fait passer d’abord les articles prioritaires, toujours une épingle par article et par jour', () => {
+    const choix = choisirEpingles(manifeste, { publiees: [] }, { max: 3, aujourdhui: '2026-10-20', priorite: ['salon'] });
+    expect(choix.map((e: { id: string }) => e.id)).toEqual(['salon-1', 'bogolan-1', 'paniers-1']);
+  });
+
   it('respecte le maximum par exécution', () => {
     expect(choisirEpingles(manifeste, { publiees: [] }, { max: 2, aujourdhui: '2026-10-20' })).toHaveLength(2);
   });
