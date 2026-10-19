@@ -215,10 +215,10 @@ function pageHub(famille: Famille, publies: Article[]): string {
 export const LISTES_TYPE: Record<'top' | 'guide', { fichier: string; h1: string; titre: string; chapo: string; vide: string; motif: string }> = {
   top: {
     fichier: FICHIER_LISTE.top,
-    h1: 'Nos sélections',
-    titre: 'Nos sélections de déco africaine',
-    chapo: 'Nos classements d’objets de déco africaine, choisis un par un : paniers, coussins, nappes, chemins de table, luminaires.',
-    vide: 'La première sélection arrive bientôt.',
+    h1: 'Nos Top 10',
+    titre: 'Tops : nos sélections de déco africaine',
+    chapo: 'Nos classements d’objets de déco africaine, choisis un par un : paniers, coussins, nappes, luminaires.',
+    vide: 'Le premier top arrive bientôt.',
     motif: 'wax',
   },
   guide: {

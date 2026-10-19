@@ -36,7 +36,7 @@ export const NAVIGATION: { href: string; libelle: string; pages: RegExp }[] = [
   { href: 'pieces.html', libelle: 'Pièces', pages: /^(pieces|piece-.*)\.html$/ },
   { href: 'matieres.html', libelle: 'Matières', pages: /^(matieres|matiere-.*)\.html$/ },
   { href: 'occasions.html', libelle: 'Occasions', pages: /^(occasions|occasion-.*)\.html$/ },
-  { href: 'tops.html', libelle: 'Nos sélections', pages: /^(tops|top-.*)\.html$/ },
+  { href: 'tops.html', libelle: 'Tops', pages: /^tops\.html$/ },
   { href: 'guides.html', libelle: 'Guides', pages: /^guides\.html$/ },
   { href: 'conseils.html', libelle: 'Conseils', pages: /^conseils?(-.*)?\.html$/ },
   { href: 'glossaire.html', libelle: 'Glossaire', pages: /^glossaire(-.*)?\.html$/ },
@@ -226,7 +226,7 @@ export function footer(): string {
     <div>
       ${colonne('occasion').replace(/^<div>|<\/div>$/g, '')}
       <h2>Keur Déco</h2>
-      <ul><li><a href="tops.html">Nos sélections</a></li><li><a href="guides.html">Guides</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="glossaire.html">Glossaire</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="confidentialite.html#publicite" data-cookies>Gérer mes cookies</a></li></ul>
+      <ul><li><a href="tops.html">Tops</a></li><li><a href="guides.html">Guides</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="glossaire.html">Glossaire</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="confidentialite.html#publicite" data-cookies>Gérer mes cookies</a></li></ul>
     </div>
   </div>
 </footer>`;
