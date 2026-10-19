@@ -62,7 +62,7 @@ const DOSSIER_VIGNETTES = resolve(import.meta.dirname, '../public/images/produit
  * Vignette du produit découpée dans une de nos images d'ambiance (créée par IA, jamais une photo Amazon :
  * voir scripts/vignettes-produits.ts) ; à défaut, l'icône du type d'objet.
  */
-function visuelProduit(p: Produit): string {
+export function visuelProduit(p: Produit): string {
   if (!existsSync(resolve(DOSSIER_VIGNETTES, `${p.id}-160.webp`))) return iconeObjet(p.type_objet);
   return `<img class="produit__vignette" src="images/produits/${p.id}-160.webp" srcset="images/produits/${p.id}-160.webp 160w, images/produits/${p.id}-320.webp 320w" sizes="120px" width="160" height="160" alt="Illustration : ${echapper(p.nom)}" loading="lazy" decoding="async" /><span class="produit__ia">Illustration IA</span>`;
 }

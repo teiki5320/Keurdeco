@@ -1960,6 +1960,404 @@ main {
   margin-top: 16px;
 }
 
+/* ---------- Pages « Nos sélections » (articles de type top, build/selections.ts) ---------- */
+
+.mention-amazon--haut {
+  margin: 0 0 18px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* Onglets d'ancres sous l'en-tête : défilent seuls sur téléphone, jamais la page. */
+.onglets-selection {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--fond);
+  border-block: 1px solid var(--bordure);
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.onglets-selection .conteneur {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-block: 10px;
+}
+
+.onglets-selection .conteneur::-webkit-scrollbar {
+  display: none;
+}
+
+.onglets-selection a {
+  flex: none;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--indigo);
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+}
+
+.onglets-selection a:hover,
+.onglets-selection a:focus-visible {
+  background: var(--indigo);
+  color: var(--ivoire);
+}
+
+.selection__intro {
+  margin-bottom: clamp(16px, 3vw, 32px);
+}
+
+.selection__bloc {
+  margin-block: clamp(36px, 6vw, 72px);
+  scroll-margin-top: 70px;
+}
+
+.selection h2[id] {
+  scroll-margin-top: 70px;
+}
+
+.selection__bloc > h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 4.5vw, 2.3rem);
+}
+
+.selection__sous-titre {
+  margin: 0 0 20px;
+  color: var(--texte-doux);
+  font-size: 0.95rem;
+}
+
+.badge-selection {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--indigo);
+  color: var(--ivoire);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.selection-action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: auto;
+}
+
+.selection-action .bouton {
+  padding: 11px 20px;
+  font-size: 0.95rem;
+}
+
+.lien-partenaire {
+  font-size: 0.78rem;
+  color: var(--texte-doux);
+}
+
+/* Top 3 : une colonne sur téléphone, trois côte à côte sur grand écran. */
+.top3 {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+@media (min-width: 900px) {
+  .top3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.top3__carte {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border-radius: var(--rayon);
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+}
+
+.top3__entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.top3__rang {
+  font-family: var(--police-titre);
+  font-style: italic;
+  color: var(--texte-doux);
+}
+
+.top3__produit {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.top3__produit .produit__visuel {
+  width: 84px;
+  height: 84px;
+}
+
+.top3__nom {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.top3__nom a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.top3__faits {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
+  color: var(--texte-doux);
+}
+
+.top3__resume {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Classement complet : une fiche par produit. */
+.selection .classement {
+  gap: 18px;
+  margin-top: 0;
+}
+
+.selection .classement__entree {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(18px, 3vw, 26px);
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  scroll-margin-top: 70px;
+}
+
+.fiche__entete {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.selection .classement__rang {
+  position: static;
+  width: 44px;
+  height: 44px;
+  font-size: 1.25rem;
+  border-radius: 12px;
+}
+
+.fiche__entete .produit__visuel,
+.fiche__entete .produit__visuel--photo {
+  width: 76px;
+  height: 76px;
+}
+
+.fiche__titre .badge-selection {
+  margin-bottom: 6px;
+}
+
+.fiche__titre .produit__nom {
+  margin: 2px 0 0;
+  font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+}
+
+.fiche__faits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+  margin: 0;
+  padding: 14px 0;
+  border-block: 1px solid var(--bordure);
+}
+
+@media (min-width: 700px) {
+  .fiche__faits {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.fiche__faits dt {
+  font-size: 0.75rem;
+  color: var(--texte-doux);
+}
+
+.fiche__faits dd {
+  margin: 2px 0 0;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.selection .classement__avis p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+.fiche__ideal strong {
+  color: var(--baobab);
+}
+
+/* Tableau comparatif : il défile seul sur téléphone. */
+.tableau-selection {
+  position: relative; /* garde le texte masqué du tableau dans la zone qui défile */
+  overflow-x: auto;
+  border-radius: var(--rayon);
+  border: 1px solid var(--bordure);
+  background: var(--surface);
+}
+
+.tableau-selection table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.tableau-selection th,
+.tableau-selection td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.tableau-selection thead th {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+}
+
+.tableau-selection tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.tableau-selection tbody th {
+  min-width: 190px;
+}
+
+.tableau-selection__produit {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-weight: 700;
+  color: var(--texte);
+  text-decoration: none;
+}
+
+.tableau-selection__rang {
+  font-family: var(--police-titre);
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.tableau-selection__lien a {
+  font-weight: 700;
+}
+
+.tableau-selection__lien .lien-partenaire {
+  display: block;
+}
+
+/* Conseils « Comment choisir » en cartes numérotées. */
+.prose .choix-cartes {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  counter-reset: choix;
+}
+
+@media (min-width: 700px) {
+  .prose .choix-cartes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.prose .choix-cartes li {
+  counter-increment: choix;
+  margin: 0;
+  padding: 18px 18px 18px 60px;
+  position: relative;
+  border-radius: var(--rayon-petit);
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.prose .choix-cartes li::before {
+  content: counter(choix);
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--indigo);
+  color: var(--ivoire);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Questions fréquentes en accordéon (éléments <details>, sans script). */
+.faq {
+  border-top: 1px solid var(--bordure);
+}
+
+.faq__question {
+  border-bottom: 1px solid var(--bordure);
+}
+
+.faq__question summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__question summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question summary::after {
+  content: '+';
+  flex: none;
+  color: var(--terracotta);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.faq__question[open] summary::after {
+  content: '−';
+}
+
+.faq__reponse p {
+  margin: 0 0 16px;
+}
+
 /* Texte d'introduction des pages de liste (build/rubriques.ts, introPage), sous la grille des ambiances. */
 .intro-page {
   margin-block: clamp(2.5rem, 6vw, 4.5rem);

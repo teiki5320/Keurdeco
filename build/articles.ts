@@ -11,7 +11,9 @@
  * Facultatif : galerie: [{ image, alt }] (images en plus, souvent verticales) : chacune s'affiche en entier
  * dans le texte avec une ligne {{image: <nom>}}, et les épingles Pinterest les utilisent à tour de rôle
  * (épingle n → image n de la galerie) au lieu de recadrer l'image principale.
- * Top : classement: [{ produit, pourquoi, a_savoir }] (5 à 10 produits).
+ * Top : classement: [{ produit, pourquoi, a_savoir, badge? }] (5 à 10 produits) ; mise en page « Nos sélections »
+ * dans build/selections.ts (top 3, classement complet, tableau comparatif, conseils en cartes, FAQ en accordéon).
+ * Dans « a_savoir », un passage « **Pour qui ?** … » devient la ligne « Idéal pour ».
  *
  * Dans le texte, une ligne {{produit: <id>}} insère un encadré produit ;
  * {{classement}} place le classement d'un top (sinon il suit le texte).
@@ -22,13 +24,14 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { Marked } from 'marked';
 import { placerAnnonces } from './annonces.ts';
+import { classes, mentionHaut, mettreEnFormeTexte, rendreFiches, rendreTableau, rendreTop3 } from './selections.ts';
 import { parse as parseYaml } from 'yaml';
 import { attributsLienAmazon } from '../src/amazon.ts';
 import { FAMILLES, fichierRubrique, trouverRubrique, type Famille } from '../src/taxonomie.ts';
 import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone } from './icones.ts';
 import { imageArticle, imageExiste } from './images.ts';
-import { carteProduit, echapper, encadreProduit, estAffichable, grilleProduits, indexProduits, libelleType, mentionAmazon, type Produit } from './produits.ts';
+import { echapper, encadreProduit, estAffichable, grilleProduits, indexProduits, libelleType, mentionAmazon, type Produit } from './produits.ts';
 
 export const DOSSIER_ARTICLES = resolve(import.meta.dirname, '../contenu/articles');
 
@@ -36,7 +39,7 @@ export type TypeArticle = 'ambiance' | 'top' | 'guide';
 
 export const TYPES: Record<TypeArticle, { nom: string; pluriel: string; icone: 'maison' | 'classement' | 'livre' }> = {
   ambiance: { nom: 'Ambiance', pluriel: 'Ambiances', icone: 'maison' },
-  top: { nom: 'Top', pluriel: 'Tops', icone: 'classement' },
+  top: { nom: 'Top', pluriel: 'Nos sélections', icone: 'classement' },
   guide: { nom: 'Guide', pluriel: 'Guides', icone: 'livre' },
 };
 
@@ -57,6 +60,8 @@ export interface EntreeClassement {
   produit: string;
   pourquoi: string;
   a_savoir: string;
+  /** Facultatif : étiquette éditoriale de la carte (« Le plus sobre »…). */
+  badge?: string;
 }
 
 export interface Article {
@@ -116,6 +121,7 @@ export function lireArticle(slug: string, source: string): Article {
     produit: String(c.produit),
     pourquoi: String(c.pourquoi ?? '').trim(),
     a_savoir: String(c.a_savoir ?? '').trim(),
+    ...(c.badge ? { badge: String(c.badge).trim() } : {}),
   }));
   const galerie = (Array.isArray(e.galerie) ? e.galerie : []).map((g: Record<string, unknown>) => ({ image: String(g.image ?? '').trim(), alt: String(g.alt ?? '').trim() }));
   for (const g of galerie) if (!g.image || !g.alt) throw erreur('galerie : chaque image a besoin de « image » et « alt »');
@@ -284,22 +290,8 @@ export function rendreAmbiance(a: Article, produits: Map<string, Produit>): stri
 
 /** Classement numéroté d'un top (produits non affichables retirés, numérotation continue). */
 export function rendreClassement(a: Article, produits: Map<string, Produit>): string {
-  const visibles = a.classement.map((c) => ({ ...c, p: produits.get(c.produit) })).filter((c) => estAffichable(c.p));
-  if (visibles.length === 0) return '<p class="produits-vide">Le classement arrive bientôt.</p>';
-  const md = (s: string) => markdown.parseInline(s, { async: false }) as string;
-  return `<ol class="classement">${visibles
-    .map(
-      (c, i) => `<li class="classement__entree" id="rang-${i + 1}">
-    <span class="classement__rang" aria-hidden="true">${i + 1}</span>
-    ${carteProduit(c.p as Produit & { asin: string })}
-    <div class="classement__avis">
-      <p><strong>Pourquoi on l’aime.</strong> ${md(c.pourquoi)}</p>
-      <p><strong>À savoir.</strong> ${md(c.a_savoir)}</p>
-    </div>
-  </li>`,
-    )
-    .join('')}</ol>
-${mentionAmazon()}`;
+  const liste = classes(a.classement, produits);
+  return liste.length ? `${rendreFiches(liste)}\n${mentionAmazon()}` : rendreFiches(liste);
 }
 
 /** Points de l'image d'un top, numérotés comme le classement (rang du produit). */
@@ -419,11 +411,9 @@ export function donneesStructurees(a: Article, produits: Map<string, Produit>, u
 /** Page complète (avec marqueurs) d'un article publié. */
 export function sourcePageArticle(a: Article, publies: Article[], produits = indexProduits()): string {
   const t = TYPES[a.type];
-  const classement = a.type === 'top' ? rendreClassement(a, produits) : '';
-  let corps = rendreCorps(a.corps, produits, classement, a.galerie);
-  if (a.type === 'top' && !a.corps.includes('{{classement}}')) corps += `\n<h2 id="le-classement">Le classement</h2>\n${classement}`;
-  // Annonces : jamais sur les Tops (ils vivent des liens Amazon), 2 au plus ailleurs.
-  if (a.type !== 'top') corps = placerAnnonces(corps, 2);
+  if (a.type === 'top') return sourcePageSelection(a, publies, produits);
+  // Annonces : 2 au plus (jamais sur les sélections, qui vivent des liens Amazon : voir sourcePageSelection).
+  const corps = placerAnnonces(rendreCorps(a.corps, produits, '', a.galerie), 2);
   const titres = [...corps.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)];
   const sommaire =
     a.type === 'guide' && titres.length > 2
@@ -469,6 +459,101 @@ export function sourcePageArticle(a: Article, publies: Article[], produits = ind
           ${corps}
         </div>
       </div>
+      ${
+        proches.length
+          ? `<section class="conteneur a-lire" aria-labelledby="a-lire">
+        <h2 id="a-lire">À lire aussi</h2>
+        ${grilleArticles(proches)}
+      </section>`
+          : ''
+      }
+    </main>
+    <!--#footer-->
+    <script type="module" src="/src/site.ts"></script>
+  </body>
+</html>
+`;
+}
+
+/**
+ * Page « Nos sélections » (article de type top) : mention Amazon en haut, onglets, introduction, top 3,
+ * classement complet, tableau comparatif, image en situation, puis le texte (conseils en cartes, FAQ en accordéon).
+ */
+function sourcePageSelection(a: Article, publies: Article[], produits: Map<string, Produit>): string {
+  const t = TYPES[a.type];
+  const liste = classes(a.classement, produits);
+  // Le classement a sa propre section : la ligne {{classement}} du texte n'est plus utilisée.
+  const html = rendreCorps(a.corps.replace(/^\{\{\s*classement\s*\}\}\s*$/gm, ''), produits, '', a.galerie);
+  const coupure = html.search(/<h2[\s>]/);
+  const intro = coupure === -1 ? html : html.slice(0, coupure);
+  const suite = coupure === -1 ? '' : mettreEnFormeTexte(html.slice(coupure));
+  const top3 = rendreTop3(liste);
+  const tableau = rendreTableau(liste);
+  const titresSuite = [...suite.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)].map(([, id, h]) => [id, h.replace(/<[^>]+>/g, '')]);
+  const onglets: [string, string][] = [
+    ...(top3 ? ([['notre-top-3', 'Top 3']] as [string, string][]) : []),
+    ['le-classement', 'Classement'],
+    ...(tableau ? ([['tableau-comparatif', 'Tableau']] as [string, string][]) : []),
+    ...titresSuite.filter(([id]) => /^(comment-choisir|questions-frequentes)/.test(id)).map(([id]): [string, string] => [id, id.startsWith('questions') ? 'FAQ' : 'Guide']),
+  ];
+  const couverture = imageExiste(a.image)
+    ? `<figure class="couverture"><div class="couverture__image">${imageArticle(a.image, a.imageAlt, '(min-width: 1100px) 1040px, 100vw', 'lazy')}${pointsTop(a, produits)}${boutonEpingler(a)}</div>${
+        a.imageIa ? `<figcaption class="mention-ia">${icone('ia', 'icone icone--petite')} Image d’illustration créée par IA : les numéros renvoient au classement.</figcaption>` : ''
+      }</figure>`
+    : '';
+  const proches = articlesProches(a, publies);
+  const minutes = Math.max(1, Math.round((html + rendreFiches(liste)).replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length / 200));
+  return `<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="${echapper(a.description)}" />
+    <meta name="date-publication" content="${a.publieLe}" />
+    <meta name="image-partage" content="${echapper(a.image)}" />
+    <title>${echapper(titrePage(a.titre))}</title>
+    <!--#head-->
+    <style>@view-transition{navigation:auto}</style>
+    ${donneesStructurees(a, produits)}
+  </head>
+  <body>
+    <!--#header-->
+    <main id="contenu" class="article article--top selection">
+      <header class="article__entete conteneur conteneur--etroit">
+        <p class="fil"><a href="index.html">Accueil</a>${filArticle(a).map(([href, nom]) => ` › <a href="${href}">${echapper(nom)}</a>`).join('')}</p>
+        <p class="article__meta"><span class="article__type">${icone(t.icone, 'icone icone--petite')} Notre sélection</span><span>${liste.length} produits</span><time datetime="${a.publieLe}">${dateLongue(a.publieLe)}</time><span>${icone('horloge', 'icone icone--petite')} ${minutes} min de lecture</span></p>
+        <h1 data-mots>${echapper(a.titre)}</h1>
+        <p class="chapo" data-reveal>${echapper(a.description)}</p>
+        ${mentionHaut()}
+        <p class="pastilles">${etiquettesRubriques(a)}</p>
+      </header>
+      <nav class="onglets-selection" aria-label="Dans cette sélection"><div class="conteneur">${onglets.map(([id, nom]) => `<a href="#${id}">${nom}</a>`).join('')}</div></nav>
+      ${intro.trim() ? `<div class="conteneur conteneur--etroit prose selection__intro">${intro}</div>` : ''}
+      ${
+        top3
+          ? `<section class="conteneur selection__bloc" aria-labelledby="notre-top-3">
+        <h2 id="notre-top-3">Notre top 3</h2>
+        ${top3}
+      </section>`
+          : ''
+      }
+      <section class="conteneur selection__bloc" aria-labelledby="le-classement">
+        <h2 id="le-classement">Le classement complet</h2>
+        <p class="selection__sous-titre">${liste.length} produits, du n° 1 au n° ${liste.length}. Notre sélection d’après le style, la matière et les dimensions : nous ne les avons pas testés nous-mêmes.</p>
+        ${rendreFiches(liste)}
+        ${mentionAmazon()}
+      </section>
+      ${
+        tableau
+          ? `<section class="conteneur selection__bloc" aria-labelledby="tableau-comparatif">
+        <h2 id="tableau-comparatif">Tableau comparatif</h2>
+        <p class="selection__sous-titre">Ce que l’on sait de chaque produit, d’après sa fiche. Sur téléphone, faites glisser le tableau.</p>
+        ${tableau}
+      </section>`
+          : ''
+      }
+      ${couverture ? `<div class="conteneur selection__bloc">${couverture}</div>` : ''}
+      ${suite ? `<div class="conteneur conteneur--etroit"><div class="prose">${suite}</div></div>` : ''}
       ${
         proches.length
           ? `<section class="conteneur a-lire" aria-labelledby="a-lire">
