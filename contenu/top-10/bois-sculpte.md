@@ -2,7 +2,7 @@
 onglet: "Bois sculpté"
 titre: "Top 10 des tabourets et objets en bois sculpté"
 description: "Notre sélection de 10 tabourets, tables d’appoint et objets en bois massif ou taillé main : teck, acajou, manguier, pour une déco aux accents africains."
-ordre: 2
+ordre: 7
 image_partage: tabourets-bois-sculpte
 tops_lies: [top-tabourets-bois-sculpte]
 intro: "Pour ce classement, nous avons retenu dix objets en bois vendus sur Amazon.fr : tabourets, tables d’appoint, un bol et un jeu, choisis d’après leur bois, leur forme et la présence qu’ils donnent à une pièce. En tête, les pièces taillées à la main qui ont le plus de caractère ; plus bas, des objets plus simples. C’est notre sélection : nous ne les avons pas testés nous-mêmes."

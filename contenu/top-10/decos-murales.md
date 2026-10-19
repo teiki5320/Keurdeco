@@ -2,7 +2,7 @@
 onglet: "Décos murales"
 titre: "Top 10 des assiettes murales et décos à accrocher"
 description: "Notre sélection de 10 décos murales aux accents africains : paniers muraux tressés, miroirs soleil en rotin, décorations en jonc de mer et affiches de la savane."
-ordre: 3
+ordre: 8
 image_partage: top-paniers-muraux-tresses
 tops_lies: [top-paniers-muraux-tresses]
 intro: "Pour ce classement, nous avons retenu dix décos murales vendues sur Amazon.fr : paniers muraux tressés (qu’on appelle souvent assiettes murales), miroirs soleil, décorations en fibres naturelles et affiches. Nous les avons choisies d’après leur matière, leur taille et l’effet qu’elles donnent sur un mur. En tête, les lots qui suffisent à habiller un mur entier. C’est notre sélection : nous ne les avons pas testés nous-mêmes."
