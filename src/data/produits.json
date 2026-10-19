@@ -2892,5 +2892,367 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "chemin-table-geometrique-africain-33x183",
+    "asin": "B0G2LG7ZBV",
+    "nom": "Chemin de table à motifs géométriques africains, polyester, 33 × 183 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "chemin-table-africain-noir-coton-lin",
+    "asin": "B0F9X3WL1Q",
+    "nom": "Chemin de table africain noir en coton et lin, imprimé ethnique tribal, 33 × 183 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "noir"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "chemin-table-tribal-coton-pampilles",
+    "asin": "B0DK5859H5",
+    "nom": "Chemin de table tribal africain en coton épais, à pampilles, 32 × 228 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "chemin-table-elephant-girafe-coton-lin",
+    "asin": "B0DCBRK3NS",
+    "nom": "Chemin de table en coton et lin, femme africaine, éléphant et girafe, 33 × 275 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "chemin-table-lin-carte-afrique",
+    "asin": "B0DFT1DB5Q",
+    "nom": "Chemin de table en lin, motif ethnique carte de l’Afrique",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "chemin-table-ethnique-africain-33x178",
+    "asin": "B0FMF4JTWM",
+    "nom": "Chemin de table à motif ethnique africain, polyester, 33 × 178 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "chemin-table-tribal-texture-pompons",
+    "asin": "B0CXS9VYPM",
+    "nom": "Chemin de table texturé à motif tribal africain, aspect lin, à pompons, 35,6 × 152,4 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "nappe-motif-wax-120x160",
+    "asin": "B0HNJD6MM8",
+    "nom": "Nappe rectangulaire motif wax, polyester imperméable anti-taches, 120 × 160 cm",
+    "type_objet": "nappe",
+    "matieres": [
+      "wax"
+    ],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "nappe-danseuse-africaine-160x240",
+    "asin": "B0HFSKQTDY",
+    "nom": "Nappe rectangulaire à motif africain (danseuse), polyester imperméable anti-taches, 160 × 240 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "nappe-motif-africain-140x200",
+    "asin": "B0HMVPKFB7",
+    "nom": "Nappe rectangulaire à motif africain, polyester imperméable anti-taches, 140 × 200 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "nappe-motif-africain-traditionnel-137x183",
+    "asin": "B0CWTWNBX7",
+    "nom": "Nappe à motif africain traditionnel, polyester anti-éclaboussures, 137 × 183 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "nappe-ethnique-africaine-bord-ondule",
+    "asin": "B0G2XV8N15",
+    "nom": "Nappe à thème ethnique africain, bord ondulé, résistante à l’eau, 137 × 183 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "sets-table-bogolan-lot-6",
+    "asin": "B0FZTMJNMN",
+    "nom": "Sets de table africains en tissu bogolan noir et blanc, 30 × 45 cm, lot de 6",
+    "type_objet": "nappe",
+    "matieres": [
+      "bogolan"
+    ],
+    "couleurs": [
+      "noir",
+      "blanc"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "sets-table-tribal-bleu-jaune-lot-4",
+    "asin": "B0DX5R38GB",
+    "nom": "Sets de table imprimés africains, motif tribal bleu et jaune, polyester, 45 × 30 cm, lot de 4",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "bleu",
+      "jaune"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "sets-table-ethnique-africain-lot-6",
+    "asin": "B0C4LM2YMF",
+    "nom": "Sets de table à motif ethnique africain, antidérapants, 45 × 30 cm, lot de 6",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "sets-table-jute-geometriques-lot-6",
+    "asin": "B0DS29PRK1",
+    "nom": "Sets de table africains géométriques noirs et blancs, toile de jute et lin, 30,5 × 45,7 cm, lot de 6",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "noir",
+      "blanc"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "housse-couette-coton-boho-africaine",
+    "asin": "B0HC5BYM9L",
+    "nom": "Housse de couette en coton, motif boho africain, 220 × 240 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-coton-geometrique-ethnique",
+    "asin": "B0D1VHJJ85",
+    "nom": "Parure de lit en coton, motifs géométriques ethniques africains, housse 240 × 220 cm et 2 taies 65 × 65 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [
+      "noir"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-symboles-tribaux-orange-jaune",
+    "asin": "B0DKBCSMK6",
+    "nom": "Parure de lit à symboles tribaux africains, orange et jaune, microfibre, housse 220 × 240 cm et 2 taies 65 × 65 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [
+      "terracotta",
+      "jaune"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-patchwork-tribal-reversible",
+    "asin": "B0DSC5D53C",
+    "nom": "Parure de lit réversible à motif patchwork tribal africain, microfibre, housse 200 × 200 cm et 2 taies 65 × 65 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-enfant-ethnique-africain",
+    "asin": "B0DLJQ1QNC",
+    "nom": "Parure de lit enfant imprimé ethnique africain, polycoton, housse 140 × 200 cm et taie",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-style-africain-220x240",
+    "asin": "B09FZ3HHXD",
+    "nom": "Parure de lit imprimé style africain, microfibre, housse 220 × 240 cm et 2 taies 65 × 65 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-elephant-africain-200x200",
+    "asin": "B0D1KV22FJ",
+    "nom": "Parure de lit motif éléphant africain, microfibre, housse 200 × 200 cm et 2 taies 65 × 65 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-femme-africaine-tribale-brun",
+    "asin": "B0DJ2Y1PWY",
+    "nom": "Parure de lit motif femme africaine tribale, brun, microfibre, housse 220 × 240 cm et 2 taies 65 × 65 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [
+      "brun"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-coton-togo-moutarde",
+    "asin": "B0B29BRSG4",
+    "nom": "Parure housse de couette en coton imprimé Togo, moutarde, 240 × 220 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [
+      "safran"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-motif-tribal-240x260",
+    "asin": "B0FV39BJJT",
+    "nom": "Parure de lit à motif tribal, microfibre, housse 240 × 260 cm et 2 taies 80 × 80 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
   }
 ]

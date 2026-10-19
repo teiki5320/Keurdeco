@@ -1997,6 +1997,14 @@ main {
   display: none;
 }
 
+/* Sur grand écran, tous les onglets restent visibles : ils passent à la ligne au lieu de défiler. */
+@media (min-width: 900px) {
+  .top10-onglets__bande {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
 .top10-onglets a {
   flex: none;
   scroll-snap-align: start;
