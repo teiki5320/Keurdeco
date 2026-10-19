@@ -1,7 +1,7 @@
 ---
 onglet: "Paniers tressés"
 titre: "Top 10 des paniers tressés africains"
-description: "Notre sélection de 10 paniers tressés pour une déco aux accents africains : panier Bolga, panier coloré à couvercle, corbeilles, cache-pot et paniers à linge."
+description: "Notre sélection de 10 paniers tressés pour une déco aux accents africains : paniers Bolga du Ghana, panier coloré à couvercle, corbeilles, cache-pot et paniers à linge."
 ordre: 2
 classement_le: "2026-10-19"
 image_partage: paniers-tresses-africains
@@ -17,9 +17,6 @@ produits:
   - produit: paniers-ronds-rotin-empilables
     pourquoi: "Trois paniers ronds en rotin, empilables. Empilés, ils prennent peu de place ; séparés, ils rangent les petites choses de l’entrée, du bureau ou de la salle de bain. Le rotin naturel se marie avec tous les styles. Un lot pratique pour mettre de l’ordre sans sacrifier la déco."
     ideal_pour: "les petits espaces où chaque rangement doit aussi être joli."
-  - produit: panier-tisse-extra-large
-    pourquoi: "Un panier tissé extra large, de 55 × 35 cm, à poser au sol. Il accueille plaids, coussins, jouets ou bûches. Sa grande taille en fait un rangement de salon ou de chambre d’enfant qui reste discret. Rempli d’un plaid à motifs, il devient un coin cosy à lui seul."
-    ideal_pour: "ranger les plaids et les coussins du salon, ou les jouets d’une chambre d’enfant."
   - produit: panier-plante-tresse-rayures
     pourquoi: "Un cache-pot tressé en jonc de mer, noir, de 27 cm. Il habille un pot de plante en plastique et le transforme en objet déco. Le noir apporte du contraste à côté des paniers naturels et des murs clairs. Glissez-y une plante verte : c’est le duo le plus simple d’une déco aux accents africains."
     ideal_pour: "les amateurs de plantes qui veulent cacher leurs pots en plastique."
@@ -32,12 +29,15 @@ produits:
   - produit: paniers-gigognes-tresses
     pourquoi: "Trois paniers en algues tressées, avec couvercle, qui s’emboîtent les uns dans les autres. On peut les poser côte à côte, du plus grand au plus petit, ou les répartir dans la maison. Les trois tailles servent à tout : pain, fruits, petits objets, courrier. C’est le lot le plus polyvalent de notre sélection."
     ideal_pour: "ceux qui veulent plusieurs paniers assortis pour ranger un peu partout."
+  - produit: panier-all-across-africa-mineral
+    pourquoi: "Un panier rond tissé à la main, de la collection Expressions de la marque All Across Africa. Il s’accroche au mur grâce à une boucle, ou sert de corbeille à fruits. Chaque pièce est faite main et varie un peu en forme et en taille."
+    ideal_pour: "un mur à habiller ou une corbeille à fruits qui se remarque."
   - produit: corbeille-fruits-tressee
     pourquoi: "Une grande corbeille ronde tressée de 40 cm, ouverte, à poser au centre d’une table ou sur un plan de travail. Remplie de fruits, de pain ou simplement vide, elle apporte la chaleur des fibres naturelles à la cuisine. Sa taille généreuse lui donne de la présence. Elle s’accorde avec la vaisselle en terre cuite et le bois."
     ideal_pour: "une table de cuisine ou de salle à manger qui manque de chaleur."
-  - produit: corbeilles-tressees-anse-lot-10
-    pourquoi: "Dix petites corbeilles tressées façon osier, avec anse. En lot, elles servent pour une table de fête, des cadeaux d’invités, des chocolats ou des petites plantes. On peut aussi les aligner sur une étagère. Une idée pratique pour un mariage, un baptême ou une grande tablée."
-    ideal_pour: "les fêtes de famille, mariages et baptêmes, pour présenter ou offrir."
+  - produit: panier-bolga-petit-20
+    pourquoi: "Un petit panier Bolga rond, d’environ 20 à 25 cm, fait main au Ghana et issu du commerce équitable. Il est tressé en herbe de steppe, avec une anse en cuir véritable, sans plastique d’après la fiche. C’est la petite version du grand panier Bolga."
+    ideal_pour: "un enfant, ou ranger de petites choses dans un vrai panier africain."
 ---
 
 ## Comment choisir son panier tressé

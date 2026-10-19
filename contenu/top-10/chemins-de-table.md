@@ -31,9 +31,9 @@ produits:
   - produit: chemin-table-kente-lin
     pourquoi: "Un chemin de table en lin imprimé kente, de 33 × 183 cm. Les bandes colorées du kente, le tissu des rois du Ghana, donnent le ton à toute la table. Le lin apporte une texture naturelle. Il s’accorde avec une vaisselle unie, blanche ou en terre cuite."
     ideal_pour: "une table de 4 à 6 personnes qui veut un vrai point de couleur."
-  - produit: chemin-table-paisley-africain-40x225
-    pourquoi: "Un chemin de table de 40 × 225 cm, à motifs paisley d’inspiration africaine, dans des tons abricot, rouge et bordeaux. Il est en polyester et se lave en machine, à froid. Avec ses 2,25 m, il couvre une grande table."
-    ideal_pour: "une grande table, dans des tons chauds."
+  - produit: chemin-table-faune-africaine-33x91
+    pourquoi: "Un petit chemin de table de 33 × 91,4 cm, imprimé de la faune africaine (léopard, zèbre, guépard) et de formes géométriques, en rouge et noir. Il est en faux lin et se lave en machine. Sa petite taille convient à une table basse ou une console."
+    ideal_pour: "une table basse, une console ou un buffet."
   - produit: chemin-table-tambour-africain-33x91
     pourquoi: "Un petit chemin de table en lin, au motif de tambour africain, de 33 × 91,4 cm. Sa petite taille le destine plutôt à une table basse, une commode ou une console. D’autres tailles sont proposées sur la fiche."
     ideal_pour: "une table basse, une commode ou une console."

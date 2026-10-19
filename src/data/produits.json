@@ -3630,5 +3630,220 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "tapis-berbere-creme-orange-noir-120x170",
+    "asin": "B0CL27YKS2",
+    "nom": "Tapis style berbère à losanges, crème, orange et noir, 120 × 170 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [
+      "crème",
+      "noir"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "tapis-berbere-rouge-140x200",
+    "asin": "B08GZF3KZB",
+    "nom": "Tapis style berbère rouge, bandes et losanges, 140 × 200 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [
+      "rouge"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "tapis-berbere-patchwork-carre-160",
+    "asin": "B07TWP1D8S",
+    "nom": "Tapis style berbère carré, patchwork de lignes, beige, 160 × 160 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "tapis-berbere-ecru-noir-80x150",
+    "asin": "B0CL1ZY3LP",
+    "nom": "Tapis style berbère à losanges, écru et noir, 80 × 150 cm",
+    "type_objet": "tapis",
+    "matieres": [],
+    "couleurs": [
+      "crème",
+      "noir"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "teinture-indigo-prereduit-jacquard",
+    "asin": "B00MGUN86A",
+    "nom": "Teinture indigo pré-réduite Jacquard, 0,2 l",
+    "type_objet": "objet",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "couvre-lit-ajrak-indigo",
+    "asin": "B01M10TQVN",
+    "nom": "Couvre-lit réversible en coton imprimé indigo (ajrak), fait main, 152,4 × 228,6 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo"
+    ],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "housse-coussin-shibori-indigo-jaipur",
+    "asin": "B01KCXV7MO",
+    "nom": "Housse de coussin shibori indigo en coton, 40,6 × 40,6 cm",
+    "type_objet": "coussin",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "nappe-ronde-femme-africaine",
+    "asin": "B09BQFJFBS",
+    "nom": "Nappe ronde imperméable, motif femme africaine, polyester",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "nappe-imprime-girafe-152x213",
+    "asin": "B0CMLXXW1M",
+    "nom": "Nappe rectangulaire imprimé peau de girafe, marron, 152 × 213 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "brun"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "parure-enfant-savane-coton-140x200",
+    "asin": "B078GLR6TQ",
+    "nom": "Parure de lit enfant savane (zèbre, girafe, éléphant), 100 % coton, housse 140 × 200 cm et taie 63 × 63 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "housse-couette-elephant-girafe-220x240",
+    "asin": "B0CG98M72Q",
+    "nom": "Housse de couette éléphant et girafe, microfibre, 220 × 240 cm et 2 taies 50 × 75 cm",
+    "type_objet": "linge-de-lit",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "chemin-table-faune-africaine-33x91",
+    "asin": "B0CSNS49C9",
+    "nom": "Chemin de table faune africaine (léopard, zèbre, guépard), aspect lin, 33 × 91,4 cm",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [
+      "rouge",
+      "noir"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "panier-bolga-petit-20",
+    "asin": "B0C8Z92RMS",
+    "nom": "Petit panier Bolga rond du Ghana, 20 à 25 cm, anse en cuir, commerce équitable",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [],
+    "pieces": [
+      "chambre-enfant",
+      "entree"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "panier-all-across-africa-mineral",
+    "asin": "B0CV65R422",
+    "nom": "Panier rond tissé main All Across Africa, à suspendre ou pour servir, grand format",
+    "type_objet": "panier",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [],
+    "pieces": [
+      "salon",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
   }
 ]

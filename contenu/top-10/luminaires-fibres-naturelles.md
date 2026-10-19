@@ -14,9 +14,6 @@ produits:
   - produit: lampadaire-fibres-naturelles-bijie
     pourquoi: "Un lampadaire en fibres naturelles. Posé à côté d’un canapé ou d’un fauteuil, il crée un coin lecture chaleureux. La lumière filtrée par les fibres est douce. Une alternative aux suspensions quand on ne peut pas toucher au plafond."
     ideal_pour: "un coin lecture, sans travaux au plafond."
-  - produit: lanternes-bois-lot-10
-    pourquoi: "Dix lanternes en bois pour centre de table, de 27 cm, sans bougies. Pour une table de fête."
-    ideal_pour: "les mariages et les grandes tablées."
   - produit: suspension-rotin-fait-main
     pourquoi: "Une suspension vintage en rotin naturel, fabriquée à la main. Le tressage fait main donne un objet chaleureux. Son style vintage s’accorde avec les meubles anciens. Elle apporte de la texture au plafond."
     ideal_pour: "un intérieur vintage ou bohème."

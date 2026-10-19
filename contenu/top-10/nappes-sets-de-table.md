@@ -1,28 +1,28 @@
 ---
 onglet: "Nappes et sets"
 titre: "Top 10 des nappes et sets de table à motifs africains"
-description: "Notre sélection de 10 nappes et sets de table à motifs africains : femme africaine, girafes et éléphants, motifs tribaux et géométriques, en lin ou anti-taches."
+description: "Notre sélection de 10 nappes et sets de table à motifs africains : femme africaine, girafes et éléphants, motifs tribaux, nappes anti-taches et sets en coton ou jute."
 ordre: 4
 classement_le: "2026-10-19"
 image_partage: nappes-wax-table-ete
 voir_aussi: [chemins-de-table, paniers-tresses-africains, bois-sculpte]
 tops_lies: [top-nappes-wax]
 produits:
-  - produit: nappe-lin-geometrique
-    pourquoi: "Une nappe en lin à motifs géométriques, de 130 × 180 cm. Le lin donne une table naturelle et chaleureuse. Les motifs géométriques restent discrets, ce qui laisse la place à une vaisselle colorée. Une nappe pour les beaux repas."
-    ideal_pour: "une table de 4 à 6 personnes, pour les repas soignés."
   - produit: nappe-femme-africaine-152x213
     pourquoi: "Une nappe rectangulaire de 152 × 213 cm, au motif de femme africaine. La fiche la donne pour des tables de 91 × 152 cm à 122 × 183 cm, soit 6 à 8 personnes. Le portrait occupe la table : gardez une vaisselle unie autour."
     ideal_pour: "une table de 6 à 8 personnes qui veut un motif fort."
   - produit: nappe-tribale-rayures-africaines-137x183
     pourquoi: "Une nappe rectangulaire de 137 × 183 cm, à motif tribal géométrique et rayures africaines. Elle est en polyester, infroissable et résistante aux taches d’après la fiche. Elle convient à une table de 4 à 6 personnes."
     ideal_pour: "la table de tous les jours, pour 4 à 6 personnes."
-  - produit: nappe-retro-ethnique-132x178
-    pourquoi: "Une nappe rectangulaire de 132 × 178 cm, à motif ethnique rétro, en polyester. La fiche la dit imperméable, résistante à l’huile et aux taches. Elle s’utilise à l’intérieur comme dehors."
-    ideal_pour: "une table de cuisine ou de terrasse."
+  - produit: nappe-imprime-girafe-152x213
+    pourquoi: "Une nappe rectangulaire de 152 × 213 cm, à l’imprimé peau de girafe, dans des tons marron. La fiche la donne pour des tables de 6 à 8 personnes. Un motif de la savane plus discret qu’un portrait ou des couleurs vives."
+    ideal_pour: "une table de 6 à 8 personnes, dans des tons naturels."
   - produit: nappe-carree-tribale-140
     pourquoi: "Une nappe carrée de 140 × 140 cm, au motif tribal « Nation africaine », en polyester anti-taches. Le format carré convient aux tables de 4 personnes. Elle se lave et s’essuie facilement."
     ideal_pour: "une table carrée de 4 personnes."
+  - produit: nappe-ronde-femme-africaine
+    pourquoi: "Une nappe ronde en polyester, imperméable et anti-taches, imprimée d’une femme africaine. D’après la fiche, les liquides perlent à la surface et s’épongent vite. Choisissez le diamètre sur la fiche Amazon."
+    ideal_pour: "une table ronde, à la cuisine ou au jardin."
   - produit: sets-table-girafe-elephant-lot-4
     pourquoi: "Quatre sets de table de 30 × 45 cm, aux motifs de girafe, d’éléphant et de savane africaine. Ils sont en coton et lin d’après la fiche, et se lavent à la main ou en machine. Ils laissent voir une belle table en bois."
     ideal_pour: "une table de 4 personnes, y compris avec des enfants."

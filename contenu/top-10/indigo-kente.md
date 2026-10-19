@@ -1,7 +1,7 @@
 ---
 onglet: "Indigo et kente"
 titre: "Top 10 des objets déco en indigo et kente"
-description: "Notre sélection de 10 objets déco en indigo et kente : tissus et coussins kente, chemin de table, kit de teinture indigo, linge de lit, tapis et un livre."
+description: "Notre sélection de 10 objets déco en indigo et kente : tissus et coussins kente, chemin de table, coussins shibori, teintures indigo, couvre-lit et un livre."
 ordre: 9
 classement_le: "2026-10-19"
 image_partage: kente-tissu-bandes
@@ -19,9 +19,6 @@ produits:
   - produit: tissu-kente-ankara-5-5m
     pourquoi: "Un tissu africain imprimé aux motifs du kente, en polyester, de 5,49 × 1,14 m. La fiche le présente pour la couture comme pour la décoration. Il se lave en machine et sèche à l’air libre."
     ideal_pour: "une tenture, une nappe ou des travaux de couture."
-  - produit: housse-couette-coton-denim
-    pourquoi: "Une housse de couette en coton bleu denim, de 220 × 240 cm. Le bleu denim est de la famille de l’indigo : il donne une chambre calme et profonde. Unie, elle laisse la place aux coussins à motifs, kente ou bogolan. Une base simple pour une chambre aux accents africains."
-    ideal_pour: "un lit deux places, en base unie sous des coussins à motifs."
   - produit: housses-coussin-imprime-kente-lot-2
     pourquoi: "Deux housses de coussin à imprimé kente rouge, vert et jaune, au grand format 60 × 60 cm. Ce sont les couleurs les plus connues du kente, le tissu des rois du Ghana. Sur un canapé uni, elles font tout de suite un point fort. C’est la façon la plus simple d’apporter le kente dans un salon."
     ideal_pour: "ceux qui veulent un vrai point de couleur sur le canapé."
@@ -31,15 +28,18 @@ produits:
   - produit: coussin-shibori-indigo
     pourquoi: "Une housse de coussin shibori indigo, en coton et lin. Le bleu indigo et le blanc forment un motif doux, qui évoque les tissus teints à la main. Elle apaise un canapé ou un lit. Elle se marie avec le kente pour un contraste chaud et froid."
     ideal_pour: "une chambre ou un salon dans les bleus."
-  - produit: tapis-rond-coton-bleu-marine
-    pourquoi: "Un tapis rond tissé à plat en coton bleu marine, de 120 cm. Son bleu profond rappelle l’indigo et calme une chambre. Il s’accorde avec le blanc, le lin et les coussins à motifs. Sa forme ronde adoucit une pièce."
-    ideal_pour: "une chambre aux tons bleus."
-  - produit: plaid-coton-bleu-140x200
-    pourquoi: "Un plaid jeté de fauteuil en coton bleu, de 140 × 200 cm. Posé sur un canapé ou au pied d’un lit, il apporte une note bleue. Il accompagne bien les coussins kente."
-    ideal_pour: "un canapé ou un fauteuil."
+  - produit: teinture-indigo-prereduit-jacquard
+    pourquoi: "De l’indigo pré-réduit de la marque Jacquard, pour teindre soi-même ses tissus. La fiche indique un colorant d’origine naturelle, livré déjà réduit pour être simple à utiliser, qui donne toute une gamme de bleus. De quoi teindre des coussins, une nappe ou un coupon de coton."
+    ideal_pour: "ceux qui veulent teindre eux-mêmes leur linge à l’indigo."
   - produit: housses-coussin-shibori-indigo-lot-5
     pourquoi: "Cinq housses de coussin teintes en shibori indigo, en coton, de 40 × 40 cm, avec fermeture éclair. Le lot suffit pour un canapé entier. Les garnitures ne sont pas fournies ; la fiche conseille de les laver à la main, seules, à l’eau froide."
     ideal_pour: "habiller tout un canapé en bleu indigo."
+  - produit: couvre-lit-ajrak-indigo
+    pourquoi: "Un couvre-lit réversible en coton, fait main, imprimé à l’indigo au bloc de bois, avec des couleurs naturelles d’après la fiche. Il mesure 152,4 × 228,6 cm. Son motif ajrak vient d’Asie du Sud, pas d’Afrique : nous le retenons pour son impression à l’indigo."
+    ideal_pour: "un lit une personne ou un canapé, en bleu indigo."
+  - produit: housse-coussin-shibori-indigo-jaipur
+    pourquoi: "Une housse de coussin en coton teinte en shibori, la technique qui consiste à nouer le tissu avant la teinture, dans des tons indigo. Elle mesure 40,6 × 40,6 cm. Elle complète les autres coussins shibori de cette sélection."
+    ideal_pour: "compléter un canapé en bleu indigo."
 ---
 
 ## Comment choisir ses objets en indigo et kente
