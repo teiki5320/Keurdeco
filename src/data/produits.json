@@ -3845,5 +3845,21 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "housses-coussin-kente-boucles-dorees-lot-4",
+    "asin": "B0C3M6NTF8",
+    "nom": "Housses de coussin motif kente et boucles d’oreilles dorées, coton et lin, 45 × 45 cm, lot de 4",
+    "type_objet": "coussin",
+    "matieres": [
+      "kente"
+    ],
+    "couleurs": [],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
   }
 ]

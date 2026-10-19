@@ -1,7 +1,7 @@
 ---
 onglet: "Indigo et kente"
 titre: "Top 10 des objets déco en indigo et kente"
-description: "Notre sélection de 10 objets déco en indigo et kente : tissus et coussins kente, chemin de table, coussins shibori, teintures indigo, couvre-lit et un livre."
+description: "Notre sélection de 10 objets déco en indigo et kente : tissus et coussins kente, chemin de table, coussins shibori, teintures indigo et un livre."
 ordre: 9
 classement_le: "2026-10-19"
 image_partage: kente-tissu-bandes
@@ -13,6 +13,9 @@ produits:
   - produit: livre-african-textiles
     pourquoi: "Le livre « African Textiles: Colour and Creativity Across a Continent », en anglais. Il présente les textiles d’Afrique, dont le kente et les tissus teints. Posé sur une table basse, il est à la fois une source d’idées et un objet déco. Une belle idée de cadeau pour les amoureux des tissus."
     ideal_pour: "ceux qui veulent comprendre les textiles africains (et lisent l’anglais)."
+  - produit: housses-coussin-kente-boucles-dorees-lot-4
+    pourquoi: "Quatre housses de coussin de 45 × 45 cm, imprimées d’un motif tribal traditionnel kente et de boucles d’oreilles géométriques dorées. Elles sont en coton et lin, avec une fermeture éclair invisible, et se lavent en machine à froid. L’impression est d’un seul côté ; les coussins ne sont pas fournis."
+    ideal_pour: "habiller tout un canapé aux couleurs du kente."
   - produit: kit-teinture-indigo-jacquard
     pourquoi: "Un petit kit de teinture à l’indigo, de la marque Jacquard. Il permet de teindre soi-même du coton ou du lin en bleu indigo. Torchons, serviettes ou housses de coussin : chaque pièce sera unique. Une activité créative autour de l’indigo."
     ideal_pour: "les amateurs de loisirs créatifs qui veulent teindre eux-mêmes."
@@ -34,9 +37,6 @@ produits:
   - produit: housses-coussin-shibori-indigo-lot-5
     pourquoi: "Cinq housses de coussin teintes en shibori indigo, en coton, de 40 × 40 cm, avec fermeture éclair. Le lot suffit pour un canapé entier. Les garnitures ne sont pas fournies ; la fiche conseille de les laver à la main, seules, à l’eau froide."
     ideal_pour: "habiller tout un canapé en bleu indigo."
-  - produit: couvre-lit-ajrak-indigo
-    pourquoi: "Un couvre-lit réversible en coton, fait main, imprimé à l’indigo au bloc de bois, avec des couleurs naturelles d’après la fiche. Il mesure 152,4 × 228,6 cm. Son motif ajrak vient d’Asie du Sud, pas d’Afrique : nous le retenons pour son impression à l’indigo."
-    ideal_pour: "un lit une personne ou un canapé, en bleu indigo."
   - produit: housse-coussin-shibori-indigo-jaipur
     pourquoi: "Une housse de coussin en coton teinte en shibori, la technique qui consiste à nouer le tissu avant la teinture, dans des tons indigo. Elle mesure 40,6 × 40,6 cm. Elle complète les autres coussins shibori de cette sélection."
     ideal_pour: "compléter un canapé en bleu indigo."
