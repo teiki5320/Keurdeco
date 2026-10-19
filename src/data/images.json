@@ -267,7 +267,23 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "maison-reve-chambre": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
+  "maison-reve-chambre-vue": {
+    "largeur": 1600,
+    "hauteur": 2385
+  },
+  "maison-reve-entree": {
+    "largeur": 1600,
+    "hauteur": 2385
+  },
   "maison-reve-piscine": {
+    "largeur": 1600,
+    "hauteur": 2385
+  },
+  "maison-reve-salle-de-bain": {
     "largeur": 1600,
     "hauteur": 2385
   },
@@ -279,7 +295,15 @@
     "largeur": 1600,
     "hauteur": 2385
   },
+  "maison-reve-terrasse-toit": {
+    "largeur": 1600,
+    "hauteur": 2385
+  },
   "maison-reve-villa-falaise": {
+    "largeur": 1600,
+    "hauteur": 2385
+  },
+  "maison-reve-villa-nuit": {
     "largeur": 1600,
     "hauteur": 2385
   },
