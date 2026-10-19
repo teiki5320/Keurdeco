@@ -102,7 +102,7 @@ export function tableauPour(rubrique, config) {
  * - d'abord la 1re épingle de chaque article (les articles les plus récents en premier), puis la 2e, etc. ;
  * - `priorite` (liste de slugs) : les épingles de ces articles passent avant toutes les autres.
  */
-export function choisirEpingles(manifeste, etat, { max = 5, aujourdhui = aujourdhuiParis(), priorite = [] } = {}) {
+export function choisirEpingles(manifeste, etat, { max = 5, aujourdhui = aujourdhuiParis(), priorite = /** @type {string[]} */ ([]) } = {}) {
   const prioritaire = (e) => (priorite.includes(e.slug) ? 0 : 1);
   const publiees = new Set((etat.publiees ?? []).map((p) => p.id));
   const slugsDuJour = new Set((etat.publiees ?? []).filter((p) => p.publie_le === aujourdhui).map((p) => p.slug));
