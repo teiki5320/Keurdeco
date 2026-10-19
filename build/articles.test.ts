@@ -73,6 +73,13 @@ describe('lecture des articles', () => {
     expect(() => lireArticle('x', entete('hotspots: [{ produit: a, x: 1, y: 1 }]').replace('["Un", "Deux", "Trois"]', '["Un"]'))).toThrow(/épingles/);
   });
 
+  it('lit la galerie et refuse une image du texte absente de la galerie', () => {
+    const avecGalerie = lireArticle('x', entete('hotspots: [{ produit: a, x: 1, y: 1 }]\ngalerie:\n  - { image: vue-mer, alt: "Villa face à la mer" }') + '\n{{image: vue-mer}}\n');
+    expect(avecGalerie.galerie).toEqual([{ image: 'vue-mer', alt: 'Villa face à la mer' }]);
+    expect(() => lireArticle('x', entete('hotspots: [{ produit: a, x: 1, y: 1 }]') + '\n{{image: vue-mer}}\n')).toThrow(/galerie/);
+    expect(() => lireArticle('x', entete('hotspots: [{ produit: a, x: 1, y: 1 }]\ngalerie:\n  - { image: vue-mer }'))).toThrow(/alt/);
+  });
+
   it('ne publie que les articles dont la date est passée', () => {
     const futur = { ...ambiance, slug: 'futur', publieLe: '2026-12-01' } as Article;
     expect(articlesPublies('2026-10-05', [ambiance, futur]).map((a) => a.slug)).toEqual(['test-ambiance']);

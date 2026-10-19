@@ -8,6 +8,9 @@
  *   produits[] (identifiants de src/data/produits.json),
  *   epingles[] (3 à 8 titres d'épingles Pinterest), tableau_pinterest (config/tableaux-pinterest.json)
  * Ambiance : hotspots: [{ produit, x, y }] (x et y en % de l'image).
+ * Facultatif : galerie: [{ image, alt }] (images en plus, souvent verticales) : chacune s'affiche en entier
+ * dans le texte avec une ligne {{image: <nom>}}, et les épingles Pinterest les utilisent à tour de rôle
+ * (épingle n → image n de la galerie) au lieu de recadrer l'image principale.
  * Top : classement: [{ produit, pourquoi, a_savoir }] (5 à 10 produits).
  *
  * Dans le texte, une ligne {{produit: <id>}} insère un encadré produit ;
@@ -45,6 +48,11 @@ export interface Hotspot {
   cadre?: number;
 }
 
+export interface ImageGalerie {
+  image: string;
+  alt: string;
+}
+
 export interface EntreeClassement {
   produit: string;
   pourquoi: string;
@@ -69,6 +77,7 @@ export interface Article {
   tableauPinterest: string;
   hotspots: Hotspot[];
   classement: EntreeClassement[];
+  galerie: ImageGalerie[];
   corps: string;
 }
 
@@ -108,6 +117,12 @@ export function lireArticle(slug: string, source: string): Article {
     pourquoi: String(c.pourquoi ?? '').trim(),
     a_savoir: String(c.a_savoir ?? '').trim(),
   }));
+  const galerie = (Array.isArray(e.galerie) ? e.galerie : []).map((g: Record<string, unknown>) => ({ image: String(g.image ?? '').trim(), alt: String(g.alt ?? '').trim() }));
+  for (const g of galerie) if (!g.image || !g.alt) throw erreur('galerie : chaque image a besoin de « image » et « alt »');
+  const corps = m[2].trim();
+  for (const [, nom] of corps.matchAll(/^\{\{\s*image:\s*([a-z0-9-]+)\s*\}\}\s*$/gm)) {
+    if (!galerie.some((g) => g.image === nom)) throw erreur(`{{image: ${nom}}} : image absente de la galerie`);
+  }
   if (type === 'ambiance' && hotspots.length === 0) throw erreur('un article « ambiance » doit avoir des hotspots');
   if (type === 'top') {
     if (classement.length < 5 || classement.length > 10) throw erreur(`un top classe 5 à 10 produits (${classement.length})`);
@@ -132,7 +147,8 @@ export function lireArticle(slug: string, source: string): Article {
     tableauPinterest: String(e.tableau_pinterest).trim(),
     hotspots,
     classement,
-    corps: m[2].trim(),
+    galerie,
+    corps,
   };
 }
 
@@ -182,13 +198,24 @@ const markdown = new Marked({
   },
 });
 
-/** Convertit le texte Markdown d'un article ; les encadrés produits sont insérés à leur place. */
-export function rendreCorps(corps: string, produits: Map<string, Produit>, classement = ''): string {
+/** Image de galerie montrée en entier dans le texte ({{image: <nom>}}). */
+function imageCorps(g: ImageGalerie | undefined): string {
+  if (!g) return '';
+  const img = imageArticle(g.image, g.alt, '(min-width: 700px) 560px, 92vw');
+  return img ? `<figure class="image-corps">${img}<figcaption class="mention-ia">${icone('ia', 'icone icone--petite')} Image créée par IA.</figcaption></figure>` : '';
+}
+
+/** Convertit le texte Markdown d'un article ; les encadrés produits et les images de galerie sont insérés à leur place. */
+export function rendreCorps(corps: string, produits: Map<string, Produit>, classement = '', galerie: ImageGalerie[] = []): string {
   const prepare = corps
     .replace(/^\{\{\s*produit:\s*([a-z0-9-]+)\s*\}\}\s*$/gm, '\n<!--produit:$1-->\n')
+    .replace(/^\{\{\s*image:\s*([a-z0-9-]+)\s*\}\}\s*$/gm, '\n<!--image:$1-->\n')
     .replace(/^\{\{\s*classement\s*\}\}\s*$/gm, '\n<!--classement-->\n');
   const html = markdown.parse(prepare, { async: false }) as string;
-  return html.replace(/<!--produit:([a-z0-9-]+)-->/g, (_m, id: string) => encadreProduit(produits.get(id))).replace('<!--classement-->', classement);
+  return html
+    .replace(/<!--produit:([a-z0-9-]+)-->/g, (_m, id: string) => encadreProduit(produits.get(id)))
+    .replace(/<!--image:([a-z0-9-]+)-->/g, (_m, nom: string) => imageCorps(galerie.find((g) => g.image === nom)))
+    .replace('<!--classement-->', classement);
 }
 
 /** Lien « Épingler » sans script externe (bouton officiel de création d'épingle). */
@@ -393,7 +420,7 @@ export function donneesStructurees(a: Article, produits: Map<string, Produit>, u
 export function sourcePageArticle(a: Article, publies: Article[], produits = indexProduits()): string {
   const t = TYPES[a.type];
   const classement = a.type === 'top' ? rendreClassement(a, produits) : '';
-  let corps = rendreCorps(a.corps, produits, classement);
+  let corps = rendreCorps(a.corps, produits, classement, a.galerie);
   if (a.type === 'top' && !a.corps.includes('{{classement}}')) corps += `\n<h2 id="le-classement">Le classement</h2>\n${classement}`;
   // Annonces : jamais sur les Tops (ils vivent des liens Amazon), 2 au plus ailleurs.
   if (a.type !== 'top') corps = placerAnnonces(corps, 2);

@@ -267,6 +267,22 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "maison-reve-piscine": {
+    "largeur": 1600,
+    "hauteur": 2385
+  },
+  "maison-reve-salon": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
+  "maison-reve-salon-savane": {
+    "largeur": 1600,
+    "hauteur": 2385
+  },
+  "maison-reve-villa-falaise": {
+    "largeur": 1600,
+    "hauteur": 2385
+  },
   "mariage-africain-decoration": {
     "largeur": 1600,
     "hauteur": 1073

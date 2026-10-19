@@ -1611,6 +1611,18 @@ main {
   box-shadow: var(--ombre);
 }
 
+.image-corps {
+  margin: clamp(24px, 4vw, 40px) auto;
+  max-width: 560px;
+}
+
+.image-corps img {
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--rayon) + 6px);
+  box-shadow: var(--ombre);
+}
+
 .mention-ia {
   font-size: 0.9rem;
   color: var(--texte-doux);

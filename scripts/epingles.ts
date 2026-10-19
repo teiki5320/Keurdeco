@@ -241,16 +241,19 @@ export async function genererEpingles(articles = articlesPublies(), url = SITE_U
   mkdirSync(SORTIE, { recursive: true });
   const manifeste: EntreeManifeste[] = [];
   for (const a of articles) {
-    const source = sourceImage(a.image);
-    if (!existsSync(source)) {
-      console.warn(`⚠ Épingles de ${a.slug} : image « ${a.image} » introuvable.`);
+    // Avec une galerie, les épingles prennent ses images à tour de rôle (images entières, souvent verticales).
+    const images = a.galerie.length ? a.galerie : [{ image: a.image, alt: a.imageAlt }];
+    const absente = images.find((g) => !existsSync(sourceImage(g.image)));
+    if (absente) {
+      console.warn(`⚠ Épingles de ${a.slug} : image « ${absente.image} » introuvable.`);
       continue;
     }
     for (const [i, titre] of a.epingles.entries()) {
       const numero = i + 1;
       const gabarit = gabaritPour(a, i);
       const fichier = `${a.slug}-${numero}.jpg`;
-      writeFileSync(resolve(SORTIE, fichier), await composerEpingle(source, titre, gabarit));
+      const visuel = images[i % images.length];
+      writeFileSync(resolve(SORTIE, fichier), await composerEpingle(sourceImage(visuel.image), titre, gabarit));
       manifeste.push({
         id: `${a.slug}-${numero}`,
         slug: a.slug,
@@ -259,7 +262,7 @@ export async function genererEpingles(articles = articlesPublies(), url = SITE_U
         image: `${url}epingles/${fichier}`,
         titre: titre.length > 100 ? `${titre.slice(0, 99)}…` : titre,
         description: descriptionEpingle(a),
-        alt: a.imageAlt.slice(0, 500),
+        alt: visuel.alt.slice(0, 500),
         lien: lienPinterest(adresseArticle(a, url), a.slug, numero),
         tableau: a.tableauPinterest,
         publie_le: a.publieLe,
