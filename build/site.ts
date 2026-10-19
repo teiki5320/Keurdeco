@@ -49,7 +49,8 @@ export function head(): string {
     <link rel="icon" type="image/png" sizes="48x48" href="icones/favicon-48.png" />
     <link rel="apple-touch-icon" href="icones/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <meta name="theme-color" content="#F7F0E6" />`;
+    <meta name="theme-color" content="#F7F0E6" />
+    <meta name="robots" content="max-image-preview:large" />`;
 }
 
 const DOSSIER_PARTAGE = resolve(import.meta.dirname, '../public/images/partage');

@@ -1,7 +1,7 @@
 ---
 onglet: "Nappes et sets"
 titre: "Top 10 des nappes et sets de table à motifs africains"
-description: "Notre sélection de 10 nappes et sets de table à motifs africains : femme africaine, girafes et éléphants, motifs tribaux, nappes anti-taches et sets en coton ou jute."
+description: "Notre sélection de 10 nappes et sets de table à motifs africains : femme africaine, girafes et éléphants, motifs tribaux, en polyester, coton ou jute."
 ordre: 4
 classement_le: "2026-10-19"
 image_partage: nappes-wax-table-ete
