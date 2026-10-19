@@ -22,6 +22,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { Marked } from 'marked';
 import { placerAnnonces } from './annonces.ts';
+import { adresseTop10, top10Lie } from './top10.ts';
 import { parse as parseYaml } from 'yaml';
 import { attributsLienAmazon } from '../src/amazon.ts';
 import { FAMILLES, fichierRubrique, trouverRubrique, type Famille } from '../src/taxonomie.ts';
@@ -416,6 +417,13 @@ export function donneesStructurees(a: Article, produits: Map<string, Produit>, u
   return blocs.map(jsonLd).join('\n    ');
 }
 
+/** Lien d'une page Top vers l'onglet Top 10 du même sujet (champ tops_lies du sujet), s'il est publié. */
+function lienTop10(a: Article, produits: Map<string, Produit>): string {
+  if (a.type !== 'top') return '';
+  const s = top10Lie(a.slug, produits);
+  return s ? `<p class="lien-top10"><a class="lien-fleche" href="${adresseTop10(s.slug)}">Voir aussi notre ${echapper(s.titre)} ${icone('fleche', 'icone icone--petite')}</a></p>` : '';
+}
+
 /** Page complète (avec marqueurs) d'un article publié. */
 export function sourcePageArticle(a: Article, publies: Article[], produits = indexProduits()): string {
   const t = TYPES[a.type];
@@ -459,6 +467,7 @@ export function sourcePageArticle(a: Article, publies: Article[], produits = ind
         <h1 data-mots>${echapper(a.titre)}</h1>
         <p class="chapo" data-reveal>${echapper(a.description)}</p>
         <p class="pastilles">${etiquettesRubriques(a)}</p>
+        ${lienTop10(a, produits)}
       </header>
       <div class="conteneur article__visuel">
         ${couverture}

@@ -16,7 +16,7 @@
  */
 import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { basename, resolve } from 'node:path';
+import { isAbsolute, relative, resolve } from 'node:path';
 import type { Plugin } from 'vite';
 import { MENTION_AMAZON } from '../src/amazon.ts';
 import { FAMILLES, type Famille, fichierRubrique } from '../src/taxonomie.ts';
@@ -28,6 +28,7 @@ import { essayage } from './essayage.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { ambiancesDeRubrique, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
+import { pagesTop10 } from './top10.ts';
 
 export { insecables, NOM_SITE, SITE_URL };
 
@@ -36,7 +37,7 @@ export const NAVIGATION: { href: string; libelle: string; pages: RegExp }[] = [
   { href: 'pieces.html', libelle: 'Pièces', pages: /^(pieces|piece-.*)\.html$/ },
   { href: 'matieres.html', libelle: 'Matières', pages: /^(matieres|matiere-.*)\.html$/ },
   { href: 'occasions.html', libelle: 'Occasions', pages: /^(occasions|occasion-.*)\.html$/ },
-  { href: 'tops.html', libelle: 'Tops', pages: /^tops\.html$/ },
+  { href: 'top-10/', libelle: 'Top 10', pages: /^top-10\// },
   { href: 'guides.html', libelle: 'Guides', pages: /^guides\.html$/ },
   { href: 'conseils.html', libelle: 'Conseils', pages: /^conseils?(-.*)?\.html$/ },
   { href: 'glossaire.html', libelle: 'Glossaire', pages: /^glossaire(-.*)?\.html$/ },
@@ -57,9 +58,14 @@ function attribut(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
-/** Adresse publique d'une page (l'accueil est servi à la racine). */
+/**
+ * Adresse publique d'une page (l'accueil est servi à la racine). Les pages d'un sous-dossier (Top 10)
+ * ont une adresse sans « .html » : top-10/<sujet>, et top-10/ pour leur page d'entrée.
+ */
 export function urlPage(fichier: string, url = SITE_URL): string {
-  return fichier === 'index.html' ? url : `${url}${fichier}`;
+  if (fichier === 'index.html') return url;
+  if (fichier.includes('/')) return `${url}${fichier.replace(/index\.html$/, '').replace(/\.html$/, '')}`;
+  return `${url}${fichier}`;
 }
 
 /** Balise de vérification Google Search Console (variable GOOGLE_VERIFY, méthode « balise HTML »). */
@@ -85,7 +91,9 @@ export function referencement(html: string, fichier: string, url = SITE_URL): st
   const nomImage = html.match(/<meta name="image-partage" content="([^"]+)"/)?.[1];
   const partage = nomImage && existsSync(resolve(DOSSIER_PARTAGE, `${nomImage}.jpg`)) ? nomImage : 'accueil';
   const image = `${url}images/partage/${partage}.jpg`;
-  const adresse = urlPage(fichier, url);
+  // Une page peut désigner une autre adresse canonique (page d'entrée du Top 10 = premier onglet).
+  const canonique = html.match(/<meta name="adresse-canonique" content="([^"]+)"/)?.[1];
+  const adresse = canonique ? `${url}${canonique}` : urlPage(fichier, url);
   const donnees =
     fichier === 'index.html'
       ? [
@@ -226,7 +234,7 @@ export function footer(): string {
     <div>
       ${colonne('occasion').replace(/^<div>|<\/div>$/g, '')}
       <h2>Keur Déco</h2>
-      <ul><li><a href="tops.html">Tops</a></li><li><a href="guides.html">Guides</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="glossaire.html">Glossaire</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="confidentialite.html#publicite" data-cookies>Gérer mes cookies</a></li></ul>
+      <ul><li><a href="top-10/">Top 10</a></li><li><a href="tops.html">Tops</a></li><li><a href="guides.html">Guides</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="glossaire.html">Glossaire</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="confidentialite.html#publicite" data-cookies>Gérer mes cookies</a></li></ul>
     </div>
   </div>
 </footer>`;
@@ -251,7 +259,8 @@ export function pagesGenerees(): Map<string, string> {
     const conseils = pagesConseils();
     for (const f of articles.keys()) if (rubriques.has(f)) throw new Error(`Conflit d'adresse : l'article ${f} porte le nom d'une page de rubrique`);
     for (const f of conseils.keys()) if (rubriques.has(f) || articles.has(f)) throw new Error(`Conflit d'adresse : ${f}`);
-    cachePages = new Map([...rubriques, ...articles, ...conseils]);
+    const top10 = pagesTop10();
+    cachePages = new Map([...rubriques, ...articles, ...conseils, ...top10]);
   }
   return cachePages;
 }
@@ -276,8 +285,16 @@ export function sourcePage(racine: string, fichier: string): string {
   return genere;
 }
 
+let racineSite = process.cwd();
+
+/** Chemin d'une page relatif à la racine du projet (« top-10/paniers.html »), à partir d'un id Vite ou d'une URL. */
+function cheminRelatif(id: string): string {
+  const p = decodeURIComponent(id.split('?')[0]);
+  return isAbsolute(p) && p.startsWith(racineSite) ? relative(racineSite, p) : p.replace(/^\.?\//, '');
+}
+
 function pageGeneree(id: string): string | null {
-  const f = basename(id.split('?')[0]);
+  const f = cheminRelatif(id);
   return f.endsWith('.html') && pagesGenerees().has(f) ? f : null;
 }
 
@@ -318,6 +335,14 @@ export function datesSitemap(racine: string): Map<string, string> {
   const glossaire = dateGit(racine, 'src/data/glossaire.json');
   for (const f of readdirSync(racine)) if (f.endsWith('.html') && !dates.has(f)) poser(f, dateGit(racine, f));
   for (const f of pagesGenerees().keys()) if (f.startsWith('glossaire')) poser(f, glossaire);
+  // Top 10 : dernier commit du fichier du sujet (à défaut, le jour du build) ; la page d'entrée suit le premier onglet.
+  const aujourdhui = new Date().toISOString().slice(0, 10);
+  for (const f of pagesGenerees().keys()) {
+    const m = f.match(/^top-10\/(.+)\.html$/);
+    if (m && m[1] !== 'index') poser(f, dateGit(racine, `contenu/top-10/${m[1]}.md`) ?? aujourdhui);
+  }
+  const premier = [...pagesGenerees().keys()].find((f) => /^top-10\/(?!index)/.test(f));
+  if (premier) poser('top-10/index.html', dates.get(premier));
   return dates;
 }
 
@@ -325,7 +350,7 @@ export function sitemap(pages: string[], url = SITE_URL, dates: Map<string, stri
   const urls = pages
     .filter((p) => p !== '404.html')
     .sort()
-    .map((p) => `  <url><loc>${url}${p === 'index.html' ? '' : p}</loc>${dates.has(p) ? `<lastmod>${dates.get(p)}</lastmod>` : ''}</url>`)
+    .map((p) => `  <url><loc>${urlPage(p, url)}</loc>${dates.has(p) ? `<lastmod>${dates.get(p)}</lastmod>` : ''}</url>`)
     .join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
@@ -334,7 +359,10 @@ export function sitemap(pages: string[], url = SITE_URL, dates: Map<string, stri
 export function transformerPage(html: string, fichier: string): string {
   const publies = articlesPublies();
   // La 404 peut être servie sous n'importe quel chemin : liens résolus depuis la racine du site.
-  const base = fichier === '404.html' ? `<base href="${SITE_URL}" />\n    ` : '';
+  // Pages d'un sous-dossier (Top 10) : liens relatifs résolus depuis la racine (« ../ »), ancres de la page conservées.
+  const profondeur = fichier.split('/').length - 1;
+  const base = fichier === '404.html' ? `<base href="${SITE_URL}" />\n    ` : profondeur ? `<base href="${'../'.repeat(profondeur)}" />\n    ` : '';
+  const ici = fichier.replace(/index\.html$/, '').replace(/\.html$/, '');
   const page = html
     .replace('<!--#head-->', `${base}${head()}\n    ${referencement(html, fichier)}\n    ${mesureAudience()}${pageAvecAdsense(fichier) ? `\n    ${codeAdsense()}` : ''}`)
     .replace('<!--#header-->', header(fichier))
@@ -351,7 +379,7 @@ export function transformerPage(html: string, fichier: string): string {
     .replace(/<!--#entrees:(piece|matiere|occasion)-->/g, (_m, f: Famille) => tuilesRubriques(f, publies))
     .replace(/<!--#mention-amazon-->/g, MENTION_AMAZON)
     .replace(/<!--#icone:([a-z-]+)-->/g, (_m, nom: NomIcone) => icone(nom));
-  return insecables(page);
+  return insecables(profondeur ? page.replace(/href="#/g, `href="${ici}#`) : page);
 }
 
 export function pluginSite(): Plugin {
@@ -360,13 +388,15 @@ export function pluginSite(): Plugin {
     name: 'keurdeco-site',
     configResolved(config) {
       racine = config.root;
+      racineSite = config.root;
     },
     buildStart() {
       console.log(texteRapport(calculerRapport()));
     },
     // Pages générées : elles n'existent pas sur le disque, on les fournit à Vite.
     resolveId(id) {
-      return pageGeneree(id) ? resolve(racine, basename(id.split('?')[0])) : null;
+      const f = pageGeneree(id);
+      return f ? resolve(racine, f) : null;
     },
     load(id) {
       const f = pageGeneree(id);
@@ -383,13 +413,13 @@ export function pluginSite(): Plugin {
       });
     },
     transformIndexHtml(html, ctx) {
-      return transformerPage(html, basename(ctx.filename));
+      return transformerPage(html, relative(racine, ctx.filename));
     },
     generateBundle() {
-      // Les pages marquées noindex (404) ne vont pas dans le sitemap.
+      // Les pages marquées noindex (404) et celles qui renvoient vers une autre adresse canonique (top-10/) ne vont pas dans le sitemap.
       const pages = Object.keys(toutesLesPages(racine))
         .map((nom) => `${nom}.html`)
-        .filter((f) => !sourcePage(racine, f).includes('content="noindex"'));
+        .filter((f) => !/content="noindex"|name="adresse-canonique"/.test(sourcePage(racine, f)));
       // Date de publication des articles et conseils (<lastmod>), pour aider Google à les découvrir.
       const dates = datesSitemap(racine);
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap(pages, SITE_URL, dates) });
