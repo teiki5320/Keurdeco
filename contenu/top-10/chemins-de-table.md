@@ -1,50 +1,42 @@
 ---
 onglet: "Chemins de table"
 titre: "Top 10 des chemins de table à motifs africains"
-description: "Notre sélection de 10 chemins de table à motifs africains : kente, totems, motifs tribaux, carte de l’Afrique, éléphants et girafes, en lin, coton ou polyester."
+description: "Notre sélection de 10 chemins de table à motifs africains : kente, totems, motifs tribaux, façon bogolan, Kwanzaa, en lin, coton ou polyester."
 ordre: 1
-image_partage: nappes-wax-table-ete
-intro: "Pour ce classement, nous avons retenu dix chemins de table vendus sur Amazon.fr, choisis d’après leur motif, leur matière et leur longueur. Ce ne sont pas des tissus wax au sens strict : ce sont des imprimés aux motifs africains, en lin, en coton ou en polyester. En tête, les modèles les plus graphiques et les matières naturelles. C’est notre sélection : nous ne les avons pas testés nous-mêmes."
+classement_le: "2026-10-19"
+image_partage: top-table-mariage-africain
+voir_aussi: [nappes-sets-de-table, indigo-kente, paniers-tresses-africains]
 produits:
-  - produit: chemin-table-kente-lin
-    pourquoi: "Un chemin de table en lin imprimé kente, de 33 × 183 cm. Les bandes colorées du kente, le tissu des rois du Ghana, donnent le ton à toute la table. Le lin apporte une texture naturelle. Il s’accorde avec une vaisselle unie, blanche ou en terre cuite."
-    ideal_pour: "une table de 4 à 6 personnes qui veut un vrai point de couleur."
-  - produit: chemin-table-totems-lin
-    pourquoi: "Un chemin de table en lin à totems africains, de 33 × 183 cm. Les totems noirs sur fond naturel en font le chemin le plus sobre de notre sélection. Il va avec le bois clair, les paniers tressés et la vaisselle blanche. Facile à garder toute l’année."
-    ideal_pour: "les intérieurs calmes, en tons naturels."
-  - produit: chemin-table-tribal-africain
-    pourquoi: "Un chemin de table à motifs tribaux africains. Il habille la table d’un coup, sans la cacher comme une nappe. C’est une façon simple de commencer si l’on n’a encore rien d’africain à table. Vérifiez la longueur sur la fiche Amazon."
-    ideal_pour: "un premier chemin de table à motifs."
-  - produit: chemin-table-africain-noir-coton-lin
-    pourquoi: "Un chemin de table africain noir, en coton et lin, à imprimé ethnique tribal, de 33 × 183 cm. Le fond noir fait ressortir les couleurs du motif. Le mélange coton et lin garde un aspect naturel. Il donne une table plus habillée, pour le soir ou les repas de fête."
-    ideal_pour: "une table du soir, élégante et contrastée."
-  - produit: chemin-table-tribal-coton-pampilles
-    pourquoi: "Un chemin de table tribal africain en coton épais, avec des pampilles, de 32 × 228 cm. Sa longueur convient aux grandes tables. Les pampilles aux extrémités ajoutent une touche artisanale. Il a sa place dans un salon de jardin comme dans une salle à manger."
-    ideal_pour: "une grande table, à l’intérieur ou dehors."
-  - produit: chemin-table-elephant-girafe-coton-lin
-    pourquoi: "Un chemin de table en coton et lin, avec une femme africaine, des éléphants et des girafes, de 33 × 275 cm. Ses 2,75 m couvrent une très longue table de fête. Le motif raconte une histoire, presque comme une fresque. À réserver aux grandes tablées."
-    ideal_pour: "les grandes tablées et les repas de fête."
-  - produit: chemin-table-lin-carte-afrique
-    pourquoi: "Un chemin de table en lin, avec un motif ethnique et la carte de l’Afrique. C’est le chemin le plus « clin d’œil » de notre sélection. Il plaira à ceux qui veulent afficher leurs racines ou leur amour du continent. Le lin lui donne un aspect rustique."
-    ideal_pour: "ceux qui veulent un motif qui parle de l’Afrique."
-  - produit: chemin-table-tribal-texture-pompons
-    pourquoi: "Un chemin de table texturé, à motif tribal africain, d’aspect lin, avec des pompons, de 35,6 × 152,4 cm. Plus court, il convient aux petites tables ou à une console. Les pompons et la texture le rendent chaleureux. Une bonne taille pour une table de 4 personnes."
-    ideal_pour: "les petites tables, les consoles et les buffets."
   - produit: chemin-table-geometrique-africain-33x183
     pourquoi: "Un chemin de table à motifs géométriques africains, en polyester, de 33 × 183 cm. Le polyester se lave facilement, ce qui en fait un chemin pour tous les jours. Les motifs géométriques se marient avec une vaisselle unie. Un choix pratique."
     ideal_pour: "la table de tous les jours, avec des enfants."
-  - produit: chemin-table-ethnique-africain-33x178
-    pourquoi: "Un chemin de table à motif ethnique africain, en polyester, de 33 × 178 cm. Facile d’entretien, il peut aussi habiller une commode ou un buffet. Une option simple pour apporter un motif africain sur une table. Regardez bien le motif sur la fiche Amazon, plusieurs modèles existent."
-    ideal_pour: "habiller une table ou un meuble sans se compliquer la vie."
-  - produit: chemin-table-lin-orange-pompons
-    pourquoi: "Un chemin de table en lin orange à pompons, uni. Il réchauffe une nappe blanche ou une table en bois."
-    ideal_pour: "les tables d’été et les terrasses."
-  - produit: chemin-table-terracotta-glands
-    pourquoi: "Un chemin de table uni couleur terracotta orangé, terminé par des glands. Il apporte la chaleur de la terre cuite."
-    ideal_pour: "relier des serviettes ou une vaisselle à motifs."
-  - produit: chemins-table-gaze-terracotta-lot-6
-    pourquoi: "Six chemins de table en gaze de coton terracotta, de 55 × 300 cm. Le lot à prévoir pour une grande occasion."
-    ideal_pour: "les mariages et les grandes fêtes de famille."
+  - produit: chemin-table-mois-histoire-noire-lin
+    pourquoi: "Un chemin de table en lin noir de 33 × 183 cm, aux motifs africains créés pour le Mois de l’histoire des Noirs. La fiche le donne pour une table de 4 à 6 personnes. Le fond noir fait ressortir les motifs. Il se lave à la main et se range roulé."
+    ideal_pour: "une table du soir, ou un repas de fête autour de l’histoire africaine."
+  - produit: chemin-table-kwanzaa-lin
+    pourquoi: "Un chemin de table africain sur le thème de Kwanzaa, la fête afro-américaine des récoltes, de 33 × 183 cm. Sa matière imite la toile de jute, ce qui lui donne un aspect rustique. La fiche le donne pour une table de 4 à 6 personnes. Il se lave à la main."
+    ideal_pour: "une table de fête aux couleurs vives."
+  - produit: chemin-table-tribal-africain
+    pourquoi: "Un chemin de table à motifs tribaux africains. Il habille la table d’un coup, sans la cacher comme une nappe. C’est une façon simple de commencer si l’on n’a encore rien d’africain à table. Vérifiez la longueur sur la fiche Amazon."
+    ideal_pour: "un premier chemin de table à motifs."
+  - produit: chemin-table-totems-lin
+    pourquoi: "Un chemin de table en lin à totems africains, de 33 × 183 cm. Les totems noirs sur fond naturel en font le chemin le plus sobre de notre sélection. Il va avec le bois clair, les paniers tressés et la vaisselle blanche. Facile à garder toute l’année."
+    ideal_pour: "les intérieurs calmes, en tons naturels."
+  - produit: chemin-table-tribal-geometrique-33x152
+    pourquoi: "Un chemin de table tribal africain à motif géométrique, de 33 × 152,4 cm, d’aspect lin. Plus court que la plupart, il convient aux petites tables, à une console ou à un buffet. La fiche indique qu’il s’utilise à l’intérieur comme à l’extérieur."
+    ideal_pour: "une petite table, une console ou un buffet."
+  - produit: chemin-table-tissu-de-boue-33x178
+    pourquoi: "Un chemin de table aux motifs géométriques tribaux, inspiré du tissu de boue (le nom anglais du bogolan), de 33 × 177,8 cm. Ses tons bruns s’accordent avec le bois et la terre cuite. La fiche le donne pour une table de 4 à 6 personnes, en matière imitation lin et coton."
+    ideal_pour: "une table en bois, dans des tons naturels."
+  - produit: chemin-table-kente-lin
+    pourquoi: "Un chemin de table en lin imprimé kente, de 33 × 183 cm. Les bandes colorées du kente, le tissu des rois du Ghana, donnent le ton à toute la table. Le lin apporte une texture naturelle. Il s’accorde avec une vaisselle unie, blanche ou en terre cuite."
+    ideal_pour: "une table de 4 à 6 personnes qui veut un vrai point de couleur."
+  - produit: chemin-table-paisley-africain-40x225
+    pourquoi: "Un chemin de table de 40 × 225 cm, à motifs paisley d’inspiration africaine, dans des tons abricot, rouge et bordeaux. Il est en polyester et se lave en machine, à froid. Avec ses 2,25 m, il couvre une grande table."
+    ideal_pour: "une grande table, dans des tons chauds."
+  - produit: chemin-table-tambour-africain-33x91
+    pourquoi: "Un petit chemin de table en lin, au motif de tambour africain, de 33 × 91,4 cm. Sa petite taille le destine plutôt à une table basse, une commode ou une console. D’autres tailles sont proposées sur la fiche."
+    ideal_pour: "une table basse, une commode ou une console."
 ---
 
 ## Comment choisir son chemin de table

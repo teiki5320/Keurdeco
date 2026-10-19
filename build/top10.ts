@@ -4,8 +4,14 @@
  * le premier onglet, avec une adresse canonique vers celui-ci.
  *
  * En-tête d'un sujet : onglet (libellé court), titre (« Top 10 des … »), description (70 à 180 caractères),
- * ordre, intro (comment le classement est fait), image_partage (facultatif), tops_lies[] (pages Top existantes
- * qui renvoient vers cet onglet), produits[] : { produit, pourquoi, ideal_pour } (au moins 10).
+ * ordre, classement_le (date du relevé des notes, AAAA-MM-JJ), image_partage (propre à l'onglet), voir_aussi[]
+ * (3 autres onglets), tops_lies[] (pages Top existantes qui renvoient vers cet onglet),
+ * produits[] : { produit, pourquoi, ideal_pour } (au moins 10).
+ *
+ * Classement : l'ordre de produits[] suit la note moyenne des acheteurs sur Amazon.fr relevée le jour de
+ * classement_le ; à égalité, le plus évalué passe devant ; seuls les produits disponibles avec au moins
+ * 10 évaluations sont retenus. Les notes servent à classer : elles ne sont ni enregistrées ni affichées.
+ * L'intro (critère + n° 1) est écrite par le code.
  * Texte : « ## Comment choisir… » (une liste) puis « ## Questions fréquentes » (3 questions en ###).
  *
  * Règles : uniquement de vrais produits (actifs, ASIN vérifié) ; un sujet n'est publié que s'il en a au moins 10,
@@ -16,7 +22,7 @@ import { resolve } from 'node:path';
 import { Marked } from 'marked';
 import { parse as parseYaml } from 'yaml';
 import { attributsLienAmazon, MENTION_AMAZON } from '../src/amazon.ts';
-import { NOM_SITE, SITE_URL, titrePage } from './config.ts';
+import { dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone, iconeObjet } from './icones.ts';
 import { echapper, estAffichable, indexProduits, libelleType, type Produit } from './produits.ts';
 
@@ -36,8 +42,9 @@ export interface SujetTop10 {
   titre: string;
   description: string;
   ordre: number;
-  intro: string;
+  classementLe: string;
   imagePartage: string;
+  voirAussi: string[];
   topsLies: string[];
   produits: EntreeTop10[];
   corps: string;
@@ -56,9 +63,13 @@ export function lireSujet(slug: string, source: string): SujetTop10 {
   if (!m) throw new Error(`Top 10 ${slug} : en-tête YAML manquant`);
   const e = (parseYaml(m[1]) ?? {}) as Record<string, unknown>;
   const erreur = (msg: string) => new Error(`Top 10 ${slug} : ${msg}`);
-  for (const champ of ['onglet', 'titre', 'description', 'intro']) if (!String(e[champ] ?? '').trim()) throw erreur(`champ « ${champ} » manquant`);
+  for (const champ of ['onglet', 'titre', 'description', 'image_partage']) if (!String(e[champ] ?? '').trim()) throw erreur(`champ « ${champ} » manquant`);
   const description = String(e.description).trim();
   if (description.length < 70 || description.length > 180) throw erreur(`la description doit faire 70 à 180 caractères (${description.length})`);
+  const classementLe = String(e.classement_le ?? '').trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(classementLe)) throw erreur('« classement_le » doit être une date AAAA-MM-JJ');
+  const voirAussi = Array.isArray(e.voir_aussi) ? e.voir_aussi.map(String) : [];
+  if (voirAussi.length !== 3 || new Set(voirAussi).size !== 3 || voirAussi.includes(slug)) throw erreur('« voir_aussi » doit nommer 3 autres onglets');
   const produits = (Array.isArray(e.produits) ? e.produits : []).map((p: Record<string, unknown>) => ({
     produit: String(p.produit ?? '').trim(),
     pourquoi: String(p.pourquoi ?? '').trim(),
@@ -77,8 +88,9 @@ export function lireSujet(slug: string, source: string): SujetTop10 {
     titre: String(e.titre).trim(),
     description,
     ordre: Number(e.ordre ?? 99),
-    intro: String(e.intro).trim(),
-    imagePartage: String(e.image_partage ?? '').trim(),
+    classementLe,
+    imagePartage: String(e.image_partage).trim(),
+    voirAussi,
     topsLies: Array.isArray(e.tops_lies) ? e.tops_lies.map(String) : [],
     produits,
     corps,
@@ -104,6 +116,20 @@ export function dixProduits(s: SujetTop10, produits: Map<string, Produit>): (Ent
 /** Sujets publiés : ceux qui ont au moins 10 vrais produits, dans l'ordre des onglets. */
 export function sujetsPublies(produits = indexProduits(), sujets = tousLesSujets()): SujetTop10[] {
   return sujets.filter((s) => dixProduits(s, produits).length === NOMBRE);
+}
+
+/** Intro d'un onglet : le critère de classement, puis le n° 1. */
+export function introClassement(s: SujetTop10, dix: ReturnType<typeof dixProduits>): string {
+  return `Classés selon la note moyenne des acheteurs relevée sur Amazon.fr le ${dateLongue(s.classementLe)} ; à égalité, le produit qui a le plus d’évaluations passe devant, et seuls les produits disponibles avec au moins 10 évaluations sont retenus. Les notes servent à classer mais ne sont pas affichées ; nous n’avons pas testé ces produits. N° 1 : ${dix[0]?.p.nom ?? ''}.`;
+}
+
+/** Bloc « Voir aussi » : 3 autres onglets publiés. */
+export function voirAussi(s: SujetTop10, sujets: SujetTop10[]): string {
+  const autres = s.voirAussi.map((slug) => sujets.find((t) => t.slug === slug)).filter((t): t is SujetTop10 => !!t);
+  if (!autres.length) return '';
+  return `<nav class="voisines-glossaire top10__voir-aussi" aria-label="Voir aussi"><h2>Voir aussi</h2><ul class="liste-glossaire">${autres
+    .map((t) => `<li><a href="${adresseTop10(t.slug)}"><strong>${echapper(t.titre)}</strong> <span>${echapper(t.description)}</span></a></li>`)
+    .join('')}</ul></nav>`;
 }
 
 /** Grande image d'un produit : vignette découpée dans nos images d'ambiance (IA), sinon l'icône du type d'objet. */
@@ -198,18 +224,19 @@ export function sourcePageTop10(s: SujetTop10, sujets: SujetTop10[], produits: M
     <!--#header-->
     <main id="contenu" class="top10">
       <div class="conteneur top10__entete">
-        <p class="fil"><a href="index.html">Accueil</a> › <a href="top-10/">Top 10</a></p>
+        <p class="fil"><a href="index.html">Accueil</a> › <a href="top-10/">Top 10</a> › ${echapper(s.onglet)}</p>
         <p class="top10__marque">${icone('classement', 'icone icone--petite')} Les Top 10 de ${NOM_SITE}</p>
       </div>
       ${onglets(sujets, s.slug)}
       <article class="conteneur conteneur--etroit top10__sujet">
         <h1>${echapper(s.titre)}</h1>
-        <p class="chapo">${echapper(s.intro)}</p>
+        <p class="chapo">${echapper(introClassement(s, dix))}</p>
         <p class="mention-amazon mention-amazon--haut">${MENTION_AMAZON} Aucun prix n’est affiché : le prix du jour est sur Amazon.</p>
         ${rendreListe(dix)}
         <div class="prose top10__texte-bas">
           ${rendreTexte(s.corps)}
         </div>
+        ${voirAussi(s, sujets)}
       </article>
     </main>
     <!--#footer-->

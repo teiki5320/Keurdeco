@@ -1,11 +1,27 @@
 ---
 onglet: "Indigo et kente"
 titre: "Top 10 des objets déco en indigo et kente"
-description: "Notre sélection de 10 objets déco en indigo et kente : coussins et chemin de table kente, tissus bogolan et Dogon indigo, tapis, linge de lit et un livre."
+description: "Notre sélection de 10 objets déco en indigo et kente : tissus et coussins kente, chemin de table, kit de teinture indigo, linge de lit, tapis et un livre."
 ordre: 9
+classement_le: "2026-10-19"
 image_partage: kente-tissu-bandes
-intro: "Pour ce classement, nous avons retenu dix objets vendus sur Amazon.fr, autour de deux grands textiles d’Afrique de l’Ouest : le kente du Ghana, aux bandes colorées, et l’indigo, ce bleu profond des teintures traditionnelles. Nous les avons choisis d’après leur motif, leur couleur et leur usage dans la maison. Ce sont des imprimés ou des objets dans ces tons, pas des pièces tissées ou teintes à la main. C’est notre sélection : nous ne les avons pas testés nous-mêmes."
+voir_aussi: [coussins-imprimes-africains, parures-de-lit, chemins-de-table]
 produits:
+  - produit: tissu-kente-patchwork-5-5m
+    pourquoi: "Un tissu imprimé kente en patchwork, en polyester : 5,5 m sur environ 114 cm de large. C’est un imprimé, pas un kente tissé. Avec cette longueur, on peut tendre un pan de mur, couvrir une table ou coudre des coussins."
+    ideal_pour: "tendre au mur ou coudre ses propres coussins."
+  - produit: livre-african-textiles
+    pourquoi: "Le livre « African Textiles: Colour and Creativity Across a Continent », en anglais. Il présente les textiles d’Afrique, dont le kente et les tissus teints. Posé sur une table basse, il est à la fois une source d’idées et un objet déco. Une belle idée de cadeau pour les amoureux des tissus."
+    ideal_pour: "ceux qui veulent comprendre les textiles africains (et lisent l’anglais)."
+  - produit: kit-teinture-indigo-jacquard
+    pourquoi: "Un petit kit de teinture à l’indigo, de la marque Jacquard. Il permet de teindre soi-même du coton ou du lin en bleu indigo. Torchons, serviettes ou housses de coussin : chaque pièce sera unique. Une activité créative autour de l’indigo."
+    ideal_pour: "les amateurs de loisirs créatifs qui veulent teindre eux-mêmes."
+  - produit: tissu-kente-ankara-5-5m
+    pourquoi: "Un tissu africain imprimé aux motifs du kente, en polyester, de 5,49 × 1,14 m. La fiche le présente pour la couture comme pour la décoration. Il se lave en machine et sèche à l’air libre."
+    ideal_pour: "une tenture, une nappe ou des travaux de couture."
+  - produit: housse-couette-coton-denim
+    pourquoi: "Une housse de couette en coton bleu denim, de 220 × 240 cm. Le bleu denim est de la famille de l’indigo : il donne une chambre calme et profonde. Unie, elle laisse la place aux coussins à motifs, kente ou bogolan. Une base simple pour une chambre aux accents africains."
+    ideal_pour: "un lit deux places, en base unie sous des coussins à motifs."
   - produit: housses-coussin-imprime-kente-lot-2
     pourquoi: "Deux housses de coussin à imprimé kente rouge, vert et jaune, au grand format 60 × 60 cm. Ce sont les couleurs les plus connues du kente, le tissu des rois du Ghana. Sur un canapé uni, elles font tout de suite un point fort. C’est la façon la plus simple d’apporter le kente dans un salon."
     ideal_pour: "ceux qui veulent un vrai point de couleur sur le canapé."
@@ -15,33 +31,15 @@ produits:
   - produit: coussin-shibori-indigo
     pourquoi: "Une housse de coussin shibori indigo, en coton et lin. Le bleu indigo et le blanc forment un motif doux, qui évoque les tissus teints à la main. Elle apaise un canapé ou un lit. Elle se marie avec le kente pour un contraste chaud et froid."
     ideal_pour: "une chambre ou un salon dans les bleus."
-  - produit: tissu-bogolan-indigo-fleches
-    pourquoi: "Un coupon de tissu de style bogolan, bleu indigo, à motifs de flèches et d’ovales, en 100 % coton, de 180 × 116 cm. On peut le tendre au mur comme une tenture, le poser en nappe ou en faire des coussins. Il réunit deux styles d’Afrique de l’Ouest : les motifs du bogolan et le bleu de l’indigo. Un tissu, plusieurs usages."
-    ideal_pour: "ceux qui aiment coudre ou suspendre un grand tissu au mur."
-  - produit: tissu-kente-jaune-noir-blanc
-    pourquoi: "Un coupon de tissu imprimé kente jaune, noir et blanc, en 100 % coton, de 180 × 117 cm. Ces trois couleurs donnent un kente plus graphique que le rouge-vert-jaune classique. Tendu au mur ou posé en nappe, il illumine une pièce. On peut aussi en tirer des coussins assortis."
-    ideal_pour: "une tenture murale ou une nappe graphique."
   - produit: tapis-rond-coton-bleu-marine
     pourquoi: "Un tapis rond tissé à plat en coton bleu marine, de 120 cm. Son bleu profond rappelle l’indigo et calme une chambre. Il s’accorde avec le blanc, le lin et les coussins à motifs. Sa forme ronde adoucit une pièce."
     ideal_pour: "une chambre aux tons bleus."
-  - produit: tissu-dogon-indigo-blanc
-    pourquoi: "Un coupon de tissu imprimé Super Dogon, indigo et blanc, à motif géométrique, en 100 % coton, de 180 × 119 cm. Le contraste bleu profond et blanc est très graphique. Tendu sur un châssis, il fait un grand tableau textile. Il se marie avec le bois clair et le rotin."
-    ideal_pour: "créer un grand tableau textile ou des coussins."
-  - produit: housse-couette-coton-denim
-    pourquoi: "Une housse de couette en coton bleu denim, de 220 × 240 cm. Le bleu denim est de la famille de l’indigo : il donne une chambre calme et profonde. Unie, elle laisse la place aux coussins à motifs, kente ou bogolan. Une base simple pour une chambre aux accents africains."
-    ideal_pour: "un lit deux places, en base unie sous des coussins à motifs."
-  - produit: livre-african-textiles
-    pourquoi: "Le livre « African Textiles: Colour and Creativity Across a Continent », en anglais. Il présente les textiles d’Afrique, dont le kente et les tissus teints. Posé sur une table basse, il est à la fois une source d’idées et un objet déco. Une belle idée de cadeau pour les amoureux des tissus."
-    ideal_pour: "ceux qui veulent comprendre les textiles africains (et lisent l’anglais)."
-  - produit: kit-teinture-indigo-jacquard
-    pourquoi: "Un petit kit de teinture à l’indigo, de la marque Jacquard. Il permet de teindre soi-même du coton ou du lin en bleu indigo. Torchons, serviettes ou housses de coussin : chaque pièce sera unique. Une activité créative autour de l’indigo."
-    ideal_pour: "les amateurs de loisirs créatifs qui veulent teindre eux-mêmes."
-  - produit: tissu-kente-bleu-jaune
-    pourquoi: "Un coupon de tissu wax imprimé kente, bleu et jaune, de 180 × 116 cm. Le bleu et le jaune changent des couleurs habituelles du kente. Il se tend au mur, se pose en nappe ou se coud en coussins."
-    ideal_pour: "un kente dans des tons bleus."
   - produit: plaid-coton-bleu-140x200
     pourquoi: "Un plaid jeté de fauteuil en coton bleu, de 140 × 200 cm. Posé sur un canapé ou au pied d’un lit, il apporte une note bleue. Il accompagne bien les coussins kente."
     ideal_pour: "un canapé ou un fauteuil."
+  - produit: housses-coussin-shibori-indigo-lot-5
+    pourquoi: "Cinq housses de coussin teintes en shibori indigo, en coton, de 40 × 40 cm, avec fermeture éclair. Le lot suffit pour un canapé entier. Les garnitures ne sont pas fournies ; la fiche conseille de les laver à la main, seules, à l’eau froide."
+    ideal_pour: "habiller tout un canapé en bleu indigo."
 ---
 
 ## Comment choisir ses objets en indigo et kente

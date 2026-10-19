@@ -1,48 +1,43 @@
 ---
 onglet: "Nappes et sets"
 titre: "Top 10 des nappes et sets de table à motifs africains"
-description: "Notre sélection de 10 nappes et sets de table à motifs africains : motif wax, bogolan, tribal, géométrique, en lin ou en polyester anti-taches pour tous les jours."
+description: "Notre sélection de 10 nappes et sets de table à motifs africains : femme africaine, girafes et éléphants, motifs tribaux et géométriques, en lin ou anti-taches."
 ordre: 4
+classement_le: "2026-10-19"
 image_partage: nappes-wax-table-ete
+voir_aussi: [chemins-de-table, paniers-tresses-africains, bois-sculpte]
 tops_lies: [top-nappes-wax]
-intro: "Pour ce classement, nous avons retenu six nappes et quatre lots de sets de table vendus sur Amazon.fr, choisis d’après leur motif, leur taille et leur facilité d’entretien. Ce sont des imprimés aux motifs africains (wax, bogolan, tribal), pas des tissus wax cousus. En tête, les nappes les plus polyvalentes ; plus bas, les sets de table. C’est notre sélection : nous ne les avons pas testés nous-mêmes."
 produits:
   - produit: nappe-lin-geometrique
     pourquoi: "Une nappe en lin à motifs géométriques, de 130 × 180 cm. Le lin donne une table naturelle et chaleureuse. Les motifs géométriques restent discrets, ce qui laisse la place à une vaisselle colorée. Une nappe pour les beaux repas."
     ideal_pour: "une table de 4 à 6 personnes, pour les repas soignés."
-  - produit: nappe-motif-wax-120x160
-    pourquoi: "Une nappe rectangulaire à motif wax, en polyester imperméable anti-taches, de 120 × 160 cm. Elle apporte les couleurs du wax sans craindre les taches. On l’essuie au lieu de la laver à chaque repas. Une nappe pour tous les jours."
-    ideal_pour: "une petite table de cuisine utilisée tous les jours."
-  - produit: nappe-impermeable-tribale
-    pourquoi: "Une nappe imperméable anti-taches à motif tribal. Pratique avec des enfants ou sur une terrasse, elle se nettoie d’un coup d’éponge. Le motif tribal donne du caractère à une table simple. Vérifiez la taille sur la fiche Amazon."
-    ideal_pour: "les familles et les repas en extérieur."
-  - produit: nappe-danseuse-africaine-160x240
-    pourquoi: "Une nappe rectangulaire à motif africain de danseuse, en polyester imperméable anti-taches, de 160 × 240 cm. Son grand format couvre une table de 6 à 8 personnes. Le motif figuratif en fait la vedette de la table. À associer à une vaisselle unie."
-    ideal_pour: "une grande table familiale."
-  - produit: nappe-motif-africain-traditionnel-137x183
-    pourquoi: "Une nappe à motif africain traditionnel, en polyester traité anti-éclaboussures, de 137 × 183 cm. Un format courant pour une table de 4 à 6 personnes. Elle protège la table au quotidien tout en l’habillant. Un bon compromis entre décoration et praticité."
-    ideal_pour: "une table rectangulaire de 4 à 6 personnes."
-  - produit: nappe-ethnique-africaine-bord-ondule
-    pourquoi: "Une nappe à thème ethnique africain, avec un bord ondulé, résistante à l’eau, de 137 × 183 cm. Le bord ondulé lui donne une finition plus soignée. Elle convient aussi bien à la salle à manger qu’à une table de fête. Facile à laver."
-    ideal_pour: "une table de fête, comme un mariage ou un baptême."
-  - produit: sets-table-bogolan-lot-6
-    pourquoi: "Six sets de table africains en tissu bogolan noir et blanc, de 30 × 45 cm. Le noir et blanc du bogolan est graphique et facile à associer. Sur une table en bois, ils remplacent la nappe. C’est le lot le plus chic de notre sélection de sets."
-    ideal_pour: "une table en bois que l’on veut laisser visible."
-  - produit: sets-table-tribal-bleu-jaune-lot-4
-    pourquoi: "Quatre sets de table imprimés africains, à motif tribal bleu et jaune, en polyester, de 45 × 30 cm. Le bleu et le jaune donnent une table gaie et lumineuse. Le lot de quatre convient à une petite famille. Ils se lavent facilement."
-    ideal_pour: "une table de 4, gaie et colorée."
-  - produit: sets-table-ethnique-africain-lot-6
-    pourquoi: "Six sets de table à motif ethnique africain, antidérapants, de 45 × 30 cm. Antidérapants, ils restent en place sous les assiettes. Le lot de six couvre une table de famille. Un choix pratique pour tous les jours."
-    ideal_pour: "les repas de tous les jours, à six."
+  - produit: nappe-femme-africaine-152x213
+    pourquoi: "Une nappe rectangulaire de 152 × 213 cm, au motif de femme africaine. La fiche la donne pour des tables de 91 × 152 cm à 122 × 183 cm, soit 6 à 8 personnes. Le portrait occupe la table : gardez une vaisselle unie autour."
+    ideal_pour: "une table de 6 à 8 personnes qui veut un motif fort."
+  - produit: nappe-tribale-rayures-africaines-137x183
+    pourquoi: "Une nappe rectangulaire de 137 × 183 cm, à motif tribal géométrique et rayures africaines. Elle est en polyester, infroissable et résistante aux taches d’après la fiche. Elle convient à une table de 4 à 6 personnes."
+    ideal_pour: "la table de tous les jours, pour 4 à 6 personnes."
+  - produit: nappe-retro-ethnique-132x178
+    pourquoi: "Une nappe rectangulaire de 132 × 178 cm, à motif ethnique rétro, en polyester. La fiche la dit imperméable, résistante à l’huile et aux taches. Elle s’utilise à l’intérieur comme dehors."
+    ideal_pour: "une table de cuisine ou de terrasse."
+  - produit: nappe-carree-tribale-140
+    pourquoi: "Une nappe carrée de 140 × 140 cm, au motif tribal « Nation africaine », en polyester anti-taches. Le format carré convient aux tables de 4 personnes. Elle se lave et s’essuie facilement."
+    ideal_pour: "une table carrée de 4 personnes."
+  - produit: sets-table-girafe-elephant-lot-4
+    pourquoi: "Quatre sets de table de 30 × 45 cm, aux motifs de girafe, d’éléphant et de savane africaine. Ils sont en coton et lin d’après la fiche, et se lavent à la main ou en machine. Ils laissent voir une belle table en bois."
+    ideal_pour: "une table de 4 personnes, y compris avec des enfants."
   - produit: sets-table-jute-geometriques-lot-6
     pourquoi: "Six sets de table africains géométriques noirs et blancs, en toile de jute et lin, de 30,5 × 45,7 cm. La toile de jute donne une texture naturelle. Les motifs noirs et blancs rappellent le bogolan. Une alternative plus rustique au lot n° 7."
     ideal_pour: "une table rustique, en tons naturels."
-  - produit: nappe-motif-africain-140x200
-    pourquoi: "Une nappe rectangulaire à motif africain, en polyester imperméable anti-taches, de 140 × 200 cm. Un format intermédiaire pour une table de 6 personnes."
-    ideal_pour: "une table de 6 personnes."
-  - produit: sets-table-jacinthe-lot-6
-    pourquoi: "Six sets de table ronds en jacinthe d’eau tressée. Unis, ils apportent la vannerie sur la table."
-    ideal_pour: "une table naturelle, avec une vaisselle colorée."
+  - produit: nappe-impermeable-tribale
+    pourquoi: "Une nappe imperméable anti-taches à motif tribal. Pratique avec des enfants ou sur une terrasse, elle se nettoie d’un coup d’éponge. Le motif tribal donne du caractère à une table simple. Vérifiez la taille sur la fiche Amazon."
+    ideal_pour: "les familles et les repas en extérieur."
+  - produit: nappe-ronde-tribale-150
+    pourquoi: "Une nappe ronde de 150 cm de diamètre, au motif tribal « Nation africaine », en polyester. La fiche la dit imperméable : les liquides s’essuient rapidement. Une solution pour les tables rondes, souvent oubliées."
+    ideal_pour: "une table ronde, à l’intérieur ou au jardin."
+  - produit: sets-table-flute-africaine-lot-4
+    pourquoi: "Quatre sets de table de 30 × 45 cm, au motif de flûte africaine. La fiche les dit en coton et lin, résistants aux taches et lavables à la main ou en machine. Une touche africaine discrète pour une table de 4."
+    ideal_pour: "une table de 4 personnes, au quotidien."
 ---
 
 ## Comment choisir sa nappe ou ses sets de table
