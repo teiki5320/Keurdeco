@@ -22,9 +22,9 @@ classement:
   - produit: paniers-muraux-rotin-lot-8
     pourquoi: "Huit paniers en rotin et feuilles tressées : de quoi habiller tout un mur d’un coup."
     a_savoir: "Avec huit pièces, préparez la composition au sol avant de percer, c’est indispensable."
-  - produit: paniers-muraux-jacinthe-lot-7
-    pourquoi: "Sept paniers plats faits main, en jacinthe d’eau et feuille de maïs : des matières douces, aux tons chauds."
-    a_savoir: "Plats, ils restent près du mur : parfaits dans une entrée ou un couloir où l’on passe souvent."
+  - produit: paniers-muraux-jacinthe-lot-10
+    pourquoi: "Dix paniers ronds faits main, en jacinthe d’eau et feuille de maïs : des matières douces, aux tons chauds et foncés."
+    a_savoir: "Le lot réunit sept tailles différentes : de quoi composer un nuage dense au centre et plus léger sur les bords."
   - produit: corbeilles-murales-jonc-lot-7
     pourquoi: "Sept corbeilles rondes qui mélangent jonc de mer, feuille de maïs et rotin : la variété des fibres fait tout le charme."
     a_savoir: "Tons naturels : elles s’accordent avec un mur blanc, ocre ou terracotta."
@@ -45,7 +45,7 @@ hotspots:
   - { produit: paniers-muraux-motif-africain-classic-lot-3, x: 37, y: 37, cadre: 18 }
   - { produit: decorations-murales-seagrass-lot-3, x: 38, y: 17, cadre: 18 }
   - { produit: paniers-muraux-rotin-lot-8, x: 60, y: 32, cadre: 18 }
-  - { produit: paniers-muraux-jacinthe-lot-7, x: 70, y: 44, cadre: 16 }
+  - { produit: paniers-muraux-jacinthe-lot-10, x: 70, y: 44, cadre: 16 }
   - { produit: corbeilles-murales-jonc-lot-7, x: 81, y: 42, cadre: 14 }
   - { produit: panier-bolga-marche, x: 51, y: 46, cadre: 24 }
   - { produit: panier-mural-tresse, x: 70, y: 72, cadre: 18 }

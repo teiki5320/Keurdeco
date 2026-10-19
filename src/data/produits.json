@@ -2341,6 +2341,26 @@
     "verifie_le": "2026-09-29"
   },
   {
+    "id": "paniers-muraux-jacinthe-lot-10",
+    "asin": "B0CJ8PMZDS",
+    "nom": "Paniers muraux ronds en jacinthe d’eau et feuille de maïs, faits main, lot de 10",
+    "type_objet": "assiette-murale",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel",
+      "brun"
+    ],
+    "pieces": [
+      "salon",
+      "chambre",
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-19"
+  },
+  {
     "id": "corbeilles-murales-jonc-lot-7",
     "asin": "B0F98Z1VM9",
     "nom": "Corbeilles murales rondes en jonc de mer, feuille de maïs et rotin, tons naturels, lot de 7",
