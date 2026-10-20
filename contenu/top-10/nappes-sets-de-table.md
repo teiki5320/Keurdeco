@@ -7,6 +7,22 @@ classement_le: "2026-10-19"
 image_partage: nappes-wax-table-ete
 voir_aussi: [chemins-de-table, paniers-tresses-africains, bois-sculpte]
 tops_lies: [top-nappes-wax]
+ambiances:
+  - image: top10-nappes-1
+    alt: "Terrasse fleurie de bougainvilliers dressée pour le déjeuner : nappe beige à femmes africaines portant des jarres, nappe rouge à bandes tribales, nappe imprimé girafe et petite table carrée à nappe ocre et bordeaux aux silhouettes africaines."
+    hotspots:
+      - { produit: nappe-femme-africaine-152x213, x: 30, y: 62, cadre: 26 }
+      - { produit: nappe-tribale-rayures-africaines-137x183, x: 54, y: 47, cadre: 18 }
+      - { produit: nappe-imprime-girafe-152x213, x: 77, y: 58, cadre: 22 }
+      - { produit: nappe-carree-tribale-140, x: 54, y: 78, cadre: 26 }
+  - image: top10-nappes-2
+    alt: "Cuisine aux tomettes : table ronde à nappe orange aux femmes africaines stylisées, table en bois à sets de savane avec girafes, sets noir et blanc façon bogolan, set à éléphant d’Afrique au premier plan et petite table ronde à nappe beige aux femmes portant des jarres."
+    hotspots:
+      - { produit: nappe-ronde-femme-africaine, x: 17, y: 47, cadre: 30 }
+      - { produit: sets-table-girafe-elephant-lot-4, x: 37, y: 54, cadre: 18 }
+      - { produit: sets-table-jute-geometriques-lot-6, x: 80, y: 78, cadre: 26 }
+      - { produit: sets-table-elephant-africain-lot-4, x: 30, y: 81, cadre: 26 }
+      - { produit: nappe-ronde-tribale-150, x: 90, y: 42, cadre: 24 }
 produits:
   - produit: nappe-femme-africaine-152x213
     pourquoi: "Une nappe rectangulaire de 152 × 213 cm, au motif de femme africaine. La fiche la donne pour des tables de 91 × 152 cm à 122 × 183 cm, soit 6 à 8 personnes. Le portrait occupe la table : gardez une vaisselle unie autour."
@@ -35,8 +51,8 @@ produits:
   - produit: nappe-ronde-tribale-150
     pourquoi: "Une nappe ronde de 150 cm de diamètre, au motif tribal « Nation africaine », en polyester. La fiche la dit imperméable : les liquides s’essuient rapidement. Une solution pour les tables rondes, souvent oubliées."
     ideal_pour: "une table ronde, à l’intérieur ou au jardin."
-  - produit: sets-table-flute-africaine-lot-4
-    pourquoi: "Quatre sets de table de 30 × 45 cm, au motif de flûte africaine. La fiche les dit en coton et lin, résistants aux taches et lavables à la main ou en machine. Une touche africaine discrète pour une table de 4."
+  - produit: sets-table-elephant-africain-lot-4
+    pourquoi: "Quatre sets de table de 30 × 45 cm, imprimés d’un éléphant d’Afrique. La fiche les dit en coton et lin, imperméables, résistants aux taches et lavables à la main ou en machine."
     ideal_pour: "une table de 4 personnes, au quotidien."
 ---
 

@@ -235,21 +235,21 @@ function boutonEpingler(a: Article): string {
   return `<a class="epingler" href="${echapper(lienEpingler(a))}" target="_blank" rel="noopener">${icone('epingle', 'icone icone--petite')}<span>Épingler</span></a>`;
 }
 
-const MENTION_IA = 'Image d’ambiance créée par IA : les produits proposés sont dans le même esprit, pas les objets exacts.';
+export const MENTION_IA = 'Image d’ambiance créée par IA : les produits proposés sont dans le même esprit, pas les objets exacts.';
 
 /**
  * Points cliquables posés sur l'image d'un article (ambiance ou top). `numero` donne le numéro affiché
  * de chaque produit : ordre des points pour une ambiance, rang dans le classement pour un top.
  */
-function pointsImage(a: Article, produits: Map<string, Produit>, numero: (id: string, i: number) => number | undefined): string {
-  return a.hotspots
+export function pointsImage(cle: string, hotspots: Hotspot[], produits: Map<string, Produit>, numero: (id: string, i: number) => number | undefined): string {
+  return hotspots
     .map((h) => ({ ...h, p: produits.get(h.produit) }))
     .filter((h): h is Hotspot & { p: Produit & { asin: string } } => estAffichable(h.p))
     .map((h, i) => {
       const n = numero(h.produit, i);
       if (n === undefined) return '';
-      return `<button type="button" class="hotspot" style="left:${h.x}%;top:${h.y}%" aria-expanded="false" aria-controls="carte-${a.slug}-${n}" aria-label="Objet ${n} : ${echapper(h.p.nom)}"><span aria-hidden="true">${n}</span></button>
-      <div class="hotspot-carte${h.x > 55 ? ' hotspot-carte--gauche' : ''}${h.y > 60 ? ' hotspot-carte--haut' : ''}" id="carte-${a.slug}-${n}" style="left:${h.x}%;top:${h.y}%" hidden>
+      return `<button type="button" class="hotspot" style="left:${h.x}%;top:${h.y}%" aria-expanded="false" aria-controls="carte-${cle}-${n}" aria-label="Objet ${n} : ${echapper(h.p.nom)}"><span aria-hidden="true">${n}</span></button>
+      <div class="hotspot-carte${h.x > 55 ? ' hotspot-carte--gauche' : ''}${h.y > 60 ? ' hotspot-carte--haut' : ''}" id="carte-${cle}-${n}" style="left:${h.x}%;top:${h.y}%" hidden>
         <p class="hotspot-carte__type">${echapper(libelleType(h.p.type_objet))}</p>
         <p class="hotspot-carte__nom">${echapper(h.p.nom)}</p>
         <a class="bouton bouton--amazon" ${attributsLienAmazon(h.p.asin)}>Voir sur Amazon</a>
@@ -263,7 +263,7 @@ function pointsImage(a: Article, produits: Map<string, Produit>, numero: (id: st
 export function rendreAmbiance(a: Article, produits: Map<string, Produit>): string {
   const affichables = a.hotspots.filter((h) => estAffichable(produits.get(h.produit)));
   const numeros = new Map(affichables.map((h, i) => [h.produit, i + 1]));
-  const boutons = pointsImage(a, produits, (_id, i) => i + 1);
+  const boutons = pointsImage(a.slug, a.hotspots, produits, (_id, i) => i + 1);
   // La liste reprend tous les produits de l'article (repli sans JavaScript), numérotés comme les points.
   const tous = [...new Set([...a.hotspots.map((h) => h.produit), ...a.produits])]
     .map((id) => produits.get(id))
@@ -307,7 +307,7 @@ ${mentionAmazon()}`;
 function pointsTop(a: Article, produits: Map<string, Produit>): string {
   if (a.type !== 'top' || a.hotspots.length === 0) return '';
   const rangs = new Map(produitsClassement(a, produits).map((p, i) => [p.id, i + 1]));
-  return pointsImage(a, produits, (id) => rangs.get(id));
+  return pointsImage(a.slug, a.hotspots, produits, (id) => rangs.get(id));
 }
 
 /** Produits d'un top affichés, dans l'ordre (pour les données structurées ItemList). */

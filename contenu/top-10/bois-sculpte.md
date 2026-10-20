@@ -7,6 +7,14 @@ classement_le: "2026-10-19"
 image_partage: tabourets-bois-sculpte
 voir_aussi: [paniers-tresses-africains, decos-murales, luminaires-fibres-naturelles]
 tops_lies: [top-tabourets-bois-sculpte]
+ambiances:
+  - image: top10-bois-sculpte-1
+    alt: "Coin salon au mur ocre : petite table ronde en manguier sombre à marqueterie de laiton portant un bol sculpté sur pied, masque de zèbre en bois sculpté accroché au mur, grande girafe en bois sur son socle noir."
+    hotspots:
+      - { produit: table-appoint-manguier-laiton, x: 54, y: 72, cadre: 36 }
+      - { produit: bol-manguier-sculpte, x: 58, y: 55, cadre: 20 }
+      - { produit: masque-zebre-bois-sculpte, x: 51, y: 24, cadre: 36 }
+      - { produit: statue-girafe-bois-60, x: 78, y: 52, cadre: 55 }
 produits:
   - produit: table-appoint-manguier-laiton
     pourquoi: "Une table d’appoint marocaine, faite main, en manguier avec une marqueterie de laiton. Le laiton apporte une touche dorée et précieuse au bois. Elle se marie avec les tissus colorés, les poufs en cuir et les tapis berbères. Une pièce plus habillée que les autres de notre sélection."

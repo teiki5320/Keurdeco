@@ -7,6 +7,14 @@ classement_le: "2026-10-19"
 image_partage: paniers-tresses-africains
 voir_aussi: [decos-murales, luminaires-fibres-naturelles, bois-sculpte]
 tops_lies: [top-paniers-tresses-africains, top-rangements-tresses-rentree]
+ambiances:
+  - image: top10-paniers-1
+    alt: "Entrée blanchie à la chaux : grand panier rond tissé crème, gris et noir accroché au mur, petit panier Bolga rayé rouge et vert sur le banc, grand panier Bolga multicolore au sol et corbeille tressée pleine de mangues sur la console."
+    hotspots:
+      - { produit: panier-all-across-africa-mineral, x: 60, y: 24, cadre: 38 }
+      - { produit: panier-bolga-petit-20, x: 45, y: 58, cadre: 22 }
+      - { produit: panier-bolga-marche, x: 27, y: 78, cadre: 30 }
+      - { produit: corbeille-fruits-tressee, x: 86, y: 48, cadre: 22 }
 produits:
   - produit: panier-agaseke-couvercle
     pourquoi: "Un grand panier coloré en rotin tressé main, fermé par un couvercle pointu. Ses motifs géométriques en font un objet de décoration à part entière, sur un buffet ou une étagère. Le couvercle permet d’y ranger de petites choses à l’abri des regards. Il apporte une touche graphique sans prendre beaucoup de place au sol."

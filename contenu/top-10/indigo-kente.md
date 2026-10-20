@@ -6,6 +6,21 @@ ordre: 9
 classement_le: "2026-10-19"
 image_partage: kente-tissu-bandes
 voir_aussi: [coussins-imprimes-africains, parures-de-lit, chemins-de-table]
+ambiances:
+  - image: top10-indigo-kente-1
+    alt: "Salon clair : grand tissu kente patchwork rose, violet, bleu et orange tendu au mur, canapé crème aux coussins kente et aux coussins à silhouettes de femmes africaines avec boucles d’oreilles dorées, tissu Ankara turquoise drapé sur le fauteuil."
+    hotspots:
+      - { produit: tissu-kente-patchwork-5-5m, x: 20, y: 38, cadre: 34 }
+      - { produit: housses-coussin-imprime-kente-lot-2, x: 26, y: 63, cadre: 18 }
+      - { produit: housses-coussin-kente-boucles-dorees-lot-4, x: 47, y: 60, cadre: 22 }
+      - { produit: tissu-kente-ankara-5-5m, x: 89, y: 66, cadre: 28 }
+  - image: top10-indigo-kente-2
+    alt: "Atelier de teinture à l’indigo : boîte de kit de teinture et sachet d’indigo en poudre sur l’établi, housses de coussin shibori bleu indigo qui sèchent sur un séchoir en bois, coussin rayé shibori sur un tabouret."
+    hotspots:
+      - { produit: kit-teinture-indigo-jacquard, x: 16, y: 45, cadre: 26 }
+      - { produit: teinture-indigo-prereduit-jacquard, x: 33, y: 47, cadre: 18 }
+      - { produit: housses-coussin-shibori-indigo-lot-5, x: 74, y: 35, cadre: 30 }
+      - { produit: coussin-shibori-indigo, x: 79, y: 65, cadre: 24 }
 produits:
   - produit: tissu-kente-patchwork-5-5m
     pourquoi: "Un tissu imprimé kente en patchwork, en polyester : 5,5 m sur environ 114 cm de large. C’est un imprimé, pas un kente tissé. Avec cette longueur, on peut tendre un pan de mur, couvrir une table ou coudre des coussins."

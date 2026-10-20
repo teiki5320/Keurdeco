@@ -12,6 +12,7 @@ import { conseilsPublies, imageConseil, tousLesConseils } from './conseils.ts';
 import { chargerDimensions, DOSSIER_IMAGES, imageExiste, texteAlternatif } from './images.ts';
 import { chargerProduits } from './produits.ts';
 import { chargerGlossaire, imageRubrique, introPage } from './rubriques.ts';
+import { ambiancesTop10 } from './top10.ts';
 
 const RACINE = resolve(import.meta.dirname, '..');
 const produits = chargerProduits(resolve(RACINE, 'src/data/produits.json'));
@@ -116,6 +117,7 @@ describe('articles (contenu/articles)', () => {
     const parDate = (a: { publieLe: string; slug: string }, b: { publieLe: string; slug: string }) => a.publieLe.localeCompare(b.publieLe) || a.slug.localeCompare(b.slug);
     const ambiances = [...articles.filter((a) => a.type === 'ambiance').sort(parDate), ...articles.filter((a) => a.type === 'top').sort(parDate)];
     for (const a of ambiances) for (const h of a.hotspots) attendu[h.produit] ??= { article: a.slug, x: h.x, y: h.y, cadre: h.cadre ?? 30 };
+    for (const a of ambiancesTop10()) for (const h of a.hotspots) attendu[h.produit] ??= { article: a.cle, x: h.x, y: h.y, cadre: h.cadre ?? 30 };
     expect(vignettes).toEqual(attendu);
     for (const id of Object.keys(vignettes)) for (const t of [160, 320]) expect(existsSync(resolve(RACINE, 'public/images/produits', `${id}-${t}.webp`)), `${id}-${t}.webp`).toBe(true);
   });

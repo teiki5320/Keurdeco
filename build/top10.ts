@@ -6,7 +6,9 @@
  * En-tête d'un sujet : onglet (libellé court), titre (« Top 10 des … »), description (70 à 180 caractères),
  * ordre, classement_le (date du relevé des notes, AAAA-MM-JJ), image_partage (propre à l'onglet), voir_aussi[]
  * (3 autres onglets), tops_lies[] (pages Top existantes qui renvoient vers cet onglet),
- * produits[] : { produit, pourquoi, ideal_pour } (au moins 10).
+ * produits[] : { produit, pourquoi, ideal_pour } (au moins 10), ambiances[] (facultatif) : images d'ambiance créées par IA
+ * { image, alt, hotspots: [{ produit, x, y, cadre? }] }, points numérotés comme le classement ; les vignettes des
+ * produits en sont découpées (npm run vignettes).
  *
  * Classement : l'ordre de produits[] suit la note moyenne des acheteurs sur Amazon.fr relevée le jour de
  * classement_le ; à égalité, le plus évalué passe devant ; seuls les produits disponibles avec au moins
@@ -24,6 +26,8 @@ import { parse as parseYaml } from 'yaml';
 import { attributsLienAmazon, MENTION_AMAZON } from '../src/amazon.ts';
 import { dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone, iconeObjet } from './icones.ts';
+import { imageArticle } from './images.ts';
+import { MENTION_IA, pointsImage, type Hotspot } from './articles.ts';
 import { echapper, estAffichable, indexProduits, libelleType, type Produit } from './produits.ts';
 
 export const DOSSIER_TOP10 = resolve(import.meta.dirname, '../contenu/top-10');
@@ -47,7 +51,14 @@ export interface SujetTop10 {
   voirAussi: string[];
   topsLies: string[];
   produits: EntreeTop10[];
+  ambiances: AmbianceTop10[];
   corps: string;
+}
+
+export interface AmbianceTop10 {
+  image: string;
+  alt: string;
+  hotspots: Hotspot[];
 }
 
 /** Adresse d'un onglet, relative à la racine du site (sans « .html » : /top-10/<slug>). */
@@ -78,6 +89,15 @@ export function lireSujet(slug: string, source: string): SujetTop10 {
   if (produits.length < NOMBRE) throw erreur(`il faut au moins ${NOMBRE} produits (${produits.length})`);
   for (const p of produits) if (!p.produit || !p.pourquoi || !p.ideal_pour) throw erreur(`« produit », « pourquoi » et « ideal_pour » sont obligatoires (${p.produit || '?'})`);
   if (new Set(produits.map((p) => p.produit)).size !== produits.length) throw erreur('un produit apparaît deux fois');
+  const ambiances = (Array.isArray(e.ambiances) ? e.ambiances : []).map((a: Record<string, unknown>) => ({
+    image: String(a.image ?? '').trim(),
+    alt: String(a.alt ?? '').trim(),
+    hotspots: (Array.isArray(a.hotspots) ? a.hotspots : []).map((h: Record<string, unknown>) => ({ produit: String(h.produit), x: Number(h.x), y: Number(h.y), ...(h.cadre != null ? { cadre: Number(h.cadre) } : {}) })),
+  }));
+  for (const a of ambiances) {
+    if (!a.image || !a.alt || a.hotspots.length === 0) throw erreur('une ambiance demande « image », « alt » et des « hotspots »');
+    for (const h of a.hotspots) if (!produits.some((p) => p.produit === h.produit)) throw erreur(`le point « ${h.produit} » ne désigne pas un produit du sujet`);
+  }
   const corps = m[2].trim();
   if (!/^## Comment choisir/m.test(corps)) throw erreur('section « ## Comment choisir… » manquante');
   const faq = corps.split(/^## Questions fréquentes\s*$/m)[1];
@@ -93,6 +113,7 @@ export function lireSujet(slug: string, source: string): SujetTop10 {
     voirAussi,
     topsLies: Array.isArray(e.tops_lies) ? e.tops_lies.map(String) : [],
     produits,
+    ambiances,
     corps,
   };
 }
@@ -121,6 +142,31 @@ export function sujetsPublies(produits = indexProduits(), sujets = tousLesSujets
 /** Intro d'un onglet : le critère de classement, puis le n° 1. */
 export function introClassement(s: SujetTop10, dix: ReturnType<typeof dixProduits>): string {
   return `Classés selon la note moyenne des acheteurs relevée sur Amazon.fr le ${dateLongue(s.classementLe)} ; à égalité, le produit qui a le plus d’évaluations passe devant, et seuls les produits disponibles avec au moins 10 évaluations sont retenus. Les notes servent à classer mais ne sont pas affichées ; nous n’avons pas testé ces produits. N° 1 : ${dix[0]?.p.nom ?? ''}.`;
+}
+
+/** Images d'ambiance du sujet, avec des points numérotés comme le classement affiché. */
+export function rendreAmbiances(s: SujetTop10, dix: ReturnType<typeof dixProduits>, produits: Map<string, Produit>): string {
+  if (!s.ambiances.length) return '';
+  const rangs = new Map(dix.map((e, i) => [e.p.id, i + 1]));
+  const figures = s.ambiances
+    .map(
+      (a, i) => `<figure class="ambiance">
+          <div class="ambiance__image">
+            ${imageArticle(a.image, a.alt, '(min-width: 800px) 760px, 100vw')}
+            ${pointsImage(`${s.slug}-${i + 1}`, a.hotspots, produits, (id) => rangs.get(id))}
+          </div>
+          <figcaption class="mention-ia">${icone('ia', 'icone icone--petite')} ${MENTION_IA}</figcaption>
+        </figure>`,
+    )
+    .join('\n        ');
+  return `<section class="top10__ambiances" aria-labelledby="en-situation"><h2 id="en-situation">Ces produits en situation</h2>
+        ${figures}
+      </section>`;
+}
+
+/** Images d'ambiance de tous les sujets, dans l'ordre des onglets (pour les vignettes des produits). */
+export function ambiancesTop10(sujets = tousLesSujets()): { cle: string; image: string; hotspots: Hotspot[] }[] {
+  return sujets.flatMap((s) => s.ambiances.map((a) => ({ cle: adresseTop10(s.slug), image: a.image, hotspots: a.hotspots })));
 }
 
 /** Bloc « Voir aussi » : 3 autres onglets publiés. */
@@ -233,6 +279,7 @@ export function sourcePageTop10(s: SujetTop10, sujets: SujetTop10[], produits: M
         <p class="chapo">${echapper(introClassement(s, dix))}</p>
         <p class="mention-amazon mention-amazon--haut">${MENTION_AMAZON} Aucun prix n’est affiché : le prix du jour est sur Amazon.</p>
         ${rendreListe(dix)}
+        ${rendreAmbiances(s, dix, produits)}
         <div class="prose top10__texte-bas">
           ${rendreTexte(s.corps)}
         </div>

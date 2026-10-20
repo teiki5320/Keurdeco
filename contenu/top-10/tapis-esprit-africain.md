@@ -7,6 +7,15 @@ classement_le: "2026-10-19"
 image_partage: top-tapis-esprit-africain
 voir_aussi: [coussins-imprimes-africains, paniers-tresses-africains, luminaires-fibres-naturelles]
 tops_lies: [top-tapis-esprit-africain]
+ambiances:
+  - image: top10-tapis-1
+    alt: "Grand loft aux poutres apparentes : tapis crème à losanges noirs sous le canapé, tapis berbère rouge sous la table basse, tapis carré en patchwork rayé sous la table ronde, petit tapis écru à losanges près du fauteuil et tapis à poils longs crème dans le coin chambre."
+    hotspots:
+      - { produit: tapis-berbere-creme-orange-noir-120x170, x: 31, y: 74, cadre: 22 }
+      - { produit: tapis-berbere-rouge-140x200, x: 52, y: 73, cadre: 28 }
+      - { produit: tapis-berbere-patchwork-carre-160, x: 79, y: 67, cadre: 24 }
+      - { produit: tapis-berbere-ecru-noir-80x150, x: 20, y: 86, cadre: 26 }
+      - { produit: tapis-berbere-losanges-creme, x: 89, y: 63, cadre: 18 }
 produits:
   - produit: tapis-berbere-creme-orange-noir-120x170
     pourquoi: "Un tapis de style berbère à losanges graphiques, crème, orange et noir, de 120 × 170 cm. Il est tissé à la machine, à poils ras, et fabriqué en Turquie : c’est un motif berbère, pas un tapis noué au Maroc. Sa taille convient à une chambre, un bureau ou un coin de salon."

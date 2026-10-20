@@ -6,6 +6,23 @@ ordre: 6
 classement_le: "2026-10-19"
 image_partage: chambre-indigo-lin
 voir_aussi: [coussins-imprimes-africains, indigo-kente, tapis-esprit-africain]
+ambiances:
+  - image: top10-parures-1
+    alt: "Grande chambre d’amis aux murs d’argile : un lit en parure coucher de soleil et éléphant, un lit en parure ocre au profil de femme africaine, une parure crème et moutarde pliée sur le banc, une housse aux palmiers, girafe et éléphant sur le fauteuil, une parure coucher de soleil pliée sur l’étagère."
+    hotspots:
+      - { produit: parure-elephant-africain-200x200, x: 33, y: 60, cadre: 34 }
+      - { produit: housse-couette-femme-africaine-220x240, x: 73, y: 60, cadre: 34 }
+      - { produit: parure-coton-togo-moutarde, x: 21, y: 67, cadre: 20 }
+      - { produit: housse-couette-elephant-girafe-220x240, x: 89, y: 75, cadre: 28 }
+      - { produit: parure-afrique-coucher-soleil-elephant-135x200, x: 53, y: 49, cadre: 18 }
+  - image: top10-parures-2
+    alt: "Chambre d’enfants esprit safari : lit en parure blanche à zèbres et girafes, lit en housse crème aux éléphants, girafes et lions, lit en parure noire à tête de lion, parure aux zèbres, hippopotames et léopards pliée sur le banc, et lit en hauteur à housse orange tribale avec girafe."
+    hotspots:
+      - { produit: parure-enfant-savane-coton-140x200, x: 25, y: 64, cadre: 26 }
+      - { produit: housse-couette-animaux-savane-140x200, x: 58, y: 64, cadre: 28 }
+      - { produit: parure-lion-africain-140x200, x: 82, y: 66, cadre: 30 }
+      - { produit: parure-safari-zebre-leopard-220x240, x: 24, y: 87, cadre: 24 }
+      - { produit: housse-couette-paysage-africain, x: 70, y: 35, cadre: 22 }
 produits:
   - produit: parure-elephant-africain-200x200
     pourquoi: "Une parure de lit au motif d’éléphant africain, en microfibre, avec une housse de 200 × 200 cm et deux taies. L’éléphant donne une ambiance savane à la chambre. La microfibre est facile d’entretien. Une parure qui plaira aux amoureux des animaux."

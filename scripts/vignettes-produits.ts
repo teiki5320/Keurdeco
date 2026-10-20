@@ -11,6 +11,7 @@ import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:
 import { resolve } from 'node:path';
 import sharp from 'sharp';
 import { tousLesArticles } from '../build/articles.ts';
+import { ambiancesTop10 } from '../build/top10.ts';
 
 const RACINE = resolve(import.meta.dirname, '..');
 const SORTIE = resolve(RACINE, 'public/images/produits');
@@ -24,13 +25,17 @@ for (const f of readdirSync(SORTIE)) rmSync(resolve(SORTIE, f));
 // de la première image où il apparaît.
 const parDate = (a: { publieLe: string; slug: string }, b: { publieLe: string; slug: string }) => a.publieLe.localeCompare(b.publieLe) || a.slug.localeCompare(b.slug);
 const articles = tousLesArticles();
-const ambiances = [...articles.filter((a) => a.type === 'ambiance').sort(parDate), ...articles.filter((a) => a.type === 'top').sort(parDate)];
+// Puis les images d'ambiance des onglets du Top 10 (clé « top-10/<sujet> »).
+const ambiances = [
+  ...[...articles.filter((a) => a.type === 'ambiance').sort(parDate), ...articles.filter((a) => a.type === 'top').sort(parDate)].map((a) => ({ cle: a.slug, image: a.image, hotspots: a.hotspots })),
+  ...ambiancesTop10(),
+];
 
 const vignettes: Record<string, { article: string; x: number; y: number; cadre: number }> = {};
 for (const a of ambiances) {
   const source = resolve(RACINE, 'contenu/images', `${a.image}.jpg`);
   if (!existsSync(source)) {
-    console.log(`⚠ ${a.slug} : source ${a.image}.jpg absente, ignorée`);
+    console.log(`⚠ ${a.cle} : source ${a.image}.jpg absente, ignorée`);
     continue;
   }
   const { width = 0, height = 0 } = await sharp(source).metadata();
@@ -47,7 +52,7 @@ for (const a of ambiances) {
         .webp({ quality: 74 })
         .toFile(resolve(SORTIE, `${h.produit}-${taille}.webp`));
     }
-    vignettes[h.produit] = { article: a.slug, x: h.x, y: h.y, cadre };
+    vignettes[h.produit] = { article: a.cle, x: h.x, y: h.y, cadre };
   }
 }
 

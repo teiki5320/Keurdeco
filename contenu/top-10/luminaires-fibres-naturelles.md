@@ -7,6 +7,14 @@ classement_le: "2026-10-19"
 image_partage: luminaires-tresses
 voir_aussi: [decos-murales, paniers-tresses-africains, tapis-esprit-africain]
 tops_lies: [top-luminaires-tresses]
+ambiances:
+  - image: top10-luminaires-1
+    alt: "Chambre le soir : deux appliques en bois et rotin au-dessus du lit, lampe lanterne en bambou tressé sur la table de chevet, grande suspension plate en jute tressé au plafond et deux lampes en rotin sur la commode."
+    hotspots:
+      - { produit: appliques-bois-rotin-lot-2, x: 21, y: 34, cadre: 18 }
+      - { produit: lampe-lanterne-bambou, x: 10, y: 61, cadre: 18 }
+      - { produit: suspension-jute-alara-70, x: 56, y: 15, cadre: 26 }
+      - { produit: lampes-chevet-rotin-lot-2, x: 78, y: 46, cadre: 22 }
 produits:
   - produit: lampes-chevet-rotin-lot-2
     pourquoi: "Deux lampes de chevet bohèmes en rotin. Le lot de deux habille les deux côtés du lit à l’identique. Le rotin donne une lumière tamisée, idéale pour le soir. Une façon simple d’apporter la vannerie dans la chambre."

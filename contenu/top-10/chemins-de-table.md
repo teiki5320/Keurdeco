@@ -6,6 +6,21 @@ ordre: 1
 classement_le: "2026-10-19"
 image_partage: top-table-mariage-africain
 voir_aussi: [nappes-sets-de-table, indigo-kente, paniers-tresses-africains]
+ambiances:
+  - image: top10-chemins-de-table-1
+    alt: "Salle à manger lumineuse aux tomettes : sur le buffet, un chemin de table façon bogolan rouille et brun ; sur la grande table, un chemin noir à carrés verts, rouges et jaunes ; sur la console, un chemin kente orange et vert ; sur le banc, un chemin noir à carte de l’Afrique."
+    hotspots:
+      - { produit: chemin-table-tribal-geometrique-33x152, x: 14, y: 62, cadre: 26 }
+      - { produit: chemin-table-geometrique-africain-33x183, x: 59, y: 58, cadre: 24 }
+      - { produit: chemin-table-kwanzaa-lin, x: 92, y: 48, cadre: 20 }
+      - { produit: chemin-table-mois-histoire-noire-lin, x: 77, y: 76, cadre: 30 }
+  - image: top10-chemins-de-table-2
+    alt: "Salon-salle à manger aux murs d’argile : chemin brun façon bogolan sur la table en bois, chemin à masques jaunes et rouges sur le buffet, petit chemin léopard, zèbre et carreaux sur la table basse, chemin rouge et or à tambours sur le coffre sculpté."
+    hotspots:
+      - { produit: chemin-table-totems-lin, x: 12, y: 55, cadre: 22 }
+      - { produit: chemin-table-tissu-de-boue-33x178, x: 40, y: 56, cadre: 22 }
+      - { produit: chemin-table-faune-africaine-33x91, x: 25, y: 85, cadre: 26 }
+      - { produit: chemin-table-tambour-africain-33x91, x: 83, y: 74, cadre: 26 }
 produits:
   - produit: chemin-table-geometrique-africain-33x183
     pourquoi: "Un chemin de table à motifs géométriques africains, en polyester, de 33 × 183 cm. Le polyester se lave facilement, ce qui en fait un chemin pour tous les jours. Les motifs géométriques se marient avec une vaisselle unie. Un choix pratique."

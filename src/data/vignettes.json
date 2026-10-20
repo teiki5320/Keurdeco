@@ -5,6 +5,12 @@
     "y": 26,
     "cadre": 30
   },
+  "appliques-bois-rotin-lot-2": {
+    "article": "top-10/luminaires-fibres-naturelles",
+    "x": 21,
+    "y": 34,
+    "cadre": 18
+  },
   "assiettes-murales-tressees": {
     "article": "salon-terracotta-wax",
     "x": 51,
@@ -125,11 +131,29 @@
     "y": 56,
     "cadre": 30
   },
+  "chemin-table-faune-africaine-33x91": {
+    "article": "top-10/chemins-de-table",
+    "x": 25,
+    "y": 85,
+    "cadre": 26
+  },
+  "chemin-table-geometrique-africain-33x183": {
+    "article": "top-10/chemins-de-table",
+    "x": 59,
+    "y": 58,
+    "cadre": 24
+  },
   "chemin-table-kente-lin": {
     "article": "salon-touches-kente",
     "x": 38,
     "y": 80,
     "cadre": 30
+  },
+  "chemin-table-kwanzaa-lin": {
+    "article": "top-10/chemins-de-table",
+    "x": 92,
+    "y": 48,
+    "cadre": 20
   },
   "chemin-table-lin-orange-pompons": {
     "article": "top-nappes-wax",
@@ -137,11 +161,29 @@
     "y": 59,
     "cadre": 20
   },
+  "chemin-table-mois-histoire-noire-lin": {
+    "article": "top-10/chemins-de-table",
+    "x": 77,
+    "y": 76,
+    "cadre": 30
+  },
+  "chemin-table-tambour-africain-33x91": {
+    "article": "top-10/chemins-de-table",
+    "x": 83,
+    "y": 74,
+    "cadre": 26
+  },
   "chemin-table-terracotta-glands": {
     "article": "cuisine-terre-cuite-paniers",
     "x": 52,
     "y": 82,
     "cadre": 30
+  },
+  "chemin-table-tissu-de-boue-33x178": {
+    "article": "top-10/chemins-de-table",
+    "x": 40,
+    "y": 56,
+    "cadre": 22
   },
   "chemin-table-totems-lin": {
     "article": "top-nappes-wax",
@@ -154,6 +196,12 @@
     "x": 50,
     "y": 89,
     "cadre": 30
+  },
+  "chemin-table-tribal-geometrique-33x152": {
+    "article": "top-10/chemins-de-table",
+    "x": 14,
+    "y": 62,
+    "cadre": 26
   },
   "chemins-table-gaze-terracotta-lot-6": {
     "article": "bapteme-decoration-africaine",
@@ -215,6 +263,12 @@
     "y": 17,
     "cadre": 30
   },
+  "coussin-afrique-patchwork-40": {
+    "article": "top-10/coussins-imprimes-africains",
+    "x": 15,
+    "y": 64,
+    "cadre": 24
+  },
   "coussin-bogolan": {
     "article": "balcon-boheme-africain",
     "x": 68,
@@ -226,6 +280,12 @@
     "x": 64,
     "y": 57,
     "cadre": 30
+  },
+  "coussin-portrait-femme-africaine-40": {
+    "article": "top-10/coussins-imprimes-africains",
+    "x": 31,
+    "y": 59,
+    "cadre": 22
   },
   "coussin-shibori-indigo": {
     "article": "chambre-indigo-lin",
@@ -262,6 +322,12 @@
     "x": 28,
     "y": 61,
     "cadre": 18
+  },
+  "coussins-femme-africaine-lin-lot-4": {
+    "article": "top-10/coussins-imprimes-africains",
+    "x": 49,
+    "y": 56,
+    "cadre": 24
   },
   "coussins-kuba-lot-4": {
     "article": "top-coussins-wax",
@@ -365,11 +431,35 @@
     "y": 42,
     "cadre": 30
   },
+  "housse-couette-animaux-savane-140x200": {
+    "article": "top-10/parures-de-lit",
+    "x": 58,
+    "y": 64,
+    "cadre": 28
+  },
   "housse-couette-coton-denim": {
     "article": "chambre-indigo-lin",
     "x": 40,
     "y": 70,
     "cadre": 30
+  },
+  "housse-couette-elephant-girafe-220x240": {
+    "article": "top-10/parures-de-lit",
+    "x": 89,
+    "y": 75,
+    "cadre": 28
+  },
+  "housse-couette-femme-africaine-220x240": {
+    "article": "top-10/parures-de-lit",
+    "x": 73,
+    "y": 60,
+    "cadre": 34
+  },
+  "housse-couette-paysage-africain": {
+    "article": "top-10/parures-de-lit",
+    "x": 70,
+    "y": 35,
+    "cadre": 22
   },
   "housses-coussin-imprime-kente-lot-2": {
     "article": "balcon-lanternes-kente",
@@ -377,11 +467,29 @@
     "y": 48,
     "cadre": 30
   },
+  "housses-coussin-kente-boucles-dorees-lot-4": {
+    "article": "top-10/indigo-kente",
+    "x": 47,
+    "y": 60,
+    "cadre": 22
+  },
+  "housses-coussin-shibori-indigo-lot-5": {
+    "article": "top-10/indigo-kente",
+    "x": 74,
+    "y": 35,
+    "cadre": 30
+  },
   "jarre-terre-cuite-toscane": {
     "article": "balcon-boheme-africain",
     "x": 19,
     "y": 75,
     "cadre": 30
+  },
+  "kit-teinture-indigo-jacquard": {
+    "article": "top-10/indigo-kente",
+    "x": 16,
+    "y": 45,
+    "cadre": 26
   },
   "lampadaire-fibres-naturelles-bijie": {
     "article": "top-luminaires-tresses",
@@ -400,6 +508,12 @@
     "x": 84,
     "y": 21,
     "cadre": 30
+  },
+  "lampe-lanterne-bambou": {
+    "article": "top-10/luminaires-fibres-naturelles",
+    "x": 10,
+    "y": 61,
+    "cadre": 18
   },
   "lampes-chevet-ceramique-lot-2": {
     "article": "chambre-indigo-lin",
@@ -437,6 +551,12 @@
     "y": 77,
     "cadre": 30
   },
+  "masque-zebre-bois-sculpte": {
+    "article": "top-10/bois-sculpte",
+    "x": 51,
+    "y": 24,
+    "cadre": 36
+  },
   "miroir-soleil-rotin-58": {
     "article": "entree-paniers-miroir-raphia",
     "x": 43,
@@ -455,16 +575,52 @@
     "y": 17,
     "cadre": 30
   },
+  "nappe-carree-tribale-140": {
+    "article": "top-10/nappes-sets-de-table",
+    "x": 54,
+    "y": 78,
+    "cadre": 26
+  },
+  "nappe-femme-africaine-152x213": {
+    "article": "top-10/nappes-sets-de-table",
+    "x": 30,
+    "y": 62,
+    "cadre": 26
+  },
   "nappe-impermeable-tribale": {
     "article": "top-nappes-wax",
     "x": 89,
     "y": 66,
     "cadre": 20
   },
+  "nappe-imprime-girafe-152x213": {
+    "article": "top-10/nappes-sets-de-table",
+    "x": 77,
+    "y": 58,
+    "cadre": 22
+  },
   "nappe-lin-geometrique": {
     "article": "top-nappes-wax",
     "x": 27,
     "y": 55,
+    "cadre": 18
+  },
+  "nappe-ronde-femme-africaine": {
+    "article": "top-10/nappes-sets-de-table",
+    "x": 17,
+    "y": 47,
+    "cadre": 30
+  },
+  "nappe-ronde-tribale-150": {
+    "article": "top-10/nappes-sets-de-table",
+    "x": 90,
+    "y": 42,
+    "cadre": 24
+  },
+  "nappe-tribale-rayures-africaines-137x183": {
+    "article": "top-10/nappes-sets-de-table",
+    "x": 54,
+    "y": 47,
     "cadre": 18
   },
   "pampa-sechee-bouquet": {
@@ -479,11 +635,23 @@
     "y": 79,
     "cadre": 30
   },
+  "panier-all-across-africa-mineral": {
+    "article": "top-10/paniers-tresses-africains",
+    "x": 60,
+    "y": 24,
+    "cadre": 38
+  },
   "panier-bolga-marche": {
     "article": "balcon-boheme-africain",
     "x": 67,
     "y": 84,
     "cadre": 30
+  },
+  "panier-bolga-petit-20": {
+    "article": "top-10/paniers-tresses-africains",
+    "x": 45,
+    "y": 58,
+    "cadre": 22
   },
   "panier-jouets-tresse": {
     "article": "chambre-indigo-lin",
@@ -563,11 +731,47 @@
     "y": 47,
     "cadre": 30
   },
+  "parure-afrique-coucher-soleil-elephant-135x200": {
+    "article": "top-10/parures-de-lit",
+    "x": 53,
+    "y": 49,
+    "cadre": 18
+  },
+  "parure-coton-togo-moutarde": {
+    "article": "top-10/parures-de-lit",
+    "x": 21,
+    "y": 67,
+    "cadre": 20
+  },
+  "parure-elephant-africain-200x200": {
+    "article": "top-10/parures-de-lit",
+    "x": 33,
+    "y": 60,
+    "cadre": 34
+  },
+  "parure-enfant-savane-coton-140x200": {
+    "article": "top-10/parures-de-lit",
+    "x": 25,
+    "y": 64,
+    "cadre": 26
+  },
   "parure-gaze-coton-terracotta": {
     "article": "chambre-saint-valentin-terracotta",
     "x": 55,
     "y": 62,
     "cadre": 30
+  },
+  "parure-lion-africain-140x200": {
+    "article": "top-10/parures-de-lit",
+    "x": 82,
+    "y": 66,
+    "cadre": 30
+  },
+  "parure-safari-zebre-leopard-220x240": {
+    "article": "top-10/parures-de-lit",
+    "x": 24,
+    "y": 87,
+    "cadre": 24
   },
   "pateres-chene-lot-4": {
     "article": "entree-paniers-miroir-raphia",
@@ -677,11 +881,29 @@
     "y": 75,
     "cadre": 30
   },
+  "sets-table-elephant-africain-lot-4": {
+    "article": "top-10/nappes-sets-de-table",
+    "x": 30,
+    "y": 81,
+    "cadre": 26
+  },
+  "sets-table-girafe-elephant-lot-4": {
+    "article": "top-10/nappes-sets-de-table",
+    "x": 37,
+    "y": 54,
+    "cadre": 18
+  },
   "sets-table-jacinthe-lot-6": {
     "article": "table-tabaski",
     "x": 28,
     "y": 76,
     "cadre": 30
+  },
+  "sets-table-jute-geometriques-lot-6": {
+    "article": "top-10/nappes-sets-de-table",
+    "x": 80,
+    "y": 78,
+    "cadre": 26
   },
   "sous-verres-rotin-lot-6": {
     "article": "top-cadeaux-deco-africaine",
@@ -694,6 +916,12 @@
     "x": 76,
     "y": 88,
     "cadre": 30
+  },
+  "statue-girafe-bois-60": {
+    "article": "top-10/bois-sculpte",
+    "x": 78,
+    "y": 52,
+    "cadre": 55
   },
   "suspension-bambou-tess-58": {
     "article": "top-luminaires-tresses",
@@ -724,6 +952,12 @@
     "x": 42,
     "y": 26,
     "cadre": 22
+  },
+  "table-appoint-manguier-laiton": {
+    "article": "top-10/bois-sculpte",
+    "x": 54,
+    "y": 72,
+    "cadre": 36
   },
   "table-appoint-racine-teck": {
     "article": "top-tabourets-bois-sculpte",
@@ -797,6 +1031,36 @@
     "y": 91,
     "cadre": 22
   },
+  "tapis-berbere-creme-orange-noir-120x170": {
+    "article": "top-10/tapis-esprit-africain",
+    "x": 31,
+    "y": 74,
+    "cadre": 22
+  },
+  "tapis-berbere-ecru-noir-80x150": {
+    "article": "top-10/tapis-esprit-africain",
+    "x": 20,
+    "y": 86,
+    "cadre": 26
+  },
+  "tapis-berbere-losanges-creme": {
+    "article": "top-10/tapis-esprit-africain",
+    "x": 89,
+    "y": 63,
+    "cadre": 18
+  },
+  "tapis-berbere-patchwork-carre-160": {
+    "article": "top-10/tapis-esprit-africain",
+    "x": 79,
+    "y": 67,
+    "cadre": 24
+  },
+  "tapis-berbere-rouge-140x200": {
+    "article": "top-10/tapis-esprit-africain",
+    "x": 52,
+    "y": 73,
+    "cadre": 28
+  },
   "tapis-couloir-kilim-chindi": {
     "article": "entree-paniers-miroir-raphia",
     "x": 47,
@@ -851,6 +1115,12 @@
     "y": 95,
     "cadre": 30
   },
+  "teinture-indigo-prereduit-jacquard": {
+    "article": "top-10/indigo-kente",
+    "x": 33,
+    "y": 47,
+    "cadre": 18
+  },
   "tete-de-lit-rotin-160": {
     "article": "chambre-indigo-lin",
     "x": 52,
@@ -862,6 +1132,18 @@
     "x": 20,
     "y": 55,
     "cadre": 30
+  },
+  "tissu-kente-ankara-5-5m": {
+    "article": "top-10/indigo-kente",
+    "x": 89,
+    "y": 66,
+    "cadre": 28
+  },
+  "tissu-kente-patchwork-5-5m": {
+    "article": "top-10/indigo-kente",
+    "x": 20,
+    "y": 38,
+    "cadre": 34
   },
   "vase-ceramique-noir-mat": {
     "article": "entree-rideau-perles",

@@ -7,10 +7,24 @@ classement_le: "2026-10-19"
 image_partage: coussins-imprimes-africains
 voir_aussi: [parures-de-lit, tapis-esprit-africain, indigo-kente]
 tops_lies: [top-coussins-wax]
+ambiances:
+  - image: top10-coussins-1
+    alt: "Salon au mur terre cuite : canapé crème avec un coussin patchwork « Africa », un coussin au portrait de femme africaine au foulard coloré et des coussins aux silhouettes de femmes africaines sur un coucher de soleil ; deux coussins façon bogolan sur le fauteuil en bois."
+    hotspots:
+      - { produit: coussin-afrique-patchwork-40, x: 15, y: 64, cadre: 24 }
+      - { produit: coussin-portrait-femme-africaine-40, x: 31, y: 59, cadre: 22 }
+      - { produit: coussins-femme-africaine-lin-lot-4, x: 49, y: 56, cadre: 24 }
+      - { produit: coussin-bogolan, x: 89, y: 64, cadre: 24 }
 produits:
+  - produit: coussin-afrique-patchwork-40
+    pourquoi: "Une housse de coussin de 40 × 40 cm en patchwork de motifs africains : bandes façon bogolan, imprimé léopard, silhouettes d’éléphant et de girafe et le mot « Africa ». Elle est vendue sans garnissage ; la fiche la dit épaisse, douce et facile à laver."
+    ideal_pour: "un canapé ou un fauteuil, pour un coussin qui annonce la couleur."
   - produit: coussin-tribal-coton-lin
     pourquoi: "Une housse de coussin tribale en coton et lin, au format 45 × 45 cm. Son motif coloré réveille un canapé uni. Une seule suffit pour apporter une touche africaine. Elle se mélange facilement avec des coussins unis."
     ideal_pour: "ajouter une touche colorée à un ensemble de coussins unis."
+  - produit: coussin-portrait-femme-africaine-40
+    pourquoi: "Une housse de coussin de 40 × 40 cm, imprimée du portrait d’une femme africaine coiffée d’un foulard aux couleurs vives. Elle est vendue sans garnissage. Ce portrait très coloré suffit à habiller un canapé uni."
+    ideal_pour: "un canapé uni qui a besoin d’un point de couleur."
   - produit: coussins-femme-africaine-lin-lot-4
     pourquoi: "Quatre housses de coussin en lin, avec des portraits de femmes africaines. Les portraits sont plus illustratifs que les motifs textiles : ils racontent une histoire. Sur un canapé uni, ils deviennent le centre de l’attention. Gardez le reste de la pièce sobre pour les mettre en valeur."
     ideal_pour: "ceux qui aiment les portraits et les coussins qui se remarquent."
@@ -23,9 +37,6 @@ produits:
   - produit: coussins-kuba-lot-4
     pourquoi: "Quatre housses de coussin à motifs kuba, au format 45 × 45 cm. Les motifs kuba viennent des tissus en raphia du Congo, très géométriques. Les tons naturels et noirs restent sobres. Un lot pratique pour habiller un canapé ou un banc."
     ideal_pour: "ceux qui aiment les motifs géométriques dans des tons neutres."
-  - produit: coussin-divinite-fertilite
-    pourquoi: "Une housse de coussin en coton et lin, avec un motif de divinité africaine de la fertilité. Le motif rappelle les statuettes en bois sculpté. Elle se marie avec les objets en bois et les tons terre. Un coussin original, qui fait parler."
-    ideal_pour: "ceux qui aiment les objets inspirés de l’art africain."
   - produit: housses-coussin-imprime-kente-lot-2
     pourquoi: "Deux housses de coussin à imprimé kente, en rouge, vert et jaune, au grand format 60 × 60 cm. Le kente est le tissu des rois du Ghana, reconnaissable à ses bandes colorées. Ces couleurs vives donnent tout de suite un point fort à un canapé ou un lit. C’est un imprimé, pas un kente tissé."
     ideal_pour: "ceux qui aiment les couleurs franches et veulent un vrai point fort."
@@ -35,9 +46,6 @@ produits:
   - produit: coussin-wax-cercles-safran
     pourquoi: "Un lot de quatre housses de coussin à imprimé africain, dans des tons safran, terracotta et indigo. Ces trois couleurs se marient bien entre elles et avec les murs couleur terre. Le lot de quatre permet d’habiller un grand canapé d’un coup. Un bon choix pour une ambiance chaude."
     ideal_pour: "habiller un grand canapé avec des coussins assortis."
-  - produit: coussin-femme-africaine-jute
-    pourquoi: "Une housse de coussin en toile de coton et lin, avec une femme africaine. La toile de coton et lin, d’aspect naturel, va bien avec le rotin et le bois. Une seule housse peut accompagner des coussins unis ou à motifs discrets. Un bon complément au lot de portraits n° 8."
-    ideal_pour: "ajouter un seul portrait à un ensemble de coussins existant."
 ---
 
 ## Comment choisir ses coussins à imprimés africains

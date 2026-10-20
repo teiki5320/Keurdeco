@@ -1093,8 +1093,8 @@
       "salon",
       "chambre"
     ],
-    "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "statut": "indisponible",
+    "verifie_le": "2026-10-20"
   },
   {
     "id": "coussins-ethniques-geometriques-lot-4",
@@ -3861,5 +3861,44 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-10-19"
+  },
+  {
+    "id": "coussin-afrique-patchwork-40",
+    "asin": "B0BX66JBYW",
+    "nom": "Housse de coussin patchwork « Africa », éléphant, girafe et motifs africains, 40 × 40 cm",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-20"
+  },
+  {
+    "id": "coussin-portrait-femme-africaine-40",
+    "asin": "B0CSM6GKDY",
+    "nom": "Housse de coussin portrait de femme africaine au foulard coloré, 40 × 40 cm",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-20"
+  },
+  {
+    "id": "sets-table-elephant-africain-lot-4",
+    "asin": "B0F62RYGMR",
+    "nom": "Sets de table motif éléphant d’Afrique, 30 × 45 cm, lot de 4",
+    "type_objet": "nappe",
+    "matieres": [],
+    "couleurs": [],
+    "pieces": [
+      "cuisine-salle-a-manger"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-10-20"
   }
 ]

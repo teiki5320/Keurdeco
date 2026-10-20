@@ -462,5 +462,57 @@
   "top-tapis-esprit-africain": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "top10-bois-sculpte-1": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-chemins-de-table-1": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-chemins-de-table-2": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-coussins-1": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-indigo-kente-1": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-indigo-kente-2": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-luminaires-1": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-nappes-1": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-nappes-2": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-paniers-1": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-parures-1": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-parures-2": {
+    "largeur": 1600,
+    "hauteur": 1073
+  },
+  "top10-tapis-1": {
+    "largeur": 1600,
+    "hauteur": 1073
   }
 }
