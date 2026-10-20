@@ -23,7 +23,8 @@ const SANDBOX = env.PINTEREST_SANDBOX === '1';
 const FICHIER_ETAT = resolve(RACINE, SANDBOX ? 'data/pinterest-etat-sandbox.json' : 'data/pinterest-etat.json');
 const config = lireJson(resolve(RACINE, 'config/pinterest.json'), {});
 const tableaux = lireJson(resolve(RACINE, 'config/tableaux-pinterest.json'), { tableaux: {} });
-const MAX = Number(env.PINTEREST_MAX ?? config.max_par_execution ?? 5);
+// Variable GitHub absente : le workflow passe une chaîne vide, qui ne doit pas devenir « 0 épingle ».
+const MAX = Number(env.PINTEREST_MAX || config.max_par_execution || 5);
 
 async function lireManifeste() {
   const local = resolve(RACINE, 'public', config.manifeste ?? 'epingles.json');
