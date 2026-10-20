@@ -863,6 +863,51 @@
       "mode": "import-csv",
       "publie_le": "2026-11-18",
       "confirme_le": "2026-10-19T09:56:32.199Z"
+    },
+    {
+      "id": "conseil-entretenir-tissu-bogolan-1",
+      "slug": "conseil-entretenir-tissu-bogolan",
+      "pin_id": "1085719422761721850",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-20",
+      "publie_a": "2026-10-20T12:44:20.808Z"
+    },
+    {
+      "id": "conseil-hauteur-suspension-jute-1",
+      "slug": "conseil-hauteur-suspension-jute",
+      "pin_id": "1085719422761721852",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-20",
+      "publie_a": "2026-10-20T12:44:23.099Z"
+    },
+    {
+      "id": "conseil-lampe-deco-africaine-1",
+      "slug": "conseil-lampe-deco-africaine",
+      "pin_id": "1085719422761721858",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-20",
+      "publie_a": "2026-10-20T12:44:25.343Z"
+    },
+    {
+      "id": "conseil-melanger-imprimes-africains-1",
+      "slug": "conseil-melanger-imprimes-africains",
+      "pin_id": "1085719422761721859",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-20",
+      "publie_a": "2026-10-20T12:44:27.654Z"
+    },
+    {
+      "id": "conseil-motifs-bogolan-signification-1",
+      "slug": "conseil-motifs-bogolan-signification",
+      "pin_id": "1085719422761721861",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-20",
+      "publie_a": "2026-10-20T12:44:29.857Z"
     }
   ]
 }
