@@ -28,12 +28,15 @@ classement:
   - produit: coussins-ethniques-geometriques-lot-4
     pourquoi: "Quatre motifs géométriques ethniques différents dans une même gamme de couleurs : le lot le plus facile pour mélanger les imprimés sans fausse note."
     a_savoir: "Elles sont en polyester : moins naturelles que le coton, mais très faciles à laver."
-  - produit: coussin-femme-africaine-jute
-    pourquoi: "Une silhouette de femme africaine sur une toile d’aspect jute : un coussin unique à poser seul sur un fauteuil."
-    a_savoir: "La toile a un grain marqué : c’est un coussin de décoration plus qu’un coussin de sieste."
   - produit: coussin-wax-cercles-safran
     pourquoi: "Un lot de quatre housses aux silhouettes africaines stylisées, pour habiller un grand canapé d’angle d’un coup."
     a_savoir: "Taille 45 × 45 cm, en polyester et lin : un bon compromis entre l’aspect du lin et la facilité d’entretien."
+  - produit: coussin-afrique-patchwork-40
+    pourquoi: "Un patchwork de motifs africains sur une seule housse : bandes façon bogolan, imprimé léopard, silhouettes d’éléphant et de girafe, et le mot « Africa »."
+    a_savoir: "Format 40 × 40 cm, vendue sans garnissage : un coussin qui se suffit à lui-même, à associer à des coussins unis."
+  - produit: coussin-portrait-femme-africaine-40
+    pourquoi: "Le portrait d’une femme africaine coiffée d’un foulard aux couleurs vives : le coussin le plus coloré de la sélection."
+    a_savoir: "Format 40 × 40 cm, vendue sans garnissage : posez-la sur un canapé uni pour que le portrait ressorte."
   - produit: coussin-wax-vert-baobab
     pourquoi: "Pour avoir de vrais coussins en wax, le plus sûr est de les coudre : huit coupons de wax pour des housses uniques."
     a_savoir: "Chaque coupon mesure 50 × 40 cm : il en faut deux pour une housse de 40 × 40 cm, ou un seul pour le devant avec un dos uni."
