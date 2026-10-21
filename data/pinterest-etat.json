@@ -908,6 +908,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-20",
       "publie_a": "2026-10-20T12:44:29.857Z"
+    },
+    {
+      "id": "conseil-hauteur-cadre-textile-1",
+      "slug": "conseil-hauteur-cadre-textile",
+      "pin_id": "1085719422761809744",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-21",
+      "publie_a": "2026-10-21T12:56:51.249Z"
+    },
+    {
+      "id": "conseil-nettoyer-tapis-jute-1",
+      "slug": "conseil-nettoyer-tapis-jute",
+      "pin_id": "1085719422761809747",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-21",
+      "publie_a": "2026-10-21T12:56:53.524Z"
+    },
+    {
+      "id": "conseil-objets-africains-salon-sans-effet-musee-1",
+      "slug": "conseil-objets-africains-salon-sans-effet-musee",
+      "pin_id": "1085719422761809750",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-21",
+      "publie_a": "2026-10-21T12:56:55.837Z"
+    },
+    {
+      "id": "conseil-origine-wax-1",
+      "slug": "conseil-origine-wax",
+      "pin_id": "1085719422761809754",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-21",
+      "publie_a": "2026-10-21T12:56:58.212Z"
+    },
+    {
+      "id": "conseil-panier-bolga-1",
+      "slug": "conseil-panier-bolga",
+      "pin_id": "1085719422761809760",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-21",
+      "publie_a": "2026-10-21T12:57:00.675Z"
     }
   ]
 }
