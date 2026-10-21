@@ -52,9 +52,6 @@ produits:
   - produit: housses-coussin-shibori-indigo-lot-5
     pourquoi: "Cinq housses de coussin teintes en shibori indigo, en coton, de 40 × 40 cm, avec fermeture éclair. Le lot suffit pour un canapé entier. Les garnitures ne sont pas fournies ; la fiche conseille de les laver à la main, seules, à l’eau froide."
     ideal_pour: "habiller tout un canapé en bleu indigo."
-  - produit: housse-coussin-shibori-indigo-jaipur
-    pourquoi: "Une housse de coussin en coton teinte en shibori, la technique qui consiste à nouer le tissu avant la teinture, dans des tons indigo. Elle mesure 40,6 × 40,6 cm. Elle complète les autres coussins shibori de cette sélection."
-    ideal_pour: "compléter un canapé en bleu indigo."
 ---
 
 ## Comment choisir ses objets en indigo et kente
