@@ -104,7 +104,7 @@ Les articles sont publiés à leur date : le site est reconstruit à chaque push
 npm run images -- ~/Images/nouvelles     # <nom>.png|jpg → images du site, image de partage, source HD
 ```
 
-Produit `public/images/articles/<nom>-800.webp` et `-1600.webp` (proportions conservées), `public/images/partage/<nom>.jpg` (1200 × 630) et `contenu/images/<nom>.jpg` (2400 px max, pour les épingles), et enregistre les dimensions dans `src/data/images.json`. Les trois articles de départ utilisent des **illustrations provisoires** dessinées par `scripts/illustrations-provisoires.ts`, à remplacer par les images OpenArt.
+Produit `public/images/articles/<nom>-800.webp` et `-1600.webp` (proportions conservées), `public/images/partage/<nom>.jpg` (1200 × 630) et `contenu/images/<nom>.jpg` (2400 px max, pour les épingles), et enregistre les dimensions dans `src/data/images.json`. Les 39 articles utilisent des images d'ambiance créées par IA avec OpenArt (`image_ia: true`, mention affichée sous l'image) ; les illustrations provisoires de départ (`scripts/illustrations-provisoires.ts`) ne servent plus.
 
 ### Rapport de build
 
@@ -112,7 +112,7 @@ Chaque build affiche : les articles programmés à venir, les produits `a_select
 
 ## Conseils
 
-Onglet « Conseils », comme sur OptiLED et Alohash : une question pratique par page (entretenir, associer, choisir, accrocher, comprendre), publiée à sa date.
+Onglet « Conseils », comme sur Kultiled et Keur Cook : une question pratique par page (entretenir, associer, choisir, accrocher, comprendre), publiée à sa date.
 
 - Un fichier par conseil : `contenu/conseils/<slug>.md` (en-tête YAML : `titre` = la question, `description`, `publie_le`, `theme`, `reponse` = réponse courte affichée en tête, `matieres[]` et `epingles[]` facultatifs). `{{produit: <id>}}` insère un encadré produit.
 - Pages générées par `build/conseils.ts` : `conseils.html` (par thème) et `conseil-<slug>.html` (réponse courte, données structurées FAQ, conseils proches).
@@ -123,7 +123,7 @@ Onglet « Conseils », comme sur OptiLED et Alohash : une question pratique par 
 
 `src/data/produits.json` : `id`, `asin` (ou `null`), `nom`, `type_objet`, `matieres[]`, `couleurs[]`, `pieces[]`, `statut` (`a_selectionner` | `actif` | `indisponible`), `verifie_le`.
 
-Comme sur OptiLED : les produits sont relevés à la main sur Amazon.fr, sans API ni synchronisation automatique. Vérification mensuelle (disponibilité) : le rapport de build liste les produits non vérifiés depuis plus de 60 jours.
+Comme sur Kultiled : les produits sont relevés à la main sur Amazon.fr, sans API ni synchronisation automatique. Vérification mensuelle (disponibilité) : le rapport de build liste les produits non vérifiés depuis plus de 60 jours.
 
 Règles (vérifiées par les tests) :
 
@@ -142,7 +142,8 @@ Tout est détaillé dans [`docs/pinterest.md`](docs/pinterest.md), y compris les
 - **Sur le site** : Open Graph complet + données structurées `Article` (Rich Pins), balise `p:domain_verify` (variable `PINTEREST_VERIFY`), bouton « Épingler » sans script externe.
 - **Au build** (`scripts/epingles.ts`, sharp) : pour chaque article publié, une épingle 1000 × 1500 JPG par titre de `epingles[]`, 4 gabarits qui alternent (bandeau haut, bandeau bas, cadre, split) ; sortie `public/epingles/<slug>-<n>.jpg` et manifeste `epingles.json` (slug, image, titre, description avec mots-clés, lien avec `utm_source=pinterest`, tableau).
 - **Publication** (`scripts/pinterest-publier.mjs`, workflow quotidien 7 h 17 UTC) : lit le manifeste publié et `data/pinterest-etat.json`, publie au plus 5 épingles (config) sans deux épingles du même article le même jour, `POST /v5/pins` avec `media_source` `image_url`, tableau choisi via `config/tableaux-pinterest.json`, puis commit de l'état sur `main`. Le workflow échoue si un tableau n'a pas de `board_id`, et ouvre un ticket GitHub quand Pinterest renouvelle le refresh token (à recopier dans le secret). OAuth : `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, `PINTEREST_REFRESH_TOKEN` (jeton d'accès renouvelé automatiquement). `PINTEREST_SANDBOX=1` : `https://api-sandbox.pinterest.com`. Sans secrets : mode à blanc.
-- **Import manuel** : le build écrit aussi `public/epingles-pinterest.csv` (format d'import en masse de Pinterest, une épingle par jour), utile tant que l'accès à l'API n'est pas accordé.
+- **Import manuel** : le build écrit aussi `public/epingles-pinterest.csv` (format d'import en masse de Pinterest). Des épingles importées ainsi sont programmées jusqu'au 18 novembre 2026 (2 par jour), en plus de celles publiées par l'API.
+- **État au 21 octobre 2026** : accès standard à l'API Pinterest accordé ; le workflow publie 5 épingles par passage (correctif du 20 octobre, commit `3529a05`) et a publié ses 5 premières épingles le 20 octobre. Le secret `PINTEREST_REFRESH_TOKEN` a été renouvelé le 20 octobre ; comme Pinterest renvoie un nouveau refresh token à chaque renouvellement, GitHub peut rouvrir un ticket demandant de le recopier dans le secret (le jeton actuel reste valable environ 60 jours).
 - **`npm run pinterest:auth`** : serveur local (http://localhost:8085/) qui mène le parcours OAuth complet et affiche le refresh token, les tableaux et un formulaire d'épingle de démonstration (pour la vidéo exigée par Pinterest).
 
 ## Déploiement (GitHub Pages)
@@ -159,7 +160,7 @@ Autre workflow : `pinterest.yml` (quotidien, 7 h 17 UTC).
 
 ## Domaine (Cloudflare + GitHub Pages)
 
-Le domaine `keurdeco.com` est enregistré chez **Cloudflare** (compte teiki5320@gmail.com, renouvellement automatique).
+Le domaine `keurdeco.com` est enregistré chez **Cloudflare** (compte de gestion admin@toakeur.com, renouvellement automatique).
 
 - **DNS Cloudflare** (zone keurdeco.com), **proxy désactivé** (nuage gris, sinon GitHub ne peut pas émettre le certificat HTTPS) : 4 enregistrements **A** sur `keurdeco.com` vers 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153, et un **CNAME** `www` → `teiki5320.github.io`.
 - **GitHub** : *Settings* → *Pages* → *Custom domain* = `www.keurdeco.com` (fichier `public/CNAME`), *Enforce HTTPS* coché. `keurdeco.com` redirige vers `www.keurdeco.com`.
