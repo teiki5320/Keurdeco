@@ -31,4 +31,4 @@ Repérées mais laissées pour un prochain passage : /matiere-wax.html (« déco
 
 ### Page nouvelle
 
-Aucune créée. Recherches fréquentes sans bonne place : « décoration intérieur wax » (25 vues) et « tissu kente » (15 vues) ont déjà leur vraie page (rubrique Wax, glossaire et article Kente) : une nouvelle page leur ferait concurrence. « chemin de table wax » (20 vues) : le site n'a aucun chemin de table en wax parmi ses produits (seulement kente, lin, motifs tribaux) ; proposé à Jean.
+Aucune créée. Recherches fréquentes sans bonne place : « décoration intérieur wax » (25 vues) et « tissu kente » (15 vues) ont déjà leur vraie page (rubrique Wax, glossaire et article Kente) : une nouvelle page leur ferait concurrence. « chemin de table wax » (20 vues) : le site n'a aucun chemin de table en wax parmi ses produits (seulement kente, lin, motifs tribaux). Proposé à Jean le 21/10 : il préfère laisser cette recherche de côté, ne pas la reproposer.
