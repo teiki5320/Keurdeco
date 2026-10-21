@@ -25,9 +25,6 @@ classement:
   - produit: coussins-femme-africaine-lin-lot-4
     pourquoi: "Quatre portraits de femmes africaines façon peinture, sur du lin : un lot qui fait office de petite galerie sur le canapé."
     a_savoir: "Les quatre housses ont des motifs différents : gardez les autres coussins unis pour laisser les portraits respirer."
-  - produit: coussin-divinite-fertilite
-    pourquoi: "Un motif de statuette africaine de la fertilité, imprimé des deux côtés sur coton et lin."
-    a_savoir: "Imprimé recto verso : pas de face « cachée », le coussin reste beau quel que soit le côté."
   - produit: coussins-ethniques-geometriques-lot-4
     pourquoi: "Quatre motifs géométriques ethniques différents dans une même gamme de couleurs : le lot le plus facile pour mélanger les imprimés sans fausse note."
     a_savoir: "Elles sont en polyester : moins naturelles que le coton, mais très faciles à laver."
