@@ -23,7 +23,7 @@ Un ou deux coussins en wax, un plaid en bogolan, un tapis en jute : les motifs a
 
 ## Le bois, en deux tons
 
-Le bois clair des meubles et le bois foncé d’un tabouret sculpté ou d’un bol en manguier se répondent. Un ou deux objets suffisent.
+Le bois clair des meubles et le bois foncé d’un [tabouret sculpté](conseil-choisir-tabouret-bois.html) ou d’un bol en manguier se répondent. Un ou deux objets suffisent.
 
 ## Les fibres
 

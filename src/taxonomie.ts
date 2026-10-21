@@ -9,6 +9,8 @@ export interface Rubrique {
   nom: string;
   /** Phrase d'accroche de la page de rubrique (70 à 180 caractères, sert aussi de description). */
   accroche: string;
+  /** Titre de la page (balise title et h1) quand il doit différer du nom, par exemple pour reprendre la recherche des lecteurs. */
+  titre?: string;
 }
 
 export const PIECES: Rubrique[] = [
@@ -25,7 +27,7 @@ export const MATIERES: Rubrique[] = [
   { id: 'wax', nom: 'Wax', accroche: 'Le wax, tissu imprimé star des marchés d’Afrique de l’Ouest : coussins, rideaux, nappes et idées pour l’adopter chez soi.' },
   { id: 'bogolan', nom: 'Bogolan', accroche: 'Le bogolan, toile du Mali teinte à la boue : motifs graphiques, tons bruns et crème, et idées pour l’intégrer à la déco.' },
   { id: 'kente', nom: 'Kente', accroche: 'Le kente, tissu tissé du Ghana aux bandes colorées : signification, usages et façons de l’apporter dans la maison.' },
-  { id: 'indigo', nom: 'Indigo', accroche: 'Le bleu indigo d’Afrique de l’Ouest, de l’adire yoruba aux teintures maliennes : textiles profonds et apaisants.' },
+  { id: 'indigo', nom: 'Indigo', titre: 'Tissu indigo africain : idées de déco', accroche: 'Le bleu indigo d’Afrique de l’Ouest, de l’adire yoruba aux teintures maliennes : textiles profonds et apaisants.' },
   { id: 'raphia-paniers', nom: 'Raphia et paniers tressés', accroche: 'Raphia, osier, herbes tressées : paniers, suspensions et assiettes murales, la vannerie africaine dans toute la maison.' },
   { id: 'terre-cuite', nom: 'Terre cuite et poterie', accroche: 'Jarres, vases et vaisselle en terre cuite : la poterie africaine pour une déco chaleureuse et naturelle.' },
   { id: 'bois-sculpte', nom: 'Bois sculpté', accroche: 'Tabourets, masques, bols et statuettes : le bois sculpté africain, à choisir et à mettre en valeur sans effet musée.' },

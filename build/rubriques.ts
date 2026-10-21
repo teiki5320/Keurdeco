@@ -17,6 +17,7 @@ import { icone, type NomIcone } from './icones.ts';
 import { motif } from './motifs.ts';
 import { imageArticle, imageExiste, MENTION_IA_ILLUSTRATION, photoFond } from './images.ts';
 import { echapper } from './produits.ts';
+import { conseilsPublies, type Conseil } from './conseils.ts';
 
 export interface EntreeGlossaire {
   id: string;
@@ -26,6 +27,8 @@ export interface EntreeGlossaire {
   resume: string;
   texte: string[];
   matieres: string[];
+  /** Balise title, quand elle doit différer de « <nom> : définition et origine ». */
+  titre?: string;
 }
 
 export const FICHIER_GLOSSAIRE = resolve(import.meta.dirname, '../src/data/glossaire.json');
@@ -79,7 +82,7 @@ export function pageSimple(p: PageSimple): string {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="${echapper(p.description)}" />${p.noindex ? '\n    <meta name="robots" content="noindex" />' : ''}${photo ? `\n    <meta name="image-partage" content="${p.image}" />` : ''}
     <title>${echapper(titrePage(p.titre))}</title>
-    <!--#head-->\n    <script type="application/ld+json">${JSON.stringify(p.ld ?? filArianeLd(p.fil)).replace(/</g, '\\u003c')}</script>
+    <!--#head-->\n    <script type="application/ld+json">${JSON.stringify(p.ld ? [p.ld, filArianeLd(p.fil)] : filArianeLd(p.fil)).replace(/</g, '\\u003c')}</script>
   </head>
   <body>
     <!--#header-->
@@ -151,10 +154,10 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
   // Une rubrique ne montre que ses ambiances ; les tops, les guides, les conseils et le glossaire ont chacun leur page.
   const articles = ambiancesDeRubrique(famille, r.id, publies);
   return pageSimple({
-    titre: `${r.nom} : idées de déco africaine`,
+    titre: r.titre ?? `${r.nom} : idées de déco africaine`,
     description: r.accroche,
     fil: [[f.hub, f.titre], ['', r.nom]],
-    h1: echapper(r.nom),
+    h1: echapper(r.titre ?? r.nom),
     chapo: echapper(r.accroche),
     classe: `page--rubrique page--${famille}`,
     noindex: articles.length === 0,
@@ -266,8 +269,14 @@ function pageEntreeGlossaire(g: EntreeGlossaire, entrees: EntreeGlossaire[], pub
   const articles = publies.filter((a) => a.matieres.some((m) => g.matieres.includes(m))).slice(0, 3);
   const voisines = entrees.filter((e) => e.id !== g.id && e.matieres.some((m) => g.matieres.includes(m))).slice(0, 4);
   const rubriques = g.matieres.map((m) => FAMILLES.matiere.liste.find((r) => r.id === m)).filter((r): r is Rubrique => !!r);
+  // Conseils publiés de la même matière, ceux qui citent le terme dans leur titre d'abord.
+  const cite = (c: Conseil) => (c.titre.toLowerCase().includes(g.nom.toLowerCase()) ? 0 : 1);
+  const conseils = conseilsPublies()
+    .filter((c) => c.matieres.some((m) => g.matieres.includes(m)))
+    .sort((a, b) => cite(a) - cite(b))
+    .slice(0, 3);
   return pageSimple({
-    titre: `${g.nom} : définition et origine`,
+    titre: g.titre ?? `${g.nom} : définition et origine`,
     description: g.resume,
     fil: [['glossaire.html', 'Glossaire'], ['', g.nom]],
     h1: echapper(g.nom),
@@ -287,6 +296,7 @@ function pageEntreeGlossaire(g: EntreeGlossaire, entrees: EntreeGlossaire[], pub
           <p class="entree-glossaire__origine"><strong>${echapper(g.categorie)}</strong> · ${echapper(g.origine)}</p>
           ${g.texte.map((p) => `<p>${echapper(p)}</p>`).join('\n          ')}
           ${rubriques.length ? `<p>Voir la rubrique ${rubriques.map((r) => `<a href="${fichierRubrique('matiere', r.id)}">${r.nom}</a>`).join(', ')}.</p>` : ''}
+          ${conseils.length ? `<p>À lire aussi : ${conseils.map((c) => `<a href="${c.fichier}">${echapper(c.titre)}</a>`).join(' ; ')}</p>` : ''}
           ${blocAnnonce()}
         </div>
         ${articles.length ? `<section aria-labelledby="articles-lies"><h2 id="articles-lies">Articles liés</h2>${grilleArticles(articles)}</section>` : ''}

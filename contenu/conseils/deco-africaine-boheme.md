@@ -11,7 +11,7 @@ epingles:
   - "Fibres, plantes et wax : un intérieur bohème africain"
 ---
 
-Le style bohème emprunte beaucoup à l’artisanat africain : paniers, assiettes tressées, tapis, couleurs chaudes. Les associer est naturel ; le risque est d’en faire trop.
+Le style bohème emprunte beaucoup à l’artisanat africain : paniers (comme le [panier Bolga](conseil-panier-bolga.html) du nord du Ghana), assiettes tressées, tapis, couleurs chaudes. Les associer est naturel ; le risque est d’en faire trop.
 
 ## Ce qu’ils partagent
 

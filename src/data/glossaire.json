@@ -67,6 +67,7 @@
   {
     "id": "adire",
     "nom": "Adire",
+    "titre": "Adire : le tissu indigo yoruba, définition",
     "categorie": "Tissu",
     "origine": "Nigeria (peuple yoruba)",
     "resume": "Tissu yoruba teint à l’indigo avec des réserves (ligatures, coutures ou pâte d’amidon) qui dessinent les motifs en clair.",
@@ -222,6 +223,7 @@
   {
     "id": "shweshwe",
     "nom": "Shweshwe",
+    "titre": "Shweshwe : le tissu imprimé sud-africain",
     "categorie": "Tissu",
     "origine": "Afrique du Sud",
     "resume": "Coton imprimé sud-africain aux petits motifs géométriques, souvent bleu indigo, brun ou rouge, obtenus par enlevage.",

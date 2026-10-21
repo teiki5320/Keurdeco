@@ -29,4 +29,4 @@ Un grand masque, une tenture, une composition de paniers muraux : choisissez une
 
 Un tabouret qui accueille un livre, un panier qui range les plaids, une calebasse qui reçoit des fruits : les objets utilisés au quotidien ne font jamais musée.
 
-Pour bien choisir un tabouret, voyez aussi la rubrique [bois sculpté](matiere-bois-sculpte.html).
+Pour bien choisir un tabouret, voyez [comment choisir un tabouret africain en bois sculpté](conseil-choisir-tabouret-bois.html) et la rubrique [bois sculpté](matiere-bois-sculpte.html).

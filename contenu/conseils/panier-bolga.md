@@ -1,6 +1,6 @@
 ---
 titre: "Qu’est-ce qu’un panier Bolga ?"
-description: "Tressé à la main dans le nord du Ghana avec de l’herbe à éléphant, souvent muni d’une anse en cuir : ce qu’est un panier Bolga et comment le choisir."
+description: "Panier Bolga : tressé à la main à Bolgatanga, dans le nord du Ghana, en herbe à éléphant, avec son anse en cuir. Origine, usages et remise en forme."
 publie_le: 2026-10-02
 theme: comprendre
 reponse: "Le panier Bolga vient de la région de Bolgatanga, dans le nord du Ghana. Il est tressé à la main avec de l’herbe à éléphant, souvent teinte de couleurs vives, et porte fréquemment une anse gainée de cuir."

@@ -27,7 +27,7 @@ Pour un petit trou, procurez-vous du raphia naturel en mercerie. Humidifiez-le p
 
 ## Remettre en forme
 
-Un panier écrasé se reforme : vaporisez-le légèrement d’eau, redonnez-lui sa forme à la main ou autour d’un saladier, et laissez sécher à l’air.
+Un panier écrasé se reforme : vaporisez-le légèrement d’eau, redonnez-lui sa forme à la main ou autour d’un saladier, et laissez sécher à l’air. C’est aussi ainsi qu’on remet en forme un [panier Bolga](conseil-panier-bolga.html) écrasé dans une valise.
 
 ## Prévenir
 
