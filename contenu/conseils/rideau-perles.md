@@ -23,4 +23,4 @@ Un rideau de perles délimite une entrée ou un coin sans fermer l’espace. Cho
 
 ## Le bon dosage
 
-Un ou deux objets perlés par pièce suffisent. Associez-les à des matières brutes (bois, raphia, lin) qui calment leur brillance. Pour en savoir plus sur les perles de verre krobo, consultez le [glossaire](glossaire-perles-krobo.html).
+Un ou deux objets perlés par pièce suffisent. Associez-les à des matières brutes (bois, raphia, lin) qui calment leur brillance. Pour en savoir plus sur les perles de verre recyclé du Ghana, consultez la fiche [perles krobo](glossaire-perles-krobo.html) du glossaire.

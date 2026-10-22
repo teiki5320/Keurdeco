@@ -38,7 +38,7 @@ epingles:
 tableau_pinterest: bogolan
 ---
 
-Le style scandinave et le bogolan ont plus en commun qu’on ne le croit : des matières naturelles, une palette resserrée, et un goût pour les formes simples. Les motifs graphiques noir et crème du bogolan malien apportent exactement ce qui manque parfois aux intérieurs nordiques : du caractère et une histoire.
+Le style scandinave et le bogolan ont plus en commun qu’on ne le croit : des matières naturelles, une palette resserrée, et un goût pour les formes simples. Les [motifs graphiques](conseil-motifs-bogolan-signification.html) noir et crème du bogolan malien apportent exactement ce qui manque parfois aux intérieurs nordiques : du caractère et une histoire.
 
 ## 1. Une base blanche et du bois clair
 

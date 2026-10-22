@@ -11,7 +11,7 @@ epingles:
   - "Bogolan : le guide d’entretien"
 ---
 
-Le [bogolan](glossaire-bogolan.html) est teint avec des pigments naturels : décoctions de feuilles et boue riche en fer, appliquées à la main sur une toile de coton. Ces teintures sont belles, mais plus fragiles qu’une couleur industrielle.
+Le [bogolan](glossaire-bogolan.html) est teint avec des pigments naturels : décoctions de feuilles et boue riche en fer, appliquées à la main sur une toile de coton pour dessiner des [motifs qui ont chacun un sens](conseil-motifs-bogolan-signification.html). Ces teintures sont belles, mais plus fragiles qu’une couleur industrielle.
 
 ## Le moins de lavages possible
 

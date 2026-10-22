@@ -1,6 +1,7 @@
 ---
-titre: "Que signifient les motifs du bogolan ?"
-description: "Points, zigzags, croix, losanges : ce que racontent les motifs du bogolan malien, et pourquoi leur sens varie selon les régions et les artisans."
+titre: "Que signifient les motifs bogolan ?"
+titre_page: "Motif bogolan : signification des symboles"
+description: "Motif bogolan et signification : points, zigzags, croix, losanges… ce que racontent les symboles du bogolan malien, et pourquoi leur sens varie."
 publie_le: 2026-10-02
 theme: comprendre
 reponse: "Chaque motif du bogolan porte un nom et un sens : un proverbe, un événement, un objet du quotidien. Ces significations varient selon les régions et les artisans ; il n’existe pas de dictionnaire unique des motifs."

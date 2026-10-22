@@ -3,6 +3,7 @@
  *
  * Un fichier Markdown par conseil dans contenu/conseils/<slug>.md, avec un en-tête YAML :
  *   titre        la question (« Comment laver un coussin en wax ? »)
+ *   titre_page   facultatif : balise title quand elle doit différer du titre (60 caractères au plus)
  *   description  70 à 180 caractères (Google, partage)
  *   publie_le    AAAA-MM-JJ : seuls les conseils dont la date est passée (heure de Paris) sont construits
  *   theme        entretien | associer | choisir | accrocher | comprendre (voir THEMES)
@@ -42,6 +43,8 @@ export interface Conseil {
   slug: string;
   fichier: string;
   titre: string;
+  /** Balise title, quand elle doit différer du titre (recherche Google visée). */
+  titrePage?: string;
   description: string;
   publieLe: string;
   theme: Theme;
@@ -73,8 +76,10 @@ export function lireConseil(slug: string, source: string): Conseil {
   const matieres = Array.isArray(e.matieres) ? e.matieres.map(String) : [];
   for (const id of matieres) if (!trouverRubrique('matiere', id)) throw erreur(`matière « ${id} » inconnue`);
   const titre = String(e.titre).trim();
+  const titrePageBrut = e.titre_page == null ? '' : String(e.titre_page).trim();
+  if (titrePageBrut.length > 60) throw erreur(`titre_page doit faire 60 caractères au plus (${titrePageBrut.length})`);
   const epingles = Array.isArray(e.epingles) && e.epingles.length ? e.epingles.map(String) : [titre];
-  return { slug, fichier: fichierConseil(slug), titre, description, publieLe, theme, reponse: String(e.reponse).trim(), matieres, epingles, corps: m[2].trim() };
+  return { slug, fichier: fichierConseil(slug), titre, ...(titrePageBrut ? { titrePage: titrePageBrut } : {}), description, publieLe, theme, reponse: String(e.reponse).trim(), matieres, epingles, corps: m[2].trim() };
 }
 
 /** Tous les conseils, publiés ou programmés, du plus récent au plus ancien. */
@@ -148,7 +153,7 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="${echapper(c.description)}" />
     <meta name="date-publication" content="${c.publieLe}" />${imageExiste(imageConseil(c)) ? `\n    <meta name="image-partage" content="${imageConseil(c)}" />` : ''}
-    <title>${echapper(titrePage(c.titre))}</title>
+    <title>${echapper(titrePage(c.titrePage ?? c.titre))}</title>
     <!--#head-->
     ${ld.map(jsonLd).join('\n    ')}
   </head>

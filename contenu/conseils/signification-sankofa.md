@@ -1,10 +1,13 @@
 ---
-titre: "Que signifie le symbole Sankofa ?"
-description: "Sankofa, l’oiseau qui se retourne, est l’un des symboles adinkra les plus connus. Son sens, son origine akan et comment l’utiliser en déco."
+titre: "Sankofa : que signifie ce symbole akan ?"
+titre_page: "Sankofa : signification du symbole akan"
+description: "Le Sankofa, l’oiseau qui se retourne : signification de ce symbole adinkra des Akan du Ghana, ses deux dessins et comment l’utiliser en déco."
 publie_le: 2026-09-28
 theme: comprendre
 reponse: "Sankofa est un symbole adinkra des peuples akan du Ghana : il signifie qu’il n’est jamais interdit de revenir chercher ce que l’on a oublié, autrement dit d’apprendre du passé pour avancer."
 matieres: [kente]
+epingles:
+  - "Que signifie le symbole Sankofa ?"
 ---
 
 Parmi les symboles adinkra des peuples akan (Ghana, Côte d’Ivoire), Sankofa est sans doute le plus répandu, jusque sur les bijoux, les affiches et les tissus vendus en Europe.

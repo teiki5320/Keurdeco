@@ -2,6 +2,20 @@
 
 Tenu par la routine « Référencement du jour » (Keur Déco passe le mercredi). Une page travaillée n'est pas retouchée avant 28 jours : Google a besoin de ce temps pour réagir.
 
+## 22/10/2026
+
+### Pages presque en première page (chiffres Search Console des 30 derniers jours)
+
+| Page | Recherches visées | Place / vues au moment du travail | Ancien titre → nouveau titre | Autres changements |
+|---|---|---|---|---|
+| /conseil-motifs-bogolan-signification.html | motif bogolan signification, motifs bogolan, motif bogolan, symbole bogolan | 11,2 (6 vues, 1 clic) | « Que signifient les motifs du bogolan ? · Keur Déco » → « Motif bogolan : signification des symboles · Keur Déco » | titre principal « Que signifient les motifs bogolan ? » ; description réécrite (motif, signification, symboles) ; liens ajoutés depuis les conseils Reconnaître un vrai bogolan et Entretenir un tissu bogolan, et l’ambiance Salon bogolan et bois clair |
+| /conseil-signification-sankofa.html | sankofa, le sankofa, symbole akan signification | 18,6 (5 vues) ; « sankofa » 24e | « Que signifie le symbole Sankofa ? · Keur Déco » → « Sankofa : signification du symbole akan · Keur Déco » | titre principal « Sankofa : que signifie ce symbole akan ? » ; description réécrite ; titre de l’épingle Pinterest gardé à l’identique ; liens « Sankofa » ajoutés depuis les rubriques Kente et Entrée |
+| /glossaire-perles-krobo.html | perles krobo | 12,3 (3 vues) | « Perles krobo : définition et origine » → « Perles krobo : les perles en verre recyclé du Ghana » | description (résumé de la fiche) réécrite et accordée au texte (couleurs vives ou translucides) ; liens « perles krobo » ajoutés depuis les rubriques Matières et Entrée ; lien du conseil Décorer avec des perles africaines renommé « perles krobo » |
+
+Nouveau réglage : un conseil peut avoir un `titre_page` (balise title, 60 caractères au plus) différent de sa question.
+
+À relire à partir du 19/11/2026.
+
 ## 21/10/2026
 
 ### Pages améliorées (chiffres Search Console du 21/09 au 19/10)

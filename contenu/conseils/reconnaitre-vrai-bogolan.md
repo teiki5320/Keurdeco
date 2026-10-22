@@ -12,7 +12,7 @@ Le motif « mud cloth » est partout, mais beaucoup de tissus sont simplement im
 ## Les indices qui ne trompent pas
 
 - **Les bandes cousues** : le coton est tissé à la main en bandes étroites, assemblées par des coutures visibles.
-- **Des motifs irréguliers** : peints au pinceau ou à la tige, ils ne sont jamais parfaitement identiques d’un bout à l’autre.
+- **Des motifs irréguliers** : peints au pinceau ou à la tige, ils ne sont jamais parfaitement identiques d’un bout à l’autre (voir [ce que signifient les motifs bogolan](conseil-motifs-bogolan-signification.html)).
 - **L’envers** : sur un tissu imprimé, l’envers est souvent pâle ou blanc. Sur un bogolan, la teinte végétale et la boue marquent aussi l’envers, de façon plus diffuse.
 - **Le toucher** : un coton épais, un peu rêche, qui s’assouplit avec le temps.
 

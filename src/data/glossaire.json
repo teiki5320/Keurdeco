@@ -210,7 +210,7 @@
     "nom": "Perles krobo",
     "categorie": "Savoir-faire",
     "origine": "Ghana (peuple krobo)",
-    "resume": "Perles de verre fabriquées au Ghana à partir de verre recyclé broyé, moulé et cuit au four, aux couleurs douces et mates.",
+    "resume": "Perles de verre recyclé fabriquées par les Krobo, dans l’est du Ghana : verre broyé, coloré, moulé dans l’argile puis cuit au four.",
     "texte": [
       "Les Krobo, dans l’est du Ghana, fabriquent des perles à partir de verre recyclé (bouteilles, vitres) réduit en poudre, coloré, versé dans des moules en argile puis cuit dans des fours artisanaux. Chaque perle est légèrement irrégulière.",
       "Les perles tiennent une place importante dans les cérémonies, notamment le Dipo, rite de passage des jeunes filles. En décoration, on les retrouve en guirlandes, en rideaux de perles, en suspensions ou en colliers accrochés au mur.",
@@ -218,7 +218,8 @@
     ],
     "matieres": [
       "perles"
-    ]
+    ],
+    "titre": "Perles krobo : les perles en verre recyclé du Ghana"
   },
   {
     "id": "shweshwe",
