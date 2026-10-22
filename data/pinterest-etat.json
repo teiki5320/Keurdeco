@@ -953,6 +953,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-21",
       "publie_a": "2026-10-21T12:57:00.675Z"
+    },
+    {
+      "id": "conseil-plantes-deco-africaine-1",
+      "slug": "conseil-plantes-deco-africaine",
+      "pin_id": "1085719422761898905",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-22",
+      "publie_a": "2026-10-22T12:59:12.825Z"
+    },
+    {
+      "id": "conseil-proteger-couleurs-soleil-1",
+      "slug": "conseil-proteger-couleurs-soleil",
+      "pin_id": "1085719422761898911",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-22",
+      "publie_a": "2026-10-22T12:59:17.089Z"
+    },
+    {
+      "id": "conseil-reconnaitre-vrai-bogolan-1",
+      "slug": "conseil-reconnaitre-vrai-bogolan",
+      "pin_id": "1085719422761898918",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-22",
+      "publie_a": "2026-10-22T12:59:19.328Z"
+    },
+    {
+      "id": "conseil-reconnaitre-vrai-wax-1",
+      "slug": "conseil-reconnaitre-vrai-wax",
+      "pin_id": "1085719422761898922",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-22",
+      "publie_a": "2026-10-22T12:59:21.654Z"
+    },
+    {
+      "id": "conseil-rideau-perles-1",
+      "slug": "conseil-rideau-perles",
+      "pin_id": "1085719422761898930",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-22",
+      "publie_a": "2026-10-22T12:59:23.994Z"
     }
   ]
 }
