@@ -1,9 +1,11 @@
 name: Publier les épingles Pinterest
 
 on:
-  # Chaque jour à 7 h 17 UTC, après la reconstruction du lundi (5 h UTC).
+  # Chaque jour à 4 h 17 UTC (6 h 17 à Paris en été, 5 h 17 en hiver), même horaire que Keur Cook et Keur Kado,
+  # pour un résultat avant le point de 7 h. GitHub peut retarder les tâches programmées.
+  # Les articles du lundi (reconstruction à 5 h UTC) partent donc à partir du mardi.
   schedule:
-    - cron: '17 7 * * *'
+    - cron: '17 4 * * *'
   workflow_dispatch:
     inputs:
       a_blanc:

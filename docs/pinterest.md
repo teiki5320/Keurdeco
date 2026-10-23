@@ -6,7 +6,7 @@ La génération des épingles et leur publication sont automatiques. Il reste de
 
 - **Sur le site** : Open Graph complet et données structurées `Article` (Rich Pins), bouton « Épingler » sur les images d'article (sans script externe), balise de revendication du domaine lue dans la variable `PINTEREST_VERIFY`.
 - **Au build** (`scripts/epingles.ts`) : pour chaque article publié, une épingle 1000 × 1500 px par titre de la liste `epingles`, dans 4 gabarits qui alternent (bandeau haut, bandeau bas, cadre, split), et le manifeste `https://www.keurdeco.com/epingles.json`.
-- **Chaque jour à 7 h 17 UTC** (`.github/workflows/pinterest.yml`) : `scripts/pinterest-publier.mjs` publie au plus 5 épingles (réglage `config/pinterest.json`), jamais deux du même article le même jour, dans le tableau de la rubrique (`config/tableaux-pinterest.json`), puis enregistre `data/pinterest-etat.json` sur `main`.
+- **Chaque jour à 4 h 17 UTC** (`.github/workflows/pinterest.yml`) : `scripts/pinterest-publier.mjs` publie au plus 5 épingles (réglage `config/pinterest.json`), jamais deux du même article le même jour, dans le tableau de la rubrique (`config/tableaux-pinterest.json`), puis enregistre `data/pinterest-etat.json` sur `main`.
 - Sans secrets, le script tourne en **mode à blanc** : il affiche ce qu'il publierait.
 
 ## 1. Compte professionnel
