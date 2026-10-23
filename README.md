@@ -96,7 +96,7 @@ Selon le type :
 - **top** : `classement: [{ produit, pourquoi, a_savoir }]` (5 à 10), données structurées `ItemList`. `{{classement}}` dans le texte place le classement.
 - **guide** : `{{produit: <id>}}` seul sur une ligne insère un encadré produit ; sommaire automatique.
 
-Les articles sont publiés à leur date : le site est reconstruit à chaque push sur `main` et **chaque lundi à 5 h UTC**.
+Les articles sont publiés à leur date : le site est reconstruit à chaque push sur `main` et **chaque lundi, mercredi et vendredi à 5 h UTC**.
 
 ### Images
 
@@ -148,7 +148,7 @@ Tout est détaillé dans [`docs/pinterest.md`](docs/pinterest.md), y compris les
 
 ## Déploiement (GitHub Pages)
 
-`.github/workflows/pages.yml` : à chaque push sur `main`, chaque lundi à 5 h UTC et à la demande : `npm ci`, tests, build (épingles comprises), test de bout en bout Chromium, puis déploiement GitHub Pages.
+`.github/workflows/pages.yml` : à chaque push sur `main`, chaque lundi, mercredi et vendredi à 5 h UTC et à la demande : `npm ci`, tests, build (épingles comprises), test de bout en bout Chromium, puis déploiement GitHub Pages.
 
 Réglages facultatifs (*Settings* › *Secrets and variables* › *Actions* › *Variables*) : `SITE_URL` (par défaut `https://www.keurdeco.com/`), `CLOUDFLARE_WEB_ANALYTICS` (token public du « JS Snippet » de Cloudflare Web Analytics : mesure d'audience sans cookie, en place), `PLAUSIBLE_DOMAIN` (alternative : Plausible), `PINTEREST_VERIFY`, `GOOGLE_VERIFY` (code de la Search Console, balise `google-site-verification`).
 
