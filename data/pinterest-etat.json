@@ -1043,6 +1043,51 @@
       "board_id": "1085719491358932174",
       "publie_le": "2026-10-24",
       "publie_a": "2026-10-24T03:13:04.482Z"
+    },
+    {
+      "id": "conseil-disposer-jarres-poteries-2",
+      "slug": "conseil-disposer-jarres-poteries",
+      "pin_id": "1085719422762082387",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-24",
+      "publie_a": "2026-10-24T08:53:11.456Z"
+    },
+    {
+      "id": "conseil-deco-africaine-boheme-2",
+      "slug": "conseil-deco-africaine-boheme",
+      "pin_id": "1085719422762082389",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-24",
+      "publie_a": "2026-10-24T08:53:13.674Z"
+    },
+    {
+      "id": "conseil-deco-africaine-scandinave-2",
+      "slug": "conseil-deco-africaine-scandinave",
+      "pin_id": "1085719422762082392",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-24",
+      "publie_a": "2026-10-24T08:53:15.874Z"
+    },
+    {
+      "id": "top-terre-cuite-deco-2",
+      "slug": "top-terre-cuite-deco",
+      "pin_id": "1085719422762082393",
+      "tableau": "terre-cuite",
+      "board_id": "1085719491358932185",
+      "publie_le": "2026-10-24",
+      "publie_a": "2026-10-24T08:53:18.056Z"
+    },
+    {
+      "id": "conseil-deco-africaine-petit-appartement-2",
+      "slug": "conseil-deco-africaine-petit-appartement",
+      "pin_id": "1085719422762082397",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-24",
+      "publie_a": "2026-10-24T08:53:20.199Z"
     }
   ]
 }
