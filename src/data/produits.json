@@ -2588,7 +2588,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "chemins-table-gaze-terracotta-lot-6",
@@ -2636,7 +2636,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "couronnes-fleurs-sechees-lot-2",
@@ -2719,7 +2719,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "tapis-kilim-terracotta-160x230",
@@ -2735,7 +2735,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "tapis-berbere-losanges-creme",
@@ -2752,7 +2752,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "tapis-rond-jute-lurex-80",
@@ -2772,7 +2772,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "rideau-perles-bambou-bois",
@@ -2812,7 +2812,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "tissu-bogolan-indigo-fleches",
@@ -2830,7 +2830,7 @@
       "salon",
       "chambre"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-19"
   },
   {
@@ -2851,7 +2851,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "tissu-dogon-indigo-blanc",
@@ -2870,7 +2870,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "tissu-kente-bleu-jaune",
@@ -2891,7 +2891,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "chemin-table-geometrique-africain-33x183",
@@ -2904,7 +2904,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "chemin-table-africain-noir-coton-lin",
@@ -2919,7 +2919,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "chemin-table-tribal-coton-pampilles",
@@ -2932,7 +2932,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "chemin-table-elephant-girafe-coton-lin",
@@ -2945,7 +2945,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "chemin-table-lin-carte-afrique",
@@ -2958,7 +2958,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "chemin-table-ethnique-africain-33x178",
@@ -2971,7 +2971,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "chemin-table-tribal-texture-pompons",
@@ -2984,7 +2984,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "nappe-motif-wax-120x160",
@@ -2999,7 +2999,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "nappe-danseuse-africaine-160x240",
@@ -3012,7 +3012,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "nappe-motif-africain-140x200",
@@ -3025,7 +3025,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "nappe-motif-africain-traditionnel-137x183",
@@ -3038,7 +3038,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "nappe-ethnique-africaine-bord-ondule",
@@ -3051,7 +3051,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "sets-table-bogolan-lot-6",
@@ -3069,7 +3069,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "sets-table-tribal-bleu-jaune-lot-4",
@@ -3085,7 +3085,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "sets-table-ethnique-africain-lot-6",
@@ -3098,7 +3098,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "sets-table-jute-geometriques-lot-6",
@@ -3114,7 +3114,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "housse-couette-coton-boho-africaine",
@@ -3127,7 +3127,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "parure-coton-geometrique-ethnique",
@@ -3142,7 +3142,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "parure-symboles-tribaux-orange-jaune",
@@ -3158,7 +3158,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-25"
   },
   {
     "id": "parure-patchwork-tribal-reversible",
