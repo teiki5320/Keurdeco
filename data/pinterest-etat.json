@@ -1088,6 +1088,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-24",
       "publie_a": "2026-10-24T08:53:20.199Z"
+    },
+    {
+      "id": "conseil-entretenir-pouf-cuir-2",
+      "slug": "conseil-entretenir-pouf-cuir",
+      "pin_id": "1085719422762173357",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-25",
+      "publie_a": "2026-10-25T04:12:54.737Z"
+    },
+    {
+      "id": "conseil-choisir-pouf-2",
+      "slug": "conseil-choisir-pouf",
+      "pin_id": "1085719422762173362",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-25",
+      "publie_a": "2026-10-25T04:12:57.101Z"
+    },
+    {
+      "id": "conseil-taille-suspension-table-2",
+      "slug": "conseil-taille-suspension-table",
+      "pin_id": "1085719422762173367",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-25",
+      "publie_a": "2026-10-25T04:12:59.843Z"
+    },
+    {
+      "id": "salon-cocooning-ocre-2",
+      "slug": "salon-cocooning-ocre",
+      "pin_id": "1085719422762173372",
+      "tableau": "salon",
+      "board_id": "1085719491358932130",
+      "publie_le": "2026-10-25",
+      "publie_a": "2026-10-25T04:13:02.432Z"
+    },
+    {
+      "id": "conseil-accrocher-miroir-soleil-rotin-2",
+      "slug": "conseil-accrocher-miroir-soleil-rotin",
+      "pin_id": "1085719422762173376",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-25",
+      "publie_a": "2026-10-25T04:13:04.774Z"
     }
   ]
 }
