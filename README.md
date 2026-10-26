@@ -118,6 +118,7 @@ Onglet « Conseils », comme sur Kultiled et Keur Cook : une question pratique p
 - Pages générées par `build/conseils.ts` : `conseils.html` (par thème) et `conseil-<slug>.html` (réponse courte, données structurées FAQ, conseils proches).
 - Épingles Pinterest automatiques : un visuel typographique (la question dans une arche, sur le motif du thème) par titre, publié dans le tableau « general ».
 - Les tests vérifient que les liens internes d'un conseil mènent à des pages déjà publiées à sa date.
+- Photo facultative : `public/images/articles/conseil-<slug>-*.webp` (texte alternatif dans `src/data/textes-alternatifs.json`) ; sans photo, la carte et la page affichent le motif du thème.
 
 ## Produits
 

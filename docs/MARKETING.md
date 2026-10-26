@@ -40,7 +40,7 @@ Mis à jour le 25 octobre 2026. Compagnon de INFRA.md.
 ## Calendrier
 
 - Articles et conseils **publiés à leur date** (en-tête `publie_le`), le site étant reconstruit à chaque push et chaque lundi, mercredi et vendredi à 5 h UTC. Au 24 octobre 2026 : 39 articles, dont 24 en ligne et 15 programmés, un par lundi jusqu'au 25 janvier 2027, puis le balcon le 26 avril 2027. Page « Top 10 » à onglets (10 sujets) en ligne depuis le 19 octobre.
-- Conseils : 50, dont 39 en ligne au 24 octobre 2026 et 11 programmés (lundi, mercredi, vendredi) jusqu'au 18 novembre 2026. Depuis le 23 octobre 2026, le site est reconstruit le lundi, le mercredi et le vendredi (`pages.yml`, cron `0 5 * * 1,3,5`) et à chaque push : chaque conseil paraît le jour de sa date. Un rappel est prévu le 2 novembre pour préparer le lot suivant.
+- Conseils : 62, dont 40 en ligne au 26 octobre 2026 et 22 programmés (lundi, mercredi, vendredi) jusqu'au 16 décembre 2026 (12 ajoutés le 26 octobre par la routine « Articles », pour l'instant sans photo : la carte affiche le motif du thème en attendant l'accord de Jean pour les images). Depuis le 23 octobre 2026, le site est reconstruit le lundi, le mercredi et le vendredi (`pages.yml`, cron `0 5 * * 1,3,5`) et à chaque push : chaque conseil paraît le jour de sa date.
 - Épingles : import CSV par lots de 30 jours, 2 par jour (lot en cours jusqu'au 18 novembre) ; en plus, l'API publie 5 épingles par passage du workflow quotidien.
 
 ## Les 3 priorités

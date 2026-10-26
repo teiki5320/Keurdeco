@@ -122,11 +122,12 @@ describe('articles (contenu/articles)', () => {
     for (const id of Object.keys(vignettes)) for (const t of [160, 320]) expect(existsSync(resolve(RACINE, 'public/images/produits', `${id}-${t}.webp`)), `${id}-${t}.webp`).toBe(true);
   });
 
-  it('chaque rubrique et chaque conseil a sa photo d’illustration', () => {
+  // Photo facultative pour un conseil : sans photo, sa carte et sa page affichent le motif de son thème
+  // (les photos d'un nouveau lot de conseils ne sont générées qu'après l'accord de Jean).
+  it('chaque rubrique a sa photo d’illustration', () => {
     for (const famille of Object.keys(FAMILLES) as Famille[]) {
       for (const r of FAMILLES[famille].liste) expect(imageExiste(imageRubrique(famille, r.id)), imageRubrique(famille, r.id)).toBe(true);
     }
-    for (const c of tousLesConseils()) expect(imageExiste(imageConseil(c)), imageConseil(c)).toBe(true);
   });
 
   it('chaque page de rubrique et chaque page de famille a son texte d’introduction (contenu/rubriques/)', () => {
@@ -136,10 +137,10 @@ describe('articles (contenu/articles)', () => {
     }
   });
 
-  it('chaque photo de rubrique et de conseil a son texte alternatif (src/data/textes-alternatifs.json)', () => {
+  it('chaque photo de rubrique et de conseil existante a son texte alternatif (src/data/textes-alternatifs.json)', () => {
     const noms = [
       ...(Object.keys(FAMILLES) as Famille[]).flatMap((f) => FAMILLES[f].liste.map((r) => imageRubrique(f, r.id))),
-      ...tousLesConseils().map((c) => imageConseil(c)),
+      ...tousLesConseils().map((c) => imageConseil(c)).filter((nom) => imageExiste(nom)),
     ];
     for (const nom of noms) expect(texteAlternatif(nom).length, nom).toBeGreaterThan(30);
   });
