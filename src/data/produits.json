@@ -3171,7 +3171,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-enfant-ethnique-africain",
@@ -3184,7 +3184,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-style-africain-220x240",
@@ -3197,7 +3197,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-elephant-africain-200x200",
@@ -3210,7 +3210,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-femme-africaine-tribale-brun",
@@ -3225,7 +3225,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-coton-togo-moutarde",
@@ -3240,7 +3240,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-motif-tribal-240x260",
@@ -3253,7 +3253,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "chemin-table-mois-histoire-noire-lin",
@@ -3268,7 +3268,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "chemin-table-kwanzaa-lin",
@@ -3281,7 +3281,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "chemin-table-tribal-geometrique-33x152",
@@ -3296,7 +3296,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "chemin-table-tissu-de-boue-33x178",
@@ -3311,7 +3311,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "chemin-table-paisley-africain-40x225",
@@ -3325,7 +3325,7 @@
     "pieces": [
       "cuisine-salle-a-manger"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-19"
   },
   {
@@ -3341,7 +3341,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "nappe-femme-africaine-152x213",
@@ -3354,7 +3354,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "nappe-tribale-rayures-africaines-137x183",
@@ -3369,7 +3369,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "nappe-retro-ethnique-132x178",
@@ -3382,7 +3382,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "nappe-carree-tribale-140",
@@ -3395,7 +3395,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "nappe-ronde-tribale-150",
@@ -3408,7 +3408,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "sets-table-girafe-elephant-lot-4",
@@ -3421,7 +3421,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "sets-table-flute-africaine-lot-4",
@@ -3434,7 +3434,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-geometrique-ethnique-kaki-220x240",
@@ -3449,7 +3449,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-ethnique-boheme-reversible-135x200",
@@ -3464,7 +3464,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "housse-couette-animaux-savane-140x200",
@@ -3477,7 +3477,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "housse-couette-femme-africaine-220x240",
@@ -3490,7 +3490,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-afrique-coucher-soleil-elephant-135x200",
@@ -3503,7 +3503,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-safari-zebre-leopard-220x240",
@@ -3516,7 +3516,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "housse-couette-paysage-africain",
@@ -3529,7 +3529,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "parure-lion-africain-140x200",
@@ -3545,7 +3545,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "tissu-kente-patchwork-5-5m",
@@ -3563,7 +3563,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "tissu-kente-ankara-5-5m",
@@ -3581,7 +3581,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-26"
   },
   {
     "id": "housses-coussin-shibori-indigo-lot-5",
