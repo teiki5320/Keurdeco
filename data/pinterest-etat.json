@@ -1178,6 +1178,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-25",
       "publie_a": "2026-10-25T09:09:54.450Z"
+    },
+    {
+      "id": "conseil-entretenir-jarre-terre-cuite-2",
+      "slug": "conseil-entretenir-jarre-terre-cuite",
+      "pin_id": "1085719422762270394",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T04:12:56.068Z"
+    },
+    {
+      "id": "conseil-entretenir-meuble-rotin-2",
+      "slug": "conseil-entretenir-meuble-rotin",
+      "pin_id": "1085719422762270396",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T04:12:58.222Z"
+    },
+    {
+      "id": "conseil-entretenir-tissu-bogolan-2",
+      "slug": "conseil-entretenir-tissu-bogolan",
+      "pin_id": "1085719422762270398",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T04:13:00.481Z"
+    },
+    {
+      "id": "conseil-hauteur-suspension-jute-2",
+      "slug": "conseil-hauteur-suspension-jute",
+      "pin_id": "1085719422762270399",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T04:13:02.762Z"
+    },
+    {
+      "id": "conseil-lampe-deco-africaine-2",
+      "slug": "conseil-lampe-deco-africaine",
+      "pin_id": "1085719422762270401",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T04:13:05.021Z"
     }
   ]
 }
