@@ -1223,6 +1223,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-26",
       "publie_a": "2026-10-26T04:13:05.021Z"
+    },
+    {
+      "id": "conseil-detacher-tapis-laine-1",
+      "slug": "conseil-detacher-tapis-laine",
+      "pin_id": "1085719422762289198",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T10:07:52.927Z"
+    },
+    {
+      "id": "top-luminaires-tresses-1",
+      "slug": "top-luminaires-tresses",
+      "pin_id": "1085719422762289201",
+      "tableau": "paniers",
+      "board_id": "1085719491358932166",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T10:07:55.233Z"
+    },
+    {
+      "id": "conseil-melanger-imprimes-africains-2",
+      "slug": "conseil-melanger-imprimes-africains",
+      "pin_id": "1085719422762289204",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T10:07:58.049Z"
+    },
+    {
+      "id": "conseil-motifs-bogolan-signification-2",
+      "slug": "conseil-motifs-bogolan-signification",
+      "pin_id": "1085719422762289206",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T10:08:00.470Z"
+    },
+    {
+      "id": "conseil-nettoyer-tapis-jute-2",
+      "slug": "conseil-nettoyer-tapis-jute",
+      "pin_id": "1085719422762289207",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-26",
+      "publie_a": "2026-10-26T10:08:02.797Z"
     }
   ]
 }
