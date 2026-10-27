@@ -13,10 +13,10 @@ Mis à jour le 27 octobre 2026 d'après le dépôt et le site en ligne. Cette fi
 
 ## Parcours
 
-- 🌐 **Web** : 🐙 GitHub — main · pages.yml au vert [ok] → 📄 Hébergement web — GitHub Pages, HTTPS imposé [ok] → 🌍 Nom de domaine — keurdeco.com chez Cloudflare [ok] → 🔎 Google et Bing — indexation en cours [à faire]
+- 🌐 **Web** : 🐙 GitHub — main · pages.yml au vert [ok] → 📄 Hébergement web — GitHub Pages, HTTPS imposé [ok] → 🌍 Nom de domaine — keurdeco.com chez Cloudflare [ok] → 🔎 Google et Bing — 104 pages sur 120 indexées par Google au 27 octobre [à faire]
 - 🛒 **Affiliation** : 📝 Articles — 25 en ligne, 14 programmés [ok] → 🛍️ Affiliation — Amazon Partenaires, tag keurdecofr-21 [ok] → 💶 Commissions — à vérifier dans la console [pas encore]
 - 📌 **Contenu** : 🖼️ Épingles — générées au build [ok] → 📥 Import CSV — lot jusqu'au 18 novembre [ok] → 🤖 API Pinterest — accès standard, 5 épingles par passage [ok]
-- 📰 **Publicité** : 📄 Pages de lecture — emplacements In-Article [ok] → 📰 AdSense (publicité web) — en examen depuis le 16 octobre, aucune annonce [à faire]
+- 📰 **Publicité** : 📄 Pages de lecture — emplacements In-Article [ok] → 📰 AdSense (publicité web) — en examen depuis le 16 octobre, « En préparation » au 27 octobre, aucune annonce [à faire]
 
 ## Vue d'ensemble
 
@@ -85,7 +85,7 @@ Mis à jour le 27 octobre 2026 d'après le dépôt et le site en ligne. Cette fi
 
 ## AdSense (publicité web)
 
-- **Rôle** : second revenu du site, mis en place le 12 octobre 2026 ; examen du site demandé à Google le 16 octobre 2026, toujours en cours : **aucune annonce ne s'affiche pour l'instant**. Le code AdSense est ajouté par le marqueur commun `<!--#head-->` sur les pages qui peuvent porter une annonce, Confidentialité comprise (son lien « Gérer mes cookies » rouvre la fenêtre de Google) ; depuis le 13 octobre 2026, il n'est plus chargé sur l'accueil, les Tops (pages Top 10 comprises), la page Actus (depuis le 27 octobre 2026), À propos, Mentions légales ni la 404 (`pageAvecAdsense` dans `build/site.ts`) ; `public/ads.txt` est servi à la racine (réponse 200 le 13 octobre 2026). Un bloc In-Article « Keur Déco - dans le texte » est placé au build par `build/annonces.ts` : 2 au plus par article, 1 pour un conseil, une fiche du glossaire ou une page de pièce, matière, occasion ou guides ; devant un intertitre, jamais contre un encadré Amazon, signalé « Annonce ». Aucune annonce sur l'accueil, les Tops, la page Actus, À propos, Confidentialité, Mentions légales ni la 404 ; un emplacement non rempli est masqué.
+- **Rôle** : second revenu du site, mis en place le 12 octobre 2026 ; examen du site demandé à Google le 16 octobre 2026, toujours en cours (« En préparation » dans la console AdSense, ni validé ni refusé (vérifié le 27 octobre 2026)) : **aucune annonce ne s'affiche pour l'instant**. Le code AdSense est ajouté par le marqueur commun `<!--#head-->` sur les pages qui peuvent porter une annonce, Confidentialité comprise (son lien « Gérer mes cookies » rouvre la fenêtre de Google) ; depuis le 13 octobre 2026, il n'est plus chargé sur l'accueil, les Tops (pages Top 10 comprises), la page Actus (depuis le 27 octobre 2026), À propos, Mentions légales ni la 404 (`pageAvecAdsense` dans `build/site.ts`) ; `public/ads.txt` est servi à la racine (réponse 200 le 13 octobre 2026). Un bloc In-Article « Keur Déco - dans le texte » est placé au build par `build/annonces.ts` : 2 au plus par article, 1 pour un conseil, une fiche du glossaire ou une page de pièce, matière, occasion ou guides ; devant un intertitre, jamais contre un encadré Amazon, signalé « Annonce ». Aucune annonce sur l'accueil, les Tops, la page Actus, À propos, Confidentialité, Mentions légales ni la 404 ; un emplacement non rempli est masqué.
 - **Consentement** : fenêtre de choix de Google (Autoriser, Refuser, Gérer les options) ; cookies publicitaires seulement avec accord ; lien « Gérer mes cookies » en bas de chaque page. Confidentialité et mentions légales le décrivent.
 - **Console** : https://adsense.google.com (compte `pub-2680784147246798`, géré avec admin@toakeur.com) — site en examen, pas de revenus avant la validation.
 - **Identifiants publics** : identifiant éditeur et identifiant du bloc d'annonces, définis une seule fois dans `build/config.ts` (publics, l'éditeur figure aussi dans `ads.txt`).
