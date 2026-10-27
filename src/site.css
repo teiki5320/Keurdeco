@@ -2680,12 +2680,21 @@ main {
 .actus__liste {
   display: grid;
   gap: 20px;
+  /* Les vignettes se règlent sur la largeur du bloc (page entière ou colonne), pas sur celle de l'écran. */
+  container-type: inline-size;
 }
 
+/*
+ * Vignettes : une grille de 12 pistes. Le nombre de colonnes dépend de la largeur du bloc
+ * (1, puis 2, 3 ou 4), et la dernière rangée s'étire toujours pour remplir la ligne : jamais
+ * de case vide, quel que soit le nombre d'actus. Une vignette étirée sur la moitié de la ligne
+ * ou plus passe en format couché (image à gauche, plafonnée) pour ne jamais devenir géante.
+ * Le reste de la division se lit en CSS : :first-child:nth-last-child(4n + 3) = « 4n + 3 vignettes ».
+ */
 .actus__vignettes {
   display: grid;
   gap: 18px;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .actu {
@@ -2819,7 +2828,13 @@ main {
   padding: 8px 14px 0;
 }
 
-@media (min-width: 700px) {
+@container (min-width: 600px) {
+  .actus__vignettes {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .actus__vignettes > .actu {
+    grid-column: span 6;
+  }
   .actu--vignette {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 'image' 'credit' 'texte';
@@ -2834,6 +2849,67 @@ main {
   }
   .actu--vignette .actu__texte {
     padding: 10px 16px 18px;
+  }
+}
+
+/* 2 colonnes : un nombre impair laisse la dernière seule, elle prend toute la ligne. */
+@container (min-width: 600px) and (max-width: 899.98px) {
+  .actus__vignettes > .actu:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 3 colonnes : reste 1 → la dernière sur toute la ligne ; reste 2 → les deux dernières par moitié. */
+@container (min-width: 900px) and (max-width: 1099.98px) {
+  .actus__vignettes > .actu {
+    grid-column: span 4;
+  }
+  .actus__vignettes:has(> :first-child:nth-last-child(3n + 1)) > .actu:last-child {
+    grid-column: 1 / -1;
+  }
+  .actus__vignettes:has(> :first-child:nth-last-child(3n + 2)) > .actu:nth-last-child(-n + 2) {
+    grid-column: span 6;
+  }
+}
+
+/* 4 colonnes : reste 1 → toute la ligne ; reste 2 → moitié chacune ; reste 3 → un tiers chacune. */
+@container (min-width: 1100px) {
+  .actus__vignettes > .actu {
+    grid-column: span 3;
+  }
+  .actus__vignettes:has(> :first-child:nth-last-child(4n + 1)) > .actu:last-child {
+    grid-column: 1 / -1;
+  }
+  .actus__vignettes:has(> :first-child:nth-last-child(4n + 2)) > .actu:nth-last-child(-n + 2) {
+    grid-column: span 6;
+  }
+  .actus__vignettes:has(> :first-child:nth-last-child(4n + 3)) > .actu:nth-last-child(-n + 3) {
+    grid-column: span 4;
+  }
+}
+
+/* Vignette étirée sur la moitié de la ligne ou plus : couchée, image carrée plafonnée à gauche. */
+@container (min-width: 600px) and (max-width: 899.98px) {
+  .actus__vignettes > .actu:last-child:nth-child(odd) {
+    grid-template-columns: clamp(150px, 32%, 260px) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'image texte' 'credit texte';
+  }
+}
+@container (min-width: 900px) and (max-width: 1099.98px) {
+  .actus__vignettes:has(> :first-child:nth-last-child(3n + 1)) > .actu:last-child,
+  .actus__vignettes:has(> :first-child:nth-last-child(3n + 2)) > .actu:nth-last-child(-n + 2) {
+    grid-template-columns: clamp(150px, 32%, 260px) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'image texte' 'credit texte';
+  }
+}
+@container (min-width: 1100px) {
+  .actus__vignettes:has(> :first-child:nth-last-child(4n + 1)) > .actu:last-child,
+  .actus__vignettes:has(> :first-child:nth-last-child(4n + 2)) > .actu:nth-last-child(-n + 2) {
+    grid-template-columns: clamp(150px, 32%, 260px) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'image texte' 'credit texte';
   }
 }
 
