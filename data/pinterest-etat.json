@@ -1268,6 +1268,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-26",
       "publie_a": "2026-10-26T10:08:02.797Z"
+    },
+    {
+      "id": "conseil-detacher-tapis-laine-2",
+      "slug": "conseil-detacher-tapis-laine",
+      "pin_id": "1085719422762364038",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T04:13:03.864Z"
+    },
+    {
+      "id": "top-luminaires-tresses-2",
+      "slug": "top-luminaires-tresses",
+      "pin_id": "1085719422762364040",
+      "tableau": "paniers",
+      "board_id": "1085719491358932166",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T04:13:06.186Z"
+    },
+    {
+      "id": "conseil-objets-africains-salon-sans-effet-musee-2",
+      "slug": "conseil-objets-africains-salon-sans-effet-musee",
+      "pin_id": "1085719422762364043",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T04:13:08.358Z"
+    },
+    {
+      "id": "conseil-origine-wax-2",
+      "slug": "conseil-origine-wax",
+      "pin_id": "1085719422762364048",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T04:13:10.621Z"
+    },
+    {
+      "id": "conseil-panier-bolga-2",
+      "slug": "conseil-panier-bolga",
+      "pin_id": "1085719422762364050",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T04:13:12.771Z"
     }
   ]
 }
