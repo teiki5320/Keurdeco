@@ -13,6 +13,9 @@
  *   <!--#entrees:piece-->    tuiles d'entrée d'une famille (piece, matiere, occasion)
  *   <!--#mention-amazon-->   mention obligatoire du programme Partenaires Amazon
  *   <!--#icone:nom-->        une icône de build/icones.ts
+ *   <!--#motif:nom-->        un motif de tissu de build/motifs.ts (arche des pages écrites à la main)
+ *   <!--#actus:4-->          section d'actus de la veille (cachée, remplie par le navigateur : src/veille.ts)
+ *   <!--#actus:3:matiere:wax-->  idem, seulement les actus d'une matière
  */
 import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
@@ -26,9 +29,11 @@ import { ADSENSE_EDITEUR, NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
 import { blocConseils, conseilsPublies, pagesConseils } from './conseils.ts';
 import { essayage } from './essayage.ts';
 import { icone, type NomIcone } from './icones.ts';
+import { motif } from './motifs.ts';
 import { ambiancesDeRubrique, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
 import { pagesTop10 } from './top10.ts';
+import { blocActus, entitesVeille } from './veille.ts';
 
 export { insecables, NOM_SITE, SITE_URL };
 
@@ -41,6 +46,7 @@ export const NAVIGATION: { href: string; libelle: string; pages: RegExp }[] = [
   { href: 'guides.html', libelle: 'Guides', pages: /^guides\.html$/ },
   { href: 'conseils.html', libelle: 'Conseils', pages: /^conseils?(-.*)?\.html$/ },
   { href: 'glossaire.html', libelle: 'Glossaire', pages: /^glossaire(-.*)?\.html$/ },
+  { href: 'actus.html', libelle: 'Actus', pages: /^actus\.html$/ },
 ];
 
 export function head(): string {
@@ -148,12 +154,12 @@ export function codeAdsense(editeur = ADSENSE_EDITEUR): string {
 }
 
 /**
- * Pages sans annonce (accueil, Tops, pages légales, 404) : on n'y charge pas le script de Google,
+ * Pages sans annonce (accueil, Tops, Actus, pages légales, 404) : on n'y charge pas le script de Google,
  * pour qu'elles restent aussi rapides. Confidentialité le garde : son lien « Gérer mes cookies »
  * doit pouvoir rouvrir la fenêtre de choix de Google.
  */
 export function pageAvecAdsense(fichier: string): boolean {
-  return !/^(index|tops|top-.*|a-propos|mentions-legales|404)\.html$/.test(fichier);
+  return !/^(index|tops|top-.*|a-propos|mentions-legales|actus|404)\.html$/.test(fichier);
 }
 
 function liensNavigation(fichier: string): string {
@@ -235,7 +241,7 @@ export function footer(): string {
     <div>
       ${colonne('occasion').replace(/^<div>|<\/div>$/g, '')}
       <h2>Keur Déco</h2>
-      <ul><li><a href="top-10/">Top 10</a></li><li><a href="tops.html">Tops</a></li><li><a href="guides.html">Guides</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="glossaire.html">Glossaire</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="confidentialite.html#publicite" data-cookies>Gérer mes cookies</a></li></ul>
+      <ul><li><a href="top-10/">Top 10</a></li><li><a href="tops.html">Tops</a></li><li><a href="guides.html">Guides</a></li><li><a href="conseils.html">Conseils</a></li><li><a href="glossaire.html">Glossaire</a></li><li><a href="actus.html">Actus</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="confidentialite.html#publicite" data-cookies>Gérer mes cookies</a></li></ul>
     </div>
   </div>
 </footer>`;
@@ -378,8 +384,10 @@ export function transformerPage(html: string, fichier: string): string {
     .replace('<!--#porte-image-->', () => imagePorte(publies))
     .replace('<!--#porte-objets-->', () => objetsPorte())
     .replace(/<!--#entrees:(piece|matiere|occasion)-->/g, (_m, f: Famille) => tuilesRubriques(f, publies))
+    .replace(/<!--#actus:(\d+)(?::([a-z]+:[a-z0-9-]+))?-->/g, (_m, n: string, tag?: string) => blocActus(Number(n), tag))
     .replace(/<!--#mention-amazon-->/g, MENTION_AMAZON)
-    .replace(/<!--#icone:([a-z-]+)-->/g, (_m, nom: NomIcone) => icone(nom));
+    .replace(/<!--#icone:([a-z-]+)-->/g, (_m, nom: NomIcone) => icone(nom))
+    .replace(/<!--#motif:([a-z-]+)-->/g, (_m, nom: string) => motif(nom));
   return insecables(profondeur ? page.replace(/href="#/g, `href="${ici}#`) : page);
 }
 
@@ -424,6 +432,8 @@ export function pluginSite(): Plugin {
       // Date de publication des articles et conseils (<lastmod>), pour aider Google à les découvrir.
       const dates = datesSitemap(racine);
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap(pages, SITE_URL, dates) });
+      // Matières du site pour la tâche de veille (relier une actu à une page matière).
+      this.emitFile({ type: 'asset', fileName: 'veille/entites.json', source: `${JSON.stringify(entitesVeille(), null, 2)}\n` });
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}sitemap.xml\n` });
       // Service worker : une version par publication, pour que les caches (images comprises) se renouvellent.
       const modele = readFileSync(resolve(import.meta.dirname, 'sw.js'), 'utf8');

@@ -56,7 +56,40 @@ try {
   const erreurs = [];
   page.on('pageerror', (e) => erreurs.push(e.message));
 
-  const pages = ['index.html', 'tops.html', 'guides.html', 'pieces.html', 'matiere-bogolan.html', 'occasion-mariage.html', 'glossaire.html', 'glossaire-bogolan.html', 'conseils.html', 'conseil-laver-coussin-wax.html', 'conseil-rideau-perles.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', 'salon-terracotta-wax.html', 'top-paniers-tresses-africains.html', 'bogolan-histoire-idees.html'];
+  // Veille actus : fichier JSON simulé (22 actus, dont une carte générée et deux sur le wax), images servies en local.
+  const URL_VEILLE = 'https://teiki5320.github.io/veille/actus/keurdeco.json';
+  const imageDemo = readFileSync(resolve(RACINE, 'public/images/marque/embleme-clair-192.webp'));
+  const actusDemo = {
+    version: 3,
+    site: 'keurdeco',
+    genere_le: '2026-10-27T08:00:00.000Z',
+    actus: Array.from({ length: 22 }, (_, i) => ({
+      id: String(i).padStart(40, '0'),
+      titre: `Actu de démonstration numéro ${i + 1}`,
+      resume: 'Un résumé de démonstration, réécrit en français, en deux phrases. Il ne vient d’aucune source réelle.',
+      theme: 'deco',
+      pays: ['SN'],
+      tags: i < 2 ? ['matiere:wax'] : [],
+      source_nom: `Source ${i + 1}`,
+      source_url: `https://exemple.org/article-${i + 1}`,
+      publie_le: new Date(Date.UTC(2026, 9, 27, 7) - i * 3600000).toISOString(),
+      image:
+        i === 1
+          ? { url: 'https://teiki5320.github.io/veille/cartes/keurdeco/demo.svg', source: 'carte', credit: 'Illustration : Keur Déco', licence: null, page: null, alt: 'Illustration Keur Déco', largeur: 1600, hauteur: 900 }
+          : { url: `https://teiki5320.github.io/veille/images/keurdeco/demo-${i}.webp`, source: 'wikimedia', credit: `Auteur ${i + 1}`, licence: 'CC BY 4.0', page: `https://commons.wikimedia.org/wiki/File:Demo_${i + 1}.jpg`, alt: `Photo de démonstration ${i + 1}`, largeur: 1600, hauteur: 900 },
+    })),
+  };
+  const simulerVeille = async (cible, { panne = false } = {}) => {
+    await cible.route('https://teiki5320.github.io/veille/**', (route) => {
+      const u = route.request().url();
+      if (u === URL_VEILLE) return panne ? route.fulfill({ status: 500, body: 'panne' }) : route.fulfill({ contentType: 'application/json', body: JSON.stringify(actusDemo) });
+      if (u.endsWith('.svg')) return route.fulfill({ contentType: 'image/svg+xml', body: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 9"><rect width="16" height="9" fill="#a3472a"/></svg>' });
+      return route.fulfill({ contentType: 'image/webp', body: imageDemo });
+    });
+  };
+  await simulerVeille(page);
+
+  const pages = ['index.html', 'actus.html', 'tops.html', 'guides.html', 'pieces.html', 'matiere-bogolan.html', 'occasion-mariage.html', 'glossaire.html', 'glossaire-bogolan.html', 'conseils.html', 'conseil-laver-coussin-wax.html', 'conseil-rideau-perles.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', 'salon-terracotta-wax.html', 'top-paniers-tresses-africains.html', 'bogolan-histoire-idees.html'];
   for (const p of pages) {
     const rep = await page.goto(BASE + p, { waitUntil: 'networkidle' });
     verifier(rep?.ok() && (await page.locator('h1').count()) === 1, `${p} s'affiche avec un seul h1`);
@@ -141,6 +174,45 @@ try {
   await page.goto(`${BASE}conseil-laver-coussin-wax.html`, { waitUntil: 'networkidle' });
   verifier((await page.locator('.reponse-courte').count()) === 1 && (await page.locator('.site-nav a[href="conseils.html"][aria-current="page"]').count()) === 1, 'conseil : réponse courte et onglet Conseils actif');
   verifier((await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"FAQPage"')), 'conseil : données structurées FAQ');
+
+  // Veille actus : accueil (4), actus.html (20), page matière avec et sans actus, panne du fichier, sans JavaScript
+  await page.goto(BASE, { waitUntil: 'networkidle' });
+  verifier((await page.locator('.actus--accueil:not([hidden]) .actu').count()) === 4 && (await page.locator('.actus--accueil .actu--bandeau').count()) === 1 && (await page.getAttribute('.actus--accueil .actu--bandeau img', 'loading')) === null, 'accueil : 4 actus (1 bandeau chargé tout de suite, 3 vignettes)');
+  await page.goto(`${BASE}actus.html`, { waitUntil: 'networkidle' });
+  const sourceActu = page.locator('.actu__source a').first();
+  verifier(
+    (await page.locator('.actu').count()) === 20 && (await page.locator('[data-actus-maj]').isVisible()) && (await page.locator('h1').count()) === 1,
+    'actus.html : 20 actus et date de mise à jour',
+  );
+  verifier(
+    (await sourceActu.getAttribute('href')) === 'https://exemple.org/article-1' && (await sourceActu.getAttribute('target')) === '_blank' && (await sourceActu.getAttribute('rel')) === 'noopener nofollow',
+    'actus.html : lien « Source » vers l’article, nouvel onglet, rel noopener nofollow',
+  );
+  const credits = await page.locator('.actu__credit').allTextContents();
+  verifier(credits[0] === 'Photo : Auteur 1 · CC BY 4.0' && credits[1] === 'Illustration : Keur Déco' && (await page.locator('.actu img[alt=""]').count()) === 0, 'actus.html : crédits (photo et carte générée) et textes alternatifs');
+  verifier(!/amazon|epingler/i.test(await page.locator('.actus').innerHTML()), 'actus.html : aucun lien Amazon ni bouton Épingler dans les actus');
+  verifier((await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)), 'actus.html : pas de défilement horizontal');
+  await page.goto(`${BASE}matiere-wax.html`, { waitUntil: 'networkidle' });
+  verifier((await page.locator('.actus--matiere:not([hidden]) .actu').count()) === 2 && (await page.textContent('.actus--matiere h2'))?.includes('L’actu du wax'), 'page matière (wax) : ses 2 actus');
+  await page.goto(`${BASE}matiere-perles.html`, { waitUntil: 'networkidle' });
+  verifier((await page.locator('.actus--matiere').isHidden()) && (await page.locator('.actu').count()) === 0, 'page matière sans actu (perles) : bloc absent');
+  const contexteActus = await navigateur.newContext({ viewport: { width: 390, height: 844 } });
+  const pagePanne = await contexteActus.newPage();
+  const erreursPanne = [];
+  pagePanne.on('pageerror', (e) => erreursPanne.push(e.message));
+  await simulerVeille(pagePanne, { panne: true });
+  await pagePanne.goto(`${BASE}actus.html`, { waitUntil: 'networkidle' });
+  verifier((await pagePanne.locator('.actus').isHidden()) && (await pagePanne.locator('[data-actus-maj]').isHidden()) && erreursPanne.length === 0, 'fichier des actus en panne : bloc caché, page intacte, aucune erreur');
+  await contexteActus.close();
+  const contexteActusSansJs = await navigateur.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+  const actusSansJs = await contexteActusSansJs.newPage();
+  await actusSansJs.goto(BASE);
+  verifier((await actusSansJs.locator('.actus').isHidden()) && (await actusSansJs.locator('h1').count()) === 1, 'sans JavaScript : aucun bloc d’actus vide');
+  await contexteActusSansJs.close();
+  // L'interception des requêtes désactive le cache du navigateur : on la retire pour les mesures de vitesse qui suivent.
+  await page.unrouteAll();
+  const entites = await (await fetch(`${BASE}veille/entites.json`)).json();
+  verifier(Array.isArray(entites) && entites.length === 8 && entites.every((e) => /^matiere:[a-z-]+$/.test(e.tag) && e.nom && Array.isArray(e.autres_noms)), 'veille/entites.json : les 8 matières');
 
   // Animations : pas de boucle permanente, liens de contenu immédiats, mémoire bloquée sans plantage
   await page.goto(BASE, { waitUntil: 'networkidle' });

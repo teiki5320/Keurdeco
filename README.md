@@ -38,6 +38,8 @@ Node 22.18 ou plus récent (les scripts `.ts` sont exécutés directement par No
 | `src/theme.css` | **Thème** : toutes les couleurs et polices (palette « Terre de Dakar ») |
 | `src/animations.ts`, `src/nuancier.ts` | Animations (porte, visite, coupons, coutures, rideau) et nuancier des matières |
 | `build/conseils.ts`, `contenu/conseils/*.md` | Onglet Conseils (une question par page) |
+| `build/veille.ts`, `src/veille.ts`, `actus.html` | Veille actus : `veille/entites.json` au build, blocs d'actus lus en direct dans le navigateur |
+| `src/data/credits-images.json`, `scripts/images-libres.ts` | Photos libres et cartes générées (crédits) des conseils sans image IA |
 | `build/sw.js` | Modèle du service worker (numéro de version ajouté à chaque build) |
 | `src/site.css`, `src/site.ts` | Styles et JavaScript (points cliquables, menu, service worker) |
 | `contenu/articles/*.md` | Un fichier par article |
@@ -118,7 +120,17 @@ Onglet « Conseils », comme sur Kultiled et Keur Cook : une question pratique p
 - Pages générées par `build/conseils.ts` : `conseils.html` (par thème) et `conseil-<slug>.html` (réponse courte, données structurées FAQ, conseils proches).
 - Épingles Pinterest automatiques : un visuel typographique (la question dans une arche, sur le motif du thème) par titre, publié dans le tableau « general ».
 - Les tests vérifient que les liens internes d'un conseil mènent à des pages déjà publiées à sa date.
-- Photo facultative : `public/images/articles/conseil-<slug>-*.webp` (texte alternatif dans `src/data/textes-alternatifs.json`) ; sans photo, la carte et la page affichent le motif du thème.
+- Photo : `public/images/articles/conseil-<slug>-*.webp` (texte alternatif dans `src/data/textes-alternatifs.json`) ; sans photo, la carte et la page affichent le motif du thème. Au 27 octobre 2026, les 62 conseils ont une image : 50 créées par IA (mention sous le titre) et 12 complétées le 27 octobre par `npm run images-libres` (6 photos libres de Wikimedia Commons, 6 cartes générées aux couleurs du site). Une image déjà en place n'est jamais remplacée.
+- Photos libres : `src/data/credits-images.json` (auteur, licence, page d'origine, adresse de téléchargement) ; `npm run images-libres` télécharge et range les images dans le dépôt en WebP (400/800/1600), sans image de partage ni source HD : elles ne servent jamais aux épingles. Ordre des sources : Wikimedia Commons, puis Openverse en usage commercial (CC0, domaine public, CC BY, CC BY-SA), sinon une carte générée (« Illustration : Keur Déco »). Crédit « Photo : auteur · licence » sous l'image, avec un lien vers la page d'origine ; les tests refusent un auteur inconnu, une licence non commerciale et deux fois la même image.
+
+## Actus (veille)
+
+Depuis le 27 octobre 2026 : actus de la déco, du design et de l'artisanat africains, préparées 2 fois par jour (12 h et 19 h) par la tâche de veille dans le dépôt public `teiki5320/veille` et lues en direct par le navigateur (`https://teiki5320.github.io/veille/actus/keurdeco.json`, schéma v3), sans reconstruire le site.
+
+- Emplacements : accueil (4 actus, 1 bandeau + 3 vignettes, lien « Toutes les actus »), page `actus.html` (20, avec la date de mise à jour) et chaque page matière (3 actus avec le tag `matiere:<id>`, bloc absent s'il n'y en a pas). Marqueurs `<!--#actus:4-->` et `<!--#actus:3:matiere:wax-->` (`build/veille.ts`).
+- `src/veille.ts` : délai de 8 s, cache de 15 min (`sessionStorage`), HTML construit sans `innerHTML`, liens « Source » `target="_blank" rel="noopener nofollow"`, crédit sous chaque image. En cas d'erreur ou sans JavaScript, les blocs restent cachés.
+- Le build publie `veille/entites.json` (les 8 matières et leurs autres noms) pour que la veille relie une actu à une matière.
+- Aucun lien Amazon, aucun prix, aucun bouton « Épingler » dans les actus ; pas d'annonce AdSense sur `actus.html`.
 
 ## Produits
 

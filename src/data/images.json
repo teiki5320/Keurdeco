@@ -63,6 +63,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-aso-oke": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-associer-wax-bogolan": {
     "largeur": 1600,
     "hauteur": 1073
@@ -95,6 +99,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-coussins-canape-gris": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-deco-africaine-boheme": {
     "largeur": 1600,
     "hauteur": 1073
@@ -115,9 +123,17 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-emballer-cadeau-tissu-wax": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-entretenir-bois-sculpte": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-entretenir-calebasse": {
+    "largeur": 1600,
+    "hauteur": 1205
   },
   "conseil-entretenir-jarre-terre-cuite": {
     "largeur": 1600,
@@ -147,6 +163,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-juju-hat": {
+    "largeur": 1600,
+    "hauteur": 1638
+  },
   "conseil-lampe-deco-africaine": {
     "largeur": 1600,
     "hauteur": 1073
@@ -154,6 +174,10 @@
   "conseil-laver-coussin-wax": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-linge-de-lit-africain": {
+    "largeur": 1600,
+    "hauteur": 1067
   },
   "conseil-melanger-imprimes-africains": {
     "largeur": 1600,
@@ -166,6 +190,10 @@
   "conseil-motifs-bogolan-signification": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-nettoyer-laiton-bronze": {
+    "largeur": 1600,
+    "hauteur": 745
   },
   "conseil-nettoyer-tapis-jute": {
     "largeur": 1600,
@@ -182,6 +210,10 @@
   "conseil-panier-bolga": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-plaid-deco-africaine": {
+    "largeur": 1600,
+    "hauteur": 1067
   },
   "conseil-plantes-deco-africaine": {
     "largeur": 1600,
@@ -207,6 +239,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-rideaux-deco-africaine": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-signification-sankofa": {
     "largeur": 1600,
     "hauteur": 1073
@@ -231,9 +267,21 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-tete-de-lit-tissu-africain": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
+  "conseil-tissu-kanga": {
+    "largeur": 1600,
+    "hauteur": 1200
+  },
   "conseil-tissu-kuba": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-tissu-ndop": {
+    "largeur": 1600,
+    "hauteur": 2133
   },
   "conseil-vase-herbes-pampa": {
     "largeur": 1600,

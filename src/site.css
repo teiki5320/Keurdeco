@@ -2646,3 +2646,255 @@ main {
 .annonce:has(ins[data-ad-status='unfilled']) {
   display: none;
 }
+
+/* ---------- Actus de la veille (src/veille.ts) ---------- */
+
+/* Sections posées au build, cachées tant qu'aucune actu n'est affichée (sans JavaScript : jamais montrées). */
+.actus[hidden],
+.actus-maj[hidden] {
+  display: none;
+}
+
+.actus {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.8s var(--courbe);
+}
+
+.actus--visible {
+  opacity: 1;
+  transform: none;
+}
+
+.actus--matiere {
+  margin-top: 56px;
+}
+
+.actus__tout {
+  font-weight: 700;
+  color: var(--lien);
+}
+
+.actus__liste {
+  display: grid;
+  gap: 20px;
+}
+
+.actus__vignettes {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+}
+
+.actu {
+  display: grid;
+  min-width: 0;
+  border-radius: var(--rayon);
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  overflow: hidden;
+}
+
+/* Le figure s'efface : l'image et son crédit se placent directement dans la grille de la carte. */
+.actu__figure {
+  display: contents;
+}
+
+.actu__image {
+  grid-area: image;
+  overflow: hidden;
+  background: var(--fond-doux);
+}
+
+.actu__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.actu__credit {
+  grid-area: credit;
+  margin: 0;
+  padding: 8px 16px 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--texte-doux);
+  overflow-wrap: anywhere;
+}
+
+.actu__credit a {
+  color: var(--texte-doux);
+}
+
+.actu__texte {
+  grid-area: texte;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 14px 16px 18px;
+  min-width: 0;
+}
+
+.actu__age {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-texte);
+}
+
+.actu__titre {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--titre);
+}
+
+.actu__resume {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--texte-doux);
+}
+
+.actu__source {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Bandeau : la première actu, image 16:9. */
+.actu--bandeau {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'image' 'credit' 'texte';
+}
+
+.actu--bandeau .actu__image img {
+  aspect-ratio: 16 / 9;
+}
+
+.actu--bandeau .actu__titre {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.1;
+}
+
+.actu--bandeau .actu__resume {
+  font-size: 1.02rem;
+}
+
+/* Vignettes : image carrée à gauche sur téléphone, au-dessus du texte sur grand écran. */
+.actu--vignette {
+  grid-template-columns: 104px minmax(0, 1fr);
+  grid-template-areas: 'image texte' 'credit credit';
+  padding-bottom: 12px;
+}
+
+.actu--vignette .actu__image {
+  margin: 14px 0 0 14px;
+  border-radius: var(--rayon-petit);
+  align-self: start;
+}
+
+.actu--vignette .actu__image img {
+  aspect-ratio: 1 / 1;
+}
+
+.actu--vignette .actu__texte {
+  padding: 14px 16px 4px 14px;
+}
+
+.actu--vignette .actu__resume {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.actu--vignette .actu__credit {
+  padding: 8px 14px 0;
+}
+
+@media (min-width: 700px) {
+  .actu--vignette {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'image' 'credit' 'texte';
+    padding-bottom: 0;
+  }
+  .actu--vignette .actu__image {
+    margin: 0;
+    border-radius: 0;
+  }
+  .actu--vignette .actu__credit {
+    padding: 8px 16px 0;
+  }
+  .actu--vignette .actu__texte {
+    padding: 10px 16px 18px;
+  }
+}
+
+@media (min-width: 900px) {
+  .actu--bandeau {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    grid-template-areas: 'image texte' 'credit texte';
+  }
+  .actu--bandeau .actu__credit {
+    padding-bottom: 12px;
+  }
+  .actu--bandeau .actu__texte {
+    padding: clamp(20px, 3vw, 40px);
+    align-content: center;
+  }
+}
+
+.actus-maj {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  color: var(--texte-doux);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .actus {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Crédit des photos libres et des cartes générées (conseils) ---------- */
+
+.page__figure {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  justify-self: center;
+  width: min(100%, 320px);
+}
+
+.page__figure .page__arche {
+  width: 100%;
+}
+
+.credit-image {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--texte-doux);
+  overflow-wrap: anywhere;
+}
+
+.credit-image a {
+  color: var(--texte-doux);
+}
+
+.carte-conseil__credit {
+  font-size: 0.75rem;
+  color: var(--texte-doux);
+  overflow-wrap: anywhere;
+}

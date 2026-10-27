@@ -163,7 +163,8 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     noindex: articles.length === 0,
     motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
     image: imageExiste(imageRubrique(famille, r.id)) ? imageRubrique(famille, r.id) : undefined,
-    contenu: `${grilleArticles(articles, '<p class="liste-vide">La première ambiance arrive bientôt.</p>')}
+    // Page matière : les 3 dernières actus de la veille sur cette matière (bloc absent s'il n'y en a pas).
+    contenu: `${grilleArticles(articles, '<p class="liste-vide">La première ambiance arrive bientôt.</p>')}${famille === 'matiere' ? `\n        <!--#actus:3:matiere:${r.id}-->` : ''}
         ${introPage(fichierRubrique(famille, r.id).replace(/\.html$/, ''), true)}
         <nav class="autres-rubriques" aria-label="${f.titre}"><h2>${f.titre}</h2>${tuilesRubriques(famille, publies)}</nav>`,
   });

@@ -15,6 +15,7 @@
     "test:watch": "vitest",
     "test:e2e": "node scripts/e2e.mjs",
     "images": "node scripts/images.ts",
+    "images-libres": "PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/images-libres.ts",
     "epingles": "PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/epingles.ts",
     "hotspots": "node scripts/hotspots.mjs",
     "nouvel-article": "node scripts/nouvel-article.mjs",

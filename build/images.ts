@@ -57,3 +57,33 @@ export function texteAlternatif(nom: string): string {
 }
 
 export const MENTION_IA_ILLUSTRATION = 'Photo d’illustration créée par IA.';
+
+/**
+ * Crédit d'une image qui n'est pas créée par IA (src/data/credits-images.json, voir scripts/images-libres.ts) :
+ * photo libre (Wikimedia Commons, Openverse) ou carte générée aux couleurs du site.
+ */
+export type CreditImage =
+  | { type: 'photo'; source: 'wikimedia' | 'openverse'; auteur: string; licence: string; page: string; telechargement: string }
+  | { type: 'carte'; libelle: string; icone: string; motif: string };
+
+let credits: Record<string, CreditImage> | null = null;
+
+export function creditImage(nom: string): CreditImage | undefined {
+  credits ??= JSON.parse(readFileSync(resolve(RACINE, 'src/data/credits-images.json'), 'utf8')) as Record<string, CreditImage>;
+  return credits[nom];
+}
+
+/** Texte du crédit : « Photo : auteur · licence » ou « Illustration : Keur Déco » ; vide pour une image IA. */
+export function texteCredit(nom: string): string {
+  const c = creditImage(nom);
+  if (!c) return '';
+  return c.type === 'photo' ? `Photo : ${c.auteur} · ${c.licence}` : 'Illustration : Keur Déco';
+}
+
+/** Crédit affiché sous l'image, avec un lien vers la page d'origine pour une photo libre. */
+export function legendeCredit(nom: string, classe = 'credit-image'): string {
+  const c = creditImage(nom);
+  if (!c) return '';
+  if (c.type === 'carte') return `<p class="${classe}">Illustration : Keur Déco</p>`;
+  return `<p class="${classe}">Photo : <a href="${echapper(c.page)}" target="_blank" rel="noopener">${echapper(c.auteur)} · ${echapper(c.licence)}</a></p>`;
+}

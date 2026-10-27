@@ -19,6 +19,7 @@ Mis à jour le 27 octobre 2026. Compagnon de INFRA.md.
 
 - 🧵 **Matières expliquées** : nuancier animé et glossaire de 15 matières (wax, bogolan, kente, indigo, raphia…).
 - 🛋️ **Ambiances cliquables** : chaque image d'ambiance a des points qui mènent aux produits, classés sans mélange par pièce, matière ou occasion.
+- 📰 **Actus de la déco africaine** : depuis le 27 octobre 2026, 4 actus sur l'accueil, 20 sur la page Actus et 3 par page matière, mises à jour 2 fois par jour par la veille (titres et résumés réécrits, source et crédit photo toujours affichés, aucun lien Amazon).
 - ✅ **Produits vérifiés à la main** : aucun prix, aucune photo Amazon, mention IA sur les images et mention Partenaires affichée.
 
 ## Canaux
@@ -27,6 +28,12 @@ Mis à jour le 27 octobre 2026. Compagnon de INFRA.md.
 - ✅ **Google** : Search Console vérifiée (propriété de domaine) ; au relevé du 7 octobre 2026, 71 pages indexées et 27 non indexées, demandes d'indexation faites les 7 et 8 octobre. Le 21 octobre, la routine « Référencement du jour » a retravaillé 5 pages (titres, descriptions, liens internes), à relire à partir du 18 novembre ; le 22 octobre, 3 pages presque en première page retravaillées, à relire à partir du 19 novembre (`docs/referencement.md`).
 - ✅ **Bing** : pages signalées par IndexNow après chaque reconstruction programmée (lundi, mercredi, vendredi).
 - ⬜ **TikTok et YouTube** : TikTok « Afrotok » est branché au Studio mais rattaché à aucune app, YouTube « toa.afrotok » à Erea seule (Studio, 13 octobre 2026) ; aucune publication pour Keur Déco.
+
+## Rubrique Actus
+
+- **Où** : bloc « Actus de la déco africaine » sur l'accueil (4), page `actus.html` (20, dans le menu et le pied de page, au sitemap), bloc « L'actu du [matière] » sur chaque page matière (3, absent s'il n'y en a pas).
+- **Quoi** : designers, artisans, textiles, vannerie, poterie, bois sculpté, perles, salons et expositions ; 15 flux RSS ; titres et résumés réécrits par Claude, lien vers chaque source, crédit de chaque image.
+- **Règles** : aucun lien Partenaires ni prix dans les actus, aucune épingle Pinterest tirée des actus, pas d'annonce AdSense sur la page Actus.
 
 ## Mesures
 
@@ -40,7 +47,7 @@ Mis à jour le 27 octobre 2026. Compagnon de INFRA.md.
 ## Calendrier
 
 - Articles et conseils **publiés à leur date** (en-tête `publie_le`), le site étant reconstruit à chaque push et chaque lundi, mercredi et vendredi à 5 h UTC. Au 27 octobre 2026 : 39 articles, dont 25 en ligne et 14 programmés, un par lundi jusqu'au 25 janvier 2027, puis le balcon le 26 avril 2027. Page « Top 10 » à onglets (10 sujets) en ligne depuis le 19 octobre.
-- Conseils : 62, dont 40 en ligne au 27 octobre 2026 et 22 programmés (lundi, mercredi, vendredi) jusqu'au 16 décembre 2026 (12 ajoutés le 26 octobre par la routine « Articles », pour l'instant sans photo : la carte affiche le motif du thème en attendant l'accord de Jean pour les images). Depuis le 23 octobre 2026, le site est reconstruit le lundi, le mercredi et le vendredi (`pages.yml`, cron `0 5 * * 1,3,5`) et à chaque push : chaque conseil paraît le jour de sa date.
+- Conseils : 62, dont 40 en ligne au 27 octobre 2026 et 22 programmés (lundi, mercredi, vendredi) jusqu'au 16 décembre 2026 (12 ajoutés le 26 octobre par la routine « Articles », restés sans image jusqu'au 27 octobre : Jean a choisi de les compléter, 6 avec une photo libre de Wikimedia Commons créditée et 6 avec une carte générée aux couleurs du site ; les 50 images IA déjà en place sont gardées). Depuis le 23 octobre 2026, le site est reconstruit le lundi, le mercredi et le vendredi (`pages.yml`, cron `0 5 * * 1,3,5`) et à chaque push : chaque conseil paraît le jour de sa date.
 - Épingles : import CSV par lots de 30 jours, 2 par jour (lot en cours jusqu'au 18 novembre) ; en plus, l'API publie 5 épingles par passage du workflow quotidien.
 
 ## Les 3 priorités

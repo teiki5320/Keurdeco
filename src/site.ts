@@ -6,6 +6,7 @@ import '@fontsource-variable/source-sans-3';
 import './theme.css';
 import './site.css';
 import { demarrerAnimations } from './animations.ts';
+import { afficherActus } from './veille.ts';
 
 /** Photos pas encore chargées : cachées puis montrées en fondu (voir .img-attente dans site.css). */
 function fonduImages(): void {
@@ -102,6 +103,10 @@ annonces();
 lienEvitement();
 fonduImages();
 demarrerAnimations();
+// Actus de la veille (accueil, actus.html, pages matières) : lues en direct, jamais bloquantes.
+afficherActus().catch(() => {
+  /* sans actus, les sections restent cachées */
+});
 
 /** Site installable et consultable hors ligne : service worker (site publié en HTTPS uniquement). */
 if (import.meta.env.PROD && 'serviceWorker' in navigator && location.protocol === 'https:') {

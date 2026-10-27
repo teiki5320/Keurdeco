@@ -22,7 +22,7 @@ import { placerAnnonces } from './annonces.ts';
 import { rendreCorps } from './articles.ts';
 import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
-import { imageExiste, MENTION_IA_ILLUSTRATION, photoFond } from './images.ts';
+import { creditImage, imageExiste, legendeCredit, MENTION_IA_ILLUSTRATION, photoFond, texteCredit } from './images.ts';
 import { motif } from './motifs.ts';
 import { echapper, indexProduits } from './produits.ts';
 
@@ -108,7 +108,7 @@ export function carteConseil(c: Conseil, i = 0): string {
   <span class="carte-conseil__texte">
     <span class="carte-conseil__theme">${t.nom}</span>
     <strong class="carte-conseil__titre">${echapper(c.titre)}</strong>
-    <span class="carte-conseil__reponse">${echapper(c.reponse)}</span>
+    <span class="carte-conseil__reponse">${echapper(c.reponse)}</span>${creditImage(imageConseil(c))?.type === 'photo' && imageExiste(imageConseil(c)) ? `\n    <span class="carte-conseil__credit">${echapper(texteCredit(imageConseil(c)))}</span>` : ''}
   </span>
 </a>`;
 }
@@ -132,6 +132,8 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
   const matieres = c.matieres.map((id) => trouverRubrique('matiere', id)).filter((r) => !!r);
   const adresse = `${url}${c.fichier}`;
   const photo = photoFond(imageConseil(c), '(min-width: 900px) 320px, 120px', 'eager');
+  // Photo libre ou carte générée : crédit sous l'image (et image lue par les lecteurs d'écran) ; sinon image IA, signalée sous le titre.
+  const credit = photo ? legendeCredit(imageConseil(c)) : '';
   // Données structurées : la question et sa réponse courte (FAQ), plus l'article et le fil d'Ariane.
   const ld = [
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: c.titre, acceptedAnswer: { '@type': 'Answer', text: c.reponse } }] },
@@ -164,9 +166,9 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
         <div class="page__entete-texte">
           <p class="fil"><a href="index.html">Accueil</a> › <a href="conseils.html">Conseils</a> › ${t.nom}</p>
           <p class="article__meta"><span class="article__type">${icone(t.icone, 'icone icone--petite')} ${t.nom}</span><time datetime="${c.publieLe}">${dateLongue(c.publieLe)}</time></p>
-          <h1 data-mots>${echapper(c.titre)}</h1>${photo ? `\n          <p class="mention-ia">${icone('ia', 'icone icone--petite')} ${MENTION_IA_ILLUSTRATION}</p>` : ''}
+          <h1 data-mots>${echapper(c.titre)}</h1>${photo && !credit ? `\n          <p class="mention-ia">${icone('ia', 'icone icone--petite')} ${MENTION_IA_ILLUSTRATION}</p>` : ''}
         </div>
-        <div class="page__arche" data-reveal aria-hidden="true">${photo || motif(t.motif)}</div>
+        ${credit ? `<figure class="page__figure" data-reveal><div class="page__arche">${photo}</div><figcaption>${credit}</figcaption></figure>` : `<div class="page__arche" data-reveal aria-hidden="true">${photo || motif(t.motif)}</div>`}
       </header>
       <div class="conteneur conteneur--etroit">
         <aside class="reponse-courte" data-reveal>

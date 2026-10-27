@@ -1,0 +1,86 @@
+{
+  "conseil-aso-oke": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Toyinvisuals",
+    "licence": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Aso-Oke.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Aso-Oke.jpg/1920px-Aso-Oke.jpg"
+  },
+  "conseil-coussins-canape-gris": {
+    "type": "carte",
+    "libelle": "Coussins",
+    "icone": "coussin",
+    "motif": "wax"
+  },
+  "conseil-emballer-cadeau-tissu-wax": {
+    "type": "carte",
+    "libelle": "Emballage en wax",
+    "icone": "cadeau",
+    "motif": "kente"
+  },
+  "conseil-entretenir-calebasse": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Musaddam Idriss",
+    "licence": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Decorated_Calabashes_in_Kolere_Market.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Decorated_Calabashes_in_Kolere_Market.jpg/1920px-Decorated_Calabashes_in_Kolere_Market.jpg"
+  },
+  "conseil-juju-hat": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Ann Porteus",
+    "licence": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:6229_2_bamileke_hat_(2310900701).jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/4/48/6229_2_bamileke_hat_%282310900701%29.jpg"
+  },
+  "conseil-linge-de-lit-africain": {
+    "type": "carte",
+    "libelle": "Linge de lit",
+    "icone": "linge-de-lit",
+    "motif": "indigo"
+  },
+  "conseil-nettoyer-laiton-bronze": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "ZSM",
+    "licence": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Brass_leopard.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Brass_leopard.jpg"
+  },
+  "conseil-plaid-deco-africaine": {
+    "type": "carte",
+    "libelle": "Plaid",
+    "icone": "plaid",
+    "motif": "bogolan"
+  },
+  "conseil-rideaux-deco-africaine": {
+    "type": "carte",
+    "libelle": "Rideaux",
+    "icone": "rideau",
+    "motif": "raphia-paniers"
+  },
+  "conseil-tete-de-lit-tissu-africain": {
+    "type": "carte",
+    "libelle": "Tête de lit",
+    "icone": "tete-de-lit",
+    "motif": "terre-cuite"
+  },
+  "conseil-tissu-kanga": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Flickr user Lall",
+    "licence": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Kangas_drying_in_Zanzibar.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Kangas_drying_in_Zanzibar.jpg"
+  },
+  "conseil-tissu-ndop": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Ji-Elle",
+    "licence": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Tissu_ndop_de_Bati%C3%A9.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/2/20/Tissu_ndop_de_Bati%C3%A9.jpg"
+  }
+}
