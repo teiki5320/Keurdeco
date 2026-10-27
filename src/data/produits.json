@@ -33,7 +33,7 @@
     "pieces": [
       "salon"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-20"
   },
   {
@@ -51,7 +51,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "plaid-coton-rayures-creme",
@@ -68,7 +68,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "assiettes-murales-tressees",
@@ -143,7 +143,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "vase-terre-cuite-terracotta",
@@ -161,7 +161,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "tabouret-bois-sculpte",
@@ -237,7 +237,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "corbeille-fruits-tressee",
@@ -273,7 +273,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "panier-mural-tresse",
@@ -406,7 +406,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "lanternes-solaires-rotin",
@@ -457,7 +457,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "banc-acacia-jardin",
@@ -475,7 +475,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "coupon-pagne-wax-180x120",
@@ -493,7 +493,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "chemin-table-tribal-africain",
@@ -571,7 +571,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "nappe-impermeable-tribale",
@@ -3599,7 +3599,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "statue-girafe-bois-60",
@@ -3614,7 +3614,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "masque-zebre-bois-sculpte",
@@ -3629,7 +3629,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "tapis-berbere-creme-orange-noir-120x170",
@@ -3646,7 +3646,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "tapis-berbere-rouge-140x200",
@@ -3660,7 +3660,7 @@
     "pieces": [
       "salon"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-19"
   },
   {
@@ -3674,7 +3674,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "tapis-berbere-ecru-noir-80x150",
@@ -3690,7 +3690,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "teinture-indigo-prereduit-jacquard",
@@ -3707,7 +3707,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "couvre-lit-ajrak-indigo",
@@ -3724,7 +3724,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "housse-coussin-shibori-indigo-jaipur",
@@ -3742,7 +3742,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "nappe-ronde-femme-africaine",
@@ -3755,7 +3755,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "nappe-imprime-girafe-152x213",
@@ -3770,7 +3770,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "parure-enfant-savane-coton-140x200",
@@ -3783,7 +3783,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "housse-couette-elephant-girafe-220x240",
@@ -3796,7 +3796,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "chemin-table-faune-africaine-33x91",
@@ -3812,7 +3812,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "panier-bolga-petit-20",
@@ -3828,7 +3828,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "panier-all-across-africa-mineral",
@@ -3844,7 +3844,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "housses-coussin-kente-boucles-dorees-lot-4",
@@ -3860,7 +3860,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-19"
+    "verifie_le": "2026-10-27"
   },
   {
     "id": "coussin-afrique-patchwork-40",
