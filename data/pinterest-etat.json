@@ -1313,6 +1313,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-27",
       "publie_a": "2026-10-27T04:13:12.771Z"
+    },
+    {
+      "id": "conseil-reconnaitre-vrai-wax-2",
+      "slug": "conseil-reconnaitre-vrai-wax",
+      "pin_id": "1085719422762378448",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T09:49:24.161Z"
+    },
+    {
+      "id": "conseil-entretenir-pouf-cuir-3",
+      "slug": "conseil-entretenir-pouf-cuir",
+      "pin_id": "1085719422762378453",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T09:49:26.400Z"
+    },
+    {
+      "id": "conseil-hauteur-cadre-textile-3",
+      "slug": "conseil-hauteur-cadre-textile",
+      "pin_id": "1085719422762378455",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T09:49:28.606Z"
+    },
+    {
+      "id": "conseil-accrocher-masque-africain-3",
+      "slug": "conseil-accrocher-masque-africain",
+      "pin_id": "1085719422762378458",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T09:49:30.831Z"
+    },
+    {
+      "id": "salon-bogolan-bois-clair-3",
+      "slug": "salon-bogolan-bois-clair",
+      "pin_id": "1085719422762378461",
+      "tableau": "bogolan",
+      "board_id": "1085719491358932174",
+      "publie_le": "2026-10-27",
+      "publie_a": "2026-10-27T09:49:32.989Z"
     }
   ]
 }
