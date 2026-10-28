@@ -511,6 +511,12 @@ main {
   box-shadow: 0 14px 30px rgb(180 83 47 / 38%);
 }
 
+/* Boutons « Voir sur Amazon » : 44 px de haut au moins (cible tactile), toujours avec leur texte. */
+.bouton--amazon {
+  min-height: 44px;
+  justify-content: center;
+}
+
 .bouton--contour {
   background: transparent;
   border: 1.5px solid var(--encre);
@@ -1662,8 +1668,9 @@ main {
   display: none;
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 38px;
-  height: 38px;
+  /* 44 px : taille minimale d'une cible tactile. */
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 3px solid #fff;
   background: var(--terracotta);
@@ -1749,7 +1756,7 @@ main {
 }
 
 .hotspot-carte__nom {
-  margin: 4px 26px 14px 0;
+  margin: 4px 30px 14px 0;
   font-family: var(--police-titre);
   font-weight: 600;
   color: var(--encre);
@@ -1758,15 +1765,19 @@ main {
 
 .hotspot-carte__fermer {
   position: absolute;
-  top: 6px;
-  right: 8px;
+  top: 0;
+  right: 0;
   border: 0;
   background: none;
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
   color: var(--texte-doux);
-  padding: 4px;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
 }
 
 @media (max-width: 599px) {
