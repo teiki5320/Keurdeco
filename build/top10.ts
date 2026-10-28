@@ -304,3 +304,46 @@ export function pagesTop10(produits = indexProduits()): Map<string, string> {
 export function top10Lie(slugArticle: string, produits = indexProduits()): SujetTop10 | undefined {
   return sujetsPublies(produits).find((s) => s.topsLies.includes(slugArticle));
 }
+
+/** Ordre des sujets dans les coups de cœur de l'accueil : la table et la lumière d'abord (fêtes de fin d'année). */
+export const SAISON_ACCUEIL = ['chemins-de-table', 'nappes-sets-de-table', 'luminaires-fibres-naturelles', 'coussins-imprimes-africains', 'parures-de-lit', 'paniers-tresses-africains', 'bois-sculpte', 'decos-murales', 'tapis-esprit-africain', 'indigo-kente'];
+
+/**
+ * Coups de cœur de l'accueil : un produit par Top 10 publié (le mieux classé qui a une vignette maison),
+ * 8 au plus. Chaque carte mène à sa place dans le Top 10 (ancre #n-<rang>) : aucun lien Amazon sur l'accueil.
+ */
+export function coupsDeCoeur(produits = indexProduits(), sujets = sujetsPublies(produits), n = 8, aVignette = (id: string) => existsSync(resolve(DOSSIER_VIGNETTES, `${id}-320.webp`))) {
+  const rang = (slug: string) => (SAISON_ACCUEIL.indexOf(slug) + 1 || 99);
+  return [...sujets]
+    .sort((a, b) => rang(a.slug) - rang(b.slug) || a.ordre - b.ordre)
+    .flatMap((s) => {
+      const dix = dixProduits(s, produits);
+      const i = dix.findIndex((e) => aVignette(e.p.id));
+      return i < 0 ? [] : [{ sujet: s, p: dix[i].p, href: `${adresseTop10(s.slug)}#n-${i + 1}` }];
+    })
+    .slice(0, n);
+}
+
+/** Bloc « Nos coups de cœur » de l'accueil (vide s'il y a moins de 4 produits à montrer). */
+export function blocCoupsDeCoeur(choix = coupsDeCoeur()): string {
+  if (choix.length < 4) return '';
+  const cartes = choix
+    .map(
+      ({ sujet, p, href }, i) => `<li data-reveal style="--i:${i}"><a class="coeur" href="${href}" data-libelle="${echapper(p.nom)}">
+      <span class="coeur__visuel"><img src="images/produits/${p.id}-320.webp" srcset="images/produits/${p.id}-160.webp 160w, images/produits/${p.id}-320.webp 320w" sizes="(min-width: 900px) 260px, 44vw" width="320" height="320" alt="" loading="lazy" decoding="async" /><span class="produit__ia">Illustration IA</span></span>
+      <span class="coeur__sujet">${echapper(sujet.onglet)}</span>
+      <strong class="coeur__nom">${echapper(p.nom)}</strong>
+    </a></li>`,
+    )
+    .join('');
+  return `<section class="conteneur section section--coeurs" aria-labelledby="coeurs-titre">
+  <div class="section__entete">
+    <div>
+      <p class="surtitre">À découvrir</p>
+      <h2 id="coeurs-titre">Nos coups de <em>cœur</em><span class="point">.</span></h2>
+    </div>
+    <a class="lien-fleche" href="top-10/">Tout voir ${icone('fleche', 'icone icone--petite')}</a>
+  </div>
+  <ul class="coeurs" role="list">${cartes}</ul>
+</section>`;
+}

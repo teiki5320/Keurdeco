@@ -9,6 +9,7 @@
  *   <!--#footer-->           pied de page (avec la mention Partenaires Amazon)
  *   <!--#une-->              ambiance à la une (accueil)
  *   <!--#tops-->             derniers Top 10
+ *   <!--#coups-de-coeur-->   produits coups de cœur de l'accueil (liens vers les Top 10, jamais vers Amazon)
  *   <!--#conseils-->         derniers conseils publiés
  *   <!--#entrees:piece-->    tuiles d'entrée d'une famille (piece, matiere, occasion)
  *   <!--#mention-amazon-->   mention obligatoire du programme Partenaires Amazon
@@ -33,7 +34,7 @@ import { icone, type NomIcone } from './icones.ts';
 import { motif } from './motifs.ts';
 import { ambiancesDeRubrique, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
-import { pagesTop10 } from './top10.ts';
+import { blocCoupsDeCoeur, pagesTop10 } from './top10.ts';
 import { blocActus, entitesVeille } from './veille.ts';
 
 export { insecables, NOM_SITE, SITE_URL };
@@ -439,6 +440,7 @@ export function transformerPage(html: string, fichier: string): string {
     .replace('<!--#footer-->', footer())
     .replace('<!--#une-->', () => blocUne(publies))
     .replace('<!--#tops-->', () => blocTops(publies))
+    .replace('<!--#coups-de-coeur-->', () => blocCoupsDeCoeur())
     .replace('<!--#conseils-->', () => blocConseils())
     .replace('<!--#glossaire-accueil-->', () => blocGlossaire())
     .replace(/<!--#couture-->/g, () => couture())

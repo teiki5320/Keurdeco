@@ -188,3 +188,26 @@ describe('liens Amazon des pages construites', () => {
     expect(liens).toBeGreaterThan(100);
   });
 });
+
+describe('accueil : coups de cœur', () => {
+  const accueil = transformerPage(readFileSync(resolve(import.meta.dirname, '../index.html'), 'utf8'), 'index.html');
+  const bloc = accueil.match(/<section class="conteneur section section--coeurs"[\s\S]*?<\/section>/)?.[0] ?? '';
+
+  it('au moins 4 produits avec leur vignette maison, chacun vers une page Top 10 du site', () => {
+    const cartes = [...bloc.matchAll(/<a class="coeur" href="([^"]+)"/g)].map((m) => m[1]);
+    expect(cartes.length).toBeGreaterThanOrEqual(4);
+    for (const href of cartes) expect(href).toMatch(/^top-10\/[a-z0-9-]+#n-\d+$/);
+    expect(bloc.match(/src="images\/produits\/[a-z0-9-]+-320\.webp"/g)?.length).toBe(cartes.length);
+    expect(bloc).toContain('href="top-10/"');
+  });
+
+  it('placé juste après la porte, avant l’ambiance à la une', () => {
+    expect(accueil.indexOf('section--coeurs')).toBeGreaterThan(accueil.indexOf('data-porte'));
+    expect(accueil.indexOf('section--coeurs')).toBeLessThan(accueil.indexOf('id="une"'));
+  });
+
+  it('aucun lien Amazon, aucun prix, aucun vocabulaire de vente sur l’accueil', () => {
+    expect(accueil).not.toMatch(/amazon\.fr|amzn\.|Voir sur Amazon/i);
+    expect(bloc).not.toMatch(/€|prix|promo|acheter/i);
+  });
+});

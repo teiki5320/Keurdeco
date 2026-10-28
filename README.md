@@ -153,6 +153,7 @@ Règles (vérifiées par les tests) :
 - **Jamais d'ASIN, de note, d'avis ni de prix inventés** ; aucun prix affiché.
 - Un produit `a_selectionner` ou `indisponible` n'est jamais affiché.
 - **Aucune photo Amazon** : chaque carte produit montre une vignette découpée dans nos images IA ou une icône du type d'objet.
+- Accueil (depuis le 28 octobre 2026) : bloc « Nos coups de cœur » juste après la porte en arche, 8 produits (un par Top 10, le mieux classé qui a sa vignette maison, la table et la lumière d'abord pour les fêtes), chaque carte menant à sa place dans le Top 10 (`top-10/<sujet>#n-<rang>`), lien « Tout voir » vers les Top 10 ; aucun lien Amazon ni prix sur l'accueil (`coupsDeCoeur()` dans `build/top10.ts`, marqueur `<!--#coups-de-coeur-->`).
 - Pages de pièces et de matières : bandeau de 4 produits filtrés depuis `produits.json` (`pieces[]` ou `matieres[]`), rien s'il en manque. Cartes des ambiances : « Pourquoi » et « Idéal pour » repris des Top 10 (sinon des pages Top, puis les pièces du produit), rien d'inventé.
 - Boutons « Voir sur Amazon » de 44 px de haut au moins, toujours avec leur texte.
 - `npm run verifier-produits -- --ecrire --ids a,b` ne vérifie que les produits indiqués (par exemple ceux qu'on vient de placer).
