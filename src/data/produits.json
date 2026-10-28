@@ -19,8 +19,8 @@
   },
   {
     "id": "coussin-wax-vert-baobab",
-    "asin": "B0BWCF2VQ1",
-    "nom": "Coupons de tissu wax africain, lot de 8 (50 × 40 cm)",
+    "asin": "B08LNKXY3F",
+    "nom": "Coupons de tissu africain imprimé à la cire, lot de 12 (50 × 40 cm)",
     "type_objet": "textile",
     "matieres": [
       "wax"
@@ -33,8 +33,8 @@
     "pieces": [
       "salon"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-20"
+    "statut": "actif",
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "coussin-wax-terracotta",

@@ -38,7 +38,7 @@ classement:
     pourquoi: "Le portrait d’une femme africaine coiffée d’un foulard aux couleurs vives : le coussin le plus coloré de la sélection."
     a_savoir: "Format 40 × 40 cm, vendue sans garnissage : posez-la sur un canapé uni pour que le portrait ressorte."
   - produit: coussin-wax-vert-baobab
-    pourquoi: "Pour avoir de vrais coussins en wax, le plus sûr est de les coudre : huit coupons de wax pour des housses uniques."
+    pourquoi: "Pour avoir de vrais coussins en wax, le plus sûr est de les coudre : douze coupons de tissu imprimé à la cire pour des housses uniques."
     a_savoir: "Chaque coupon mesure 50 × 40 cm : il en faut deux pour une housse de 40 × 40 cm, ou un seul pour le devant avec un dos uni."
 hotspots:
   - { produit: coussins-kuba-lot-4, x: 59, y: 54, cadre: 16 }
