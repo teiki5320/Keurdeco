@@ -10,7 +10,7 @@
  */
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { attributsLienAmazon, FORMAT_ASIN, MENTION_AMAZON, NOTE_ILLUSTRATION_IA, NOTE_LIEN_AMAZON } from '../src/amazon.ts';
+import { attributsLienAmazon, type Emplacement, FORMAT_ASIN, MENTION_AMAZON, NOTE_ILLUSTRATION_IA, NOTE_LIEN_AMAZON } from '../src/amazon.ts';
 import { iconeObjet, icone } from './icones.ts';
 
 export type Statut = 'a_selectionner' | 'actif' | 'indisponible';
@@ -71,23 +71,23 @@ function visuelProduit(p: Produit): string {
  * Bouton « Voir sur Amazon » d'un produit, suivi des deux petites lignes communes à tout le site
  * (lien partenaire, illustration IA). Le même modèle sert aux cartes, aux points cliquables et aux tops.
  */
-export function boutonAmazon(p: Produit & { asin: string }, avecIcone = true): string {
+export function boutonAmazon(p: Produit & { asin: string }, emplacement: Emplacement, avecIcone = true): string {
   const etiquette = `Voir sur Amazon : ${echapper(p.nom)}, lien partenaire (nouvel onglet)`;
-  return `<a class="bouton bouton--amazon" ${attributsLienAmazon(p.asin)} aria-label="${etiquette}">Voir sur Amazon${avecIcone ? ` ${icone('externe', 'icone icone--petite')}` : ''}</a>
+  return `<a class="bouton bouton--amazon" ${attributsLienAmazon(p.asin, emplacement)} aria-label="${etiquette}">Voir sur Amazon${avecIcone ? ` ${icone('externe', 'icone icone--petite')}` : ''}</a>
     <p class="note-amazon">${NOTE_LIEN_AMAZON}</p>
     <p class="note-amazon note-amazon--ia">${NOTE_ILLUSTRATION_IA}</p>`;
 }
 
 /** Carte d'un produit affichable ; `numero` relie la carte au point cliquable de l'image. */
-export function carteProduit(p: Produit & { asin: string }, numero?: number, niveau: 'h3' | 'h4' = 'h3'): string {
-  const lien = attributsLienAmazon(p.asin);
+export function carteProduit(p: Produit & { asin: string }, emplacement: Emplacement, numero?: number, niveau: 'h3' | 'h4' = 'h3', extra = ''): string {
+  const lien = attributsLienAmazon(p.asin, emplacement);
   const visuel = visuelProduit(p);
   return `<article class="produit" id="produit-${p.id}">
   <a class="produit__visuel${visuel.startsWith('<img') ? ' produit__visuel--photo' : ''}" ${lien} tabindex="-1" aria-hidden="true">${visuel}${numero ? `<span class="produit__numero">${numero}</span>` : ''}</a>
   <div class="produit__texte">
     <p class="produit__type">${echapper(libelleType(p.type_objet))}</p>
     <${niveau} class="produit__nom">${echapper(p.nom)}</${niveau}>
-    ${boutonAmazon(p)}
+    ${extra}${boutonAmazon(p, emplacement)}
   </div>
 </article>`;
 }
@@ -97,18 +97,18 @@ export function mentionAmazon(): string {
 }
 
 /** Encadré produit dans le texte d'un article ({{produit: id}}). Vide si le produit n'est pas affichable. */
-export function encadreProduit(p: Produit | undefined): string {
+export function encadreProduit(p: Produit | undefined, emplacement: Emplacement): string {
   if (!estAffichable(p)) return '';
   return `<aside class="encadre-produit" aria-label="Produit conseillé">
   <p class="encadre-produit__titre">Notre sélection</p>
-  ${carteProduit(p, undefined, 'h4')}
+  ${carteProduit(p, emplacement, undefined, 'h4')}
   ${mentionAmazon()}
 </aside>`;
 }
 
 /** Grille de cartes (liste « Dans le même esprit ») ; numérotée comme les points de l'image si demandé. */
-export function grilleProduits(produits: { produit: Produit & { asin: string }; numero?: number }[]): string {
+export function grilleProduits(produits: { produit: Produit & { asin: string }; numero?: number; extra?: string }[], emplacement: Emplacement): string {
   if (produits.length === 0) return '<p class="produits-vide">La sélection de produits arrive bientôt.</p>';
-  return `<div class="grille-produits">${produits.map(({ produit, numero }) => carteProduit(produit, numero)).join('')}</div>
+  return `<div class="grille-produits">${produits.map(({ produit, numero, extra }) => carteProduit(produit, emplacement, numero, 'h3', extra)).join('')}</div>
 ${mentionAmazon()}`;
 }

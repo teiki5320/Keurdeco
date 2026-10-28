@@ -1,9 +1,36 @@
 /**
- * Liens Partenaires Amazon.fr : l'identifiant de suivi est défini ici, et nulle part ailleurs.
+ * Liens Partenaires Amazon.fr : les identifiants de suivi sont définis ici, et nulle part ailleurs.
  */
 
 /** Identifiant de suivi Partenaires Amazon : keurdecofr-21, sur le nouveau compte (toakeur) créé le 18 octobre 2026, l'ancien compte ayant été fermé par Amazon. */
 export const AMAZON_TAG = 'keurdecofr-21';
+
+/**
+ * Emplacements des liens Amazon : chaque type de page qui affiche des produits.
+ * Le lien reçoit l'emplacement et prend son identifiant de suivi dans CODES_SUIVI.
+ */
+export const EMPLACEMENTS = ['ambiance', 'guide', 'top', 'conseil', 'rubrique'] as const;
+export type Emplacement = (typeof EMPLACEMENTS)[number];
+
+/**
+ * Table unique des identifiants de suivi par emplacement. Pour l'instant, tous les emplacements gardent
+ * keurdecofr-21 : quand Jean aura créé un code par emplacement dans Amazon Partenaires, il suffira de
+ * changer la valeur ici (aucun autre fichier à toucher).
+ */
+export const CODES_SUIVI: Readonly<Record<Emplacement, string>> = {
+  ambiance: AMAZON_TAG,
+  guide: AMAZON_TAG,
+  top: AMAZON_TAG,
+  conseil: AMAZON_TAG,
+  rubrique: AMAZON_TAG,
+};
+
+/** Identifiant de suivi d'un emplacement. */
+export function codeSuivi(emplacement: Emplacement): string {
+  const code = CODES_SUIVI[emplacement];
+  if (!code) throw new Error(`Emplacement Amazon inconnu : « ${emplacement} »`);
+  return code;
+}
 
 /** Attributs obligatoires des liens affiliés : sponsorisés, non suivis, ouverts dans un nouvel onglet. */
 export const REL_AMAZON = 'sponsored nofollow noopener';
@@ -26,7 +53,7 @@ export function lienAmazon(asin: string, tag = AMAZON_TAG): string {
   return `https://www.amazon.fr/dp/${asin}?tag=${encodeURIComponent(tag)}`;
 }
 
-/** Attributs HTML d'un lien vers Amazon (à placer dans la balise <a>). */
-export function attributsLienAmazon(asin: string): string {
-  return `href="${lienAmazon(asin)}" rel="${REL_AMAZON}" target="_blank"`;
+/** Attributs HTML d'un lien vers Amazon (à placer dans la balise <a>), avec le code de suivi de l'emplacement. */
+export function attributsLienAmazon(asin: string, emplacement: Emplacement): string {
+  return `href="${lienAmazon(asin, codeSuivi(emplacement))}" rel="${REL_AMAZON}" target="_blank"`;
 }

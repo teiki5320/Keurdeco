@@ -28,6 +28,7 @@ import { FAMILLES, fichierRubrique, trouverRubrique, type Famille } from '../src
 import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone } from './icones.ts';
 import { imageArticle, imageExiste } from './images.ts';
+import type { Emplacement } from '../src/amazon.ts';
 import { boutonAmazon, carteProduit, echapper, encadreProduit, estAffichable, grilleProduits, indexProduits, libelleType, mentionAmazon, type Produit } from './produits.ts';
 
 export const DOSSIER_ARTICLES = resolve(import.meta.dirname, '../contenu/articles');
@@ -206,14 +207,14 @@ function imageCorps(g: ImageGalerie | undefined): string {
 }
 
 /** Convertit le texte Markdown d'un article ; les encadrés produits et les images de galerie sont insérés à leur place. */
-export function rendreCorps(corps: string, produits: Map<string, Produit>, classement = '', galerie: ImageGalerie[] = []): string {
+export function rendreCorps(corps: string, produits: Map<string, Produit>, emplacement: Emplacement, classement = '', galerie: ImageGalerie[] = []): string {
   const prepare = corps
     .replace(/^\{\{\s*produit:\s*([a-z0-9-]+)\s*\}\}\s*$/gm, '\n<!--produit:$1-->\n')
     .replace(/^\{\{\s*image:\s*([a-z0-9-]+)\s*\}\}\s*$/gm, '\n<!--image:$1-->\n')
     .replace(/^\{\{\s*classement\s*\}\}\s*$/gm, '\n<!--classement-->\n');
   const html = markdown.parse(prepare, { async: false }) as string;
   return html
-    .replace(/<!--produit:([a-z0-9-]+)-->/g, (_m, id: string) => encadreProduit(produits.get(id)))
+    .replace(/<!--produit:([a-z0-9-]+)-->/g, (_m, id: string) => encadreProduit(produits.get(id), emplacement))
     .replace(/<!--image:([a-z0-9-]+)-->/g, (_m, nom: string) => imageCorps(galerie.find((g) => g.image === nom)))
     .replace('<!--classement-->', classement);
 }
@@ -240,7 +241,7 @@ export const MENTION_IA = 'Image d’ambiance créée par IA : les produits prop
  * Points cliquables posés sur l'image d'un article (ambiance ou top). `numero` donne le numéro affiché
  * de chaque produit : ordre des points pour une ambiance, rang dans le classement pour un top.
  */
-export function pointsImage(cle: string, hotspots: Hotspot[], produits: Map<string, Produit>, numero: (id: string, i: number) => number | undefined): string {
+export function pointsImage(cle: string, hotspots: Hotspot[], produits: Map<string, Produit>, numero: (id: string, i: number) => number | undefined, emplacement: Emplacement): string {
   return hotspots
     .map((h) => ({ ...h, p: produits.get(h.produit) }))
     .filter((h): h is Hotspot & { p: Produit & { asin: string } } => estAffichable(h.p))
@@ -251,7 +252,7 @@ export function pointsImage(cle: string, hotspots: Hotspot[], produits: Map<stri
       <div class="hotspot-carte${h.x > 55 ? ' hotspot-carte--gauche' : ''}${h.y > 60 ? ' hotspot-carte--haut' : ''}" id="carte-${cle}-${n}" style="left:${h.x}%;top:${h.y}%" hidden>
         <p class="hotspot-carte__type">${echapper(libelleType(h.p.type_objet))}</p>
         <p class="hotspot-carte__nom">${echapper(h.p.nom)}</p>
-        ${boutonAmazon(h.p, false)}
+        ${boutonAmazon(h.p, emplacement, false)}
         <button type="button" class="hotspot-carte__fermer" aria-label="Fermer">×</button>
       </div>`;
     })
@@ -262,7 +263,7 @@ export function pointsImage(cle: string, hotspots: Hotspot[], produits: Map<stri
 export function rendreAmbiance(a: Article, produits: Map<string, Produit>): string {
   const affichables = a.hotspots.filter((h) => estAffichable(produits.get(h.produit)));
   const numeros = new Map(affichables.map((h, i) => [h.produit, i + 1]));
-  const boutons = pointsImage(a.slug, a.hotspots, produits, (_id, i) => i + 1);
+  const boutons = pointsImage(a.slug, a.hotspots, produits, (_id, i) => i + 1, 'ambiance');
   // La liste reprend tous les produits de l'article (repli sans JavaScript), numérotés comme les points.
   const tous = [...new Set([...a.hotspots.map((h) => h.produit), ...a.produits])]
     .map((id) => produits.get(id))
@@ -278,7 +279,7 @@ export function rendreAmbiance(a: Article, produits: Map<string, Produit>): stri
   </figure>
   <section class="meme-esprit" aria-labelledby="meme-esprit-titre">
     <h2 id="meme-esprit-titre">Dans le même esprit</h2>
-    ${grilleProduits(tous)}
+    ${grilleProduits(tous, 'ambiance')}
   </section>`;
 }
 
@@ -291,7 +292,7 @@ export function rendreClassement(a: Article, produits: Map<string, Produit>): st
     .map(
       (c, i) => `<li class="classement__entree" id="rang-${i + 1}">
     <span class="classement__rang" aria-hidden="true">${i + 1}</span>
-    ${carteProduit(c.p as Produit & { asin: string })}
+    ${carteProduit(c.p as Produit & { asin: string }, 'top')}
     <div class="classement__avis">
       <p><strong>Pourquoi on l’aime.</strong> ${md(c.pourquoi)}</p>
       <p><strong>À savoir.</strong> ${md(c.a_savoir)}</p>
@@ -306,7 +307,7 @@ ${mentionAmazon()}`;
 function pointsTop(a: Article, produits: Map<string, Produit>): string {
   if (a.type !== 'top' || a.hotspots.length === 0) return '';
   const rangs = new Map(produitsClassement(a, produits).map((p, i) => [p.id, i + 1]));
-  return pointsImage(a.slug, a.hotspots, produits, (id) => rangs.get(id));
+  return pointsImage(a.slug, a.hotspots, produits, (id) => rangs.get(id), 'top');
 }
 
 /** Produits d'un top affichés, dans l'ordre (pour les données structurées ItemList). */
@@ -427,7 +428,7 @@ function lienTop10(a: Article, produits: Map<string, Produit>): string {
 export function sourcePageArticle(a: Article, publies: Article[], produits = indexProduits()): string {
   const t = TYPES[a.type];
   const classement = a.type === 'top' ? rendreClassement(a, produits) : '';
-  let corps = rendreCorps(a.corps, produits, classement, a.galerie);
+  let corps = rendreCorps(a.corps, produits, a.type, classement, a.galerie);
   if (a.type === 'top' && !a.corps.includes('{{classement}}')) corps += `\n<h2 id="le-classement">Le classement</h2>\n${classement}`;
   // Annonces : jamais sur les Tops (ils vivent des liens Amazon), 2 au plus ailleurs.
   if (a.type !== 'top') corps = placerAnnonces(corps, 2);

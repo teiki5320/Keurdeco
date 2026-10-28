@@ -125,7 +125,7 @@ function jsonLd(donnees: object): string {
 /** Page complète (avec marqueurs) d'un conseil publié. */
 export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = indexProduits(), url = SITE_URL): string {
   const t = THEMES[c.theme];
-  const corps = placerAnnonces(rendreCorps(c.corps, produits), 1, 80);
+  const corps = placerAnnonces(rendreCorps(c.corps, produits, 'conseil'), 1, 80);
   const voisins = suivantsEnBoucle(publies.filter((v) => v.theme === c.theme), c, 3);
   const autres = suivantsEnBoucle(publies, c, publies.length).filter((v) => v.theme !== c.theme);
   const lire = [...voisins, ...autres].slice(0, 3);

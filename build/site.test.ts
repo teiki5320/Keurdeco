@@ -171,3 +171,20 @@ describe('flux RSS', () => {
     expect([...dates].sort((a, b) => b - a)).toEqual(dates);
   });
 });
+
+describe('liens Amazon des pages construites', () => {
+  it('chaque lien Amazon porte un code de suivi de la table CODES_SUIVI', async () => {
+    const { CODES_SUIVI } = await import('../src/amazon.ts');
+    const codes = new Set(Object.values(CODES_SUIVI));
+    let liens = 0;
+    for (const [fichier, html] of pagesGenerees()) {
+      for (const [, href] of html.matchAll(/href="(https:\/\/www\.amazon\.fr\/[^"]*)"/g)) {
+        liens++;
+        const tag = new URL(href.replace(/&amp;/g, '&')).searchParams.get('tag');
+        expect(tag, `${fichier} : ${href}`).not.toBeNull();
+        expect(codes.has(tag!), `${fichier} : ${href}`).toBe(true);
+      }
+    }
+    expect(liens).toBeGreaterThan(100);
+  });
+});

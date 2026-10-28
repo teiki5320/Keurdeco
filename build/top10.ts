@@ -153,7 +153,7 @@ export function rendreAmbiances(s: SujetTop10, dix: ReturnType<typeof dixProduit
       (a, i) => `<figure class="ambiance">
           <div class="ambiance__image">
             ${imageArticle(a.image, a.alt, '(min-width: 800px) 760px, 100vw')}
-            ${pointsImage(`${s.slug}-${i + 1}`, a.hotspots, produits, (id) => rangs.get(id))}
+            ${pointsImage(`${s.slug}-${i + 1}`, a.hotspots, produits, (id) => rangs.get(id), 'top')}
           </div>
           <figcaption class="mention-ia">${icone('ia', 'icone icone--petite')} ${MENTION_IA}</figcaption>
         </figure>`,
@@ -184,7 +184,7 @@ function grandeImage(p: Produit & { asin: string }): string {
   const contenu = vignette
     ? `<img src="images/produits/${p.id}-320.webp" srcset="images/produits/${p.id}-160.webp 160w, images/produits/${p.id}-320.webp 320w" sizes="(min-width: 700px) 220px, 70vw" width="320" height="320" alt="Illustration : ${echapper(p.nom)}" loading="lazy" decoding="async" /><span class="produit__ia">Illustration IA</span>`
     : iconeObjet(p.type_objet);
-  return `<a class="top10__image${vignette ? '' : ' top10__image--icone'}" ${attributsLienAmazon(p.asin)} tabindex="-1" aria-hidden="true">${contenu}</a>`;
+  return `<a class="top10__image${vignette ? '' : ' top10__image--icone'}" ${attributsLienAmazon(p.asin, 'top')} tabindex="-1" aria-hidden="true">${contenu}</a>`;
 }
 
 /** Les 10 produits numérotés. */
@@ -200,7 +200,7 @@ export function rendreListe(dix: ReturnType<typeof dixProduits>): string {
         <h3 class="top10__nom"><span class="visuellement-cache">N° ${i + 1} : </span>${echapper(e.p.nom)}</h3>
         <p><strong>Pourquoi il est dans le top.</strong> ${enLigne(e.pourquoi)}</p>
         <p class="top10__ideal"><strong>Idéal pour</strong> ${enLigne(e.ideal_pour)}</p>
-        <div class="top10__action">${boutonAmazon(e.p)}</div>
+        <div class="top10__action">${boutonAmazon(e.p, 'top')}</div>
       </div>
     </li>`,
     )

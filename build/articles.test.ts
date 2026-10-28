@@ -114,10 +114,10 @@ describe('rendu', () => {
   });
 
   it('encadrés produits dans le texte et titres avec ancres', () => {
-    const html = rendreCorps(ambiance.corps, produits);
+    const html = rendreCorps(ambiance.corps, produits, 'ambiance');
     expect(html).toContain('<h2 id="premiere-partie">');
     expect(html).toContain('class="encadre-produit"');
-    expect(rendreCorps('{{produit: c}}', produits)).not.toContain('encadre-produit');
+    expect(rendreCorps('{{produit: c}}', produits, 'ambiance')).not.toContain('encadre-produit');
   });
 
   it('top : classement renuméroté sans produit masqué, et ItemList', () => {

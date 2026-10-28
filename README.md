@@ -32,7 +32,7 @@ Node 22.18 ou plus récent (les scripts `.ts` sont exécutés directement par No
 | `build/rubriques.ts` | Pages de rubriques (pièces, matières, occasions), liste des articles, glossaire, blocs de l'accueil |
 | `build/rapport.ts` | Rapport affiché à chaque build |
 | `build/icones.ts` | Icônes (une par type d'objet) et logo SVG |
-| `src/amazon.ts` | `AMAZON_TAG` (seul endroit), liens `https://www.amazon.fr/dp/<ASIN>?tag=<TAG>` |
+| `src/amazon.ts` | `AMAZON_TAG` et table `CODES_SUIVI` (code de suivi par emplacement : ambiance, guide, top, conseil, rubrique ; seul endroit), liens `https://www.amazon.fr/dp/<ASIN>?tag=<TAG>` |
 | `src/taxonomie.ts` | Pièces, matières et styles, occasions |
 | `src/data/produits.json`, `src/data/glossaire.json`, `src/data/images.json` | Données |
 | `src/theme.css` | **Thème** : toutes les couleurs et polices (palette « Terre de Dakar ») |
