@@ -1358,6 +1358,51 @@
       "board_id": "1085719491358932174",
       "publie_le": "2026-10-27",
       "publie_a": "2026-10-27T09:49:32.989Z"
+    },
+    {
+      "id": "conseil-reparer-panier-raphia-1",
+      "slug": "conseil-reparer-panier-raphia",
+      "pin_id": "1085719422762449686",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T04:13:04.680Z"
+    },
+    {
+      "id": "conseil-detacher-tapis-laine-3",
+      "slug": "conseil-detacher-tapis-laine",
+      "pin_id": "1085719422762449690",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T04:13:06.974Z"
+    },
+    {
+      "id": "top-luminaires-tresses-3",
+      "slug": "top-luminaires-tresses",
+      "pin_id": "1085719422762449693",
+      "tableau": "paniers",
+      "board_id": "1085719491358932166",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T04:13:09.235Z"
+    },
+    {
+      "id": "conseil-disposer-jarres-poteries-3",
+      "slug": "conseil-disposer-jarres-poteries",
+      "pin_id": "1085719422762449694",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T04:13:11.392Z"
+    },
+    {
+      "id": "conseil-deco-africaine-boheme-3",
+      "slug": "conseil-deco-africaine-boheme",
+      "pin_id": "1085719422762449696",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T04:13:13.843Z"
     }
   ]
 }
