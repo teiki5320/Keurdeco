@@ -603,7 +603,7 @@
     "pieces": [
       "cuisine-salle-a-manger"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-20"
   },
   {
@@ -636,7 +636,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "coussin-shibori-indigo",
@@ -672,7 +672,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "lampes-chevet-ceramique-lot-2",
@@ -687,7 +687,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "table-chevet-rotin",
@@ -704,7 +704,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "plaid-gaufre-coton",
@@ -720,7 +720,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "tapis-rond-coton-bleu-marine",
@@ -754,7 +754,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "paniers-kallax-jacinthe-lot-4",
@@ -773,7 +773,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "porte-revues-jacinthe",
@@ -790,7 +790,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "corbeille-papier-jacinthe",
@@ -827,7 +827,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "boites-papier-tresse-couvercle-lot-3",
@@ -843,7 +843,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-21"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "panier-dossiers-suspendus-a4",
@@ -860,7 +860,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-21"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "panier-tisse-extra-large",
@@ -912,7 +912,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-21"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "miroir-soleil-rotin-58",
@@ -946,7 +946,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-21"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "pateres-chene-lot-4",
@@ -962,7 +962,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-21"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "tapis-couloir-kilim-chindi",
@@ -994,7 +994,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-21"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "suspension-jute-boheme",
@@ -1125,7 +1125,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-21"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "plaid-tricot-chenille",
@@ -1157,7 +1157,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-21"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "coupe-terre-cuite-ronde",
@@ -1175,7 +1175,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-21"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "branches-saule-sechees",
@@ -2109,7 +2109,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "etageres-flottantes-pin-lot-3",
@@ -2603,7 +2603,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "vase-rustique-terre-cuite-anse",
@@ -2621,7 +2621,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "corbeilles-tressees-anse-lot-10",
@@ -2653,7 +2653,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "cadres-photo-bois-a5-lot-3",
@@ -2669,7 +2669,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "parure-gaze-coton-terracotta",
@@ -2684,7 +2684,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "plaid-terre-cuite-pompons",
@@ -2700,7 +2700,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "tapis-jute-alhambra",
@@ -2792,7 +2792,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "housses-coussin-imprime-kente-lot-2",
@@ -3873,7 +3873,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "coussin-portrait-femme-africaine-40",
@@ -3886,7 +3886,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   },
   {
     "id": "sets-table-elephant-africain-lot-4",
@@ -3899,6 +3899,6 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-20"
+    "verifie_le": "2026-10-28"
   }
 ]
