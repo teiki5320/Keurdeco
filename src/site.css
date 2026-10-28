@@ -511,6 +511,51 @@ main {
   box-shadow: 0 14px 30px rgb(180 83 47 / 38%);
 }
 
+/* « Pourquoi » et « Pour qui » sur les cartes des ambiances (textes repris de nos classements). */
+.produit__avis {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--texte);
+}
+
+.produit__avis strong {
+  color: var(--baobab);
+}
+
+/* Bandeau de produits des pages de pièce et de matière. */
+.bandeau-produits {
+  margin: 48px 0 8px;
+}
+
+.bandeau-produits h2 {
+  margin-bottom: 18px;
+}
+
+/* Lien « Notre sélection » en bas des conseils et du glossaire (lien interne vers un Top 10 ou une ambiance). */
+.lien-selection {
+  margin-top: 1.6em;
+  padding: 14px 18px;
+  border-left: 4px solid var(--terracotta);
+  background: var(--surface);
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+}
+
+.lien-selection__titre {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--terracotta);
+}
+
+.lien-selection .lien-fleche {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
 /* Boutons « Voir sur Amazon » : 44 px de haut au moins (cible tactile), toujours avec leur texte. */
 .bouton--amazon {
   min-height: 44px;

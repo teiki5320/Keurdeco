@@ -16,8 +16,9 @@ import { dateLongue, SITE_URL, suivantsEnBoucle, titrePage } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { motif } from './motifs.ts';
 import { imageArticle, imageExiste, MENTION_IA_ILLUSTRATION, photoFond } from './images.ts';
-import { echapper } from './produits.ts';
+import { aUneVignette, chargerProduits, echapper, estAffichable, grilleProduits, type Produit } from './produits.ts';
 import { conseilsPublies, type Conseil } from './conseils.ts';
+import { lienSelection, selectionAssortie } from './selection.ts';
 
 export interface EntreeGlossaire {
   id: string;
@@ -149,6 +150,46 @@ const ICONES_RUBRIQUES: Record<string, NomIcone> = {
   'fetes-fin-annee': 'luminaire',
 };
 
+/** Nombre de produits du bandeau d'une page de pièce ou de matière (rien en dessous de ce nombre). */
+export const PRODUITS_BANDEAU = 4;
+
+/**
+ * Produits d'une pièce ou d'une matière, pris dans src/data/produits.json (champ pieces[] ou matieres[]) :
+ * seulement des produits affichables (actifs, ASIN vérifié), ceux des ambiances de la rubrique d'abord,
+ * puis ceux qui ont une vignette, un seul par type d'objet si possible. Vide pour les occasions ou s'il en manque.
+ */
+export function produitsDeRubrique(famille: Famille, id: string, ambiances: Article[], produits: Produit[] = chargerProduits(), n = PRODUITS_BANDEAU): (Produit & { asin: string })[] {
+  if (famille === 'occasion') return [];
+  const champ = famille === 'piece' ? 'pieces' : 'matieres';
+  const cites = new Set(ambiances.flatMap((a) => [...a.hotspots.map((h) => h.produit), ...a.produits]));
+  const candidats = produits
+    .filter(estAffichable)
+    .filter((p) => p[champ].includes(id))
+    .map((p, i) => ({ p, rang: (cites.has(p.id) ? 0 : 2) + (aUneVignette(p) ? 0 : 1), i }))
+    .sort((a, b) => a.rang - b.rang || a.i - b.i);
+  const choisis: (Produit & { asin: string })[] = [];
+  const types = new Set<string>();
+  for (const { p } of candidats) {
+    if (choisis.length === n) break;
+    if (types.has(p.type_objet)) continue;
+    types.add(p.type_objet);
+    choisis.push(p);
+  }
+  // Pas assez de types différents (matière surtout faite de tissus, de vases…) : on complète dans le même ordre.
+  for (const { p } of candidats) if (choisis.length < n && !choisis.includes(p)) choisis.push(p);
+  return choisis.length === n ? choisis : [];
+}
+
+/** Bandeau « Notre sélection » d'une page de pièce ou de matière (vide s'il n'y a pas assez de produits). */
+export function bandeauProduits(famille: Famille, r: Rubrique, ambiances: Article[], produits?: Produit[]): string {
+  const choix = produitsDeRubrique(famille, r.id, ambiances, produits);
+  if (!choix.length) return '';
+  return `<section class="bandeau-produits" aria-labelledby="bandeau-produits">
+          <h2 id="bandeau-produits">Notre sélection ${famille === 'piece' ? 'pour la pièce' : 'en'} ${echapper(famille === 'piece' ? `« ${r.nom} »` : r.nom.toLowerCase())}</h2>
+          ${grilleProduits(choix.map((produit) => ({ produit })), 'rubrique')}
+        </section>`;
+}
+
 function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string {
   const f = FAMILLES[famille];
   // Une rubrique ne montre que ses ambiances ; les tops, les guides, les conseils et le glossaire ont chacun leur page.
@@ -164,7 +205,9 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
     image: imageExiste(imageRubrique(famille, r.id)) ? imageRubrique(famille, r.id) : undefined,
     // Page matière : les 3 dernières actus de la veille sur cette matière (bloc absent s'il n'y en a pas).
-    contenu: `${grilleArticles(articles, '<p class="liste-vide">La première ambiance arrive bientôt.</p>')}${famille === 'matiere' ? `\n        <!--#actus:3:matiere:${r.id}-->` : ''}
+    // Bandeau de produits juste sous les ambiances, loin de l'annonce posée après le texte d'introduction.
+    contenu: `${grilleArticles(articles, '<p class="liste-vide">La première ambiance arrive bientôt.</p>')}
+        ${bandeauProduits(famille, r, articles)}${famille === 'matiere' ? `\n        <!--#actus:3:matiere:${r.id}-->` : ''}
         ${introPage(fichierRubrique(famille, r.id).replace(/\.html$/, ''), true)}
         <nav class="autres-rubriques" aria-label="${f.titre}"><h2>${f.titre}</h2>${tuilesRubriques(famille, publies)}</nav>`,
   });
@@ -300,6 +343,7 @@ function pageEntreeGlossaire(g: EntreeGlossaire, entrees: EntreeGlossaire[], pub
           ${g.texte.map((p) => `<p>${echapper(p)}</p>`).join('\n          ')}
           ${rubriques.length ? `<p>Voir la rubrique ${rubriques.map((r) => `<a href="${fichierRubrique('matiere', r.id)}">${r.nom}</a>`).join(', ')}.</p>` : ''}
           ${conseils.length ? `<p>À lire aussi : ${conseils.map((c) => `<a href="${c.fichier}">${echapper(c.titre)}</a>`).join(' ; ')}</p>` : ''}
+          ${lienSelection(selectionAssortie(g.nom, g.matieres, undefined, publies))}
           ${blocAnnonce()}
         </div>
         ${articles.length ? `<section aria-labelledby="articles-lies"><h2 id="articles-lies">Articles liés</h2>${grilleArticles(articles)}</section>` : ''}

@@ -25,6 +25,7 @@ import { icone, type NomIcone } from './icones.ts';
 import { creditImage, imageExiste, legendeCredit, MENTION_IA_ILLUSTRATION, photoFond, texteCredit } from './images.ts';
 import { motif } from './motifs.ts';
 import { echapper, indexProduits } from './produits.ts';
+import { lienSelection, selectionAssortie } from './selection.ts';
 
 export const DOSSIER_CONSEILS = resolve(import.meta.dirname, '../contenu/conseils');
 export const PREFIXE_CONSEIL = 'conseil-';
@@ -178,6 +179,7 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
         <div class="prose">
           ${corps}
           ${matieres.length ? `<p>Pour aller plus loin : ${matieres.map((r) => `<a href="${fichierRubrique('matiere', r!.id)}">${r!.nom}</a>`).join(', ')}.</p>` : ''}
+          ${lienSelection(selectionAssortie(c.titre, c.matieres))}
         </div>
       </div>
       ${lire.length ? `<section class="conteneur a-lire" aria-labelledby="a-lire"><h2 id="a-lire">D’autres conseils</h2><div class="grille-conseils">${lire.map(carteConseil).join('')}</div></section>` : ''}

@@ -41,6 +41,11 @@ export function indexProduits(produits = chargerProduits()): Map<string, Produit
   return new Map(produits.map((p) => [p.id, p]));
 }
 
+/** Vrai si le produit a une vignette découpée dans nos images d'ambiance (sinon, la carte montre une icône). */
+export function aUneVignette(p: Produit): boolean {
+  return existsSync(resolve(DOSSIER_VIGNETTES, `${p.id}-160.webp`));
+}
+
 /** Un produit est affichable s'il est actif et a un ASIN valide. */
 export function estAffichable(p: Produit | undefined): p is Produit & { asin: string } {
   return !!p && p.statut === 'actif' && typeof p.asin === 'string' && FORMAT_ASIN.test(p.asin);

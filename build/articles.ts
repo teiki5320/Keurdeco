@@ -22,7 +22,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { Marked } from 'marked';
 import { placerAnnonces } from './annonces.ts';
-import { adresseTop10, top10Lie } from './top10.ts';
+import { adresseTop10, top10Lie, tousLesSujets } from './top10.ts';
 import { parse as parseYaml } from 'yaml';
 import { FAMILLES, fichierRubrique, trouverRubrique, type Famille } from '../src/taxonomie.ts';
 import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
@@ -259,6 +259,50 @@ export function pointsImage(cle: string, hotspots: Hotspot[], produits: Map<stri
     .join('\n      ');
 }
 
+/** Première phrase d'un texte (les « pourquoi » des tops comptent 2 à 4 phrases). */
+function premierePhrase(s: string): string {
+  const m = s.match(/^[\s\S]*?[.!?…](?=\s+[A-ZÀ-ÖØ-Þ«]|\s*$)/);
+  return (m ? m[0] : s).trim();
+}
+
+/**
+ * Textes déjà écrits pour un produit dans nos classements, réutilisés tels quels sur les cartes d'ambiance
+ * (rien n'est inventé) : « pourquoi » d'un onglet Top 10 (sinon d'une page Top) et « idéal pour » d'un onglet Top 10.
+ * À défaut de « idéal pour », les deux premières pièces du produit (src/data/produits.json).
+ */
+let avisConnus: Map<string, { pourquoi?: string; idealPour?: string }> | undefined;
+function avisDesClassements(): Map<string, { pourquoi?: string; idealPour?: string }> {
+  if (avisConnus) return avisConnus;
+  const m = new Map<string, { pourquoi?: string; idealPour?: string }>();
+  for (const a of articlesPublies().filter((x) => x.type === 'top')) for (const c of a.classement) if (!m.has(c.produit)) m.set(c.produit, { pourquoi: c.pourquoi });
+  for (const s of tousLesSujets()) for (const e of s.produits) m.set(e.produit, { pourquoi: e.pourquoi, idealPour: e.ideal_pour });
+  return (avisConnus = m);
+}
+
+/** Pièces de src/taxonomie.ts avec leur article, pour « Idéal pour le salon ou la chambre. ». */
+const PIECE_AVEC_ARTICLE: Record<string, string> = {
+  salon: 'le salon',
+  chambre: 'la chambre',
+  'cuisine-salle-a-manger': 'la cuisine et la salle à manger',
+  entree: 'l’entrée',
+  'salle-de-bain': 'la salle de bain',
+  'balcon-exterieur': 'le balcon et l’extérieur',
+  'chambre-enfant': 'la chambre d’enfant',
+};
+
+/** Lignes « Pourquoi » et « Idéal pour » (pour qui) d'une carte d'ambiance, comme sur les cartes Top 10. */
+export function avisCarte(p: Produit, avis = avisDesClassements()): string {
+  const md = (s: string) => markdown.parseInline(s, { async: false }) as string;
+  const connu = avis.get(p.id);
+  const pieces = p.pieces.map((id) => PIECE_AVEC_ARTICLE[id]).filter((n): n is string => !!n).slice(0, 2);
+  const pourQui = connu?.idealPour ? md(connu.idealPour) : pieces.length ? `${echapper(pieces.join(' ou '))}.` : '';
+  const lignes = [
+    connu?.pourquoi ? `<p class="produit__avis"><strong>Pourquoi.</strong> ${md(premierePhrase(connu.pourquoi))}</p>` : '',
+    pourQui ? `<p class="produit__avis"><strong>Idéal pour</strong> ${pourQui}</p>` : '',
+  ].filter(Boolean);
+  return lignes.length ? `${lignes.join('\n    ')}\n    ` : '';
+}
+
 /** Image d'ambiance avec points cliquables, puis la liste « Dans le même esprit ». */
 export function rendreAmbiance(a: Article, produits: Map<string, Produit>): string {
   const affichables = a.hotspots.filter((h) => estAffichable(produits.get(h.produit)));
@@ -268,7 +312,7 @@ export function rendreAmbiance(a: Article, produits: Map<string, Produit>): stri
   const tous = [...new Set([...a.hotspots.map((h) => h.produit), ...a.produits])]
     .map((id) => produits.get(id))
     .filter(estAffichable)
-    .map((p) => ({ produit: p, numero: numeros.get(p.id) }));
+    .map((p) => ({ produit: p, numero: numeros.get(p.id), extra: avisCarte(p) }));
   return `<figure class="ambiance">
     <div class="ambiance__image">
       ${imageArticle(a.image, a.imageAlt, '(min-width: 1100px) 1040px, 100vw', 'eager')}
