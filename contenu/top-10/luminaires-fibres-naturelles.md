@@ -1,7 +1,7 @@
 ---
 onglet: "Luminaires"
 titre: "Top 10 des luminaires en fibres naturelles"
-description: "Notre sélection de 10 luminaires en jute, rotin et bambou pour une déco aux accents africains : suspensions, lampadaire, lampes de chevet, appliques et lanternes."
+description: "Notre sélection de 10 luminaires en jute, rotin et bambou aux accents africains : suspensions, lampadaire, lampes de chevet, appliques et lanternes."
 ordre: 10
 classement_le: "2026-10-19"
 image_partage: luminaires-tresses

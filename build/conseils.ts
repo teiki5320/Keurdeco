@@ -20,7 +20,7 @@ import { parse as parseYaml } from 'yaml';
 import { fichierRubrique, trouverRubrique } from '../src/taxonomie.ts';
 import { placerAnnonces } from './annonces.ts';
 import { rendreCorps } from './articles.ts';
-import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
+import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, suivantsEnBoucle, titrePage } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { creditImage, imageExiste, legendeCredit, MENTION_IA_ILLUSTRATION, photoFond, texteCredit } from './images.ts';
 import { motif } from './motifs.ts';
@@ -126,8 +126,8 @@ function jsonLd(donnees: object): string {
 export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = indexProduits(), url = SITE_URL): string {
   const t = THEMES[c.theme];
   const corps = placerAnnonces(rendreCorps(c.corps, produits), 1, 80);
-  const voisins = publies.filter((v) => v.slug !== c.slug && v.theme === c.theme);
-  const autres = publies.filter((v) => v.slug !== c.slug && v.theme !== c.theme);
+  const voisins = suivantsEnBoucle(publies.filter((v) => v.theme === c.theme), c, 3);
+  const autres = suivantsEnBoucle(publies, c, publies.length).filter((v) => v.theme !== c.theme);
   const lire = [...voisins, ...autres].slice(0, 3);
   const matieres = c.matieres.map((id) => trouverRubrique('matiere', id)).filter((r) => !!r);
   const adresse = `${url}${c.fichier}`;

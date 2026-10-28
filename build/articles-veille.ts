@@ -15,7 +15,7 @@ import { type ArticleVeille, articleValide, corpsArticle, vueArticle } from '../
 import { enHtml } from '../src/noeud.ts';
 import { type Actu, nettoyerFichier } from '../src/veille.ts';
 import { placerAnnonces } from './annonces.ts';
-import { NOM_SITE, SITE_URL, titrePage } from './config.ts';
+import { couperTexte, NOM_SITE, SITE_URL, suivantsEnBoucle, titrePage } from './config.ts';
 import { echapper } from './produits.ts';
 
 /** Fichier préparé par scripts/veille-articles.ts (VEILLE_ARTICLES_FICHIER pour les tests de bout en bout). */
@@ -64,7 +64,10 @@ function metaImage(a: ArticleVeille): string {
 /** Page complète (avec marqueurs) d'un article. */
 export function sourcePageArticleVeille(a: ArticleVeille, cache: CacheVeille, construits: ReadonlySet<string>, url = SITE_URL): string {
   const adresse = `${url}actus/${a.slug}/`;
-  const autres = cache.actus.filter((x) => x.id !== a.id).slice(0, 3);
+  // Autres actus : d'abord les articles complets suivants (en boucle, pour que chacun reçoive des liens), puis les plus récentes.
+  const courante = cache.actus.find((x) => x.id === a.id);
+  const completes = courante ? suivantsEnBoucle(cache.actus.filter((x) => x === courante || (x.slug && construits.has(x.slug))), courante, 3) : [];
+  const autres = [...completes, ...cache.actus.filter((x) => x.id !== a.id && !completes.includes(x))].slice(0, 3);
   const corps = `<div class="prose article-actu__corps">${placerAnnonces(enHtml(corpsArticle(a)), 1, 80)}</div>`;
   const vue = enHtml(vueArticle(a, { autres, construits, corpsHtml: corps })).replace('<div data-corps=""></div>', corps);
   const ld = {
@@ -100,7 +103,7 @@ export function sourcePageArticleVeille(a: ArticleVeille, cache: CacheVeille, co
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="${echapper(a.chapo)}" />
+    <meta name="description" content="${echapper(couperTexte(a.chapo, 160))}" />
     <meta name="date-publication" content="${echapper(a.publie_le)}" />${metaImage(a)}
     <title>${echapper(titrePage(a.titre))}</title>
     <!--#head-->

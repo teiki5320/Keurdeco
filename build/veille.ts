@@ -8,6 +8,8 @@
  * Sans JavaScript, ou si le fichier de la veille ne répond pas, rien ne s'affiche.
  */
 import { MATIERES } from '../src/taxonomie.ts';
+import { lireCache } from './articles-veille.ts';
+import { echapper } from './produits.ts';
 
 export interface EntiteVeille {
   tag: string;
@@ -54,7 +56,7 @@ export function titreActusMatiere(id: string): string {
  *   tag    : « matiere:wax » pour ne garder que les actus de cette matière.
  * Accueil (4, sans tag) : titre et lien « Toutes les actus » ; actus.html (plus de 4) : pas de titre (le h1 suffit).
  */
-export function blocActus(limite: number, tag?: string): string {
+export function blocActus(limite: number, tag?: string, articles: { slug: string; titre: string }[] = lireCache().articles): string {
   const id = tag ? `actus-${tag.replace(/[^a-z0-9]+/g, '-')}` : `actus-${limite}`;
   const matiere = tag?.startsWith('matiere:') ? tag.slice('matiere:'.length) : undefined;
   const titre = matiere ? titreActusMatiere(matiere) : limite <= 4 ? 'Actus de la déco africaine' : '';
@@ -69,8 +71,13 @@ export function blocActus(limite: number, tag?: string): string {
   const accueil = !tag && limite <= 4;
   const classes = `actus${matiere ? ' actus--matiere' : ''}${accueil ? ' actus--accueil conteneur section' : ''}`;
   const attributs = `class="${classes}" data-actus data-limite="${limite}"${tag ? ` data-tag="${tag}"` : ''}${titre ? ` aria-labelledby="${id}"` : ' aria-label="Actus de la déco africaine"'}${accueil ? ' data-bandeau-prioritaire' : ''}`;
+  // Page Actus : liens écrits dans le HTML vers chaque article complet, pour que Google les trouve sans
+  // JavaScript ; le navigateur remplace cette liste par les cartes (src/veille.ts).
+  const repli = !tag && !accueil && articles.length
+    ? `<ul class="actus__repli">${articles.map((a) => `<li><a href="actus/${a.slug}/">${echapper(a.titre)}</a></li>`).join('')}</ul>`
+    : '';
   return `<section ${attributs} hidden>
   ${entete}
-  <div class="actus__liste" data-actus-liste></div>
+  <div class="actus__liste" data-actus-liste>${repli}</div>
 </section>`;
 }

@@ -1,6 +1,6 @@
 ---
 titre: "Top 10 des luminaires tressés"
-description: "Suspensions en rotin, jute, bambou ou paille, lampes de chevet et lampadaires en fibres naturelles : 10 luminaires tressés pour une lumière douce et chaleureuse."
+description: "Suspensions en rotin, jute, bambou ou paille, lampes de chevet et lampadaires en fibres naturelles : 10 luminaires tressés pour une lumière douce."
 publie_le: 2026-10-26
 type: top
 pieces: [salon, cuisine-salle-a-manger, chambre]

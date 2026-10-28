@@ -3,9 +3,28 @@
 export const NOM_SITE = 'Keur Déco';
 
 /** Titre de l'onglet : « Titre · Keur Déco », sans le nom du site quand l'ensemble dépasserait 60 caractères (Google coupe au-delà). */
+/**
+ * Les `n` éléments qui suivent `courant` dans `liste`, en reprenant au début (sans `courant`) : chaque page
+ * recommande ses suivantes, si bien que toutes reçoivent des liens, même les plus anciennes.
+ */
+export function suivantsEnBoucle<T>(liste: T[], courant: T, n: number): T[] {
+  const i = liste.indexOf(courant);
+  const autres = i < 0 ? liste : [...liste.slice(i + 1), ...liste.slice(0, i)];
+  return autres.slice(0, n);
+}
+
+/** Coupe un texte trop long au dernier mot entier et ajoute « … » (au plus `max` caractères). */
+export function couperTexte(texte: string, max: number): string {
+  if (texte.length <= max) return texte;
+  const coupe = texte.slice(0, max - 1);
+  const espace = coupe.lastIndexOf(' ');
+  return `${(espace > max / 2 ? coupe.slice(0, espace) : coupe).replace(/[\s,;:.!?«»–—-]+$/, '')}…`;
+}
+
+/** Balise title : « titre · Keur Déco » si cela tient en 60 caractères, sinon le titre seul (coupé à 60). */
 export function titrePage(titre: string): string {
   const complet = `${titre} · ${NOM_SITE}`;
-  return complet.length > 60 ? titre : complet;
+  return complet.length > 60 ? couperTexte(titre, 60) : complet;
 }
 
 export const SLOGAN = 'Décoration africaine pour la maison';

@@ -51,3 +51,12 @@ describe('veille : sections d’actus', () => {
     expect(pages.get('piece-salon.html')).not.toContain('<!--#actus');
   });
 });
+
+describe('page Actus : liens dans le HTML vers les articles complets', () => {
+  it('liste chaque article construit, seulement sur la page Actus', () => {
+    const articles = [{ slug: 'akaa-paris', titre: 'AKAA à Paris' }];
+    expect(blocActus(20, undefined, articles)).toContain('<li><a href="actus/akaa-paris/">AKAA à Paris</a></li>');
+    expect(blocActus(4, undefined, articles)).not.toContain('actus__repli');
+    expect(blocActus(3, 'matiere:wax', articles)).not.toContain('actus__repli');
+  });
+});

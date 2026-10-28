@@ -12,7 +12,7 @@ import { resolve } from 'node:path';
 import { FAMILLES, fichierRubrique, type Famille, type Rubrique } from '../src/taxonomie.ts';
 import { blocAnnonce } from './annonces.ts';
 import { articlesPublies, FICHIER_LISTE, grilleArticles, tousLesArticles, TYPES, type Article } from './articles.ts';
-import { dateLongue, SITE_URL, titrePage } from './config.ts';
+import { dateLongue, SITE_URL, suivantsEnBoucle, titrePage } from './config.ts';
 import { icone, type NomIcone } from './icones.ts';
 import { motif } from './motifs.ts';
 import { imageArticle, imageExiste, MENTION_IA_ILLUSTRATION, photoFond } from './images.ts';
@@ -268,7 +268,9 @@ function pageGlossaire(entrees: EntreeGlossaire[]): string {
 
 function pageEntreeGlossaire(g: EntreeGlossaire, entrees: EntreeGlossaire[], publies: Article[]): string {
   const articles = publies.filter((a) => a.matieres.some((m) => g.matieres.includes(m))).slice(0, 3);
-  const voisines = entrees.filter((e) => e.id !== g.id && e.matieres.some((m) => g.matieres.includes(m))).slice(0, 4);
+  const memeMatiere = suivantsEnBoucle(entrees.filter((e) => e.id === g.id || e.matieres.some((m) => g.matieres.includes(m))), g, 4);
+  // Moins de 4 termes de la même matière : on complète avec les termes suivants du glossaire.
+  const voisines = [...memeMatiere, ...suivantsEnBoucle(entrees, g, entrees.length).filter((e) => !memeMatiere.includes(e))].slice(0, 4);
   const rubriques = g.matieres.map((m) => FAMILLES.matiere.liste.find((r) => r.id === m)).filter((r): r is Rubrique => !!r);
   // Conseils publiés de la même matière, ceux qui citent le terme dans leur titre d'abord.
   const cite = (c: Conseil) => (c.titre.toLowerCase().includes(g.nom.toLowerCase()) ? 0 : 1);
@@ -326,7 +328,7 @@ export function blocUne(publies = articlesPublies(), tous = tousLesArticles()): 
   const a = publies.find((x) => x.type === 'ambiance') ?? publies[0];
   if (a) {
     return `<a class="une" href="${a.fichier}" data-reveal data-libelle="${echapper(a.titre)}">
-    <span class="une__image">${imageArticle(a.image, a.imageAlt, '100vw', 'eager')}</span>
+    <span class="une__image">${imageArticle(a.image, a.imageAlt, '100vw')}</span>
     <span class="une__texte">
       <span class="une__etiquette">${TYPES[a.type].nom} à la une</span>
       <strong class="une__titre">${echapper(a.titre)}</strong>
@@ -338,7 +340,7 @@ export function blocUne(publies = articlesPublies(), tous = tousLesArticles()): 
   const prochain = [...tous].filter((x) => !publies.includes(x)).sort((x, y) => x.publieLe.localeCompare(y.publieLe))[0];
   if (!prochain) return '';
   return `<div class="une une--bientot" data-reveal>
-    <span class="une__image">${imageArticle(prochain.image, prochain.imageAlt, '100vw', 'eager')}</span>
+    <span class="une__image">${imageArticle(prochain.image, prochain.imageAlt, '100vw')}</span>
     <span class="une__texte">
       <span class="une__etiquette">Premier article le ${dateLongue(prochain.publieLe)}</span>
       <strong class="une__titre">${echapper(prochain.titre)}</strong>

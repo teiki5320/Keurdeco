@@ -57,7 +57,8 @@ export function head(): string {
     <link rel="apple-touch-icon" href="icones/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
     <meta name="theme-color" content="#F7F0E6" />
-    <meta name="robots" content="max-image-preview:large" />`;
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="alternate" type="application/rss+xml" title="${NOM_SITE}" href="feed.xml" />`;
 }
 
 const DOSSIER_PARTAGE = resolve(import.meta.dirname, '../public/images/partage');
@@ -361,13 +362,49 @@ export function datesSitemap(racine: string): Map<string, string> {
   return dates;
 }
 
-export function sitemap(pages: string[], url = SITE_URL, dates: Map<string, string> = new Map()): string {
+/** Flux RSS (feed.xml) : les 30 derniers articles et conseils publiés, du plus récent au plus ancien. */
+export function fluxRss(url = SITE_URL, articles = articlesPublies(), conseils = conseilsPublies()): string {
+  const x = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const date = (iso: string) => new Date(`${iso}T06:00:00Z`).toUTCString();
+  const entrees = [
+    ...articles.map((a) => ({ titre: a.titre, lien: urlPage(a.fichier, url), description: a.description, publieLe: a.publieLe, image: `${url}images/articles/${a.image}-800.webp` })),
+    ...conseils.map((c) => ({ titre: c.titre, lien: urlPage(c.fichier, url), description: c.description, publieLe: c.publieLe, image: '' })),
+  ]
+    .sort((a, b) => b.publieLe.localeCompare(a.publieLe))
+    .slice(0, 30);
+  const items = entrees
+    .map((e) => `    <item><title>${x(e.titre)}</title><link>${e.lien}</link><guid isPermaLink="true">${e.lien}</guid><pubDate>${date(e.publieLe)}</pubDate><description>${x(e.description)}</description>${e.image ? `<enclosure url="${e.image}" type="image/webp" length="0" />` : ''}</item>`)
+    .join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${x(NOM_SITE)}</title>
+    <link>${url}</link>
+    <description>${x(SLOGAN)}</description>
+    <language>fr</language>
+    <atom:link href="${url}feed.xml" rel="self" type="application/rss+xml" />
+${items}
+  </channel>
+</rss>
+`;
+}
+
+/** Images d'ambiance d'une page (nos images IA, en 1600 px), pour Google Images : une seule fois chacune. */
+export function imagesDePage(html: string, url = SITE_URL): string[] {
+  const noms = new Set([...html.matchAll(/images\/articles\/([a-z0-9-]+)-(?:400|800|1600)\.webp/g)].map((m) => m[1]));
+  return [...noms].map((n) => `${url}images/articles/${n}-1600.webp`);
+}
+
+export function sitemap(pages: string[], url = SITE_URL, dates: Map<string, string> = new Map(), images: Map<string, string[]> = new Map()): string {
   const urls = pages
     .filter((p) => p !== '404.html')
     .sort()
-    .map((p) => `  <url><loc>${urlPage(p, url)}</loc>${dates.has(p) ? `<lastmod>${dates.get(p)}</lastmod>` : ''}</url>`)
+    .map((p) => {
+      const img = (images.get(p) ?? []).map((i) => `<image:image><image:loc>${i}</image:loc></image:image>`).join('');
+      return `  <url><loc>${urlPage(p, url)}</loc>${dates.has(p) ? `<lastmod>${dates.get(p)}</lastmod>` : ''}${img}</url>`;
+    })
     .join('\n');
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls}\n</urlset>\n`;
 }
 
 /** Applique toutes les transformations à une page. */
@@ -439,9 +476,12 @@ export function pluginSite(): Plugin {
         .filter((f) => !/content="noindex"|name="adresse-canonique"/.test(sourcePage(racine, f)));
       // Date de publication des articles et conseils (<lastmod>), pour aider Google à les découvrir.
       const dates = datesSitemap(racine);
-      this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap(pages, SITE_URL, dates) });
+      // Images d'ambiance de chaque page (page construite), pour Google Images.
+      const images = new Map(pages.map((f) => [f, imagesDePage(transformerPage(sourcePage(racine, f), f))]));
+      this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap(pages, SITE_URL, dates, images) });
       // Matières du site pour la tâche de veille (relier une actu à une page matière).
       this.emitFile({ type: 'asset', fileName: 'veille/entites.json', source: `${JSON.stringify(entitesVeille(), null, 2)}\n` });
+      this.emitFile({ type: 'asset', fileName: 'feed.xml', source: fluxRss() });
       this.emitFile({ type: 'asset', fileName: 'robots.txt', source: `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}sitemap.xml\n` });
       // Service worker : une version par publication, pour que les caches (images comprises) se renouvellent.
       const modele = readFileSync(resolve(import.meta.dirname, 'sw.js'), 'utf8');

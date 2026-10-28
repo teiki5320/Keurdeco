@@ -1,5 +1,6 @@
 ---
 titre: "Comment apporter une touche africaine dans un petit appartement ?"
+titre_page: "Touche africaine dans un petit appartement : nos idées"
 description: "Couleur sur les petits objets, rangements tressés, meubles qui servent deux fois, miroirs : une déco africaine dans un petit espace, sans encombrer."
 publie_le: 2026-10-09
 theme: associer

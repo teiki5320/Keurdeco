@@ -1,7 +1,7 @@
 ---
 onglet: "Décos murales"
 titre: "Top 10 des assiettes murales et décos à accrocher"
-description: "Notre sélection de 10 décos murales aux accents africains : paniers muraux tressés, miroirs soleil en rotin, décorations en jonc de mer et affiches de la savane."
+description: "Notre sélection de 10 décos murales aux accents africains : paniers muraux tressés, miroirs soleil en rotin, décos en jonc de mer et affiches de la savane."
 ordre: 8
 classement_le: "2026-10-19"
 image_partage: top-paniers-muraux-tresses

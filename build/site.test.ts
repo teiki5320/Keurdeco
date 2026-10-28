@@ -2,7 +2,8 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { MENTION_AMAZON } from '../src/amazon.ts';
-import { codeAdsense, pageAvecAdsense, datesSitemap, footer, header, insecables, mesureAudience, pagesGenerees, referencement, sitemap, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
+import { couperTexte, suivantsEnBoucle, titrePage } from './config.ts';
+import { codeAdsense, pageAvecAdsense, datesSitemap, footer, header, insecables, mesureAudience, pagesGenerees, fluxRss, imagesDePage, referencement, sitemap, toutesLesPages, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
 
 describe('parties communes', () => {
   it('navigation : la rubrique courante est signalée', () => {
@@ -94,5 +95,59 @@ describe('pages générées', () => {
     for (const f of ['pieces.html', 'matieres.html', 'occasions.html', 'piece-salon.html', 'matiere-bogolan.html', 'occasion-tabaski.html', 'tops.html', 'guides.html', 'glossaire.html', 'glossaire-bogolan.html']) {
       expect(pages.has(f), f).toBe(true);
     }
+  });
+});
+
+describe('titres et descriptions pour Google', () => {
+  it('couperTexte coupe au dernier mot entier ; titrePage tient en 60 caractères', () => {
+    expect(couperTexte('Un texte court', 60)).toBe('Un texte court');
+    const coupe = couperTexte('Ibrahim Mahama investit la Fondation Cartier avec « Le temps des fêtes » et ses sacs de jute', 60);
+    expect(coupe.length).toBeLessThanOrEqual(60);
+    expect(coupe.endsWith('…')).toBe(true);
+    expect(titrePage('x'.repeat(30) + ' ' + 'y'.repeat(40)).length).toBeLessThanOrEqual(60);
+  });
+
+  it('chaque page indexable : titre de 60 caractères au plus, description de 70 à 160 caractères', () => {
+    const racine = resolve(import.meta.dirname, '..');
+    const decoder = (s: string) => s.replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    const generees = pagesGenerees();
+    for (const [nom, chemin] of Object.entries(toutesLesPages(racine))) {
+      const html = generees.get(`${nom}.html`) ?? readFileSync(chemin, 'utf8');
+      if (/content="noindex"/.test(html)) continue;
+      const titre = decoder(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '');
+      const description = decoder(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? '');
+      expect(titre.length, `${nom} : titre (${titre.length})`).toBeLessThanOrEqual(60);
+      expect(description.length, `${nom} : description (${description.length})`).toBeLessThanOrEqual(160);
+      expect(description.length, `${nom} : description (${description.length})`).toBeGreaterThanOrEqual(70);
+    }
+  });
+});
+
+describe('sitemap des images', () => {
+  it('chaque page liste ses images d’ambiance en 1600 px, sans doublon', () => {
+    const html = '<img src="images/articles/salon-kente-800.webp" srcset="images/articles/salon-kente-400.webp 400w, images/articles/salon-kente-1600.webp 1600w" /><img src="images/produits/x-160.webp" />';
+    expect(imagesDePage(html, 'https://x/')).toEqual(['https://x/images/articles/salon-kente-1600.webp']);
+    const s = sitemap(['index.html'], 'https://x/', new Map(), new Map([['index.html', ['https://x/images/articles/a-1600.webp']]]));
+    expect(s).toContain('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"');
+    expect(s).toContain('<image:image><image:loc>https://x/images/articles/a-1600.webp</image:loc></image:image>');
+  });
+});
+
+describe('liens « À lire aussi » en boucle', () => {
+  it('suivantsEnBoucle prend les suivants et reprend au début, sans l’élément courant', () => {
+    expect(suivantsEnBoucle([1, 2, 3, 4, 5], 4, 3)).toEqual([5, 1, 2]);
+    expect(suivantsEnBoucle([1, 2], 1, 3)).toEqual([2]);
+  });
+});
+
+describe('flux RSS', () => {
+  it('liste les articles et conseils publiés, du plus récent au plus ancien', () => {
+    const flux = fluxRss('https://x/');
+    expect(flux).toContain('<rss version="2.0"');
+    expect(flux).toContain('<atom:link href="https://x/feed.xml" rel="self"');
+    const dates = [...flux.matchAll(/<pubDate>([^<]+)<\/pubDate>/g)].map((m) => Date.parse(m[1]));
+    expect(dates.length).toBeGreaterThan(0);
+    expect(dates.length).toBeLessThanOrEqual(30);
+    expect([...dates].sort((a, b) => b - a)).toEqual(dates);
   });
 });

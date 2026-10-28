@@ -1,6 +1,6 @@
 ---
-titre: "Maisons de rêve africaines : 3 lieux d’exception à s’inspirer"
-description: "Une villa en terre face à l’océan, un salon immense ouvert sur la savane, une piscine à débordement : le grand luxe africain, et comment en garder l’esprit chez soi."
+titre: "Maisons de rêve africaines : 3 lieux d’exception"
+description: "Une villa en terre face à l’océan, un salon ouvert sur la savane, une piscine à débordement : le grand luxe africain, et comment en garder l’esprit chez soi."
 publie_le: 2026-10-18
 type: ambiance
 pieces: [salon, balcon-exterieur]

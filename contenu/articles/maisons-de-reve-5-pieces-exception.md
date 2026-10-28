@@ -1,6 +1,6 @@
 ---
 titre: "Maisons de rêve africaines : 5 pièces d’exception"
-description: "Une chambre face à la vallée, une terrasse sur les toits de Dakar, une entrée en terre sculptée, un bain de pierre, un lodge sous les étoiles : 5 rêves à adapter chez soi."
+description: "Une chambre face à la vallée, une terrasse sur les toits de Dakar, une entrée en terre sculptée, un bain de pierre, un lodge : 5 rêves à adapter chez soi."
 publie_le: 2026-10-19
 type: ambiance
 pieces: [chambre, balcon-exterieur, entree, salle-de-bain]
