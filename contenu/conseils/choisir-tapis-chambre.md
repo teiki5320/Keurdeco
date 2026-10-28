@@ -31,4 +31,4 @@ Sous les pieds nus, la laine (tapis berbère, kilim) est plus douce que le jute.
 
 ## La couleur
 
-Un tapis clair et une couleur douce calment la chambre. Les motifs berbères ou les tons indigo s’accordent bien avec le linge en lin et les textiles africains. Voir aussi [quelle taille de tapis pour un salon](conseil-taille-tapis-salon.html).
+Un tapis clair et une couleur douce calment la chambre. Les motifs berbères ou les tons indigo s’accordent bien avec le linge en lin et les textiles africains. Voir aussi [quelle taille de tapis pour un salon](conseil-taille-tapis-salon.html) et nos idées pour une [chambre style africain](piece-chambre.html).

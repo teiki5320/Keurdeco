@@ -27,7 +27,7 @@ Visez environ un tiers de vase pour deux tiers d’herbes visibles. Au sol, un g
 
 ## La matière
 
-La terre cuite brute s’accorde avec la couleur sable de la pampa ; un vase noir mat crée un contraste élégant ; un panier tressé avec un pot à l’intérieur donne une note plus bohème.
+La terre cuite brute s’accorde avec la couleur sable de la pampa ; un vase noir mat crée un contraste élégant ; un panier tressé avec un pot à l’intérieur donne une note plus bohème (voir nos conseils de [déco afro bohème](conseil-deco-africaine-boheme.html)).
 
 ## L’entretien
 

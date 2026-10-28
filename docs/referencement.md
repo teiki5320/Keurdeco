@@ -2,6 +2,32 @@
 
 Tenu par la routine « Référencement du jour » (Keur Déco passe le mercredi). Une page travaillée n'est pas retouchée avant 28 jours : Google a besoin de ce temps pour réagir.
 
+## 28/10/2026
+
+### Pages presque en première page (chiffres Search Console des 28 derniers jours)
+
+| Page | Recherches visées | Place / vues au moment du travail | Ancien titre → nouveau titre | Autres changements |
+|---|---|---|---|---|
+| /matiere-bogolan.html | décoration bogolan | 17,7 (15 vues) ; « décoration bogolan » 18,9 (14 vues) | « Bogolan : idées de déco africaine · Keur Déco » → « Décoration bogolan : idées de déco africaine · Keur Déco » | titre principal « Décoration bogolan : idées de déco africaine » (au lieu de « Bogolan ») ; description réécrite ; liens « décoration bogolan » ajoutés depuis les conseils Entretenir un tissu bogolan et Mélanger wax et bogolan, l’ambiance Salon bogolan et bois clair (et le conseil Plaid, publié le 23/11) |
+| /conseil-deco-africaine-boheme.html | déco afro bohème | 17,7 (9 vues) | « Déco africaine et bohème : comment les associer ? · Keur Déco » → « Déco afro bohème : associer africain et bohème · Keur Déco » (nouveau `titre_page`) | question et titre principal « Déco afro bohème : comment associer africain et bohème ? » ; description réécrite ; une phrase nomme la « déco afro bohème » ; liens ajoutés depuis le conseil Réparer un panier en raphia et le top Luminaires tressés (et le conseil Vase d’herbes de la pampa, publié le 18/11) ; titres des épingles Pinterest inchangés |
+| /piece-chambre.html | chambre style africain, chambre africaine | 14,5 (6 vues) ; « chambre style africain » 15 (4 vues) | « Chambre : idées de déco africaine · Keur Déco » → « Chambre style africain : idées de déco · Keur Déco » | titre principal « Chambre style africain : idées de déco » ; description réécrite ; lien « chambre style africain » depuis l’ambiance Chambre indigo et lin (et les conseils Tapis de chambre, Plaid et Tête de lit, publiés en novembre et décembre) |
+
+Laissée de côté : /glossaire-panier-bolga.html (« bolga » 21e, 4 vues), en concurrence avec le conseil Panier Bolga déjà travaillé le 21/10. Les autres pages de la liste ont été travaillées les 21 et 22/10 (à relire à partir du 18 et du 19/11) ; chiffres du jour : panier Bolga 9,4 (25 vues), Indigo 18,1 (22 vues), Adire 17,5 (18 vues), Tabouret 9,4 (16 vues), Shweshwe 9,5 (13 vues), Motifs bogolan 11,2 (6 vues, 1 clic), Sankofa 17 (6 vues), Perles krobo 12,3 (3 vues).
+
+À relire à partir du 25/11/2026.
+
+### Fiches enrichies
+
+Vérifiées le 21/10/2026 : pas refait (moins de 28 jours). Contrôle rapide des pages modifiées : JSON valide (BreadcrumbList ; FAQPage + Article + BreadcrumbList sur le conseil, question identique au titre visible).
+
+### Socle
+
+Vérifié le 21/10/2026 (pas refait). Vitesse sur téléphone : PageSpeed n’a encore pas répondu (quota du jour dépassé à 5 h 30). À refaire au prochain passage.
+
+### Page nouvelle
+
+Aucune créée. « drap wax » (21 vues, page Wax 64e) : le site n’a aucun drap ni linge de lit en wax parmi ses produits, et le conseil sur le linge de lit ne paraît que le 16/12 : proposé à Jean. « décoration intérieur wax » (39 vues) et « tissu kente » (15 vues) ont déjà leur vraie page ; « chemin de table wax » : écarté par Jean le 21/10.
+
 ## 22/10/2026
 
 ### Pages presque en première page (chiffres Search Console des 30 derniers jours)

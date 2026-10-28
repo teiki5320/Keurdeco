@@ -40,7 +40,7 @@ epingles:
 tableau_pinterest: chambre
 ---
 
-L’indigo est la couleur des grandes traditions de teinture d’Afrique de l’Ouest, de l’adire yoruba au Nigeria aux étoffes teintes du Mali. Profond, jamais criard, il a quelque chose d’apaisant : c’est la couleur idéale d’une chambre. Associé au lin blanc et aux matières naturelles, il crée un cocon où l’on dort vraiment mieux.
+L’indigo est la couleur des grandes traditions de teinture d’Afrique de l’Ouest, de l’adire yoruba au Nigeria aux étoffes teintes du Mali. Profond, jamais criard, il a quelque chose d’apaisant : c’est la couleur idéale d’une [chambre style africain](piece-chambre.html). Associé au lin blanc et aux matières naturelles, il crée un cocon où l’on dort vraiment mieux.
 
 ## 1. Un grand aplat d’indigo sur le lit
 

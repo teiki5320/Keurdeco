@@ -55,7 +55,7 @@ epingles:
 tableau_pinterest: paniers
 ---
 
-Rien ne crée une ambiance aussi vite qu’un luminaire tressé. Allumé, il filtre la lumière à travers ses fibres et dessine des motifs sur les murs ; éteint, c’est déjà un bel objet. Rotin, jute, bambou, paille : les savoir-faire de vannerie du monde entier, et notamment d’Afrique, se retrouvent dans ces luminaires.
+Rien ne crée une ambiance aussi vite qu’un luminaire tressé. Allumé, il filtre la lumière à travers ses fibres et dessine des motifs sur les murs ; éteint, c’est déjà un bel objet. C’est l’une des bases de la [déco afro bohème](conseil-deco-africaine-boheme.html). Rotin, jute, bambou, paille : les savoir-faire de vannerie du monde entier, et notamment d’Afrique, se retrouvent dans ces luminaires.
 
 ## Quelle fibre choisir ?
 

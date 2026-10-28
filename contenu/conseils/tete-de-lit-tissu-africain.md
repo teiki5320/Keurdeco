@@ -11,7 +11,7 @@ epingles:
   - "Bogolan au-dessus du lit : la tête de lit tissu"
 ---
 
-Un tissu africain au-dessus du lit fait aussitôt d’une chambre une pièce à part. Pas besoin d’un vrai sommier à tête de lit : un mur, un tissu et quelques outils suffisent.
+Un tissu africain au-dessus du lit fait aussitôt d’une chambre une pièce à part. Pas besoin d’un vrai sommier à tête de lit : un mur, un tissu et quelques outils suffisent. D’autres idées pour une [chambre style africain](piece-chambre.html) complètent la tête de lit.
 
 ## Le tissu suspendu
 

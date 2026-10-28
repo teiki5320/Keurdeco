@@ -42,7 +42,7 @@ Le style scandinave et le bogolan ont plus en commun qu’on ne le croit : des m
 
 ## 1. Une base blanche et du bois clair
 
-Gardez les fondamentaux scandinaves : **murs blancs**, parquet clair, meubles en **chêne** ou en frêne aux lignes simples. Cette base neutre est l’écrin idéal pour le bogolan : ses motifs ressortent sans jamais surcharger.
+Gardez les fondamentaux scandinaves : **murs blancs**, parquet clair, meubles en **chêne** ou en frêne aux lignes simples. Cette base neutre est l’écrin idéal pour le bogolan : ses motifs ressortent sans jamais surcharger. D’autres idées de [décoration bogolan](matiere-bogolan.html) suivent le même principe.
 
 ## 2. Un bogolan encadré au mur
 

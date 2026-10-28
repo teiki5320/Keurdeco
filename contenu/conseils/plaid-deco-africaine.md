@@ -23,7 +23,7 @@ Le plaid se voit de loin : son motif compte autant que celui des coussins. Si vo
 
 ## La couleur
 
-Reprenez une couleur déjà présente dans la pièce : l’ocre d’un tapis, le terracotta d’une jarre, le bleu d’un coussin. Les tons terre et le [bogolan](glossaire-bogolan.html) brun et crème réchauffent ; l’indigo apaise une chambre.
+Reprenez une couleur déjà présente dans la pièce : l’ocre d’un tapis, le terracotta d’une jarre, le bleu d’un coussin. Les tons terre et le [bogolan](glossaire-bogolan.html) brun et crème réchauffent (voir nos idées de [décoration bogolan](matiere-bogolan.html)) ; l’indigo apaise une [chambre style africain](piece-chambre.html).
 
 ## La taille
 

@@ -15,7 +15,7 @@ export interface Rubrique {
 
 export const PIECES: Rubrique[] = [
   { id: 'salon', nom: 'Salon', accroche: 'Idées pour un salon aux couleurs de l’Afrique : coussins en wax, paniers, tapis et bois sculpté, sans surcharger la pièce.' },
-  { id: 'chambre', nom: 'Chambre', accroche: 'Une chambre douce et chaleureuse : linge de lit imprimé, tête de lit tressée, indigo et bogolan pour bien dormir.' },
+  { id: 'chambre', nom: 'Chambre', titre: 'Chambre style africain : idées de déco', accroche: 'Une chambre style africain douce et chaleureuse : linge de lit imprimé, tête de lit tressée, indigo et bogolan pour bien dormir.' },
   { id: 'cuisine-salle-a-manger', nom: 'Cuisine et salle à manger', accroche: 'Nappes en wax, vaisselle en terre cuite, paniers et sets de table tressés pour une table généreuse et colorée.' },
   { id: 'entree', nom: 'Entrée', accroche: 'Soigner la première impression : miroir encadré de raphia, banc sculpté, paniers de rangement et tapis d’accueil.' },
   { id: 'salle-de-bain', nom: 'Salle de bain', accroche: 'Une salle de bain qui respire : paniers à linge tressés, serviettes tissées, poteries et matières naturelles.' },
@@ -25,7 +25,7 @@ export const PIECES: Rubrique[] = [
 
 export const MATIERES: Rubrique[] = [
   { id: 'wax', nom: 'Wax', accroche: 'Le wax, tissu imprimé star des marchés d’Afrique de l’Ouest : coussins, rideaux, nappes et idées pour l’adopter chez soi.' },
-  { id: 'bogolan', nom: 'Bogolan', accroche: 'Le bogolan, toile du Mali teinte à la boue : motifs graphiques, tons bruns et crème, et idées pour l’intégrer à la déco.' },
+  { id: 'bogolan', nom: 'Bogolan', titre: 'Décoration bogolan : idées de déco africaine', accroche: 'Décoration bogolan : la toile du Mali teinte à la boue, ses motifs bruns et crème, et nos idées pour l’intégrer au salon ou à la chambre.' },
   { id: 'kente', nom: 'Kente', accroche: 'Le kente, tissu tissé du Ghana aux bandes colorées : signification, usages et façons de l’apporter dans la maison.' },
   { id: 'indigo', nom: 'Indigo', titre: 'Tissu indigo africain : idées de déco', accroche: 'Le bleu indigo d’Afrique de l’Ouest, de l’adire yoruba aux teintures maliennes : textiles profonds et apaisants.' },
   { id: 'raphia-paniers', nom: 'Raphia et paniers tressés', accroche: 'Raphia, osier, herbes tressées : paniers, suspensions et assiettes murales, la vannerie africaine dans toute la maison.' },

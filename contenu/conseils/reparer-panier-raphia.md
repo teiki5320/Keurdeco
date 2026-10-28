@@ -31,4 +31,4 @@ Un panier écrasé se reforme : vaporisez-le légèrement d’eau, redonnez-lui 
 
 ## Prévenir
 
-Ne surchargez pas les anses et rangez les paniers à l’abri de l’humidité et du plein soleil.
+Ne surchargez pas les anses et rangez les paniers à l’abri de l’humidité et du plein soleil. Bien entretenus, ils restent la base d’une [déco afro bohème](conseil-deco-africaine-boheme.html).

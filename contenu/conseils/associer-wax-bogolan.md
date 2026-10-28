@@ -19,7 +19,7 @@ Si le bogolan a de petits motifs serrés, choisissez un wax à grands motifs, ou
 
 ## Répartir, sans tout mélanger
 
-- Le bogolan sur une grande surface calme : un plaid, un tapis, une tenture.
+- Le bogolan sur une grande surface calme : un plaid, un tapis, une tenture (d’autres idées de [décoration bogolan](matiere-bogolan.html)).
 - Le wax en petites touches : deux coussins, un abat-jour.
 - Entre les deux, des **matières unies** : lin, coton sable, bois clair, rotin.
 

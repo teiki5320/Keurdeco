@@ -1,6 +1,7 @@
 ---
-titre: "Déco africaine et bohème : comment les associer ?"
-description: "Fibres, plantes, textiles superposés : ce qui rapproche la déco africaine du style bohème, et comment les associer sans tomber dans le fouillis."
+titre: "Déco afro bohème : comment associer africain et bohème ?"
+titre_page: "Déco afro bohème : associer africain et bohème"
+description: "Déco afro bohème : fibres, plantes et textiles superposés, ce qui rapproche la déco africaine du style bohème et comment les associer sans fouillis."
 publie_le: 2026-10-14
 theme: associer
 reponse: "Gardez de la bohème les plantes, les fibres et les textiles superposés, et de la déco africaine les tissus authentiques et le bois sculpté. Limitez la palette à trois ou quatre couleurs pour éviter l’effet fouillis."
@@ -11,7 +12,7 @@ epingles:
   - "Fibres, plantes et wax : un intérieur bohème africain"
 ---
 
-Le style bohème emprunte beaucoup à l’artisanat africain : paniers (comme le [panier Bolga](conseil-panier-bolga.html) du nord du Ghana), assiettes tressées, tapis, couleurs chaudes. Les associer est naturel ; le risque est d’en faire trop.
+Le style bohème emprunte beaucoup à l’artisanat africain : paniers (comme le [panier Bolga](conseil-panier-bolga.html) du nord du Ghana), assiettes tressées, tapis, couleurs chaudes. Les associer est naturel, c’est ce qu’on appelle souvent la déco afro bohème ; le risque est d’en faire trop.
 
 ## Ce qu’ils partagent
 
