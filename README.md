@@ -39,6 +39,7 @@ Node 22.18 ou plus récent (les scripts `.ts` sont exécutés directement par No
 | `src/animations.ts`, `src/nuancier.ts` | Animations (porte, visite, coupons, coutures, rideau) et nuancier des matières |
 | `build/conseils.ts`, `contenu/conseils/*.md` | Onglet Conseils (une question par page) |
 | `build/veille.ts`, `src/veille.ts`, `actus.html` | Veille actus : `veille/entites.json` au build, blocs d'actus lus en direct dans le navigateur |
+| `scripts/veille-articles.ts`, `build/articles-veille.ts`, `src/article-veille.ts`, `src/noeud.ts` | Articles complets des actus : lus avant le build, pages `/actus/<slug>/`, page de secours `/actus/article/?id=<id>` |
 | `src/data/credits-images.json`, `scripts/images-libres.ts` | Photos libres et cartes générées (crédits) des conseils sans image IA |
 | `build/sw.js` | Modèle du service worker (numéro de version ajouté à chaque build) |
 | `src/site.css`, `src/site.ts` | Styles et JavaScript (points cliquables, menu, service worker) |
@@ -98,7 +99,7 @@ Selon le type :
 - **top** : `classement: [{ produit, pourquoi, a_savoir }]` (5 à 10), données structurées `ItemList`. `{{classement}}` dans le texte place le classement.
 - **guide** : `{{produit: <id>}}` seul sur une ligne insère un encadré produit ; sommaire automatique.
 
-Les articles sont publiés à leur date : le site est reconstruit à chaque push sur `main` et **chaque lundi, mercredi et vendredi à 5 h UTC**.
+Les articles sont publiés à leur date : le site est reconstruit à chaque push sur `main` et **chaque lundi, mercredi et vendredi à 5 h UTC** (et chaque jour à 11 h 50 et 18 h 50 UTC pour les articles d'actus).
 
 ### Images
 
@@ -132,6 +133,15 @@ Depuis le 27 octobre 2026 : actus de la déco, du design et de l'artisanat afric
 - Le build publie `veille/entites.json` (les 8 matières et leurs autres noms) pour que la veille relie une actu à une matière.
 - Aucun lien Amazon, aucun prix, aucun bouton « Épingler » dans les actus ; pas d'annonce AdSense sur `actus.html`.
 
+### Articles complets (depuis le 28 octobre 2026)
+
+- La veille rédige un article de 300 à 450 mots par actu : `https://teiki5320.github.io/veille/articles/keurdeco/<id>.json` (schéma `article-schema-v1`), avec l'index de tous les articles dans `articles/keurdeco/index.json` (jamais supprimés). L'actu porte alors `slug`, `article_url` et `lecture_min`.
+- `npm run build` lance d'abord `scripts/veille-articles.ts` (aussi `npm run veille-articles`) : il lit l'index, chaque article et les actus récentes, et les range dans `.veille/articles-keurdeco.json` (non suivi par git). Si la veille ne répond pas, le fichier est vide et le build continue avec 0 page d'article.
+- `build/articles-veille.ts` construit une page `actus/<slug>/` par article : fil d'Ariane, titre, chapô, date et durée de lecture, image 16:9 et son crédit, intertitres, encadré « Sources » (« Article rédigé par Keur Déco à partir de… », liens `noopener nofollow`), liens vers les fiches matières citées, 3 autres actus, une annonce au plus. SEO : title, description = chapô, canonical, Open Graph avec l'image, JSON-LD `NewsArticle` (`isBasedOn` = la source), sitemap et IndexNow.
+- Page de secours `actus/article/?id=<id>` (noindex, hors sitemap) : rendue dans le navigateur pour les actus publiées après le dernier build ; message simple si l'id est inconnu ; renvoi vers la page construite si elle existe.
+- Cartes d'actus : toute la carte ouvre la page construite (liste des slugs écrite dans le code au build, `__ARTICLES_CONSTRUITS__` dans `vite.config.ts`), sinon la page de secours, sinon (pas encore d'article) la source. Le nom de la source reste écrit sur la carte.
+- Reconstruction automatique chaque jour à 11 h 50 et 18 h 50 UTC (`pages.yml`), après la veille de 12 h et 19 h.
+
 ## Produits
 
 `src/data/produits.json` : `id`, `asin` (ou `null`), `nom`, `type_objet`, `matieres[]`, `couleurs[]`, `pieces[]`, `statut` (`a_selectionner` | `actif` | `indisponible`), `verifie_le`.
@@ -161,7 +171,7 @@ Tout est détaillé dans [`docs/pinterest.md`](docs/pinterest.md), y compris les
 
 ## Déploiement (GitHub Pages)
 
-`.github/workflows/pages.yml` : à chaque push sur `main`, chaque lundi, mercredi et vendredi à 5 h UTC et à la demande : `npm ci`, tests, build (épingles comprises), test de bout en bout Chromium, puis déploiement GitHub Pages.
+`.github/workflows/pages.yml` : à chaque push sur `main`, chaque lundi, mercredi et vendredi à 5 h UTC, chaque jour à 11 h 50 et 18 h 50 UTC (articles d'actus de la veille) et à la demande : `npm ci`, tests, build (épingles comprises), test de bout en bout Chromium, puis déploiement GitHub Pages.
 
 Réglages facultatifs (*Settings* › *Secrets and variables* › *Actions* › *Variables*) : `SITE_URL` (par défaut `https://www.keurdeco.com/`), `CLOUDFLARE_WEB_ANALYTICS` (token public du « JS Snippet » de Cloudflare Web Analytics : mesure d'audience sans cookie, en place), `PLAUSIBLE_DOMAIN` (alternative : Plausible), `PINTEREST_VERIFY`, `GOOGLE_VERIFY` (code de la Search Console, balise `google-site-verification`).
 

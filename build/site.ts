@@ -25,6 +25,7 @@ import { MENTION_AMAZON } from '../src/amazon.ts';
 import { FAMILLES, type Famille, fichierRubrique } from '../src/taxonomie.ts';
 import { insecables } from '../src/typo.ts';
 import { articlesPublies, pagesArticles } from './articles.ts';
+import { datesArticlesVeille, pagesArticlesVeille } from './articles-veille.ts';
 import { ADSENSE_EDITEUR, NOM_SITE, SITE_URL, SLOGAN } from './config.ts';
 import { blocConseils, conseilsPublies, pagesConseils } from './conseils.ts';
 import { essayage } from './essayage.ts';
@@ -46,7 +47,7 @@ export const NAVIGATION: { href: string; libelle: string; pages: RegExp }[] = [
   { href: 'guides.html', libelle: 'Guides', pages: /^guides\.html$/ },
   { href: 'conseils.html', libelle: 'Conseils', pages: /^conseils?(-.*)?\.html$/ },
   { href: 'glossaire.html', libelle: 'Glossaire', pages: /^glossaire(-.*)?\.html$/ },
-  { href: 'actus.html', libelle: 'Actus', pages: /^actus\.html$/ },
+  { href: 'actus.html', libelle: 'Actus', pages: /^actus(\.html$|\/)/ },
 ];
 
 export function head(): string {
@@ -97,7 +98,10 @@ export function referencement(html: string, fichier: string, url = SITE_URL): st
   const datePublication = html.match(/<meta name="date-publication" content="([^"]+)"/)?.[1];
   const nomImage = html.match(/<meta name="image-partage" content="([^"]+)"/)?.[1];
   const partage = nomImage && existsSync(resolve(DOSSIER_PARTAGE, `${nomImage}.jpg`)) ? nomImage : 'accueil';
-  const image = `${url}images/partage/${partage}.jpg`;
+  // Une page peut donner une image extérieure (article de la veille : la photo de l'actu) et sa taille.
+  const imageExterne = html.match(/<meta name="image-partage-url" content="([^"]+)"/)?.[1];
+  const [largeurImage, hauteurImage] = (imageExterne && html.match(/<meta name="image-partage-taille" content="(\d+)x(\d+)"/)?.slice(1)) || ['1200', '630'];
+  const image = imageExterne ?? `${url}images/partage/${partage}.jpg`;
   // Une page peut désigner une autre adresse canonique (page d'entrée du Top 10 = premier onglet).
   const canonique = html.match(/<meta name="adresse-canonique" content="([^"]+)"/)?.[1];
   const adresse = canonique ? `${url}${canonique}` : urlPage(fichier, url);
@@ -117,8 +121,8 @@ export function referencement(html: string, fichier: string, url = SITE_URL): st
     <meta property="og:description" content="${attribut(description)}" />
     <meta property="og:url" content="${adresse}" />
     <meta property="og:image" content="${image}" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />${
+    <meta property="og:image:width" content="${largeurImage}" />
+    <meta property="og:image:height" content="${hauteurImage}" />${
       datePublication
         ? `
     <meta property="article:published_time" content="${datePublication}" />
@@ -159,7 +163,8 @@ export function codeAdsense(editeur = ADSENSE_EDITEUR): string {
  * doit pouvoir rouvrir la fenêtre de choix de Google.
  */
 export function pageAvecAdsense(fichier: string): boolean {
-  return !/^(index|tops|top-.*|a-propos|mentions-legales|actus|404)\.html$/.test(fichier);
+  // Pages d'articles de la veille (actus/<slug>/) : oui, comme un conseil (1 annonce au plus) ; page de secours et renvoi : non.
+  return !/^(index|tops|top-.*|a-propos|mentions-legales|actus|404|actus\/index|actus\/article\/index)\.html$/.test(fichier);
 }
 
 function liensNavigation(fichier: string): string {
@@ -267,7 +272,9 @@ export function pagesGenerees(): Map<string, string> {
     for (const f of articles.keys()) if (rubriques.has(f)) throw new Error(`Conflit d'adresse : l'article ${f} porte le nom d'une page de rubrique`);
     for (const f of conseils.keys()) if (rubriques.has(f) || articles.has(f)) throw new Error(`Conflit d'adresse : ${f}`);
     const top10 = pagesTop10();
-    cachePages = new Map([...rubriques, ...articles, ...conseils, ...top10]);
+    // Articles complets de la veille (actus/<slug>/), page de secours et renvoi /actus/.
+    const veille = pagesArticlesVeille();
+    cachePages = new Map([...rubriques, ...articles, ...conseils, ...top10, ...veille]);
   }
   return cachePages;
 }
@@ -350,6 +357,7 @@ export function datesSitemap(racine: string): Map<string, string> {
   }
   const premier = [...pagesGenerees().keys()].find((f) => /^top-10\/(?!index)/.test(f));
   if (premier) poser('top-10/index.html', dates.get(premier));
+  for (const [f, d] of datesArticlesVeille()) poser(f, d);
   return dates;
 }
 

@@ -27,7 +27,60 @@ const produitsDemo = JSON.parse(readFileSync(resolve(RACINE, 'src/data/produits.
 }));
 const fichierProduits = join(temp, 'produits.json');
 writeFileSync(fichierProduits, JSON.stringify(produitsDemo));
-const envDemo = { ...process.env, DATE_PUBLICATION: '2099-12-31', KEURDECO_PRODUITS: fichierProduits, DOSSIER_SORTIE: SORTIE, PINTEREST_VERIFY: 'code-de-test', CLOUDFLARE_WEB_ANALYTICS: '', PLAUSIBLE_DOMAIN: '' };
+// Veille actus : fichier JSON simulé (22 actus, dont une carte générée et deux sur le wax), images servies en local.
+const URL_VEILLE = 'https://teiki5320.github.io/veille/actus/keurdeco.json';
+const imageDemo = readFileSync(resolve(RACINE, 'public/images/marque/embleme-clair-192.webp'));
+const actusDemo = {
+  version: 3,
+  site: 'keurdeco',
+  genere_le: '2026-10-27T08:00:00.000Z',
+  actus: Array.from({ length: 22 }, (_, i) => ({
+    id: String(i).padStart(40, '0'),
+    titre: `Actu de démonstration numéro ${i + 1}`,
+    resume: 'Un résumé de démonstration, réécrit en français, en deux phrases. Il ne vient d’aucune source réelle.',
+    theme: 'deco',
+    pays: ['SN'],
+    tags: i < 2 ? ['matiere:wax'] : [],
+    source_nom: `Source ${i + 1}`,
+    source_url: `https://exemple.org/article-${i + 1}`,
+    publie_le: new Date(Date.UTC(2026, 9, 27, 7) - i * 3600000).toISOString(),
+    image:
+      i === 1
+        ? { url: 'https://teiki5320.github.io/veille/cartes/keurdeco/demo.svg', source: 'carte', credit: 'Illustration : Keur Déco', licence: null, page: null, alt: 'Illustration Keur Déco', largeur: 1600, hauteur: 900 }
+        : { url: `https://teiki5320.github.io/veille/images/keurdeco/demo-${i}.webp`, source: 'wikimedia', credit: `Auteur ${i + 1}`, licence: 'CC BY 4.0', page: `https://commons.wikimedia.org/wiki/File:Demo_${i + 1}.jpg`, alt: `Photo de démonstration ${i + 1}`, largeur: 1600, hauteur: 900 },
+  })),
+};
+// Articles complets de la veille : l'actu 1 a une page construite, l'actu 3 seulement un article (page de secours).
+const ID_CONSTRUIT = actusDemo.actus[0].id;
+const ID_SECOURS = actusDemo.actus[2].id;
+Object.assign(actusDemo.actus[0], { slug: 'actu-demo-construite', article_url: `https://teiki5320.github.io/veille/articles/keurdeco/${ID_CONSTRUIT}.json`, lecture_min: 2 });
+Object.assign(actusDemo.actus[2], { slug: 'actu-demo-secours', article_url: `https://teiki5320.github.io/veille/articles/keurdeco/${ID_SECOURS}.json`, lecture_min: 2 });
+const articleDemo = (a, titre) => ({
+  version: 1,
+  site: 'keurdeco',
+  id: a.id,
+  slug: a.slug,
+  titre,
+  chapo: 'Un chapô de démonstration, rédigé pour le test, qui résume l’article en une phrase.',
+  blocs: [
+    { intertitre: null, paragraphes: ['Premier paragraphe de démonstration, écrit pour le test de bout en bout. '.repeat(6)] },
+    { intertitre: 'Un intertitre de démonstration', paragraphes: ['Deuxième paragraphe de démonstration, écrit pour le test de bout en bout. '.repeat(6)] },
+    { intertitre: 'Un second intertitre', paragraphes: ['Troisième paragraphe de démonstration, écrit pour le test de bout en bout. '.repeat(6)] },
+  ],
+  mots: 330,
+  lecture_min: 2,
+  tags: ['matiere:wax', 'personne:inconnue'],
+  source_nom: a.source_nom,
+  source_url: a.source_url,
+  autres_sources: ['https://exemple.net/autre-source'],
+  publie_le: a.publie_le,
+  redige_le: a.publie_le,
+  image: a.image,
+});
+const articlesDemo = { [ID_CONSTRUIT]: articleDemo(actusDemo.actus[0], 'Article de démonstration construit'), [ID_SECOURS]: articleDemo(actusDemo.actus[2], 'Article de démonstration de secours') };
+const fichierVeille = join(temp, 'veille-articles.json');
+writeFileSync(fichierVeille, JSON.stringify({ actus: actusDemo.actus, articles: [articlesDemo[ID_CONSTRUIT]] }));
+const envDemo = { ...process.env, DATE_PUBLICATION: '2099-12-31', KEURDECO_PRODUITS: fichierProduits, DOSSIER_SORTIE: SORTIE, VEILLE_ARTICLES_FICHIER: fichierVeille, PINTEREST_VERIFY: 'code-de-test', CLOUDFLARE_WEB_ANALYTICS: '', PLAUSIBLE_DOMAIN: '' };
 
 console.log('Construction de la version de démonstration…');
 execFileSync('node', ['scripts/epingles.ts'], { cwd: RACINE, env: envDemo, stdio: 'ignore' });
@@ -56,33 +109,12 @@ try {
   const erreurs = [];
   page.on('pageerror', (e) => erreurs.push(e.message));
 
-  // Veille actus : fichier JSON simulé (22 actus, dont une carte générée et deux sur le wax), images servies en local.
-  const URL_VEILLE = 'https://teiki5320.github.io/veille/actus/keurdeco.json';
-  const imageDemo = readFileSync(resolve(RACINE, 'public/images/marque/embleme-clair-192.webp'));
-  const actusDemo = {
-    version: 3,
-    site: 'keurdeco',
-    genere_le: '2026-10-27T08:00:00.000Z',
-    actus: Array.from({ length: 22 }, (_, i) => ({
-      id: String(i).padStart(40, '0'),
-      titre: `Actu de démonstration numéro ${i + 1}`,
-      resume: 'Un résumé de démonstration, réécrit en français, en deux phrases. Il ne vient d’aucune source réelle.',
-      theme: 'deco',
-      pays: ['SN'],
-      tags: i < 2 ? ['matiere:wax'] : [],
-      source_nom: `Source ${i + 1}`,
-      source_url: `https://exemple.org/article-${i + 1}`,
-      publie_le: new Date(Date.UTC(2026, 9, 27, 7) - i * 3600000).toISOString(),
-      image:
-        i === 1
-          ? { url: 'https://teiki5320.github.io/veille/cartes/keurdeco/demo.svg', source: 'carte', credit: 'Illustration : Keur Déco', licence: null, page: null, alt: 'Illustration Keur Déco', largeur: 1600, hauteur: 900 }
-          : { url: `https://teiki5320.github.io/veille/images/keurdeco/demo-${i}.webp`, source: 'wikimedia', credit: `Auteur ${i + 1}`, licence: 'CC BY 4.0', page: `https://commons.wikimedia.org/wiki/File:Demo_${i + 1}.jpg`, alt: `Photo de démonstration ${i + 1}`, largeur: 1600, hauteur: 900 },
-    })),
-  };
   const simulerVeille = async (cible, { panne = false } = {}) => {
     await cible.route('https://teiki5320.github.io/veille/**', (route) => {
       const u = route.request().url();
       if (u === URL_VEILLE) return panne ? route.fulfill({ status: 500, body: 'panne' }) : route.fulfill({ contentType: 'application/json', body: JSON.stringify(actusDemo) });
+      const article = u.match(/\/articles\/keurdeco\/([0-9a-f]{40})\.json$/);
+      if (article) return articlesDemo[article[1]] ? route.fulfill({ contentType: 'application/json', body: JSON.stringify(articlesDemo[article[1]]) }) : route.fulfill({ status: 404, body: 'introuvable' });
       if (u.endsWith('.svg')) return route.fulfill({ contentType: 'image/svg+xml', body: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 9"><rect width="16" height="9" fill="#a3472a"/></svg>' });
       return route.fulfill({ contentType: 'image/webp', body: imageDemo });
     });
@@ -179,21 +211,74 @@ try {
   await page.goto(BASE, { waitUntil: 'networkidle' });
   verifier((await page.locator('.actus--accueil:not([hidden]) .actu').count()) === 4 && (await page.locator('.actus--accueil .actu--bandeau').count()) === 1 && (await page.getAttribute('.actus--accueil .actu--bandeau img', 'loading')) === null, 'accueil : 4 actus (1 bandeau chargé tout de suite, 3 vignettes)');
   await page.goto(`${BASE}actus.html`, { waitUntil: 'networkidle' });
-  const sourceActu = page.locator('.actu__source a').first();
+  const liensCartes = page.locator('.actu .actu__lien');
   verifier(
     (await page.locator('.actu').count()) === 20 && (await page.locator('[data-actus-maj]').isVisible()) && (await page.locator('h1').count()) === 1,
     'actus.html : 20 actus et date de mise à jour',
   );
   verifier(
-    (await sourceActu.getAttribute('href')) === 'https://exemple.org/article-1' && (await sourceActu.getAttribute('target')) === '_blank' && (await sourceActu.getAttribute('rel')) === 'noopener nofollow',
-    'actus.html : lien « Source » vers l’article, nouvel onglet, rel noopener nofollow',
+    (await liensCartes.nth(0).getAttribute('href')) === 'actus/actu-demo-construite/' &&
+      (await liensCartes.nth(0).getAttribute('target')) === null &&
+      (await liensCartes.nth(2).getAttribute('href')) === `actus/article/?id=${ID_SECOURS}` &&
+      (await liensCartes.nth(1).getAttribute('href')) === 'https://exemple.org/article-2' &&
+      (await liensCartes.nth(1).getAttribute('target')) === '_blank' &&
+      (await liensCartes.nth(1).getAttribute('rel')) === 'noopener nofollow' &&
+      (await page.locator('.actu__source a').count()) === 0 &&
+      (await page.locator('.actu__source').first().textContent()) === 'Source : Source 1',
+    'actus.html : chaque carte mène à sa page d’article, à la page de secours ou (sans article) à la source ; nom de la source en texte',
   );
   const credits = await page.locator('.actu__credit').allTextContents();
   verifier(credits[0] === 'Photo : Auteur 1 · CC BY 4.0' && credits[1] === 'Illustration : Keur Déco' && (await page.locator('.actu img[alt=""]').count()) === 0, 'actus.html : crédits (photo et carte générée) et textes alternatifs');
   verifier(!/amazon|epingler/i.test(await page.locator('.actus').innerHTML()), 'actus.html : aucun lien Amazon ni bouton Épingler dans les actus');
   verifier((await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)), 'actus.html : pas de défilement horizontal');
+  // Toucher l'image d'une carte (et pas son titre) ouvre l'article sur le site.
+  const boite = await page.locator('.actu--bandeau .actu__image').boundingBox();
+  await page.mouse.click(boite.x + boite.width / 2, boite.y + boite.height / 2);
+  await page.waitForURL('**/actus/actu-demo-construite/');
+  await page.waitForLoadState('networkidle');
+  const ldArticle = (await page.locator('script[type="application/ld+json"]').allTextContents()).map((t) => JSON.parse(t)).flatMap((d) => d['@graph'] ?? [d]);
+  const news = ldArticle.find((d) => d['@type'] === 'NewsArticle');
+  verifier(
+    (await page.textContent('h1')) === 'Article de démonstration construit' &&
+      (await page.locator('.article-actu__chapo').count()) === 1 &&
+      (await page.textContent('.article-actu__meta'))?.includes('2 min de lecture') &&
+      (await page.textContent('.article-actu__figure .actu__credit'))?.replace(/\s/g, ' ') === 'Photo : Auteur 1 · CC BY 4.0' &&
+      (await page.getAttribute('.article-actu__image img', 'loading')) === null &&
+      (await page.locator('.article-actu__corps h2').count()) === 2 &&
+      (await page.textContent('.article-actu__sources'))?.includes('Article rédigé par Keur Déco à partir de') &&
+      (await page.getAttribute('.article-actu__sources a', 'rel')) === 'noopener nofollow' &&
+      (await page.locator('.article-actu__fiches a[href="matiere-wax.html"]').count()) === 1 &&
+      (await page.locator('.autres-actus .actu').count()) === 3,
+    'page /actus/<slug>/ : titre, chapô, durée, image et crédit, intertitres, sources, fiche liée, 3 autres actus',
+  );
+  verifier(
+    (await page.getAttribute('link[rel="canonical"]', 'href')) === 'https://www.keurdeco.com/actus/actu-demo-construite/' &&
+      (await page.getAttribute('meta[property="og:image"]', 'content'))?.startsWith('https://teiki5320.github.io/veille/') &&
+      news?.headline === 'Article de démonstration construit' &&
+      news?.isBasedOn === 'https://exemple.org/article-1' &&
+      (await page.locator('meta[content="noindex"]').count()) === 0,
+    'page /actus/<slug>/ : canonical, Open Graph, JSON-LD NewsArticle',
+  );
+  verifier(!/amazon\.fr|epingler/i.test(await page.locator('main').innerHTML()) && (await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)), 'page /actus/<slug>/ : aucun lien Amazon, pas de défilement horizontal');
+  await page.goto(`${BASE}actus/article/?id=${ID_SECOURS}`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('.article-actu__corps');
+  verifier(
+    (await page.textContent('h1')) === 'Article de démonstration de secours' &&
+      (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex' &&
+      (await page.locator('.article-actu__sources').count()) === 1 &&
+      (await page.locator('.article-actu__corps h2').count()) === 2 &&
+      (await page.title()).startsWith('Article de démonstration de secours'),
+    'page de secours : article sans page construite affiché, noindex',
+  );
+  await page.goto(`${BASE}actus/article/?id=${'f'.repeat(40)}`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('.article-actu--introuvable');
+  verifier((await page.textContent('h1')) === 'Article introuvable' && (await page.locator('main a[href="actus.html"]').count()) >= 1, 'page de secours : id inconnu, message simple et lien vers les actus');
+  await page.goto(`${BASE}actus/article/?id=${ID_CONSTRUIT}`);
+  await page.waitForURL('**/actus/actu-demo-construite/');
+  verifier(true, 'page de secours : un article déjà construit renvoie vers sa page');
   await page.goto(`${BASE}matiere-wax.html`, { waitUntil: 'networkidle' });
   verifier((await page.locator('.actus--matiere:not([hidden]) .actu').count()) === 2 && (await page.textContent('.actus--matiere h2'))?.includes('L’actu du wax'), 'page matière (wax) : ses 2 actus');
+  verifier((await page.getAttribute('.actus--matiere .actu__lien', 'href')) === 'actus/actu-demo-construite/', 'page matière : la carte ouvre l’article sur le site');
   await page.goto(`${BASE}matiere-perles.html`, { waitUntil: 'networkidle' });
   verifier((await page.locator('.actus--matiere').isHidden()) && (await page.locator('.actu').count()) === 0, 'page matière sans actu (perles) : bloc absent');
   const contexteActus = await navigateur.newContext({ viewport: { width: 390, height: 844 } });
@@ -253,6 +338,7 @@ try {
   // Fichiers générés
   const sitemap = await (await fetch(`${BASE}sitemap.xml`)).text();
   verifier(sitemap.includes('https://www.keurdeco.com/salon-terracotta-wax.html') && !sitemap.includes('404'), 'sitemap.xml');
+  verifier(sitemap.includes('<loc>https://www.keurdeco.com/actus/actu-demo-construite/</loc>') && !sitemap.includes('actus/article') && !sitemap.includes('actus/</loc>'), 'sitemap.xml : pages d’articles de la veille (sans la page de secours)');
   verifier((await (await fetch(`${BASE}robots.txt`)).text()).includes('Sitemap: https://www.keurdeco.com/sitemap.xml'), 'robots.txt');
   verifier((await fetch(`${BASE}manifest.webmanifest`)).ok && (await fetch(`${BASE}sw.js`)).ok, 'manifeste et service worker');
   const manifeste = await (await fetch(`${BASE}epingles.json`)).json();

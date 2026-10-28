@@ -9,10 +9,12 @@
  * Le HTML est construit avec createElement et textContent : jamais de texte du JSON dans innerHTML.
  */
 
-export const URL_VEILLE = 'https://teiki5320.github.io/veille/actus/keurdeco.json';
+import { type Element_, enDom, h } from './noeud.ts';
 
 /** Adresse de base des fichiers de la veille : seule origine admise pour les images d'actus. */
-const BASE_VEILLE = 'https://teiki5320.github.io/veille/';
+export const BASE_VEILLE = 'https://teiki5320.github.io/veille/';
+export const SITE_VEILLE = 'keurdeco';
+export const URL_VEILLE = `${BASE_VEILLE}actus/${SITE_VEILLE}.json`;
 
 export interface ImageActu {
   url: string;
@@ -43,6 +45,10 @@ export interface Actu {
   collecte_le?: string;
   langue?: string;
   image: ImageActu;
+  /** Présents quand la veille a rédigé l'article complet (articles/keurdeco/<id>.json). */
+  slug?: string;
+  article_url?: string;
+  lecture_min?: number;
 }
 
 export interface FichierActus {
@@ -56,10 +62,10 @@ const DELAI_MS = 8000;
 const CACHE_MS = 15 * 60 * 1000;
 const CLE_CACHE = 'keurdeco-veille-actus-v3';
 
-const estHttp = (u: unknown): u is string => typeof u === 'string' && /^https?:\/\//.test(u);
+export const estHttp = (u: unknown): u is string => typeof u === 'string' && /^https?:\/\//.test(u);
 
 /** Lien Amazon (et ses liens courts) : jamais dans un bloc d'actus. */
-function estLienAmazon(u: string): boolean {
+export function estLienAmazon(u: string): boolean {
   return /(^|\.)(amazon\.[a-z.]+|amzn\.[a-z]+)$/i.test(new URL(u).hostname);
 }
 
@@ -74,10 +80,24 @@ export function actuValide(a: unknown): a is Actu {
   } catch {
     return false;
   }
-  const i = x.image;
-  if (!i || typeof i.url !== 'string' || !i.url.startsWith(BASE_VEILLE)) return false;
-  if (typeof i.credit !== 'string' || typeof i.alt !== 'string') return false;
-  if (i.page != null && !estHttp(i.page)) return false;
+  if (!imageValide(x.image)) return false;
+  // Lien vers l'article : seulement s'il est complet et sûr (sinon la carte mène à la source, comme avant).
+  if (x.slug !== undefined && !(typeof x.slug === 'string' && SLUG.test(x.slug))) delete x.slug;
+  if (x.article_url !== undefined && !(typeof x.article_url === 'string' && x.article_url.startsWith(BASE_VEILLE))) delete x.article_url;
+  if (x.lecture_min !== undefined && !(Number.isInteger(x.lecture_min) && x.lecture_min > 0)) delete x.lecture_min;
+  return true;
+}
+
+/** Slug d'un article (schéma article-schema-v1) ; « article » et « index » sont réservés aux pages du site. */
+export const SLUG = /^(?!(?:article|index)$)[a-z0-9]+(-[a-z0-9]+)*$/;
+
+/** Image servie par la veille, avec crédit et texte alternatif. */
+export function imageValide(i: unknown): i is ImageActu {
+  if (!i || typeof i !== 'object') return false;
+  const x = i as Partial<ImageActu>;
+  if (typeof x.url !== 'string' || !x.url.startsWith(BASE_VEILLE)) return false;
+  if (typeof x.credit !== 'string' || typeof x.alt !== 'string') return false;
+  if (x.page != null && !estHttp(x.page)) return false;
   return true;
 }
 
@@ -171,56 +191,87 @@ export async function chargerActus(): Promise<Actu[]> {
 
 // ---------- Affichage ----------
 
-function el<K extends keyof HTMLElementTagNameMap>(nom: K, classe?: string, texte?: string): HTMLElementTagNameMap[K] {
-  const e = document.createElement(nom);
-  if (classe) e.className = classe;
-  if (texte !== undefined) e.textContent = texte;
-  return e;
+/** Slugs des articles dont la page /actus/<slug>/ a été construite (liste écrite au build par vite.config.ts). */
+declare const __ARTICLES_CONSTRUITS__: string[] | undefined;
+export const ARTICLES_CONSTRUITS: ReadonlySet<string> = new Set(typeof __ARTICLES_CONSTRUITS__ !== 'undefined' ? __ARTICLES_CONSTRUITS__ : []);
+
+/** Où mène une carte d'actu : la page de l'article, sa page de secours, ou à défaut la source. */
+export interface LienCarte {
+  href: string;
+  type: 'article' | 'secours' | 'source';
 }
 
-/** Lien vers une source externe : nouvel onglet, sans transmettre la page ni le classement. */
-function lienExterne(href: string, texte: string, classe?: string): HTMLAnchorElement {
-  const a = el('a', classe, texte);
-  a.href = href;
-  a.target = '_blank';
-  a.rel = 'noopener nofollow';
-  return a;
+/**
+ * Choix du lien d'une carte (adresses relatives à la racine du site : chaque page a la bonne <base>).
+ *   1. page /actus/<slug>/ si elle a été construite ;
+ *   2. sinon page de secours /actus/article/?id=<id> si la veille a déjà rédigé l'article ;
+ *   3. sinon (pas encore d'article) la source, comme avant.
+ */
+export function lienCarte(a: Actu, construits: ReadonlySet<string> = ARTICLES_CONSTRUITS): LienCarte {
+  if (a.slug && construits.has(a.slug)) return { href: `actus/${a.slug}/`, type: 'article' };
+  if (a.slug && a.article_url) return { href: `actus/article/?id=${encodeURIComponent(a.id)}`, type: 'secours' };
+  return { href: a.source_url, type: 'source' };
 }
 
-/** Une actu : bandeau (image 16:9) ou vignette (image carrée). */
-function carteActu(a: Actu, bandeau: boolean, niveauTitre: 'h2' | 'h3', prioritaire: boolean): HTMLElement {
-  const article = el('article', `actu ${bandeau ? 'actu--bandeau' : 'actu--vignette'}`);
+/** Date courte, figée (« 27 octobre 2026 ») : pour les pages construites, où « il y a 3 h » vieillirait mal. */
+export function dateActu(iso: string): string {
+  const t = Date.parse(iso);
+  if (Number.isNaN(t)) return '';
+  return new Date(t).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Paris' });
+}
 
-  const figure = el('figure', 'actu__figure');
-  const cadre = el('div', 'actu__image');
-  const img = el('img');
-  img.src = bandeau ? a.image.url : imageCarree(a.image);
-  img.alt = a.image.alt;
-  img.width = bandeau ? a.image.largeur || 1600 : 600;
-  img.height = bandeau ? a.image.hauteur || 900 : 600;
-  img.decoding = 'async';
-  if (bandeau && prioritaire) img.setAttribute('fetchpriority', 'high');
-  else img.loading = 'lazy';
-  cadre.append(img);
-  const credit = el('figcaption', 'actu__credit');
-  if (a.image.source !== 'carte' && a.image.page) credit.append(lienExterne(a.image.page, texteCredit(a.image)));
-  else credit.textContent = texteCredit(a.image);
-  figure.append(cadre, credit);
+/** Lien vers un site extérieur : nouvel onglet, sans transmettre la page ni le classement. */
+export function lienExterne(href: string, texte: string, classe?: string): Element_ {
+  return h('a', { class: classe, href, target: '_blank', rel: 'noopener nofollow' }, texte);
+}
 
-  const texte = el('div', 'actu__texte');
-  const age = ageActu(a.publie_le);
-  if (age) {
-    const t = el('time', 'actu__age', age);
-    t.dateTime = a.publie_le;
-    texte.append(t);
-  }
-  texte.append(el(niveauTitre, 'actu__titre', a.titre), el('p', 'actu__resume', a.resume));
-  const source = el('p', 'actu__source', 'Source : ');
-  source.append(lienExterne(a.source_url, `${a.source_nom} ↗`));
-  texte.append(source);
+/** Crédit d'une image d'actu (le même partout : cartes, page de l'article, page de secours). */
+export function creditImage(image: ImageActu, classe = 'actu__credit'): Element_ {
+  const texte = texteCredit(image);
+  return h('figcaption', { class: classe }, image.source !== 'carte' && image.page ? lienExterne(image.page, texte) : texte);
+}
 
-  article.append(figure, texte);
-  return article;
+export interface OptionsCarte {
+  bandeau: boolean;
+  niveau: 'h2' | 'h3';
+  prioritaire?: boolean;
+  /** Date figée au lieu de « il y a 3 h » (pages construites). */
+  dateFixe?: boolean;
+  construits?: ReadonlySet<string>;
+}
+
+/**
+ * Une actu : bandeau (image 16:9) ou vignette (image carrée). Toute la carte est un lien (le lien du titre
+ * s'étend sur la carte en CSS) ; seul le crédit de l'image garde son propre lien. Le nom de la source reste
+ * écrit sur la carte, en texte.
+ */
+export function carteActu(a: Actu, o: OptionsCarte): Element_ {
+  const lien = lienCarte(a, o.construits);
+  const externe = lien.type === 'source';
+  const img = h('img', {
+    src: o.bandeau ? a.image.url : imageCarree(a.image),
+    alt: a.image.alt,
+    width: o.bandeau ? a.image.largeur || 1600 : 600,
+    height: o.bandeau ? a.image.hauteur || 900 : 600,
+    decoding: 'async',
+    fetchpriority: o.bandeau && o.prioritaire ? 'high' : null,
+    loading: o.bandeau && o.prioritaire ? null : 'lazy',
+  });
+  const age = o.dateFixe ? dateActu(a.publie_le) : ageActu(a.publie_le);
+  return h(
+    'article',
+    { class: `actu ${o.bandeau ? 'actu--bandeau' : 'actu--vignette'}`, 'data-lien': lien.type },
+    h('figure', { class: 'actu__figure' }, h('div', { class: 'actu__image' }, img), creditImage(a.image)),
+    h(
+      'div',
+      { class: 'actu__texte' },
+      age && h('time', { class: 'actu__age', datetime: a.publie_le }, age),
+      h(o.niveau, { class: 'actu__titre' }, h('a', { class: 'actu__lien', href: lien.href, target: externe ? '_blank' : null, rel: externe ? 'noopener nofollow' : null }, a.titre)),
+      h('p', { class: 'actu__resume' }, a.resume),
+      h('p', { class: 'actu__source' }, `Source : ${a.source_nom}${externe ? ' ↗' : ''}`),
+      !externe && h('p', { class: 'actu__lire', 'aria-hidden': 'true' }, a.lecture_min ? `Lire l’article · ${a.lecture_min} min` : 'Lire l’article'),
+    ),
+  );
 }
 
 /**
@@ -238,11 +289,9 @@ export function remplirActus(section: HTMLElement, actus: Actu[]): number {
   const niveau = section.querySelector('h2') ? 'h3' : 'h2';
   const prioritaire = section.hasAttribute('data-bandeau-prioritaire');
   const [premiere, ...suivantes] = liste;
-  conteneur.replaceChildren(carteActu(premiere, true, niveau, prioritaire));
+  conteneur.replaceChildren(enDom(carteActu(premiere, { bandeau: true, niveau, prioritaire }))!);
   if (suivantes.length) {
-    const grille = el('div', 'actus__vignettes');
-    grille.append(...suivantes.map((a) => carteActu(a, false, niveau, false)));
-    conteneur.append(grille);
+    conteneur.append(enDom(h('div', { class: 'actus__vignettes' }, ...suivantes.map((a) => carteActu(a, { bandeau: false, niveau }))))!);
   }
   section.hidden = false;
   requestAnimationFrame(() => section.classList.add('actus--visible'));

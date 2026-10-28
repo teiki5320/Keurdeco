@@ -8,3 +8,5 @@ dist-e2e/
 public/epingles/
 public/epingles.json
 public/epingles-pinterest.csv
+# Articles de la veille lus avant le build (scripts/veille-articles.ts)
+.veille/

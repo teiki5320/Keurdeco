@@ -6,6 +6,9 @@ on:
   # Chaque lundi, mercredi et vendredi à 5 h UTC (7 h à Paris en été, 6 h en hiver) : publie les articles programmés.
   schedule:
     - cron: '0 5 * * 1,3,5'
+    # 2 fois par jour, après la veille (12 h et 19 h à Paris) : pages des nouveaux articles d'actus (/actus/<slug>/).
+    # 11 h 50 et 18 h 50 UTC = 12 h 50 et 19 h 50 à Paris l'hiver (13 h 50 et 20 h 50 l'été).
+    - cron: '50 11,18 * * *'
   workflow_dispatch:
 
 permissions:
@@ -58,7 +61,8 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-  # Après la publication du lundi (ou à la demande) : signale les pages à Bing via IndexNow.
+  # Après la publication du lundi, mercredi et vendredi, après chaque reconstruction de la veille (pages /actus/ seulement)
+  # ou à la demande : signale les pages à Bing via IndexNow.
   indexnow:
     needs: deploy
     if: github.event_name != 'push'
@@ -69,3 +73,6 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/indexnow.mjs
+        env:
+          # Reconstruction d'après la veille : on ne signale que les pages d'articles d'actus.
+          INDEXNOW_FILTRE: ${{ github.event.schedule == '50 11,18 * * *' && '/actus/' || '' }}

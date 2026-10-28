@@ -107,6 +107,12 @@ demarrerAnimations();
 afficherActus().catch(() => {
   /* sans actus, les sections restent cachées */
 });
+// Page de secours d'un article de la veille (/actus/article/?id=…) : code chargé seulement sur cette page.
+if (document.querySelector('[data-article-secours]')) {
+  import('./article-veille.ts').then((m) => m.demarrerPageSecours()).catch(() => {
+    /* la page garde son message de chargement et son lien vers les actus */
+  });
+}
 
 /** Site installable et consultable hors ligne : service worker (site publié en HTTPS uniquement). */
 if (import.meta.env.PROD && 'serviceWorker' in navigator && location.protocol === 'https:') {

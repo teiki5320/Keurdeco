@@ -1,10 +1,13 @@
 import { defineConfig } from 'vitest/config';
+import { slugsConstruits } from './build/articles-veille.ts';
 import { pluginPrechargePolices, pluginSite, toutesLesPages } from './build/site.ts';
 
 export default defineConfig({
   // Chemins relatifs : le site fonctionne à la racine du domaine comme dans un sous-dossier.
   base: './',
   plugins: [pluginSite(), pluginPrechargePolices()],
+  // Slugs des articles de la veille dont la page /actus/<slug>/ est construite : les cartes d'actus y mènent.
+  define: { __ARTICLES_CONSTRUITS__: JSON.stringify(slugsConstruits()) },
   build: {
     // DOSSIER_SORTIE sert au test de bout en bout (construction de démonstration à part).
     outDir: process.env.DOSSIER_SORTIE ?? 'dist',

@@ -19,7 +19,7 @@ Mis à jour le 27 octobre 2026. Compagnon de INFRA.md.
 
 - 🧵 **Matières expliquées** : nuancier animé et glossaire de 15 matières (wax, bogolan, kente, indigo, raphia…).
 - 🛋️ **Ambiances cliquables** : chaque image d'ambiance a des points qui mènent aux produits, classés sans mélange par pièce, matière ou occasion.
-- 📰 **Actus de la déco africaine** : depuis le 27 octobre 2026, 4 actus sur l'accueil, 20 sur la page Actus et 3 par page matière, mises à jour 2 fois par jour par la veille (titres et résumés réécrits, source et crédit photo toujours affichés, aucun lien Amazon).
+- 📰 **Actus de la déco africaine** : depuis le 27 octobre 2026, 4 actus sur l'accueil, 20 sur la page Actus et 3 par page matière, mises à jour 2 fois par jour par la veille (titres et résumés réécrits, source et crédit photo toujours affichés, aucun lien Amazon). Depuis le 28 octobre 2026, toucher une actu ouvre son article complet sur le site (300 à 450 mots, page `/actus/<slug>/` trouvable par Google).
 - ✅ **Produits vérifiés à la main** : aucun prix, aucune photo Amazon, mention IA sur les images et mention Partenaires affichée.
 
 ## Canaux
@@ -31,9 +31,9 @@ Mis à jour le 27 octobre 2026. Compagnon de INFRA.md.
 
 ## Rubrique Actus
 
-- **Où** : bloc « Actus de la déco africaine » sur l'accueil (4), page `actus.html` (20, dans le menu et le pied de page, au sitemap), bloc « L'actu du [matière] » sur chaque page matière (3, absent s'il n'y en a pas).
-- **Quoi** : designers, artisans, textiles, vannerie, poterie, bois sculpté, perles, salons et expositions ; 15 flux RSS ; titres et résumés réécrits par Claude, lien vers chaque source, crédit de chaque image.
-- **Règles** : aucun lien Partenaires ni prix dans les actus, aucune épingle Pinterest tirée des actus, pas d'annonce AdSense sur la page Actus.
+- **Où** : bloc « Actus de la déco africaine » sur l'accueil (4), page `actus.html` (20, dans le menu et le pied de page, au sitemap), bloc « L'actu du [matière] » sur chaque page matière (3, absent s'il n'y en a pas) ; une page par article complet (`/actus/<slug>/`, au sitemap, depuis le 28 octobre 2026).
+- **Quoi** : designers, artisans, textiles, vannerie, poterie, bois sculpté, perles, salons et expositions ; 15 flux RSS ; titres, résumés et articles complets réécrits par Claude (jamais le titre original ni de texte copié), encadré « Sources » avec le lien vers chaque source, crédit de chaque image, liens vers les fiches matières citées, 3 autres actus en bas de page.
+- **Règles** : aucun lien Partenaires ni prix dans les actus, aucune épingle Pinterest tirée des actus, pas d'annonce AdSense sur la page Actus ni sur la page de secours ; une annonce au plus par page d'article (même modèle que les conseils).
 
 ## Mesures
 

@@ -75,7 +75,9 @@ describe('référencement', () => {
   it('chaque page du sitemap a une date de mise à jour (lastmod)', () => {
     const racine = resolve(import.meta.dirname, '..');
     const dates = datesSitemap(racine);
-    const pages = ['index.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', ...pagesGenerees().keys()];
+    // Pages hors sitemap (noindex : page de secours des articles de la veille, renvoi /actus/) : pas de date.
+    const generees = [...pagesGenerees()].filter(([, html]) => !/content="noindex"/.test(html)).map(([f]) => f);
+    const pages = ['index.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', ...generees];
     for (const p of pages) expect(dates.get(p), p).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
 

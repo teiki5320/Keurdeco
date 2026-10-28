@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/epingles.ts && vite build",
+    "build": "tsc --noEmit && PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/epingles.ts && node scripts/veille-articles.ts && vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -18,6 +18,7 @@
     "images-libres": "PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/images-libres.ts",
     "epingles": "PANGOCAIRO_BACKEND=fc FONTCONFIG_FILE=\"$PWD/assets/polices/fonts.conf\" node scripts/epingles.ts",
     "hotspots": "node scripts/hotspots.mjs",
+    "veille-articles": "node scripts/veille-articles.ts",
     "nouvel-article": "node scripts/nouvel-article.mjs",
     "pinterest:auth": "node scripts/pinterest-auth.mjs",
     "pinterest:publier": "node scripts/pinterest-publier.mjs",
