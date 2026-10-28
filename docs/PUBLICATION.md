@@ -29,14 +29,14 @@
 3. ✅ **Code AdSense en ligne** : emplacements sur les pages de lecture, `ads.txt` et fenêtre de choix des cookies (aucune annonce avant la validation).
 4. **Validation AdSense** : examen demandé le 16 octobre 2026, toujours en cours (« En préparation » dans la console AdSense, ni validé ni refusé (vérifié le 28 octobre 2026)) ; attendre l'avis de Google dans la console.
 5. **Indexation complète** : faire indexer les pages encore « détectées, non indexées » dans la Search Console.
-6. ✅ **Publication Pinterest automatique** : accès standard accordé, 5 épingles par passage, premières épingles publiées par l'API le 20 octobre 2026. Recopier le nouveau refresh token quand GitHub rouvre le ticket.
+6. ✅ **Publication Pinterest automatique** : accès standard accordé, 5 épingles par passage, premières épingles publiées par l'API le 20 octobre 2026. Avant l'échéance de la clé (environ 60 jours), la refaire avec `npm run pinterest:auth` puis `npm run pinterest:secrets` ; depuis le 28 octobre 2026, un seul ticket GitHub de rappel (au lieu d'un par jour).
 
 ## Web · Production
 
 | | |
 |---|---|
 | État | **En ligne** sur https://www.keurdeco.com/ (réponse 200 le 28 octobre 2026) ; `keurdeco.com` redirige vers `www` |
-| Hébergeur | GitHub Pages, déploiement par le workflow `pages.yml` (tests, build, test de bout en bout, publication) |
+| Hébergeur | GitHub Pages, déploiement par le workflow `pages.yml` (tests, build, test de bout en bout, publication, vérification que www.keurdeco.com sert la nouvelle version, IndexNow) |
 | Dernier changement du site | 28 octobre 2026 vers 4 h 37 UTC, déploiement réussi (vérification des produits Amazon du jour) |
 | Rythme | à chaque push sur `main`, chaque lundi, mercredi et vendredi à 5 h UTC (articles programmés), chaque jour à 11 h 50 et 18 h 50 UTC (articles d'actus) et à la demande |
 | Contact affiché | keurdeco@toakeur.com (À propos, mentions légales, confidentialité, `security.txt`) |

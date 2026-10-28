@@ -128,7 +128,7 @@ try {
   }
   // GitHub Pages sert 404.html pour toute adresse inconnue (vite preview ne le fait pas : on l'ouvre directement).
   await page.goto(`${BASE}404.html`, { waitUntil: 'networkidle' });
-  verifier(/n’existe pas/.test((await page.textContent('h1')) ?? '') && (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex', 'page 404 (non indexée)');
+  verifier(/n’existe pas/.test((await page.textContent('h1')) ?? '') && (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex, max-image-preview:large', 'page 404 (non indexée)');
 
   // Accueil
   await page.goto(BASE, { waitUntil: 'networkidle' });
@@ -256,7 +256,7 @@ try {
       (await page.getAttribute('meta[property="og:image"]', 'content'))?.startsWith('https://teiki5320.github.io/veille/') &&
       news?.headline === 'Article de démonstration construit' &&
       news?.isBasedOn === 'https://exemple.org/article-1' &&
-      (await page.locator('meta[content="noindex"]').count()) === 0,
+      (await page.locator('meta[name="robots"][content^="noindex"]').count()) === 0,
     'page /actus/<slug>/ : canonical, Open Graph, JSON-LD NewsArticle',
   );
   verifier(!/amazon\.fr|epingler/i.test(await page.locator('main').innerHTML()) && (await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)), 'page /actus/<slug>/ : aucun lien Amazon, pas de défilement horizontal');
@@ -264,7 +264,7 @@ try {
   await page.waitForSelector('.article-actu__corps');
   verifier(
     (await page.textContent('h1')) === 'Article de démonstration de secours' &&
-      (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex' &&
+      (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex, max-image-preview:large' &&
       (await page.locator('.article-actu__sources').count()) === 1 &&
       (await page.locator('.article-actu__corps h2').count()) === 2 &&
       (await page.title()).startsWith('Article de démonstration de secours'),

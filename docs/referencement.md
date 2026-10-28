@@ -66,7 +66,7 @@ Repérées mais laissées pour un prochain passage : /matiere-wax.html (« déco
 ### Socle vérifié le 21/10/2026
 
 - IndexNow : clé publique en place (`public/c221134c9925a6a68046cfffb8269dcf.txt`) et script `scripts/indexnow.mjs`.
-- Google Discover : `max-image-preview:large` sur toutes les pages, image de partage de 1200 px de large.
+- Google Discover : `max-image-preview:large` sur toutes les pages, pages `noindex` comprises (une seule balise robots `noindex, max-image-preview:large` depuis le 28 octobre 2026), image de partage de 1200 px de large.
 - Vitesse sur téléphone : PageSpeed n'a pas répondu (quota du jour dépassé). À refaire au prochain passage.
 
 ### Page nouvelle

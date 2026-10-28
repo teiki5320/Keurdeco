@@ -1,5 +1,5 @@
 // Signale les pages du site à Bing (et aux autres moteurs IndexNow) pour qu'elles soient explorées vite.
-// Usage : node scripts/indexnow.mjs (lancé après les publications programmées et la veille, voir .github/workflows/pages.yml).
+// Usage : node scripts/indexnow.mjs (lancé après chaque publication, voir .github/workflows/pages.yml).
 // La clé est publique par conception : elle est servie à la racine du site (public/<clé>.txt).
 const SITE = (process.env.SITE_URL ?? 'https://www.keurdeco.com/').replace(/\/?$/, '/');
 const CLE = 'c221134c9925a6a68046cfffb8269dcf';

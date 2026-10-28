@@ -39,6 +39,16 @@ describe('référencement', () => {
     expect(r).toContain('og:image');
   });
 
+  it('max-image-preview:large sur toutes les pages, une seule balise robots (noindex compris)', () => {
+    const tete = (robots: string) => `<html><head>${robots}<!--#head--></head><body></body></html>`;
+    const indexee = transformerPage(tete(''), 'a-propos.html');
+    expect(indexee.match(/<meta name="robots"/g)).toHaveLength(1);
+    expect(indexee).toContain('<meta name="robots" content="max-image-preview:large" />');
+    const cachee = transformerPage(tete('<meta name="robots" content="noindex" />'), '404.html');
+    expect(cachee.match(/<meta name="robots"/g)).toHaveLength(1);
+    expect(cachee).toContain('<meta name="robots" content="noindex, max-image-preview:large" />');
+  });
+
   it('pas de référencement sur les pages noindex', () => {
     expect(referencement('<meta name="robots" content="noindex" />', '404.html')).toBe('');
   });
@@ -56,10 +66,12 @@ describe('référencement', () => {
 
   it('code AdSense avec l’identifiant éditeur, sauf sur les pages sans annonce', () => {
     expect(codeAdsense('')).toBe('');
-    // Chargement retardé : au premier geste, ou au plus tard après 4 secondes ; jamais de balise <script src> bloquante.
+    // Chargement retardé (comme keurkado.com) : après le chargement complet, quand le navigateur est libre, au plus tard 3 secondes ;
+    // jamais de balise <script src> bloquante.
     expect(codeAdsense()).toContain('"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2680784147246798"');
-    expect(codeAdsense()).toContain('setTimeout(c,4000)');
-    expect(codeAdsense()).toContain("'scroll','touchstart','pointerdown','keydown','mousemove'");
+    expect(codeAdsense()).toContain("addEventListener('load',p,{once:true})");
+    expect(codeAdsense()).toContain('requestIdleCallback(c,{timeout:3000})');
+    expect(codeAdsense()).not.toContain('scroll');
     expect(codeAdsense()).not.toContain('<script async src=');
     // Balise de propriété sur toutes les pages, même sans annonce.
     expect(compteAdsense('')).toBe('');

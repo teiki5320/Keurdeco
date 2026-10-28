@@ -79,7 +79,7 @@ describe('pages des articles de la veille', () => {
   it('page de secours : noindex, sans annonce, hors sitemap', () => {
     const pages = pagesArticlesVeille(cache());
     const secours = transformerPage(pages.get('actus/article/index.html')!, 'actus/article/index.html');
-    expect(secours).toContain('<meta name="robots" content="noindex" />');
+    expect(secours).toContain('<meta name="robots" content="noindex, max-image-preview:large" />');
     expect(secours).toContain('data-article-secours');
     expect(secours).not.toContain('rel="canonical"');
     expect(pageAvecAdsense('actus/article/index.html')).toBe(false);

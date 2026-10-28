@@ -13,7 +13,7 @@ Domaine : www.keurdeco.com · Technologie : site statique généré par Vite 8 e
 ## A. Mise en ligne
 
 ### 1. Publication automatique à chaque envoi sur `main`
-- Ce qui est fait : chaque envoi sur `main` lance les tests, la construction du site, le test de bout en bout, puis la mise en ligne sur GitHub Pages. Si une étape échoue, rien n'est publié.
+- Ce qui est fait : chaque envoi sur `main` lance les tests, la construction du site, le test de bout en bout, puis la mise en ligne sur GitHub Pages. Si une étape échoue, rien n'est publié. Depuis le 28/10/2026, la publication vérifie ensuite que www.keurdeco.com sert bien la nouvelle version (`version.txt`, 3 minutes au plus) et réactive la tâche programmée, que GitHub couperait après 60 jours sans activité.
 - À quoi ça sert : évite de mettre en ligne un site cassé ; plus besoin de publier à la main.
 - Comment savoir si un autre site en a besoin : ouvrir l'onglet Actions du dépôt ; s'il n'y a pas d'étape de test avant le déploiement, il en a besoin.
 - Où regarder : `.github/workflows/pages.yml`
@@ -90,7 +90,7 @@ Domaine : www.keurdeco.com · Technologie : site statique généré par Vite 8 e
 - État : fait et vérifié (audit en ligne du 28/10/2026)
 
 ### 11. Signalement à Bing par IndexNow
-- Ce qui est fait : après les publications programmées et après chaque reconstruction de la veille, un script envoie les adresses du plan du site à IndexNow. Ce service prévient Bing et d'autres moteurs. La clé publique est servie à la racine du site.
+- Ce qui est fait : après chaque publication (envoi sur `main` depuis le 28/10/2026, publications programmées, reconstructions de la veille), un script envoie les adresses du plan du site à IndexNow. Ce service prévient Bing et d'autres moteurs. La clé publique est servie à la racine du site.
 - À quoi ça sert : Bing explore les nouvelles pages en quelques heures au lieu de quelques semaines.
 - Comment savoir si un autre site en a besoin : chercher un fichier `<clé>.txt` à la racine du site et un script IndexNow dans le dépôt.
 - Où regarder : `scripts/indexnow.mjs`, `public/c221134c9925a6a68046cfffb8269dcf.txt`, `.github/workflows/pages.yml` (tâche `indexnow`)
@@ -127,7 +127,7 @@ Domaine : www.keurdeco.com · Technologie : site statique généré par Vite 8 e
 - État : fait et vérifié
 
 ### 16. Code AdSense chargé après l'affichage
-- Ce qui est fait : le script AdSense (environ 300 Ko) n'est chargé que sur les pages qui ont des annonces. Il arrive au premier geste du visiteur (défilement, toucher, clavier, souris) ou au plus tard après 4 secondes.
+- Ce qui est fait : le script AdSense (environ 300 Ko) n'est chargé que sur les pages qui ont des annonces. Depuis le 28/10/2026 (méthode de Keur Kado), il est ajouté une fois la page entièrement chargée, quand le navigateur est libre, au plus tard 3 secondes après ; la balise `google-adsense-account` reste dans le `<head>`.
 - À quoi ça sert : la page s'affiche aussi vite que sans publicité ; les annonces, toujours plus bas dans le texte, ont le temps de se charger.
 - Comment savoir si un autre site en a besoin : chercher `<script async src="https://pagead2.googlesyndication.com` dans le `<head>` des pages.
 - Où regarder : `build/site.ts` (fonctions `codeAdsense`, `pageAvecAdsense`)
@@ -260,7 +260,7 @@ Domaine : www.keurdeco.com · Technologie : site statique généré par Vite 8 e
   - une tâche GitHub publie chaque jour 5 épingles par l'API Pinterest ;
   - elle garde la trace des épingles publiées dans un fichier, enregistré sur `main` ;
   - elle propose un mode « à blanc » pour tester sans publier ;
-  - elle ouvre un ticket quand Pinterest renvoie une nouvelle clé de connexion (refresh token).
+  - elle garde un seul ticket ouvert pour rappeler de refaire la clé avant son échéance (environ 60 jours), et `npm run pinterest:secrets` range la clé dans le secret GitHub sans l'afficher (depuis le 28/10/2026, comme Keur Kado).
 - À quoi ça sert : une présence régulière sur Pinterest sans y penser.
 - Comment savoir si un autre site en a besoin : regarder si les épingles sont publiées à la main.
 - Où regarder : `.github/workflows/pinterest.yml`, `scripts/pinterest-publier.mjs`, `scripts/pinterest-lib.mjs`, `scripts/pinterest-auth.mjs`, `data/pinterest-etat.json`, `docs/pinterest.md`
@@ -355,9 +355,8 @@ Rien de particulier : Keur Déco n'a pas d'application iOS ni Android. Le site e
 - **Pas d'en-têtes de sécurité ni de cache long.** GitHub Pages ne permet ni CSP, ni HSTS, ni `X-Content-Type-Options`, et il impose une durée de cache de 10 minutes à tous les fichiers, même ceux qui ne changent jamais. Cela touche tout site hébergé sur GitHub Pages ; Kultiled l'est aussi au 28/10/2026. Solution : Cloudflare Pages avec un fichier `_headers`, comme Keur Cook. Le passage est prévu après la validation d'AdSense.
 - **Doubles adresses.** `page` et `page.html` répondent toutes les deux. La balise canonique limite le problème, mais un passage sur Cloudflare Pages obligerait à passer aux adresses sans « .html ».
 - **AdSense encore en examen.** Le site est « En préparation » depuis le 16/10/2026, et la console affiche ads.txt « Introuvable » alors que le fichier est bien servi (ancien relevé). Le chargement retardé du code (point 16) est récent : son effet sur l'examen est à vérifier le 4/11/2026.
-- **Clé Pinterest à recopier à la main.** Pinterest renvoie une nouvelle clé de connexion à chaque renouvellement. La tâche ouvre alors un ticket, mais il faut recopier la clé dans le secret GitHub ; 12 tickets étaient ouverts au 28/10/2026. Ce point touche tout site qui publie sur Pinterest par l'API.
+- **Clé Pinterest à refaire tous les 60 jours environ.** Depuis le 28/10/2026, un seul ticket de rappel et `npm run pinterest:secrets` (méthode de Keur Kado) ; les 13 anciens tickets « mettre à jour le secret » restent à fermer.
 - **Vérification Amazon impossible sur les serveurs.** Amazon bloque les serveurs de GitHub et présente parfois des captchas : la vérification des produits doit tourner sur l'ordinateur, par petits lots.
 - **Indexation incomplète.** Au 28/10/2026, 11 pages étaient « détectées, actuellement non indexées » par Google ; l'indexation a été demandée pour 10 d'entre elles, la 11ᵉ étant déjà indexée. Un contrôle est prévu le 04/11/2026.
-- **IndexNow ne part pas après un simple envoi sur `main`.** Il part seulement après les reconstructions programmées ou à la demande. Une page corrigée un mardi n'est donc signalée à Bing que le mercredi.
 - **Test de bout en bout parfois instable.** Un échec isolé a été vu le 28/10/2026 ; il est passé aux trois relances. La cause n'est pas identifiée.
 - **Consentement non testé automatiquement.** La fenêtre de choix des cookies dépend d'un réglage dans la console AdSense, que les tests ne peuvent pas vérifier.

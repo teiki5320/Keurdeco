@@ -86,7 +86,9 @@ Pinterest demande une vidéo qui montre l'intégration complète avant d'ouvrir 
 
 ## 7. Secrets GitHub
 
-*Settings* › *Secrets and variables* › *Actions* :
+Méthode simple (depuis le 28 octobre 2026, comme Keur Kado) : dans le Terminal du Mac, après `npm run pinterest:auth` (étape 5), lancer `npm run pinterest:secrets`. Le script (`scripts/pinterest-secrets.mjs`) lit `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET` et `PINTEREST_REFRESH_TOKEN` dans `.env` et les range dans les secrets GitHub du dépôt avec `gh secret set`, **sans jamais les afficher** (il faut `gh` connecté : `gh auth status`).
+
+À la main, si besoin : *Settings* › *Secrets and variables* › *Actions* :
 
 | Onglet | Nom | Valeur |
 | --- | --- | --- |
@@ -97,7 +99,9 @@ Pinterest demande une vidéo qui montre l'intégration complète avant d'ouvrir 
 | Variables (facultatif) | `PINTEREST_SANDBOX` | `1` pendant l'accès d'essai, à supprimer ensuite |
 | Variables (facultatif) | `PINTEREST_MAX` | nombre maximum d'épingles par jour (sinon `config/pinterest.json`) |
 
-Le jeton d'accès est renouvelé automatiquement à chaque exécution à partir du refresh token. Le refresh token a lui-même une durée de vie limitée (environ un an) : le journal du workflow prévient 30 jours avant l'échéance ; il suffit alors de relancer `npm run pinterest:auth` et de mettre à jour le secret. Si Pinterest renvoie un nouveau refresh token, le journal le signale aussi.
+### Durée de la clé
+
+Le jeton d'accès est renouvelé automatiquement à chaque exécution à partir du refresh token. Pinterest renvoie aussi un nouveau refresh token à chaque passage, mais l'ancien reste valable jusqu'à son échéance, environ 60 jours après sa création : inutile de le recopier chaque jour. Depuis le 28 octobre 2026, le workflow ouvre **un seul ticket GitHub** « Pinterest : refaire la clé du compte avant son échéance » (pas un par jour). Avant l'échéance, refaire la clé : `npm run pinterest:auth` puis `npm run pinterest:secrets`, et fermer le ticket. Le journal du workflow prévient aussi quand il reste moins de 30 jours.
 
 ## En attendant l'application : import par lots
 

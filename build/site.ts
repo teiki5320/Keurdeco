@@ -50,15 +50,22 @@ export const NAVIGATION: { href: string; libelle: string; pages: RegExp }[] = [
   { href: 'actus.html', libelle: 'Actus', pages: /^actus(\.html$|\/)/ },
 ];
 
-export function head(): string {
+/** Balise robots d'une page non indexée : une seule balise, avec la grande image autorisée (comme keurkado.com). */
+const ROBOTS_SOURCE_NOINDEX = '<meta name="robots" content="noindex" />';
+export const ROBOTS_NOINDEX = '<meta name="robots" content="noindex, max-image-preview:large" />';
+
+/**
+ * Début commun du <head>. Grande image autorisée dans Google Discover et les résultats (« max-image-preview:large ») ;
+ * une page noindex garde sa propre balise robots, complétée par transformerPage.
+ */
+export function head(noindex = false): string {
   return `<script>document.documentElement.classList.add('js')</script>
     <link rel="icon" type="image/png" sizes="32x32" href="icones/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="icones/favicon-48.png" />
     <link rel="apple-touch-icon" href="icones/apple-touch-icon.png" />
     <link rel="manifest" href="manifest.webmanifest" />
     <meta name="theme-color" content="#F7F0E6" />
-    <meta name="robots" content="max-image-preview:large" />
-    <link rel="alternate" type="application/rss+xml" title="${NOM_SITE}" href="feed.xml" />`;
+    ${noindex ? '' : '<meta name="robots" content="max-image-preview:large" />\n    '}<link rel="alternate" type="application/rss+xml" title="${NOM_SITE}" href="feed.xml" />`;
 }
 
 const DOSSIER_PARTAGE = resolve(import.meta.dirname, '../public/images/partage');
@@ -155,16 +162,16 @@ export function mesureAudience(domaine = process.env.PLAUSIBLE_DOMAIN, jetonClou
 }
 
 /**
- * Code Google AdSense, identique sur toutes les pages qui portent des annonces.
- * Chargé au premier geste du visiteur (défilement, toucher, clavier, souris) ou au plus tard après 4 secondes :
- * ses ~300 Ko ne ralentissent plus l'affichage, et le robot de Google le trouve quand même s'il attend un peu.
- * Les annonces sont toutes plus bas dans le texte : elles ont le temps de se charger avant d'être vues.
+ * Code Google AdSense, identique sur toutes les pages qui portent des annonces (méthode de keurkado.com).
+ * Ajouté une fois la page entièrement chargée, quand le navigateur est libre (au plus tard 3 secondes après) :
+ * ses ~300 Ko ne retardent plus l'affichage du texte. La balise « google-adsense-account » (compteAdsense)
+ * reste dans le <head> de toutes les pages pour que Google reconnaisse le compte.
  * Il ne place aucune annonce à lui seul : les emplacements se décident à part (build/annonces.ts).
  */
-export function codeAdsense(editeur = ADSENSE_EDITEUR, delai = 4000): string {
+export function codeAdsense(editeur = ADSENSE_EDITEUR, delai = 3000): string {
   if (!editeur) return '';
   const src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-${editeur}`;
-  return `<script>(function(){var f=0,g=['scroll','touchstart','pointerdown','keydown','mousemove'];function c(){if(f)return;f=1;g.forEach(function(e){removeEventListener(e,c)});var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src=${JSON.stringify(src)};document.head.appendChild(s)}g.forEach(function(e){addEventListener(e,c,{passive:true})});setTimeout(c,${delai})})()</script>`;
+  return `<script>(function(){function c(){if(document.querySelector('script[data-adsense]'))return;var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src=${JSON.stringify(src)};s.dataset.adsense='';document.head.appendChild(s)}function p(){if(typeof window.requestIdleCallback==='function')requestIdleCallback(c,{timeout:${delai}});else setTimeout(c,1500)}if(document.readyState==='complete')p();else addEventListener('load',p,{once:true})})()</script>`;
 }
 
 /**
@@ -424,8 +431,10 @@ export function transformerPage(html: string, fichier: string): string {
   const profondeur = fichier.split('/').length - 1;
   const base = fichier === '404.html' ? `<base href="${SITE_URL}" />\n    ` : profondeur ? `<base href="${'../'.repeat(profondeur)}" />\n    ` : '';
   const ici = fichier.replace(/index\.html$/, '').replace(/\.html$/, '');
+  const noindex = html.includes(ROBOTS_SOURCE_NOINDEX);
   const page = html
-    .replace('<!--#head-->', `${base}${head()}\n    ${referencement(html, fichier)}\n    ${mesureAudience()}${pageAvecAdsense(fichier) ? `\n    ${codeAdsense()}` : ''}`)
+    .replace(ROBOTS_SOURCE_NOINDEX, ROBOTS_NOINDEX)
+    .replace('<!--#head-->', `${base}${head(noindex)}\n    ${referencement(html, fichier)}\n    ${mesureAudience()}${pageAvecAdsense(fichier) ? `\n    ${codeAdsense()}` : ''}`)
     .replace('<!--#header-->', header(fichier))
     .replace('<!--#footer-->', footer())
     .replace('<!--#une-->', () => blocUne(publies))

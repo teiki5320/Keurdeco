@@ -23,7 +23,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { Marked } from 'marked';
 import { parse as parseYaml } from 'yaml';
-import { attributsLienAmazon, MENTION_AMAZON } from '../src/amazon.ts';
+import { attributsLienAmazon } from '../src/amazon.ts';
 import { dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone, iconeObjet } from './icones.ts';
 import { imageArticle } from './images.ts';
@@ -277,7 +277,6 @@ export function sourcePageTop10(s: SujetTop10, sujets: SujetTop10[], produits: M
       <article class="conteneur conteneur--etroit top10__sujet">
         <h1>${echapper(s.titre)}</h1>
         <p class="chapo">${echapper(introClassement(s, dix))}</p>
-        <p class="mention-amazon mention-amazon--haut">${MENTION_AMAZON} Aucun prix n’est affiché : le prix du jour est sur Amazon.</p>
         ${rendreListe(dix)}
         ${rendreAmbiances(s, dix, produits)}
         <div class="prose top10__texte-bas">

@@ -51,13 +51,14 @@ async function jetonAcces() {
   if (!appId || !secret || !refreshToken) return null;
   const r = await renouvelerJeton({ appId, secret, refreshToken });
   if (r.refresh_token && r.refresh_token !== refreshToken) {
-    // Signal pour le workflow, qui ouvre une alerte (issue) sur GitHub. Le jeton lui-même n'est jamais écrit.
+    // Pinterest renvoie un nouveau refresh token à chaque renouvellement ; l'ancien reste valable jusqu'à son échéance.
+    // Le jeton lui-même n'est jamais écrit : seul un signal est transmis au workflow (un seul ticket de rappel ouvert).
     if (env.GITHUB_OUTPUT) appendFileSync(env.GITHUB_OUTPUT, 'nouveau_refresh_token=1\n');
-    console.warn('ℹ Pinterest a fourni un nouveau refresh token : mettez à jour le secret PINTEREST_REFRESH_TOKEN (voir docs/pinterest.md).');
+    console.log('ℹ Pinterest a fourni un nouveau refresh token (l’ancien reste valable jusqu’à son échéance, environ 60 jours après sa création).');
   }
   if (r.refresh_token_expires_in) {
     const jours = Math.round(r.refresh_token_expires_in / 86400);
-    if (jours < 30) console.warn(`⚠ Le refresh token expire dans ${jours} jours : relancez npm run pinterest:auth.`);
+    if (jours < 30) console.warn(`⚠ Le refresh token expire dans ${jours} jours : relancez npm run pinterest:auth puis npm run pinterest:secrets.`);
   }
   return r.access_token;
 }

@@ -40,12 +40,16 @@ jobs:
           PINTEREST_MAX: ${{ vars.PINTEREST_MAX }}
           SITE_URL: ${{ vars.SITE_URL || 'https://www.keurdeco.com/' }}
         run: node scripts/pinterest-publier.mjs ${{ inputs.a_blanc && '--a-blanc' || '' }}
-      - name: Alerte si Pinterest a renouvelé le refresh token
+      # Pinterest renvoie un nouveau refresh token à chaque passage ; l'ancien reste valable environ 60 jours.
+      # Un seul ticket ouvert à la fois (pas un par jour) pour rappeler de refaire la clé avant l'échéance (méthode de Keur Kado).
+      - name: Rappel de renouvellement de la clé (un seul ticket ouvert)
         if: always() && steps.publier.outputs.nouveau_refresh_token == '1'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh issue create --title "Pinterest : mettre à jour le secret PINTEREST_REFRESH_TOKEN" --body "Pinterest a fourni un nouveau refresh token lors de la publication du $(TZ=Europe/Paris date +%F). Relancez \`npm run pinterest:auth\` sur votre ordinateur, puis copiez le refresh token enregistré dans .env (ligne PINTEREST_REFRESH_TOKEN) dans le secret GitHub du même nom (voir docs/pinterest.md, étape 7)."
+          titre="Pinterest : refaire la clé du compte avant son échéance"
+          if [ -n "$(gh issue list --state open --search "in:title \"$titre\"" --json number --jq '.[].number')" ]; then exit 0; fi
+          gh issue create --title "$titre" --body "La clé Pinterest (secret PINTEREST_REFRESH_TOKEN) a été créée pour environ 60 jours. Avant l'échéance, refaites-la sur le Mac : npm run pinterest:auth puis npm run pinterest:secrets (docs/pinterest.md, étape 7). Fermez ensuite ce ticket."
       - name: Enregistrer le fichier d'état sur main
         if: always()
         run: |

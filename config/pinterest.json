@@ -1,5 +1,7 @@
 {
-  "_aide": "Réglages de la publication automatique (scripts/pinterest-publier.mjs).",
+  "_aide": "Réglages de la publication automatique (scripts/pinterest-publier.mjs) ; depot sert à npm run pinterest:secrets.",
+  "site": "Keur Déco",
+  "depot": "teiki5320/Keurdeco",
   "max_par_execution": 5,
   "manifeste": "epingles.json"
 }

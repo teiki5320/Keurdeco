@@ -26,7 +26,7 @@ Mis à jour le 28 octobre 2026. Compagnon de INFRA.md.
 
 - ✅ **Pinterest « Keur Déco »** (principal) : compte branché au Planning du Studio ; 96 épingles importées par CSV (2 par jour, du 2 octobre au 18 novembre 2026, `data/pinterest-etat.json`). Publication par l'API : accès standard accordé, 20 tableaux reliés, 5 épingles par passage ; maximum corrigé et secret renouvelé le 20 octobre, 5 premières épingles publiées par l'API le même jour, 60 au 28 octobre.
 - ✅ **Google** : Search Console vérifiée (propriété de domaine) ; 104 pages indexées sur 120 au relevé du Studio du 27 octobre 2026 (71 au 7 octobre ; demandes d'indexation faites les 7 et 8 octobre). Le 21 octobre, la routine « Référencement du jour » a retravaillé 5 pages (titres, descriptions, liens internes), à relire à partir du 18 novembre ; le 22 octobre, 3 pages presque en première page retravaillées, à relire à partir du 19 novembre ; le 28 octobre, 3 autres pages (décoration bogolan, déco afro bohème, chambre style africain), à relire à partir du 25 novembre (`docs/referencement.md`).
-- ✅ **Bing** : pages signalées par IndexNow après chaque reconstruction programmée (lundi, mercredi, vendredi).
+- ✅ **Bing** : pages signalées par IndexNow après chaque publication : reconstructions programmées (lundi, mercredi, vendredi, veille) et, depuis le 28 octobre 2026, chaque envoi sur `main`.
 - ⬜ **TikTok et YouTube** : TikTok « Afrotok » est branché au Studio mais rattaché à aucune app, YouTube « toa.afrotok » à Erea seule (Studio, 13 octobre 2026) ; aucune publication pour Keur Déco.
 
 ## Rubrique Actus
@@ -52,6 +52,6 @@ Mis à jour le 28 octobre 2026. Compagnon de INFRA.md.
 
 ## Les 3 priorités
 
-- Garder la publication Pinterest par l'API en marche : recopier le dernier jeton dans le secret `PINTEREST_REFRESH_TOKEN` (pas renouvelé depuis le 20 octobre ; 12 tickets GitHub « mettre à jour le secret » ouverts du 22 au 28 octobre 2026, le jeton actuel reste valable environ 60 jours), puis fermer les tickets.
+- Garder la publication Pinterest par l'API en marche : refaire la clé avant son échéance (environ 60 jours après le 20 octobre 2026) avec `npm run pinterest:auth` puis `npm run pinterest:secrets` (plus besoin de recopier le jeton à la main depuis le 28 octobre 2026 ; un seul ticket de rappel désormais). Fermer les 13 anciens tickets « mettre à jour le secret » (n° 2 à 14, du 20 au 28 octobre 2026).
 - Faire indexer les 12 pages encore absentes (9 détectées non explorées, 3 inconnues de Google au 27 octobre 2026) ; les 10 pages Top 10 sont déjà indexées.
 - Remplacer les 11 produits Amazon indisponibles et sans remplaçant (jarre toscane, coussin femme africaine en jute, plaid chenille, lampadaire rotin, sphère étoiles, suspension parasol, plateaux tressés lot de 2, tissu bogolan indigo à flèches, chemin de table paisley 40 × 225 cm, tapis berbère rouge 140 × 200, et coupons de tissus africains lot de 6, devenus indisponibles le 28 octobre).

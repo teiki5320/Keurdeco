@@ -15,6 +15,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  # Pour réactiver la tâche programmée (voir la dernière étape de « deploy »).
+  actions: write
 
 concurrency:
   group: pages
@@ -31,6 +33,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,6 +50,13 @@ jobs:
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
+      # Repère propre à cette publication : la tâche « deploy » vérifie ensuite que www.keurdeco.com le sert bien.
+      - name: Marquer la version publiée
+        id: version
+        run: |
+          version="${GITHUB_SHA} ${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          echo "$version" > dist/version.txt
+          echo "version=$version" >> "$GITHUB_OUTPUT"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -61,11 +72,35 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-  # Après la publication du lundi, mercredi et vendredi, après chaque reconstruction de la veille (pages /actus/ seulement)
-  # ou à la demande : signale les pages à Bing via IndexNow.
+      # Le site en ligne doit servir la version qui vient d'être publiée (jusqu'à 3 minutes d'attente).
+      - name: Vérifier que www.keurdeco.com sert la nouvelle version
+        env:
+          ATTENDU: ${{ needs.build.outputs.version }}
+        run: |
+          servi=""
+          for i in $(seq 1 18); do
+            servi="$(curl -fsS -H 'Cache-Control: no-cache' "https://www.keurdeco.com/version.txt?v=${GITHUB_RUN_ID}-${i}" || true)"
+            if [ "$servi" = "$ATTENDU" ]; then
+              echo "www.keurdeco.com sert bien la version $ATTENDU"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::error::www.keurdeco.com ne sert pas la nouvelle version (attendu « $ATTENDU », reçu « $servi »)."
+          exit 1
+
+      # GitHub coupe les tâches programmées d'un dépôt public après 60 jours sans activité :
+      # chaque publication programmée réactive la tâche, pour que les articles continuent de paraître.
+      - name: Garder la publication programmée active
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/pages.yml/enable"
+
+  # Après chaque publication (envoi sur main, lundi, mercredi et vendredi, reconstruction de la veille — pages /actus/
+  # seulement — ou à la demande) : signale les pages à Bing via IndexNow, une fois la nouvelle version en ligne.
   indexnow:
     needs: deploy
-    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
