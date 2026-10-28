@@ -28,7 +28,7 @@ import { dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone, iconeObjet } from './icones.ts';
 import { imageArticle } from './images.ts';
 import { MENTION_IA, pointsImage, type Hotspot } from './articles.ts';
-import { echapper, estAffichable, indexProduits, libelleType, type Produit } from './produits.ts';
+import { boutonAmazon, echapper, estAffichable, indexProduits, libelleType, type Produit } from './produits.ts';
 
 export const DOSSIER_TOP10 = resolve(import.meta.dirname, '../contenu/top-10');
 const DOSSIER_VIGNETTES = resolve(import.meta.dirname, '../public/images/produits');
@@ -200,7 +200,7 @@ export function rendreListe(dix: ReturnType<typeof dixProduits>): string {
         <h3 class="top10__nom"><span class="visuellement-cache">N° ${i + 1} : </span>${echapper(e.p.nom)}</h3>
         <p><strong>Pourquoi il est dans le top.</strong> ${enLigne(e.pourquoi)}</p>
         <p class="top10__ideal"><strong>Idéal pour</strong> ${enLigne(e.ideal_pour)}</p>
-        <div class="top10__action"><a class="bouton bouton--amazon" ${attributsLienAmazon(e.p.asin)}>Voir sur Amazon ${icone('externe', 'icone icone--petite')}</a><span class="lien-partenaire">Lien partenaire</span></div>
+        <div class="top10__action">${boutonAmazon(e.p)}</div>
       </div>
     </li>`,
     )

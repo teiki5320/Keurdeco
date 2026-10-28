@@ -11,6 +11,12 @@ export const REL_AMAZON = 'sponsored nofollow noopener';
 /** Mention obligatoire du programme Partenaires, près des liens, dans le pied de page et les mentions légales. */
 export const MENTION_AMAZON = 'En tant que Partenaire Amazon, Keur Déco réalise un bénéfice sur les achats remplissant les conditions requises.';
 
+/** Petite ligne posée juste sous chaque bouton « Voir sur Amazon » (même texte que sur keurcook.com). */
+export const NOTE_LIEN_AMAZON = 'Lien partenaire Amazon. Prix, disponibilité et vendeur sont indiqués sur Amazon.';
+
+/** Seconde ligne sous le bouton : nos visuels de produits sont des illustrations créées par IA. */
+export const NOTE_ILLUSTRATION_IA = 'Illustration IA : l’article vendu peut différer.';
+
 /** Format d'un ASIN : 10 caractères, majuscules et chiffres. */
 export const FORMAT_ASIN = /^[A-Z0-9]{10}$/;
 

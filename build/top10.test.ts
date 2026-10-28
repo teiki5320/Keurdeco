@@ -48,15 +48,18 @@ describe('Top 10 à onglets', () => {
     expect(sujetsPublies(tous, [neuf])).toHaveLength(0);
   });
 
-  it('chaque fiche : numéro, nom, pourquoi, idéal pour, bouton Amazon sponsorisé et « Lien partenaire » ; ni prix ni étoiles', () => {
+  it('chaque fiche : numéro, nom, pourquoi, idéal pour, bouton « Voir sur Amazon » sponsorisé, ligne « Lien partenaire Amazon » et « Illustration IA » ; ni prix ni étoiles', () => {
     const html = rendreListe(dixProduits(lireSujet('paniers', source([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])), tous));
     expect(html.match(/class="top10__produit"/g)).toHaveLength(10);
     expect(html).toContain('id="n-10"');
     expect(html.match(/rel="sponsored nofollow noopener"/g)?.length).toBeGreaterThanOrEqual(10);
-    expect(html.match(/Lien partenaire/g)).toHaveLength(10);
+    expect(html.match(/>Voir sur Amazon/g)).toHaveLength(10);
+    expect(html.match(/Lien partenaire Amazon\. Prix, disponibilité et vendeur sont indiqués sur Amazon\./g)).toHaveLength(10);
+    expect(html.match(/Illustration IA : l’article vendu peut différer\./g)).toHaveLength(10);
     expect(html).toContain('<strong>Idéal pour</strong> les tests 1.');
     expect(html).toContain('tag=keurdecofr-21');
-    expect(html).not.toMatch(/€|prix|étoile|testé par nous/i);
+    // La ligne « Prix, disponibilité et vendeur sont indiqués sur Amazon » renvoie vers Amazon : aucun prix affiché.
+    expect(html.replaceAll('Prix, disponibilité et vendeur sont indiqués sur Amazon', '')).not.toMatch(/€|prix|étoile|testé par nous/i);
   });
 
   it('« Comment choisir » en cartes, FAQ en accordéon, onglet actif marqué', () => {

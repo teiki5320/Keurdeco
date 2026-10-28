@@ -238,7 +238,7 @@ export function footer(): string {
     <div class="site-pied__marque">
       ${logo(true)}
       <p>${SLOGAN}. Idées d’aménagement, sélections et savoir-faire, pour la diaspora et tous les amoureux de déco.</p>
-      <p class="site-pied__note">${MENTION_AMAZON} Les liens vers Amazon sont des liens sponsorisés ; aucun prix n’est affiché sur le site.</p>
+      <p class="site-pied__note">${MENTION_AMAZON}</p>
       <p class="site-pied__note">Certaines images d’ambiance sont créées par intelligence artificielle ; elles sont alors signalées sous l’image.</p>
       <p class="site-pied__note">Un site <a href="https://toakeur.com"><strong>TOA KEUR</strong></a></p>
     </div>

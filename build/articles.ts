@@ -24,12 +24,11 @@ import { Marked } from 'marked';
 import { placerAnnonces } from './annonces.ts';
 import { adresseTop10, top10Lie } from './top10.ts';
 import { parse as parseYaml } from 'yaml';
-import { attributsLienAmazon } from '../src/amazon.ts';
 import { FAMILLES, fichierRubrique, trouverRubrique, type Famille } from '../src/taxonomie.ts';
 import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone } from './icones.ts';
 import { imageArticle, imageExiste } from './images.ts';
-import { carteProduit, echapper, encadreProduit, estAffichable, grilleProduits, indexProduits, libelleType, mentionAmazon, type Produit } from './produits.ts';
+import { boutonAmazon, carteProduit, echapper, encadreProduit, estAffichable, grilleProduits, indexProduits, libelleType, mentionAmazon, type Produit } from './produits.ts';
 
 export const DOSSIER_ARTICLES = resolve(import.meta.dirname, '../contenu/articles');
 
@@ -252,7 +251,7 @@ export function pointsImage(cle: string, hotspots: Hotspot[], produits: Map<stri
       <div class="hotspot-carte${h.x > 55 ? ' hotspot-carte--gauche' : ''}${h.y > 60 ? ' hotspot-carte--haut' : ''}" id="carte-${cle}-${n}" style="left:${h.x}%;top:${h.y}%" hidden>
         <p class="hotspot-carte__type">${echapper(libelleType(h.p.type_objet))}</p>
         <p class="hotspot-carte__nom">${echapper(h.p.nom)}</p>
-        <a class="bouton bouton--amazon" ${attributsLienAmazon(h.p.asin)}>Voir sur Amazon</a>
+        ${boutonAmazon(h.p, false)}
         <button type="button" class="hotspot-carte__fermer" aria-label="Fermer">×</button>
       </div>`;
     })
