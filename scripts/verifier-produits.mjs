@@ -10,6 +10,8 @@
 //           (seulement les 30 produits vérifiés il y a le plus longtemps, jamais vérifiés
 //            d'abord, avec des pauses plus longues : Amazon tolère mieux un passage quotidien
 //            par petits lots qu'une rafale de 200 fiches)
+//         npm run verifier-produits -- --ecrire --ids id1,id2,…
+//           (seulement ces produits : par exemple ceux qu'on vient d'ajouter dans des pages)
 // Chrome : CHROMIUM_PATH=/chemin/vers/chrome (par défaut, Google Chrome sur macOS).
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -25,7 +27,10 @@ const produits = JSON.parse(readFileSync(FICHIER, 'utf8'));
 const iLot = process.argv.indexOf('--lot');
 const lot = iLot > -1 ? Number(process.argv[iLot + 1]) || 30 : 0;
 const tous = produits.filter((p) => p.statut === 'actif' && p.asin);
-const actifs = lot ? [...tous].sort((a, b) => String(a.verifie_le || '').localeCompare(String(b.verifie_le || ''))).slice(0, lot) : tous;
+const iIds = process.argv.indexOf('--ids');
+const ids = iIds > -1 ? new Set(String(process.argv[iIds + 1] || '').split(',').map((s) => s.trim()).filter(Boolean)) : null;
+if (ids) for (const id of ids) if (!tous.some((p) => p.id === id)) console.log(`? ${id} : pas un produit actif avec ASIN, ignoré`);
+const actifs = ids ? tous.filter((p) => ids.has(p.id)) : lot ? [...tous].sort((a, b) => String(a.verifie_le || '').localeCompare(String(b.verifie_le || ''))).slice(0, lot) : tous;
 
 const navigateur = await chromium.launch({ executablePath: chrome, headless: true });
 const page = await (await navigateur.newContext({ locale: 'fr-FR' })).newPage();

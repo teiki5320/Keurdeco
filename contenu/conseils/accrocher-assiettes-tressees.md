@@ -16,6 +16,8 @@ Une composition d’assiettes tressées habille un grand mur avec beaucoup de ch
 
 Posez vos assiettes au sol et jouez avec la disposition : une grande au centre, les moyennes et petites autour. Gardez **5 à 10 cm entre elles**. Prenez la composition en photo.
 
+{{produit: corbeilles-murales-jonc-lot-7}}
+
 ## 2. Faire des gabarits
 
 Découpez un cercle de papier (papier kraft, journal) de la taille de chaque assiette. Marquez dessus l’emplacement exact de l’attache. Scotchez les gabarits au mur avec du ruban de masquage : vous pouvez ajuster sans aucun trou.
@@ -29,3 +31,5 @@ Découpez un cercle de papier (papier kraft, journal) de la taille de chaque ass
 ## 4. Retirer le papier
 
 Déchirez les gabarits autour des clous, accrochez les assiettes, et reculez de quelques pas pour vérifier l’équilibre.
+
+{{produit: assiettes-murales-tressees}}

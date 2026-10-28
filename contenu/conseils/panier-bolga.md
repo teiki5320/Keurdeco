@@ -21,9 +21,13 @@ Il est fait d’herbe à éléphant, une grande graminée. Les brins sont fendus
 
 Beaucoup de paniers Bolga ont une anse gainée de cuir, cousue à la main. C’est elle qui les rend si pratiques au marché.
 
+{{produit: panier-bolga-marche}}
+
 ## Chez soi
 
 Il sert de panier à linge, de cache-pot, de rangement pour les plaids ou les jouets, ou de panier de marché accroché à une patère.
+
+{{produit: panier-bolga-petit-20}}
 
 ## Un panier qui se remet en forme
 

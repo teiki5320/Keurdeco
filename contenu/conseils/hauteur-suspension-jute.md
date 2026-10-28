@@ -17,9 +17,13 @@ Une suspension en jute ou en rotin est souvent large et légère. Trop haute, el
 
 Comptez 70 à 80 cm entre le plateau et le bas de la suspension. La lumière tombe sur les assiettes sans éblouir les convives assis. Pour une table longue, deux suspensions plus petites valent mieux qu’une seule.
 
+{{produit: suspension-jute-alara-70}}
+
 ## Dans un passage
 
 Au milieu d’un salon, d’une entrée ou d’un couloir, gardez au moins 2 m entre le sol et le bas de l’abat-jour, un peu plus si quelqu’un de grand vit chez vous.
+
+{{produit: suspension-jute-boheme}}
 
 ## Au-dessus d’un lit ou d’une table de chevet
 

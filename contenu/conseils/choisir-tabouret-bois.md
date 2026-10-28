@@ -13,11 +13,15 @@ Le tabouret sculpté est l’objet africain le plus polyvalent : siège d’appo
 
 Les tabourets traditionnels (sénoufo, ashanti, lobi…) sont taillés dans **un seul bloc**. Pas de vis ni de colle : c’est un gage de solidité. Vérifiez qu’il n’y a pas de fente profonde.
 
+{{produit: tabouret-bois-torsade}}
+
 ## Selon l’usage
 
 - **Assise** : 40 à 45 cm de haut, plateau assez large.
 - **Table d’appoint** à côté d’un canapé : à peu près la hauteur de l’accoudoir.
 - **Sellette** pour une plante : plus bas, pour créer des hauteurs différentes.
+
+{{produit: tabouret-teck-massif-42}}
 
 ## La finition
 

@@ -17,6 +17,8 @@ Un grand [bogolan](glossaire-bogolan.html), un coupon de wax ou une bande de ken
 
 Cousez un ourlet large d’environ 5 cm en haut du tissu et glissez-y une tringle fine, un bâton de bois ou une branche. Deux crochets au mur suffisent. Le tissu tombe droit et se décroche en un instant.
 
+{{produit: coupon-pagne-wax-180x120}}
+
 ## Des baguettes en bois
 
 Deux baguettes aimantées ou à pince, en haut et en bas, tiennent le tissu sans couture, comme une affiche. C’est la solution idéale pour un coupon qu’on veut garder intact.
@@ -30,3 +32,5 @@ Pour un tissu ancien ou fragile, un cadre protège de la poussière et de la lum
 Tendu sur un châssis de toile et agrafé au dos, le tissu devient un tableau léger. Réservez cette solution aux tissus neufs : les agrafes marquent les bords.
 
 Dans tous les cas, évitez le plein soleil, qui fait pâlir les couleurs.
+
+{{produit: tissu-kente-jaune-noir-blanc}}

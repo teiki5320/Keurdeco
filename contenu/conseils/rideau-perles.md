@@ -21,6 +21,8 @@ Une guirlande de perles posée sur une étagère, enroulée autour d’un vase o
 
 Un rideau de perles délimite une entrée ou un coin sans fermer l’espace. Choisissez-le dans une gamme de deux ou trois couleurs pour un effet élégant.
 
+{{produit: rideau-perles-bambou-bois}}
+
 ## Le bon dosage
 
 Un ou deux objets perlés par pièce suffisent. Associez-les à des matières brutes (bois, raphia, lin) qui calment leur brillance. Pour en savoir plus sur les perles de verre recyclé du Ghana, consultez la fiche [perles krobo](glossaire-perles-krobo.html) du glossaire.

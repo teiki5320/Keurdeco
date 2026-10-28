@@ -17,9 +17,13 @@ Les matières naturelles de la déco africaine, comme la fibre tressée, la terr
 
 Une suspension en jute, en rotin ou en raphia diffuse la lumière à travers son tressage et dessine des ombres au plafond. Au-dessus d’une table ou au centre du salon, c’est elle qui donne le ton.
 
+{{produit: suspension-rotin-fait-main}}
+
 ## Des lampes à poser
 
 Ajoutez une ou deux sources plus basses : une lampe au pied en bois sculpté sur une console, une lampe en céramique ou en terre cuite près du canapé. Plusieurs points de lumière à des hauteurs différentes rendent une pièce plus accueillante qu’un éclairage unique.
+
+{{produit: lampes-chevet-ceramique-lot-2}}
 
 ## La bonne ampoule
 
@@ -28,3 +32,5 @@ Choisissez une ampoule à lumière blanche chaude, autour de 2 700 kelvins (indi
 ## Le soir, dehors
 
 Sur un balcon, des lanternes en rotin ou en bois avec une bougie à pile prolongent l’ambiance sans fil électrique.
+
+{{produit: lanternes-solaires-rotin}}

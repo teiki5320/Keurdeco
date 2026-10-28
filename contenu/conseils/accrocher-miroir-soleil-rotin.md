@@ -17,6 +17,8 @@ Le miroir soleil, avec ses rayons de rotin tressé, illumine une entrée ou un m
 
 Vérifiez le poids sur l’étiquette. Jusqu’à 2 ou 3 kg, un crochet X (crochet à tableau planté en biais) tient bien dans le plâtre. Sur une plaque de plâtre, utilisez une cheville adaptée ; dans le béton, une vis et une cheville classique. Évitez les crochets adhésifs, qui lâchent avec le temps.
 
+{{produit: miroir-soleil-rotin-58}}
+
 ## La bonne hauteur
 
 Seul, le miroir se place avec son centre à hauteur des yeux, vers 1,60 m du sol. Au-dessus d’une console ou d’un buffet, laissez 15 à 25 cm entre le meuble et le bas des rayons.
@@ -24,6 +26,8 @@ Seul, le miroir se place avec son centre à hauteur des yeux, vers 1,60 m du sol
 ## En grappe
 
 Trois miroirs de tailles différentes, accrochés en triangle, animent un mur étroit. Faites d’abord des gabarits en papier, fixez-les au ruban de masquage et ajustez avant de percer.
+
+{{produit: miroirs-rotin-soleil-lot-3}}
 
 ## L’humidité
 

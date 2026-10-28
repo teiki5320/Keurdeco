@@ -25,6 +25,10 @@ Le pouf en cuir, souvent brodé ou cousu à la main, est solide et confortable. 
 
 Doux, souvent de couleur vive (moutarde, terracotta, ocre), le pouf en tricot apporte une touche de couleur unie qui calme un ensemble d’imprimés. Il se lave souvent en retirant la housse.
 
+{{produit: pouf-tricot-moutarde}}
+
 ## La hauteur
 
 Pour s’asseoir, comptez 40 à 45 cm, la hauteur d’une chaise. Pour poser les pieds devant un canapé, prenez un pouf un peu plus bas que l’assise du canapé.
+
+{{produit: pouf-cuir-ocre}}

@@ -117,7 +117,7 @@ Chaque build affiche : les articles programmés à venir, les produits `a_select
 
 Onglet « Conseils », comme sur Kultiled et Keur Cook : une question pratique par page (entretenir, associer, choisir, accrocher, comprendre), publiée à sa date.
 
-- Un fichier par conseil : `contenu/conseils/<slug>.md` (en-tête YAML : `titre` = la question, `description`, `publie_le`, `theme`, `reponse` = réponse courte affichée en tête, `matieres[]` et `epingles[]` facultatifs). `{{produit: <id>}}` insère un encadré produit.
+- Un fichier par conseil : `contenu/conseils/<slug>.md` (en-tête YAML : `titre` = la question, `description`, `publie_le`, `theme`, `reponse` = réponse courte affichée en tête, `matieres[]` et `epingles[]` facultatifs). `{{produit: <id>}}` insère un encadré produit (1 à 3 par conseil, jamais collé à une annonce). En bas de chaque conseil et de chaque fiche du glossaire, un lien « Notre sélection » mène vers le Top 10 ou l'ambiance assortis (`build/selection.ts`).
 - Pages générées par `build/conseils.ts` : `conseils.html` (par thème) et `conseil-<slug>.html` (réponse courte, données structurées FAQ, conseils proches).
 - Épingles Pinterest automatiques : un visuel typographique (la question dans une arche, sur le motif du thème) par titre, publié dans le tableau « general ».
 - Les tests vérifient que les liens internes d'un conseil mènent à des pages déjà publiées à sa date.
@@ -152,8 +152,11 @@ Règles (vérifiées par les tests) :
 
 - **Jamais d'ASIN, de note, d'avis ni de prix inventés** ; aucun prix affiché.
 - Un produit `a_selectionner` ou `indisponible` n'est jamais affiché.
-- **Aucune photo Amazon** : chaque carte produit montre une icône du type d'objet.
-- Liens : `https://www.amazon.fr/dp/<ASIN>?tag=keurdecofr-21`, `rel="sponsored nofollow noopener"`, `target="_blank"`.
+- **Aucune photo Amazon** : chaque carte produit montre une vignette découpée dans nos images IA ou une icône du type d'objet.
+- Pages de pièces et de matières : bandeau de 4 produits filtrés depuis `produits.json` (`pieces[]` ou `matieres[]`), rien s'il en manque. Cartes des ambiances : « Pourquoi » et « Idéal pour » repris des Top 10 (sinon des pages Top, puis les pièces du produit), rien d'inventé.
+- Boutons « Voir sur Amazon » de 44 px de haut au moins, toujours avec leur texte.
+- `npm run verifier-produits -- --ecrire --ids a,b` ne vérifie que les produits indiqués (par exemple ceux qu'on vient de placer).
+- Liens : `https://www.amazon.fr/dp/<ASIN>?tag=<code de l'emplacement>` (table `CODES_SUIVI`, tous à keurdecofr-21 au 28 octobre 2026), `rel="sponsored nofollow noopener"`, `target="_blank"`.
 - La mention Partenaires figure près des liens, dans le pied de page et les mentions légales.
 
 Tests : format d'ASIN (`/^[A-Z0-9]{10}$/`), unicité des identifiants, produits référencés existants, `verifie_le` pour tout produit actif, points entre 0 et 100 %, images existantes avec texte alternatif, tableaux Pinterest existants, liens internes valides.

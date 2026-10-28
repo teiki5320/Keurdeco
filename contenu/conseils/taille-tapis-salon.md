@@ -12,6 +12,8 @@ Un tapis trop petit « flotte » au milieu du salon et rapetisse la pièce. Un t
 
 Le repère le plus simple : **les pieds avant du canapé et des fauteuils reposent sur le tapis**, les pieds arrière sur le sol. Le coin salon paraît ainsi uni.
 
+{{produit: tapis-motif-losanges}}
+
 ## Mesurer avant d’acheter
 
 1. Mesurez la zone salon (canapé, fauteuils, table basse).
@@ -27,3 +29,5 @@ Astuce : délimitez l’emplacement au sol avec du ruban de masquage et laissez-
 - **Irrégulier** (peau, fibres naturelles) : en petite taille, par-dessus un grand tapis uni.
 
 Un tapis à motifs bogolan ou berbère ancre bien un salon aux murs clairs ; sur un sol déjà chargé, préférez un tapis uni en jute ou en coton.
+
+{{produit: tapis-jute-rond}}

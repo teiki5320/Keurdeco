@@ -17,9 +17,13 @@ Une suspension en fibres naturelles fait le charme d’une salle à manger. Trop
 
 Mesurez la largeur de la table (le petit côté) et prenez entre la moitié et les deux tiers. Pour une table de 90 cm de large, une suspension de 45 à 60 cm convient. Pour une table ronde de 120 cm, visez 60 à 80 cm.
 
+{{produit: suspension-bambou-tess-58}}
+
 ## Une ou plusieurs
 
 Sur une table longue, une seule suspension n’éclaire que le centre. Au-delà de 1,80 m, alignez deux ou trois suspensions plus petites, espacées régulièrement, en laissant au moins 30 cm de chaque bout.
+
+{{produit: suspension-jute-boheme}}
 
 ## Le volume
 

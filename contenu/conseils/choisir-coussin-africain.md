@@ -17,6 +17,8 @@ Un coussin est la façon la plus simple d’apporter un tissu africain dans un s
 
 Le format 45 × 45 cm convient à presque tous les canapés. Pour une assise profonde, montez à 50 ou 60 cm au fond et placez des 40 cm devant. Un coussin rectangulaire (30 × 50 cm) sert de coussin de lecture ou d’appui pour les reins.
 
+{{produit: coussins-kuba-lot-4}}
+
 ## Le garnissage
 
 Les plumes donnent un coussin souple qui garde l’empreinte de la main : choisissez un garnissage un peu plus grand que la housse (50 cm pour une housse de 45) pour un aspect bien rempli. La fibre synthétique est plus légère, plus ferme et convient aux personnes allergiques.
@@ -24,6 +26,8 @@ Les plumes donnent un coussin souple qui garde l’empreinte de la main : choisi
 ## Le tissu
 
 Le [wax](glossaire-wax.html) et les imprimés en coton se lavent facilement : préférez des housses à fermeture éclair. Un [bogolan](glossaire-bogolan.html) ou un kente tissé à la main se réserve aux coussins décoratifs, qu’on manipule moins.
+
+{{produit: coussin-bogolan}}
 
 ## Le nombre
 

@@ -17,6 +17,8 @@ Une grande jarre en [terre cuite](glossaire-terre-cuite.html) posée au sol suff
 
 Trois ou cinq poteries ensemble paraissent plus naturelles qu’un nombre pair. Variez les hauteurs et les formes : une jarre haute, un vase moyen, une coupe basse.
 
+{{produit: vases-argile-lot-3}}
+
 ## Le placement
 
 La plus haute à l’arrière ou contre le mur, les plus basses devant. Laissez quelques centimètres entre elles pour qu’on voie chaque silhouette.
@@ -32,3 +34,5 @@ Quelques branches séchées, des herbes de pampa ou une plante dans la plus gran
 ## Dehors
 
 Sur un balcon ou une terrasse, choisissez une terre cuite dite non gélive, ou rentrez les jarres l’hiver : l’eau absorbée par la terre peut la faire éclater en gelant.
+
+{{produit: pot-terre-cuite-fait-main-noir}}
