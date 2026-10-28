@@ -17,6 +17,41 @@ import { type Actu, nettoyerFichier } from '../src/veille.ts';
 import { placerAnnonces } from './annonces.ts';
 import { couperTexte, NOM_SITE, SITE_URL, suivantsEnBoucle, titrePage } from './config.ts';
 import { echapper } from './produits.ts';
+import { MATIERES } from '../src/taxonomie.ts';
+import { adresseTop10, type SujetTop10 } from './top10.ts';
+import { topDeMatiere } from './selection.ts';
+
+/** Mots qui signalent une matière du site dans le texte d'une actu (titre, chapô, paragraphes). */
+const MOTS_MATIERE: Record<string, RegExp> = {
+  wax: /\bwax\b/i,
+  bogolan: /bogolan/i,
+  kente: /\bkente\b/i,
+  indigo: /\bindigo\b/i,
+  'raphia-paniers': /raphia|vannerie|paniers? tress/i,
+  'terre-cuite': /terre cuite|poterie/i,
+  'bois-sculpte': /bois sculpt/i,
+  perles: /\bperles\b/i,
+};
+
+/** Matières citées par une actu : ses tags « matiere:… », puis les matières nommées dans le texte (2 au plus). */
+export function matieresCitees(a: ArticleVeille): string[] {
+  const texte = [a.titre, a.chapo, ...a.blocs.flatMap((b) => [b.intertitre ?? '', ...b.paragraphes])].join(' ');
+  const parTag = (a.tags ?? []).map((t) => t.match(/^matiere:([a-z0-9-]+)$/)?.[1]).filter((m): m is string => !!m && MATIERES.some((x) => x.id === m));
+  const parTexte = MATIERES.map((m) => m.id).filter((id) => MOTS_MATIERE[id]?.test(texte));
+  return [...new Set([...parTag, ...parTexte])].slice(0, 2);
+}
+
+/**
+ * Liens internes d'une actu vers le site : le Top 10 de la matière citée s'il existe, sinon sa fiche matière.
+ * Jamais de lien Amazon dans une actu (docs/MARKETING.md).
+ */
+export function liensInternesActu(a: ArticleVeille, sujets?: SujetTop10[]): { href: string; libelle: string }[] {
+  return matieresCitees(a).map((id) => {
+    const top = topDeMatiere(id, sujets);
+    const nom = MATIERES.find((m) => m.id === id)!.nom;
+    return top ? { href: adresseTop10(top.slug), libelle: `Voir notre ${top.titre}` } : { href: `matiere-${id}.html`, libelle: `Lire la fiche « ${nom} »` };
+  });
+}
 
 /** Fichier préparé par scripts/veille-articles.ts (VEILLE_ARTICLES_FICHIER pour les tests de bout en bout). */
 export function fichierCache(): string {
@@ -69,7 +104,7 @@ export function sourcePageArticleVeille(a: ArticleVeille, cache: CacheVeille, co
   const completes = courante ? suivantsEnBoucle(cache.actus.filter((x) => x === courante || (x.slug && construits.has(x.slug))), courante, 3) : [];
   const autres = [...completes, ...cache.actus.filter((x) => x.id !== a.id && !completes.includes(x))].slice(0, 3);
   const corps = `<div class="prose article-actu__corps">${placerAnnonces(enHtml(corpsArticle(a)), 1, 80)}</div>`;
-  const vue = enHtml(vueArticle(a, { autres, construits, corpsHtml: corps })).replace('<div data-corps=""></div>', corps);
+  const vue = enHtml(vueArticle(a, { autres, construits, corpsHtml: corps, fiches: liensInternesActu(a) })).replace('<div data-corps=""></div>', corps);
   const ld = {
     '@context': 'https://schema.org',
     '@graph': [

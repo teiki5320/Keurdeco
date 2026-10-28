@@ -127,6 +127,8 @@ export interface OptionsVue {
   construits?: ReadonlySet<string>;
   /** Corps déjà écrit en HTML (build : annonces placées) ; sinon les blocs sont écrits ici. */
   corpsHtml?: string;
+  /** Liens internes calculés au build (Top 10 ou fiche de la matière citée) ; sinon, les fiches des tags. */
+  fiches?: { href: string; libelle: string }[];
 }
 
 /** Corps de l'article : un h2 par intertitre, puis les paragraphes. */
@@ -148,7 +150,7 @@ export function encadreSources(a: ArticleVeille): Element_ {
 
 /** Contenu de la page d'un article (fil d'Ariane, titre, chapô, image, texte, sources, fiches, autres actus). */
 export function vueArticle(a: ArticleVeille, o: OptionsVue = {}): Element_[] {
-  const fiches = fichesDesTags(a.tags);
+  const fiches = o.fiches ?? fichesDesTags(a.tags);
   const autres = (o.autres ?? []).filter((x) => x.id !== a.id).slice(0, 3);
   const date = dateActu(a.publie_le);
   const corps: Noeud = o.corpsHtml !== undefined ? null : h('div', { class: 'prose article-actu__corps' }, ...corpsArticle(a));
