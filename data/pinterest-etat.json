@@ -1403,6 +1403,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-28",
       "publie_a": "2026-10-28T04:13:13.843Z"
+    },
+    {
+      "id": "conseil-deco-africaine-scandinave-3",
+      "slug": "conseil-deco-africaine-scandinave",
+      "pin_id": "1085719422762466931",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T10:35:26.216Z"
+    },
+    {
+      "id": "top-terre-cuite-deco-3",
+      "slug": "top-terre-cuite-deco",
+      "pin_id": "1085719422762466933",
+      "tableau": "terre-cuite",
+      "board_id": "1085719491358932185",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T10:35:28.604Z"
+    },
+    {
+      "id": "conseil-deco-africaine-petit-appartement-3",
+      "slug": "conseil-deco-africaine-petit-appartement",
+      "pin_id": "1085719422762466935",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T10:35:30.838Z"
+    },
+    {
+      "id": "conseil-choisir-pouf-3",
+      "slug": "conseil-choisir-pouf",
+      "pin_id": "1085719422762466937",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T10:35:33.107Z"
+    },
+    {
+      "id": "conseil-taille-suspension-table-3",
+      "slug": "conseil-taille-suspension-table",
+      "pin_id": "1085719422762466938",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-28",
+      "publie_a": "2026-10-28T10:35:35.414Z"
     }
   ]
 }
