@@ -1,5 +1,5 @@
 ---
-titre: "Top 10 des coussins à imprimés africains"
+titre: "Coussins wax et imprimés africains : notre top 10"
 description: "Motifs kuba, bogolan, indigo, tribaux ou portraits : 10 housses de coussin aux imprimés africains, et des coupons de vrai wax pour coudre les vôtres."
 publie_le: 2026-09-14
 type: top

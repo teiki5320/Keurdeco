@@ -137,7 +137,7 @@ export function sourcePageConseil(c: Conseil, publies: Conseil[], produits = ind
   // Données structurées : la question et sa réponse courte (FAQ), plus l'article et le fil d'Ariane.
   const ld = [
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: c.titre, acceptedAnswer: { '@type': 'Answer', text: c.reponse } }] },
-    { '@context': 'https://schema.org', '@type': 'Article', headline: c.titre, description: c.description, datePublished: c.publieLe, inLanguage: 'fr', mainEntityOfPage: adresse, author: { '@type': 'Organization', name: NOM_SITE, url }, publisher: { '@type': 'Organization', name: NOM_SITE, url } },
+    { '@context': 'https://schema.org', '@type': 'Article', headline: c.titre, description: c.description, datePublished: c.publieLe, inLanguage: 'fr', mainEntityOfPage: adresse, image: imageExiste(imageConseil(c)) ? `${url}images/articles/${imageConseil(c)}-1600.webp` : `${url}images/partage/accueil.jpg`, author: { '@type': 'Organization', name: NOM_SITE, url }, publisher: { '@type': 'Organization', name: NOM_SITE, url } },
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
