@@ -82,6 +82,11 @@ export function verificationGoogle(code = process.env.GOOGLE_VERIFY): string {
   return code ? `<meta name="google-site-verification" content="${attribut(code)}" />` : '';
 }
 
+/** Balise de propriété AdSense, sur toutes les pages : Google voit le compte même avant le chargement (retardé) de son code. */
+export function compteAdsense(editeur = ADSENSE_EDITEUR): string {
+  return editeur ? `<meta name="google-adsense-account" content="ca-${attribut(editeur)}" />` : '';
+}
+
 /** Balise de revendication du domaine Pinterest (variable PINTEREST_VERIFY). */
 export function verificationPinterest(code = process.env.PINTEREST_VERIFY): string {
   return code ? `<meta name="p:domain_verify" content="${attribut(code)}" />` : '';
@@ -133,6 +138,7 @@ export function referencement(html: string, fichier: string, url = SITE_URL): st
     <meta name="twitter:card" content="summary_large_image" />
     ${verificationPinterest()}
     ${verificationGoogle()}
+    ${compteAdsense()}
     ${json}`;
 }
 
@@ -149,13 +155,16 @@ export function mesureAudience(domaine = process.env.PLAUSIBLE_DOMAIN, jetonClou
 }
 
 /**
- * Code Google AdSense, identique sur toutes les pages (validation du site et, plus tard, annonces).
- * Il ne place aucune annonce à lui seul : les emplacements se décident à part.
+ * Code Google AdSense, identique sur toutes les pages qui portent des annonces.
+ * Chargé au premier geste du visiteur (défilement, toucher, clavier, souris) ou au plus tard après 4 secondes :
+ * ses ~300 Ko ne ralentissent plus l'affichage, et le robot de Google le trouve quand même s'il attend un peu.
+ * Les annonces sont toutes plus bas dans le texte : elles ont le temps de se charger avant d'être vues.
+ * Il ne place aucune annonce à lui seul : les emplacements se décident à part (build/annonces.ts).
  */
-export function codeAdsense(editeur = ADSENSE_EDITEUR): string {
-  return editeur
-    ? `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-${attribut(editeur)}" crossorigin="anonymous"></script>`
-    : '';
+export function codeAdsense(editeur = ADSENSE_EDITEUR, delai = 4000): string {
+  if (!editeur) return '';
+  const src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-${editeur}`;
+  return `<script>(function(){var f=0,g=['scroll','touchstart','pointerdown','keydown','mousemove'];function c(){if(f)return;f=1;g.forEach(function(e){removeEventListener(e,c)});var s=document.createElement('script');s.async=true;s.crossOrigin='anonymous';s.src=${JSON.stringify(src)};document.head.appendChild(s)}g.forEach(function(e){addEventListener(e,c,{passive:true})});setTimeout(c,${delai})})()</script>`;
 }
 
 /**

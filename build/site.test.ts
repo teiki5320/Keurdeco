@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { MENTION_AMAZON } from '../src/amazon.ts';
 import { couperTexte, suivantsEnBoucle, titrePage } from './config.ts';
-import { codeAdsense, pageAvecAdsense, datesSitemap, footer, header, insecables, mesureAudience, pagesGenerees, fluxRss, imagesDePage, referencement, sitemap, toutesLesPages, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
+import { codeAdsense, compteAdsense, pageAvecAdsense, datesSitemap, footer, header, insecables, mesureAudience, pagesGenerees, fluxRss, imagesDePage, referencement, sitemap, toutesLesPages, transformerPage, verificationGoogle, verificationPinterest } from './site.ts';
 
 describe('parties communes', () => {
   it('navigation : la rubrique courante est signalée', () => {
@@ -56,7 +56,15 @@ describe('référencement', () => {
 
   it('code AdSense avec l’identifiant éditeur, sauf sur les pages sans annonce', () => {
     expect(codeAdsense('')).toBe('');
-    expect(codeAdsense()).toBe('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2680784147246798" crossorigin="anonymous"></script>');
+    // Chargement retardé : au premier geste, ou au plus tard après 4 secondes ; jamais de balise <script src> bloquante.
+    expect(codeAdsense()).toContain('"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2680784147246798"');
+    expect(codeAdsense()).toContain('setTimeout(c,4000)');
+    expect(codeAdsense()).toContain("'scroll','touchstart','pointerdown','keydown','mousemove'");
+    expect(codeAdsense()).not.toContain('<script async src=');
+    // Balise de propriété sur toutes les pages, même sans annonce.
+    expect(compteAdsense('')).toBe('');
+    expect(compteAdsense()).toBe('<meta name="google-adsense-account" content="ca-pub-2680784147246798" />');
+    expect(transformerPage('<html><head><!--#head--></head><body></body></html>', 'index.html')).toContain('google-adsense-account');
     const tete = '<html><head><!--#head--></head><body></body></html>';
     expect(transformerPage(tete, 'salon-terracotta-wax.html')).toContain('client=ca-pub-2680784147246798');
     expect(transformerPage(tete, 'confidentialite.html')).toContain('client=ca-pub-2680784147246798');
