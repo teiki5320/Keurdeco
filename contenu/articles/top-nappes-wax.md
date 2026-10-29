@@ -32,7 +32,7 @@ classement:
     pourquoi: "Pour le balcon, la terrasse ou les repas avec les enfants : une nappe à motif tribal qui se nettoie d’un coup d’éponge."
     a_savoir: "Une nappe imperméable n’a pas le tombé d’un tissu : réservez-la aux repas du quotidien et à l’extérieur."
   - produit: coupons-tissus-africains-lot-6
-    pourquoi: "Six coupons de coton imprimé : de quoi coudre des serviettes dépareillées, des sets de table ou des sachets à pain assortis à la nappe."
+    pourquoi: "Douze coupons de coton imprimé : de quoi coudre des serviettes dépareillées, des sets de table ou des sachets à pain assortis à la nappe."
     a_savoir: "Chaque coupon mesure 50 × 40 cm : comptez un coupon par serviette, ourlet compris."
 hotspots:
   - { produit: coupon-pagne-wax-180x120, x: 39, y: 72, cadre: 24 }

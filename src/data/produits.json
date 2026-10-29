@@ -591,8 +591,8 @@
   },
   {
     "id": "coupons-tissus-africains-lot-6",
-    "asin": "B08P1VXJCW",
-    "nom": "Coupons de tissus africains en coton, lot de 6 (50 × 40 cm)",
+    "asin": "B08JYJFQVL",
+    "nom": "Coupons de tissu africain imprimé Ankara en coton, lot de 12 (50 × 40 cm)",
     "type_objet": "textile",
     "matieres": [
       "wax"
@@ -603,8 +603,8 @@
     "pieces": [
       "cuisine-salle-a-manger"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-20"
+    "statut": "actif",
+    "verifie_le": "2026-10-29"
   },
   {
     "id": "housse-couette-coton-denim",
@@ -3660,8 +3660,8 @@
     "pieces": [
       "salon"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-19"
+    "statut": "actif",
+    "verifie_le": "2026-10-29"
   },
   {
     "id": "tapis-berbere-patchwork-carre-160",
