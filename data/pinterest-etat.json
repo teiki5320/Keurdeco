@@ -1493,6 +1493,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-29",
       "publie_a": "2026-10-29T04:13:17.822Z"
+    },
+    {
+      "id": "conseil-couleurs-avec-terracotta-3",
+      "slug": "conseil-couleurs-avec-terracotta",
+      "pin_id": "1085719422762557394",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T10:53:59.291Z"
+    },
+    {
+      "id": "conseil-couleurs-kente-signification-3",
+      "slug": "conseil-couleurs-kente-signification",
+      "pin_id": "1085719422762557395",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T10:54:01.593Z"
+    },
+    {
+      "id": "conseil-entretenir-bois-sculpte-3",
+      "slug": "conseil-entretenir-bois-sculpte",
+      "pin_id": "1085719422762557398",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T10:54:03.904Z"
+    },
+    {
+      "id": "conseil-entretenir-jarre-terre-cuite-3",
+      "slug": "conseil-entretenir-jarre-terre-cuite",
+      "pin_id": "1085719422762557402",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T10:54:06.279Z"
+    },
+    {
+      "id": "conseil-entretenir-meuble-rotin-3",
+      "slug": "conseil-entretenir-meuble-rotin",
+      "pin_id": "1085719422762557405",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T10:54:08.543Z"
     }
   ]
 }
