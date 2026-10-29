@@ -1448,6 +1448,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-28",
       "publie_a": "2026-10-28T10:35:35.414Z"
+    },
+    {
+      "id": "conseil-reparer-panier-raphia-2",
+      "slug": "conseil-reparer-panier-raphia",
+      "pin_id": "1085719422762538334",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T04:13:07.998Z"
+    },
+    {
+      "id": "salon-cocooning-ocre-3",
+      "slug": "salon-cocooning-ocre",
+      "pin_id": "1085719422762538336",
+      "tableau": "salon",
+      "board_id": "1085719491358932130",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T04:13:10.460Z"
+    },
+    {
+      "id": "conseil-accrocher-miroir-soleil-rotin-3",
+      "slug": "conseil-accrocher-miroir-soleil-rotin",
+      "pin_id": "1085719422762538339",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T04:13:13.102Z"
+    },
+    {
+      "id": "conseil-accrocher-tissu-africain-mur-3",
+      "slug": "conseil-accrocher-tissu-africain-mur",
+      "pin_id": "1085719422762538345",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T04:13:15.449Z"
+    },
+    {
+      "id": "conseil-choisir-coussin-africain-3",
+      "slug": "conseil-choisir-coussin-africain",
+      "pin_id": "1085719422762538349",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-29",
+      "publie_a": "2026-10-29T04:13:17.822Z"
     }
   ]
 }
