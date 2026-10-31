@@ -1673,6 +1673,51 @@
       "board_id": "1085719491358932183",
       "publie_le": "2026-10-31",
       "publie_a": "2026-10-31T04:13:23.709Z"
+    },
+    {
+      "id": "top-luminaires-tresses-4",
+      "slug": "top-luminaires-tresses",
+      "pin_id": "1085719422762735147",
+      "tableau": "paniers",
+      "board_id": "1085719491358932166",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T10:24:19.402Z"
+    },
+    {
+      "id": "salon-bogolan-bois-clair-4",
+      "slug": "salon-bogolan-bois-clair",
+      "pin_id": "1085719422762735164",
+      "tableau": "bogolan",
+      "board_id": "1085719491358932174",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T10:24:21.564Z"
+    },
+    {
+      "id": "top-terre-cuite-deco-4",
+      "slug": "top-terre-cuite-deco",
+      "pin_id": "1085719422762735185",
+      "tableau": "terre-cuite",
+      "board_id": "1085719491358932185",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T10:24:23.809Z"
+    },
+    {
+      "id": "salon-cocooning-ocre-4",
+      "slug": "salon-cocooning-ocre",
+      "pin_id": "1085719422762735208",
+      "tableau": "salon",
+      "board_id": "1085719491358932130",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T10:24:25.970Z"
+    },
+    {
+      "id": "bapteme-decoration-africaine-4",
+      "slug": "bapteme-decoration-africaine",
+      "pin_id": "1085719422762735216",
+      "tableau": "bapteme",
+      "board_id": "1085719491358943570",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T10:24:28.097Z"
     }
   ]
 }
