@@ -1628,6 +1628,51 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-10-30",
       "publie_a": "2026-10-30T10:52:54.902Z"
+    },
+    {
+      "id": "conseil-moisissure-paniers-2",
+      "slug": "conseil-moisissure-paniers",
+      "pin_id": "1085719422762718879",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T04:13:14.650Z"
+    },
+    {
+      "id": "conseil-panier-bolga-3",
+      "slug": "conseil-panier-bolga",
+      "pin_id": "1085719422762718880",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T04:13:16.930Z"
+    },
+    {
+      "id": "conseil-reconnaitre-vrai-wax-3",
+      "slug": "conseil-reconnaitre-vrai-wax",
+      "pin_id": "1085719422762718883",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T04:13:19.444Z"
+    },
+    {
+      "id": "top-nappes-wax-3",
+      "slug": "top-nappes-wax",
+      "pin_id": "1085719422762718884",
+      "tableau": "cuisine-salle-a-manger",
+      "board_id": "1085719491358932180",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T04:13:21.617Z"
+    },
+    {
+      "id": "balcon-boheme-africain-3",
+      "slug": "balcon-boheme-africain",
+      "pin_id": "1085719422762718885",
+      "tableau": "balcon-exterieur",
+      "board_id": "1085719491358932183",
+      "publie_le": "2026-10-31",
+      "publie_a": "2026-10-31T04:13:23.709Z"
     }
   ]
 }
