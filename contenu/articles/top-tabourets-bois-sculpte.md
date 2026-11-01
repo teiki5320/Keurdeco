@@ -20,8 +20,8 @@ classement:
     pourquoi: "Un tabouret en teck massif, simple et robuste, qui passe du salon à la salle de bain."
     a_savoir: "46 cm de haut pour 30 cm de diamètre : la bonne hauteur pour s’asseoir ou poser une plante."
   - produit: table-appoint-manguier-laiton
-    pourquoi: "Une table d’appoint marocaine en bois de manguier, ornée d’une marqueterie de laiton : l’artisanat d’Afrique du Nord, fait main."
-    a_savoir: "Le laiton se patine avec le temps ; un chiffon doux suffit pour l’entretenir."
+    pourquoi: "Une table d’appoint orientale en bois massif, faite main et peinte à la main de motifs fins sur fond bleu : un air d’artisanat nord-africain."
+    a_savoir: "Environ 37 cm de haut pour 29 cm de diamètre ; livrée montée, et son aspect patiné est voulu."
   - produit: tabouret-bois-sculpte
     pourquoi: "Un tabouret tripode en teck massif, fabriqué à la main : trois pieds pour une stabilité parfaite, même sur un sol irrégulier."
     a_savoir: "Il fait aussi un très joli support de plante devant une fenêtre."

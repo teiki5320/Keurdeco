@@ -2057,22 +2057,22 @@
   },
   {
     "id": "table-appoint-manguier-laiton",
-    "asin": "B07H3XRQ2Y",
-    "nom": "Table d’appoint marocaine en manguier et marqueterie de laiton, faite main",
+    "asin": "B07H4ST9YG",
+    "nom": "Table d’appoint orientale Saada en bois massif peint à la main, bleue (37 cm)",
     "type_objet": "table",
     "matieres": [
       "bois-sculpte"
     ],
     "couleurs": [
-      "bois",
-      "or"
+      "bleu",
+      "bois"
     ],
     "pieces": [
       "salon",
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-24"
+    "verifie_le": "2026-11-01"
   },
   {
     "id": "tabouret-bois-torsade",

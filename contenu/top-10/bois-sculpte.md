@@ -11,14 +11,13 @@ ambiances:
   - image: top10-bois-sculpte-1
     alt: "Coin salon au mur ocre : petite table ronde en manguier sombre à marqueterie de laiton portant un bol sculpté sur pied, masque de zèbre en bois sculpté accroché au mur, grande girafe en bois sur son socle noir."
     hotspots:
-      - { produit: table-appoint-manguier-laiton, x: 54, y: 72, cadre: 36 }
       - { produit: bol-manguier-sculpte, x: 58, y: 55, cadre: 20 }
       - { produit: masque-zebre-bois-sculpte, x: 51, y: 24, cadre: 36 }
       - { produit: statue-girafe-bois-60, x: 78, y: 52, cadre: 55 }
 produits:
   - produit: table-appoint-manguier-laiton
-    pourquoi: "Une table d’appoint marocaine, faite main, en manguier avec une marqueterie de laiton. Le laiton apporte une touche dorée et précieuse au bois. Elle se marie avec les tissus colorés, les poufs en cuir et les tapis berbères. Une pièce plus habillée que les autres de notre sélection."
-    ideal_pour: "ceux qui aiment le mélange bois et doré, dans un esprit nord-africain."
+    pourquoi: "Une petite table d’appoint orientale en bois massif, faite main et peinte à la main de motifs fins sur un fond bleu, avec un aspect patiné volontaire : chaque table est unique. Elle se marie avec les tissus colorés, les poufs en cuir et les tapis berbères. La pièce la plus colorée de notre sélection."
+    ideal_pour: "ceux qui aiment la couleur et le bois peint, dans un esprit nord-africain."
   - produit: awale-mancala-bois
     pourquoi: "Un jeu d’awalé (mancala) en bois, avec un plateau pliable. L’awalé est un jeu de semailles très joué en Afrique de l’Ouest. Posé sur une table basse, il est à la fois un objet de déco et un jeu à partager. Une belle idée de cadeau qui raconte une histoire."
     ideal_pour: "offrir, ou jouer en famille tout en décorant la table basse."
