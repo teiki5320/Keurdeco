@@ -1718,6 +1718,51 @@
       "board_id": "1085719491358943570",
       "publie_le": "2026-10-31",
       "publie_a": "2026-10-31T10:24:28.097Z"
+    },
+    {
+      "id": "conseil-moisissure-paniers-3",
+      "slug": "conseil-moisissure-paniers",
+      "pin_id": "1085719422762803239",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-01",
+      "publie_a": "2026-11-01T04:13:23.349Z"
+    },
+    {
+      "id": "entree-rideau-perles-4",
+      "slug": "entree-rideau-perles",
+      "pin_id": "1085719422762803240",
+      "tableau": "perles",
+      "board_id": "1085719491358943577",
+      "publie_le": "2026-11-01",
+      "publie_a": "2026-11-01T04:13:26.644Z"
+    },
+    {
+      "id": "noel-touche-africaine-4",
+      "slug": "noel-touche-africaine",
+      "pin_id": "1085719422762803242",
+      "tableau": "fetes",
+      "board_id": "1085719491358932173",
+      "publie_le": "2026-11-01",
+      "publie_a": "2026-11-01T04:13:28.777Z"
+    },
+    {
+      "id": "salon-touches-kente-4",
+      "slug": "salon-touches-kente",
+      "pin_id": "1085719422762803244",
+      "tableau": "kente",
+      "board_id": "1085719491358932176",
+      "publie_le": "2026-11-01",
+      "publie_a": "2026-11-01T04:13:31.398Z"
+    },
+    {
+      "id": "table-mariage-wax-4",
+      "slug": "table-mariage-wax",
+      "pin_id": "1085719422762803245",
+      "tableau": "mariage",
+      "board_id": "1085719491358943572",
+      "publie_le": "2026-11-01",
+      "publie_a": "2026-11-01T04:13:33.919Z"
     }
   ]
 }
