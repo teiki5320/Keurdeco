@@ -1853,6 +1853,51 @@
       "board_id": "1085719491358932182",
       "publie_le": "2026-11-02",
       "publie_a": "2026-11-02T04:13:39.609Z"
+    },
+    {
+      "id": "conseil-tissu-kuba-1",
+      "slug": "conseil-tissu-kuba",
+      "pin_id": "1085719422762915437",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T12:25:01.303Z"
+    },
+    {
+      "id": "top-cadeaux-deco-africaine-1",
+      "slug": "top-cadeaux-deco-africaine",
+      "pin_id": "1085719422762915439",
+      "tableau": "fetes",
+      "board_id": "1085719491358932173",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T12:25:03.513Z"
+    },
+    {
+      "id": "top-rangements-tresses-rentree-4",
+      "slug": "top-rangements-tresses-rentree",
+      "pin_id": "1085719422762915441",
+      "tableau": "paniers",
+      "board_id": "1085719491358932166",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T12:25:05.991Z"
+    },
+    {
+      "id": "chambre-indigo-lin-4",
+      "slug": "chambre-indigo-lin",
+      "pin_id": "1085719422762915442",
+      "tableau": "chambre",
+      "board_id": "1085719491358932178",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T12:25:08.370Z"
+    },
+    {
+      "id": "top-nappes-wax-4",
+      "slug": "top-nappes-wax",
+      "pin_id": "1085719422762915445",
+      "tableau": "cuisine-salle-a-manger",
+      "board_id": "1085719491358932180",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T12:25:10.578Z"
     }
   ]
 }
