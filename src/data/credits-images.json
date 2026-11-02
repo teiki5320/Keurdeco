@@ -7,11 +7,35 @@
     "page": "https://commons.wikimedia.org/wiki/File:Aso-Oke.jpg",
     "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Aso-Oke.jpg/1920px-Aso-Oke.jpg"
   },
+  "conseil-choisir-miroir-deco-africaine": {
+    "type": "carte",
+    "libelle": "Miroir",
+    "icone": "miroir",
+    "motif": "raphia-paniers"
+  },
+  "conseil-coin-lecture-africain": {
+    "type": "carte",
+    "libelle": "Coin lecture",
+    "icone": "livre",
+    "motif": "terre-cuite"
+  },
+  "conseil-couleurs-avec-indigo": {
+    "type": "carte",
+    "libelle": "Indigo",
+    "icone": "textile",
+    "motif": "indigo"
+  },
   "conseil-coussins-canape-gris": {
     "type": "carte",
     "libelle": "Coussins",
     "icone": "coussin",
     "motif": "wax"
+  },
+  "conseil-decorer-etagere-objets-africains": {
+    "type": "carte",
+    "libelle": "Étagère",
+    "icone": "statuette",
+    "motif": "bois-sculpte"
   },
   "conseil-emballer-cadeau-tissu-wax": {
     "type": "carte",
@@ -49,11 +73,23 @@
     "page": "https://commons.wikimedia.org/wiki/File:Brass_leopard.jpg",
     "telechargement": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Brass_leopard.jpg"
   },
+  "conseil-nettoyer-suspension-rotin": {
+    "type": "carte",
+    "libelle": "Suspension",
+    "icone": "luminaire",
+    "motif": "raphia-paniers"
+  },
   "conseil-plaid-deco-africaine": {
     "type": "carte",
     "libelle": "Plaid",
     "icone": "plaid",
     "motif": "bogolan"
+  },
+  "conseil-ranger-tissus-wax": {
+    "type": "carte",
+    "libelle": "Ranger le wax",
+    "icone": "rangement",
+    "motif": "wax"
   },
   "conseil-rideaux-deco-africaine": {
     "type": "carte",
@@ -82,5 +118,11 @@
     "licence": "CC BY-SA 4.0",
     "page": "https://commons.wikimedia.org/wiki/File:Tissu_ndop_de_Bati%C3%A9.jpg",
     "telechargement": "https://upload.wikimedia.org/wikipedia/commons/2/20/Tissu_ndop_de_Bati%C3%A9.jpg"
+  },
+  "conseil-toile-korhogo": {
+    "type": "carte",
+    "libelle": "Toile de Korhogo",
+    "icone": "textile",
+    "motif": "bogolan"
   }
 }

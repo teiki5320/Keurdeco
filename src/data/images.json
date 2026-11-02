@@ -75,6 +75,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-choisir-miroir-deco-africaine": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-choisir-pouf": {
     "largeur": 1600,
     "hauteur": 1073
@@ -87,9 +91,17 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-coin-lecture-africain": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-couleur-mur-wax": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-couleurs-avec-indigo": {
+    "largeur": 1600,
+    "hauteur": 1067
   },
   "conseil-couleurs-avec-terracotta": {
     "largeur": 1600,
@@ -114,6 +126,10 @@
   "conseil-deco-africaine-scandinave": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-decorer-etagere-objets-africains": {
+    "largeur": 1600,
+    "hauteur": 1067
   },
   "conseil-detacher-tapis-laine": {
     "largeur": 1600,
@@ -195,6 +211,10 @@
     "largeur": 1600,
     "hauteur": 745
   },
+  "conseil-nettoyer-suspension-rotin": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-nettoyer-tapis-jute": {
     "largeur": 1600,
     "hauteur": 1073
@@ -222,6 +242,10 @@
   "conseil-proteger-couleurs-soleil": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-ranger-tissus-wax": {
+    "largeur": 1600,
+    "hauteur": 1067
   },
   "conseil-reconnaitre-vrai-bogolan": {
     "largeur": 1600,
@@ -282,6 +306,10 @@
   "conseil-tissu-ndop": {
     "largeur": 1600,
     "hauteur": 2133
+  },
+  "conseil-toile-korhogo": {
+    "largeur": 1600,
+    "hauteur": 1067
   },
   "conseil-vase-herbes-pampa": {
     "largeur": 1600,
