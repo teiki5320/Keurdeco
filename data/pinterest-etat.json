@@ -1808,6 +1808,51 @@
       "board_id": "1085719491358932174",
       "publie_le": "2026-11-01",
       "publie_a": "2026-11-01T11:16:38.175Z"
+    },
+    {
+      "id": "salon-terracotta-wax-4",
+      "slug": "salon-terracotta-wax",
+      "pin_id": "1085719422762892679",
+      "tableau": "salon",
+      "board_id": "1085719491358932130",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T04:13:30.832Z"
+    },
+    {
+      "id": "top-paniers-tresses-africains-4",
+      "slug": "top-paniers-tresses-africains",
+      "pin_id": "1085719422762892681",
+      "tableau": "paniers",
+      "board_id": "1085719491358932166",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T04:13:32.987Z"
+    },
+    {
+      "id": "kente-histoire-couleurs-4",
+      "slug": "kente-histoire-couleurs",
+      "pin_id": "1085719422762892683",
+      "tableau": "kente",
+      "board_id": "1085719491358932176",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T04:13:35.119Z"
+    },
+    {
+      "id": "top-coussins-wax-4",
+      "slug": "top-coussins-wax",
+      "pin_id": "1085719422762892685",
+      "tableau": "wax",
+      "board_id": "1085719491358932177",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T04:13:37.406Z"
+    },
+    {
+      "id": "entree-paniers-miroir-raphia-4",
+      "slug": "entree-paniers-miroir-raphia",
+      "pin_id": "1085719422762892686",
+      "tableau": "entree",
+      "board_id": "1085719491358932182",
+      "publie_le": "2026-11-02",
+      "publie_a": "2026-11-02T04:13:39.609Z"
     }
   ]
 }
