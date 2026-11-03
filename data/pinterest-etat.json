@@ -1898,6 +1898,51 @@
       "board_id": "1085719491358932180",
       "publie_le": "2026-11-02",
       "publie_a": "2026-11-02T12:25:10.578Z"
+    },
+    {
+      "id": "conseil-tissu-kuba-2",
+      "slug": "conseil-tissu-kuba",
+      "pin_id": "1085719422762977407",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-03",
+      "publie_a": "2026-11-03T04:13:31.131Z"
+    },
+    {
+      "id": "top-cadeaux-deco-africaine-2",
+      "slug": "top-cadeaux-deco-africaine",
+      "pin_id": "1085719422762977410",
+      "tableau": "fetes",
+      "board_id": "1085719491358932173",
+      "publie_le": "2026-11-03",
+      "publie_a": "2026-11-03T04:13:33.328Z"
+    },
+    {
+      "id": "balcon-boheme-africain-4",
+      "slug": "balcon-boheme-africain",
+      "pin_id": "1085719422762977411",
+      "tableau": "balcon-exterieur",
+      "board_id": "1085719491358932183",
+      "publie_le": "2026-11-03",
+      "publie_a": "2026-11-03T04:13:35.478Z"
+    },
+    {
+      "id": "top-luminaires-tresses-5",
+      "slug": "top-luminaires-tresses",
+      "pin_id": "1085719422762977412",
+      "tableau": "paniers",
+      "board_id": "1085719491358932166",
+      "publie_le": "2026-11-03",
+      "publie_a": "2026-11-03T04:13:37.953Z"
+    },
+    {
+      "id": "salon-bogolan-bois-clair-5",
+      "slug": "salon-bogolan-bois-clair",
+      "pin_id": "1085719422762977414",
+      "tableau": "bogolan",
+      "board_id": "1085719491358932174",
+      "publie_le": "2026-11-03",
+      "publie_a": "2026-11-03T04:13:40.205Z"
     }
   ]
 }
