@@ -1988,6 +1988,51 @@
       "board_id": "1085719491358932173",
       "publie_le": "2026-11-03",
       "publie_a": "2026-11-03T11:56:20.914Z"
+    },
+    {
+      "id": "conseil-adire-indigo-yoruba-1",
+      "slug": "conseil-adire-indigo-yoruba",
+      "pin_id": "1085719422763061237",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T04:12:40.303Z"
+    },
+    {
+      "id": "conseil-tissu-kuba-3",
+      "slug": "conseil-tissu-kuba",
+      "pin_id": "1085719422763061240",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T04:12:42.735Z"
+    },
+    {
+      "id": "top-cadeaux-deco-africaine-3",
+      "slug": "top-cadeaux-deco-africaine",
+      "pin_id": "1085719422763061242",
+      "tableau": "fetes",
+      "board_id": "1085719491358932173",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T04:12:45.086Z"
+    },
+    {
+      "id": "salon-touches-kente-5",
+      "slug": "salon-touches-kente",
+      "pin_id": "1085719422763061244",
+      "tableau": "kente",
+      "board_id": "1085719491358932176",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T04:12:47.207Z"
+    },
+    {
+      "id": "table-mariage-wax-5",
+      "slug": "table-mariage-wax",
+      "pin_id": "1085719422763061246",
+      "tableau": "mariage",
+      "board_id": "1085719491358943572",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T04:12:49.353Z"
     }
   ]
 }
