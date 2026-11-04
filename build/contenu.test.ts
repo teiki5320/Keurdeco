@@ -9,6 +9,7 @@ import { FORMAT_ASIN } from '../src/amazon.ts';
 import { FAMILLES, type Famille } from '../src/taxonomie.ts';
 import { produitsCites, tousLesArticles } from './articles.ts';
 import { conseilsPublies, imageConseil, tousLesConseils } from './conseils.ts';
+import { dateDuJour } from './config.ts';
 import { chargerDimensions, DOSSIER_IMAGES, imageExiste, texteAlternatif } from './images.ts';
 import { chargerProduits } from './produits.ts';
 import { chargerGlossaire, imageRubrique, introPage } from './rubriques.ts';
@@ -160,8 +161,10 @@ describe('articles (contenu/articles)', () => {
     const pages = new Set([...glossaire, ...rubriques, 'index.html', 'tops.html', 'guides.html', 'glossaire.html', 'a-propos.html']);
     const conseils = tousLesConseils();
     for (const a of articles) {
-      // Un article peut renvoyer à un article ou à un conseil déjà publié à sa propre date (sinon, lien mort en attendant).
-      const publies = new Set([...articles, ...conseils].filter((x) => x.publieLe <= a.publieLe).map((x) => x.fichier));
+      // Un article peut renvoyer à un article ou à un conseil déjà publié à sa propre date, ou déjà en ligne aujourd’hui
+      // (lien ajouté après coup vers une page plus récente) ; sinon, lien mort en attendant.
+      const limite = a.publieLe > dateDuJour() ? a.publieLe : dateDuJour();
+      const publies = new Set([...articles, ...conseils].filter((x) => x.publieLe <= limite).map((x) => x.fichier));
       for (const [, lien] of a.corps.matchAll(/\]\(([^)#]+\.html)(#[^)]*)?\)/g)) expect(pages.has(lien) || publies.has(lien), `${a.slug} → ${lien}`).toBe(true);
     }
   });
@@ -205,7 +208,7 @@ describe('conseils (contenu/conseils)', () => {
     for (const c of conseils) {
       for (const [, lien] of c.corps.matchAll(/\]\(([^)#]+\.html)(#[^)]*)?\)/g)) {
         const date = articlesParFichier.get(lien) ?? conseilsParFichier.get(lien);
-        if (date) expect(date <= c.publieLe, `${c.slug} → ${lien} (publié le ${date})`).toBe(true);
+        if (date) expect(date <= c.publieLe || date <= dateDuJour(), `${c.slug} → ${lien} (publié le ${date})`).toBe(true);
         else expect(glossaire.has(lien) || rubriques.has(lien), `${c.slug} → ${lien}`).toBe(true);
       }
     }
