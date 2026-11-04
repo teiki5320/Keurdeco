@@ -27,7 +27,7 @@ Le bleu est la couleur opposée de l’orangé : il le fait ressortir. Un coussi
 
 ## Ocre et moutarde
 
-Pour une ambiance encore plus chaude, restez dans la même famille : ocre, moutarde, rouge brique. Ajoutez du bois et des fibres tressées pour garder du relief.
+Pour une ambiance encore plus chaude, restez dans la même famille : ocre, moutarde, rouge brique. Ajoutez du bois et des fibres tressées pour garder du relief, et quelques poteries : notre [top de la déco terre cuite](top-terre-cuite-deco.html) en propose dix.
 
 ## Une touche de noir
 

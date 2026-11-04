@@ -15,7 +15,7 @@ Une grande jarre en [terre cuite](glossaire-terre-cuite.html) posée au sol suff
 
 ## Par nombre impair
 
-Trois ou cinq poteries ensemble paraissent plus naturelles qu’un nombre pair. Variez les hauteurs et les formes : une jarre haute, un vase moyen, une coupe basse.
+Trois ou cinq poteries ensemble paraissent plus naturelles qu’un nombre pair. Variez les hauteurs et les formes : une jarre haute, un vase moyen, une coupe basse. Pour choisir les pièces, voyez notre sélection d’[objets en terre cuite pour la déco](top-terre-cuite-deco.html).
 
 {{produit: vases-argile-lot-3}}
 

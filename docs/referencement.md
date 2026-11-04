@@ -2,6 +2,32 @@
 
 Tenu par la routine « Référencement du jour » (Keur Déco passe le mercredi). Une page travaillée n'est pas retouchée avant 28 jours : Google a besoin de ce temps pour réagir.
 
+## 04/11/2026
+
+### Pages presque en première page (chiffres Search Console des 28 derniers jours)
+
+| Page | Recherches visées | Place / vues au moment du travail | Ancien titre → nouveau titre | Autres changements |
+|---|---|---|---|---|
+| /top-terre-cuite-deco.html | deco terre cuite, objet en terre cuite, décoration en terre cuite | 12,5 (23 vues, 1 clic) ; « deco terre cuite » 13,4 (7 vues) ; « objet en terre cuite » 11,4 (7 vues) | « Top 10 des objets en terre cuite pour la déco · Keur Déco » → « Déco terre cuite : 10 objets en terre cuite · Keur Déco » | titre principal identique au nouveau titre ; description réécrite (« Déco terre cuite », « objets en terre cuite ») ; intertitre « Réussir sa décoration en terre cuite » ; liens ajoutés depuis les conseils Disposer jarres et poteries (« objets en terre cuite pour la déco ») et Couleurs avec le terracotta (« top de la déco terre cuite »), et l’ambiance Cuisine terre cuite et paniers (« objets en terre cuite ») |
+
+Laissées de côté : /bogolan-histoire-idees.html (« décoration bogolan » 19,3, 9 vues), en concurrence avec /matiere-bogolan.html travaillée le 28/10 pour la même recherche ; /top-paniers-tresses-africains.html (4 vues en tout, une par recherche). Les autres pages de la liste ont été travaillées il y a moins de 28 jours ; chiffres du jour : panier Bolga 11,9 (32 vues), Indigo 18,6 (28 vues), Tabouret 8,7 (21 vues), Déco afro bohème 17,3 (12 vues), Shweshwe 6,7 (12 vues), Adire 16,4 (9 vues), Motifs bogolan 9,6 (5 vues, 1 clic), Sankofa 18,4 (5 vues).
+
+Pages travaillées il y a 28 jours ou plus : aucune (les premières, du 21/10, sont à relire à partir du 18/11).
+
+À relire à partir du 02/12/2026.
+
+### Fiches enrichies
+
+Vérifiées le 21/10/2026 : pas refait (moins de 28 jours).
+
+### Socle
+
+Vérifié le 21/10/2026 (pas refait ; IndexNow et `max-image-preview:large` en place). Vitesse sur téléphone : PageSpeed refuse encore (quota du jour dépassé à 6 h). À refaire au prochain passage.
+
+### Page nouvelle
+
+Aucune créée. Les recherches fréquentes sans bonne place portent sur le wax : « décoration intérieur wax » (38 vues, rubrique Wax 48e), « idées déco chambre wax » (22 vues, rubrique Wax 21,9), « déco wax africaine » (21 vues, rubrique Wax 21,2) ; la rubrique Wax est déjà la vraie page de ces recherches : proposé à Jean de la retravailler. « chemin de table wax » (42 vues) : écarté par Jean le 21/10 ; « drap wax » (17 vues) : déjà proposé le 28/10 (aucun drap en wax parmi les produits).
+
 ## 28/10/2026
 
 ### Pages presque en première page (chiffres Search Console des 28 derniers jours)

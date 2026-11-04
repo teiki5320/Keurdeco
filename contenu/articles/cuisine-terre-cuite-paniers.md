@@ -44,7 +44,7 @@ En plein hiver, la cuisine devient le cœur de la maison : on y mijote, on y tra
 
 ## 1. La terre cuite à table
 
-Remplacez la vaisselle blanche du quotidien par des **assiettes creuses en terre cuite** vernissées et de **petits bols** assortis. Les bols servent à tout : sauces, arachides grillées, olives, épices pour un tiéboudienne ou un mafé. Leur couleur chaude met en valeur les plats mijotés et donne tout de suite un air de repas partagé.
+Remplacez la vaisselle blanche du quotidien par des **assiettes creuses en terre cuite** vernissées et de **petits bols** assortis. Les bols servent à tout : sauces, arachides grillées, olives, épices pour un tiéboudienne ou un mafé. Leur couleur chaude met en valeur les plats mijotés et donne tout de suite un air de repas partagé. D’autres idées dans notre top des [objets en terre cuite](top-terre-cuite-deco.html).
 
 ## 2. Une carafe en argile, comme un canari
 

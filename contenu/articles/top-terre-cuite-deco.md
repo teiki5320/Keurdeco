@@ -1,6 +1,6 @@
 ---
-titre: "Top 10 des objets en terre cuite pour la déco"
-description: "Jarre, tajine, carafe en argile, vases, boule décorative : 10 objets en terre cuite pour apporter la chaleur des poteries d’Afrique, du salon à la table."
+titre: "Déco terre cuite : 10 objets en terre cuite"
+description: "Déco terre cuite : jarre, tajine, carafe en argile, vases… 10 objets en terre cuite pour la chaleur des poteries d’Afrique, du salon à la table."
 publie_le: 2026-10-12
 type: top
 pieces: [salon, cuisine-salle-a-manger, entree]
@@ -67,9 +67,9 @@ La terre cuite est l’une des plus anciennes matières du monde, et l’une des
 
 La terre cuite **non émaillée** est poreuse : elle respire, garde l’eau fraîche, mais craint les taches et l’humidité sur les meubles. La terre cuite **émaillée** (à l’intérieur ou partout) est étanche et plus facile à laver : c’est elle qu’on choisit pour la vaisselle du quotidien.
 
-## Composer avec la terre cuite
+## Réussir sa décoration en terre cuite
 
-Groupez les objets par trois ou cinq, de hauteurs différentes, sur une console ou une étagère. Ajoutez une plante ou des branches séchées pour la vie, et laissez de l’espace autour : la terre cuite a besoin de respirer, visuellement aussi.
+Une décoration en terre cuite réussie tient en peu de règles. Groupez les objets par trois ou cinq, de hauteurs différentes, sur une console ou une étagère. Ajoutez une plante ou des branches séchées pour la vie, et laissez de l’espace autour : la terre cuite a besoin de respirer, visuellement aussi.
 
 {{classement}}
 
