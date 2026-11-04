@@ -2033,6 +2033,51 @@
       "board_id": "1085719491358943572",
       "publie_le": "2026-11-04",
       "publie_a": "2026-11-04T04:12:49.353Z"
+    },
+    {
+      "id": "table-tabaski-5",
+      "slug": "table-tabaski",
+      "pin_id": "1085719422763085290",
+      "tableau": "tabaski",
+      "board_id": "1085719491358943576",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T12:09:00.765Z"
+    },
+    {
+      "id": "chambre-enfant-savane-5",
+      "slug": "chambre-enfant-savane",
+      "pin_id": "1085719422763085291",
+      "tableau": "chambre-enfant",
+      "board_id": "1085719491358943578",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T12:09:03.510Z"
+    },
+    {
+      "id": "cuisine-terre-cuite-paniers-5",
+      "slug": "cuisine-terre-cuite-paniers",
+      "pin_id": "1085719422763085296",
+      "tableau": "cuisine-salle-a-manger",
+      "board_id": "1085719491358932180",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T12:09:06.742Z"
+    },
+    {
+      "id": "salle-de-bain-spa-africaine-5",
+      "slug": "salle-de-bain-spa-africaine",
+      "pin_id": "1085719422763085300",
+      "tableau": "salle-de-bain",
+      "board_id": "1085719491358943579",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T12:09:09.493Z"
+    },
+    {
+      "id": "bogolan-histoire-idees-5",
+      "slug": "bogolan-histoire-idees",
+      "pin_id": "1085719422763085306",
+      "tableau": "bogolan",
+      "board_id": "1085719491358932174",
+      "publie_le": "2026-11-04",
+      "publie_a": "2026-11-04T12:09:11.970Z"
     }
   ]
 }
