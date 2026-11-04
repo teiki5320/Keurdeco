@@ -29,7 +29,7 @@ classement:
     pourquoi: "Un rond de jute de 120 cm pour adoucir les angles : sous un fauteuil, une table d’appoint ou au centre d’une petite entrée."
     a_savoir: "Comme tous les tapis en jute, il craint l’humidité : évitez la salle de bain."
   - produit: tapis-rond-jute-lurex-80
-    pourquoi: "Du jute traversé d’un fil doré, sur 80 cm : une petite touche lumineuse devant une console ou au pied d’un lit d’enfant."
+    pourquoi: "Du jute tressé en motif ajouré, sur 80 cm : une petite touche légère devant une console ou au pied d’un lit d’enfant."
     a_savoir: "À 80 cm, c’est un tapis d’appoint : il ne suffit pas à délimiter un coin salon."
   - produit: tapis-couloir-kilim-chindi
     pourquoi: "Un tapis de couloir tissé à plat façon kilim, en 60 × 180 cm : il habille une entrée étroite ou un couloir d’un seul geste."

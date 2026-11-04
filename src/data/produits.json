@@ -2756,23 +2756,22 @@
   },
   {
     "id": "tapis-rond-jute-lurex-80",
-    "asin": "B07TVYHFTJ",
-    "nom": "Tapis rond en jute et fil doré, 80 cm",
+    "asin": "B07T9VWSSK",
+    "nom": "Tapis rond en jute au motif ajouré, 80 cm",
     "type_objet": "tapis",
     "matieres": [
       "raphia-paniers"
     ],
     "couleurs": [
-      "naturel",
-      "or"
+      "naturel"
     ],
     "pieces": [
       "salon",
       "entree",
       "chambre"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-25"
+    "statut": "actif",
+    "verifie_le": "2026-11-04"
   },
   {
     "id": "rideau-perles-bambou-bois",

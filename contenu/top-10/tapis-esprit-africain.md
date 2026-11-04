@@ -51,8 +51,8 @@ produits:
     pourquoi: "Un tapis effet kilim, terracotta chiné, lavable, de 160 × 230 cm. Le terracotta est la couleur de la terre cuite, très présente dans une déco africaine. Il est indiqué lavable, un atout dans une pièce de passage ou avec des enfants. Un grand tapis chaleureux et pratique."
     ideal_pour: "les familles et les pièces de passage, pour un tapis facile à entretenir."
   - produit: tapis-rond-jute-lurex-80
-    pourquoi: "Un tapis rond en jute et fil doré, de 80 cm. Le fil doré ajoute une touche précieuse au jute naturel. Sa petite taille convient à une entrée, une salle de bain ou au pied d’un lit. Un petit tapis qui fait de l’effet."
-    ideal_pour: "les petits espaces, avec une touche dorée."
+    pourquoi: "Un tapis rond en jute au motif ajouré, de 80 cm. Le tressage ajouré allège le jute naturel. Sa petite taille convient à une entrée, un coin lecture ou au pied d’un lit. Un petit tapis qui fait de l’effet."
+    ideal_pour: "les petits espaces, avec une touche naturelle."
 ---
 
 ## Comment choisir son tapis

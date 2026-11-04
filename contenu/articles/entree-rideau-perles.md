@@ -28,7 +28,6 @@ hotspots:
   - { produit: guirlande-perles-bois, x: 32, y: 78 }
   - { produit: tabouret-bois-torsade, x: 28, y: 86 }
   - { produit: panier-agaseke-couvercle, x: 76, y: 79 }
-  - { produit: tapis-rond-jute-lurex-80, x: 50, y: 95 }
 epingles:
   - "Une entrée au rideau de perles"
   - "Rideau de perles : l’idée déco pour le seuil"
