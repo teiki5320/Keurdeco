@@ -64,6 +64,34 @@ function menuMobile(): void {
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => (menu.open = false)));
 }
 
+/** Menu « Les sites Keur » : s'ouvre au bouton, se ferme avec Échap (focus rendu au bouton) ou en touchant ailleurs. */
+function sitesKeur(): void {
+  const menus = [...document.querySelectorAll<HTMLElement>('[data-sites-keur]')];
+  const bouton = (m: HTMLElement) => m.querySelector<HTMLButtonElement>('.sites-keur__bouton')!;
+  const liste = (m: HTMLElement) => m.querySelector<HTMLElement>('.sites-keur__liste')!;
+  const fermer = (m: HTMLElement, rendreFocus = false): void => {
+    bouton(m).setAttribute('aria-expanded', 'false');
+    liste(m).hidden = true;
+    if (rendreFocus) bouton(m).focus();
+  };
+  for (const m of menus) {
+    bouton(m).addEventListener('click', () => {
+      const ouvert = bouton(m).getAttribute('aria-expanded') === 'true';
+      menus.forEach((autre) => fermer(autre));
+      if (!ouvert) {
+        bouton(m).setAttribute('aria-expanded', 'true');
+        liste(m).hidden = false;
+      }
+    });
+  }
+  document.addEventListener('click', (e) => menus.forEach((m) => !m.contains(e.target as Node) && fermer(m)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const ouvert = menus.find((m) => bouton(m).getAttribute('aria-expanded') === 'true');
+    if (ouvert) fermer(ouvert, true);
+  });
+}
+
 /** Page 404 : son <base> pointe vers la racine du site ; le lien d'évitement vise la page courante. */
 function lienEvitement(): void {
   const lien = document.querySelector<HTMLAnchorElement>('a.evitement');
@@ -98,6 +126,7 @@ function annonces(): void {
 
 pointsCliquables();
 menuMobile();
+sitesKeur();
 gererCookies();
 annonces();
 lienEvitement();

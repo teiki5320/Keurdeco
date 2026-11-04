@@ -464,12 +464,129 @@ main {
   color: var(--terracotta);
 }
 
+/* ---------- Menu « Les sites Keur » ---------- */
+
+.sites-keur {
+  position: relative;
+}
+
+.sites-keur__bouton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--bordure);
+  background: var(--surface);
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--encre);
+  cursor: pointer;
+}
+
+.sites-keur__bouton::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.sites-keur__bouton[aria-expanded='true']::after {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+.sites-keur__bouton:hover {
+  background: var(--fond-doux);
+}
+
+.sites-keur__bouton:focus-visible,
+.sites-keur__liste a:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.sites-keur__liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sites-keur__liste a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: var(--encre);
+  text-decoration: none;
+}
+
+.sites-keur__liste a:hover {
+  background: var(--fond-doux);
+}
+
+.sites-keur__liste strong {
+  display: block;
+}
+
+.sites-keur__liste span {
+  font-size: 0.88rem;
+  color: var(--texte);
+}
+
+.sites-keur__maison {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--bordure);
+}
+
+.sites-keur__maison a {
+  font-weight: 600;
+}
+
+.sites-keur--bureau {
+  display: none;
+}
+
+.sites-keur--bureau .sites-keur__liste {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 60;
+  width: max-content;
+  max-width: 320px;
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 8px;
+  box-shadow: var(--ombre);
+}
+
+/* Dans le menu mobile : la liste se déplie sous le bouton, sans déborder. */
+.sites-keur--mobile {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--bordure);
+}
+
+.sites-keur--mobile .sites-keur__bouton {
+  width: 100%;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+}
+
 @media (min-width: 960px) {
   .site-nav {
     display: block;
   }
   .menu-mobile {
     display: none;
+  }
+  .sites-keur--bureau {
+    display: block;
   }
 }
 

@@ -199,6 +199,24 @@ function logo(surFonce = false): string {
   return `<a class="logo" href="index.html" aria-label="${NOM_SITE}, accueil">${embleme(surFonce)}<span class="logo__texte">Keur <em>Déco</em></span></a>`;
 }
 
+/** Les autres sites de la maison TOA KEUR, proposés dans le menu « Les sites Keur » de l'en-tête (le site courant, Keur Déco, en est retiré). */
+const SITES_KEUR: { nom: string; description: string; url: string }[] = [
+  { nom: 'Keurbook', description: 'les livres d’auteurs africains', url: 'https://keurbook.com/' },
+  { nom: 'Keur Cook', description: 'la cuisine africaine', url: 'https://keurcook.com/' },
+  { nom: 'Keurfoot', description: 'le foot africain', url: 'https://keurfoot.com/' },
+  { nom: 'Keur Kado', description: 'les cadeaux africains', url: 'https://keurkado.com/' },
+  { nom: 'Keur Bible', description: 'les objets chrétiens et l’art chrétien afro', url: 'https://keurbible.com/' },
+];
+
+/** Bouton « Les sites Keur » et sa liste de liens ; `id` rend l'identifiant unique (bureau / mobile). */
+function menuSitesKeur(id: string, variante: 'bureau' | 'mobile'): string {
+  const items = SITES_KEUR.map((s) => `<li><a href="${s.url}"><strong>${s.nom}</strong> <span>${s.description}</span></a></li>`).join('');
+  return `<div class="sites-keur sites-keur--${variante}" data-sites-keur>
+      <button type="button" class="sites-keur__bouton" aria-expanded="false" aria-controls="${id}">Les sites Keur</button>
+      <ul class="sites-keur__liste" id="${id}" hidden>${items}<li class="sites-keur__maison"><a href="https://toakeur.com/">Toute la maison : toakeur.com</a></li></ul>
+    </div>`;
+}
+
 export function header(fichier: string): string {
   const liens = liensNavigation(fichier);
   return `<a class="evitement" href="#contenu">Aller au contenu</a>
@@ -206,9 +224,11 @@ export function header(fichier: string): string {
   <div class="conteneur site-entete__barre">
     ${logo()}
     <nav class="site-nav" aria-label="Navigation principale"><ul>${liens}</ul></nav>
+    ${menuSitesKeur('sites-keur-bureau', 'bureau')}
     <details class="menu-mobile">
       <summary aria-label="Ouvrir le menu">${icone('menu')}<span>Menu</span></summary>
-      <nav aria-label="Navigation principale (mobile)"><ul>${liens}<li><a href="a-propos.html">À propos</a></li></ul></nav>
+      <nav aria-label="Navigation principale (mobile)"><ul>${liens}<li><a href="a-propos.html">À propos</a></li></ul>
+      ${menuSitesKeur('sites-keur-mobile', 'mobile')}</nav>
     </details>
   </div>
 </header>`;
