@@ -2123,6 +2123,51 @@
       "board_id": "1085719491358932176",
       "publie_le": "2026-11-05",
       "publie_a": "2026-11-05T04:13:36.276Z"
+    },
+    {
+      "id": "top-coussins-wax-5",
+      "slug": "top-coussins-wax",
+      "pin_id": "1085719422763171656",
+      "tableau": "wax",
+      "board_id": "1085719491358932177",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T12:21:49.775Z"
+    },
+    {
+      "id": "entree-paniers-miroir-raphia-5",
+      "slug": "entree-paniers-miroir-raphia",
+      "pin_id": "1085719422763171659",
+      "tableau": "entree",
+      "board_id": "1085719491358932182",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T12:21:52.177Z"
+    },
+    {
+      "id": "top-rangements-tresses-rentree-5",
+      "slug": "top-rangements-tresses-rentree",
+      "pin_id": "1085719422763171661",
+      "tableau": "paniers",
+      "board_id": "1085719491358932166",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T12:21:54.449Z"
+    },
+    {
+      "id": "chambre-indigo-lin-5",
+      "slug": "chambre-indigo-lin",
+      "pin_id": "1085719422763171662",
+      "tableau": "chambre",
+      "board_id": "1085719491358932178",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T12:21:56.657Z"
+    },
+    {
+      "id": "top-nappes-wax-5",
+      "slug": "top-nappes-wax",
+      "pin_id": "1085719422763171665",
+      "tableau": "cuisine-salle-a-manger",
+      "board_id": "1085719491358932180",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T12:21:59.010Z"
     }
   ]
 }
