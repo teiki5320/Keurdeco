@@ -184,7 +184,7 @@ function grandeImage(p: Produit & { asin: string }): string {
   const contenu = vignette
     ? `<img src="images/produits/${p.id}-320.webp" srcset="images/produits/${p.id}-160.webp 160w, images/produits/${p.id}-320.webp 320w" sizes="(min-width: 700px) 220px, 70vw" width="320" height="320" alt="Illustration : ${echapper(p.nom)}" loading="lazy" decoding="async" /><span class="produit__ia">Illustration IA</span>`
     : iconeObjet(p.type_objet);
-  return `<a class="top10__image${vignette ? '' : ' top10__image--icone'}" ${attributsLienAmazon(p.asin, 'top')} tabindex="-1" aria-hidden="true">${contenu}</a>`;
+  return `<a class="top10__image${vignette ? '' : ' top10__image--icone'}" ${attributsLienAmazon(p.asin, 'top', p.nom)} tabindex="-1" aria-hidden="true">${contenu}</a>`;
 }
 
 /** Les 10 produits numérotés. */

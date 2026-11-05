@@ -53,7 +53,13 @@ export function lienAmazon(asin: string, tag = AMAZON_TAG): string {
   return `https://www.amazon.fr/dp/${asin}?tag=${encodeURIComponent(tag)}`;
 }
 
-/** Attributs HTML d'un lien vers Amazon (à placer dans la balise <a>), avec le code de suivi de l'emplacement. */
-export function attributsLienAmazon(asin: string, emplacement: Emplacement): string {
-  return `href="${lienAmazon(asin, codeSuivi(emplacement))}" rel="${REL_AMAZON}" target="_blank"`;
+/**
+ * Attributs HTML d'un lien vers Amazon (à placer dans la balise <a>), avec le code de suivi de l'emplacement.
+ * Avec le nom du produit, le clic est aussi compté par Umami (« Clic Amazon », avec le produit).
+ */
+export function attributsLienAmazon(asin: string, emplacement: Emplacement, produit?: string): string {
+  const mesure = produit
+    ? ` data-umami-event="Clic Amazon" data-umami-event-produit="${produit.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')}"`
+    : '';
+  return `href="${lienAmazon(asin, codeSuivi(emplacement))}" rel="${REL_AMAZON}" target="_blank"${mesure}`;
 }

@@ -78,14 +78,14 @@ function visuelProduit(p: Produit): string {
  */
 export function boutonAmazon(p: Produit & { asin: string }, emplacement: Emplacement, avecIcone = true): string {
   const etiquette = `Voir sur Amazon : ${echapper(p.nom)}, lien partenaire (nouvel onglet)`;
-  return `<a class="bouton bouton--amazon" ${attributsLienAmazon(p.asin, emplacement)} aria-label="${etiquette}">Voir sur Amazon${avecIcone ? ` ${icone('externe', 'icone icone--petite')}` : ''}</a>
+  return `<a class="bouton bouton--amazon" ${attributsLienAmazon(p.asin, emplacement, p.nom)} aria-label="${etiquette}">Voir sur Amazon${avecIcone ? ` ${icone('externe', 'icone icone--petite')}` : ''}</a>
     <p class="note-amazon">${NOTE_LIEN_AMAZON}</p>
     <p class="note-amazon note-amazon--ia">${NOTE_ILLUSTRATION_IA}</p>`;
 }
 
 /** Carte d'un produit affichable ; `numero` relie la carte au point cliquable de l'image. */
 export function carteProduit(p: Produit & { asin: string }, emplacement: Emplacement, numero?: number, niveau: 'h3' | 'h4' = 'h3', extra = ''): string {
-  const lien = attributsLienAmazon(p.asin, emplacement);
+  const lien = attributsLienAmazon(p.asin, emplacement, p.nom);
   const visuel = visuelProduit(p);
   return `<article class="produit" id="produit-${p.id}">
   <a class="produit__visuel${visuel.startsWith('<img') ? ' produit__visuel--photo' : ''}" ${lien} tabindex="-1" aria-hidden="true">${visuel}${numero ? `<span class="produit__numero">${numero}</span>` : ''}</a>

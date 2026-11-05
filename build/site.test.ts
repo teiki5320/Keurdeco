@@ -64,6 +64,13 @@ describe('référencement', () => {
     expect(mesureAudience('www.keurdeco.com', '')).toContain('data-domain="www.keurdeco.com"');
   });
 
+  it('balise Umami sur toutes les pages, limitée au domaine du site', () => {
+    const html = transformerPage('<html><head><!--#head--></head><body></body></html>', 'a-propos.html');
+    expect(html).toContain('src="https://cloud.umami.is/script.js"');
+    expect(html).toContain('data-website-id="d1715415-5452-48af-a9fa-69e3e2de06f3"');
+    expect(html).toContain('data-domains="www.keurdeco.com,keurdeco.com"');
+  });
+
   it('code AdSense avec l’identifiant éditeur, sauf sur les pages sans annonce', () => {
     expect(codeAdsense('')).toBe('');
     // Chargement retardé (comme keurkado.com) : après le chargement complet, quand le navigateur est libre, au plus tard 3 secondes ;

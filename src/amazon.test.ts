@@ -13,6 +13,12 @@ describe('liens Amazon', () => {
     expect(a).toContain('rel="sponsored nofollow noopener"');
     expect(a).toContain('target="_blank"');
   });
+  it('compte le clic dans Umami quand le nom du produit est donné', () => {
+    expect(attributsLienAmazon('B0ABCDEFGH', 'conseil')).not.toContain('data-umami-event');
+    const a = attributsLienAmazon('B0ABCDEFGH', 'conseil', 'Coussin "wax" & co');
+    expect(a).toContain('data-umami-event="Clic Amazon"');
+    expect(a).toContain('data-umami-event-produit="Coussin &quot;wax&quot; &amp; co"');
+  });
 });
 
 describe('codes de suivi par emplacement', () => {

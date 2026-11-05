@@ -354,9 +354,11 @@ try {
   verifier(epingle?.ok() && epingle.headers()['content-type'] === 'image/jpeg', 'épingle 1000 × 1500 servie');
 
   const scripts = await page.goto(BASE).then(() => page.$$eval('script[src]', (els) => els.map((e) => e.src)));
-  // Seuls scripts externes admis : Google AdSense (build/site.ts, codeAdsense) et ceux qu'il charge lui-même.
+  // Seuls scripts externes admis : Google AdSense (build/site.ts, codeAdsense) et ceux qu'il charge lui-même,
+  // et la mesure d'audience Umami (build/site.ts, mesureUmami).
   const ADSENSE = 'https://pagead2.googlesyndication.com/';
-  verifier(scripts.every((s) => s.startsWith(BASE) || s.startsWith(ADSENSE)), 'aucun script externe chargé, hors AdSense');
+  const UMAMI = 'https://cloud.umami.is/script.js';
+  verifier(scripts.every((s) => s.startsWith(BASE) || s.startsWith(ADSENSE) || s === UMAMI), 'aucun script externe chargé, hors AdSense et Umami');
   verifier(erreurs.length === 0, `aucune erreur JavaScript${erreurs.length ? ' : ' + erreurs.join(' | ') : ''}`);
   await navigateur.close();
 } catch (e) {

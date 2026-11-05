@@ -66,6 +66,7 @@ Mis à jour le 5 novembre 2026 d'après le dépôt et le site en ligne. Cette fi
 - **Identifiants publics** : jeton de balise (variable `CLOUDFLARE_WEB_ANALYTICS`), visible dans les pages — non secret.
 - **Secrets** : aucun.
 - **Coût** : gratuit.
+- **Umami (depuis le 5 novembre 2026)** : Umami Cloud, offre gratuite, région UE, sans cookie ; un seul identifiant de site partagé par les sites de la maison (`UMAMI_WEBSITE_ID` dans `build/site.ts`, public), balise `mesureUmami()` sur toutes les pages, limitée à `www.keurdeco.com` et `keurdeco.com`. Clics comptés : « Clic Amazon » (avec le produit) et « Menu sites Keur » (avec le site). Console : https://cloud.umami.is. Cloudflare Web Analytics reste en place.
 
 ## Affiliation (Amazon Partenaires)
 

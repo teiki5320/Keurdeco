@@ -162,6 +162,17 @@ export function mesureAudience(domaine = process.env.PLAUSIBLE_DOMAIN, jetonClou
   return domaine ? `<script defer data-domain="${attribut(domaine)}" src="https://plausible.io/js/script.js"></script>` : '';
 }
 
+/** Umami Cloud (offre gratuite, région UE) : identifiant public du site, partagé par les sites de la maison (pas un secret). */
+export const UMAMI_WEBSITE_ID = 'd1715415-5452-48af-a9fa-69e3e2de06f3';
+
+/**
+ * Mesure d'audience Umami, sans cookie, sur toutes les pages : visites, et clics marqués data-umami-event
+ * (liens Amazon, menu des sites Keur). Limitée au domaine du site (pas de mesure en local ni en aperçu).
+ */
+export function mesureUmami(): string {
+  return `<script defer src="https://cloud.umami.is/script.js" data-website-id="${UMAMI_WEBSITE_ID}" data-domains="www.keurdeco.com,keurdeco.com"></script>`;
+}
+
 /**
  * Code Google AdSense, identique sur toutes les pages qui portent des annonces (méthode de keurkado.com).
  * Ajouté une fois la page entièrement chargée, quand le navigateur est libre (au plus tard 3 secondes après) :
@@ -210,10 +221,10 @@ const SITES_KEUR: { nom: string; description: string; url: string }[] = [
 
 /** Bouton « Les sites Keur » et sa liste de liens ; `id` rend l'identifiant unique (bureau / mobile). */
 function menuSitesKeur(id: string, variante: 'bureau' | 'mobile'): string {
-  const items = SITES_KEUR.map((s) => `<li><a href="${s.url}"><strong>${s.nom}</strong> <span>${s.description}</span></a></li>`).join('');
+  const items = SITES_KEUR.map((s) => `<li><a href="${s.url}" data-umami-event="Menu sites Keur" data-umami-event-site="${s.nom}"><strong>${s.nom}</strong> <span>${s.description}</span></a></li>`).join('');
   return `<div class="sites-keur sites-keur--${variante}" data-sites-keur>
       <button type="button" class="sites-keur__bouton" aria-expanded="false" aria-controls="${id}">Les sites Keur</button>
-      <ul class="sites-keur__liste" id="${id}" hidden>${items}<li class="sites-keur__maison"><a href="https://toakeur.com/">Toute la maison : toakeur.com</a></li></ul>
+      <ul class="sites-keur__liste" id="${id}" hidden>${items}<li class="sites-keur__maison"><a href="https://toakeur.com/" data-umami-event="Menu sites Keur" data-umami-event-site="toakeur.com">Toute la maison : toakeur.com</a></li></ul>
     </div>`;
 }
 
@@ -455,7 +466,7 @@ export function transformerPage(html: string, fichier: string): string {
   const noindex = html.includes(ROBOTS_SOURCE_NOINDEX);
   const page = html
     .replace(ROBOTS_SOURCE_NOINDEX, ROBOTS_NOINDEX)
-    .replace('<!--#head-->', `${base}${head(noindex)}\n    ${referencement(html, fichier)}\n    ${mesureAudience()}${pageAvecAdsense(fichier) ? `\n    ${codeAdsense()}` : ''}`)
+    .replace('<!--#head-->', `${base}${head(noindex)}\n    ${referencement(html, fichier)}\n    ${mesureAudience()}\n    ${mesureUmami()}${pageAvecAdsense(fichier) ? `\n    ${codeAdsense()}` : ''}`)
     .replace('<!--#header-->', header(fichier))
     .replace('<!--#footer-->', footer())
     .replace('<!--#une-->', () => blocUne(publies))
