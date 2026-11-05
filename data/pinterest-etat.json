@@ -2078,6 +2078,51 @@
       "board_id": "1085719491358932174",
       "publie_le": "2026-11-04",
       "publie_a": "2026-11-04T12:09:11.970Z"
+    },
+    {
+      "id": "conseil-adire-indigo-yoruba-2",
+      "slug": "conseil-adire-indigo-yoruba",
+      "pin_id": "1085719422763151263",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T04:13:26.922Z"
+    },
+    {
+      "id": "top-cadeaux-deco-africaine-4",
+      "slug": "top-cadeaux-deco-africaine",
+      "pin_id": "1085719422763151267",
+      "tableau": "fetes",
+      "board_id": "1085719491358932173",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T04:13:29.214Z"
+    },
+    {
+      "id": "salon-terracotta-wax-5",
+      "slug": "salon-terracotta-wax",
+      "pin_id": "1085719422763151268",
+      "tableau": "salon",
+      "board_id": "1085719491358932130",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T04:13:31.555Z"
+    },
+    {
+      "id": "top-paniers-tresses-africains-5",
+      "slug": "top-paniers-tresses-africains",
+      "pin_id": "1085719422763151270",
+      "tableau": "paniers",
+      "board_id": "1085719491358932166",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T04:13:33.795Z"
+    },
+    {
+      "id": "kente-histoire-couleurs-5",
+      "slug": "kente-histoire-couleurs",
+      "pin_id": "1085719422763151274",
+      "tableau": "kente",
+      "board_id": "1085719491358932176",
+      "publie_le": "2026-11-05",
+      "publie_a": "2026-11-05T04:13:36.276Z"
     }
   ]
 }
