@@ -43,7 +43,7 @@ produits:
     pourquoi: "Une parure en microfibre brossée au motif de coucher de soleil africain et d’éléphant, imprimé des deux côtés. Elle comprend une housse de couette de 135 × 200 cm et une taie de 80 × 80 cm, avec fermeture. La fiche la dit hypoallergénique."
     ideal_pour: "un lit une personne, chez un amoureux de la savane."
   - produit: housse-couette-elephant-girafe-220x240
-    pourquoi: "Une housse de couette en microfibre imprimée d’éléphants et de girafes, de 220 × 240 cm, avec deux taies de 50 × 75 cm et une fermeture éclair. Couette et oreillers ne sont pas inclus."
+    pourquoi: "Une housse de couette en microfibre imprimée d’éléphants, de 220 × 240 cm, avec deux taies de 65 × 65 cm et une fermeture éclair. Couette et oreillers ne sont pas inclus."
     ideal_pour: "un lit deux places, chez un amoureux des animaux de la savane."
   - produit: parure-safari-zebre-leopard-220x240
     pourquoi: "Une parure en microfibre aux animaux du safari africain : zèbre, hippopotame, léopard. Elle comprend une housse de couette de 220 × 240 cm et deux taies de 65 × 65 cm. Elle se lave en machine et passe au sèche-linge."
