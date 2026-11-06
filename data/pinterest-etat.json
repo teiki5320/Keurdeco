@@ -2168,6 +2168,33 @@
       "board_id": "1085719491358932180",
       "publie_le": "2026-11-05",
       "publie_a": "2026-11-05T12:21:59.010Z"
+    },
+    {
+      "id": "conseil-adire-indigo-yoruba-3",
+      "slug": "conseil-adire-indigo-yoruba",
+      "pin_id": "1085719422763233166",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-06",
+      "publie_a": "2026-11-06T04:13:18.453Z"
+    },
+    {
+      "id": "top-cadeaux-deco-africaine-5",
+      "slug": "top-cadeaux-deco-africaine",
+      "pin_id": "1085719422763233167",
+      "tableau": "fetes",
+      "board_id": "1085719491358932173",
+      "publie_le": "2026-11-06",
+      "publie_a": "2026-11-06T04:13:20.833Z"
+    },
+    {
+      "id": "balcon-boheme-africain-5",
+      "slug": "balcon-boheme-africain",
+      "pin_id": "1085719422763233169",
+      "tableau": "balcon-exterieur",
+      "board_id": "1085719491358932183",
+      "publie_le": "2026-11-06",
+      "publie_a": "2026-11-06T04:13:23.048Z"
     }
   ]
 }
