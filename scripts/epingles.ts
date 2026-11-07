@@ -16,6 +16,7 @@ import { typographier } from '../src/typo.ts';
 import { adresseArticle, articlesPublies, type Article } from '../build/articles.ts';
 import { lienPinterest, SITE_URL } from '../build/config.ts';
 import { conseilsPublies, THEMES, type Conseil } from '../build/conseils.ts';
+import { creditImage } from '../build/images.ts';
 import { motif } from '../build/motifs.ts';
 
 const RACINE = resolve(import.meta.dirname, '..');
@@ -243,6 +244,12 @@ export async function genererEpingles(articles = articlesPublies(), url = SITE_U
   for (const a of articles) {
     // Avec une galerie, les épingles prennent ses images à tour de rôle (images entières, souvent verticales).
     const images = a.galerie.length ? a.galerie : [{ image: a.image, alt: a.imageAlt }];
+    // Photo libre ou carte générée : jamais utilisée pour les épingles (crédit et licence), l'article n'a donc pas d'épingle.
+    const libre = images.find((g) => creditImage(g.image));
+    if (libre) {
+      console.log(`Épingles de ${a.slug} : image « ${libre.image} » libre de droits, aucune épingle générée.`);
+      continue;
+    }
     const absente = images.find((g) => !existsSync(sourceImage(g.image)));
     if (absente) {
       console.warn(`⚠ Épingles de ${a.slug} : image « ${absente.image} » introuvable.`);

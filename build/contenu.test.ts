@@ -10,7 +10,7 @@ import { FAMILLES, type Famille } from '../src/taxonomie.ts';
 import { produitsCites, tousLesArticles } from './articles.ts';
 import { conseilsPublies, imageConseil, tousLesConseils } from './conseils.ts';
 import { dateDuJour } from './config.ts';
-import { chargerDimensions, DOSSIER_IMAGES, imageExiste, texteAlternatif } from './images.ts';
+import { chargerDimensions, creditImage, DOSSIER_IMAGES, imageExiste, texteAlternatif } from './images.ts';
 import { chargerProduits } from './produits.ts';
 import { chargerGlossaire, imageRubrique, introPage } from './rubriques.ts';
 import { ambiancesTop10 } from './top10.ts';
@@ -95,7 +95,8 @@ describe('articles (contenu/articles)', () => {
       expect(a.imageAlt.length, `${a.slug} : texte alternatif trop court`).toBeGreaterThan(15);
       expect(dims[a.image], `${a.slug} : dimensions de ${a.image} absentes de src/data/images.json`).toBeDefined();
       for (const f of [`${a.image}-800.webp`, `${a.image}-1600.webp`]) expect(existsSync(resolve(DOSSIER_IMAGES, f)), `${a.slug} : ${f}`).toBe(true);
-      expect(existsSync(resolve(RACINE, 'public/images/partage', `${a.image}.jpg`)), `${a.slug} : image de partage`).toBe(true);
+      // Une photo libre (src/data/credits-images.json) n'a pas d'image de partage : l'accueil la remplace.
+      if (!creditImage(a.image)) expect(existsSync(resolve(RACINE, 'public/images/partage', `${a.image}.jpg`)), `${a.slug} : image de partage`).toBe(true);
     }
   });
 

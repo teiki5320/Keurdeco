@@ -6,9 +6,8 @@ type: guide
 pieces: [salon, chambre, entree, cuisine-salle-a-manger]
 matieres: [raphia-paniers, bois-sculpte]
 occasions: [fetes-fin-annee]
-image: cadeaux-deco-africaine
-image_alt: "Idées cadeaux disposées sur une nappe en lin : panier Bolga coloré, jeu d’awalé en bois, tissu wax plié noué de raphia, carafe en terre cuite, bol en bois sculpté, sous-verres tressés, bougie, beau livre, plateau en rotin et branches d’eucalyptus."
-image_ia: true
+image: black-friday-deco-africaine
+image_alt: "Étoffes kente tissées de la région de la Volta, au Ghana, suspendues côte à côte : bandes et losanges rouges, bleus, jaunes, violets et orange."
 produits:
   - tapis-rond-jute-lurex-80
   - paniers-rangement-raphia-lot

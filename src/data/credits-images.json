@@ -124,5 +124,13 @@
     "libelle": "Toile de Korhogo",
     "icone": "textile",
     "motif": "bogolan"
+  },
+  "black-friday-deco-africaine": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Warmglow",
+    "licence": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Different_Kente_cloth,_Tafi,_Volta_region.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Different_Kente_cloth%2C_Tafi%2C_Volta_region.jpg/1920px-Different_Kente_cloth%2C_Tafi%2C_Volta_region.jpg"
   }
 }

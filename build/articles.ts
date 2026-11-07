@@ -27,7 +27,7 @@ import { parse as parseYaml } from 'yaml';
 import { FAMILLES, fichierRubrique, trouverRubrique, type Famille } from '../src/taxonomie.ts';
 import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
 import { icone } from './icones.ts';
-import { imageArticle, imageExiste } from './images.ts';
+import { creditImage, imageArticle, imageExiste, legendeCredit } from './images.ts';
 import type { Emplacement } from '../src/amazon.ts';
 import { boutonAmazon, carteProduit, echapper, encadreProduit, estAffichable, grilleProduits, indexProduits, libelleType, mentionAmazon, type Produit } from './produits.ts';
 
@@ -232,6 +232,8 @@ export function mediaEpingle(a: Article, url = SITE_URL): string {
 }
 
 function boutonEpingler(a: Article): string {
+  // Une photo libre ou une carte générée ne sert jamais aux épingles (voir scripts/images-libres.ts).
+  if (creditImage(a.image)) return '';
   return `<a class="epingler" href="${echapper(lienEpingler(a))}" target="_blank" rel="noopener">${icone('epingle', 'icone icone--petite')}<span>Épingler</span></a>`;
 }
 
@@ -485,7 +487,7 @@ export function sourcePageArticle(a: Article, publies: Article[], produits = ind
     a.type === 'ambiance'
       ? rendreAmbiance(a, produits)
       : `<figure class="couverture"><div class="couverture__image">${imageArticle(a.image, a.imageAlt, '(min-width: 1100px) 1040px, 100vw', 'eager')}${pointsTop(a, produits)}${boutonEpingler(a)}</div>${
-          a.imageIa ? `<figcaption class="mention-ia">${icone('ia', 'icone icone--petite')} Image d’illustration créée par IA.</figcaption>` : ''
+          legendeCredit(a.image) || (a.imageIa ? `<figcaption class="mention-ia">${icone('ia', 'icone icone--petite')} Image d’illustration créée par IA.</figcaption>` : '')
         }</figure>`;
   const proches = articlesProches(a, publies);
   const minutes = Math.max(1, Math.round(corps.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length / 200));
