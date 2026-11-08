@@ -344,11 +344,20 @@ try {
   const manifeste = await (await fetch(`${BASE}epingles.json`)).json();
   const epArticles = manifeste.epingles.filter((e) => e.gabarit !== 'question');
   const epConseils = manifeste.epingles.filter((e) => e.gabarit === 'question');
-  // Une épingle par titre de la liste « epingles » de chaque article (tous publiés dans la version de démonstration).
+  // Une épingle par titre de la liste « epingles » de chaque article (tous publiés dans la version de démonstration),
+  // sauf les articles dont l'image (ou une image de la galerie) est une photo libre ou une carte générée :
+  // ceux-là n'ont aucune épingle (crédit et licence, voir scripts/epingles.ts).
   const dossierArticles = resolve(RACINE, 'contenu/articles');
+  const imagesLibres = JSON.parse(readFileSync(resolve(RACINE, 'src/data/credits-images.json'), 'utf8'));
   const attendues = readdirSync(dossierArticles)
     .filter((f) => f.endsWith('.md'))
-    .reduce((n, f) => n + (readFileSync(join(dossierArticles, f), 'utf8').match(/^epingles:\r?\n((?: {2}- .*\r?\n)+)/m)?.[1].trim().split('\n').length ?? 0), 0);
+    .reduce((n, f) => {
+      const source = readFileSync(join(dossierArticles, f), 'utf8');
+      const enTete = source.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
+      const images = [...enTete.matchAll(/^\s*(?:- )?image:\s*["']?([^"'\r\n]+?)["']?\s*$/gm)].map((m) => m[1]);
+      if (images.some((nom) => imagesLibres[nom])) return n;
+      return n + (source.match(/^epingles:\r?\n((?: {2}- .*\r?\n)+)/m)?.[1].trim().split('\n').length ?? 0);
+    }, 0);
   verifier(epArticles.length === attendues && epConseils.length >= 12 && manifeste.epingles.every((e) => e.lien.includes('utm_source=pinterest')), `manifeste des épingles : ${epArticles.length}/${attendues} d'articles, ${epConseils.length} de conseils, liens avec utm_source=pinterest`);
   const epingle = await page.goto(`${BASE}epingles/salon-terracotta-wax-1.jpg`);
   verifier(epingle?.ok() && epingle.headers()['content-type'] === 'image/jpeg', 'épingle 1000 × 1500 servie');
