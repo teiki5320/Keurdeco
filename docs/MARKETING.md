@@ -12,7 +12,7 @@ Mis à jour le 9 novembre 2026. Compagnon de INFRA.md.
 
 - [fait] **Aujourd'hui** : liens Amazon Partenaires (tag `keurdecofr-21` depuis le 18 octobre 2026), 226 produits actifs sur 238, en ligne au 9 novembre 2026.
 - [en cours] **Validation AdSense** : examen demandé le 16 octobre 2026, « En préparation » au dernier contrôle de la console, le 9 novembre 2026 ; aucun mail de Google au 9 novembre 2026.
-- **Trafic Pinterest automatique** : publication quotidienne par l'API (5 épingles par passage) depuis le 20 octobre 2026, 151 au 9 novembre (aucune nouvelle le 9 novembre : les 247 épingles du manifeste sont toutes publiées ou programmées).
+- **Trafic Pinterest automatique** : publication quotidienne par l'API (5 épingles par passage) depuis le 20 octobre 2026, 151 au 9 novembre (aucune au passage du 9 novembre : les 247 épingles du manifeste d'alors étaient toutes publiées ou programmées ; 255 au manifeste depuis l'article du 9 novembre).
 - **Trafic de recherche** : pages indexées par Google et Bing, qui font vivre les deux revenus.
 
 ## Points forts
@@ -37,16 +37,16 @@ Mis à jour le 9 novembre 2026. Compagnon de INFRA.md.
 ## Mesures
 
 - **Audience** : Cloudflare Web Analytics et, depuis le 5 novembre 2026, Umami (sans cookie, visites, clics Amazon et clics du menu des sites Keur) — à vérifier dans la console.
-- **Pages indexées** : 135 sur 147 au 9 novembre 2026 (relevé du Studio) : 4 détectées non explorées (3 articles d'actus et 1 conseil), 4 inconnues de Google (2 articles d'actus et 2 conseils), 4 exclues volontairement par `noindex` ; le sitemap en ligne compte 147 adresses le 9 novembre 2026, dont 45 conseils et 20 articles d'actus.
-- **Épingles** : 96 importées par CSV (programmées jusqu'au 18 novembre 2026) et 151 publiées par l'API du 20 octobre au 9 novembre 2026 (247 au manifeste, toutes publiées ou programmées) (`data/pinterest-etat.json`).
+- **Pages indexées** : 135 sur 147 au 9 novembre 2026 (relevé du Studio) : 4 détectées non explorées (3 articles d'actus et 1 conseil), 4 inconnues de Google (2 articles d'actus et 2 conseils), 4 exclues volontairement par `noindex` ; le sitemap en ligne compte 149 adresses le 9 novembre 2026, dont 46 conseils et 20 articles d'actus.
+- **Épingles** : 96 importées par CSV (programmées jusqu'au 18 novembre 2026) et 151 publiées par l'API du 20 octobre au 9 novembre 2026 (255 au manifeste depuis l'article du 9 novembre, dont 8 pas encore publiées) (`data/pinterest-etat.json`).
 - **Statistiques Pinterest** : à vérifier dans la console Pinterest.
 - **Commissions Amazon** : à vérifier dans la console Amazon Partenaires.
 - **Revenus AdSense** : aucun, site encore en examen chez Google.
 
 ## Calendrier
 
-- Articles et conseils **publiés à leur date** (en-tête `publie_le`), le site étant reconstruit à chaque push et chaque lundi, mercredi et vendredi à 5 h UTC. Au 9 novembre 2026 au matin : 40 articles, dont 26 en ligne et 14 programmés, un par lundi jusqu'au 25 janvier 2027 (plus le guide Black Friday, programmé exceptionnellement le mercredi 18 novembre 2026), puis le balcon le 26 avril 2027. Page « Top 10 » à onglets (10 sujets) en ligne depuis le 19 octobre.
-- Conseils : 69, dont 45 en ligne au 9 novembre 2026 au matin et 24 programmés (lundi, mercredi, vendredi) jusqu'au 1er janvier 2027 (45 pages `conseil-…` au sitemap en ligne le 9 novembre, dont celui du jour sur les symboles adinkra ; 7 conseils ajoutés le 2 novembre par la routine « Articles », du 18 décembre 2026 au 1er janvier 2027, avec une carte générée aux couleurs du site ; 12 ajoutés le 26 octobre par la routine « Articles », restés sans image jusqu'au 27 octobre : Jean a choisi de les compléter, 6 avec une photo libre de Wikimedia Commons créditée et 6 avec une carte générée aux couleurs du site ; les 50 images IA déjà en place sont gardées). Depuis le 23 octobre 2026, le site est reconstruit le lundi, le mercredi et le vendredi (`pages.yml`, cron `0 5 * * 1,3,5`) et à chaque push : chaque conseil paraît le jour de sa date.
+- Articles et conseils **publiés à leur date** (en-tête `publie_le`), le site étant reconstruit à chaque push et chaque lundi, mercredi et vendredi à 5 h UTC. Au 9 novembre 2026 : 40 articles, dont 27 en ligne (celui du jour, la table de réveillon wax et or, compris) et 13 programmés, un par lundi jusqu'au 25 janvier 2027 (plus le guide Black Friday, programmé exceptionnellement le mercredi 18 novembre 2026), puis le balcon le 26 avril 2027. Page « Top 10 » à onglets (10 sujets) en ligne depuis le 19 octobre.
+- Conseils : 69, dont 46 en ligne au 9 novembre 2026 et 23 programmés (lundi, mercredi, vendredi) jusqu'au 1er janvier 2027 (46 pages `conseil-…` au sitemap en ligne le 9 novembre, dont celui du jour sur le tabouret ashanti ; 7 conseils ajoutés le 2 novembre par la routine « Articles », du 18 décembre 2026 au 1er janvier 2027, avec une carte générée aux couleurs du site ; 12 ajoutés le 26 octobre par la routine « Articles », restés sans image jusqu'au 27 octobre : Jean a choisi de les compléter, 6 avec une photo libre de Wikimedia Commons créditée et 6 avec une carte générée aux couleurs du site ; les 50 images IA déjà en place sont gardées). Depuis le 23 octobre 2026, le site est reconstruit le lundi, le mercredi et le vendredi (`pages.yml`, cron `0 5 * * 1,3,5`) et à chaque push : chaque conseil paraît le jour de sa date.
 - Épingles : import CSV par lots de 30 jours, 2 par jour (lot en cours jusqu'au 18 novembre) ; en plus, l'API publie 5 épingles par passage du workflow quotidien.
 
 ## Les 3 priorités
