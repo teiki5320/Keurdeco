@@ -31,7 +31,7 @@ Un tabouret qui accueille un livre, un panier qui range les plaids, une calebass
 
 Pour bien choisir un tabouret, voyez [comment choisir un tabouret africain en bois sculpté](conseil-choisir-tabouret-bois.html) et la rubrique [bois sculpté](matiere-bois-sculpte.html).
 
-{{produit: table-appoint-racine-teck}}
+{{produit: table-appoint-tronc-teck-kare}}
 
 {{produit: bol-manguier-sculpte}}
 

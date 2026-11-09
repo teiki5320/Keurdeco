@@ -11,7 +11,7 @@ Mis à jour le 9 novembre 2026. Compagnon de INFRA.md.
 ## Rémunération par phases
 
 - [fait] **Aujourd'hui** : liens Amazon Partenaires (tag `keurdecofr-21` depuis le 18 octobre 2026), 226 produits actifs sur 238, en ligne au 9 novembre 2026.
-- [en cours] **Validation AdSense** : examen demandé le 16 octobre 2026, « En préparation » au dernier contrôle de la console, le 9 novembre 2026 ; aucun mail de Google au 9 novembre 2026.
+- [à faire] **Validation AdSense** : examen demandé le 16 octobre 2026, refusé par Google le 9 novembre 2026 pour « Contenu à faible valeur informative » (les agents avaient encore noté « En préparation » le matin du 9 novembre). Avant de redemander l'examen : rallonger les fiches produits et les pages courtes (médiane d'environ 490 mots par page en ligne le 9 novembre 2026).
 - **Trafic Pinterest automatique** : publication quotidienne par l'API (5 épingles par passage) depuis le 20 octobre 2026, 151 au 9 novembre (aucune au passage du 9 novembre : les 247 épingles du manifeste d'alors étaient toutes publiées ou programmées ; 255 au manifeste depuis l'article du 9 novembre).
 - **Trafic de recherche** : pages indexées par Google et Bing, qui font vivre les deux revenus.
 
@@ -41,7 +41,7 @@ Mis à jour le 9 novembre 2026. Compagnon de INFRA.md.
 - **Épingles** : 96 importées par CSV (programmées jusqu'au 18 novembre 2026) et 151 publiées par l'API du 20 octobre au 9 novembre 2026 (255 au manifeste depuis l'article du 9 novembre, dont 8 pas encore publiées) (`data/pinterest-etat.json`).
 - **Statistiques Pinterest** : à vérifier dans la console Pinterest.
 - **Commissions Amazon** : à vérifier dans la console Amazon Partenaires.
-- **Revenus AdSense** : aucun, site encore en examen chez Google.
+- **Revenus AdSense** : aucun, site refusé par Google le 9 novembre 2026 (contenu à faible valeur informative).
 
 ## Calendrier
 

@@ -1976,8 +1976,26 @@
       "salon",
       "chambre"
     ],
+    "statut": "indisponible",
+    "verifie_le": "2026-11-09"
+  },
+  {
+    "id": "table-appoint-tronc-teck-kare",
+    "asin": "B07MVH5SHY",
+    "nom": "Table d’appoint Tree en tronc de teck massif, environ 50 cm",
+    "type_objet": "table",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [
+      "bois"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "table-appoint-tranche-teck",
@@ -3659,8 +3677,8 @@
     "pieces": [
       "salon"
     ],
-    "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "statut": "indisponible",
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-berbere-patchwork-carre-160",

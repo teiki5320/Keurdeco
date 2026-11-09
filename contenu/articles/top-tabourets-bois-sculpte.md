@@ -1,6 +1,6 @@
 ---
 titre: "Top 8 des tabourets et tables d’appoint en bois massif"
-description: "Racine de teck, tronc taillé d’une seule pièce, acajou, manguier : 8 tabourets et tables d’appoint en bois massif, dans l’esprit des tabourets sculptés africains."
+description: "Tronc de teck brut, tronc torsadé d’une seule pièce, acajou, manguier : 8 tabourets et tables d’appoint en bois massif, dans l’esprit des tabourets sculptés africains."
 publie_le: 2026-11-16
 type: top
 pieces: [salon, chambre, entree]
@@ -10,9 +10,9 @@ image: tabourets-bois-sculpte
 image_alt: "Groupe de tabourets et tables d’appoint en bois sculpté de hauteurs différentes contre un mur crème : tabouret rond à colonne centrale, tabouret tripode, table en tronc d’arbre, tabouret à motifs géométriques portant une plante, petite table ronde avec livres et tasse."
 image_ia: true
 classement:
-  - produit: table-appoint-racine-teck
-    pourquoi: "Plateau et pieds sont taillés dans une même racine de teck : une pièce unique, qui a la présence d’une sculpture."
-    a_savoir: "Environ 45 cm de haut et 35 à 40 cm de diamètre ; son poids varie de 6 à 12 kg selon la racine."
+  - produit: table-appoint-tronc-teck-kare
+    pourquoi: "Un tronçon de teck massif laissé brut, sans aucune pièce de métal : chaque table est unique et a la présence d’une sculpture, en bout de canapé comme en chevet."
+    a_savoir: "Environ 49 à 52 cm de haut pour un plateau de 39 à 42 cm ; elle pèse 8 kg et porte jusqu’à 35 kg. Le bois n’est pas étanche : un dessous de verre évite les traces."
   - produit: tabouret-bois-torsade
     pourquoi: "Taillé dans un seul morceau de tronc, avec une colonne torsadée : il sert de sellette pour une plante, de bout de canapé ou de chevet."
     a_savoir: "50 cm de haut ; le bois a été séché pour limiter les fissures, mais évitez de le coller à un radiateur."
@@ -35,7 +35,7 @@ classement:
     pourquoi: "Un petit tabouret bas en acajou massif, parfait pour les enfants ou pour surélever une plante."
     a_savoir: "Il ne mesure que 21 cm de haut : c’est un marchepied ou un support, pas une assise d’adulte."
 hotspots:
-  - { produit: table-appoint-racine-teck, x: 77, y: 67, cadre: 32 }
+  - { produit: table-appoint-tronc-teck-kare, x: 77, y: 67, cadre: 32 }
   - { produit: tabouret-bois-torsade, x: 33, y: 62, cadre: 30 }
   - { produit: tabouret-teck-massif-42, x: 48, y: 66, cadre: 30 }
   - { produit: tabouret-bois-sculpte, x: 17, y: 60, cadre: 30 }
@@ -44,7 +44,7 @@ epingles:
   - "8 tabourets en bois massif pour le salon"
   - "Table d’appoint africaine : notre sélection"
   - "Le tabouret sculpté, pièce maîtresse"
-  - "Racine de teck, tronc taillé : des tabourets uniques"
+  - "Tronc de teck brut, colonne torsadée : des tabourets uniques"
   - "Bout de canapé en bois brut : 8 idées"
 tableau_pinterest: bois-sculpte
 ---
@@ -70,4 +70,4 @@ Un tabouret sculpté se suffit à lui-même. Posez-y une plante, une pile de liv
 
 ## En résumé
 
-Une racine de teck pour l’effet sculpture, un tronc taillé pour la plante, un tabouret en teck pour la salle de bain : le bois massif apporte à chaque pièce la chaleur et la présence des tabourets sculptés africains.
+Un tronc de teck brut pour l’effet sculpture, un tronc taillé pour la plante, un tabouret en teck pour la salle de bain : le bois massif apporte à chaque pièce la chaleur et la présence des tabourets sculptés africains.
