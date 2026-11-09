@@ -2,7 +2,7 @@
   {
     "id": "coussin-wax-cercles-safran",
     "asin": "B09S5QN8GB",
-    "nom": "Housses de coussin à imprimé africain, lot de 4",
+    "nom": "Housses de coussin « Femmes africaines », polyester aspect lin, lot de 4 (45 × 45 cm)",
     "type_objet": "coussin",
     "matieres": [],
     "couleurs": [
@@ -15,7 +15,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coussin-wax-vert-baobab",
@@ -242,7 +242,7 @@
   {
     "id": "corbeille-fruits-tressee",
     "asin": "B0B2RDK7DC",
-    "nom": "Grande corbeille ronde tressée, 40 cm",
+    "nom": "Grande corbeille ronde tressée en herbe de savane et plastique recyclé, 40 cm",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -255,7 +255,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-jouets-tresse",
@@ -290,7 +290,7 @@
       "entree",
       "cuisine-salle-a-manger"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-29"
   },
   {
@@ -357,22 +357,19 @@
   {
     "id": "tapis-motif-bogolan",
     "asin": "B0F9QXTF71",
-    "nom": "Tapis tribal noir et blanc à losanges",
+    "nom": "Tapis tribal noir et blanc à losanges, style « southwestern »",
     "type_objet": "tapis",
-    "matieres": [
-      "bogolan"
-    ],
+    "matieres": [],
     "couleurs": [
-      "brun",
-      "crème",
-      "noir"
+      "noir",
+      "blanc"
     ],
     "pieces": [
       "salon",
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "jarre-terre-cuite-toscane",
@@ -411,7 +408,7 @@
   {
     "id": "lanternes-solaires-rotin",
     "asin": "B0G19M7BX1",
-    "nom": "Lanternes solaires en rotin tressé, lot de 2",
+    "nom": "Lanternes solaires d’extérieur façon rotin tressé, lot de 2",
     "type_objet": "luminaire",
     "matieres": [
       "raphia-paniers"
@@ -423,7 +420,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-jute-rond",
@@ -546,7 +543,7 @@
   {
     "id": "nappe-lin-geometrique",
     "asin": "B082KGNPHR",
-    "nom": "Nappe en lin à motifs géométriques, 130 × 180 cm",
+    "nom": "Nappe en lin mélangé à motifs géométriques, 130 × 180 cm",
     "type_objet": "nappe",
     "matieres": [],
     "couleurs": [
@@ -556,12 +553,12 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-lin-orange-pompons",
     "asin": "B0DFTWY87B",
-    "nom": "Chemin de table en lin orange à pompons",
+    "nom": "Chemin de table en coton mélangé orange à pompons",
     "type_objet": "nappe",
     "matieres": [],
     "couleurs": [
@@ -571,7 +568,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "nappe-impermeable-tribale",
@@ -813,7 +810,7 @@
   {
     "id": "malles-osier-lot-2",
     "asin": "B0BXL71YLC",
-    "nom": "Coffres de rangement en osier tressé, lot de 2 (80 et 60 cm)",
+    "nom": "Coffres de rangement en feuille de palmier tressée, lot de 2 (80 et 60 cm)",
     "type_objet": "rangement",
     "matieres": [
       "raphia-paniers"
@@ -827,7 +824,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "boites-papier-tresse-couvercle-lot-3",
@@ -917,7 +914,7 @@
   {
     "id": "miroir-soleil-rotin-58",
     "asin": "B077NG6R71",
-    "nom": "Miroir soleil en rotin, 58 cm",
+    "nom": "Miroir soleil en rotin et saule, 58 cm",
     "type_objet": "miroir",
     "matieres": [
       "raphia-paniers"
@@ -931,7 +928,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "banc-chaussures-bambou",
@@ -1369,7 +1366,7 @@
   {
     "id": "coussins-lin-beige-lot-2",
     "asin": "B0GXGG35X9",
-    "nom": "Housses de coussin en lin naturel beige, lot de 2 (45 × 45 cm)",
+    "nom": "Housses de coussin lin-ramie et coton, beige, lot de 2 (45 × 45 cm)",
     "type_objet": "coussin",
     "matieres": [],
     "couleurs": [
@@ -1380,7 +1377,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "table-basse-ronde-chene-clair",
@@ -1485,7 +1482,7 @@
   {
     "id": "suspension-rotin-fait-main",
     "asin": "B0BB28LM7L",
-    "nom": "Suspension vintage en rotin naturel, fabriquée à la main",
+    "nom": "Suspension vintage tressée main en cordon de papier façon rotin",
     "type_objet": "luminaire",
     "matieres": [
       "raphia-paniers"
@@ -1499,7 +1496,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "suspension-paille-parasol",
@@ -1517,8 +1514,8 @@
       "cuisine-salle-a-manger",
       "chambre"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-09-28"
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "suspension-bambou-tess-58",
@@ -1580,7 +1577,7 @@
   {
     "id": "lampes-chevet-rotin-lot-2",
     "asin": "B0FK4YWHTQ",
-    "nom": "Lampes de chevet bohèmes en rotin, lot de 2",
+    "nom": "Lampes de chevet bohèmes en papier tressé façon rotin, lot de 2",
     "type_objet": "luminaire",
     "matieres": [
       "raphia-paniers"
@@ -1593,7 +1590,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "lampadaire-fibres-naturelles-bijie",
@@ -1616,7 +1613,7 @@
   {
     "id": "appliques-bois-rotin-lot-2",
     "asin": "B0CY4H3GX9",
-    "nom": "Appliques murales en bois et rotin, lot de 2",
+    "nom": "Appliques murales en bois et papier tressé façon rotin, lot de 2",
     "type_objet": "luminaire",
     "matieres": [
       "raphia-paniers"
@@ -1630,7 +1627,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "lampe-lanterne-bambou",
@@ -1764,8 +1761,8 @@
       "salon",
       "chambre-enfant"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-23"
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "livre-african-textiles",
@@ -1801,7 +1798,7 @@
       "salon",
       "cuisine-salle-a-manger"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-29"
   },
   {
@@ -1819,8 +1816,8 @@
       "salon",
       "cuisine-salle-a-manger"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-17"
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "savon-noir-dudu-osun-lot-6",
@@ -1917,7 +1914,7 @@
   {
     "id": "serviettes-lin-melange-lot-12",
     "asin": "B0C535K7FJ",
-    "nom": "Serviettes de table en mélange de lin, couleur unie, lot de 12",
+    "nom": "Serviettes de table en polyester mélangé (15 % lin), couleur unie, lot de 12",
     "type_objet": "textile",
     "matieres": [],
     "couleurs": [
@@ -1927,7 +1924,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "eucalyptus-artificiel-lot-6",
@@ -2355,8 +2352,8 @@
       "chambre",
       "cuisine-salle-a-manger"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-09-29"
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "paniers-muraux-jacinthe-lot-10",
@@ -2400,7 +2397,7 @@
   {
     "id": "miroirs-rotin-soleil-lot-3",
     "asin": "B07MY93WBS",
-    "nom": "Miroirs soleil en rotin, 28 cm, lot de 3",
+    "nom": "Miroirs soleil en osier, 28 cm, lot de 3",
     "type_objet": "miroir",
     "matieres": [
       "raphia-paniers"
@@ -2414,7 +2411,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "kit-teinture-indigo-jacquard",
@@ -2430,7 +2427,7 @@
     "pieces": [
       "salon"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-28"
   },
   {
@@ -2742,18 +2739,19 @@
   {
     "id": "tapis-kilim-terracotta-160x230",
     "asin": "B0F5NRTMF1",
-    "nom": "Tapis effet kilim terracotta chiné, lavable, 160 × 230 cm",
+    "nom": "Tapis en coton façon kilim, beige, lavable, 160 × 230 cm",
     "type_objet": "tapis",
     "matieres": [],
     "couleurs": [
-      "terracotta"
+      "crème",
+      "naturel"
     ],
     "pieces": [
       "salon",
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-berbere-losanges-creme",
@@ -3585,20 +3583,21 @@
   {
     "id": "tissu-kente-ankara-5-5m",
     "asin": "B09MV38NT7",
-    "nom": "Tissu africain imprimé kente (Ankara), polyester, 5,49 × 1,14 m",
+    "nom": "Tissu africain imprimé Ankara façon wax, polyester, 5 m",
     "type_objet": "textile",
     "matieres": [
-      "kente"
+      "wax"
     ],
     "couleurs": [
-      "multicolore"
+      "bleu",
+      "noir"
     ],
     "pieces": [
       "salon",
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "housses-coussin-shibori-indigo-lot-5",
@@ -3646,7 +3645,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-berbere-creme-orange-noir-120x170",
@@ -3889,7 +3888,7 @@
     "pieces": [
       "salon"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-28"
   },
   {
@@ -3902,7 +3901,7 @@
     "pieces": [
       "salon"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-10-28"
   },
   {
@@ -3917,5 +3916,111 @@
     ],
     "statut": "actif",
     "verifie_le": "2026-10-28"
+  },
+  {
+    "id": "coussins-tribal-africain-velours-lot-4",
+    "asin": "B08P6V6JZM",
+    "nom": "Housses de coussin en velours à motifs tribaux africains, lot de 4 (40 × 40 cm)",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "terracotta",
+      "safran",
+      "noir",
+      "crème"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
+  },
+  {
+    "id": "coussin-girafes-orange-40",
+    "asin": "B0C2T5L72X",
+    "nom": "Housse de coussin à silhouettes de girafes sur fond orange",
+    "type_objet": "coussin",
+    "matieres": [],
+    "couleurs": [
+      "safran",
+      "terracotta",
+      "noir"
+    ],
+    "pieces": [
+      "salon",
+      "chambre"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
+  },
+  {
+    "id": "eventail-kente-cuir",
+    "asin": "B08HRDXQCN",
+    "nom": "Éventail pliant fait main à imprimé kente, poignée en cuir",
+    "type_objet": "objet",
+    "matieres": [
+      "kente"
+    ],
+    "couleurs": [
+      "multicolore"
+    ],
+    "pieces": [
+      "salon"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
+  },
+  {
+    "id": "rideau-douche-shibori-indigo",
+    "asin": "B0BLJW7TD6",
+    "nom": "Rideau de douche à motif shibori bleu indigo, polyester, 183 × 183 cm",
+    "type_objet": "rideau",
+    "matieres": [
+      "indigo"
+    ],
+    "couleurs": [
+      "indigo",
+      "blanc"
+    ],
+    "pieces": [
+      "salle-de-bain"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
+  },
+  {
+    "id": "pot-terre-cuite-citrons-italien",
+    "asin": "B08B4RDS18",
+    "nom": "Pot de fleurs en terre cuite à décor de citrons en relief, artisanat italien, 25 cm",
+    "type_objet": "vase",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
+  },
+  {
+    "id": "amphore-terre-cuite-ouverte-40",
+    "asin": "B01GBMN6GA",
+    "nom": "Amphore décorative en terre cuite ouverte sur le flanc, 40 cm",
+    "type_objet": "vase",
+    "matieres": [
+      "terre-cuite"
+    ],
+    "couleurs": [
+      "terracotta"
+    ],
+    "pieces": [
+      "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
   }
 ]

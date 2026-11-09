@@ -10,7 +10,7 @@ Mis à jour le 9 novembre 2026. Compagnon de INFRA.md.
 
 ## Rémunération par phases
 
-- [fait] **Aujourd'hui** : liens Amazon Partenaires (tag `keurdecofr-21` depuis le 18 octobre 2026), 226 produits actifs sur 238, en ligne au 9 novembre 2026.
+- [fait] **Aujourd'hui** : liens Amazon Partenaires (tag `keurdecofr-21` depuis le 18 octobre 2026), 230 produits actifs sur 245 au soir du 9 novembre 2026 (fiches Amazon relues une à une ce soir-là : 5 produits passés indisponibles, 4 revenus en stock, 6 remplaçants ajoutés ; tous les Top et les 10 onglets Top 10 sont complets).
 - [à faire] **Validation AdSense** : examen demandé le 16 octobre 2026, refusé par Google le 9 novembre 2026 pour « Contenu à faible valeur informative » (les agents avaient encore noté « En préparation » le matin du 9 novembre). Avant de redemander l'examen : rallonger les fiches produits et les pages courtes (médiane d'environ 490 mots par page en ligne le 9 novembre 2026).
 - **Trafic Pinterest automatique** : publication quotidienne par l'API (5 épingles par passage) depuis le 20 octobre 2026, 151 au 9 novembre (aucune au passage du 9 novembre : les 247 épingles du manifeste d'alors étaient toutes publiées ou programmées ; 255 au manifeste depuis l'article du 9 novembre).
 - **Trafic de recherche** : pages indexées par Google et Bing, qui font vivre les deux revenus.
@@ -52,5 +52,5 @@ Mis à jour le 9 novembre 2026. Compagnon de INFRA.md.
 ## Les 3 priorités
 
 - Faire indexer les 8 pages encore absentes (4 détectées non explorées, 4 inconnues de Google ; 5 sont des articles d'actus et 3 des conseils, relevé du 9 novembre 2026) ; les 10 pages Top 10 sont déjà indexées.
-- Remplacer les 9 produits Amazon indisponibles et sans remplaçant (jarre toscane, coussin femme africaine en jute, plaid chenille, lampadaire rotin, sphère étoiles, suspension parasol, plateaux tressés lot de 2, tissu bogolan indigo à flèches, chemin de table paisley 40 × 225 cm) ; le tapis rond jute lurex a été remplacé le 4 novembre 2026 et les paniers en jonc de mer le 5 novembre 2026.
+- 15 produits Amazon sont indisponibles au 9 novembre 2026 (masqués automatiquement). Ils ont été remplacés dans tous les Top et Top 10 le 9 novembre 2026 ; restent à remplacer les points masqués de 8 ambiances (jarre toscane, plaid chenille, lampadaire rotin, sphère étoiles, guirlande de perles, kit de teinture indigo, panier suspendu en jacinthe d’eau). La suspension parasol et les plateaux tressés lot de 2 sont revenus en stock le 9 novembre 2026.
 - Refaire la clé Pinterest avant son échéance : le secret `PINTEREST_REFRESH_TOKEN` date du 20 octobre 2026 (valable environ 60 jours, soit vers le 19 décembre) ; sans elle, la publication automatique des épingles s'arrête (ticket de rappel n° 15 ouvert).

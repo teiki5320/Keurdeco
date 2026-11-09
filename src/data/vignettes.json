@@ -905,12 +905,6 @@
     "y": 78,
     "cadre": 26
   },
-  "sous-verres-rotin-lot-6": {
-    "article": "top-cadeaux-deco-africaine",
-    "x": 85,
-    "y": 50,
-    "cadre": 18
-  },
   "sphere-terre-cuite-etoiles": {
     "article": "balcon-lanternes-kente",
     "x": 76,
@@ -953,17 +947,17 @@
     "y": 26,
     "cadre": 22
   },
-  "table-appoint-tronc-teck-kare": {
-    "article": "top-tabourets-bois-sculpte",
-    "x": 77,
-    "y": 67,
-    "cadre": 32
-  },
   "table-appoint-tranche-teck": {
     "article": "balcon-lanternes-kente",
     "x": 50,
     "y": 74,
     "cadre": 30
+  },
+  "table-appoint-tronc-teck-kare": {
+    "article": "top-tabourets-bois-sculpte",
+    "x": 77,
+    "y": 67,
+    "cadre": 32
   },
   "table-basse-ronde-chene-clair": {
     "article": "salon-touches-kente",
@@ -1120,12 +1114,6 @@
     "x": 20,
     "y": 55,
     "cadre": 30
-  },
-  "tissu-kente-ankara-5-5m": {
-    "article": "top-10/indigo-kente",
-    "x": 89,
-    "y": 66,
-    "cadre": 28
   },
   "tissu-kente-patchwork-5-5m": {
     "article": "top-10/indigo-kente",

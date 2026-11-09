@@ -25,9 +25,9 @@ classement:
   - produit: bol-manguier-sculpte
     pourquoi: "Un bol en bois de manguier sculpté à la main, pour les fruits ou en vide-poches : un cadeau chaleureux qui convient à tout le monde. Le manguier, cultivé dans toute la zone tropicale, donne un bois de fruitier souvent issu d’arbres qui ne produisent plus : ses veines dorées et brunes rendent chaque pièce différente. Ce bol se pose au centre d’une table, sur un buffet ou dans l’entrée pour accueillir clés et lunettes. Comparé à la carafe en argile, objet de table plus délicat, il est robuste et sans entretien compliqué ; avec les sous-verres en rotin, il compose un petit lot pour la maison."
     a_savoir: "La fiche indique 30,5 × 30,5 × 12,1 cm, en bois de manguier sculpté à la main. Le bois se nourrit de temps en temps avec un peu d’huile alimentaire, puis on essuie l’excédent ; ne le passez pas au lave-vaisselle et ne le laissez pas tremper. Pour des fruits, posez une serviette au fond si le bois a été verni. Pour l’entretien, voir [entretenir le bois sculpté](conseil-entretenir-bois-sculpte.html)."
-  - produit: sous-verres-rotin-lot-6
-    pourquoi: "Six sous-verres en rotin tressés à la main, avec leur support : un petit cadeau élégant, parfait pour un budget serré. D’après la fiche, ils sont fabriqués par des artisans de régions rurales du Vietnam, et chaque lot partage une même finition, miel naturel ou blanchie à la chaux. Le rotin, tige d’un palmier grimpant, est tressé en spirale serrée pour former des disques fins et légers qui protègent les tables des traces de verre. Comparés au bol en manguier, ils sont plus modestes mais tout aussi utiles ; associés aux plateaux tressés de la liste, ils forment un ensemble de service cohérent."
-    a_savoir: "La fiche indique des sous-verres de 10 cm de diamètre et 5 mm d’épaisseur, livrés dans un coffret cadeau recyclable, à laver à la main uniquement et non compatibles avec le lave-vaisselle. Essuyez-les avec un chiffon humide et laissez-les sécher à plat. Idéal en cadeau d’hôte quand on est invité à dîner."
+  - produit: eventail-kente-cuir
+    pourquoi: "Un éventail pliant fait main, couvert d’un tissu imprimé de motifs kente et tenu par une poignée en cuir : un petit cadeau coloré, utile l’été et joli accroché au mur le reste de l’année. Ses deux faces portent des imprimés différents, dans des bleus, des marrons, des blancs cassés et des noirs, avec des rayons rouges sur les photos. Le kente est à l’origine un tissu ghanéen tissé en bandes étroites ; ici, c’est un imprimé qui en reprend les carreaux et les couleurs, ce que le vendeur annonce clairement. Fermé, il tient dans un sac ; ouvert, il forme une rosace qui fait un bel effet sur un mur de cadres."
+    a_savoir: "La fiche indique environ 23 × 5 cm fermé et 28 cm de large ouvert, avec des cordelettes en cuir pour le garder plié. Pas de lavage : un coup de pinceau sec suffit, car le cuir et la colle n’aiment pas l’eau. Pour accompagner le cadeau, notre fiche sur le [kente](glossaire-kente.html) raconte l’histoire de ce tissu et le sens de ses couleurs."
   - produit: carafe-argile-naturelle
     pourquoi: "Une carafe en argile non émaillée, qui garde l’eau fraîche : un objet ancestral, beau et utile sur la table. Le principe est celui des jarres à eau d’Afrique et du pourtour méditerranéen : l’argile poreuse laisse suinter un peu d’eau, dont l’évaporation rafraîchit le contenu. D’après la fiche, cet ensemble est façonné à la main en Cappadoce, en Turquie, et comprend un pichet, un couvercle et une coupelle. C’est un petit format, pour une personne ou un tête-à-tête. Comparée au bol en manguier, plus robuste, elle demande un peu plus de soin, mais elle raconte une histoire à chaque repas."
     a_savoir: "La fiche donne environ 15 cm de large pour 23,9 cm de haut, mais des capacités contradictoires : nous ne citons donc pas de volume. Joignez un petit mot : l’argile nue se pose sur sa coupelle, jamais directement sur un meuble en bois, car elle transpire. Rincez-la à l’eau claire, sans savon ni lave-vaisselle, et laissez-la sécher tête en bas. Les petites irrégularités sont normales sur une pièce faite main."
@@ -46,7 +46,6 @@ hotspots:
   - { produit: livre-african-textiles, x: 73, y: 70, cadre: 26 }
   - { produit: coupon-pagne-wax-180x120, x: 42, y: 30, cadre: 20 }
   - { produit: bol-manguier-sculpte, x: 71, y: 37, cadre: 20 }
-  - { produit: sous-verres-rotin-lot-6, x: 85, y: 50, cadre: 18 }
   - { produit: carafe-argile-naturelle, x: 16, y: 55, cadre: 24 }
   - { produit: plateaux-tresses-lot-2, x: 55, y: 63, cadre: 22 }
 epingles:
@@ -75,7 +74,7 @@ Pour un cadeau cohérent, emballez-le dans un **coupon de wax** noué, à la man
 - **Pour celle qui coud** : un coupon de wax, accompagné de quelques coupons plus petits pour les finitions, ou du beau livre sur les textiles africains pour l’inspiration.
 - **Pour la famille** : un jeu d’awalé, qui se joue à deux mais se regarde à plusieurs, et dont les règles s’apprennent en une soirée.
 - **Pour ceux qui viennent d’emménager** : des housses de coussin, un panier pour les plaids ou un bol pour l’entrée, des objets qui habillent tout de suite une maison encore vide.
-- **Pour un dîner** : des sous-verres tressés, un savon noir ou une petite carafe en argile, des attentions qui ne prennent pas de place.
+- **Pour un dîner** : des plateaux tressés, un savon noir ou une petite carafe en argile, des attentions qui ne prennent pas de place.
 
 ## Artisanal ou fabriqué en série ?
 
@@ -99,4 +98,4 @@ Oui, bien calé dans du papier froissé ou un tissu. L’argile est plus fragile
 
 ## En résumé
 
-Un panier Bolga pour faire plaisir à coup sûr, un jeu d’awalé pour partager, un beau livre pour rêver, et de petites attentions en rotin ou en bois pour un dîner entre amis : il y a un cadeau africain pour chacun.
+Un panier Bolga pour faire plaisir à coup sûr, un jeu d’awalé pour partager, un beau livre pour rêver, et de petites attentions tressées ou en bois pour un dîner entre amis : il y a un cadeau africain pour chacun.

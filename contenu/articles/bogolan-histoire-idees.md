@@ -63,9 +63,9 @@ Un coupon de bogolan tendu sur un châssis, ou simplement suspendu à une tringl
 
 Un abat-jour à motifs bogolan diffuse une lumière chaude et projette le graphisme du tissu. À placer sur une lampe à poser, au salon ou dans une chambre.
 
-### 5. Au sol, un tapis à motifs bogolan
+### 5. Au sol, un tapis graphique noir et blanc
 
-Un tapis inspiré du bogolan ancre un coin salon ou une entrée. Choisissez-le assez grand pour que les pieds avant du canapé reposent dessus.
+Un tapis aux losanges noirs et blancs rappelle le graphisme du bogolan et ancre un coin salon ou une entrée. Celui que nous proposons n’est pas un motif malien : son vendeur le range dans le style « southwestern », celui du sud-ouest des États-Unis. Choisissez-le assez grand pour que les pieds avant du canapé reposent dessus.
 
 {{produit: tapis-motif-bogolan}}
 
