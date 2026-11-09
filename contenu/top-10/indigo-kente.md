@@ -23,35 +23,35 @@ ambiances:
       - { produit: coussin-shibori-indigo, x: 79, y: 65, cadre: 24 }
 produits:
   - produit: tissu-kente-patchwork-5-5m
-    pourquoi: "Un tissu imprimé kente en patchwork, en polyester : 5,5 m sur environ 114 cm de large. C’est un imprimé, pas un kente tissé. Avec cette longueur, on peut tendre un pan de mur, couvrir une table ou coudre des coussins."
-    ideal_pour: "tendre au mur ou coudre ses propres coussins."
+    pourquoi: "Un tissu en polyester imprimé façon kente en patchwork, vendu en une pièce de 5,5 m sur environ 114 cm de large, de quoi tendre un pan de mur, couvrir une grande table ou coudre plusieurs coussins. C’est un imprimé fabriqué en Chine, pas un kente tissé : le vrai [kente](glossaire-kente.html) ghanéen est fait de bandes étroites tissées puis cousues bord à bord, ce que ce patchwork imite visuellement. La longueur de 5,5 m correspond aux six yards des coupons de tissu africain. Le polyester ne se froisse presque pas et garde ses couleurs. Lavez-le à 30 °C, séchez-le à l’air et repassez-le à fer doux, sur l’envers. Tendu au mur, il évite le soleil direct qui pâlirait les couleurs."
+    ideal_pour: "tendre au mur derrière un canapé ou un lit, ou coudre ses propres coussins et une nappe assortie ; notre conseil pour [accrocher un tissu africain au mur](conseil-accrocher-tissu-africain-mur.html) détaille les méthodes. Si vous préférez un tissu plus uni dans ses motifs, le coupon de type Ankara est l’autre option de la sélection."
   - produit: livre-african-textiles
-    pourquoi: "Le livre « African Textiles: Colour and Creativity Across a Continent », en anglais. Il présente les textiles d’Afrique, dont le kente et les tissus teints. Posé sur une table basse, il est à la fois une source d’idées et un objet déco. Une belle idée de cadeau pour les amoureux des tissus."
-    ideal_pour: "ceux qui veulent comprendre les textiles africains (et lisent l’anglais)."
+    pourquoi: "Le livre « African Textiles: Colour and Creativity Across a Continent » de John Gillow, en anglais, est l’un des tours d’horizon les plus complets des textiles faits main en Afrique. L’édition compacte de 2016 chez Thames & Hudson compte 240 pages et plus de 570 photographies en couleur, au format d’environ 28 × 22 cm. Le livre avance région par région, de l’Afrique de l’Ouest à l’Afrique australe, et décrit les techniques, les métiers à tisser, les matières et les teintures : kente, bogolan, adire à l’indigo, velours kuba et bien d’autres. Un glossaire, une carte et une liste des musées où voir ces tissus complètent l’ensemble. Rangez-le à plat, à l’abri du soleil qui jaunit les couvertures."
+    ideal_pour: "ceux qui veulent comprendre les textiles africains et lisent l’anglais, ou qui cherchent un cadeau pour un amoureux des tissus. Posé sur une table basse, il sert aussi de socle à un bol ou à une bougie. C’est le complément naturel des tissus et coussins de cette sélection : on y apprend à distinguer un kente tissé d’un imprimé."
   - produit: housses-coussin-kente-boucles-dorees-lot-4
-    pourquoi: "Quatre housses de coussin de 45 × 45 cm, imprimées d’un motif tribal traditionnel kente et de boucles d’oreilles géométriques dorées. Elles sont en coton et lin, avec une fermeture éclair invisible, et se lavent en machine à froid. L’impression est d’un seul côté ; les coussins ne sont pas fournis."
-    ideal_pour: "habiller tout un canapé aux couleurs du kente."
+    pourquoi: "Quatre housses de coussin de 45 × 45 cm, imprimées d’un motif tribal inspiré du kente et de boucles d’oreilles géométriques dorées, pour un ensemble coloré et assorti. La fiche les décrit en coton et lin, un tissu épais et respirant, avec une fermeture éclair invisible ; l’impression n’est que sur une face et les coussins ne sont pas fournis. Elles sont fabriquées en Chine, avec une tolérance de 1 à 2 cm sur la taille. Lavage en machine ou à la main à l’eau froide, cycle délicat, sans eau de Javel, séchage à basse température. Les boucles dorées évoquent les bijoux de fête plus qu’un motif textile : elles ajoutent une note glamour au kente."
+    ideal_pour: "habiller tout un canapé aux couleurs du kente, avec un plaid uni ocre ou noir. Le format 45 cm se garnit facilement. Pour deux grands coussins plutôt que quatre moyens, le lot kente en 60 cm fait un effet plus massif ; pour calmer l’ensemble, ajoutez un coussin shibori bleu."
   - produit: kit-teinture-indigo-jacquard
-    pourquoi: "Un petit kit de teinture à l’indigo, de la marque Jacquard. Il permet de teindre soi-même du coton ou du lin en bleu indigo. Torchons, serviettes ou housses de coussin : chaque pièce sera unique. Une activité créative autour de l’indigo."
-    ideal_pour: "les amateurs de loisirs créatifs qui veulent teindre eux-mêmes."
+    pourquoi: "Un petit kit de teinture à l’indigo de la marque Jacquard, pour teindre soi-même du coton ou du lin et obtenir des pièces toutes différentes. La fiche détaille son contenu : 20 g d’indigo pré-réduit, 250 g d’agent réducteur, une paire de gants, deux bâtonnets, des élastiques et un livret avec des modèles de pliage. Il faut prévoir un seau d’environ 20 litres avec couvercle et ses propres tissus en fibres naturelles. Le kit permet de teindre plus de 13 m de tissu, soit une quinzaine de chemises. Il est fabriqué aux États-Unis et déconseillé avant 8 ans sans adulte : la poudre contient du carbonate de sodium, nocif en cas d’ingestion."
+    ideal_pour: "les amateurs de loisirs créatifs qui veulent teindre torchons, serviettes ou housses en famille. Le livret n’est pas garanti en français. Si vous avez déjà le matériel, le sachet d’indigo pré-réduit seul est l’autre choix ; et pour les techniques africaines, lisez notre conseil sur l’[adire](conseil-adire-indigo-yoruba.html)."
   - produit: tissu-kente-ankara-5-5m
-    pourquoi: "Un tissu africain imprimé aux motifs du kente, en polyester, de 5,49 × 1,14 m. La fiche le présente pour la couture comme pour la décoration. Il se lave en machine et sèche à l’air libre."
-    ideal_pour: "une tenture, une nappe ou des travaux de couture."
+    pourquoi: "Un coupon de tissu africain imprimé de type Ankara, en polyester, présenté par la fiche pour la couture comme pour la décoration. Ankara est le nom courant, au Nigeria, des tissus imprimés façon wax ; celui-ci imite l’effet de la réserve à la cire sans être un [wax](glossaire-wax.html) en coton. La fiche du jour annonce une pièce de 5 m, sans préciser la largeur, et ne parle plus de kente : fiez-vous aux photos pour le motif exact. Elle recommande un lavage à la main, ou en machine sans dépasser 30 °C, sans eau de Javel, et un séchage à l’air libre ; le tissu s’assouplit au fil des lavages. Une tenture ou une nappe se coupent sans ourlet compliqué."
+    ideal_pour: "une tenture, une nappe, des rideaux ou des travaux de couture, si vous aimez les imprimés vifs. Pour un motif clairement inspiré du kente, le tissu patchwork de 5,5 m sur 114 cm est plus fidèle et sa largeur est connue."
   - produit: housses-coussin-imprime-kente-lot-2
-    pourquoi: "Deux housses de coussin à imprimé kente rouge, vert et jaune, au grand format 60 × 60 cm. Ce sont les couleurs les plus connues du kente, le tissu des rois du Ghana. Sur un canapé uni, elles font tout de suite un point fort. C’est la façon la plus simple d’apporter le kente dans un salon."
-    ideal_pour: "ceux qui veulent un vrai point de couleur sur le canapé."
+    pourquoi: "Deux grandes housses de 60 × 60 cm en polyester, imprimées de rayures et de carreaux rouges, verts et jaunes dans l’esprit du kente, la façon la plus simple d’apporter ce tissu dans un salon. Ces trois couleurs sont parmi les plus associées au kente : le vert y évoque la croissance et le renouveau, l’or la richesse, le rouge la force ; voir notre conseil sur les [couleurs du kente](conseil-couleurs-kente-signification.html). L’impression couvre les deux faces, la fermeture éclair est invisible et les coussins sont à acheter à part. La fiche autorise la machine en cycle délicat et le sèche-linge. Gardez-les loin d’une fenêtre plein sud : même un polyester finit par pâlir."
+    ideal_pour: "ceux qui veulent un vrai point de couleur sur le canapé, avec un mur ou un tissu d’ameublement neutre. Leur grand format convient aux coussins de dos. Pour une série plus nombreuse en 45 cm, prenez le lot aux boucles dorées ; associez-les à du shibori pour un contraste chaud et froid."
   - produit: chemin-table-kente-lin
-    pourquoi: "Un chemin de table en lin imprimé kente, de 33 × 183 cm. Posé sur une table en bois, il donne le ton sans cacher le bois. Les bandes colorées s’accordent avec une vaisselle unie, blanche ou en terre cuite. Il passe aussi bien sur une table de tous les jours que sur une table de fête."
-    ideal_pour: "une table rectangulaire de 4 à 6 personnes."
+    pourquoi: "Un chemin de table en lin imprimé de bandes kente, de 33 × 182,9 cm, qui fait entrer le kente à table sans cacher le bois. La fiche annonce un lin pur, prévu pour une table de 4 à 6 personnes, et cite aussi Kwanzaa et Juneteenth, deux fêtes afro-américaines, dans son titre. Elle conseille un lavage doux en machine à l’eau froide ou tiède, un séchage à l’air libre et un repassage quand il est encore à moitié sec, ce qui évite de cuire la fibre. Le lin se froisse naturellement ; un rangement roulé limite les plis. Sur une table en bois foncé, les bandes jaunes et vertes ressortent ; sur du bois clair, ce sont les rouges et les noirs."
+    ideal_pour: "une table rectangulaire de 4 à 6 personnes, au quotidien comme les jours de fête. Il complète les coussins kente du salon, si la salle à manger est dans la même pièce. Pour une table plus calme, notre top des chemins de table propose des modèles à totems ou façon bogolan."
   - produit: coussin-shibori-indigo
-    pourquoi: "Une housse de coussin shibori indigo, en coton et lin. Le bleu indigo et le blanc forment un motif doux, qui évoque les tissus teints à la main. Elle apaise un canapé ou un lit. Elle se marie avec le kente pour un contraste chaud et froid."
-    ideal_pour: "une chambre ou un salon dans les bleus."
+    pourquoi: "Une housse de coussin en coton et lin à motif shibori bleu indigo sur fond blanc, de 45,7 × 45,7 cm, qui apporte un bleu frais face aux couleurs chaudes du kente. Le motif est imprimé, pas teint à la main : il ne dégorge donc pas au lavage, contrairement au lot de cinq housses teintes. Le shibori, technique japonaise, partage avec l’adire nigérian et les teintures à l’indigo du Mali ou de Guinée le même principe de réserve : ce que l’on noue ou serre reste blanc. La fiche annonce une fermeture éclair cachée et un lavage en machine ou à la main ; la housse est fabriquée en Chine. Une seule suffit pour calmer un canapé chargé."
+    ideal_pour: "une chambre ou un salon dans les bleus, ou pour faire le pont entre des coussins kente et un canapé blanc. Bleu et orangé étant complémentaires, elle se marie aussi avec la terre cuite. Si vous voulez un vrai tissu teint, au rendu irrégulier, prenez le lot de cinq housses shibori en coton."
   - produit: teinture-indigo-prereduit-jacquard
-    pourquoi: "De l’indigo pré-réduit de la marque Jacquard, pour teindre soi-même ses tissus. La fiche indique un colorant d’origine naturelle, livré déjà réduit pour être simple à utiliser, qui donne toute une gamme de bleus. De quoi teindre des coussins, une nappe ou un coupon de coton."
-    ideal_pour: "ceux qui veulent teindre eux-mêmes leur linge à l’indigo."
+    pourquoi: "Un sachet de 21 g d’indigo pré-réduit de la marque Jacquard, pour teindre soi-même ses tissus en bleu, du bleu ciel au bleu marine selon le nombre de bains. Pré-réduit signifie que le colorant a déjà subi une partie de la transformation qui le rend soluble, d’où une préparation plus simple ; la fiche parle de 60 %. Elle se contredit sur l’origine, naturelle d’un côté, synthétique de l’autre : nous ne retenons que le procédé. Comme pour toute cuve d’indigo, le bleu apparaît quand le tissu sorti du bain s’oxyde à l’air. La fiche ne détaille pas les autres produits nécessaires : vérifiez si un agent réducteur est à prévoir. Le sachet est fabriqué aux États-Unis."
+    ideal_pour: "ceux qui veulent teindre eux-mêmes leur linge à l’indigo et ont déjà seau, gants et élastiques. Portez des gants et travaillez dehors ou dans une pièce aérée. Pour un premier essai tout compris, le kit Jacquard contient agent réducteur et accessoires."
   - produit: housses-coussin-shibori-indigo-lot-5
-    pourquoi: "Cinq housses de coussin teintes en shibori indigo, en coton, de 40 × 40 cm, avec fermeture éclair. Le lot suffit pour un canapé entier. Les garnitures ne sont pas fournies ; la fiche conseille de les laver à la main, seules, à l’eau froide."
-    ideal_pour: "habiller tout un canapé en bleu indigo."
+    pourquoi: "Cinq housses de coussin en coton teintes à la main en shibori indigo, de 40 × 40 cm, avec fermeture éclair, vendues par une marque d’artisanat indien. Contrairement aux imprimés, ce sont de vraies teintures par nouage, dont les motifs varient d’une housse à l’autre ; les garnitures ne sont pas fournies. La fiche prévient que les housses peuvent dégorger pendant quelques lavages et pâlir un peu, ce qui est normal pour l’indigo : lavez-les à la main, seules, à l’eau froide, et séchez-les à l’ombre. Le bleu s’adoucit avec le temps, comme un jean. Le coton 100 % est doux et respirant, agréable sur un lit comme sur un canapé."
+    ideal_pour: "habiller tout un canapé ou un lit en bleu indigo, avec du lin blanc et du bois clair. Avec cinq housses, on mélange deux ou trois motifs de nouage. Si vous ne voulez qu’un coussin d’accent qui ne déteint pas, la housse shibori imprimée en coton et lin suffit."
 ---
 
 ## Comment choisir ses objets en indigo et kente
@@ -61,6 +61,18 @@ produits:
 - **Imprimé ou tissé.** Les objets vendus en ligne sont presque toujours des imprimés : très bien pour la maison, mais différents d’un vrai kente tissé à la main.
 - **Les tissus au mètre.** Un coupon se tend au mur, se pose en nappe ou se coud : vérifiez ses dimensions sur la fiche Amazon avant de commander.
 
+## Le kente, tissé en bandes
+
+Le [kente](glossaire-kente.html) est associé aux Ashanti et aux Éwé, au Ghana et au Togo. Il est tissé sur des métiers horizontaux en bandes étroites d’une dizaine de centimètres, ensuite cousues bord à bord. D’abord réservé aux rois et aux chefs, il se porte aujourd’hui lors des grandes cérémonies. Chaque couleur et chaque motif portent un sens et un nom. Dans cette sélection, seuls des imprimés reprennent ces bandes : coussins, chemin de table et tissus au mètre.
+
+## L’indigo, de la plante à la cuve
+
+L’[indigo](glossaire-indigo.html) est un colorant bleu tiré de plantes comme les indigotiers. Le tissu plongé dans la cuve ressort jaune-vert, puis bleuit au contact de l’air : c’est l’oxydation. Plus on répète les bains, plus le bleu est profond. En Afrique de l’Ouest, les fosses de teinture de Kano, au Nigeria, sont parmi les plus anciennes encore en activité, et les Yoruba ont développé l’[adire](glossaire-adire.html), avec ses ligatures et ses réserves à la pâte de manioc. Le shibori japonais repose sur le même principe de réserve.
+
+## Teindre soi-même sans risque
+
+Les deux produits Jacquard de la sélection demandent quelques précautions : gants, vêtements de travail, pièce aérée ou extérieur, et un seau réservé à la teinture. Choisissez des fibres naturelles (coton, lin, soie), lavées avant teinture pour enlever les apprêts. Rincez longuement à l’eau froide après la teinture, puis lavez la pièce seule les premières fois.
+
 ## Questions fréquentes
 
 ### Quelle est la différence entre le kente et le wax ?
@@ -69,8 +81,8 @@ Le kente est à l’origine un tissu tissé à la main au Ghana, en bandes étro
 
 ### Comment accrocher un tissu africain au mur ?
 
-Le plus simple est une tringle ou un tasseau de bois fixé en haut du tissu. Vous pouvez aussi le tendre sur un châssis de toile, comme un tableau.
+Le plus simple est une tringle ou un tasseau de bois fixé en haut du tissu. Vous pouvez aussi le tendre sur un châssis de toile, comme un tableau. Tous les détails dans notre conseil pour [accrocher un tissu africain au mur](conseil-accrocher-tissu-africain-mur.html).
 
 ### L’indigo déteint-il au lavage ?
 
-Un tissu teint à l’indigo peut dégorger au premier lavage. Lavez-le seul, à froid ou à 30 °C, et suivez toujours l’étiquette.
+Un tissu teint à l’indigo peut dégorger au premier lavage. Lavez-le seul, à froid ou à 30 °C, et suivez toujours l’étiquette. Un motif shibori simplement imprimé, en revanche, ne déteint pas plus qu’un autre imprimé.
