@@ -30,3 +30,9 @@ Un radiateur, une cheminée ou le plein soleil derrière une vitre dessèchent l
 Une ou deux fois par an, appliquez une fine couche de cire d’abeille avec un chiffon doux, laissez pénétrer puis lustrez. Testez d’abord sur une zone cachée : sur certaines patines anciennes, mieux vaut ne rien ajouter.
 
 Un bol utilisé pour servir des fruits secs ou du pain se nettoie d’un coup de chiffon et s’entretient avec une huile alimentaire adaptée au bois.
+
+{{produit: bol-manguier-sculpte}}
+
+{{produit: tabouret-teck-massif-42}}
+
+{{produit: statue-girafe-bois-60}}

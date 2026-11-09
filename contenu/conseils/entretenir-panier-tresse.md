@@ -26,3 +26,9 @@ Laissez sécher **à l’air libre**, dans une pièce aérée. Évitez le radiat
 - Un panier cache-pot ne doit pas recevoir l’eau d’arrosage : gardez une soucoupe ou le pot d’origine à l’intérieur.
 - Dans une salle de bain humide, aérez souvent la pièce.
 - Si les fibres deviennent très sèches, un voile d’eau pulvérisé de loin puis un séchage lent leur redonne un peu de souplesse.
+
+{{produit: corbeille-fruits-tressee}}
+
+{{produit: panier-agaseke-couvercle}}
+
+{{produit: panier-bolga-petit-20}}

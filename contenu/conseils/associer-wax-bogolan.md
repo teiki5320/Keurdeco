@@ -26,3 +26,9 @@ Si le bogolan a de petits motifs serrés, choisissez un wax à grands motifs, ou
 ## La règle des trois
 
 Au-delà de trois imprimés dans une même pièce, l’œil fatigue. Si vous aimez les deux tissus, une autre solution est de les séparer d’une pièce à l’autre : bogolan au salon, wax dans la chambre.
+
+{{produit: coussin-bogolan}}
+
+{{produit: coupon-pagne-wax-180x120}}
+
+{{produit: sets-table-bogolan-lot-6}}

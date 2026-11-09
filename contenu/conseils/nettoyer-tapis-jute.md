@@ -28,3 +28,9 @@ Un tapis en jute ne se lave pas à grande eau : mouillé, il rétrécit, se déf
 ## Le bon endroit
 
 Le jute convient au salon, à la chambre ou à l’entrée, pas à la salle de bain ni devant un évier. Tournez-le tous les six mois pour qu’il s’use de façon régulière.
+
+{{produit: tapis-jute-rond}}
+
+{{produit: tapis-jute-alhambra}}
+
+{{produit: tapis-rond-jute-lurex-80}}

@@ -28,3 +28,9 @@ Laissez toujours la jarre sécher à l’air, idéalement au soleil, avant de la
 ## L’hiver
 
 C’est le gel qui abîme le plus la terre cuite : l’eau prise dans la terre gonfle en gelant et fait éclater la paroi. Videz les jarres d’extérieur, rentrez-les ou posez-les sur des cales, à l’abri de la pluie. Pour en savoir plus sur cette matière, voyez la [terre cuite](glossaire-terre-cuite.html) dans le glossaire.
+
+{{produit: vase-terre-cuite-terracotta}}
+
+{{produit: pot-terre-cuite-fait-main-noir}}
+
+{{produit: coupe-terre-cuite-ronde}}

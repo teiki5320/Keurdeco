@@ -32,3 +32,9 @@ Pour une ambiance encore plus chaude, restez dans la même famille : ocre, mouta
 ## Une touche de noir
 
 Un cadre, un pied de lampe, un vase noir mat : un ou deux objets noirs soulignent l’ensemble, comme dans le bogolan.
+
+{{produit: coussin-wax-terracotta}}
+
+{{produit: plaid-terre-cuite-pompons}}
+
+{{produit: vase-terre-cuite-terracotta}}

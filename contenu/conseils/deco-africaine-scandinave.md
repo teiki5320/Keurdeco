@@ -32,3 +32,9 @@ Paniers tressés, suspension en rotin, assiettes murales : la vannerie fait le l
 ## Garder la sobriété
 
 Le style scandinave tient sur peu d’objets. Gardez cette règle : chaque pièce africaine doit avoir de la place autour d’elle.
+
+{{produit: coussins-lin-beige-lot-2}}
+
+{{produit: tabouret-teck-massif-42}}
+
+{{produit: plaid-coton-rayures-creme}}

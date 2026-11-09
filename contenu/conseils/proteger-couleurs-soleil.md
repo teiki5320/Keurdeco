@@ -25,3 +25,9 @@ Un **voilage** léger devant la fenêtre suffit à adoucir la lumière l’aprè
 ## Laver en douceur
 
 Le lavage abîme aussi les couleurs : eau froide, envers, lessive couleurs, séchage à l’ombre. Retrouvez les détails dans [comment laver un coussin en wax](conseil-laver-coussin-wax.html).
+
+{{produit: voilage-lin-naturel}}
+
+{{produit: housses-coussin-imprime-kente-lot-2}}
+
+{{produit: coussin-shibori-indigo}}

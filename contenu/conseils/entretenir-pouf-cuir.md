@@ -31,3 +31,5 @@ Le soleil direct et la chaleur d’un radiateur dessèchent et craquellent le cu
 ## Garder sa forme
 
 Avec le temps, le garnissage se tasse. Ouvrez la fermeture et ajoutez du rembourrage ou des textiles bien serrés pour lui rendre sa forme ronde.
+
+{{produit: pouf-cuir-ocre}}

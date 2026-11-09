@@ -29,3 +29,9 @@ Chaque motif tissé porte un nom, souvent tiré d’un proverbe ou d’un évén
 ## En décoration
 
 Pour un salon, un kente où dominent l’or et le vert apporte une énergie chaleureuse ; un kente plus bleu, une atmosphère calme. Une bande encadrée ou un jeté sur un canapé suffisent : voyez nos idées dans la rubrique [kente](matiere-kente.html).
+
+{{produit: tissu-kente-jaune-noir-blanc}}
+
+{{produit: tissu-kente-bleu-jaune}}
+
+{{produit: housses-coussin-imprime-kente-lot-2}}

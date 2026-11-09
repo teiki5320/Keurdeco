@@ -23,3 +23,9 @@ Un bogolan fait main demande plusieurs jours de travail : il coûte nettement pl
 ## Imprimé ou fait main : les deux ont leur place
 
 Un tissu imprimé façon bogolan convient très bien pour des coussins ou un abat-jour. Pour une pièce à encadrer ou un plaid qui durera, le fait main vaut l’investissement. Pour tout savoir, lisez notre guide [Le bogolan : histoire et idées](bogolan-histoire-idees.html).
+
+Pour apprendre à reconnaître les techniques, un ouvrage de référence aide. Pour la déco, les housses « à motifs bogolan » vendues en grande surface sont le plus souvent des imprimés : elles inspirent le style, mais ne remplacent pas une pièce peinte à la main.
+
+{{produit: livre-african-textiles}}
+
+{{produit: coussin-bogolan}}

@@ -32,3 +32,9 @@ Avec l’adire alabere, le tissu est cousu et froncé avant la teinture, ce qui 
 ## Chez soi
 
 Le bleu profond de l’adire apaise une chambre. Associez-le au lin blanc, au bois clair et à une touche de terracotta.
+
+{{produit: tissu-dogon-indigo-blanc}}
+
+{{produit: kit-teinture-indigo-jacquard}}
+
+{{produit: coussin-shibori-indigo}}

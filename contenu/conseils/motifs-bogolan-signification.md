@@ -29,3 +29,9 @@ Traditionnellement, le bogolan était porté lors de moments importants de la vi
 ## Chez soi
 
 Si vous choisissez un bogolan pour sa signification, demandez au vendeur ou à l’artisan ce que représente sa pièce. Pour la déco, ses motifs graphiques bruns et crème s’accordent avec le bois, le lin et la terre cuite.
+
+{{produit: coussin-bogolan}}
+
+{{produit: tapis-motif-bogolan}}
+
+{{produit: livre-african-textiles}}

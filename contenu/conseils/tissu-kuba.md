@@ -31,3 +31,7 @@ Ces tissus servaient de monnaie d’échange, de dot et accompagnaient les défu
 ## Chez soi
 
 Une pièce de kuba se met sous verre ou se pose sur un dossier. Les reproductions imprimées en coton conviennent aux coussins et aux nappes du quotidien.
+
+{{produit: coussins-kuba-lot-4}}
+
+{{produit: livre-african-textiles}}

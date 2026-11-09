@@ -32,3 +32,9 @@ Un tabouret en bois sculpté fait table de chevet ou assise d’appoint ; un pou
 ## Des miroirs
 
 Un ou plusieurs miroirs soleil en rotin renvoient la lumière et agrandissent visuellement la pièce.
+
+{{produit: coussin-wax-cercles-safran}}
+
+{{produit: panier-mural-tresse}}
+
+{{produit: miroir-soleil-rotin-58}}

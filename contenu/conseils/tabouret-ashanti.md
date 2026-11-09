@@ -28,3 +28,9 @@ Les tabourets de certains chefs défunts sont noircis et conservés dans une sal
 ## Chez soi
 
 Les tabourets sculptés d’inspiration ashanti font de très belles tables d’appoint ou sellettes pour une plante. Voir aussi [comment choisir un tabouret en bois](conseil-choisir-tabouret-bois.html).
+
+{{produit: tabouret-bois-sculpte}}
+
+{{produit: tabouret-teck-massif-42}}
+
+{{produit: tabouret-acajou-monte}}

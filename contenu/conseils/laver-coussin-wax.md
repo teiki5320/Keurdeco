@@ -30,3 +30,9 @@ Un wax neuf peut encore dégorger un peu. Pour le premier lavage, lavez la houss
 ## Au quotidien
 
 Tapotez et aérez les coussins régulièrement, et changez leur place de temps en temps : un coussin toujours exposé à la même fenêtre pâlira plus vite que les autres.
+
+{{produit: coussin-wax-cercles-safran}}
+
+{{produit: coussins-ethniques-geometriques-lot-4}}
+
+{{produit: coussin-wax-terracotta}}

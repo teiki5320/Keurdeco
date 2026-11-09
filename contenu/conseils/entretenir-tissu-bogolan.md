@@ -30,3 +30,9 @@ Ne le tordez pas : pressez-le dans une serviette, puis faites-le sécher à plat
 Un fer chaud, à l’envers du tissu, redonne de la tenue à la toile de coton.
 
 Pour une housse de coussin en bogolan imprimé (et non teint à la main), suivez simplement l’étiquette : un lavage en machine à froid suffit souvent. Pour savoir où le placer dans la maison, voir nos idées de [décoration bogolan](matiere-bogolan.html).
+
+{{produit: coussin-bogolan}}
+
+{{produit: sets-table-bogolan-lot-6}}
+
+{{produit: tapis-motif-bogolan}}

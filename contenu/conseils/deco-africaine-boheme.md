@@ -29,3 +29,9 @@ Choisissez trois ou quatre couleurs : par exemple terracotta, crème, ocre et ve
 ## Des zones calmes
 
 Superposer les tapis et les coussins est l’esprit bohème, mais laissez un mur nu, une étagère aérée, un coin vide. L’œil a besoin de repos.
+
+{{produit: coussin-wax-cercles-safran}}
+
+{{produit: suspension-jute-boheme}}
+
+{{produit: tapis-jute-alhambra}}

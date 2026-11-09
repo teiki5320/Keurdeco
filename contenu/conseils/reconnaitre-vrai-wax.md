@@ -30,3 +30,9 @@ Un wax neuf garde une légère odeur de cire et un toucher un peu raide, qui s�
 Les fabricants inscrivent souvent leur nom ou une mention sur le bord du tissu. C’est un indice, pas une garantie : certaines imitations copient aussi la lisière.
 
 Pour un coussin ou une nappe, une bonne imitation peut suffire ; pour une pièce qu’on garde longtemps, le vrai wax tient mieux ses couleurs.
+
+{{produit: coupon-pagne-wax-180x120}}
+
+{{produit: coussin-wax-vert-baobab}}
+
+{{produit: livre-african-textiles}}

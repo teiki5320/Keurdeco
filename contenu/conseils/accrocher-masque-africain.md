@@ -32,3 +32,7 @@ Certains masques sont des objets rituels. Renseignez-vous sur la provenance de v
 ## Protéger le bois
 
 Évitez le soleil direct et la chaleur d’un radiateur, qui font fendre le bois. Voir aussi [comment entretenir un objet en bois sculpté](conseil-entretenir-bois-sculpte.html).
+
+{{produit: masque-zebre-bois-sculpte}}
+
+{{produit: assiettes-murales-tressees}}

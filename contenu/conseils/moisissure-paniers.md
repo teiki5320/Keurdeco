@@ -32,3 +32,9 @@ Laissez le panier quelques heures au soleil, en le retournant : la lumière et l
 ## Si ça revient
 
 Une moisissure qui revient sans cesse signale une pièce trop humide : aérez chaque jour ou utilisez un absorbeur d’humidité.
+
+{{produit: panier-linge-tresse-couvercle}}
+
+{{produit: paniers-gigognes-tresses}}
+
+{{produit: panier-bolga-marche}}

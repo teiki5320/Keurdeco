@@ -28,3 +28,9 @@ Laissez sécher dans un endroit aéré, pas en plein soleil. Une fois sec, une f
 ## Le bon emplacement
 
 Trop de chaleur dessèche le rotin, qui devient cassant ; trop d’humidité le fait moisir. Évitez la proximité d’un radiateur et, dehors, rentrez le meuble l’hiver ou couvrez-le.
+
+{{produit: table-chevet-rotin}}
+
+{{produit: chaises-dossier-rotin-lot-2}}
+
+{{produit: tete-de-lit-rotin-160}}

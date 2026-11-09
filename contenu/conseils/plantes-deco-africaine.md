@@ -23,3 +23,9 @@ Un **panier tressé** comme cache-pot (avec une soucoupe à l’intérieur), une
 ## Attention aux animaux
 
 Certaines de ces plantes sont toxiques pour les chats et les chiens (notamment la sansevieria et le zamioculcas) : placez-les hors de portée si besoin.
+
+{{produit: panier-plante-tresse-rayures}}
+
+{{produit: pot-terre-cuite-fait-main-noir}}
+
+{{produit: coupe-terre-cuite-ronde}}

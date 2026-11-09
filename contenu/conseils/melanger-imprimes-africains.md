@@ -28,3 +28,9 @@ Dans un même regard, au canapé ou sur une table, trois imprimés suffisent. Au
 ## 4. Des unis pour respirer
 
 Un canapé crème, un mur clair, un tapis en jute : ces surfaces calmes mettent les tissus en valeur. Gardez les grands éléments neutres et réservez les imprimés aux petites surfaces.
+
+{{produit: coussin-wax-cercles-safran}}
+
+{{produit: coussins-lin-beige-lot-2}}
+
+{{produit: coussin-bogolan}}
