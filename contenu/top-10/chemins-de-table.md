@@ -3,7 +3,7 @@ onglet: "Chemins de table"
 titre: "Top 10 des chemins de table à motifs africains"
 description: "Notre sélection de 10 chemins de table à motifs africains : kente, totems, motifs tribaux, façon bogolan, Kwanzaa, en lin, coton ou polyester."
 ordre: 1
-classement_le: "2026-10-19"
+classement_le: "2026-11-09"
 image_partage: top-table-mariage-africain
 voir_aussi: [nappes-sets-de-table, indigo-kente, paniers-tresses-africains]
 ambiances:
@@ -22,9 +22,6 @@ ambiances:
       - { produit: chemin-table-faune-africaine-33x91, x: 25, y: 85, cadre: 26 }
       - { produit: chemin-table-tambour-africain-33x91, x: 83, y: 74, cadre: 26 }
 produits:
-  - produit: chemin-table-geometrique-africain-33x183
-    pourquoi: "Un chemin de table en polyester de 33 × 183 cm, couvert de motifs géométriques d’inspiration africaine aux couleurs vives, pensé pour servir tous les jours. La fiche le donne pour une table de 4 à 6 personnes et indique un lavage à la main ou en machine ; il est fabriqué en Chine. Ses losanges et ses lignes brisées évoquent les textiles d’Afrique de l’Ouest sans copier un tissu précis : c’est un imprimé décoratif, ni wax ni kente. Le polyester a deux atouts à table : il sèche vite et ne se froisse presque pas. Lavez-le à 30 °C, à l’envers, et séchez-le à plat pour garder des bords bien droits. Évitez seulement d’y poser un plat brûlant sans dessous de plat."
-    ideal_pour: "la table de tous les jours, avec des enfants, là où le chemin passe souvent à la machine. Avec une vaisselle blanche ou unie, le motif reste lisible. Si vous préférez une matière naturelle au même format, le chemin à totems en lin est plus calme ; pour une texture plus brute, prenez celui en jute."
   - produit: chemin-table-mois-histoire-noire-lin
     pourquoi: "Un chemin de table en lin noir de 33 × 183 cm, imprimé de motifs africains pensés pour le Mois de l’histoire des Noirs. Cette commémoration est née aux États-Unis : l’historien Carter G. Woodson lance en 1926 une semaine consacrée à l’histoire afro-américaine en février, élargie à tout le mois en 1976. La fiche décrit une matière proche de la toile de jute, prévue pour une table de 4 à 6 personnes. Elle recommande un lavage à la main, un séchage à plat et un rangement roulé plutôt que plié, pour éviter les marques. Le fond noir fait ressortir les couleurs et cache bien les petites taches, un vrai avantage pour un dîner."
     ideal_pour: "une table du soir, ou un repas de fête autour de l’histoire africaine et afro-américaine. Il va avec des bougies, du laiton et une vaisselle dorée ou blanche. Du même fabricant, le chemin Kwanzaa partage la matière et le format mais joue sur un fond plus clair, plus rustique."
@@ -49,6 +46,9 @@ produits:
   - produit: chemin-table-faune-africaine-33x91
     pourquoi: "Un petit chemin de table de 33 × 91,4 cm, imprimé de motifs de faune africaine (léopard, zèbre, guépard) et de formes géométriques, en rouge et noir. La fiche le décrit en faux lin aux bords cousus, lavable en machine en cycle délicat et à sécher à plat. Il arrive plié et donc froissé : un coup de fer doux, ou quelques jours sous un objet lourd, comme le suggère le vendeur. Les imprimés animaliers sont des motifs décoratifs plus qu’une tradition textile : mieux vaut les doser. Sur un petit meuble, il crée un point d’accroche ; posez dessus un objet unique, une lampe ou un bol, pour ne pas surcharger."
     ideal_pour: "une table basse, une console ou un buffet, dans un salon déjà sobre. Son rouge vif réveille un meuble sombre. Pour le même format avec un motif plus graphique, choisissez le chemin au tambour africain ; pour une console plus longue, le chemin de 152 cm."
+  - produit: chemin-table-geometrique-africain-33x183
+    pourquoi: "Un chemin de table en polyester de 33 × 183 cm, couvert de motifs géométriques d’inspiration africaine aux couleurs vives, pensé pour servir tous les jours. La fiche le donne pour une table de 4 à 6 personnes et indique un lavage à la main ou en machine ; il est fabriqué en Chine. Ses losanges et ses lignes brisées évoquent les textiles d’Afrique de l’Ouest sans copier un tissu précis : c’est un imprimé décoratif, ni wax ni kente. Le polyester a deux atouts à table : il sèche vite et ne se froisse presque pas. Lavez-le à 30 °C, à l’envers, et séchez-le à plat pour garder des bords bien droits. Évitez seulement d’y poser un plat brûlant sans dessous de plat."
+    ideal_pour: "la table de tous les jours, avec des enfants, là où le chemin passe souvent à la machine. Avec une vaisselle blanche ou unie, le motif reste lisible. Si vous préférez une matière naturelle au même format, le chemin à totems en lin est plus calme ; pour une texture plus brute, prenez celui en jute."
   - produit: chemin-table-tambour-africain-33x91
     pourquoi: "Un petit chemin de table en lin au motif de tambour africain, de 33 × 91,4 cm, décliné en rouge dans la version que nous avons retenue. La fiche propose aussi d’autres longueurs, de 152 à 229 cm, pratique si vous voulez le même motif sur la grande table. Elle recommande un lavage à la main, ou en machine en cycle délicat, un séchage à plat et un repassage à basse température, sans chlore. Le tambour est un instrument central de nombreuses musiques d’Afrique de l’Ouest et centrale ; ici, il est stylisé en motif décoratif. Ce petit format protège aussi la surface d’un meuble des rayures et des traces de verres."
     ideal_pour: "une table basse, une commode ou une console, ou le dessus d’un buffet de salle à manger. Il s’accorde avec du bois foncé et des objets en laiton. S’il vous faut plus de calme, prenez le chemin à totems ; pour un thème savane, le chemin faune africaine du même format."

@@ -34,7 +34,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coussin-wax-terracotta",
@@ -89,7 +89,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-plante-tresse-rayures",
@@ -108,7 +108,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-motif-losanges",
@@ -126,7 +126,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "pouf-cuir-ocre",
@@ -161,7 +161,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tabouret-bois-sculpte",
@@ -180,7 +180,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-bolga-marche",
@@ -199,7 +199,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-linge-tresse-couvercle",
@@ -218,7 +218,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "paniers-rangement-raphia-lot",
@@ -237,7 +237,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-05"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "corbeille-fruits-tressee",
@@ -273,7 +273,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-mural-tresse",
@@ -311,7 +311,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-agaseke-couvercle",
@@ -332,12 +332,12 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coussin-bogolan",
     "asin": "B0CJF5J48N",
-    "nom": "Housses de coussin à motifs mudcloth (bogolan), 50 × 50 cm",
+    "nom": "Housses de coussin à motifs mudcloth (bogolan), lot de 4 (50 × 50 cm)",
     "type_objet": "coussin",
     "matieres": [
       "bogolan"
@@ -352,7 +352,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-motif-bogolan",
@@ -439,7 +439,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "guirlande-guinguette",
@@ -490,7 +490,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-tribal-africain",
@@ -505,7 +505,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-kente-lin",
@@ -522,7 +522,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-totems-lin",
@@ -538,7 +538,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "nappe-lin-geometrique",
@@ -584,7 +584,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coupons-tissus-africains-lot-6",
@@ -601,7 +601,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "housse-couette-coton-denim",
@@ -652,7 +652,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tete-de-lit-rotin-160",
@@ -735,7 +735,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "voilage-lin-naturel",
@@ -770,7 +770,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "porte-revues-jacinthe",
@@ -787,7 +787,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "corbeille-papier-jacinthe",
@@ -805,7 +805,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "malles-osier-lot-2",
@@ -840,7 +840,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-dossiers-suspendus-a4",
@@ -857,7 +857,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-tisse-extra-large",
@@ -873,7 +873,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "paniers-ronds-rotin-empilables",
@@ -891,7 +891,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "bannette-courrier-jonc",
@@ -909,7 +909,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "miroir-soleil-rotin-58",
@@ -975,7 +975,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "pampa-sechee-bouquet",
@@ -991,7 +991,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "suspension-jute-boheme",
@@ -1010,7 +1010,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coussins-kuba-lot-4",
@@ -1027,7 +1027,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coussin-tribal-coton-lin",
@@ -1043,7 +1043,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coussin-divinite-fertilite",
@@ -1075,7 +1075,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coussin-femme-africaine-jute",
@@ -1107,7 +1107,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "housse-canape-velours-cotele",
@@ -1172,7 +1172,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "branches-saule-sechees",
@@ -1204,7 +1204,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "lampadaire-rotin-boheme",
@@ -1255,7 +1255,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "carafe-argile-naturelle",
@@ -1272,7 +1272,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tajine-terre-cuite-35",
@@ -1289,7 +1289,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "bols-terre-cuite-lot-12",
@@ -1306,7 +1306,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "vases-argile-lot-3",
@@ -1325,7 +1325,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "pot-terre-cuite-fait-main-noir",
@@ -1343,7 +1343,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "sphere-terre-cuite-etoiles",
@@ -1443,7 +1443,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "lampadaire-noir-abat-jour-lin",
@@ -1460,7 +1460,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "cadre-chene-a2",
@@ -1534,7 +1534,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "suspension-jute-alara-70",
@@ -1553,7 +1553,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "suspension-rotin-cuzco",
@@ -1572,7 +1572,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "lampes-chevet-rotin-lot-2",
@@ -1608,7 +1608,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "appliques-bois-rotin-lot-2",
@@ -1645,7 +1645,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "sapin-artificiel-180",
@@ -1781,7 +1781,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "sous-verres-rotin-lot-6",
@@ -1832,7 +1832,7 @@
       "salle-de-bain"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "assiettes-porcelaine-blanches-lot-6",
@@ -1893,7 +1893,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "bougies-tige-ivoire-lot-50",
@@ -1956,7 +1956,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-29"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "table-appoint-racine-teck",
@@ -2011,7 +2011,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tabouret-teck-massif-42",
@@ -2030,7 +2030,7 @@
       "salle-de-bain"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tabouret-acajou-monte",
@@ -2049,7 +2049,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tabouret-bois-recycle",
@@ -2068,7 +2068,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "table-appoint-manguier-laiton",
@@ -2087,7 +2087,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-01"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tabouret-bois-torsade",
@@ -2106,7 +2106,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chaises-dossier-rotin-lot-2",
@@ -2218,7 +2218,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "mobile-bois-animaux-savane",
@@ -2297,7 +2297,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "decorations-murales-seagrass-lot-3",
@@ -2315,7 +2315,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "paniers-muraux-rotin-lot-8",
@@ -2334,7 +2334,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "paniers-muraux-jacinthe-lot-7",
@@ -2373,7 +2373,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-02"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "corbeilles-murales-jonc-lot-7",
@@ -2392,7 +2392,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "miroirs-rotin-soleil-lot-3",
@@ -2571,7 +2571,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "porte-noms-bois-lot-30",
@@ -2586,7 +2586,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "sets-table-jacinthe-lot-6",
@@ -2603,7 +2603,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemins-table-gaze-terracotta-lot-6",
@@ -2618,7 +2618,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "vase-rustique-terre-cuite-anse",
@@ -2636,7 +2636,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "corbeilles-tressees-anse-lot-10",
@@ -2734,12 +2734,12 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-kilim-terracotta-160x230",
     "asin": "B0F5NRTMF1",
-    "nom": "Tapis en coton façon kilim, beige, lavable, 160 × 230 cm",
+    "nom": "Tapis façon kilim en chenille de polyester, beige, lavable, 160 × 230 cm",
     "type_objet": "tapis",
     "matieres": [],
     "couleurs": [
@@ -2768,7 +2768,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-rond-jute-lurex-80",
@@ -2787,7 +2787,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "rideau-perles-bambou-bois",
@@ -2827,7 +2827,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tissu-bogolan-indigo-fleches",
@@ -2919,7 +2919,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-africain-noir-coton-lin",
@@ -3129,7 +3129,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "housse-couette-coton-boho-africaine",
@@ -3225,7 +3225,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "parure-femme-africaine-tribale-brun",
@@ -3255,7 +3255,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "parure-motif-tribal-240x260",
@@ -3283,7 +3283,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-kwanzaa-lin",
@@ -3296,7 +3296,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-tribal-geometrique-33x152",
@@ -3311,7 +3311,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-tissu-de-boue-33x178",
@@ -3326,7 +3326,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-paisley-africain-40x225",
@@ -3356,7 +3356,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "nappe-femme-africaine-152x213",
@@ -3369,7 +3369,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "nappe-tribale-rayures-africaines-137x183",
@@ -3384,7 +3384,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "nappe-retro-ethnique-132x178",
@@ -3410,7 +3410,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "nappe-ronde-tribale-150",
@@ -3423,7 +3423,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "sets-table-girafe-elephant-lot-4",
@@ -3436,7 +3436,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "sets-table-flute-africaine-lot-4",
@@ -3492,7 +3492,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "housse-couette-femme-africaine-220x240",
@@ -3505,7 +3505,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "parure-afrique-coucher-soleil-elephant-135x200",
@@ -3518,7 +3518,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "parure-safari-zebre-leopard-220x240",
@@ -3531,7 +3531,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "housse-couette-paysage-africain",
@@ -3544,7 +3544,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "parure-lion-africain-140x200",
@@ -3560,7 +3560,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tissu-kente-patchwork-5-5m",
@@ -3578,7 +3578,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tissu-kente-ankara-5-5m",
@@ -3615,7 +3615,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "statue-girafe-bois-60",
@@ -3630,7 +3630,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "masque-zebre-bois-sculpte",
@@ -3662,7 +3662,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-berbere-rouge-140x200",
@@ -3690,7 +3690,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "tapis-berbere-ecru-noir-80x150",
@@ -3706,7 +3706,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "teinture-indigo-prereduit-jacquard",
@@ -3723,7 +3723,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "couvre-lit-ajrak-indigo",
@@ -3771,7 +3771,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "nappe-imprime-girafe-152x213",
@@ -3786,7 +3786,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "parure-enfant-savane-coton-140x200",
@@ -3799,7 +3799,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "housse-couette-elephant-girafe-220x240",
@@ -3812,7 +3812,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-06"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "chemin-table-faune-africaine-33x91",
@@ -3828,7 +3828,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-bolga-petit-20",
@@ -3844,7 +3844,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "panier-all-across-africa-mineral",
@@ -3860,7 +3860,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "housses-coussin-kente-boucles-dorees-lot-4",
@@ -3876,7 +3876,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coussin-afrique-patchwork-40",
@@ -3915,7 +3915,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-10-28"
+    "verifie_le": "2026-11-09"
   },
   {
     "id": "coussins-tribal-africain-velours-lot-4",
@@ -4019,6 +4019,39 @@
     ],
     "pieces": [
       "balcon-exterieur"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
+  },
+  {
+    "id": "masque-girafe-bois-sculpte",
+    "asin": "B09C8RQC58",
+    "nom": "Masque girafe en bois sculpté main, 38 cm, à suspendre",
+    "type_objet": "objet",
+    "matieres": [
+      "bois-sculpte"
+    ],
+    "couleurs": [],
+    "pieces": [
+      "salon",
+      "chambre-enfant"
+    ],
+    "statut": "actif",
+    "verifie_le": "2026-11-09"
+  },
+  {
+    "id": "sets-table-ovales-jonc-de-mer-lot-6",
+    "asin": "B0CG1JRM36",
+    "nom": "Sets de table ovales tressés en jonc de mer, 30 × 40 cm, lot de 6",
+    "type_objet": "nappe",
+    "matieres": [
+      "raphia-paniers"
+    ],
+    "couleurs": [
+      "naturel"
+    ],
+    "pieces": [
+      "cuisine-salle-a-manger"
     ],
     "statut": "actif",
     "verifie_le": "2026-11-09"

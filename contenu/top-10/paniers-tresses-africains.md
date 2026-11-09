@@ -3,7 +3,7 @@ onglet: "Paniers tressés"
 titre: "Top 10 des paniers tressés africains"
 description: "Notre sélection de 10 paniers tressés aux accents africains : paniers Bolga du Ghana, panier coloré à couvercle, corbeilles, cache-pot et paniers à linge."
 ordre: 2
-classement_le: "2026-10-19"
+classement_le: "2026-11-09"
 image_partage: paniers-tresses-africains
 voir_aussi: [decos-murales, luminaires-fibres-naturelles, bois-sculpte]
 tops_lies: [top-paniers-tresses-africains, top-rangements-tresses-rentree]
