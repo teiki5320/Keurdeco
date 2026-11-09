@@ -4,7 +4,7 @@ La [terre cuite](glossaire-terre-cuite.html) est l’une des matières les plus 
 
 ## Un savoir-faire de potières
 
-En Afrique de l’Ouest, la poterie est souvent un savoir-faire féminin, transmis de mère en fille. Les pièces sont montées à la main, au colombin ou par martelage sur une forme, polies, parfois décorées d’impressions, puis cuites en meule à l’air libre plutôt qu’au four. Au Mali, le village de Kalabougou, près de Ségou, est réputé pour ses pièces noires ou rouges. Le canari, grande jarre poreuse, garde l’eau fraîche grâce à l’évaporation à travers ses parois. La terre cuite a aussi une longue histoire artistique : au Nigeria, les têtes sculptées de la culture Nok ont plus de deux mille ans.
+En Afrique de l’Ouest, la poterie est souvent un savoir-faire féminin, transmis de mère en fille. Les pièces sont montées à la main, au colombin ou par martelage sur une forme, polies, parfois décorées d’impressions, puis cuites en meule à l’air libre plutôt qu’au four. Au Mali, le village de Kalabougou, en face de Ségou sur le fleuve Niger, est réputé pour ses potières, qui cuisent leurs jarres en meule chaque fin de semaine. Le canari, grande jarre poreuse, garde l’eau fraîche grâce à l’évaporation à travers ses parois. La terre cuite a aussi une longue histoire artistique : au Nigeria, les têtes sculptées de la culture Nok ont plus de deux mille ans.
 
 ## La terre cuite dans la maison
 

@@ -70,7 +70,7 @@ Beaucoup de plateaux tressés ont d’abord servi, en Afrique, à vanner le grai
 Un bon mur tressé mélange :
 
 - des **pièces plates** (les assiettes tressées), qui forment la base ;
-- des **pièces en volume** (un panier mural, un panier à anse), qui créent du relief ;
+- des **pièces en volume** (un panier à anse comme le Bolga), qui créent du relief ;
 - un ou deux **miroirs**, qui ajoutent de la lumière et des reflets.
 
 Gardez une famille de couleurs cohérente : naturel et brun, avec au plus une ou deux couleurs vives sur les motifs.

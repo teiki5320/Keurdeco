@@ -1,7 +1,7 @@
 ---
 onglet: "Tapis"
 titre: "Top 10 des tapis esprit africain"
-description: "Notre sélection de 10 tapis pour une déco aux accents africains : tapis de style berbère, losanges noir et blanc, kilims, jute tressé main et tapis ronds en jute."
+description: "Notre sélection de 10 tapis pour une déco aux accents africains : tapis de style berbère, losanges graphiques, kilims, jute tressé main et tapis ronds en jute."
 ordre: 5
 classement_le: "2026-10-19"
 image_partage: top-tapis-esprit-africain
