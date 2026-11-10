@@ -98,3 +98,18 @@ Repérées mais laissées pour un prochain passage : /matiere-wax.html (« déco
 ### Page nouvelle
 
 Aucune créée. Recherches fréquentes sans bonne place : « décoration intérieur wax » (25 vues) et « tissu kente » (15 vues) ont déjà leur vraie page (rubrique Wax, glossaire et article Kente) : une nouvelle page leur ferait concurrence. « chemin de table wax » (20 vues) : le site n'a aucun chemin de table en wax parmi ses produits (seulement kente, lin, motifs tribaux). Proposé à Jean le 21/10 : il préfère laisser cette recherche de côté, ne pas la reproposer.
+
+### Produits Amazon indisponibles remplacés le 10/11/2026 (décision de Jean)
+
+Chaque remplaçant a été vérifié sur amazon.fr le 10/11/2026 (en vente, au moins 4 étoiles et 50 avis) ; l'identifiant du produit sur le site ne change pas, seuls l'ASIN et le nom changent.
+
+- `sapin-artificiel-180` : B0GY1BKZX2 → B0GY13PP2W (sapin YEAUPE PRO 180 cm, vert mousse, 4,6/5, 679 avis).
+- `panier-mural-tresse` : B0FD9YXM78 → B0CCJMV9HJ (panier HMF en jacinthe d'eau 30 × 17,5 × 38 cm, 4,5/5, 90 avis) ; texte du Top déco murale revu d'après la fiche.
+- `coussin-femme-africaine-jute` : B085LDCGF5 → B0BRD5VX3R (housse Tomda coton et lin, femme africaine, 45 × 45 cm, 4,4/5, 78 avis).
+- `plaid-tricot-chenille` : B0CJV3388K → B0BQDPBKDT (plaid WESHIONGOO grosse maille, vert sauge, 4,4/5, 483 avis).
+- `lampadaire-rotin-boheme` : B0F1FPJ393 → B0FS7SZT5V (lampadaire Wio-Mio en rotin avec tablette, double abat-jour, 4,4/5, 67 avis).
+- `sphere-terre-cuite-etoiles` : B0000UNANE → B007STMBG2 (2 boules en terre cuite à étoiles, 12 cm, 4,4/5, 74 avis).
+- `sous-verres-rotin-lot-6` : B0GFWD7JN3 → B0B8GPR9VV (6 dessous de verre en rotin avec support, 4,4/5, 127 avis).
+- `tapis-berbere-rouge-140x200` : B08GZF3KZB → B01BHGG7CK (tapis UnAmourDeTapis style berbère rouge 160 × 230 cm, 4,6/5, 97 avis) ; texte du Top tapis revu (taille).
+- Déjà réglés : `table-appoint-racine-teck` (remplacée le 09/11 par `table-appoint-tronc-teck-kare`) ; `chemin-table-paisley-africain-40x225` (son équivalent B09WCZJW2K est déjà au catalogue, `chemin-table-tribal-africain`).
+- Sans équivalent fiable, restés masqués : `jarre-terre-cuite-toscane` (aucune jarre en terre cuite avec 50 avis), `guirlande-perles-bois`, `tissu-bogolan-indigo-fleches`, `coussin-portrait-femme-africaine-40` (aucun portrait au foulard avec 50 avis), `kit-teinture-indigo-jacquard` (le seul équivalent, l'indigo pré-réduit Jacquard B00MGUN86A, est déjà au catalogue et dans le même Top), `coussin-afrique-patchwork-40` (aucun patchwork « Africa » équivalent ; l'image du Top montre ce coussin).

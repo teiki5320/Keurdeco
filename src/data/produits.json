@@ -277,8 +277,8 @@
   },
   {
     "id": "panier-mural-tresse",
-    "asin": "B0FD9YXM78",
-    "nom": "Panier suspendu tressé en jacinthe d’eau",
+    "asin": "B0CCJMV9HJ",
+    "nom": "Panier suspendu tressé main en jacinthe d’eau, 30 × 17,5 × 38 cm",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -290,8 +290,8 @@
       "entree",
       "cuisine-salle-a-manger"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-29"
+    "statut": "actif",
+    "verifie_le": "2026-11-10"
   },
   {
     "id": "paniers-gigognes-tresses",
@@ -1079,8 +1079,8 @@
   },
   {
     "id": "coussin-femme-africaine-jute",
-    "asin": "B085LDCGF5",
-    "nom": "Housse de coussin en toile de coton et lin, femme africaine",
+    "asin": "B0BRD5VX3R",
+    "nom": "Housse de coussin en coton et lin, femme africaine, 45 × 45 cm",
     "type_objet": "coussin",
     "matieres": [],
     "couleurs": [
@@ -1090,8 +1090,8 @@
       "salon",
       "chambre"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-20"
+    "statut": "actif",
+    "verifie_le": "2026-11-10"
   },
   {
     "id": "coussins-ethniques-geometriques-lot-4",
@@ -1126,8 +1126,8 @@
   },
   {
     "id": "plaid-tricot-chenille",
-    "asin": "B0CJV3388K",
-    "nom": "Plaid en grosse maille de chenille tricotée main, vert sauge",
+    "asin": "B0BQDPBKDT",
+    "nom": "Plaid en grosse maille de chenille fait main, vert sauge, 101 × 101 cm",
     "type_objet": "plaid",
     "matieres": [],
     "couleurs": [
@@ -1137,7 +1137,7 @@
       "salon",
       "chambre"
     ],
-    "statut": "indisponible",
+    "statut": "actif",
     "verifie_le": "2026-11-10"
   },
   {
@@ -1208,8 +1208,8 @@
   },
   {
     "id": "lampadaire-rotin-boheme",
-    "asin": "B0F1FPJ393",
-    "nom": "Lampadaire bohème en rotin, double abat-jour, 173 cm",
+    "asin": "B0FS7SZT5V",
+    "nom": "Lampadaire bohème en rotin avec tablette, double abat-jour en tissu",
     "type_objet": "luminaire",
     "matieres": [
       "raphia-paniers"
@@ -1221,7 +1221,7 @@
       "salon",
       "chambre"
     ],
-    "statut": "indisponible",
+    "statut": "actif",
     "verifie_le": "2026-11-10"
   },
   {
@@ -1347,8 +1347,8 @@
   },
   {
     "id": "sphere-terre-cuite-etoiles",
-    "asin": "B0000UNANE",
-    "nom": "Boule décorative en terre cuite à motif d’étoiles, 17 cm",
+    "asin": "B007STMBG2",
+    "nom": "Boules décoratives en terre cuite à motif d’étoiles, 12 cm, lot de 2",
     "type_objet": "objet",
     "matieres": [
       "terre-cuite"
@@ -1360,7 +1360,7 @@
       "salon",
       "balcon-exterieur"
     ],
-    "statut": "indisponible",
+    "statut": "actif",
     "verifie_le": "2026-11-10"
   },
   {
@@ -1649,8 +1649,8 @@
   },
   {
     "id": "sapin-artificiel-180",
-    "asin": "B0GY1BKZX2",
-    "nom": "Sapin de Noël artificiel touffu, 180 cm",
+    "asin": "B0GY13PP2W",
+    "nom": "Sapin de Noël artificiel touffu YEAUPE PRO, 180 cm, vert mousse",
     "type_objet": "sapin",
     "matieres": [],
     "couleurs": [
@@ -1659,8 +1659,8 @@
     "pieces": [
       "salon"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-29"
+    "statut": "actif",
+    "verifie_le": "2026-11-10"
   },
   {
     "id": "guirlande-perles-bois",
@@ -1785,8 +1785,8 @@
   },
   {
     "id": "sous-verres-rotin-lot-6",
-    "asin": "B0GFWD7JN3",
-    "nom": "Dessous de verre en rotin faits main, lot de 6 avec support",
+    "asin": "B0B8GPR9VV",
+    "nom": "Dessous de verre en rotin tissés main, lot de 6 avec support",
     "type_objet": "vaisselle",
     "matieres": [
       "raphia-paniers"
@@ -1798,8 +1798,8 @@
       "salon",
       "cuisine-salle-a-manger"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-10-29"
+    "statut": "actif",
+    "verifie_le": "2026-11-10"
   },
   {
     "id": "plateaux-tresses-lot-2",
@@ -3666,8 +3666,8 @@
   },
   {
     "id": "tapis-berbere-rouge-140x200",
-    "asin": "B08GZF3KZB",
-    "nom": "Tapis style berbère rouge, bandes et losanges, 140 × 200 cm",
+    "asin": "B01BHGG7CK",
+    "nom": "Tapis style berbère rouge, bandes et losanges, 160 × 230 cm",
     "type_objet": "tapis",
     "matieres": [],
     "couleurs": [
@@ -3676,8 +3676,8 @@
     "pieces": [
       "salon"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-11-09"
+    "statut": "actif",
+    "verifie_le": "2026-11-10"
   },
   {
     "id": "tapis-berbere-patchwork-carre-160",
