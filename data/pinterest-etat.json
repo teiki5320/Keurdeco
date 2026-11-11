@@ -2258,6 +2258,24 @@
       "board_id": "1085719491358932173",
       "publie_le": "2026-11-10",
       "publie_a": "2026-11-10T04:13:16.661Z"
+    },
+    {
+      "id": "conseil-tabouret-ashanti-3",
+      "slug": "conseil-tabouret-ashanti",
+      "pin_id": "1085719422763656614",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-11",
+      "publie_a": "2026-11-11T04:12:45.947Z"
+    },
+    {
+      "id": "table-reveillon-wax-or-3",
+      "slug": "table-reveillon-wax-or",
+      "pin_id": "1085719422763656616",
+      "tableau": "fetes",
+      "board_id": "1085719491358932173",
+      "publie_le": "2026-11-11",
+      "publie_a": "2026-11-11T04:12:48.157Z"
     }
   ]
 }
