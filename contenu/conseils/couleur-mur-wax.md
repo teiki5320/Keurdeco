@@ -22,7 +22,7 @@ Repérez une couleur secondaire du wax (pas la plus vive) et choisissez-la en ve
 
 ## Un seul mur coloré
 
-Si vous hésitez, ne peignez que le mur derrière le canapé ou derrière le lit. Les autres restent clairs, la pièce garde sa lumière. Découvrez un exemple complet dans notre ambiance [Salon terracotta et wax](salon-terracotta-wax.html).
+Si vous hésitez, ne peignez que le mur derrière le canapé ou derrière le lit. Les autres restent clairs, la pièce garde sa lumière. Découvrez un exemple complet dans notre ambiance [Salon terracotta et wax](salon-terracotta-wax.html). D’autres idées de [décoration intérieur wax](matiere-wax.html) vous attendent dans la rubrique Wax.
 
 {{produit: coussin-wax-vert-baobab}}
 

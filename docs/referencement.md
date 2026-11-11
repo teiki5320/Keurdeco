@@ -33,6 +33,12 @@ Aucune créée. Les recherches de 15 vues ou plus sans bonne place portent sur l
 
 `kit-teinture-indigo-jacquard` (B003IIN7HO, indisponible) : l’article Indigo et adire et le conseil Adire montrent désormais l’indigo pré-réduit Jacquard déjà au catalogue (`teinture-indigo-prereduit-jacquard`, B00MGUN86A, 4,3/5, 136 avis, en stock, vérifié sur amazon.fr le 11/11). La fiche du kit reste masquée (statut indisponible) ; le Top 10 Indigo et kente avait déjà les deux.
 
+### Rubrique Wax retravaillée (choix de Jean, file du Studio, 11/11 à 14 h)
+
+| Page | Recherches visées | Place et vues au moment du travail | Titre | Ce qui a changé |
+|---|---|---|---|---|
+| /matiere-wax.html | décoration intérieur wax, déco wax africaine, idées déco chambre wax, idées déco table wax | « décoration intérieur wax » 52e (40 vues), « idées déco chambre wax » 26e (24 vues), « déco wax africaine » 27e (22 vues) — chiffres du passage de ce matin | « Wax · Keur Déco » → « Décoration intérieur wax : idées déco africaine · Keur Déco » | titre principal identique au nouveau titre ; description réécrite ; nouvelle partie visible « Idées déco wax, pièce par pièce » (salon, chambre, table, mur) avec liens vers les pages wax déjà publiées ; liens « décoration intérieur wax » / « déco wax africaine » ajoutés depuis l’ambiance Salon terracotta et wax et les conseils Couleur du mur avec du wax et D’où vient le wax |
+
 ## 04/11/2026
 
 ### Pages presque en première page (chiffres Search Console des 28 derniers jours)

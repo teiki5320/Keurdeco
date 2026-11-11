@@ -71,4 +71,4 @@ Au sol, un **tapis clair à motifs géométriques** (losanges, lignes) rappelle 
 
 > Le bon réflexe : trois couleurs principales (ici terracotta, indigo et orange), et tout le reste en tons naturels.
 
-Retrouvez les objets de cette ambiance juste sous l’image, et d’autres idées dans la rubrique [Salon](piece-salon.html) ou dans notre guide du [wax](glossaire-wax.html).
+Retrouvez les objets de cette ambiance juste sous l’image, et d’autres idées dans la rubrique [Salon](piece-salon.html) dans notre guide du [wax](glossaire-wax.html) ou parmi nos idées de [décoration intérieur wax](matiere-wax.html).

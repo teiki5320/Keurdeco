@@ -24,7 +24,7 @@ export const PIECES: Rubrique[] = [
 ];
 
 export const MATIERES: Rubrique[] = [
-  { id: 'wax', nom: 'Wax', accroche: 'Le wax, tissu imprimé star des marchés d’Afrique de l’Ouest : coussins, rideaux, nappes et idées pour l’adopter chez soi.' },
+  { id: 'wax', nom: 'Wax', titre: 'Décoration intérieur wax : idées déco africaine', accroche: 'Décoration intérieur wax : coussins, nappes, tissu au mur, idées pour le salon, la chambre et la table. Le tissu star d’Afrique de l’Ouest, bien dosé.' },
   { id: 'bogolan', nom: 'Bogolan', titre: 'Décoration bogolan : idées de déco africaine', accroche: 'Décoration bogolan : la toile du Mali teinte à la boue, ses motifs bruns et crème, et nos idées pour l’intégrer au salon ou à la chambre.' },
   { id: 'kente', nom: 'Kente', accroche: 'Le kente, tissu tissé du Ghana aux bandes colorées : signification, usages et façons de l’apporter dans la maison.' },
   { id: 'indigo', nom: 'Indigo', titre: 'Tissu indigo africain : idées de déco', accroche: 'Le bleu indigo d’Afrique de l’Ouest, de l’adire yoruba aux teintures maliennes : textiles profonds et apaisants.' },

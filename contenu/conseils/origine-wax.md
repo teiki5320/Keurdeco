@@ -27,7 +27,7 @@ En Afrique de l’Ouest, ce sont les commerçantes qui choisissent les motifs qu
 
 ## Aujourd’hui
 
-Le wax est fabriqué aux Pays-Bas, mais aussi au Ghana, en Côte d’Ivoire, au Nigeria et en Asie. Pour le reconnaître, voir notre conseil [comment reconnaître un vrai wax](conseil-reconnaitre-vrai-wax.html).
+Le wax est fabriqué aux Pays-Bas, mais aussi au Ghana, en Côte d’Ivoire, au Nigeria et en Asie. Pour le reconnaître, voir notre conseil [comment reconnaître un vrai wax](conseil-reconnaitre-vrai-wax.html). Et pour l’adopter chez vous, voir nos idées de [déco wax africaine](matiere-wax.html).
 
 {{produit: coupon-pagne-wax-180x120}}
 
