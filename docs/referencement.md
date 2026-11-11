@@ -2,6 +2,37 @@
 
 Tenu par la routine « Référencement du jour » (Keur Déco passe le mercredi). Une page travaillée n'est pas retouchée avant 28 jours : Google a besoin de ce temps pour réagir.
 
+## 11/11/2026
+
+### Pages presque en première page (chiffres Search Console des 28 derniers jours)
+
+| Page | Recherches visées | Place / vues au moment du travail | Ancien titre → nouveau titre | Autres changements |
+|---|---|---|---|---|
+| /conseil-tissu-kuba.html | tissu kuba, motif tissu kuba, tissu kuba congo | 12,2 (19 vues) ; « tissu kuba » 10,8 (9 vues) ; « motif tissu kuba » 20 (3 vues) ; « tissu kuba congo » 10,7 (3 vues) | « Qu’est-ce que le tissu kuba ? · Keur Déco » → « Tissu kuba : le velours de raphia du Congo · Keur Déco » (nouveau `titre_page`) | titre principal inchangé (« Qu’est-ce que le tissu kuba ? », contient la recherche) ; description réécrite (« Tissu kuba du Congo ») ; intertitre « Les motifs du tissu kuba » ; liens « tissu kuba » ajoutés depuis le conseil Choisir un coussin africain et le Top 10 Indigo et kente |
+| /top-10/chemins-de-table | chemin de table africain | 9,7 (3 vues) | « Top 10 des chemins de table à motifs africains · Keur Déco » → « Top 10 des chemins de table africains · Keur Déco » | titre principal identique au nouveau titre ; description réécrite (« Chemin de table africain ») ; liens « chemins de table africains » ajoutés depuis les ambiances Table de Tabaski et Salon touches de kente |
+
+Laissées de côté : /bogolan-histoire-idees.html (« décoration bogolan » 19,3, 9 vues), toujours en concurrence avec /matiere-bogolan.html ; /top-paniers-tresses-africains.html (4 vues, une par recherche) ; /salon-terracotta-wax.html (3 vues sur des recherches sans rapport : « images », « autres exemples »). Les autres pages de la liste ont été travaillées il y a moins de 28 jours ; chiffres du jour : terre cuite 13,5 (58 vues, 1 clic ; « objet en terre cuite » 12,7, « deco terre cuite » 14,7), Indigo 19,7 (35 vues ; « tissu indigo africain déco » 13,8), panier Bolga 11,7 (34 vues), Tabouret 8,7 (19 vues), Déco afro bohème 17,3 (12 vues), Sankofa 18,4 (5 vues).
+
+Pages travaillées il y a 28 jours ou plus : aucune (les premières, du 21/10, sont à relire à partir du 18/11).
+
+À relire à partir du 09/12/2026.
+
+### Fiches enrichies
+
+Vérifiées le 21/10/2026 : pas refait (moins de 28 jours).
+
+### Socle
+
+Vérifié le 21/10/2026 (pas refait). Vitesse sur téléphone : PageSpeed refuse encore (quota du jour dépassé à 5 h 30, erreur 429). À refaire au prochain passage.
+
+### Page nouvelle
+
+Aucune créée. Les recherches de 15 vues ou plus sans bonne place portent sur le wax et ont déjà leur vraie page : « décoration intérieur wax » (40 vues, rubrique Wax 52e), « idées déco chambre wax » (24 vues, 26e), « déco wax africaine » (22 vues, 27e) → rubrique Wax, à retravailler (déjà proposé à Jean le 04/11) ; « linge de table wax » (33 vues, 19,5) et « nappe wax » (21 vues, 31e) → Top nappes wax ; « décoration bogolan » (38 vues) → deux pages déjà (rubrique et article). Le site n’a que deux ambiances de chambre en wax publiées : trop peu pour une page « chambre wax ». « chemin de table wax » : écarté par Jean le 21/10.
+
+### Produit Amazon (demande du Studio du 11/11)
+
+`kit-teinture-indigo-jacquard` (B003IIN7HO, indisponible) : l’article Indigo et adire et le conseil Adire montrent désormais l’indigo pré-réduit Jacquard déjà au catalogue (`teinture-indigo-prereduit-jacquard`, B00MGUN86A, 4,3/5, 136 avis, en stock, vérifié sur amazon.fr le 11/11). La fiche du kit reste masquée (statut indisponible) ; le Top 10 Indigo et kente avait déjà les deux.
+
 ## 04/11/2026
 
 ### Pages presque en première page (chiffres Search Console des 28 derniers jours)

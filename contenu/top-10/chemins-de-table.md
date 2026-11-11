@@ -1,7 +1,7 @@
 ---
 onglet: "Chemins de table"
-titre: "Top 10 des chemins de table à motifs africains"
-description: "Notre sélection de 10 chemins de table à motifs africains : kente, totems, motifs tribaux, façon bogolan, Kwanzaa, en lin, coton ou polyester."
+titre: "Top 10 des chemins de table africains"
+description: "Chemin de table africain : notre sélection de 10 modèles à motifs kente, totems, motifs tribaux, façon bogolan ou Kwanzaa, en lin, coton ou polyester."
 ordre: 1
 classement_le: "2026-11-09"
 image_partage: top-table-mariage-africain

@@ -54,7 +54,7 @@ C’est le geste le plus simple : une pièce de kente pliée en deux, posée sur
 
 ## 3. Un chemin de table sur une petite table ronde
 
-Pour répéter le motif sans acheter un second tissage, posez un **chemin de table imprimé kente** en travers d’une **petite table ronde** blanche à pieds clairs. Il fait écho au jeté et délimite un petit plateau : un **bol en manguier sculpté**, un beau livre sur les textiles africains, rien de plus.
+Pour répéter le motif sans acheter un second tissage, posez un **chemin de table imprimé kente** en travers d’une **petite table ronde** blanche à pieds clairs. Il fait écho au jeté et délimite un petit plateau : un **bol en manguier sculpté**, un beau livre sur les textiles africains, rien de plus. Pour choisir le vôtre, voir notre top des [chemins de table africains](top-10/chemins-de-table).
 
 Le bois sombre du bol calme les couleurs et rappelle une autre matière de la maison, le [bois sculpté](matiere-bois-sculpte.html).
 

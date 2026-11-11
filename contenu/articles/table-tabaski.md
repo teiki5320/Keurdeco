@@ -68,7 +68,7 @@ Ajoutez une **carafe en argile** : non émaillée, elle garde l’eau fraîche p
 
 Sous chaque assiette, un **set de table rond tressé** protège le bois et délimite les places. Le pain se présente sur un **plateau tressé**, les fruits dans une grande **corbeille ronde** : oranges, mangues, grenades font un dessert tout prêt et un décor à eux seuls.
 
-Au centre, un **chemin de table à motifs tribaux**, en bandes rouges, vertes, jaunes et noires, donne le rythme sans cacher le bois de la table.
+Au centre, un **chemin de table à motifs tribaux**, en bandes rouges, vertes, jaunes et noires, donne le rythme sans cacher le bois de la table. D’autres modèles dans notre sélection de [chemins de table africains](top-10/chemins-de-table).
 
 ## 5. Une lumière douce pour la soirée
 

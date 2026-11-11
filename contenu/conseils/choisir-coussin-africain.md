@@ -19,6 +19,8 @@ Le format 45 × 45 cm convient à presque tous les canapés. Pour une assise pro
 
 {{produit: coussins-kuba-lot-4}}
 
+Ces housses reprennent en impression les motifs du [tissu kuba](conseil-tissu-kuba.html), la toile de raphia brodée du Congo.
+
 ## Le garnissage
 
 Les plumes donnent un coussin souple qui garde l’empreinte de la main : choisissez un garnissage un peu plus grand que la housse (50 cm pour une housse de 45) pour un aspect bien rempli. La fibre synthétique est plus légère, plus ferme et convient aux personnes allergiques.
