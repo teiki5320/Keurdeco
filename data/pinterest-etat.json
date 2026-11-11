@@ -2276,6 +2276,15 @@
       "board_id": "1085719491358932173",
       "publie_le": "2026-11-11",
       "publie_a": "2026-11-11T04:12:48.157Z"
+    },
+    {
+      "id": "conseil-artisanal-ou-industriel-1",
+      "slug": "conseil-artisanal-ou-industriel",
+      "pin_id": "1085719422763675374",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-11",
+      "publie_a": "2026-11-11T11:53:11.993Z"
     }
   ]
 }
