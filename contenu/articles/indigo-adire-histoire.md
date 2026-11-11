@@ -13,7 +13,7 @@ produits:
   - coussin-shibori-indigo
   - plaid-coton-bleu-140x200
   - housse-couette-coton-denim
-  - kit-teinture-indigo-jacquard
+  - teinture-indigo-prereduit-jacquard
   - livre-african-textiles
   - tapis-rond-coton-bleu-marine
 epingles:
@@ -75,7 +75,7 @@ Au sol, un tapis bleu marine ancre la pièce.
 
 Pour comprendre la magie de l’indigo, nouez une taie en coton et plongez-la dans le bain.
 
-{{produit: kit-teinture-indigo-jacquard}}
+{{produit: teinture-indigo-prereduit-jacquard}}
 
 ### 5. Un beau livre sur la table basse
 

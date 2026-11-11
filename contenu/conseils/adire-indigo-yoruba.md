@@ -35,6 +35,6 @@ Le bleu profond de l’adire apaise une chambre. Associez-le au lin blanc, au bo
 
 {{produit: tissu-dogon-indigo-blanc}}
 
-{{produit: kit-teinture-indigo-jacquard}}
+{{produit: teinture-indigo-prereduit-jacquard}}
 
 {{produit: coussin-shibori-indigo}}
