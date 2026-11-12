@@ -15,7 +15,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "coussin-wax-vert-baobab",
@@ -51,7 +51,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "plaid-coton-rayures-creme",
@@ -68,7 +68,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "assiettes-murales-tressees",
@@ -143,7 +143,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "vase-terre-cuite-terracotta",
@@ -387,7 +387,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "galettes-chaise-orange",
@@ -403,7 +403,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "lanternes-solaires-rotin",
@@ -454,7 +454,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "banc-acacia-jardin",
@@ -472,7 +472,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "coupon-pagne-wax-180x120",
@@ -618,7 +618,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "drap-housse-lin-blanc",
@@ -633,7 +633,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "coussin-shibori-indigo",
@@ -669,7 +669,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "lampes-chevet-ceramique-lot-2",
@@ -684,7 +684,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "table-chevet-rotin",
@@ -701,7 +701,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "plaid-gaufre-coton",
@@ -717,7 +717,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "tapis-rond-coton-bleu-marine",
@@ -751,7 +751,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "paniers-kallax-jacinthe-lot-4",
@@ -943,7 +943,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "pateres-chene-lot-4",
@@ -959,7 +959,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-08"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "tapis-couloir-kilim-chindi",
@@ -1677,7 +1677,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-11"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "etoiles-paille-lot-16",
@@ -1973,8 +1973,8 @@
       "salon",
       "chambre"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-11-09"
+    "statut": "actif",
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "table-appoint-tronc-teck-kare",
@@ -2428,7 +2428,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-11"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "plaid-coton-bleu-140x200",
@@ -2846,7 +2846,7 @@
       "chambre"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "tissu-kente-jaune-noir-blanc",
@@ -3142,7 +3142,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "parure-coton-geometrique-ethnique",
@@ -3157,7 +3157,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-03"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "parure-symboles-tribaux-orange-jaune",
@@ -3172,7 +3172,7 @@
     "pieces": [
       "chambre"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-11-03"
   },
   {
@@ -3186,7 +3186,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "parure-enfant-ethnique-africain",
@@ -3198,7 +3198,7 @@
     "pieces": [
       "chambre-enfant"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-11-04"
   },
   {
@@ -3212,7 +3212,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "parure-elephant-africain-200x200",
@@ -3239,7 +3239,7 @@
     "pieces": [
       "chambre"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-11-04"
   },
   {
@@ -3268,7 +3268,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "chemin-table-mois-histoire-noire-lin",
@@ -3397,7 +3397,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "nappe-carree-tribale-140",
@@ -3449,7 +3449,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "parure-geometrique-ethnique-kaki-220x240",
@@ -3464,7 +3464,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "parure-ethnique-boheme-reversible-135x200",
@@ -3479,7 +3479,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-04"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "housse-couette-animaux-savane-140x200",
@@ -3740,7 +3740,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "housse-coussin-shibori-indigo-jaipur",
@@ -3758,7 +3758,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-07"
+    "verifie_le": "2026-11-12"
   },
   {
     "id": "nappe-ronde-femme-africaine",
