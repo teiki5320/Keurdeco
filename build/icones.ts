@@ -26,6 +26,7 @@ const TRACES = {
   rangement: '<rect x="3" y="7" width="18" height="13" rx="1"/><path d="M3 12h18M10 15h4M7 7V4h10v3"/>',
   bijou: '<path d="M5 4c0 7 3 11 7 11s7-4 7-11"/><circle cx="12" cy="18" r="3"/><circle cx="8" cy="12" r="1"/><circle cx="16" cy="12" r="1"/>',
   textile: '<path d="M5 4h14v16H5z"/><path d="m5 8 4 4-4 4m14-8-4 4 4 4M9 4l3 3 3-3M9 20l3-3 3 3"/>',
+  'éventail': '<path d="M12 20 3.5 8a12 12 0 0 1 17 0L12 20Z"/><path d="M12 20 8 6.2M12 20l4-13.8M12 20V5.2"/>',
   objet: '<path d="M12 3 3 8v8l9 5 9-5V8l-9-5Z"/><path d="m3 8 9 5 9-5m-9 5v8"/>',
   // Interface
   menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
