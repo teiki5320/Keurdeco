@@ -2321,6 +2321,15 @@
       "board_id": "1085719491358932173",
       "publie_le": "2026-11-13",
       "publie_a": "2026-11-13T04:13:37.578Z"
+    },
+    {
+      "id": "conseil-table-fete-petit-budget-1",
+      "slug": "conseil-table-fete-petit-budget",
+      "pin_id": "1085719422763831866",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-13",
+      "publie_a": "2026-11-13T12:13:08.190Z"
     }
   ]
 }
