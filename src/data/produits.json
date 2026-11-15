@@ -2091,8 +2091,8 @@
   },
   {
     "id": "tabouret-bois-torsade",
-    "asin": "B07Y1SQ2JL",
-    "nom": "Tabouret-sellette taillé dans un tronc, 50 cm",
+    "asin": "B0785RJFQ1",
+    "nom": "Sellette torsadée en bois massif de suar, 50 cm",
     "type_objet": "tabouret",
     "matieres": [
       "bois-sculpte"
@@ -2105,8 +2105,8 @@
       "chambre",
       "entree"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-11-09"
+    "statut": "actif",
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "chaises-dossier-rotin-lot-2",
