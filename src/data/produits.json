@@ -387,7 +387,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-14"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "galettes-chaise-orange",
@@ -1590,7 +1590,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "lampadaire-fibres-naturelles-bijie",
@@ -1608,7 +1608,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "appliques-bois-rotin-lot-2",
@@ -1627,7 +1627,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "lampe-lanterne-bambou",
@@ -1645,7 +1645,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "sapin-artificiel-180",
@@ -1762,7 +1762,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "livre-african-textiles",
@@ -1781,7 +1781,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "sous-verres-rotin-lot-6",
@@ -1817,7 +1817,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "savon-noir-dudu-osun-lot-6",
@@ -1832,7 +1832,7 @@
       "salle-de-bain"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "assiettes-porcelaine-blanches-lot-6",
@@ -1893,7 +1893,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "bougies-tige-ivoire-lot-50",
@@ -1924,7 +1924,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "eucalyptus-artificiel-lot-6",
@@ -1956,7 +1956,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "table-appoint-racine-teck",
@@ -1992,7 +1992,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "table-appoint-tranche-teck",
@@ -2011,7 +2011,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "tabouret-teck-massif-42",
@@ -2030,7 +2030,7 @@
       "salle-de-bain"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "tabouret-acajou-monte",
@@ -2049,7 +2049,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "tabouret-bois-recycle",
@@ -2068,7 +2068,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "table-appoint-manguier-laiton",
@@ -2087,7 +2087,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "tabouret-bois-torsade",
@@ -2105,7 +2105,7 @@
       "chambre",
       "entree"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-11-09"
   },
   {
@@ -2218,7 +2218,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "mobile-bois-animaux-savane",
@@ -2297,7 +2297,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "decorations-murales-seagrass-lot-3",
@@ -2315,7 +2315,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "paniers-muraux-rotin-lot-8",
@@ -2334,7 +2334,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "paniers-muraux-jacinthe-lot-7",
@@ -2353,7 +2353,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "paniers-muraux-jacinthe-lot-10",
@@ -2373,7 +2373,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "corbeilles-murales-jonc-lot-7",
@@ -2392,7 +2392,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "miroirs-rotin-soleil-lot-3",
@@ -2411,7 +2411,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "kit-teinture-indigo-jacquard",
@@ -2428,7 +2428,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-14"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "plaid-coton-bleu-140x200",
@@ -2571,7 +2571,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "porte-noms-bois-lot-30",
@@ -2586,7 +2586,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "sets-table-jacinthe-lot-6",
@@ -2603,7 +2603,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "chemins-table-gaze-terracotta-lot-6",
@@ -2618,7 +2618,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "vase-rustique-terre-cuite-anse",
@@ -3173,7 +3173,7 @@
       "chambre"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-13"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "parure-patchwork-tribal-reversible",
@@ -3199,7 +3199,7 @@
       "chambre-enfant"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-13"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "parure-style-africain-220x240",
@@ -3889,7 +3889,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-13"
+    "verifie_le": "2026-11-15"
   },
   {
     "id": "coussin-portrait-femme-africaine-40",
