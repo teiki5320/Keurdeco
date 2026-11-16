@@ -11,6 +11,7 @@ import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'n
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { chromium } from 'playwright';
+import { RENVOIS_TOPS } from '../build/renvois.ts';
 
 const RACINE = resolve(import.meta.dirname, '..');
 const PORT = 4179;
@@ -350,7 +351,7 @@ try {
   const dossierArticles = resolve(RACINE, 'contenu/articles');
   const imagesLibres = JSON.parse(readFileSync(resolve(RACINE, 'src/data/credits-images.json'), 'utf8'));
   const attendues = readdirSync(dossierArticles)
-    .filter((f) => f.endsWith('.md'))
+    .filter((f) => f.endsWith('.md') && !(f.replace(/\.md$/, '') in RENVOIS_TOPS)) // anciens Tops devenus des pages de renvoi : plus d'épingles
     .reduce((n, f) => {
       const source = readFileSync(join(dossierArticles, f), 'utf8');
       const enTete = source.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
