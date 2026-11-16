@@ -8,7 +8,7 @@ L’Aïd el-Kébir commémore le sacrifice d’Abraham (Ibrahim). Le mouton est 
 
 ## La table
 
-Sur la table, une nappe en wax ou un chemin de table aux couleurs vives, de la vaisselle en terre cuite, des sets tressés et des corbeilles de fruits donnent le ton. Prévoyez des petits bols pour les sauces et les condiments, et une carafe en argile pour garder l’eau fraîche. L’ambiance [table de Tabaski](table-tabaski.html) montre comment dresser une grande table familiale ; notre [top des nappes en wax](top-nappes-wax.html) propose des nappes lavables, indispensables pour un repas aussi long.
+Sur la table, une nappe en wax ou un chemin de table aux couleurs vives, de la vaisselle en terre cuite, des sets tressés et des corbeilles de fruits donnent le ton. Prévoyez des petits bols pour les sauces et les condiments, et une carafe en argile pour garder l’eau fraîche. L’ambiance [table de Tabaski](table-tabaski.html) montre comment dresser une grande table familiale ; notre [top des nappes en wax](top-10/nappes-sets-de-table) propose des nappes lavables, indispensables pour un repas aussi long.
 
 ## L’accueil
 

@@ -30,7 +30,7 @@ Le Black Friday tombe le **vendredi 27 novembre 2026**. Beaucoup de sites annonc
 
 - **Mesurez** l’emplacement : largeur du mur, diamètre d’un tapis rond, hauteur d’une assise. Une dimension oubliée est la première cause de retour.
 - **Notez ce qui manque vraiment** : un panier pour l’entrée, un tapis pour le salon, de nouvelles housses pour la chambre. Trois objets bien choisis valent mieux que dix achats d’impulsion.
-- **Pensez aux cadeaux de fin d’année** : si vous aviez déjà une idée pour Noël, c’est le bon moment de la mettre sur la liste. Notre [Top 10 des idées cadeaux déco africaine](top-cadeaux-deco-africaine.html) peut aider.
+- **Pensez aux cadeaux de fin d’année** : si vous aviez déjà une idée pour Noël, c’est le bon moment de la mettre sur la liste.
 
 ## Le jour J : garder la tête froide
 

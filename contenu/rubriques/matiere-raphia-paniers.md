@@ -10,7 +10,7 @@ Un point d’honnêteté : une grande partie des paniers en jacinthe d’eau, en
 
 ## Les paniers dans la maison
 
-Les paniers sont à la fois utiles et décoratifs : ils rangent le linge, les jouets ou les plaids, servent de cache-pot ou s’accrochent au mur. Les [assiettes tressées](glossaire-assiette-murale-tressee.html) composent de beaux murs ; voir [comment les accrocher](conseil-accrocher-assiettes-tressees.html). Au plafond, une suspension en fibres diffuse une lumière douce ; voir [à quelle hauteur l’accrocher](conseil-hauteur-suspension-jute.html). Le [top des paniers tressés africains](top-paniers-tresses-africains.html) et celui des [luminaires tressés](top-luminaires-tresses.html) réunissent nos pièces préférées.
+Les paniers sont à la fois utiles et décoratifs : ils rangent le linge, les jouets ou les plaids, servent de cache-pot ou s’accrochent au mur. Les [assiettes tressées](glossaire-assiette-murale-tressee.html) composent de beaux murs ; voir [comment les accrocher](conseil-accrocher-assiettes-tressees.html). Au plafond, une suspension en fibres diffuse une lumière douce ; voir [à quelle hauteur l’accrocher](conseil-hauteur-suspension-jute.html). Le [top des paniers tressés africains](top-10/paniers-tresses-africains) et celui des [luminaires tressés](top-10/luminaires-fibres-naturelles) réunissent nos pièces préférées.
 
 ## Entretien
 

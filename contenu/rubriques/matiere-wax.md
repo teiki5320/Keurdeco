@@ -10,13 +10,13 @@ Le principe vient du batik javanais : une réserve de cire protège certaines zo
 
 En décoration, le wax habille les coussins, les nappes, les rideaux et les cadres. Comme il est très coloré, il se dose : un fond clair, une couleur reprise ailleurs dans la pièce, et quelques unis pour respirer. Nos conseils pour [choisir la couleur du mur](conseil-couleur-mur-wax.html), pour [l’associer au bogolan](conseil-associer-wax-bogolan.html) et pour [mélanger les imprimés](conseil-melanger-imprimes-africains.html) aident à trouver l’équilibre.
 
-Pour commencer, deux coussins suffisent ; notre [top des coussins wax](top-coussins-wax.html) et celui des [nappes en wax](top-nappes-wax.html) proposent des pièces faciles à vivre. L’ambiance [salon terracotta et wax](salon-terracotta-wax.html) montre une palette chaude qui fonctionne toute l’année.
+Pour commencer, deux coussins suffisent ; notre [top des coussins wax](top-10/coussins-imprimes-africains) et celui des [nappes en wax](top-10/nappes-sets-de-table) proposent des pièces faciles à vivre. L’ambiance [salon terracotta et wax](salon-terracotta-wax.html) montre une palette chaude qui fonctionne toute l’année.
 
 ## Idées déco wax, pièce par pièce
 
 - **Au salon** : deux coussins en wax sur un canapé uni, un mur terracotta ou sable derrière, des paniers tressés pour calmer l’ensemble ; c’est l’idée de notre ambiance [salon terracotta et wax](salon-terracotta-wax.html), et notre conseil sur [la couleur du mur avec du wax](conseil-couleur-mur-wax.html) aide à choisir le fond.
 - **Dans la chambre** : le wax se garde pour une touche, une paire de coussins sur le lit ou un coupon accroché au-dessus de la tête de lit, avec du linge uni autour. Pour la chambre d’un enfant, un coupon joyeux dans les orange et les jaunes, tendu sur un châssis ou transformé en fanions, suffit : voir notre [chambre d’enfant africaine](chambre-enfant-savane.html).
-- **À table** : une nappe blanche et un chemin de table en wax, pour un repas de fête ou un mariage ; voir la [table de mariage en wax](table-mariage-wax.html), la [table de réveillon wax et or](table-reveillon-wax-or.html) et notre [top des nappes et chemins de table en wax](top-nappes-wax.html).
+- **À table** : une nappe blanche et un chemin de table en wax, pour un repas de fête ou un mariage ; voir la [table de mariage en wax](table-mariage-wax.html), la [table de réveillon wax et or](table-reveillon-wax-or.html) et notre [top des nappes et chemins de table en wax](top-10/nappes-sets-de-table).
 - **Au mur** : un beau coupon se met en valeur comme un tableau, avec une tringle et un fourreau ou dans un cadre ; voir [comment accrocher un tissu africain au mur](conseil-accrocher-tissu-africain-mur.html).
 
 ## Entretien

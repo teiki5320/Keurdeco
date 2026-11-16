@@ -1,6 +1,6 @@
 ## Comment lire nos tops
 
-Chaque top réunit de cinq à dix objets autour d’un même thème : les [coussins en wax](top-coussins-wax.html), les [nappes en wax](top-nappes-wax.html), les [paniers tressés africains](top-paniers-tresses-africains.html), les [rangements tressés](top-rangements-tresses-rentree.html), les [objets en terre cuite](top-terre-cuite-deco.html), les [luminaires tressés](top-luminaires-tresses.html) ou les [cadeaux de déco africaine](top-cadeaux-deco-africaine.html). Les objets sont classés : le premier est celui que nous conseillerions d’abord, les suivants répondent à d’autres besoins, une autre taille, une autre couleur, un budget différent.
+Chaque top réunit de cinq à dix objets autour d’un même thème : les [coussins en wax](top-10/coussins-imprimes-africains), les [nappes en wax](top-10/nappes-sets-de-table), les [paniers et rangements tressés](top-10/paniers-tresses-africains) ou les [luminaires tressés](top-10/luminaires-fibres-naturelles). Les objets sont classés : le premier est celui que nous conseillerions d’abord, les suivants répondent à d’autres besoins, une autre taille, une autre couleur, un budget différent.
 
 Pour chaque objet, deux textes. « Pourquoi on l’aime » dit ce qu’il apporte dans une pièce et avec quoi l’associer. « À savoir » rassemble ce qu’il faut connaître avant d’acheter : la matière réelle, les dimensions, l’entretien, et les points sur lesquels la fiche du vendeur reste floue ou se contredit.
 

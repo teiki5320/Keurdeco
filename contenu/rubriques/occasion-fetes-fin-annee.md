@@ -8,7 +8,7 @@ Pour le sapin, choisissez une palette et tenez-vous-y : or et terracotta, ou or 
 
 ## La table du réveillon
 
-Pour la table du réveillon, associez une nappe ou un chemin de table en wax à de la vaisselle dorée ou en terre cuite, des bougies et des feuillages. L’ambiance [table de réveillon wax et or](table-reveillon-wax-or.html) montre l’équilibre : un seul imprimé, beaucoup d’uni, l’or en petites touches. Notre [top des nappes et chemins de table en wax](top-nappes-wax.html) aide à trouver la base. Les paniers tressés servent de cache-pied pour le sapin ou de corbeilles pour les cadeaux.
+Pour la table du réveillon, associez une nappe ou un chemin de table en wax à de la vaisselle dorée ou en terre cuite, des bougies et des feuillages. L’ambiance [table de réveillon wax et or](table-reveillon-wax-or.html) montre l’équilibre : un seul imprimé, beaucoup d’uni, l’or en petites touches. Notre [top des nappes et chemins de table en wax](top-10/nappes-sets-de-table) aide à trouver la base. Les paniers tressés servent de cache-pied pour le sapin ou de corbeilles pour les cadeaux.
 
 ## Emballer en tissu
 
@@ -16,7 +16,7 @@ Emballer les cadeaux dans des coupons de wax, à la manière du furoshiki japona
 
 ## Côté cadeaux
 
-Côté cadeaux, la déco africaine offre de belles idées : coussins, paniers, objets en bois sculpté ou bougies parfumées. Notre [top des idées cadeaux déco africaine](top-cadeaux-deco-africaine.html) en réunit dix, pour tous les budgets.
+Côté cadeaux, la déco africaine offre de belles idées : coussins, paniers, objets en bois sculpté ou bougies parfumées.
 
 ## Les erreurs à éviter
 

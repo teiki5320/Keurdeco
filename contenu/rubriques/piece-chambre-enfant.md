@@ -8,7 +8,7 @@ Pour les tout-petits, partez de tons sable, crème et terracotta pâle, avec une
 
 ## Ranger sans y penser
 
-Les paniers tressés sont les alliés du rangement : jouets, peluches et livres y trouvent leur place, à hauteur d’enfant. Choisissez des modèles légers, sans fibres qui piquent, avec des anses pour qu’il puisse les porter lui-même. Un panier par catégorie (peluches, cubes, livres) rend le rangement presque ludique. Le [top des rangements tressés](top-rangements-tresses-rentree.html) en propose de toutes les tailles.
+Les paniers tressés sont les alliés du rangement : jouets, peluches et livres y trouvent leur place, à hauteur d’enfant. Choisissez des modèles légers, sans fibres qui piquent, avec des anses pour qu’il puisse les porter lui-même. Un panier par catégorie (peluches, cubes, livres) rend le rangement presque ludique. Le [top des rangements tressés](top-10/paniers-tresses-africains) en propose de toutes les tailles.
 
 Au sol, un tapis doux qui se lave facilement délimite le coin jeu. Un tapis de coton tissé à plat passe souvent en machine ; un jute, plus rêche, convient mieux aux plus grands.
 

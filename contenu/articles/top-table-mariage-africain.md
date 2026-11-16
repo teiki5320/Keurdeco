@@ -68,7 +68,7 @@ Une table de mariage africain doit être généreuse et chaleureuse, mais rester
 - **Le doré** pour la lumière : bougeoirs et photophores. Il suffit de quelques touches par table.
 - **Le naturel** pour le lien : fibres tressées, bois, lin, herbes séchées.
 
-Le **kente** vient par-dessus, en accent : sur la table d’honneur, ses bandes colorées disent immédiatement où sont assis les mariés. Si vous aimez le wax, notre [top des nappes en wax](top-nappes-wax.html) propose d’autres pistes pour habiller les tables.
+Le **kente** vient par-dessus, en accent : sur la table d’honneur, ses bandes colorées disent immédiatement où sont assis les mariés. Si vous aimez le wax, notre [top des nappes en wax](top-10/nappes-sets-de-table) propose d’autres pistes pour habiller les tables.
 
 ## Calculer les quantités
 

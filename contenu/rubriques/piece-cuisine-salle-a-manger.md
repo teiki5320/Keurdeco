@@ -4,7 +4,7 @@ Dans la cuisine et la salle à manger, la déco africaine se vit à table. La va
 
 ## Dresser une table du quotidien
 
-Une recette simple : un tissu, une matière naturelle, une couleur de vaisselle. Par exemple, un chemin de table en wax, des sets tressés sous chaque assiette, et des assiettes unies crème ou terracotta. Le tissu donne la couleur, les fibres réchauffent, la vaisselle unie calme l’ensemble. Notre [top des nappes et chemins de table en wax](top-nappes-wax.html) propose des pièces lavables, faites pour durer. Pour les grandes tablées, les ambiances [table de Tabaski](table-tabaski.html) et [table de mariage en wax](table-mariage-wax.html) montrent la même logique en version fête.
+Une recette simple : un tissu, une matière naturelle, une couleur de vaisselle. Par exemple, un chemin de table en wax, des sets tressés sous chaque assiette, et des assiettes unies crème ou terracotta. Le tissu donne la couleur, les fibres réchauffent, la vaisselle unie calme l’ensemble. Notre [top des nappes et chemins de table en wax](top-10/nappes-sets-de-table) propose des pièces lavables, faites pour durer. Pour les grandes tablées, les ambiances [table de Tabaski](table-tabaski.html) et [table de mariage en wax](table-mariage-wax.html) montrent la même logique en version fête.
 
 ## La lumière au-dessus de la table
 

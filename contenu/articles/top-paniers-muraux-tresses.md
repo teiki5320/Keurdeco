@@ -101,4 +101,4 @@ Laissez **5 à 10 cm entre chaque pièce** : assez pour que chacune respire, ass
 
 ## En résumé
 
-Des assiettes plates pour la base, un panier en volume pour le relief, un miroir soleil pour la lumière, et 5 à 10 cm entre chaque pièce : avec ces règles simples, un mur tressé réchauffe n’importe quelle pièce. Pour d’autres idées de vannerie, voyez aussi notre [top des paniers tressés africains](top-paniers-tresses-africains.html).
+Des assiettes plates pour la base, un panier en volume pour le relief, un miroir soleil pour la lumière, et 5 à 10 cm entre chaque pièce : avec ces règles simples, un mur tressé réchauffe n’importe quelle pièce. Pour d’autres idées de vannerie, voyez aussi notre [top des paniers tressés africains](top-10/paniers-tresses-africains).

@@ -68,7 +68,7 @@ produits:
 
 ### Imprimé africain ou tissu africain ?
 
-Les nappes de ce top sont des imprimés numériques sur polyester ou sur coton et lin : elles reprennent des portraits, des animaux ou des motifs géométriques inspirés de l’Afrique, sans être du wax, du kente ou du bogolan. C’est ce qui les rend lavables et résistantes aux taches. Pour une table de fête plus authentique, un coupon de [wax](glossaire-wax.html) posé en chemin de table ou en nappe fait très bien l’affaire. Notre sélection de [nappes en wax](top-nappes-wax.html) va dans ce sens.
+Les nappes de ce top sont des imprimés numériques sur polyester ou sur coton et lin : elles reprennent des portraits, des animaux ou des motifs géométriques inspirés de l’Afrique, sans être du wax, du kente ou du bogolan. C’est ce qui les rend lavables et résistantes aux taches. Pour une table de fête plus authentique, un coupon de [wax](glossaire-wax.html) posé en chemin de table ou en nappe fait très bien l’affaire.
 
 ### Composer une table
 

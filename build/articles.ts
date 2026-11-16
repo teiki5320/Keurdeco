@@ -23,6 +23,7 @@ import { resolve } from 'node:path';
 import { Marked } from 'marked';
 import { placerAnnonces } from './annonces.ts';
 import { adresseTop10, top10Lie, tousLesSujets } from './top10.ts';
+import { RENVOIS_TOPS } from './renvois.ts';
 import { parse as parseYaml } from 'yaml';
 import { FAMILLES, fichierRubrique, trouverRubrique, type Famille } from '../src/taxonomie.ts';
 import { dateDuJour, dateLongue, NOM_SITE, SITE_URL, titrePage } from './config.ts';
@@ -164,7 +165,8 @@ export function tousLesArticles(dossier = DOSSIER_ARTICLES): Article[] {
 
 /** Articles publiés à la date de référence (heure de Paris). */
 export function articlesPublies(date = dateDuJour(), tous = tousLesArticles()): Article[] {
-  return tous.filter((a) => a.publieLe <= date);
+  // Les anciens Tops remplacés par un Top 10 ne sont plus des articles : seule leur page de renvoi demeure (build/renvois.ts).
+  return tous.filter((a) => a.publieLe <= date && !(a.slug in RENVOIS_TOPS));
 }
 
 /** Tous les identifiants de produits cités par un article (liste, points, classement, encadrés). */

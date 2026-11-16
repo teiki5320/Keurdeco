@@ -61,7 +61,7 @@ Tous les paniers tressés ne viennent pas d’Afrique. Les paniers [Bolga](gloss
 
 ### Où placer ses paniers
 
-Dans l’entrée, un panier ouvert reçoit les clés et le courrier, un plus grand les chaussures ou les sacs. Au salon, un grand panier au sol accueille un plaid ou des magazines à côté du canapé. Dans la cuisine, une corbeille centrale et quelques paniers bas sur une étagère suffisent. Au mur, une composition de paniers plats de tailles différentes remplace un tableau. Retrouvez d’autres idées dans notre [Top des paniers tressés africains](top-paniers-tresses-africains.html).
+Dans l’entrée, un panier ouvert reçoit les clés et le courrier, un plus grand les chaussures ou les sacs. Au salon, un grand panier au sol accueille un plaid ou des magazines à côté du canapé. Dans la cuisine, une corbeille centrale et quelques paniers bas sur une étagère suffisent. Au mur, une composition de paniers plats de tailles différentes remplace un tableau.
 
 ## Questions fréquentes
 

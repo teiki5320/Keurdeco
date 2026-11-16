@@ -1,6 +1,6 @@
 ---
 titre: "Top 8 des tabourets et tables d’appoint en bois massif"
-description: "Tronc de teck brut, tronc torsadé d’une seule pièce, acajou, manguier : 8 tabourets et tables d’appoint en bois massif, dans l’esprit des tabourets sculptés africains."
+description: "Tronc de teck brut, tronc torsadé d’une seule pièce, acajou, manguier : 8 tabourets et tables d’appoint en bois massif, dans l’esprit des tabourets africains."
 publie_le: 2026-11-16
 type: top
 pieces: [salon, chambre, entree]

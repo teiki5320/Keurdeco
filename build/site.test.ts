@@ -1,3 +1,4 @@
+import { RENVOIS_TOPS, sourcePageRenvoi } from './renvois.ts';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
@@ -103,8 +104,8 @@ describe('référencement', () => {
   it('chaque page du sitemap a une date de mise à jour (lastmod)', () => {
     const racine = resolve(import.meta.dirname, '..');
     const dates = datesSitemap(racine);
-    // Pages hors sitemap (noindex : page de secours des articles de la veille, renvoi /actus/) : pas de date.
-    const generees = [...pagesGenerees()].filter(([, html]) => !/content="noindex"/.test(html)).map(([f]) => f);
+    // Pages hors sitemap (noindex : page de secours des articles de la veille, renvoi /actus/ ; renvois des anciens Tops) : pas de date.
+    const generees = [...pagesGenerees()].filter(([f, html]) => !/content="noindex"/.test(html) && !(f.replace(/\.html$/, '') in RENVOIS_TOPS)).map(([f]) => f);
     const pages = ['index.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', ...generees];
     for (const p of pages) expect(dates.get(p), p).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
@@ -140,7 +141,7 @@ describe('titres et descriptions pour Google', () => {
     const generees = pagesGenerees();
     for (const [nom, chemin] of Object.entries(toutesLesPages(racine))) {
       const html = generees.get(`${nom}.html`) ?? readFileSync(chemin, 'utf8');
-      if (/content="noindex"/.test(html)) continue;
+      if (/content="noindex"/.test(html) || nom in RENVOIS_TOPS) continue; // pages de renvoi : hors sitemap, sans description
       const titre = decoder(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '');
       const description = decoder(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? '');
       expect(titre.length, `${nom} : titre (${titre.length})`).toBeLessThanOrEqual(60);
@@ -216,5 +217,20 @@ describe('accueil : coups de cœur', () => {
   it('aucun lien Amazon, aucun prix, aucun vocabulaire de vente sur l’accueil', () => {
     expect(accueil).not.toMatch(/amazon\.fr|amzn\.|Voir sur Amazon/i);
     expect(bloc).not.toMatch(/€|prix|promo|acheter/i);
+  });
+});
+
+describe('renvois des anciens Tops', () => {
+  it('chaque ancien Top renvoie vers une page Top 10 qui existe, hors sitemap, avec adresse canonique et redirection', () => {
+    const generees = pagesGenerees();
+    for (const [slug, dest] of Object.entries(RENVOIS_TOPS)) {
+      const html = generees.get(`${slug}.html`)!;
+      expect(html, slug).toContain(`<link rel="canonical" href="https://www.keurdeco.com/${dest}" />`);
+      expect(html, slug).toContain(`http-equiv="refresh" content="0; url=https://www.keurdeco.com/${dest}"`);
+      expect(html, slug).not.toContain('noindex');
+      expect(html, slug).toContain('Cette page a déménagé');
+      expect(generees.has(dest === 'top-10/' ? 'top-10/index.html' : `${dest}.html`), `${slug} → ${dest}`).toBe(true);
+    }
+    expect(sourcePageRenvoi('top-10/')).toContain('name="adresse-canonique"');
   });
 });

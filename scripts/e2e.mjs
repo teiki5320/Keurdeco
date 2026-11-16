@@ -121,7 +121,7 @@ try {
   };
   await simulerVeille(page);
 
-  const pages = ['index.html', 'actus.html', 'tops.html', 'guides.html', 'pieces.html', 'matiere-bogolan.html', 'occasion-mariage.html', 'glossaire.html', 'glossaire-bogolan.html', 'conseils.html', 'conseil-laver-coussin-wax.html', 'conseil-rideau-perles.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', 'salon-terracotta-wax.html', 'top-paniers-tresses-africains.html', 'bogolan-histoire-idees.html'];
+  const pages = ['index.html', 'actus.html', 'tops.html', 'guides.html', 'pieces.html', 'matiere-bogolan.html', 'occasion-mariage.html', 'glossaire.html', 'glossaire-bogolan.html', 'conseils.html', 'conseil-laver-coussin-wax.html', 'conseil-rideau-perles.html', 'a-propos.html', 'mentions-legales.html', 'confidentialite.html', 'salon-terracotta-wax.html', 'top-tabourets-bois-sculpte.html', 'bogolan-histoire-idees.html'];
   for (const p of pages) {
     const rep = await page.goto(BASE + p, { waitUntil: 'networkidle' });
     verifier(rep?.ok() && (await page.locator('h1').count()) === 1, `${p} s'affiche avec un seul h1`);
@@ -194,8 +194,8 @@ try {
   await contexteSansJs.close();
 
   // Top et guide
-  await page.goto(`${BASE}top-paniers-tresses-africains.html`, { waitUntil: 'networkidle' });
-  const nbClasses = [...readFileSync(resolve(RACINE, 'contenu/articles/top-paniers-tresses-africains.md'), 'utf8').matchAll(/^ {2}- produit: /gm)].length;
+  await page.goto(`${BASE}top-tabourets-bois-sculpte.html`, { waitUntil: 'networkidle' });
+  const nbClasses = [...readFileSync(resolve(RACINE, 'contenu/articles/top-tabourets-bois-sculpte.md'), 'utf8').matchAll(/^ {2}- produit: /gm)].length;
   verifier((await page.locator('.classement__entree').count()) === nbClasses, `top : ${nbClasses} produits classés`);
   verifier((await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"ItemList"') && t.includes(`"numberOfItems":${nbClasses}`)), 'top : données structurées ItemList');
   await page.goto(`${BASE}bogolan-histoire-idees.html`, { waitUntil: 'networkidle' });

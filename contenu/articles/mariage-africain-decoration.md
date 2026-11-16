@@ -41,7 +41,7 @@ Reprenez sur les tables le tissu de la famille, ou les couleurs des tenues. Sur 
 
 {{produit: chemin-table-kente-lin}}
 
-Pour varier les tables, découpez des carrés de wax à poser sous les centres de table, ou ourlez-les en serviettes. Un lot de coupons permet d’avoir plusieurs motifs qui s’accordent. Notre [top des nappes en wax](top-nappes-wax.html) donne d’autres idées.
+Pour varier les tables, découpez des carrés de wax à poser sous les centres de table, ou ourlez-les en serviettes. Un lot de coupons permet d’avoir plusieurs motifs qui s’accordent. Notre [top des nappes en wax](top-10/nappes-sets-de-table) donne d’autres idées.
 
 {{produit: coupons-tissus-africains-lot-6}}
 

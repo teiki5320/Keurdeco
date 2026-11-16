@@ -35,6 +35,7 @@ import { motif } from './motifs.ts';
 import { ambiancesDeRubrique, blocGlossaire, blocTops, blocUne, imagePorte, pagesRubriques, tuilesRubriques, visiteMaison } from './rubriques.ts';
 import { calculerRapport, texteRapport } from './rapport.ts';
 import { blocCoupsDeCoeur, pagesTop10 } from './top10.ts';
+import { pagesRenvois } from './renvois.ts';
 import { blocActus, entitesVeille } from './veille.ts';
 
 export { insecables, NOM_SITE, SITE_URL };
@@ -323,7 +324,7 @@ export function pagesGenerees(): Map<string, string> {
     const top10 = pagesTop10();
     // Articles complets de la veille (actus/<slug>/), page de secours et renvoi /actus/.
     const veille = pagesArticlesVeille();
-    cachePages = new Map([...rubriques, ...articles, ...conseils, ...top10, ...veille]);
+    cachePages = new Map([...rubriques, ...articles, ...conseils, ...top10, ...veille, ...pagesRenvois()]);
   }
   return cachePages;
 }

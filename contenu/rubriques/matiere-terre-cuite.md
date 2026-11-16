@@ -10,7 +10,7 @@ En Afrique de l’Ouest, la poterie est souvent un savoir-faire féminin, transm
 
 En décoration, une grande jarre posée au sol habille un coin vide ; plusieurs poteries de hauteurs différentes composent une nature morte ; voir [comment disposer jarres et poteries](conseil-disposer-jarres-poteries.html). Sur la table, la vaisselle en terre cuite se mêle aux sets tressés et aux nappes en wax. Côté couleurs, le terracotta s’accorde avec le crème, le vert sauge et l’indigo ; voir [quelles couleurs lui associer](conseil-couleurs-avec-terracotta.html).
 
-Le [top des objets en terre cuite](top-terre-cuite-deco.html) et l’ambiance [cuisine chaleureuse, paniers et terre cuite](cuisine-terre-cuite-paniers.html) donnent des idées concrètes, de la jarre au bougeoir. Une règle simple : variez les formes (une jarre ronde, un vase haut, un bol bas) mais gardez une même famille de teintes.
+L’ambiance [cuisine chaleureuse, paniers et terre cuite](cuisine-terre-cuite-paniers.html) donne des idées concrètes, de la jarre au bougeoir. Une règle simple : variez les formes (une jarre ronde, un vase haut, un bol bas) mais gardez une même famille de teintes.
 
 ## Entretien
 
