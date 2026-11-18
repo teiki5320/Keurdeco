@@ -13,7 +13,7 @@ Mis à jour le 18 novembre 2026 d'après le dépôt et le site en ligne. Cette f
 
 ## Parcours
 
-- 🌐 **Web** : 🐙 GitHub — main · CI au vert le 18 novembre [ok] → 📄 Hébergement web — GitHub Pages, HTTPS imposé [ok] → 🌍 Nom de domaine — keurdeco.com chez Cloudflare [ok] → 🔎 Google et Bing — 145 pages sur 161 indexées au 18 novembre [à faire]
+- 🌐 **Web** : 🐙 GitHub — publication en échec le 18 novembre [bloquant] → 📄 Hébergement web — GitHub Pages, HTTPS imposé [ok] → 🌍 Nom de domaine — keurdeco.com chez Cloudflare [ok] → 🔎 Google et Bing — 145 pages sur 161 indexées au 18 novembre [à faire]
 - 🛒 **Affiliation** : 📝 Articles — 21 en ligne, 12 programmés [ok] → 🛍️ Affiliation — Amazon Partenaires, tag keurdecofr-21 [ok] → 💶 Commissions — à vérifier dans la console [pas encore]
 - 📌 **Contenu** : 🖼️ Épingles — générées au build [ok] → 📥 Import CSV — lot jusqu'au 18 novembre [ok] → 🤖 API Pinterest — accès standard, 5 épingles par passage [ok]
 - 📰 **Publicité** : 📄 Pages de lecture — emplacements In-Article [ok] → 📰 AdSense (publicité web) — refusé le 9 novembre (contenu à faible valeur informative), aucune annonce [à faire]
