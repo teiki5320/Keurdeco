@@ -169,14 +169,18 @@ export function produitsDeRubrique(famille: Famille, id: string, ambiances: Arti
     .sort((a, b) => a.rang - b.rang || a.i - b.i);
   const choisis: (Produit & { asin: string })[] = [];
   const types = new Set<string>();
-  for (const { p } of candidats) {
-    if (choisis.length === n) break;
-    if (types.has(p.type_objet)) continue;
-    types.add(p.type_objet);
-    choisis.push(p);
+  // Un produit avec vignette passe avant tout produit sans vignette (une carte sans vignette n'affiche qu'une icône) ;
+  // dans chaque groupe, un seul produit par type d'objet d'abord, puis on complète dans le même ordre.
+  for (const avecVignette of [true, false]) {
+    const groupe = candidats.filter(({ p }) => aUneVignette(p) === avecVignette);
+    for (const { p } of groupe) {
+      if (choisis.length === n) break;
+      if (types.has(p.type_objet)) continue;
+      types.add(p.type_objet);
+      choisis.push(p);
+    }
+    for (const { p } of groupe) if (choisis.length < n && !choisis.includes(p)) choisis.push(p);
   }
-  // Pas assez de types différents (matière surtout faite de tissus, de vases…) : on complète dans le même ordre.
-  for (const { p } of candidats) if (choisis.length < n && !choisis.includes(p)) choisis.push(p);
   return choisis.length === n ? choisis : [];
 }
 

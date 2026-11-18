@@ -1,6 +1,6 @@
 ---
 titre: "Black Friday déco africaine : que surveiller, que viser"
-description: "Black Friday le 27 novembre 2026 : comment préparer sa liste déco africaine, éviter les achats d’impulsion et repérer six pièces durables à comparer avant d’acheter."
+description: "Black Friday le 27 novembre 2026 : préparer sa liste déco africaine, éviter les achats d’impulsion et repérer six pièces durables à comparer avant d’acheter."
 publie_le: 2026-11-18
 type: guide
 pieces: [salon, chambre, entree, cuisine-salle-a-manger]
