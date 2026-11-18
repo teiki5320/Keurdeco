@@ -1,6 +1,7 @@
 ---
 titre: "Que signifient les symboles adinkra ?"
-description: "Gye Nyame, Sankofa, Dwennimmen : l’origine et le sens des symboles adinkra du Ghana, imprimés avec des tampons en calebasse."
+titre_page: "Adinkra : signification des symboles du Ghana"
+description: "Adinkra : origine et signification des symboles akan du Ghana (Gye Nyame, Sankofa, Dwennimmen, Adinkrahene), imprimés au tampon en calebasse."
 publie_le: 2026-11-06
 theme: comprendre
 reponse: "Les adinkra sont des symboles des Akan du Ghana, chacun associé à un proverbe ou à une idée. Gye Nyame exprime la toute-puissance de Dieu, Sankofa le retour aux sources, Dwennimmen l’humilité alliée à la force."

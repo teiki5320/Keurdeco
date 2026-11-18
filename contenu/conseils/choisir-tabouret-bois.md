@@ -1,6 +1,7 @@
 ---
 titre: "Comment choisir un tabouret africain en bois sculpté ?"
-description: "Une seule pièce de bois, essence, finition, stabilité et usage : les critères pour choisir un tabouret africain qui sera beau et utile."
+titre_page: "Tabouret africain en bois sculpté : bien le choisir"
+description: "Tabouret africain en bois sculpté : une seule pièce de bois, hauteur selon l’usage, finition et entretien. Les critères pour bien le choisir."
 publie_le: 2026-10-02
 theme: choisir
 reponse: "Préférez un tabouret taillé dans une seule pièce de bois, stable, bien poncé, et choisissez sa hauteur selon l’usage : assise, table d’appoint ou sellette pour une plante."

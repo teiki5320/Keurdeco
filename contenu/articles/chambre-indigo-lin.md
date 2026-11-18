@@ -73,3 +73,5 @@ Au pied du lit, un **tapis rond bleu marine** prolonge la couleur jusqu’au sol
 ## En résumé
 
 Un grand aplat d’indigo, beaucoup de blanc, deux motifs teints et des matières naturelles : la recette d’une chambre à la fois douce, élégante et pleine de caractère.
+
+Pour aller plus loin, retrouvez toutes nos idées autour du [tissu indigo africain](matiere-indigo.html).

@@ -38,3 +38,5 @@ Le bleu profond de l’adire apaise une chambre. Associez-le au lin blanc, au bo
 {{produit: teinture-indigo-prereduit-jacquard}}
 
 {{produit: coussin-shibori-indigo}}
+
+Pour d’autres idées autour de cette couleur, parcourez la rubrique [tissu indigo africain](matiere-indigo.html).

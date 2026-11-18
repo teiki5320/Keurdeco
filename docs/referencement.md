@@ -2,6 +2,21 @@
 
 Tenu par la routine « Référencement du jour » (Keur Déco passe le mercredi). Une page travaillée n'est pas retouchée avant 28 jours : Google a besoin de ce temps pour réagir.
 
+## 18/11/2026
+
+Changements préparés par le passage de 5 h 05 (bloqué ce matin par la description trop longue du guide Black Friday, réglée à 11 h), envoyés au passage de 14 h.
+
+| Page | Changement |
+|---|---|
+| /conseil-panier-bolga.html | nouveau `titre_page` « Panier Bolga : le panier tressé du Ghana » ; description réécrite |
+| /conseil-choisir-tabouret-bois.html | nouveau `titre_page` « Tabouret africain en bois sculpté : bien le choisir » ; description réécrite |
+| /conseil-symboles-adinkra.html | nouveau `titre_page` « Adinkra : signification des symboles du Ghana » ; description réécrite |
+| /matiere-indigo.html | accroche de la rubrique Indigo réécrite (« tissu indigo africain ») ; premier intertitre « Le tissu indigo africain, bleu profond d’Afrique de l’Ouest » |
+
+Liens internes ajoutés : « tissu indigo africain » vers la rubrique Indigo à la fin du conseil Adire (partie Chez soi) et de l’article Chambre indigo et lin ; « leur signification » vers le conseil Symboles adinkra depuis l’article Kente.
+
+À relire à partir du 16/12/2026.
+
 ## 11/11/2026
 
 ### Pages presque en première page (chiffres Search Console des 28 derniers jours)

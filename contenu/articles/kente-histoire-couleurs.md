@@ -77,4 +77,4 @@ Un coussin, une étole accrochée à une patère, un abat-jour : le kente est si
 
 Le kente tissé main est un objet de prestige, lié aux grandes étapes de la vie. Évitez de découper un kente ancien, et préférez l’achat auprès d’artisans ou de coopératives qui rémunèrent justement les tisserands. Pour les usages exposés aux taches (table, cuisine), les imprimés sont tout indiqués.
 
-Pour aller plus loin, lisez la fiche [kente](glossaire-kente.html) du glossaire, découvrez les [symboles adinkra](glossaire-adinkra.html), ou parcourez la rubrique [Kente](matiere-kente.html).
+Pour aller plus loin, lisez la fiche [kente](glossaire-kente.html) du glossaire, découvrez les [symboles adinkra](glossaire-adinkra.html) et [leur signification](conseil-symboles-adinkra.html), ou parcourez la rubrique [Kente](matiere-kente.html).

@@ -27,7 +27,7 @@ export const MATIERES: Rubrique[] = [
   { id: 'wax', nom: 'Wax', titre: 'Décoration intérieur wax : idées déco africaine', accroche: 'Décoration intérieur wax : coussins, nappes, tissu au mur, idées pour le salon, la chambre et la table. Le tissu star d’Afrique de l’Ouest, bien dosé.' },
   { id: 'bogolan', nom: 'Bogolan', titre: 'Décoration bogolan : idées de déco africaine', accroche: 'Décoration bogolan : la toile du Mali teinte à la boue, ses motifs bruns et crème, et nos idées pour l’intégrer au salon ou à la chambre.' },
   { id: 'kente', nom: 'Kente', accroche: 'Le kente, tissu tissé du Ghana aux bandes colorées : signification, usages et façons de l’apporter dans la maison.' },
-  { id: 'indigo', nom: 'Indigo', titre: 'Tissu indigo africain : idées de déco', accroche: 'Le bleu indigo d’Afrique de l’Ouest, de l’adire yoruba aux teintures maliennes : textiles profonds et apaisants.' },
+  { id: 'indigo', nom: 'Indigo', titre: 'Tissu indigo africain : idées de déco', accroche: 'Tissu indigo africain pour la déco : adire yoruba, teintures du Mali, idées pour la chambre et le salon, entretien et erreurs à éviter.' },
   { id: 'raphia-paniers', nom: 'Raphia et paniers tressés', accroche: 'Raphia, osier, herbes tressées : paniers, suspensions et assiettes murales, la vannerie africaine dans toute la maison.' },
   { id: 'terre-cuite', nom: 'Terre cuite et poterie', accroche: 'Jarres, vases et vaisselle en terre cuite : la poterie africaine pour une déco chaleureuse et naturelle.' },
   { id: 'bois-sculpte', nom: 'Bois sculpté', accroche: 'Tabourets, masques, bols et statuettes : le bois sculpté africain, à choisir et à mettre en valeur sans effet musée.' },
