@@ -2384,6 +2384,24 @@
       "board_id": "1085719491358932186",
       "publie_le": "2026-11-17",
       "publie_a": "2026-11-17T04:13:30.479Z"
+    },
+    {
+      "id": "conseil-choisir-tapis-chambre-3",
+      "slug": "conseil-choisir-tapis-chambre",
+      "pin_id": "1085719422764200968",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-18",
+      "publie_a": "2026-11-18T04:13:26.484Z"
+    },
+    {
+      "id": "top-tabourets-bois-sculpte-3",
+      "slug": "top-tabourets-bois-sculpte",
+      "pin_id": "1085719422764200971",
+      "tableau": "bois-sculpte",
+      "board_id": "1085719491358932186",
+      "publie_le": "2026-11-18",
+      "publie_a": "2026-11-18T04:13:28.647Z"
     }
   ]
 }
