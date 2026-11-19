@@ -291,7 +291,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "paniers-gigognes-tresses",
@@ -387,7 +387,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-17"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "galettes-chaise-orange",
@@ -1091,7 +1091,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "coussins-ethniques-geometriques-lot-4",
@@ -1122,7 +1122,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "plaid-tricot-chenille",
@@ -1138,7 +1138,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "bougies-piliers-ivoire-lot-6",
@@ -1154,7 +1154,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "coupe-terre-cuite-ronde",
@@ -1188,7 +1188,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "tapis-peau-mouton-beige",
@@ -1222,7 +1222,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "pouf-tricot-moutarde",
@@ -1238,7 +1238,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "assiettes-terre-cuite-lot-6",
@@ -2428,7 +2428,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-17"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "plaid-coton-bleu-140x200",
@@ -2846,7 +2846,7 @@
       "chambre"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-17"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "tissu-kente-jaune-noir-blanc",
@@ -3173,7 +3173,7 @@
       "chambre"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-17"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "parure-patchwork-tribal-reversible",
@@ -3198,8 +3198,8 @@
     "pieces": [
       "chambre-enfant"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-11-17"
+    "statut": "actif",
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "parure-style-africain-220x240",
@@ -3645,7 +3645,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "tapis-berbere-creme-orange-noir-120x170",
@@ -3662,7 +3662,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "tapis-berbere-rouge-140x200",
@@ -3690,7 +3690,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "tapis-berbere-ecru-noir-80x150",
@@ -3706,7 +3706,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "teinture-indigo-prereduit-jacquard",
@@ -3723,7 +3723,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "couvre-lit-ajrak-indigo",
@@ -3771,7 +3771,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "nappe-imprime-girafe-152x213",
@@ -3786,7 +3786,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "parure-enfant-savane-coton-140x200",
@@ -3799,7 +3799,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "housse-couette-elephant-girafe-220x240",
@@ -3812,7 +3812,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "chemin-table-faune-africaine-33x91",
@@ -3828,7 +3828,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "panier-bolga-petit-20",
@@ -3844,7 +3844,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "panier-all-across-africa-mineral",
@@ -3876,7 +3876,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "coussin-afrique-patchwork-40",
@@ -3889,7 +3889,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-15"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "coussin-portrait-femme-africaine-40",
@@ -3915,7 +3915,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "coussins-tribal-africain-velours-lot-4",
@@ -3934,7 +3934,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "coussin-girafes-orange-40",
@@ -3952,7 +3952,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "eventail-kente-cuir",
@@ -3969,7 +3969,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "rideau-douche-shibori-indigo",
@@ -3987,7 +3987,7 @@
       "salle-de-bain"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "pot-terre-cuite-citrons-italien",
@@ -4004,7 +4004,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "amphore-terre-cuite-ouverte-40",
@@ -4021,7 +4021,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "masque-girafe-bois-sculpte",
@@ -4037,7 +4037,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "sets-table-ovales-jonc-de-mer-lot-6",
@@ -4053,7 +4053,7 @@
     "pieces": [
       "cuisine-salle-a-manger"
     ],
-    "statut": "actif",
+    "statut": "indisponible",
     "verifie_le": "2026-11-09"
   }
 ]
