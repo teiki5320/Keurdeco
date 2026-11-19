@@ -249,7 +249,7 @@ try {
       (await page.locator('.article-actu__corps h2').count()) === 2 &&
       (await page.textContent('.article-actu__sources'))?.includes('Article rédigé par Keur Déco à partir de') &&
       (await page.getAttribute('.article-actu__sources a', 'rel')) === 'noopener nofollow' &&
-      (await page.locator('.article-actu__fiches a[href="matiere-wax.html"]').count()) === 1 &&
+      (await page.locator('.article-actu__fiches a[href="/matiere-wax.html"]').count()) === 1 &&
       (await page.locator('.autres-actus .actu').count()) === 3,
     'page /actus/<slug>/ : titre, chapô, durée, image et crédit, intertitres, sources, fiche liée, 3 autres actus',
   );
