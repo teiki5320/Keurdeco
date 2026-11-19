@@ -30,13 +30,13 @@ Mis à jour le 19 novembre 2026. Compagnon de INFRA.md.
 
 ## Rubrique Actus
 
-- **Où** : bloc « Actus de la déco africaine » sur l'accueil (4), page `actus.html` (20, dans le menu et le pied de page, au sitemap), bloc « L'actu du [matière] » sur chaque page matière (3, absent s'il n'y en a pas) ; une page par article complet (`/actus/<slug>/`, au sitemap, depuis le 28 octobre 2026).
+- **Où** : page `actus.html` (20, dans le menu et le pied de page) et une page par article complet (`/actus/<slug>/`, depuis le 28 octobre 2026). Depuis le 19 novembre 2026, ces pages sont en `noindex, follow` et hors sitemap (les actus réécrites d'autres médias passaient pour du contenu repris), et les blocs d'actus de l'accueil (4) et des pages matière (3) sont retirés ; les pages d'articles n'ont plus de `<base>` : leurs liens internes partent de la racine (`/a-propos.html`).
 - **Quoi** : designers, artisans, textiles, vannerie, poterie, bois sculpté, perles, salons et expositions ; 15 flux RSS ; titres, résumés et articles complets réécrits par Claude (jamais le titre original ni de texte copié), encadré « Sources » avec le lien vers chaque source, crédit de chaque image, liens vers les fiches matières citées, 3 autres actus en bas de page.
 - **Règles** : aucun lien Partenaires ni prix dans les actus, aucune épingle Pinterest tirée des actus, pas d'annonce AdSense sur la page Actus ni sur la page de secours ; une annonce au plus par page d'article (même modèle que les conseils).
 
 ## Mesures
 
-- **Audience** : Cloudflare Web Analytics et, depuis le 5 novembre 2026, Umami (sans cookie, visites, clics Amazon et clics du menu des sites Keur) — à vérifier dans la console.
+- **Audience** : Cloudflare Web Analytics et, depuis le 5 novembre 2026, Umami (sans cookie, visites, clics Amazon ; le menu des sites Keur a été retiré le 19 novembre 2026) — à vérifier dans la console.
 - **Pages indexées** : 146 sur 165 au 19 novembre 2026 (relevé du Studio) : le top des tabourets en bois sculpté est indexé ; pas encore indexés : le guide Black Friday et le conseil sur le vase d'herbes de pampa, parus le 18 novembre, le conseil sur le tapis de chambre, paru le 16 novembre, et 12 articles d'actus ; 4 pages (matière perles, occasions fêtes de fin d'année, mariage et Tabaski) encore vues par Google avec le `noindex` de son dernier passage du 29 septembre 2026, alors qu'elles sont ouvertes (sans `noindex`, au sitemap) depuis qu'elles ont leurs ambiances ; le sitemap en ligne compte 165 adresses le 19 novembre 2026 (161 le 18 novembre, 159 le 16 novembre, 164 le 15 novembre, avant le retrait des 7 anciens Tops), dont 50 conseils et 37 articles d'actus.
 - **Épingles** : 96 importées par CSV (du 2 octobre au 18 novembre 2026) et 174 publiées par l'API du 20 octobre au 19 novembre 2026 (237 au manifeste en ligne le 19 novembre, dont 2 à publier) (`data/pinterest-etat.json`).
 - **Statistiques Pinterest** : à vérifier dans la console Pinterest.

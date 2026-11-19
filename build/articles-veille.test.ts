@@ -53,17 +53,21 @@ describe('pages des articles de la veille', () => {
     expect(slugsConstruits(c)).toEqual(['expo-wax-dakar']);
   });
 
-  it('page /actus/<slug>/ : titre, description, canonical, Open Graph, JSON-LD NewsArticle, une annonce', () => {
+  it('page /actus/<slug>/ : titre, description, noindex, liens depuis la racine (sans <base>), JSON-LD NewsArticle, une annonce', () => {
     const source = pagesArticlesVeille(cache()).get('actus/expo-wax-dakar/index.html')!;
     const html = transformerPage(source, 'actus/expo-wax-dakar/index.html');
     expect(html).toContain('<title>Une exposition de wax à Dakar · Keur Déco</title>');
     expect(html).toContain('<meta name="description" content="Un chapô de démonstration');
-    expect(html).toContain('<base href="../../" />');
-    expect(html).toContain('<link rel="canonical" href="https://www.keurdeco.com/actus/expo-wax-dakar/" />');
-    expect(html).toContain('<meta property="og:image" content="https://teiki5320.github.io/veille/images/keurdeco/x.webp" />');
-    expect(html).toContain('<meta property="og:image:width" content="1600" />');
-    expect(html).toContain('<meta property="og:type" content="article" />');
-    expect(html).toMatch(/<a href="actus\.html" aria-current="page">Actus<\/a>/);
+    // Actus hors de Google (19 novembre 2026) : noindex, follow, ni canonique ni Open Graph.
+    expect(html).toContain('<meta name="robots" content="noindex, follow, max-image-preview:large" />');
+    expect(html.match(/<meta name="robots"/g)).toHaveLength(1);
+    expect(html).not.toContain('rel="canonical"');
+    // Pas de <base> : tous les liens internes partent de la racine.
+    expect(html).not.toContain('<base');
+    expect(html).toMatch(/<a href="\/actus\.html" aria-current="page">Actus<\/a>/);
+    expect(html).toContain('href="/a-propos.html"');
+    const internes = [...html.matchAll(/\s(?:href|src)="([^"]*)"/g)].map((m) => m[1]).filter((v) => !/^([a-z][a-z0-9+.-]*:|\/|#)/i.test(v));
+    expect(internes).toEqual([]);
     const ld = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)![1]);
     const news = ld['@graph'][0];
     expect(news).toMatchObject({ '@type': 'NewsArticle', headline: 'Une exposition de wax à Dakar', datePublished: '2026-10-26T10:00:00.000Z', dateModified: '2026-10-27T10:00:00.000Z', image: [image.url], isBasedOn: 'https://www.lemonde.fr/a' });
@@ -79,7 +83,7 @@ describe('pages des articles de la veille', () => {
   it('page de secours : noindex, sans annonce, hors sitemap', () => {
     const pages = pagesArticlesVeille(cache());
     const secours = transformerPage(pages.get('actus/article/index.html')!, 'actus/article/index.html');
-    expect(secours).toContain('<meta name="robots" content="noindex, max-image-preview:large" />');
+    expect(secours).toContain('<meta name="robots" content="noindex, follow, max-image-preview:large" />');
     expect(secours).toContain('data-article-secours');
     expect(secours).not.toContain('rel="canonical"');
     expect(pageAvecAdsense('actus/article/index.html')).toBe(false);
@@ -87,8 +91,8 @@ describe('pages des articles de la veille', () => {
     expect(pageAvecAdsense('actus/expo-wax-dakar/index.html')).toBe(true);
     const indexees = [...pages].filter(([, h]) => !/content="noindex"/.test(h)).map(([f]) => f);
     const plan = sitemap(indexees);
-    expect(plan).toContain('<loc>https://www.keurdeco.com/actus/expo-wax-dakar/</loc>');
-    expect(plan).not.toContain('actus/article');
+    // Les pages d'articles d'actus sont en noindex : plus dans le plan du site.
+    expect(plan).not.toContain('actus/');
   });
 
   it('les cartes « Autres actus » de la page mènent à la page construite, à la secours ou à la source', () => {

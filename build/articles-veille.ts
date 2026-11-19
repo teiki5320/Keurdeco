@@ -140,6 +140,7 @@ export function sourcePageArticleVeille(a: ArticleVeille, cache: CacheVeille, co
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="${echapper(couperTexte(a.chapo, 160))}" />
     <meta name="date-publication" content="${echapper(a.publie_le)}" />${metaImage(a)}
+    <meta name="robots" content="noindex" />
     <title>${echapper(titrePage(a.titre))}</title>
     <!--#head-->
     ${jsonLd(ld)}

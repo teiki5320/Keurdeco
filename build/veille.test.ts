@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { MATIERES } from '../src/taxonomie.ts';
 import { pagesGenerees, transformerPage } from './site.ts';
@@ -45,10 +46,12 @@ describe('veille : sections d’actus', () => {
     expect(html).not.toMatch(/amazon|epingler/i);
   });
 
-  it('chaque page matière porte son bloc d’actus', () => {
+  it('aucune page matière ni pièce, ni l’accueil, ne porte de bloc d’actus (actus hors de Google depuis le 19 novembre 2026)', () => {
     const pages = pagesGenerees();
-    for (const m of MATIERES) expect(pages.get(`matiere-${m.id}.html`)).toContain(`<!--#actus:3:matiere:${m.id}-->`);
+    for (const m of MATIERES) expect(pages.get(`matiere-${m.id}.html`)).not.toContain('<!--#actus');
     expect(pages.get('piece-salon.html')).not.toContain('<!--#actus');
+    expect(readFileSync('index.html', 'utf8')).not.toContain('<!--#actus');
+    expect(readFileSync('actus.html', 'utf8')).toContain('<meta name="robots" content="noindex" />');
   });
 });
 

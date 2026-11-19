@@ -47,7 +47,7 @@ describe('référencement', () => {
     expect(indexee).toContain('<meta name="robots" content="max-image-preview:large" />');
     const cachee = transformerPage(tete('<meta name="robots" content="noindex" />'), '404.html');
     expect(cachee.match(/<meta name="robots"/g)).toHaveLength(1);
-    expect(cachee).toContain('<meta name="robots" content="noindex, max-image-preview:large" />');
+    expect(cachee).toContain('<meta name="robots" content="noindex, follow, max-image-preview:large" />');
   });
 
   it('pas de référencement sur les pages noindex', () => {

@@ -208,10 +208,10 @@ function pageRubrique(famille: Famille, r: Rubrique, publies: Article[]): string
     noindex: articles.length === 0,
     motif: famille === 'matiere' ? r.id : famille === 'piece' ? (MOTIF_PIECE[r.id] ?? 'wax') : MOTIF_FAMILLE[famille],
     image: imageExiste(imageRubrique(famille, r.id)) ? imageRubrique(famille, r.id) : undefined,
-    // Page matière : les 3 dernières actus de la veille sur cette matière (bloc absent s'il n'y en a pas).
+    // Plus de bloc d'actus sur les pages matières depuis le 19 novembre 2026 (actus hors de Google).
     // Bandeau de produits juste sous les ambiances, loin de l'annonce posée après le texte d'introduction.
     contenu: `${grilleArticles(articles, '<p class="liste-vide">La première ambiance arrive bientôt.</p>')}
-        ${bandeauProduits(famille, r, articles)}${famille === 'matiere' ? `\n        <!--#actus:3:matiere:${r.id}-->` : ''}
+        ${bandeauProduits(famille, r, articles)}
         ${introPage(fichierRubrique(famille, r.id).replace(/\.html$/, ''), true)}
         <nav class="autres-rubriques" aria-label="${f.titre}"><h2>${f.titre}</h2>${tuilesRubriques(famille, publies)}</nav>`,
   });

@@ -129,7 +129,7 @@ try {
   }
   // GitHub Pages sert 404.html pour toute adresse inconnue (vite preview ne le fait pas : on l'ouvre directement).
   await page.goto(`${BASE}404.html`, { waitUntil: 'networkidle' });
-  verifier(/n’existe pas/.test((await page.textContent('h1')) ?? '') && (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex, max-image-preview:large', 'page 404 (non indexée)');
+  verifier(/n’existe pas/.test((await page.textContent('h1')) ?? '') && (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex, follow, max-image-preview:large', 'page 404 (non indexée)');
 
   // Accueil
   await page.goto(BASE, { waitUntil: 'networkidle' });
@@ -208,9 +208,10 @@ try {
   verifier((await page.locator('.reponse-courte').count()) === 1 && (await page.locator('.site-nav a[href="conseils.html"][aria-current="page"]').count()) === 1, 'conseil : réponse courte et onglet Conseils actif');
   verifier((await page.locator('script[type="application/ld+json"]').allTextContents()).some((t) => t.includes('"@type":"FAQPage"')), 'conseil : données structurées FAQ');
 
-  // Veille actus : accueil (4), actus.html (20), page matière avec et sans actus, panne du fichier, sans JavaScript
+  // Veille actus : accueil (aucun bloc), actus.html (20, noindex), pages matière (aucun bloc), panne du fichier, sans JavaScript
   await page.goto(BASE, { waitUntil: 'networkidle' });
-  verifier((await page.locator('.actus--accueil:not([hidden]) .actu').count()) === 4 && (await page.locator('.actus--accueil .actu--bandeau').count()) === 1 && (await page.getAttribute('.actus--accueil .actu--bandeau img', 'loading')) === null, 'accueil : 4 actus (1 bandeau chargé tout de suite, 3 vignettes)');
+  verifier((await page.locator('.actus').count()) === 0 && (await page.locator('a[href*="actus/"]').count()) === 0, 'accueil : plus de bloc d’actus (actus hors de Google)');
+  verifier((await page.locator('a[href*="keurbook.com"], a[href*="keurcook.com"], a[href*="keurkado.com"], a[href*="toakeur.com"], [data-sites-keur]').count()) === 0, 'accueil : aucun lien vers les autres sites de la maison');
   await page.goto(`${BASE}actus.html`, { waitUntil: 'networkidle' });
   const liensCartes = page.locator('.actu .actu__lien');
   verifier(
@@ -253,19 +254,20 @@ try {
     'page /actus/<slug>/ : titre, chapô, durée, image et crédit, intertitres, sources, fiche liée, 3 autres actus',
   );
   verifier(
-    (await page.getAttribute('link[rel="canonical"]', 'href')) === 'https://www.keurdeco.com/actus/actu-demo-construite/' &&
-      (await page.getAttribute('meta[property="og:image"]', 'content'))?.startsWith('https://teiki5320.github.io/veille/') &&
-      news?.headline === 'Article de démonstration construit' &&
+    news?.headline === 'Article de démonstration construit' &&
       news?.isBasedOn === 'https://exemple.org/article-1' &&
-      (await page.locator('meta[name="robots"][content^="noindex"]').count()) === 0,
-    'page /actus/<slug>/ : canonical, Open Graph, JSON-LD NewsArticle',
+      (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex, follow, max-image-preview:large' &&
+      (await page.locator('link[rel="canonical"]').count()) === 0 &&
+      (await page.locator('base').count()) === 0 &&
+      (await page.locator('.site-nav a[href="/actus.html"]').count()) === 1,
+    'page /actus/<slug>/ : noindex, follow, sans <base>, liens depuis la racine, JSON-LD NewsArticle',
   );
   verifier(!/amazon\.fr|epingler/i.test(await page.locator('main').innerHTML()) && (await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)), 'page /actus/<slug>/ : aucun lien Amazon, pas de défilement horizontal');
   await page.goto(`${BASE}actus/article/?id=${ID_SECOURS}`, { waitUntil: 'networkidle' });
   await page.waitForSelector('.article-actu__corps');
   verifier(
     (await page.textContent('h1')) === 'Article de démonstration de secours' &&
-      (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex, max-image-preview:large' &&
+      (await page.getAttribute('meta[name="robots"]', 'content')) === 'noindex, follow, max-image-preview:large' &&
       (await page.locator('.article-actu__sources').count()) === 1 &&
       (await page.locator('.article-actu__corps h2').count()) === 2 &&
       (await page.title()).startsWith('Article de démonstration de secours'),
@@ -278,10 +280,9 @@ try {
   await page.waitForURL('**/actus/actu-demo-construite/');
   verifier(true, 'page de secours : un article déjà construit renvoie vers sa page');
   await page.goto(`${BASE}matiere-wax.html`, { waitUntil: 'networkidle' });
-  verifier((await page.locator('.actus--matiere:not([hidden]) .actu').count()) === 2 && (await page.textContent('.actus--matiere h2'))?.includes('L’actu du wax'), 'page matière (wax) : ses 2 actus');
-  verifier((await page.getAttribute('.actus--matiere .actu__lien', 'href')) === 'actus/actu-demo-construite/', 'page matière : la carte ouvre l’article sur le site');
+  verifier((await page.locator('.actus').count()) === 0, 'page matière (wax) : plus de bloc d’actus');
   await page.goto(`${BASE}matiere-perles.html`, { waitUntil: 'networkidle' });
-  verifier((await page.locator('.actus--matiere').isHidden()) && (await page.locator('.actu').count()) === 0, 'page matière sans actu (perles) : bloc absent');
+  verifier((await page.locator('.actus').count()) === 0 && (await page.locator('.actu').count()) === 0, 'page matière (perles) : plus de bloc d’actus');
   const contexteActus = await navigateur.newContext({ viewport: { width: 390, height: 844 } });
   const pagePanne = await contexteActus.newPage();
   const erreursPanne = [];
@@ -339,7 +340,7 @@ try {
   // Fichiers générés
   const sitemap = await (await fetch(`${BASE}sitemap.xml`)).text();
   verifier(sitemap.includes('https://www.keurdeco.com/salon-terracotta-wax.html') && !sitemap.includes('404'), 'sitemap.xml');
-  verifier(sitemap.includes('<loc>https://www.keurdeco.com/actus/actu-demo-construite/</loc>') && !sitemap.includes('actus/article') && !sitemap.includes('actus/</loc>'), 'sitemap.xml : pages d’articles de la veille (sans la page de secours)');
+  verifier(!sitemap.includes('actus'), 'sitemap.xml : aucune page d’actus (page Actus et articles en noindex)');
   verifier((await (await fetch(`${BASE}robots.txt`)).text()).includes('Sitemap: https://www.keurdeco.com/sitemap.xml'), 'robots.txt');
   verifier((await fetch(`${BASE}manifest.webmanifest`)).ok && (await fetch(`${BASE}sw.js`)).ok, 'manifeste et service worker');
   const manifeste = await (await fetch(`${BASE}epingles.json`)).json();

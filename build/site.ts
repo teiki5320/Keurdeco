@@ -54,7 +54,7 @@ export const NAVIGATION: { href: string; libelle: string; pages: RegExp }[] = [
 
 /** Balise robots d'une page non indexée : une seule balise, avec la grande image autorisée (comme keurkado.com). */
 const ROBOTS_SOURCE_NOINDEX = '<meta name="robots" content="noindex" />';
-export const ROBOTS_NOINDEX = '<meta name="robots" content="noindex, max-image-preview:large" />';
+export const ROBOTS_NOINDEX = '<meta name="robots" content="noindex, follow, max-image-preview:large" />';
 
 /**
  * Début commun du <head>. Grande image autorisée dans Google Discover et les résultats (« max-image-preview:large ») ;
@@ -211,24 +211,6 @@ function logo(surFonce = false): string {
   return `<a class="logo" href="index.html" aria-label="${NOM_SITE}, accueil">${embleme(surFonce)}<span class="logo__texte">Keur <em>Déco</em></span></a>`;
 }
 
-/** Les autres sites de la maison TOA KEUR, proposés dans le menu « Les sites Keur » de l'en-tête (le site courant, Keur Déco, en est retiré). */
-const SITES_KEUR: { nom: string; description: string; url: string }[] = [
-  { nom: 'Keurbook', description: 'les livres d’auteurs africains', url: 'https://keurbook.com/' },
-  { nom: 'Keur Cook', description: 'la cuisine africaine', url: 'https://keurcook.com/' },
-  { nom: 'Keurfoot', description: 'le foot africain', url: 'https://keurfoot.com/' },
-  { nom: 'Keur Kado', description: 'les cadeaux africains', url: 'https://keurkado.com/' },
-  { nom: 'Keur Bible', description: 'les objets chrétiens et l’art chrétien afro', url: 'https://keurbible.com/' },
-];
-
-/** Bouton « Les sites Keur » et sa liste de liens ; `id` rend l'identifiant unique (bureau / mobile). */
-function menuSitesKeur(id: string, variante: 'bureau' | 'mobile'): string {
-  const items = SITES_KEUR.map((s) => `<li><a href="${s.url}" data-umami-event="Menu sites Keur" data-umami-event-site="${s.nom}"><strong>${s.nom}</strong> <span>${s.description}</span></a></li>`).join('');
-  return `<div class="sites-keur sites-keur--${variante}" data-sites-keur>
-      <button type="button" class="sites-keur__bouton" aria-expanded="false" aria-controls="${id}">Les sites Keur</button>
-      <ul class="sites-keur__liste" id="${id}" hidden>${items}<li class="sites-keur__maison"><a href="https://toakeur.com/" data-umami-event="Menu sites Keur" data-umami-event-site="toakeur.com">Toute la maison : toakeur.com</a></li></ul>
-    </div>`;
-}
-
 export function header(fichier: string): string {
   const liens = liensNavigation(fichier);
   return `<a class="evitement" href="#contenu">Aller au contenu</a>
@@ -236,11 +218,9 @@ export function header(fichier: string): string {
   <div class="conteneur site-entete__barre">
     ${logo()}
     <nav class="site-nav" aria-label="Navigation principale"><ul>${liens}</ul></nav>
-    ${menuSitesKeur('sites-keur-bureau', 'bureau')}
     <details class="menu-mobile">
       <summary aria-label="Ouvrir le menu">${icone('menu')}<span>Menu</span></summary>
-      <nav aria-label="Navigation principale (mobile)"><ul>${liens}<li><a href="a-propos.html">À propos</a></li></ul>
-      ${menuSitesKeur('sites-keur-mobile', 'mobile')}</nav>
+      <nav aria-label="Navigation principale (mobile)"><ul>${liens}<li><a href="a-propos.html">À propos</a></li></ul></nav>
     </details>
   </div>
 </header>`;
@@ -289,7 +269,6 @@ export function footer(): string {
       <p>${SLOGAN}. Idées d’aménagement, sélections et savoir-faire, pour la diaspora et tous les amoureux de déco.</p>
       <p class="site-pied__note">${MENTION_AMAZON}</p>
       <p class="site-pied__note">Certaines images d’ambiance sont créées par intelligence artificielle ; elles sont alors signalées sous l’image.</p>
-      <p class="site-pied__note">Un site <a href="https://toakeur.com"><strong>TOA KEUR</strong></a></p>
     </div>
     ${colonne('piece')}
     ${colonne('matiere')}
@@ -456,13 +435,31 @@ export function sitemap(pages: string[], url = SITE_URL, dates: Map<string, stri
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls}\n</urlset>\n`;
 }
 
+/** Pages d'articles d'actus (actus/<slug>/index.html), hors page de secours (actus/article/) et renvoi (actus/). */
+const PAGE_ARTICLE_ACTU = /^actus\/(?!article\/)[^/]+\/index\.html$/;
+
+/** Adresse relative (ou « ../../ ») d'un lien interne → adresse partant de la racine du site. */
+function depuisLaRacine(valeur: string): string {
+  if (/^([a-z][a-z0-9+.-]*:|\/\/|\/|#)/i.test(valeur) || valeur === '') return valeur;
+  return `/${valeur.replace(/^(\.{1,2}\/)+/, '')}`;
+}
+
+/** Passe en adresses partant de la racine les href, src et srcset d'une page (liens internes seulement). */
+export function liensDepuisLaRacine(html: string): string {
+  return html
+    .replace(/(\s(?:href|src)=")([^"]*)"/g, (_m, debut: string, v: string) => `${debut}${depuisLaRacine(v)}"`)
+    .replace(/(\ssrcset=")([^"]*)"/g, (_m, debut: string, v: string) => `${debut}${v.split(',').map((c) => { const t = c.trim(); const [u, ...d] = t.split(/\s+/); return [depuisLaRacine(u), ...d].join(' '); }).join(', ')}"`);
+}
+
 /** Applique toutes les transformations à une page. */
 export function transformerPage(html: string, fichier: string): string {
   const publies = articlesPublies();
   // La 404 peut être servie sous n'importe quel chemin : liens résolus depuis la racine du site.
   // Pages d'un sous-dossier (Top 10) : liens relatifs résolus depuis la racine (« ../ »), ancres de la page conservées.
   const profondeur = fichier.split('/').length - 1;
-  const base = fichier === '404.html' ? `<base href="${SITE_URL}" />\n    ` : profondeur ? `<base href="${'../'.repeat(profondeur)}" />\n    ` : '';
+  // Pages d'articles d'actus (actus/<slug>/) : pas de <base>, tous les liens internes partent de la racine (« /a-propos.html »).
+  const racineAbsolue = PAGE_ARTICLE_ACTU.test(fichier);
+  const base = racineAbsolue ? '' : fichier === '404.html' ? `<base href="${SITE_URL}" />\n    ` : profondeur ? `<base href="${'../'.repeat(profondeur)}" />\n    ` : '';
   const ici = fichier.replace(/index\.html$/, '').replace(/\.html$/, '');
   const noindex = html.includes(ROBOTS_SOURCE_NOINDEX);
   const page = html
@@ -485,6 +482,7 @@ export function transformerPage(html: string, fichier: string): string {
     .replace(/<!--#mention-amazon-->/g, MENTION_AMAZON)
     .replace(/<!--#icone:([a-z-]+)-->/g, (_m, nom: NomIcone) => icone(nom))
     .replace(/<!--#motif:([a-z-]+)-->/g, (_m, nom: string) => motif(nom));
+  if (racineAbsolue) return insecables(liensDepuisLaRacine(page));
   return insecables(profondeur ? page.replace(/href="#/g, `href="${ici}#`) : page);
 }
 
@@ -559,7 +557,10 @@ export function pluginPrechargePolices(): Plugin {
         if (!liens) return html;
         // Page 404 : ses liens se résolvent depuis <base> ; le préchargement doit venir après.
         const base = html.match(/<base [^>]*>/)?.[0];
-        return base ? html.replace(base, `${base}\n    ${liens}`) : html.replace('</title>', `</title>\n    ${liens}`);
+        // Page d'un sous-dossier sans <base> (articles d'actus) : adresse partant de la racine.
+        const sousDossier = !base && (ctx.path ?? '').split('/').length > 2;
+        const liensPolices = sousDossier ? liens.replace(/href="(?!\/)/g, 'href="/') : liens;
+        return base ? html.replace(base, `${base}\n    ${liensPolices}`) : html.replace('</title>', `</title>\n    ${liensPolices}`);
       },
     },
   };
