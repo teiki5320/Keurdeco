@@ -2411,6 +2411,24 @@
       "board_id": "1085719491358932127",
       "publie_le": "2026-11-18",
       "publie_a": "2026-11-18T13:03:21.980Z"
+    },
+    {
+      "id": "conseil-vase-herbes-pampa-2",
+      "slug": "conseil-vase-herbes-pampa",
+      "pin_id": "1085719422764276292",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-19",
+      "publie_a": "2026-11-19T04:12:58.579Z"
+    },
+    {
+      "id": "top-tabourets-bois-sculpte-4",
+      "slug": "top-tabourets-bois-sculpte",
+      "pin_id": "1085719422764276293",
+      "tableau": "bois-sculpte",
+      "board_id": "1085719491358932186",
+      "publie_le": "2026-11-19",
+      "publie_a": "2026-11-19T04:13:00.850Z"
     }
   ]
 }
