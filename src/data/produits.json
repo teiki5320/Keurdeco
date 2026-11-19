@@ -3848,8 +3848,8 @@
   },
   {
     "id": "panier-all-across-africa-mineral",
-    "asin": "B0CV65R422",
-    "nom": "Panier rond tissé main All Across Africa, à suspendre ou pour servir, grand format",
+    "asin": "B0BQ246LH4",
+    "nom": "Lot de 3 paniers muraux ronds tissés main en jonc de mer, motif africain, 30, 25 et 20 cm",
     "type_objet": "panier",
     "matieres": [
       "raphia-paniers"
@@ -3860,7 +3860,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-09"
+    "verifie_le": "2026-11-19"
   },
   {
     "id": "housses-coussin-kente-boucles-dorees-lot-4",
@@ -3880,15 +3880,15 @@
   },
   {
     "id": "coussin-afrique-patchwork-40",
-    "asin": "B0BX66JBYW",
-    "nom": "Housse de coussin patchwork « Africa », éléphant, girafe et motifs africains, 40 × 40 cm",
+    "asin": "B0C7ZWLTQ3",
+    "nom": "Lot de 4 housses de coussin animaux d’Afrique (girafe, éléphant, zèbre, léopard), polyester aspect lin, 40 × 40 cm",
     "type_objet": "coussin",
     "matieres": [],
     "couleurs": [],
     "pieces": [
       "salon"
     ],
-    "statut": "indisponible",
+    "statut": "actif",
     "verifie_le": "2026-11-19"
   },
   {
@@ -4041,8 +4041,8 @@
   },
   {
     "id": "sets-table-ovales-jonc-de-mer-lot-6",
-    "asin": "B0CG1JRM36",
-    "nom": "Sets de table ovales tressés en jonc de mer, 30 × 40 cm, lot de 6",
+    "asin": "B0DHK384XD",
+    "nom": "Sets de table rectangulaires tressés en jonc de mer, 43 × 30 cm, lot de 6",
     "type_objet": "nappe",
     "matieres": [
       "raphia-paniers"
@@ -4053,7 +4053,7 @@
     "pieces": [
       "cuisine-salle-a-manger"
     ],
-    "statut": "indisponible",
-    "verifie_le": "2026-11-09"
+    "statut": "actif",
+    "verifie_le": "2026-11-19"
   }
 ]
