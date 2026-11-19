@@ -132,5 +132,29 @@
     "licence": "CC0",
     "page": "https://commons.wikimedia.org/wiki/File:Different_Kente_cloth,_Tafi,_Volta_region.jpg",
     "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Different_Kente_cloth%2C_Tafi%2C_Volta_region.jpg/1920px-Different_Kente_cloth%2C_Tafi%2C_Volta_region.jpg"
+  },
+  "eventail-africain-tressage": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "BENJAMINS212",
+    "licence": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Local_Hand_Fan_Weaving.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Local_Hand_Fan_Weaving.jpg/1280px-Local_Hand_Fan_Weaving.jpg"
+  },
+  "motifs-africains-raphia-kuba": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Hiart",
+    "licence": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Raffia_cloth,_Kuba_kingdom,_c._1909,_HMA.JPG",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Raffia_cloth%2C_Kuba_kingdom%2C_c._1909%2C_HMA.JPG/1280px-Raffia_cloth%2C_Kuba_kingdom%2C_c._1909%2C_HMA.JPG"
+  },
+  "tapis-africain-kilim": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Meriem Mach",
+    "licence": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Kilim_of_Mahdia.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Kilim_of_Mahdia.jpg/1280px-Kilim_of_Mahdia.jpg"
   }
 }
