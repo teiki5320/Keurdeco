@@ -387,7 +387,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-19"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "galettes-chaise-orange",
@@ -1059,7 +1059,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-11"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "coussins-femme-africaine-lin-lot-4",
@@ -1360,8 +1360,8 @@
       "salon",
       "balcon-exterieur"
     ],
-    "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "statut": "indisponible",
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "coussins-lin-beige-lot-2",
@@ -1393,7 +1393,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "vase-ceramique-noir-mat",
@@ -1409,7 +1409,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "buffet-lattes",
@@ -1425,7 +1425,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "bol-manguier-sculpte",
@@ -1477,7 +1477,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "suspension-rotin-fait-main",
@@ -1660,7 +1660,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "guirlande-perles-bois",
@@ -1694,7 +1694,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "cache-pied-sapin-rotin",
@@ -1711,7 +1711,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "couronne-osier-30",
@@ -1729,7 +1729,7 @@
       "entree"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "guirlande-lumineuse-20m",
@@ -1744,7 +1744,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "awale-mancala-bois",
@@ -1799,7 +1799,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "plateaux-tresses-lot-2",
@@ -1847,7 +1847,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "couverts-dores-24-pieces",
@@ -1862,7 +1862,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "verres-vin-cristal-arques-lot-6",
@@ -1877,7 +1877,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "bougeoirs-dores-coniques-lot-6",
@@ -1909,7 +1909,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "serviettes-lin-melange-lot-12",
@@ -1940,7 +1940,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "photophores-dores-lot-12",
@@ -2124,7 +2124,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "etageres-flottantes-pin-lot-3",
@@ -2188,7 +2188,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "guirlandes-boules-feutre-lot-2",
@@ -2203,7 +2203,7 @@
       "chambre-enfant"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "affiches-animaux-savane-lot-3",
@@ -2428,7 +2428,7 @@
       "salon"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-19"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "plaid-coton-bleu-140x200",
@@ -2463,7 +2463,7 @@
       "salle-de-bain"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "tapis-bain-coton-tresse-creme",
@@ -2668,7 +2668,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "cadres-photo-bois-a5-lot-3",
@@ -2684,7 +2684,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "parure-gaze-coton-terracotta",
@@ -2699,7 +2699,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "plaid-terre-cuite-pompons",
@@ -2715,7 +2715,7 @@
       "salon"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "tapis-jute-alhambra",
@@ -2807,7 +2807,7 @@
       "balcon-exterieur"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "housses-coussin-imprime-kente-lot-2",
@@ -2846,7 +2846,7 @@
       "chambre"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-19"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "tissu-kente-jaune-noir-blanc",
@@ -2866,7 +2866,7 @@
       "chambre"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "tissu-dogon-indigo-blanc",
@@ -3014,7 +3014,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "nappe-danseuse-africaine-160x240",
@@ -3084,7 +3084,7 @@
       "cuisine-salle-a-manger"
     ],
     "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "sets-table-tribal-bleu-jaune-lot-4",
@@ -3173,7 +3173,7 @@
       "chambre"
     ],
     "statut": "indisponible",
-    "verifie_le": "2026-11-19"
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "parure-patchwork-tribal-reversible",
@@ -3676,8 +3676,8 @@
     "pieces": [
       "salon"
     ],
-    "statut": "actif",
-    "verifie_le": "2026-11-10"
+    "statut": "indisponible",
+    "verifie_le": "2026-11-20"
   },
   {
     "id": "tapis-berbere-patchwork-carre-160",
