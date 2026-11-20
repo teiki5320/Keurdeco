@@ -2447,6 +2447,15 @@
       "board_id": "1085719491358932186",
       "publie_le": "2026-11-20",
       "publie_a": "2026-11-20T04:12:55.246Z"
+    },
+    {
+      "id": "conseil-juju-hat-1",
+      "slug": "conseil-juju-hat",
+      "pin_id": "1085719422764378958",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-20",
+      "publie_a": "2026-11-20T12:53:55.288Z"
     }
   ]
 }
