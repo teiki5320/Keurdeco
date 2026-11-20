@@ -55,6 +55,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-accrocher-tapis-mur": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-accrocher-tissu-africain-mur": {
     "largeur": 1600,
     "hauteur": 1073
@@ -83,9 +87,17 @@
     "largeur": 1600,
     "hauteur": 1067
   },
+  "conseil-choisir-paravent": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-choisir-pouf": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-choisir-table-basse-africaine": {
+    "largeur": 1600,
+    "hauteur": 1067
   },
   "conseil-choisir-tabouret-bois": {
     "largeur": 1600,
@@ -107,6 +119,10 @@
     "largeur": 1600,
     "hauteur": 1067
   },
+  "conseil-couleurs-avec-jaune-moutarde": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-couleurs-avec-terracotta": {
     "largeur": 1600,
     "hauteur": 1073
@@ -122,6 +138,10 @@
   "conseil-deco-africaine-boheme": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-deco-africaine-industrielle": {
+    "largeur": 1600,
+    "hauteur": 1067
   },
   "conseil-deco-africaine-petit-appartement": {
     "largeur": 1600,
@@ -175,6 +195,10 @@
     "largeur": 1600,
     "hauteur": 1073
   },
+  "conseil-faso-dan-fani": {
+    "largeur": 1600,
+    "hauteur": 1067
+  },
   "conseil-hauteur-cadre-textile": {
     "largeur": 1600,
     "hauteur": 1073
@@ -210,6 +234,10 @@
   "conseil-motifs-bogolan-signification": {
     "largeur": 1600,
     "hauteur": 1073
+  },
+  "conseil-nettoyer-abat-jour-wax": {
+    "largeur": 1600,
+    "hauteur": 1067
   },
   "conseil-nettoyer-laiton-bronze": {
     "largeur": 1600,
@@ -298,6 +326,10 @@
   "conseil-tete-de-lit-tissu-africain": {
     "largeur": 1600,
     "hauteur": 1067
+  },
+  "conseil-tissu-bazin": {
+    "largeur": 1600,
+    "hauteur": 1065
   },
   "conseil-tissu-kanga": {
     "largeur": 1600,

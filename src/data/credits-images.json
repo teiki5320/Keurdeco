@@ -156,5 +156,57 @@
     "licence": "CC BY-SA 4.0",
     "page": "https://commons.wikimedia.org/wiki/File:Kilim_of_Mahdia.jpg",
     "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Kilim_of_Mahdia.jpg/1280px-Kilim_of_Mahdia.jpg"
+  },
+  "conseil-tissu-bazin": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Karim Diarra",
+    "licence": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:S%C3%A9chage_du_basin.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/S%C3%A9chage_du_basin.jpg/1920px-S%C3%A9chage_du_basin.jpg"
+  },
+  "conseil-faso-dan-fani": {
+    "type": "photo",
+    "source": "wikimedia",
+    "auteur": "Rhodapenmarck",
+    "licence": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bande_de_Faso_Dan_Fani,_Burkina_Faso,_collection_priv%C3%A9e_de_Ariane_Mawaffo.jpg",
+    "telechargement": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Bande_de_Faso_Dan_Fani%2C_Burkina_Faso%2C_collection_priv%C3%A9e_de_Ariane_Mawaffo.jpg/1920px-Bande_de_Faso_Dan_Fani%2C_Burkina_Faso%2C_collection_priv%C3%A9e_de_Ariane_Mawaffo.jpg"
+  },
+  "conseil-choisir-table-basse-africaine": {
+    "type": "carte",
+    "libelle": "Table basse",
+    "icone": "tabouret",
+    "motif": "bois-sculpte"
+  },
+  "conseil-nettoyer-abat-jour-wax": {
+    "type": "carte",
+    "libelle": "Abat-jour en wax",
+    "icone": "luminaire",
+    "motif": "wax"
+  },
+  "conseil-accrocher-tapis-mur": {
+    "type": "carte",
+    "libelle": "Tapis au mur",
+    "icone": "tapis",
+    "motif": "bogolan"
+  },
+  "conseil-couleurs-avec-jaune-moutarde": {
+    "type": "carte",
+    "libelle": "Jaune moutarde",
+    "icone": "coussin",
+    "motif": "wax"
+  },
+  "conseil-choisir-paravent": {
+    "type": "carte",
+    "libelle": "Paravent",
+    "icone": "maison",
+    "motif": "raphia-paniers"
+  },
+  "conseil-deco-africaine-industrielle": {
+    "type": "carte",
+    "libelle": "Style industriel",
+    "icone": "statuette",
+    "motif": "bogolan"
   }
 }
