@@ -1347,8 +1347,8 @@
   },
   {
     "id": "sphere-terre-cuite-etoiles",
-    "asin": "B007STMBG2",
-    "nom": "Boules décoratives en terre cuite à motif d’étoiles, 12 cm, lot de 2",
+    "asin": "B01GRMFICO",
+    "nom": "Boule décorative en terre cuite à motif d’étoiles, Ø 17 cm (Dekoleidenschaft)",
     "type_objet": "objet",
     "matieres": [
       "terre-cuite"
@@ -1360,7 +1360,7 @@
       "salon",
       "balcon-exterieur"
     ],
-    "statut": "indisponible",
+    "statut": "actif",
     "verifie_le": "2026-11-20"
   },
   {
@@ -3666,8 +3666,8 @@
   },
   {
     "id": "tapis-berbere-rouge-140x200",
-    "asin": "B01BHGG7CK",
-    "nom": "Tapis style berbère rouge, bandes et losanges, 160 × 230 cm",
+    "asin": "B07S241XFC",
+    "nom": "Tapis style berbère rouge, motif graphique à bandes, 160 × 230 cm",
     "type_objet": "tapis",
     "matieres": [],
     "couleurs": [
@@ -3676,7 +3676,7 @@
     "pieces": [
       "salon"
     ],
-    "statut": "indisponible",
+    "statut": "actif",
     "verifie_le": "2026-11-20"
   },
   {
