@@ -11,7 +11,7 @@ Mis à jour le 21 novembre 2026. Compagnon de INFRA.md.
 ## Rémunération par phases
 
 - [fait] **Aujourd'hui** : liens Amazon Partenaires (tag `keurdecofr-21` depuis le 18 octobre 2026), 244 produits actifs sur 247 au 21 novembre 2026.
-- [en cours] **Validation AdSense** : refusée le 9 novembre 2026 (contenu à faible valeur informative) ; rallonger les pages courtes, puis redemander l'examen.
+- [en cours] **Validation AdSense** : refusée le 9 novembre 2026 ; nouvel examen en cours (« En préparation » depuis le 20 novembre, vérifié le 21 novembre 2026).
 - **Trafic Pinterest automatique** : publication quotidienne par l'API depuis le 20 octobre 2026, 178 épingles au 21 novembre 2026.
 - **Trafic de recherche** : pages indexées par Google et Bing, qui font vivre les deux revenus.
 
@@ -41,7 +41,7 @@ Mis à jour le 21 novembre 2026. Compagnon de INFRA.md.
 - **Épingles** : 96 importées par CSV (du 2 octobre au 18 novembre 2026) et 178 publiées par l'API du 20 octobre au 21 novembre 2026 (240 au manifeste en ligne le 21 novembre, dont 1 à publier, la dernière du conseil sur le juju hat) (`data/pinterest-etat.json`).
 - **Statistiques Pinterest** : à vérifier dans la console Pinterest.
 - **Commissions Amazon** : à vérifier dans la console Amazon Partenaires.
-- **Revenus AdSense** : aucun, site refusé par Google le 9 novembre 2026 (contenu à faible valeur informative ; vérifié dans Gmail le 11 novembre 2026, aucun nouveau message au 21 novembre 2026 ; console « Attention requise » vérifiée le 18 novembre 2026).
+- **Revenus AdSense** : aucun, site refusé par Google le 9 novembre 2026 (contenu à faible valeur informative ; vérifié dans Gmail le 11 novembre 2026, aucun nouveau message au 21 novembre 2026 ; console « Attention requise » le 18 novembre 2026, puis « En préparation » depuis le 20 novembre 2026 : nouvel examen en cours, vérifié le 21 novembre 2026).
 
 ## Calendrier
 
@@ -52,5 +52,5 @@ Mis à jour le 21 novembre 2026. Compagnon de INFRA.md.
 ## Les 3 priorités
 
 - Faire indexer les 4 pages du sitemap encore absentes (le guide Black Friday et le conseil sur le vase d'herbes de pampa, parus le 18 novembre, le conseil sur le tapis de chambre, paru le 16 novembre, et le conseil sur le juju hat, paru le 20 novembre) et demander à Google de repasser sur les 4 pages ouvertes depuis (matière perles, occasions fêtes de fin d'année, mariage, Tabaski), qu'il voit encore en `noindex` depuis le 29 septembre (relevé du 19 novembre 2026).
-- Redemander l'examen AdSense, refusé le 9 novembre 2026 pour « Contenu à faible valeur informative » : finir de rallonger les pages les plus courtes (conseils, fiches du glossaire — 5 des plus courtes enrichies le 16 novembre —, pages de rubrique), puis demander un nouvel examen dans la console (aucun nouvel avis de Google dans Gmail au 21 novembre 2026).
+- Suivre le nouvel examen AdSense (refusé le 9 novembre 2026 pour « Contenu à faible valeur informative ») : la console affiche « En préparation » depuis le 20 novembre 2026 (vérifié le 21 novembre 2026) ; continuer à rallonger les pages les plus courtes (conseils, fiches du glossaire, pages de rubrique) en attendant la décision de Google.
 - Refaire la clé Pinterest avant son échéance : le secret `PINTEREST_REFRESH_TOKEN` date du 20 octobre 2026 (valable environ 60 jours, soit vers le 19 décembre) ; sans elle, la publication automatique des épingles s'arrête (ticket de rappel n° 15 ouvert).
