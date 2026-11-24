@@ -2492,6 +2492,24 @@
       "board_id": "1085719491358932130",
       "publie_le": "2026-11-23",
       "publie_a": "2026-11-23T04:12:47.983Z"
+    },
+    {
+      "id": "conseil-plaid-deco-africaine-2",
+      "slug": "conseil-plaid-deco-africaine",
+      "pin_id": "1085719422764703920",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-24",
+      "publie_a": "2026-11-24T14:53:13.378Z"
+    },
+    {
+      "id": "studio-deco-africaine-2",
+      "slug": "studio-deco-africaine",
+      "pin_id": "1085719422764703922",
+      "tableau": "salon",
+      "board_id": "1085719491358932130",
+      "publie_le": "2026-11-24",
+      "publie_a": "2026-11-24T14:53:15.773Z"
     }
   ]
 }
