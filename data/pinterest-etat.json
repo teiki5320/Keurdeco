@@ -2546,6 +2546,24 @@
       "board_id": "1085719491358932130",
       "publie_le": "2026-11-26",
       "publie_a": "2026-11-26T13:54:18.702Z"
+    },
+    {
+      "id": "conseil-coussins-canape-gris-2",
+      "slug": "conseil-coussins-canape-gris",
+      "pin_id": "1085719422764938157",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-27",
+      "publie_a": "2026-11-27T13:51:59.308Z"
+    },
+    {
+      "id": "studio-deco-africaine-5",
+      "slug": "studio-deco-africaine",
+      "pin_id": "1085719422764938159",
+      "tableau": "salon",
+      "board_id": "1085719491358932130",
+      "publie_le": "2026-11-27",
+      "publie_a": "2026-11-27T13:52:01.599Z"
     }
   ]
 }
