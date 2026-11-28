@@ -2564,6 +2564,24 @@
       "board_id": "1085719491358932130",
       "publie_le": "2026-11-27",
       "publie_a": "2026-11-27T13:52:01.599Z"
+    },
+    {
+      "id": "conseil-tissu-kanga-1",
+      "slug": "conseil-tissu-kanga",
+      "pin_id": "1085719422765016711",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-28",
+      "publie_a": "2026-11-28T12:59:32.375Z"
+    },
+    {
+      "id": "conseil-coussins-canape-gris-3",
+      "slug": "conseil-coussins-canape-gris",
+      "pin_id": "1085719422765016715",
+      "tableau": "general",
+      "board_id": "1085719491358932127",
+      "publie_le": "2026-11-28",
+      "publie_a": "2026-11-28T12:59:34.731Z"
     }
   ]
 }
